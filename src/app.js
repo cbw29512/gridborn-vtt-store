@@ -19,7 +19,22 @@ function openConcept(item, trigger) {
       ['Size', item.size], ['Grid footprint', item.squares + ' × ' + item.squares + ' squares'],
       ['Animation', 'Proposed 45-second idle, walk, attack and recovery loop'],
       ['Extras', 'Rest animation and PNG fallback planned'],
-      ['Target price', '
+      ['Target price', 'USD ' + (item.priceCents / 100).toFixed(2) + ' — not yet for sale'],
+    ];
+    nodes.dialogFacts.replaceChildren();
+    for (const [term, value] of specs) {
+      const dt = document.createElement('dt');
+      const dd = document.createElement('dd');
+      dt.textContent = term;
+      dd.textContent = value;
+      nodes.dialogFacts.append(dt, dd);
+    }
+    lastDialogTrigger = trigger;
+    nodes.dialog.showModal();
+  } catch (error) {
+    console.error('Unable to display token concept', item.id, error);
+  }
+}
 
 function populateSelect(node, values, allText, selected = '') {
   try {
