@@ -5,6 +5,7 @@ FFmpeg turns transparent RGBA frame PNGs into VP9-alpha WebM. These exports
 are concept proofs, not licensed or VTT-certified commercial products.
 """
 import argparse
+import json
 import logging
 import shutil
 import subprocess
@@ -12,6 +13,7 @@ import tempfile
 from pathlib import Path
 
 from asset_spec import load_manifest
+from media_cert import inspect_motion, inspect_png, inspect_video
 
 LOG = logging.getLogger("gridborn.export")
 ROOT = Path(__file__).resolve().parents[1]
@@ -89,11 +91,14 @@ def main() -> int:
         cli.add_argument("--manifest", type=Path, default=DEFAULT_SPEC)
         cli.add_argument("--output-dir", type=Path, required=True)
         cli.add_argument("--sample-frames", type=int, default=None)
+        cli.add_argument("--certify", action="store_true", help="Run full technical media QA")
         args = cli.parse_args()
         logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
         spec = load_manifest(args.manifest, ROOT)
         if args.sample_frames is not None and args.sample_frames < 1:
             raise ValueError("--sample-frames must be positive")
+        if args.certify and args.sample_frames is not None:
+            raise ValueError("Certification requires every action and rest frame")
         output = args.output_dir.resolve()
         if output.is_relative_to(ROOT):
             raise ValueError("Refusing to export private files inside public GitHub")
@@ -109,6 +114,24 @@ def main() -> int:
             encode_webm(action_frames, output / (spec["id"] + "-loop.webm"), spec["fps"])
             render_frames(spec, rest_frames, args.sample_frames, "rest")
             encode_webm(rest_frames, output / (spec["id"] + "-rest.webm"), spec["fps"])
+            if args.certify:
+                quality = {
+                    "asset": spec["id"], "status": "technical-preview-pass",
+                    "license": "not-verified", "vttCompatibility": "untested",
+                    "purchasable": False,
+                    "still": inspect_png(output / (spec["id"] + "-still.png"), spec["canvasPx"]),
+                    "actionMotion": inspect_motion(action_frames, spec, "action"),
+                    "restMotion": inspect_motion(rest_frames, spec, "rest"),
+                    "actionVideo": inspect_video(output / (spec["id"] + "-loop.webm"),
+                                                 spec["canvasPx"], spec["fps"],
+                                                 spec["timeline"][-1]["endSec"]),
+                    "restVideo": inspect_video(output / (spec["id"] + "-rest.webm"),
+                                               spec["canvasPx"], spec["fps"],
+                                               spec["restDurationSec"]),
+                }
+                (output / (spec["id"] + "-media-qa.json")).write_text(
+                    json.dumps(quality, indent=2) + "\n", encoding="utf-8")
+                LOG.info("Technical media QA passed: %s", json.dumps(quality))
         LOG.info("Private proof-of-concept exports: %s", output)
         return 0
     except Exception:

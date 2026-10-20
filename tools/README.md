@@ -43,6 +43,28 @@ npm test
 A full run produces a 45-second action WebM, six-second rest WebM and a 256×256 PNG.
 `--sample-frames` intentionally produces a short smoke-test clip.
 
+### Full automated technical QA (private files only)
+
+Install Pillow (`python -m pip install Pillow`), then run:
+
+```sh
+python tools/export_demo.py --certify --output-dir ../gridborn-private-qa
+```
+
+This renders **450 action frames plus 60 rest frames**, inspects actual PNG
+alpha pixels and decoded VP9 alpha, checks VP9 codec, 256×256 dimensions,
+10 fps, full 45s/6s durations, frame counts, sampled motion in idle/move/
+attack, and the first/last-frame loop seam. The private output includes
+`chr-ftr-human-media-qa.json` with measured results and explicit
+`purchasable: false` and `vttCompatibility: untested`. Running `--certify`
+with `--sample-frames` is rejected. The GitHub full-media QA workflow
+runs this in an ephemeral runner without uploading any products.
+
+**Technical QA is not VTT import certification, an art-quality review,
+a legal license verification or production approval.** The visible loop
+should still be inspected manually at its actual duration on a desktop
+and mobile device before claiming suitability for sale.
+
 ## E. Acceptance tests (still needed for a sale)
 
 - Inspect alpha visually over light/dark VTT grids and verify no opaque corners.

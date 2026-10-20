@@ -109,3 +109,7 @@ The local exporter and 45-second state contract are documented in [tools/README.
 ## Fighter rest prototype
 
 The Fighter now has a distinct original six-second resting animation study (`assets/demos/human-fighter-rest.svg`) with a lowered sword, subtle breathing and blinking, plus explicit Action/Rest preview controls. Both are manually started and stop when hidden. The private exporter can generate separate alpha-WebM action/rest clips and a static PNG, none of which are included in this public repository or certified for VTT sale.
+
+## Full-duration media QA (no storefront exposure)
+
+The first Human Fighter prototype now has optional strict media checks via `python tools/export_demo.py --certify --output-dir ../gridborn-private-qa`. The QA run verifies exact frame count and duration, true transparent PNG/VP9 pixels, meaningful animation changes and loop continuity. Outputs and the media QA JSON stay private and are not committed. Passing automated QA **does not establish artistic quality, universal VTT compatibility or sale readiness**. See [tools/README.md](tools/README.md) for the full contract.

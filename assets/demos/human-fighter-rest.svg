@@ -7,8 +7,8 @@
   .cape{animation:rest-cape 6s steps(1,end) infinite}
   .sword{transform-origin:176px 145px;transform:rotate(48deg)}
   .eye{animation:rest-blink 6s steps(1,end) infinite}
-  @keyframes rest-breathe{0%,100%{transform:translateY(0)}25%,75%{transform:translateY(2px)}}
-  @keyframes rest-cape{0%,100%{transform:translateX(0)}50%{transform:translateX(-2px)}}
+  @keyframes rest-breathe{0%,90%,100%{transform:translateY(0)}25%,75%{transform:translateY(2px)}}
+  @keyframes rest-cape{0%,85%,100%{transform:translateX(0)}50%{transform:translateX(-2px)}}
   @keyframes rest-blink{0%,29%,31%,79%,81%,100%{opacity:1}30%,80%{opacity:0}}
   @media (prefers-reduced-motion:reduce){.body,.cape,.eye{animation:none!important}}
 </style>
