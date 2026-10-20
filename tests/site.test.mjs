@@ -55,3 +55,10 @@ test('preview application uses bounded modules', () => {
   assert.match(app, /initializeDemo\(\)/);
   assert.match(app, /initializeConceptDialog\(\)/);
 });
+
+test('category shortcuts are four normal links to stable catalog URLs', () => {
+  const matches = [...html.matchAll(/data-category-link="([^"]+)"/g)].map(match=>match[1]);
+  assert.deepEqual(matches,['Characters','NPCs','Monsters','Animals']);
+  assert.match(html, /href="\?category=Monsters#catalog"/);
+  assert.match(get('src/app.js'), /connectCatalogNavigation/);
+});

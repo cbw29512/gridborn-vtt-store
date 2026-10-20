@@ -2,6 +2,7 @@ import { catalog, categoryConfig } from './catalog.js';
 import { initialState, availableOptions, filterCatalog, validateCatalog } from './filters.js';
 import { initializeDemo } from './animation-demo.js';
 import { openConcept, initializeConceptDialog } from './concept-dialog.js';
+import { readCatalogRoute, writeCatalogRoute, markActiveCollection, connectCatalogNavigation } from './routing.js';
 
 // One battle-tested state object drives search and both dependent dropdowns.
 const state = { ...initialState };
@@ -80,6 +81,7 @@ function renderResults() {
     nodes.summary.textContent = filtered.length + (filtered.length === 1 ? ' result found' : ' results found');
     nodes.caption.textContent = [state.category, state.primary, state.secondary].filter(Boolean).join(' / ');
     nodes.clear.hidden = !state.query && !state.primary && !state.secondary;
+    markActiveCollection(state.category);
   } catch (error) { console.error('Unable to render catalog results', error); }
 }
 
@@ -87,13 +89,14 @@ function resetFilters() {
   try {
     Object.assign(state, initialState);
     nodes.search.value = ''; nodes.category.value = state.category;
-    updateFilters(); renderResults();
+    updateFilters(); renderResults(); writeCatalogRoute(state);
   } catch (error) { console.error('Unable to reset catalog filters', error); }
 }
 
 function initialize() {
   try {
     if (!validateCatalog(catalog)) throw new Error('Preview catalog validation failed');
+    Object.assign(state, readCatalogRoute(window.location.search, catalog));
     Object.assign(nodes, {
       search: byId('search'), category: byId('category'), primary: byId('primary-filter'),
       secondary: byId('secondary-filter'), firstLabel: byId('primary-label'),
@@ -105,23 +108,30 @@ function initialize() {
     populateSelect(nodes.category, Object.keys(categoryConfig), 'Choose category', state.category);
     nodes.category.value = state.category;
     nodes.category.addEventListener('change', () => {
-      try { state.category = nodes.category.value; state.primary = ''; state.secondary = ''; updateFilters(); renderResults(); }
+      try { state.category = nodes.category.value; state.primary = ''; state.secondary = ''; updateFilters(); renderResults(); writeCatalogRoute(state); }
       catch (error) { console.error('Category change failed', error); }
     });
     nodes.primary.addEventListener('change', () => {
-      try { state.primary = nodes.primary.value; state.secondary = ''; updateFilters(); renderResults(); }
+      try { state.primary = nodes.primary.value; state.secondary = ''; updateFilters(); renderResults(); writeCatalogRoute(state); }
       catch (error) { console.error('Primary filter change failed', error); }
     });
     nodes.secondary.addEventListener('change', () => {
-      try { state.secondary = nodes.secondary.value; renderResults(); }
+      try { state.secondary = nodes.secondary.value; renderResults(); writeCatalogRoute(state); }
       catch (error) { console.error('Secondary filter change failed', error); }
     });
     nodes.search.addEventListener('input', () => {
-      try { state.query = nodes.search.value; renderResults(); }
+      try { state.query = nodes.search.value; renderResults(); writeCatalogRoute(state); }
       catch (error) { console.error('Search update failed', error); }
+    });
+    connectCatalogNavigation(state, catalog, () => {
+      try {
+        nodes.search.value = state.query; nodes.category.value = state.category;
+        updateFilters(); renderResults();
+      } catch (error) { console.error('Unable to refresh routed catalog', error); }
     });
     nodes.clear.addEventListener('click', resetFilters);
     byId('empty-reset').addEventListener('click', resetFilters);
+    nodes.search.value = state.query;
     updateFilters(); renderResults(); initializeDemo();
   } catch (error) {
     console.error('Storefront failed to initialize', error);
