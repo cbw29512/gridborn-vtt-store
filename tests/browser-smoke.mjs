@@ -20,10 +20,11 @@ async function main() {
     browser = await chromium.launch({ headless: true });
     mkdirSync('browser-artifacts', { recursive: true });
     for (const size of dimensions) {
-      const page = await browser.newPage({
+      const context = await browser.newContext({
         viewport: { width: size.width, height: size.height },
         reducedMotion: 'reduce', // Keep screenshots deterministic and confirm motion fallback.
       });
+      const page = await context.newPage();
       const pageErrors = [];
       page.on('pageerror', error => pageErrors.push(error.message));
 
@@ -71,6 +72,7 @@ async function main() {
         await page.locator('#demo-toggle').click();
         assert.equal(await page.locator('#demo-toggle').getAttribute('aria-pressed'), 'false');
 
+        await page.screenshot({path:'browser-artifacts/gridborn-' + size.name + '.png',fullPage:true});
         // Automated accessibility checks do not replace manual screen-reader testing.
         const result = await new AxeBuilder({ page })
           .withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']).analyze();
@@ -82,10 +84,9 @@ async function main() {
         }
         assert.equal(result.violations.length, 0, size.name + ': automated WCAG findings');
         assert.deepEqual(pageErrors, [], size.name + ': no uncaught browser errors');
-        await page.screenshot({path:'browser-artifacts/gridborn-' + size.name + '.png',fullPage:true});
         console.log('PASS ' + size.name + ': responsive layout, filters, modal, animation, accessibility');
       } finally {
-        await page.close();
+        await context.close();
       }
     }
   } catch (error) {
