@@ -18,5 +18,9 @@ jobs:
           node --check src/filters.js
       - name: Validate original SVG preview files
         run: python3 -c "import xml.etree.ElementTree as ET; ET.parse('assets/demos/human-fighter-still.svg'); ET.parse('assets/demos/human-fighter-loop.svg')"
+      - name: Validate Python asset contract
+        run: |
+          python3 -m compileall -q tools tests
+          python3 -m unittest discover -s tests -p 'test_*.py'
       - name: Run tests
         run: npm test
