@@ -87,7 +87,7 @@ download links after a verified Stripe webhook grants entitlements.
 
 - `assets/demos/human-fighter-still.svg` is the static fallback.
 - `assets/demos/human-fighter-loop.svg` animates a hand-authored sprite with a 45-second cycle (idle 27s, move 8s, attack 3s, recover 7s). Playback is user-initiated with a Pause control. It respects reduced-motion preferences and pauses when the tab is hidden.
-- This is a **draft vector pixel-art study**, not the final sprite, not an accepted VTT asset, not a completed WebM / PNG / sleep-loop delivery set, and not available for purchase.
+- This is a **draft vector pixel-art study**, not the final sprite, not an accepted VTT asset, and not available for purchase. The prototype now includes a separate six-second resting animation SVG; final export and VTT delivery testing remain necessary.
 - Do not add it to a for-sale product or claim VTT compatibility before testing transparency, orientation, compositing, export frame cadence, file size, browser playback, and major VTT import workflows.
 
 Storefront browser logic is split into `src/app.js`, `src/concept-dialog.js`, and `src/animation-demo.js`. Keep individual modules below 150 lines.
@@ -105,3 +105,7 @@ FAQ markup uses native `details` and `summary` without JavaScript, retaining key
 ## Private animated token export pipeline
 
 The local exporter and 45-second state contract are documented in [tools/README.md](tools/README.md). It uses Chromium to sample the SVG study and FFmpeg to build a prototype transparent PNG and WebM, entirely outside this public repository. Test the generated media and platform compatibility before marking any product purchasable.
+
+## Fighter rest prototype
+
+The Fighter now has a distinct original six-second resting animation study (`assets/demos/human-fighter-rest.svg`) with a lowered sword, subtle breathing and blinking, plus explicit Action/Rest preview controls. Both are manually started and stop when hidden. The private exporter can generate separate alpha-WebM action/rest clips and a static PNG, none of which are included in this public repository or certified for VTT sale.

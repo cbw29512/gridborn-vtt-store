@@ -1,34 +1,52 @@
 /**
- * A user-initiated proof-of-concept preview. The still SVG loads by default.
- * The animated SVG follows the documented 27/8/3/7-second timeline.
- * This is NOT a shippable game asset or a checkout capability.
+ * Human Fighter art-study state:
+ * still (default) | action (45s) | rest (6s).
+ * Both animations are user initiated and all variants remain concept-only.
  */
+const SOURCES = Object.freeze({
+  still: './assets/demos/human-fighter-still.svg',
+  action: './assets/demos/human-fighter-loop.svg',
+  rest: './assets/demos/human-fighter-rest.svg',
+});
+
 export function initializeDemo() {
   try {
-    const toggle = document.getElementById('demo-toggle');
+    const action = document.getElementById('demo-toggle');
+    const rest = document.getElementById('demo-rest-toggle');
     const image = document.getElementById('demo-token');
-    if (!toggle || !image) throw new Error('Animation preview controls are missing');
+    if (!action || !rest || !image) throw new Error('Missing fighter preview controls');
 
-    const still = './assets/demos/human-fighter-still.svg';
-    const loop = './assets/demos/human-fighter-loop.svg';
-    let playing = false;
+    let mode = 'still';
 
-    function setPlaying(next) {
+    function selectMode(next) {
       try {
-        playing = Boolean(next);
-        image.src = playing ? loop : still;
-        toggle.textContent = playing ? 'Pause concept animation' : 'Play concept animation';
-        toggle.setAttribute('aria-pressed', String(playing));
-      } catch (error) { console.error('Unable to change preview animation', error); }
+        if (!Object.prototype.hasOwnProperty.call(SOURCES, next)) {
+          throw new Error('Invalid preview mode');
+        }
+        mode = next;
+        image.src = SOURCES[mode];
+        action.setAttribute('aria-pressed', String(mode === 'action'));
+        rest.setAttribute('aria-pressed', String(mode === 'rest'));
+        action.textContent = mode === 'action' ? 'Stop action loop' : 'Play action loop';
+        rest.textContent = mode === 'rest' ? 'Stop rest loop' : 'Play rest loop';
+      } catch (error) { console.error('Unable to set Fighter animation mode', error); }
     }
 
-    toggle.addEventListener('click', () => {
-      try { setPlaying(!playing); }
-      catch (error) { console.error('Animation control failed', error); }
+    action.addEventListener('click', () => {
+      try { selectMode(mode === 'action' ? 'still' : 'action'); }
+      catch (error) { console.error('Fighter action preview failed', error); }
+    });
+    rest.addEventListener('click', () => {
+      try { selectMode(mode === 'rest' ? 'still' : 'rest'); }
+      catch (error) { console.error('Fighter rest preview failed', error); }
     });
     document.addEventListener('visibilitychange', () => {
-      try { if (document.hidden && playing) setPlaying(false); }
-      catch (error) { console.error('Unable to pause hidden animation', error); }
+      try { if (document.hidden && mode !== 'still') selectMode('still'); }
+      catch (error) { console.error('Unable to stop hidden preview', error); }
+    });
+    image.addEventListener('error', () => {
+      try { if (mode !== 'still') selectMode('still'); }
+      catch (error) { console.error('Unable to recover image preview', error); }
     });
   } catch (error) { console.error('Animation preview failed to initialize', error); }
 }

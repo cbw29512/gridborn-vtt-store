@@ -11,10 +11,10 @@ compatibility claim is implied.** Do not publish these full exports in GitHub.
 The single source of truth is `assets/demos/manifest.json`:
 
 - Identity and status: `id`, `concept-only`, `purchasable: false`.
-- Asset references: animated SVG and static SVG, relative to the repository.
+- Asset references: action SVG, separate six-second rest SVG, and static SVG, relative to the repository.
 - Rendering: 256-square RGBA canvas, 10 sampled frames per second.
 - Phases: idle 0–27 s, move 27–35 s, attack 35–38 s, recover 38–45 s.
-- Export targets: static PNG and VP9-alpha WebM, with no completed rest loop.
+- Export targets: static PNG, 45-second VP9-alpha action WebM, six-second VP9-alpha rest WebM (all studies).
 - Verification: rights and compatibility are both explicitly unverified.
 
 ## C. Logic flow
@@ -40,7 +40,7 @@ python -m unittest discover -s tests -p "test_*.py"
 npm test
 ```
 
-A full run produces a 45-second 10-fps concept WebM and a 256×256 PNG.
+A full run produces a 45-second action WebM, six-second rest WebM and a 256×256 PNG.
 `--sample-frames` intentionally produces a short smoke-test clip.
 
 ## E. Acceptance tests (still needed for a sale)
@@ -49,7 +49,7 @@ A full run produces a 45-second 10-fps concept WebM and a 256×256 PNG.
 - Review idle/move/attack/recovery timeline boundaries and looping seams.
 - Check actual frame rate, visible pixel-art quality, transparency and file size.
 - Import into explicitly named target VTTs; record version and tested behavior.
-- Produce and independently validate the separate rest/sleep loop.
+- Independently validate the six-second draft rest loop in the intended VTT.
 - Verify original artwork rights and define a buyer license.
 - Build protected storage/Stripe fulfillment **after**, not before, acceptance.
 

@@ -61,9 +61,11 @@ def validate_manifest(data: dict, root: Path, check_files: bool = True) -> dict:
             prior = end
         if prior != 45:
             raise ValueError("Prototype duration must be exactly 45 seconds")
-        if data.get("plannedOutputs") != ["transparent-webm", "static-png"]:
+        if data.get("plannedOutputs") != ["transparent-webm", "static-png", "rest-webm"]:
             raise ValueError("Unexpected output contract")
-        for field in ("source", "stillSource"):
+        if type(data.get("restDurationSec")) not in (int, float) or not 2 <= data["restDurationSec"] <= 30:
+            raise ValueError("Rest loop duration must be between 2 and 30 seconds")
+        for field in ("source", "stillSource", "restSource"):
             relative = Path(data.get(field, ""))
             if relative.is_absolute() or relative.suffix != ".svg" or ".." in relative.parts:
                 raise ValueError(f"Unsafe {field} path")

@@ -4,6 +4,8 @@
   "status": "concept-only",
   "source": "assets/demos/human-fighter-loop.svg",
   "stillSource": "assets/demos/human-fighter-still.svg",
+  "restSource": "assets/demos/human-fighter-rest.svg",
+  "restDurationSec": 6,
   "artLicenseStatus": "not-verified",
   "canvasPx": 256,
   "fps": 10,
@@ -13,7 +15,7 @@
     {"phase": "attack", "startSec": 35, "endSec": 38},
     {"phase": "recover", "startSec": 38, "endSec": 45}
   ],
-  "plannedOutputs": ["transparent-webm", "static-png"],
+  "plannedOutputs": ["transparent-webm", "static-png", "rest-webm"],
   "vttCompatibility": "untested",
   "purchasable": false
 }

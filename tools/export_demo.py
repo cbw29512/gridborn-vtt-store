@@ -18,14 +18,17 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SPEC = ROOT / "assets/demos/manifest.json"
 
 
-def render_frames(spec: dict, frames: Path, sample: int | None = None) -> Path:
+def render_frames(spec: dict, frames: Path, sample: int | None = None, mode: str = "action") -> Path | None:
     """Playwright seeks each CSS keyframe deterministically at frame midpoint."""
     try:
         from playwright.sync_api import sync_playwright
-        animated = (ROOT / spec["source"]).read_text(encoding="utf-8")
-        still = (ROOT / spec["stillSource"]).read_text(encoding="utf-8")
+        if mode not in ("action", "rest"):
+            raise ValueError("Unsupported animation export mode")
+        source_key = "source" if mode == "action" else "restSource"
+        animated = (ROOT / spec[source_key]).read_text(encoding="utf-8")
         size, fps = spec["canvasPx"], spec["fps"]
-        count = int(spec["timeline"][-1]["endSec"] * fps)
+        duration = spec["timeline"][-1]["endSec"] if mode == "action" else spec["restDurationSec"]
+        count = int(duration * fps)
         if sample is not None:
             count = min(sample, count)
         html_start = ('<!doctype html><html><head><style>html,body{margin:0;background:transparent}'
@@ -47,6 +50,9 @@ def render_frames(spec: dict, frames: Path, sample: int | None = None) -> Path:
                     page.locator("svg").screenshot(
                         path=str(frames / f"frame_{index:05d}.png"),
                         omit_background=True, animations="allow")
+                if mode == "rest":
+                    return None
+                still = (ROOT / spec["stillSource"]).read_text(encoding="utf-8")
                 page.set_content(html_start + still + "</body></html>", wait_until="load")
                 poster = frames / "still.png"
                 page.locator("svg").screenshot(path=str(poster), omit_background=True)
@@ -93,10 +99,16 @@ def main() -> int:
             raise ValueError("Refusing to export private files inside public GitHub")
         output.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(prefix="gridborn-frames-") as directory:
-            frames = Path(directory)
-            still = render_frames(spec, frames, args.sample_frames)
+            action_frames, rest_frames = Path(directory) / "action", Path(directory) / "rest"
+            action_frames.mkdir()
+            rest_frames.mkdir()
+            still = render_frames(spec, action_frames, args.sample_frames, "action")
+            if still is None:
+                raise ValueError("Action exporter did not produce a static fallback")
             shutil.copyfile(still, output / (spec["id"] + "-still.png"))
-            encode_webm(frames, output / (spec["id"] + "-loop.webm"), spec["fps"])
+            encode_webm(action_frames, output / (spec["id"] + "-loop.webm"), spec["fps"])
+            render_frames(spec, rest_frames, args.sample_frames, "rest")
+            encode_webm(rest_frames, output / (spec["id"] + "-rest.webm"), spec["fps"])
         LOG.info("Private proof-of-concept exports: %s", output)
         return 0
     except Exception:
