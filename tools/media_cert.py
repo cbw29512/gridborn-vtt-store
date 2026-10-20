@@ -93,7 +93,7 @@ def inspect_motion(frames: Path, spec: dict, mode: str) -> dict:
         changed_pixels = sum(start[i:i + 4] != end[i:i + 4]
                              for i in range(0, len(start), 4))
         seam_ratio = changed_pixels / (len(start) / 4)
-        if seam_ratio > 0.08:
+        if seam_ratio > 0.01:
             raise ValueError(f"Loop seam changes {seam_ratio:.1%} of pixels")
         return {"frames": frame_count, "distinctSampleFrames": len(set(hashes.values())),
                 "seamChangedPixelRatio": round(seam_ratio, 5),
