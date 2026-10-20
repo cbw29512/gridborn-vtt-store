@@ -121,3 +121,9 @@ Foundry and Roll20 are **not yet tested** with the Human Fighter exports. Do not
 ## Browser-level preview checks (GitHub only)
 
 Run `python tools/browser_smoke.py` after installing Playwright and Chromium. The script hosts the checkout locally and tests Chromium at **1440px, 390px and 320px**: no horizontal overflow, one page heading, the skip link, cascading filters, accessible concept dialog and Escape focus return, and the Action/Rest controls. It captures private screenshots in a temporary local directory; the CI workflow does not upload or publish them. This is a technical browser check, **not proof of WCAG 2.2 AA, ADA compliance or purchase security**. Manual screen reader, zoom/reflow, contrast, touch, and real-product audits remain mandatory before the commercial launch.
+
+## Hero redesign: make the VTT problem and solution obvious
+
+The primary message is **"Your VTT maps are static. Your battles shouldn't be."** The first screen introduces Gridborn as animated fantasy tokens for **existing** virtual tabletop battle maps, not as a replacement VTT application. Two matched battle-grid mockups compare a still token to the existing original Human Fighter study. Visitors can explicitly start or stop the action and rest prototypes, with a polite status update announcing which is active. This is intentionally a preview; the product remains non-purchasable and VTT compatibility is not yet verified.
+
+The dedicated `src/hero.css` file keeps the responsive first-screen design isolated and makes the comparison fit 320px, 390px, and desktop widths. Chromium smoke checks cover the problem/solution message and both controls.

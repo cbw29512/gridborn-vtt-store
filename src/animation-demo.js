@@ -14,7 +14,8 @@ export function initializeDemo() {
     const action = document.getElementById('demo-toggle');
     const rest = document.getElementById('demo-rest-toggle');
     const image = document.getElementById('demo-token');
-    if (!action || !rest || !image) throw new Error('Missing fighter preview controls');
+    const status = document.getElementById('demo-status');
+    if (!action || !rest || !image || !status) throw new Error('Missing fighter preview controls');
 
     let mode = 'still';
 
@@ -25,6 +26,8 @@ export function initializeDemo() {
         }
         mode = next;
         image.src = SOURCES[mode];
+        status.textContent = mode === 'action' ? 'Action animation playing' :
+          mode === 'rest' ? 'Rest animation playing' : 'Press play to see movement';
         action.setAttribute('aria-pressed', String(mode === 'action'));
         rest.setAttribute('aria-pressed', String(mode === 'rest'));
         action.textContent = mode === 'action' ? 'Stop action loop' : 'Play action loop';
