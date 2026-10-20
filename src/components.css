@@ -39,3 +39,25 @@
 .secondary-action {border:1px solid #b8a178;padding:11px 15px;background:white;border-radius:5px;color:#67513a;font-weight:800;font-size:12px;}
 @media (max-width:460px) { .product-visual{height:140px;} .product-placeholder{width:86px;height:86px;font-size:38px;} .product-body{padding:11px;} .product-name{font-size:14px;min-height:36px;} .product-meta{font-size:10px;} .product-foot{align-items:start;flex-direction:column;} }
 @media (prefers-reduced-motion:reduce) { *,*::after,*::before {animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important;} }
+/* Critical contrast, accessible details action, and native preview dialog. */
+.filter-field label { color: #4c5660; }
+.catalog-disclaimer { color: #515c64; }
+.product-meta { color: #4b5760; }
+.product-type { color: #745025; }
+.section-kicker { color: #70542e; }
+.clear-button { min-height: 44px; }
+.product-card:focus-within { box-shadow: 0 0 0 2px #b8863f; }
+.details-button { display: block; width: 100%; margin: 7px 0 10px; min-height: 44px; padding: 11px 6px; border: 1px solid #bc955b; background: #fcf7eb; color: #64451b; border-radius: 5px; font-size: 12px; font-weight: 800; text-align: center; }
+.details-button:hover { background: #f2e5cb; }
+.preview-dialog { width: min(92vw,580px); max-height: 88vh; overflow-y: auto; border: 1px solid #ba945e; border-radius: 12px; padding: clamp(18px,4vw,32px); background: #131b26; color: #f4efe7; box-shadow: 0 32px 90px #0009; }
+.preview-dialog::backdrop { background: #080e16ce; backdrop-filter: blur(3px); }
+.preview-dialog-head { display: flex; align-items: start; justify-content: space-between; gap: 16px; }
+.preview-dialog-head h2 { margin: 9px 0 12px; font-size: clamp(24px,4vw,32px); }
+.dialog-close { width: 44px; height: 44px; border-radius: 7px; border: 1px solid #586574; background: #1d2938; color: #fff; font-size: 28px; }
+.dialog-close:hover { background: #35465b; }
+#preview-description { color: #c9d1da; font-size: 14px; }
+.preview-facts { display: grid; grid-template-columns: minmax(95px,.42fr) 1fr; gap: 12px 18px; padding: 20px 0; border-top: 1px solid #3a4756; border-bottom: 1px solid #3a4756; font-size: 13px; line-height: 1.5; }
+.preview-facts dt { color: #e8bd70; font-weight: 700; }
+.preview-facts dd { margin: 0; color: #ecf0f2; }
+.preview-disclaimer { margin: 16px 0 0; color: #c9d1da; font-size: 12px; }
+@media (max-width:460px) { .preview-facts { grid-template-columns: 1fr; gap: 4px; } .preview-facts dd { margin-bottom: 10px; } }

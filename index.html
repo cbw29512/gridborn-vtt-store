@@ -5,7 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#111721" />
   <meta name="description" content="Browse classic 16-bit-inspired animated fantasy tokens for virtual tabletops. Grid-scaled characters, NPCs, monsters and animals." />
-  <title>Gridborn | Animated VTT Tokens — Preview</title>
+  <!-- Keep the development preview out of the index until real assets and a final domain are ready. -->
+  <meta name="robots" content="noindex,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://cbw29512.github.io/gridborn-vtt-store/" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Gridborn" />
+  <meta property="og:title" content="Gridborn — Animated Fantasy Tokens (Preview)" />
+  <meta property="og:description" content="Browse planned pixel-inspired VTT characters, NPCs, monsters, and animals." />
+  <meta property="og:url" content="https://cbw29512.github.io/gridborn-vtt-store/" />
+  <meta property="og:image" content="https://cbw29512.github.io/gridborn-vtt-store/assets/social-card.svg" />
+  <meta property="og:image:alt" content="Gridborn dark fantasy token concept graphic" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://cbw29512.github.io/gridborn-vtt-store/assets/social-card.svg" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Gridborn","url":"https://cbw29512.github.io/gridborn-vtt-store/","description":"Preview catalog of original fantasy VTT token concepts."}</script>
+  <title>Gridborn | Animated Fantasy VTT Token Concepts</title>
   <link rel="stylesheet" href="./src/base.css" />
   <link rel="stylesheet" href="./src/layout.css" />
   <link rel="stylesheet" href="./src/components.css" />
@@ -69,13 +83,13 @@
           <div class="filter-field"><label for="secondary-filter" id="secondary-label">Class</label><select id="secondary-filter"></select></div>
         </div>
         <div class="results-heading"><div><span class="section-kicker" id="category-caption">Characters</span><h3 id="result-summary" aria-live="polite">Loading catalog…</h3></div><button id="clear-filters" class="clear-button" type="button">Clear filters <span aria-hidden="true">×</span></button></div>
-        <div id="results" class="product-grid" aria-live="off"></div>
+        <div id="results" class="product-grid"></div>
         <div id="empty-state" class="empty-state" hidden><div class="empty-glyph">⌕</div><h3>No matches found</h3><p>Try a different search or change the category.</p><button id="empty-reset" type="button" class="secondary-action">Show all tokens</button></div>
         <p class="catalog-disclaimer">Preview catalog only. Artwork and animations are not yet for sale; these cards demonstrate filtering and store layout.</p>
       </div>
     </section>
-    <section class="feature-section shell" id="how-it-works">
-      <div class="feature-title"><div class="eyebrow">DESIGNED TO JUST WORK</div><h2>More time playing.<br />Less time configuring.</h2></div>
+    <section class="feature-section shell" id="how-it-works" aria-labelledby="how-title">
+      <div class="feature-title"><div class="eyebrow">DESIGNED TO JUST WORK</div><h2 id="how-title">More time playing.<br />Less time configuring.</h2></div>
       <div class="feature-list">
         <div><span class="feature-number">01 /</span><h3>Drop onto your map</h3><p>Token sizes respect standard 5-foot battle-grid footprints.</p></div>
         <div><span class="feature-number">02 /</span><h3>Let it come alive</h3><p>A deliberate 45-second idle → walk → attack → recover loop.</p></div>
@@ -84,5 +98,14 @@
     </section>
   </main>
   <footer class="site-footer"><div class="shell footer-inner"><span class="footer-logo">GRID<span>BORN</span></span><span>Preview build · Original fantasy assets in production</span><a href="#catalog">Back to catalog ↑</a></div></footer>
+  <dialog id="preview-dialog" class="preview-dialog" aria-labelledby="preview-title" aria-describedby="preview-description">
+    <div class="preview-dialog-head">
+      <div><p class="eyebrow">TOKEN CONCEPT · NOT FOR SALE</p><h2 id="preview-title">Concept details</h2></div>
+      <form method="dialog"><button type="submit" class="dialog-close" aria-label="Close concept details">×</button></form>
+    </div>
+    <p id="preview-description">Proposed token specifications.</p>
+    <dl id="preview-facts" class="preview-facts"></dl>
+    <p class="preview-disclaimer">No artwork or downloadable product is available yet. Specifications and pricing may change.</p>
+  </dialog>
 </body>
 </html>
