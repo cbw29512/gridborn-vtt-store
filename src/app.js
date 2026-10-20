@@ -76,6 +76,7 @@ function renderResults() {
   try {
     const filtered = filterCatalog(catalog, state);
     nodes.results.replaceChildren(...filtered.map(makeCard).filter(Boolean));
+    nodes.results.classList.toggle('is-single', filtered.length === 1);
     nodes.empty.hidden = filtered.length > 0;
     nodes.results.hidden = filtered.length === 0;
     nodes.summary.textContent = filtered.length + (filtered.length === 1 ? ' result found' : ' results found');
@@ -89,7 +90,7 @@ function resetFilters() {
   try {
     Object.assign(state, initialState);
     nodes.search.value = ''; nodes.category.value = state.category;
-    updateFilters(); renderResults(); writeCatalogRoute(state);
+    updateFilters(); renderResults(); writeCatalogRoute(state, 'push');
   } catch (error) { console.error('Unable to reset catalog filters', error); }
 }
 
@@ -108,15 +109,15 @@ function initialize() {
     populateSelect(nodes.category, Object.keys(categoryConfig), 'Choose category', state.category);
     nodes.category.value = state.category;
     nodes.category.addEventListener('change', () => {
-      try { state.category = nodes.category.value; state.primary = ''; state.secondary = ''; updateFilters(); renderResults(); writeCatalogRoute(state); }
+      try { state.category = nodes.category.value; state.primary = ''; state.secondary = ''; updateFilters(); renderResults(); writeCatalogRoute(state, 'push'); }
       catch (error) { console.error('Category change failed', error); }
     });
     nodes.primary.addEventListener('change', () => {
-      try { state.primary = nodes.primary.value; state.secondary = ''; updateFilters(); renderResults(); writeCatalogRoute(state); }
+      try { state.primary = nodes.primary.value; state.secondary = ''; updateFilters(); renderResults(); writeCatalogRoute(state, 'push'); }
       catch (error) { console.error('Primary filter change failed', error); }
     });
     nodes.secondary.addEventListener('change', () => {
-      try { state.secondary = nodes.secondary.value; renderResults(); writeCatalogRoute(state); }
+      try { state.secondary = nodes.secondary.value; renderResults(); writeCatalogRoute(state, 'push'); }
       catch (error) { console.error('Secondary filter change failed', error); }
     });
     nodes.search.addEventListener('input', () => {
