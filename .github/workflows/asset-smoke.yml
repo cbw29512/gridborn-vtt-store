@@ -1,7 +1,7 @@
 name: Token exporter smoke test
 on:
   push:
-    branches: [feature/token-export-pipeline]
+    branches: [feature/token-export-pipeline, feature/human-fighter-rest-loop]
   workflow_dispatch:
 jobs:
   real-svg-smoke:
