@@ -61,3 +61,17 @@
 .preview-facts dd { margin: 0; color: #ecf0f2; }
 .preview-disclaimer { margin: 16px 0 0; color: #c9d1da; font-size: 12px; }
 @media (max-width:460px) { .preview-facts { grid-template-columns: 1fr; gap: 4px; } .preview-facts dd { margin-bottom: 10px; } }
+
+/* FAQ uses native details/summary for keyboard and assistive-technology operation. */
+.buyer-guide { display:grid;grid-template-columns:.78fr 1.22fr;gap:clamp(24px,5vw,80px);padding-block:76px 95px; }
+.buyer-guide h2 {font-size:clamp(28px,3.5vw,43px);margin:12px 0 15px;}
+.buyer-guide-intro p {color:#b7c0cc;font-size:14px;max-width:380px;}
+.faq-stack {border-top:1px solid #465262;}
+.faq-stack details {border-bottom:1px solid #465262;padding:0 0 3px;}
+.faq-stack summary {cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:62px;padding:15px 0;color:#f4efe7;font-size:15px;font-weight:750;}
+.faq-stack summary::-webkit-details-marker {display:none;}
+.faq-stack summary::after {content:"+";font-size:26px;font-weight:400;color:#e8bd70;}
+.faq-stack details[open] summary::after {content:"−";}
+.faq-stack details p {color:#c4cbd4;font-size:13px;line-height:1.75;margin:0 24px 18px 0;}
+.faq-stack summary:focus-visible {outline:3px solid var(--gold);outline-offset:4px;}
+@media(max-width:720px) {.buyer-guide {grid-template-columns:1fr;gap:16px;padding-block:55px 65px;}}

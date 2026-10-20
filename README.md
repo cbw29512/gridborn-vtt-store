@@ -95,3 +95,9 @@ Storefront browser logic is split into `src/app.js`, `src/concept-dialog.js`, an
 ## Navigable catalog routes
 
 Each of the four top-level categories has an ordinary, copyable link. Search and contextual filters are also reflected in stable URL query parameters: `category`, `primary`, `secondary`, and `q`. The URL parser validates those values against the actual catalog and falls back safely. Browser Back/Forward restores filters, while the initial default state retains a clean URL. The development preview stays `noindex`; commercial SEO product pages must be separately planned and server-rendered when the real catalog is ready.
+
+## Buyer-information gate
+
+The preview FAQ explicitly discloses that all pricing, download formats, licensing, compatibility and fulfillment details are unverified plans. Update these disclosures only after real product testing and approved legal/policy text. Test finished animated exports in each named VTT; do not imply universal compatibility, commercial-use licensing, or instant delivery before verification.
+
+FAQ markup uses native `details` and `summary` without JavaScript, retaining keyboard operability and progressive enhancement. The five questions cover purchase status, compatibility, files, delivery and asset rights.
