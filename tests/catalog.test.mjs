@@ -51,3 +51,14 @@ test('the draft visual has explicit preview-only status and no sale status', () 
   assert.equal(candidate.purchasable, false);
   assert.ok(catalog.filter(item => item.previewArt).every(item => item.purchasable === false));
 });
+
+test('illustrated concepts span every category without claiming completed animations', () => {
+  const illustrated = catalog.filter(item => item.previewArt);
+  assert.equal(illustrated.length, 8);
+  for (const category of ['Characters','NPCs','Monsters','Animals'])
+    assert.ok(illustrated.some(item => item.category === category), category);
+  assert.equal(illustrated.filter(item => item.animationStatus === 'art-study').length, 1);
+  assert.ok(illustrated.filter(item => item.id !== 'chr-ftr-human')
+    .every(item => item.animationStatus === 'static-art-study'));
+  assert.ok(illustrated.every(item => item.purchasable === false));
+});

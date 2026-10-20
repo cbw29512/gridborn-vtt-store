@@ -75,3 +75,23 @@
 .faq-stack details p {color:#c4cbd4;font-size:13px;line-height:1.75;margin:0 24px 18px 0;}
 .faq-stack summary:focus-visible {outline:3px solid var(--gold);outline-offset:4px;}
 @media(max-width:720px) {.buyer-guide {grid-template-columns:1fr;gap:16px;padding-block:55px 65px;}}
+
+/* Distinctive original art studies make each category recognizable at a glance. */
+.shortcut-portrait {position:relative;flex:0 0 63px;display:grid;place-items:center;width:63px;height:69px;
+ background:radial-gradient(circle at 50% 62%,#eac88227,transparent 72%);
+ border:1px solid #dbaf7355;border-radius:8px;overflow:hidden;}
+.shortcut-portrait img {width:76px;height:79px;max-width:none;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 4px 8px #0b0e19c7);}
+.collection-shortcut:hover .shortcut-portrait {border-color:#edc88c;box-shadow:0 0 20px #d8a85a30;}
+.collection-shortcut {min-height:106px;}
+.product-visual:has(.product-art) {background-image:radial-gradient(ellipse at 50% 63%,#f0d6a72a,transparent 58%);}
+.product-art {width:min(83%,166px);height:169px;max-width:95%;object-fit:contain;transition:transform .22s ease,filter .22s ease;}
+.product-card:hover .product-art,.product-card:focus-within .product-art {transform:translateY(-5px) scale(1.035);filter:drop-shadow(0 13px 15px #07111dc4);}
+.preview-label {z-index:3;}
+@media(max-width:460px) {.collection-shortcut {min-height:94px;gap:6px;}
+ .shortcut-portrait {flex-basis:39px;width:39px;height:50px;}
+ .shortcut-portrait img {width:60px;height:68px;}
+ .product-art {width:118px;height:133px;}}
+@media(prefers-reduced-motion:reduce) {
+ .product-art {transition:none!important;}
+ .product-card:hover .product-art,.product-card:focus-within .product-art {transform:none!important;}
+}

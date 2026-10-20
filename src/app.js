@@ -43,11 +43,16 @@ function makeCard(item) {
       illustration.alt = 'Original pixel-art study for ' + item.name + '; not a finished token';
       illustration.loading = 'lazy';
       illustration.decoding = 'async';
+      illustration.addEventListener('error', () => {
+        try { illustration.replaceWith(symbol); badge.textContent = 'CONCEPT ONLY'; }
+        catch (error) { console.error('Cannot recover preview artwork', item.id, error); }
+      });
       visual.append(illustration);
     } else {
       visual.append(symbol);
     }
-    const badge = document.createElement('span'); badge.className = 'preview-label'; badge.textContent = item.previewArt ? 'ART STUDY' : 'CONCEPT ONLY';
+    const badge = document.createElement('span'); badge.className = 'preview-label'; badge.textContent = item.animationStatus === 'art-study' ? 'ANIMATION STUDY' :
+      item.previewArt ? 'ART STUDY' : 'CONCEPT ONLY';
     const footprint = document.createElement('span'); footprint.className = 'product-footprint';
     footprint.textContent = item.squares + '×' + item.squares + ' GRID';
     visual.append(badge, footprint);
@@ -56,10 +61,12 @@ function makeCard(item) {
     type.textContent = item.primary + ' · ' + item.secondary;
     const name = document.createElement('h4'); name.className = 'product-name'; name.textContent = item.name;
     const meta = document.createElement('div'); meta.className = 'product-meta';
-    meta.textContent = item.size + ' · 45-sec loop + rest · Planned';
+    meta.textContent = item.size + (item.animationStatus === 'art-study'
+      ? ' · Action + rest studies' : ' · Animation planned');
     const foot = document.createElement('div'); foot.className = 'product-foot';
     const price = document.createElement('strong'); price.className = 'product-price';
     price.textContent = '$' + (item.priceCents / 100).toFixed(2);
+    price.setAttribute('aria-label', 'Proposed price ' + price.textContent);
     const button = document.createElement('button');
     button.className = 'product-button'; button.disabled = true; button.textContent = 'Coming soon';
     const details = document.createElement('button');

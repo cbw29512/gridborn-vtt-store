@@ -47,8 +47,16 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
             "() => document.documentElement.scrollWidth - document.documentElement.clientWidth")
         if overflow > 1:
             raise AssertionError(f"Horizontal overflow at {width}px: {overflow}px")
+        art = page.locator('[data-category-link] .shortcut-portrait img')
+        assert art.count() == 4, "Category navigation requires four different illustrated studies"
+        for index in range(4):
+            picture = art.nth(index)
+            picture.scroll_into_view_if_needed()
+            page.wait_for_function("(img) => img.complete && img.naturalWidth > 0",
+                                   arg=picture.element_handle())
         page.locator('[data-category-link="Animals"]').click()
         expect(page.locator("#result-summary")).to_have_text("10 results found")
+        assert page.locator(".product-art").count() >= 2, "Expected illustrated animal studies"
         page.locator("#primary-filter").select_option("Ocean")
         page.locator("#secondary-filter").select_option("Sharks")
         expect(page.locator("#result-summary")).to_have_text("2 results found")
@@ -62,6 +70,7 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
         expect(details).to_be_focused()
         page.locator("#clear-filters").click()
         expect(page.locator("#result-summary")).to_have_text("8 results found")
+        assert page.locator(".product-art").count() >= 3, "Expected three illustrated characters"
         page.locator("#demo-toggle").click()
         expect(page.locator("#demo-toggle")).to_have_attribute("aria-pressed", "true")
         expect(page.locator("#demo-status")).to_have_text("Action animation playing")

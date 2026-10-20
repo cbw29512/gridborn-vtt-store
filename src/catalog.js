@@ -3,6 +3,8 @@
  * Token: id, category, name, primary, secondary, size, squares,
  * representation, pricing and explicit non-purchasable status.
  */
+import { artStudies } from './art-studies.js';
+
 const make = (id, category, name, primary, secondary, size, squares, symbol) => ({
   id, category, name, primary, secondary, size, squares, symbol,
   race: ['Characters', 'NPCs'].includes(category) ? primary : null,
@@ -13,8 +15,8 @@ const make = (id, category, name, primary, secondary, size, squares, symbol) => 
   creatureType: category === 'Monsters' ? secondary : null,
   animalType: category === 'Animals' ? secondary : null,
   presentation: null,
-  previewArt: id === 'chr-ftr-human' ? './assets/demos/human-fighter-still.svg' : null,
-  priceCents: 299, purchasable: false, animationStatus: id === 'chr-ftr-human' ? 'art-study' : 'not-produced',
+  previewArt: artStudies[id] || null,
+  priceCents: 299, purchasable: false, animationStatus: id === 'chr-ftr-human' ? 'art-study' : artStudies[id] ? 'static-art-study' : 'not-produced',
   artLicenseStatus: 'not-verified',
 });
 export const catalog = [

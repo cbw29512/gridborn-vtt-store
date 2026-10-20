@@ -104,3 +104,14 @@ test('first screen clearly defines Gridborn as a solution for static VTT maps', 
   assert.match(html, /src\/hero\.css/);
   assert.match(get('src/animation-demo.js'), /demo-status/);
 });
+
+test('four category shortcuts show four distinct original concept illustrations', () => {
+  const paths = ['elven-wizard.svg','village-innkeeper.svg',
+    'skeleton-warrior.svg','great-white-shark.svg'];
+  for (const name of paths) {
+    assert.ok(html.includes('assets/studies/' + name), name);
+    assert.ok(existsSync(new URL('../assets/studies/' + name, import.meta.url)));
+  }
+  assert.match(get('src/app.js'), /ANIMATION STUDY/);
+  assert.match(get('src/app.js'), /illustration\.replaceWith\(symbol\)/);
+});

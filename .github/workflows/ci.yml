@@ -18,6 +18,19 @@ jobs:
           node --check src/filters.js
       - name: Validate original SVG preview files
         run: python3 -c "import xml.etree.ElementTree as ET; ET.parse('assets/demos/human-fighter-still.svg'); ET.parse('assets/demos/human-fighter-loop.svg')"
+      - name: Verify safe original concept illustrations
+        run: |
+          python3 - <<'PY'
+          import sys
+          from pathlib import Path
+          sys.path.insert(0, str(Path('tools').resolve()))
+          from asset_spec import validate_svg
+          studies = sorted(Path('assets/studies').glob('*.svg'))
+          assert len(studies) == 7, 'Exactly seven new static studies expected'
+          for item in studies:
+              validate_svg(item)
+          print(f'Validated {len(studies)} original static SVG studies')
+          PY
       - name: Validate Python asset contract
         run: |
           python3 -m compileall -q tools tests

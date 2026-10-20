@@ -127,3 +127,16 @@ Run `python tools/browser_smoke.py` after installing Playwright and Chromium. Th
 The primary message is **"Your VTT maps are static. Your battles shouldn't be."** The first screen introduces Gridborn as animated fantasy tokens for **existing** virtual tabletop battle maps, not as a replacement VTT application. Two matched battle-grid mockups compare a still token to the existing original Human Fighter study. Visitors can explicitly start or stop the action and rest prototypes, with a polite status update announcing which is active. This is intentionally a preview; the product remains non-purchasable and VTT compatibility is not yet verified.
 
 The dedicated `src/hero.css` file keeps the responsive first-screen design isolated and makes the comparison fit 320px, 390px, and desktop widths. Chromium smoke checks cover the problem/solution message and both controls.
+
+## Original illustrated catalog previews
+
+Seven additional hand-authored **static, pixel-inspired SVG studies** now cover
+Elven Wizard, Orc Barbarian, Village Innkeeper, Cave Goblin, Skeleton Warrior,
+Great White Shark, and Gray Wolf. Including Human Fighter, eight public concepts
+have original artwork spanning Characters, NPCs, Monsters, and Animals.
+All four collection shortcuts use illustrated portraits instead of generic symbols.
+
+Paths are keyed by immutable catalog ID in `src/art-studies.js`; the SVGs are
+validated in CI before deployment. Images have loading-failure fallbacks and
+motion-respecting hover polish. **Only Human Fighter has action/rest animation
+studies**, and no concept is purchasable or certified for a specific VTT.
