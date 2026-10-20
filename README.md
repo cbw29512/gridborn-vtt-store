@@ -117,3 +117,7 @@ The first Human Fighter prototype now has optional strict media checks via `pyth
 ## Platform compatibility release gate
 
 Foundry and Roll20 are **not yet tested** with the Human Fighter exports. Do not advertise any VTT as compatible just because WebM is a documented supported format. The test matrix and evidence requirements are in [docs/VTT_COMPATIBILITY.md](docs/VTT_COMPATIBILITY.md), with a machine-checked, fail-closed record in [docs/compatibility-record.json](docs/compatibility-record.json). Checkout and commercial licensing remain blocked until independently approved.
+
+## Browser-level preview checks (GitHub only)
+
+Run `python tools/browser_smoke.py` after installing Playwright and Chromium. The script hosts the checkout locally and tests Chromium at **1440px, 390px and 320px**: no horizontal overflow, one page heading, the skip link, cascading filters, accessible concept dialog and Escape focus return, and the Action/Rest controls. It captures private screenshots in a temporary local directory; the CI workflow does not upload or publish them. This is a technical browser check, **not proof of WCAG 2.2 AA, ADA compliance or purchase security**. Manual screen reader, zoom/reflow, contrast, touch, and real-product audits remain mandatory before the commercial launch.
