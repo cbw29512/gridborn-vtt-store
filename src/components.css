@@ -61,3 +61,13 @@
 .preview-facts dd { margin: 0; color: #ecf0f2; }
 .preview-disclaimer { margin: 16px 0 0; color: #c9d1da; font-size: 12px; }
 @media (max-width:460px) { .preview-facts { grid-template-columns: 1fr; gap: 4px; } .preview-facts dd { margin-bottom: 10px; } }
+
+/* A single filtered result uses the full mobile catalog width, not a half-card. */
+@media (max-width:720px) {
+  .product-grid.is-single { grid-template-columns:minmax(0,1fr); max-width:420px; }
+  .product-grid.is-single .product-visual { height:240px; }
+  .product-grid.is-single .product-art { width:200px; height:215px; }
+  .product-grid.is-single .product-body { padding:18px; }
+  .product-grid.is-single .product-name { font-size:19px; min-height:0; }
+  .product-grid.is-single .product-foot { flex-direction:row; align-items:center; }
+}

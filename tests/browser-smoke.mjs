@@ -57,6 +57,13 @@ async function main() {
         await page.locator('[data-category-link="Characters"]').click();
         await page.locator('#primary-filter').selectOption('Human');
         await page.locator('#secondary-filter').selectOption('Fighter');
+        if (size.width < 720) {
+          const cardWidth = await page.locator('.product-card').first()
+            .evaluate(card => card.getBoundingClientRect().width);
+          assert.ok(cardWidth / size.width > 0.72, 'single-result preview should fill mobile width');
+        }
+        assert.equal(await page.locator('.product-art').first().evaluate(img =>
+          img.complete && img.naturalWidth > 0), true, 'prototype art must load');
         const trigger = page.getByRole('button', { name: 'View concept details for Human Fighter' });
         await trigger.click();
         assert.equal(await page.locator('#preview-dialog').evaluate(el=>el.open), true);

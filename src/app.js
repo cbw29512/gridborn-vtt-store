@@ -76,6 +76,7 @@ function renderResults() {
   try {
     const filtered = filterCatalog(catalog, state);
     nodes.results.replaceChildren(...filtered.map(makeCard).filter(Boolean));
+    nodes.results.classList.toggle('is-single', filtered.length === 1);
     nodes.empty.hidden = filtered.length > 0;
     nodes.results.hidden = filtered.length === 0;
     nodes.summary.textContent = filtered.length + (filtered.length === 1 ? ' result found' : ' results found');
