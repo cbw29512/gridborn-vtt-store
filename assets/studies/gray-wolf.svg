@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Gray Wolf — original Gridborn art study</title>
+<desc id="description">Three-quarter overhead gray wolf with amber eyes and silver shoulder fur This is a static artwork concept, not a completed VTT token.</desc>
+<ellipse cx="128" cy="200" rx="58" ry="13" fill="#060b16" opacity=".34"/>
+<ellipse cx="128" cy="195" rx="70" ry="24" fill="none" stroke="#ddb268" stroke-width="3" opacity=".70"/>
+
+<!-- bushy tail -->
+<path d="M106 143l-45 31-14 26 39-12 37-35z" fill="#1b2733"/>
+<path d="M105 146l-43 34 19-5 27-17z" fill="#778b92"/>
+<!-- four paws and dark claws -->
+<path d="M85 133h24v51H85zM144 133h23v51h-23z" fill="#252f39"/>
+<rect x="90" y="168" width="22" height="21" fill="#7b8e92"/><rect x="145" y="168" width="22" height="21" fill="#7b8e92"/>
+<rect x="93" y="185" width="5" height="7" fill="#17222d"/><rect x="101" y="185" width="5" height="7" fill="#17222d"/>
+<rect x="147" y="185" width="5" height="7" fill="#17222d"/><rect x="156" y="185" width="5" height="7" fill="#17222d"/>
+<!-- layered coat -->
+<path d="M85 92h82l18 42-18 26H86l-19-26z" fill="#23303b"/>
+<path d="M88 97h75l15 35-17 22H93l-16-23z" fill="#677f86"/>
+<path d="M105 110h48l-7 45h-37z" fill="#a8b8b7"/>
+<path d="M109 114h38l-9 29h-23z" fill="#e1d9c6"/>
+<!-- head pointed ears, cheek ruff -->
+<path d="M97 71L81 35l35 15 11 9 12-9 35-15-13 36 10 26-17 33h-47l-21-34z" fill="#263641"/>
+<path d="M102 69L90 46l25 11 13 10 13-10 25-11-12 23 9 26-18 25h-38l-16-25z" fill="#80959a"/>
+<path d="M110 73h37l14 17-14 11-37-11z" fill="#aebfbe"/>
+<path d="M102 95l22 10-5 12h-17zM152 95l-23 10 6 12h17z" fill="#e2ddcc"/>
+<!-- amber eyes and muzzle -->
+<rect x="105" y="87" width="12" height="6" fill="#25303b"/><rect x="143" y="87" width="12" height="6" fill="#25303b"/>
+<rect x="108" y="88" width="5" height="4" fill="#e7ba6b"/><rect x="146" y="88" width="5" height="4" fill="#e7ba6b"/>
+<path d="M122 103h15l9 8-16 17-17-17z" fill="#c3cbbe"/>
+<path d="M122 105h16l-8 10z" fill="#28343b"/>
+<rect x="125" y="119" width="10" height="4" fill="#7e7770"/>
+
+</svg>

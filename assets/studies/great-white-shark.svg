@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Great White Shark — original Gridborn art study</title>
+<desc id="description">Overhead great white shark with slate-blue back, pointed fins and white belly This is a static artwork concept, not a completed VTT token.</desc>
+<ellipse cx="128" cy="200" rx="58" ry="13" fill="#060b16" opacity=".34"/>
+<ellipse cx="128" cy="195" rx="70" ry="24" fill="none" stroke="#ddb268" stroke-width="3" opacity=".70"/>
+
+<!-- stylized overhead silhouette, nose pointing upward right -->
+<path d="M137 58l30 16 20 29 4 34-19 25-28 10-37-12-25 20-3-26-27 5-8-24 33-16 6-34 28-29z" fill="#152a36"/>
+<!-- tail and outer pectoral fins -->
+<path d="M110 162l-25 37-21-12-13 19-3-35 20-16z" fill="#274f61"/>
+<path d="M84 115l-43 17-16-17 17-24 55 9z" fill="#385f72"/>
+<path d="M164 113l43 25 24-19-26-31-46 6z" fill="#284b60"/>
+<!-- shark body -->
+<path d="M127 60l27 18 23 30v24l-13 20-27 18-25-15-26-24V98l18-24z" fill="#557b91"/>
+<path d="M128 74l18 13 17 23v21l-13 17-21 12-22-12-15-18v-22l16-21z" fill="#7396a2"/>
+<!-- pale underside tapered from head -->
+<path d="M125 105h16l13 27-22 28-22-28z" fill="#c9dadd"/>
+<path d="M105 89l20-16 17 4 18 18-12 9h-30z" fill="#a8c2c8"/>
+<!-- gill lines, eye and sharp teeth -->
+<path d="M109 109l-7 12m15-11-7 16m15-15-6 15" stroke="#2a4a60" stroke-width="4" fill="none"/>
+<path d="M145 110l8 12m-1-20 10 13" stroke="#2a4a60" stroke-width="4" fill="none"/>
+<rect x="108" y="93" width="7" height="7" fill="#0a1b2d"/><rect x="147" y="93" width="7" height="7" fill="#0a1b2d"/>
+<path d="M117 84l11-8 9 7-9 12z" fill="#264a60"/>
+<path d="M116 91h26v7h-26z" fill="#152839"/>
+<path d="M117 95l4 6 4-6 4 6 4-6 4 6 4-6" stroke="#f4f5df" stroke-width="3" fill="none"/>
+<!-- water reflections -->
+<path d="M50 71h31v5H50zM185 62h18v5h-18zM51 168h18v5H51zM195 181h28v5h-28z" fill="#a2e1e9" opacity=".65"/>
+
+</svg>

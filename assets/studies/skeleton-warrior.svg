@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Skeleton Warrior — original Gridborn art study</title>
+<desc id="description">Dungeon skeleton wearing weathered armor with an old sword and shield This is a static artwork concept, not a completed VTT token.</desc>
+<ellipse cx="128" cy="200" rx="58" ry="13" fill="#060b16" opacity=".34"/>
+<ellipse cx="128" cy="195" rx="70" ry="24" fill="none" stroke="#ddb268" stroke-width="3" opacity=".70"/>
+
+<!-- tattered cloak and bone legs -->
+<path d="M95 93h64l24 73-19 14-20-13h-30l-22 15-18-20z" fill="#242438"/>
+<path d="M99 98h59l15 56-20 16h-50l-17-16z" fill="#57465e"/>
+<path d="M99 147h22v45H99zM137 147h23v45h-23z" fill="#20242d"/>
+<rect x="104" y="152" width="12" height="34" fill="#e3ddbf"/><rect x="144" y="153" width="12" height="34" fill="#e3ddbf"/>
+<rect x="99" y="183" width="27" height="9" fill="#50454b"/><rect x="138" y="183" width="26" height="9" fill="#50454b"/>
+<!-- breastplate and spine -->
+<path d="M101 100h59v57h-59z" fill="#252c35"/><rect x="108" y="104" width="43" height="47" fill="#6a7a85"/>
+<path d="M117 113h25v25h-25z" fill="#323945"/><rect x="127" y="118" width="5" height="32" fill="#ddd6be"/>
+<rect x="115" y="125" width="30" height="5" fill="#c6bd9f"/><rect x="117" y="138" width="26" height="4" fill="#c6bd9f"/>
+<path d="M96 104h-13v38h15zM161 104h15v38h-15z" fill="#d7d0af"/>
+<!-- shoulders -->
+<path d="M79 98h33v24H79zM150 98h34v24h-34z" fill="#323945"/>
+<path d="M84 101h23v16H84zM157 101h24v16h-24z" fill="#8a9192"/>
+<!-- skull with sockets, chipped teeth -->
+<path d="M105 62h49v45h-9v12h-30v-12h-10z" fill="#242b34"/>
+<path d="M109 66h40v39h-6v10h-24v-10h-10z" fill="#e7dfc2"/>
+<rect x="113" y="82" width="12" height="13" fill="#262b30"/><rect x="135" y="82" width="12" height="13" fill="#262b30"/>
+<rect x="116" y="84" width="6" height="4" fill="#9be4c9"/><rect x="139" y="84" width="6" height="4" fill="#9be4c9"/>
+<path d="M129 96h6v8h-6z" fill="#67716d"/>
+<path d="M118 108h25v5h-25z" fill="#393d39"/><path d="M124 109v5M130 109v5M136 109v5" stroke="#e1d9be" stroke-width="2"/>
+<!-- aged sword -->
+<path d="M188 47h10v88h-10z" fill="#2c313a"/><path d="M191 47h4v84h-4z" fill="#ced7d3"/>
+<path d="M189 36h8v17h-8z" fill="#faf2dc"/>
+<rect x="180" y="132" width="27" height="9" fill="#292d36"/><rect x="184" y="134" width="19" height="5" fill="#b59a70"/>
+<rect x="190" y="141" width="7" height="30" fill="#836348"/>
+<!-- shield left -->
+<path d="M68 125h43v35l-19 28-24-28z" fill="#1e252e"/>
+<path d="M73 130h33v28l-14 22-19-22z" fill="#7b4f58"/>
+<rect x="87" y="135" width="8" height="34" fill="#d3b47b"/><rect x="79" y="148" width="25" height="7" fill="#d3b47b"/>
+
+</svg>

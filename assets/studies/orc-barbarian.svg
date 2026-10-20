@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Orc Barbarian — original Gridborn art study</title>
+<desc id="description">Muscular green orc in copper-and-hide armor holding a heavy battle axe This is a static artwork concept, not a completed VTT token.</desc>
+<ellipse cx="128" cy="200" rx="58" ry="13" fill="#060b16" opacity=".34"/>
+<ellipse cx="128" cy="195" rx="70" ry="24" fill="none" stroke="#ddb268" stroke-width="3" opacity=".70"/>
+
+<!-- boots and dark fur cape -->
+<rect x="96" y="159" width="25" height="34" fill="#1d2530"/><rect x="135" y="159" width="25" height="34" fill="#1d2530"/>
+<rect x="100" y="160" width="17" height="27" fill="#654436"/><rect x="139" y="160" width="17" height="27" fill="#654436"/>
+<path d="M86 91h79l20 40-8 28-12 21-12-11H99l-12 12-16-30z" fill="#241e29"/>
+<path d="M86 96h79l11 43-14 24H93l-15-27z" fill="#5a3538"/>
+<path d="M91 104h64v50H91z" fill="#538c62"/>
+<path d="M117 112h29v31h-29z" fill="#34764f"/>
+<!-- armor belt -->
+<rect x="91" y="145" width="72" height="13" fill="#1c202a"/><rect x="94" y="147" width="67" height="7" fill="#c08754"/>
+<rect x="122" y="145" width="17" height="12" fill="#e2b46a"/><rect x="127" y="147" width="6" height="8" fill="#66412f"/>
+<!-- big shoulders and arms -->
+<path d="M77 95h35v29H77zM151 95h31v30h-31z" fill="#22212b"/>
+<path d="M81 98h26v22H81zM156 99h24v23h-24z" fill="#9e6a48"/>
+<path d="M88 111h16v48H88zM158 114h18v46h-18z" fill="#659a67"/>
+<rect x="90" y="150" width="17" height="20" fill="#5a8c5e"/><rect x="155" y="148" width="18" height="20" fill="#5a8c5e"/>
+<!-- head, tusks and mohawk -->
+<path d="M105 59h48v52h-5v11h-38v-12h-5z" fill="#1a2324"/>
+<path d="M110 66h39v46h-39z" fill="#79a975"/>
+<path d="M109 74h-16v22h18zM150 74h16v22h-16z" fill="#659b67"/>
+<rect x="116" y="84" width="10" height="6" fill="#23282a"/><rect x="137" y="84" width="10" height="6" fill="#23282a"/>
+<rect x="121" y="98" width="21" height="7" fill="#385d48"/>
+<path d="M114 107h8v12h-8zM140 107h8v12h-8z" fill="#f5e6bc"/>
+<path d="M110 64V52h7V40h22v7h7v18z" fill="#25212a"/><path d="M118 49h8v-9h8v10z" fill="#77373b"/>
+<!-- axe -->
+<rect x="185" y="52" width="9" height="145" fill="#26232b"/><rect x="188" y="58" width="4" height="135" fill="#9f6f4c"/>
+<path d="M176 45h22l21-12v52l-21-12h-22z" fill="#22232c"/>
+<path d="M180 46h18l15-9v44l-15-9h-18z" fill="#b7c5c9"/>
+<path d="M204 49h8v20h-8z" fill="#e4ece6"/>
+<rect x="172" y="142" width="16" height="16" fill="#598c5b"/>
+
+</svg>
