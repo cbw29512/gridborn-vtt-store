@@ -101,3 +101,7 @@ Each of the four top-level categories has an ordinary, copyable link. Search and
 The preview FAQ explicitly discloses that all pricing, download formats, licensing, compatibility and fulfillment details are unverified plans. Update these disclosures only after real product testing and approved legal/policy text. Test finished animated exports in each named VTT; do not imply universal compatibility, commercial-use licensing, or instant delivery before verification.
 
 FAQ markup uses native `details` and `summary` without JavaScript, retaining keyboard operability and progressive enhancement. The five questions cover purchase status, compatibility, files, delivery and asset rights.
+
+## Private animated token export pipeline
+
+The local exporter and 45-second state contract are documented in [tools/README.md](tools/README.md). It uses Chromium to sample the SVG study and FFmpeg to build a prototype transparent PNG and WebM, entirely outside this public repository. Test the generated media and platform compatibility before marking any product purchasable.

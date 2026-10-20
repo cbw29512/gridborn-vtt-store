@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "chr-ftr-human",
+  "status": "concept-only",
+  "source": "assets/demos/human-fighter-loop.svg",
+  "stillSource": "assets/demos/human-fighter-still.svg",
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "timeline": [
+    {"phase": "idle", "startSec": 0, "endSec": 27},
+    {"phase": "move", "startSec": 27, "endSec": 35},
+    {"phase": "attack", "startSec": 35, "endSec": 38},
+    {"phase": "recover", "startSec": 38, "endSec": 45}
+  ],
+  "plannedOutputs": ["transparent-webm", "static-png"],
+  "vttCompatibility": "untested",
+  "purchasable": false
+}
