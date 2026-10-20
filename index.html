@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111721" />
+  <meta name="description" content="Browse classic 16-bit-inspired animated fantasy tokens for virtual tabletops. Grid-scaled characters, NPCs, monsters and animals." />
+  <title>Gridborn | Animated VTT Tokens — Preview</title>
+  <link rel="stylesheet" href="./src/base.css" />
+  <link rel="stylesheet" href="./src/layout.css" />
+  <link rel="stylesheet" href="./src/components.css" />
+  <script src="./src/app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalog">Skip to catalog</a>
+  <header class="topbar shell">
+    <a class="brand" href="./" aria-label="Gridborn home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      <span>GRID<span class="brand-accent">BORN</span></span>
+    </a>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a href="#catalog">Browse tokens</a>
+      <a href="#how-it-works">How it works</a>
+      <span class="status-pill">Store preview</span>
+    </nav>
+  </header>
+  <main>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dash"></span> BUILT FOR THE BATTLE GRID</div>
+        <h1 id="hero-title">A little movement.<br /><em>A lot more life.</em></h1>
+        <p>Classic 16-bit-inspired fantasy tokens with slow, natural animation. Find your character, creature or monster in seconds.</p>
+        <div class="hero-actions">
+          <a class="primary-action" href="#catalog">Explore the catalog <span aria-hidden="true">↗</span></a>
+          <span class="hero-note">One token. One 45-second living loop.</span>
+        </div>
+        <div class="hero-meta" aria-label="Planned launch specifications">
+          <span><b>136</b> planned designs</span>
+          <span><b>45 sec</b> animation cycle</span>
+          <span><b>$2.99</b> target single price</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="mock-grid">
+          <span class="terrain terrain-a"></span><span class="terrain terrain-b"></span>
+          <div class="token-scene">
+            <span class="scene-spark scene-spark-1"></span><span class="scene-spark scene-spark-2"></span>
+            <div class="scene-emblem">✦</div>
+            <div class="scene-ring"></div>
+          </div>
+        </div>
+        <div class="art-tag art-tag-top">5 FT × 5 FT<br /><strong>GRID-READY</strong></div>
+        <div class="art-tag art-tag-bottom"><i></i> <strong>ANIMATION CONCEPT</strong><br />NOT A FINISHED TOKEN</div>
+      </div>
+    </section>
+    <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div><div class="eyebrow">THE COLLECTION</div><h2 id="catalog-title">Find exactly what you need.</h2></div>
+          <p>Choose a category, narrow it down, and see matching results instantly.</p>
+        </div>
+        <div class="filter-panel" role="search" aria-label="Search token catalog">
+          <div class="filter-field filter-search">
+            <label for="search">Search anything</label>
+            <div class="input-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Try shark, wizard, innkeeper..." autocomplete="off" /></div>
+          </div>
+          <div class="filter-field"><label for="category">Category</label><select id="category"></select></div>
+          <div class="filter-field"><label for="primary-filter" id="primary-label">Race</label><select id="primary-filter"></select></div>
+          <div class="filter-field"><label for="secondary-filter" id="secondary-label">Class</label><select id="secondary-filter"></select></div>
+        </div>
+        <div class="results-heading"><div><span class="section-kicker" id="category-caption">Characters</span><h3 id="result-summary" aria-live="polite">Loading catalog…</h3></div><button id="clear-filters" class="clear-button" type="button">Clear filters <span aria-hidden="true">×</span></button></div>
+        <div id="results" class="product-grid" aria-live="off"></div>
+        <div id="empty-state" class="empty-state" hidden><div class="empty-glyph">⌕</div><h3>No matches found</h3><p>Try a different search or change the category.</p><button id="empty-reset" type="button" class="secondary-action">Show all tokens</button></div>
+        <p class="catalog-disclaimer">Preview catalog only. Artwork and animations are not yet for sale; these cards demonstrate filtering and store layout.</p>
+      </div>
+    </section>
+    <section class="feature-section shell" id="how-it-works">
+      <div class="feature-title"><div class="eyebrow">DESIGNED TO JUST WORK</div><h2>More time playing.<br />Less time configuring.</h2></div>
+      <div class="feature-list">
+        <div><span class="feature-number">01 /</span><h3>Drop onto your map</h3><p>Token sizes respect standard 5-foot battle-grid footprints.</p></div>
+        <div><span class="feature-number">02 /</span><h3>Let it come alive</h3><p>A deliberate 45-second idle → walk → attack → recover loop.</p></div>
+        <div><span class="feature-number">03 /</span><h3>Rest is included</h3><p>A separate sleep or inactive loop plus a still PNG fallback.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><span class="footer-logo">GRID<span>BORN</span></span><span>Preview build · Original fantasy assets in production</span><a href="#catalog">Back to catalog ↑</a></div></footer>
+</body>
+</html>
