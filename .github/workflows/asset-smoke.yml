@@ -1,0 +1,37 @@
+name: Token exporter smoke test
+on:
+  push:
+    branches: [feature/token-export-pipeline]
+  workflow_dispatch:
+jobs:
+  real-svg-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Chromium capture dependency
+        run: |
+          python -m pip install 'playwright==1.57.0'
+          python -m playwright install --with-deps chromium
+      - name: Ensure FFmpeg is available
+        run: |
+          command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+      - name: Export five frames from the actual Human Fighter SVG
+        run: python tools/export_demo.py --sample-frames 5 --output-dir "$RUNNER_TEMP/gridborn-smoke"
+      - name: Verify transparent PNG metadata and VP9-alpha WebM
+        run: |
+          python - <<'PY'
+          import os
+          import struct
+          from pathlib import Path
+          root = Path(os.environ['RUNNER_TEMP']) / 'gridborn-smoke'
+          data = (root / 'chr-ftr-human-still.png').read_bytes()
+          assert data[:8] == b'\x89PNG\r\n\x1a\n', 'Invalid PNG signature'
+          width, height = struct.unpack('>II', data[16:24])
+          assert (width, height) == (256, 256), f'Unexpected canvas {width}x{height}'
+          assert data[25] == 6, 'PNG is not RGBA'
+          print('PNG export validated: 256x256 RGBA')
+          PY
+          ffprobe -v error -show_entries stream_tags=alpha_mode -of default=noprint_wrappers=1 "$RUNNER_TEMP/gridborn-smoke/chr-ftr-human-loop.webm" | grep 'alpha_mode=1'

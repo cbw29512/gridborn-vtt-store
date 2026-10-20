@@ -4,3 +4,10 @@
 .DS_Store
 node_modules/
 *.log
+
+# Never publish local generated token exports or private customer assets.
+/art-exports/
+/private-art/
+/gridborn-private-art/
+/exports/
+/assets/exports/
