@@ -1,0 +1,61 @@
+/**
+ * Preview-only token schema. No real products are published.
+ * Token: id, category, name, primary, secondary, size, squares,
+ * representation, pricing and explicit non-purchasable status.
+ */
+const make = (id, category, name, primary, secondary, size, squares, symbol) => ({
+  id, category, name, primary, secondary, size, squares, symbol,
+  race: ['Characters', 'NPCs'].includes(category) ? primary : null,
+  characterClass: category === 'Characters' ? secondary : null,
+  occupation: category === 'NPCs' ? secondary : null,
+  location: category === 'Monsters' ? primary : null,
+  habitat: category === 'Animals' ? primary : null,
+  creatureType: category === 'Monsters' ? secondary : null,
+  animalType: category === 'Animals' ? secondary : null,
+  presentation: null,
+  priceCents: 299, purchasable: false, animationStatus: 'not-produced',
+  artLicenseStatus: 'not-verified',
+});
+export const catalog = [
+  make('chr-wiz-elf','Characters','Elven Wizard','Elf','Wizard','Medium',1,'✧'),
+  make('chr-bar-orc','Characters','Orc Barbarian','Orc','Barbarian','Medium',1,'⚔'),
+  make('chr-ftr-human','Characters','Human Fighter','Human','Fighter','Medium',1,'⚒'),
+  make('chr-rge-gnome','Characters','Gnome Rogue','Gnome','Rogue','Small',1,'◆'),
+  make('chr-clr-dwarf','Characters','Dwarven Cleric','Dwarf','Cleric','Medium',1,'✝'),
+  make('chr-rng-elf','Characters','Elven Ranger','Elf','Ranger','Medium',1,'➶'),
+  make('chr-pal-human','Characters','Human Paladin','Human','Paladin','Medium',1,'✦'),
+  make('chr-brd-halfling','Characters','Halfling Bard','Halfling','Bard','Small',1,'♫'),
+  make('npc-inn-human','NPCs','Village Innkeeper','Human','Innkeeper','Medium',1,'⌂'),
+  make('npc-inn-dwarf','NPCs','Dwarven Tavern Keeper','Dwarf','Innkeeper','Medium',1,'♜'),
+  make('npc-far-halfling','NPCs','Halfling Farmer','Halfling','Farmer','Small',1,'❀'),
+  make('npc-far-human','NPCs','Human Farmer','Human','Farmer','Medium',1,'♣'),
+  make('npc-sol-orc','NPCs','Orc Soldier','Orc','Soldier','Medium',1,'⚔'),
+  make('npc-guard-human','NPCs','City Guard','Human','Soldier','Medium',1,'⛨'),
+  make('npc-mer-elf','NPCs','Elven Merchant','Elf','Merchant','Medium',1,'✥'),
+  make('npc-smith-dwarf','NPCs','Dwarven Blacksmith','Dwarf','Blacksmith','Medium',1,'⚒'),
+  make('mon-cave-goblin','Monsters','Cave Goblin','Cave','Goblin','Small',1,'♠'),
+  make('mon-cave-ogre','Monsters','Cave Ogre','Cave','Ogre','Large',2,'♜'),
+  make('mon-cave-spider','Monsters','Giant Cave Spider','Cave','Spider','Large',2,'✣'),
+  make('mon-dng-skeleton','Monsters','Skeleton Warrior','Dungeon','Undead','Medium',1,'☠'),
+  make('mon-dng-armor','Monsters','Animated Armor','Dungeon','Construct','Medium',1,'⛨'),
+  make('mon-swamp-lizard','Monsters','Swamp Lizardfolk','Swamp','Lizardfolk','Medium',1,'♠'),
+  make('mon-forest-wolf','Monsters','Dire Wolf','Forest','Beast','Large',2,'♣'),
+  make('mon-mtn-troll','Monsters','Mountain Troll','Mountains','Troll','Large',2,'♜'),
+  make('ani-ocean-greatwhite','Animals','Great White Shark','Ocean','Sharks','Large',2,'≋'),
+  make('ani-ocean-reef','Animals','Reef Shark','Ocean','Sharks','Medium',1,'≋'),
+  make('ani-ocean-dolphin','Animals','Dolphin','Ocean','Marine mammals','Medium',1,'◈'),
+  make('ani-ocean-turtle','Animals','Sea Turtle','Ocean','Reptiles','Medium',1,'◉'),
+  make('ani-forest-wolf','Animals','Gray Wolf','Forest','Canines','Medium',1,'♣'),
+  make('ani-forest-fox','Animals','Red Fox','Forest','Canines','Small',1,'♣'),
+  make('ani-forest-bear','Animals','Black Bear','Forest','Bears','Medium',1,'♜'),
+  make('ani-swamp-croc','Animals','Crocodile','Swamp','Reptiles','Large',2,'◈'),
+  make('ani-desert-scorpion','Animals','Scorpion','Desert','Arthropods','Tiny',1,'✣'),
+  make('ani-arctic-polar','Animals','Polar Bear','Arctic','Bears','Large',2,'♜'),
+];
+
+export const categoryConfig = Object.freeze({
+  Characters: { first: 'Race', second: 'Class', placeholder: 'Search heroes...' },
+  NPCs: { first: 'Race', second: 'Occupation', placeholder: 'Search innkeeper, farmer...' },
+  Monsters: { first: 'Location', second: 'Monster type', placeholder: 'Search goblin, skeleton...' },
+  Animals: { first: 'Habitat', second: 'Animal type', placeholder: 'Search shark, wolf, whale...' },
+});
