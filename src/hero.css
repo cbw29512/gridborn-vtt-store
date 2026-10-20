@@ -1,0 +1,89 @@
+/* Gridborn's immediate problem / solution story, paired with the real Fighter study. */
+.topbar .brand {gap:12px;}
+.brand-tagline {border-left:1px solid #4c5663;padding-left:13px;max-width:125px;color:#d6b77c;font:700 9px/1.6 ui-monospace,monospace;letter-spacing:.065em;}
+.hero {grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(22px,3.5vw,54px);padding-block:58px 75px;}
+.hero-copy {min-width:0;}
+.hero .eyebrow {font-size:11px;color:#ebc889;font-weight:850;letter-spacing:.12em;}
+.hero h1 {font-size:clamp(40px,4.4vw,67px);line-height:1.065;letter-spacing:-.045em;margin:21px 0 25px;}
+.hero h1 em {font-style:normal;color:#e8bd70;}
+.hero-copy>.hero-lede {font-size:clamp(15px,1.25vw,17px);line-height:1.7;color:#c5cdd7;max-width:550px;margin:0 0 26px;}
+.hero-lede strong {color:#faf4e9;font-weight:750;}
+.hero-actions {gap:14px;}
+.hero-secondary-action {display:inline-flex;align-items:center;gap:9px;min-height:48px;padding:10px 5px;font-size:13px;font-weight:750;color:#f0d4a4;}
+.hero-secondary-action:hover {color:#fff;}
+.hero-steps {display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:31px;padding:20px 0 0;border-top:1px solid #384354;font:750 10px/1.6 ui-monospace,monospace;letter-spacing:.035em;color:#ccd6e0;}
+.hero-steps span:nth-child(even) {color:#a79172;font-size:16px;}
+.hero-steps strong {color:#e9bc76;}
+.hero-copy>.hero-honesty {font-size:11px;color:#9ca9b9;line-height:1.6;margin:14px 0 0;}
+.hero-art {display:block;min-width:0;min-height:0;padding:18px;border:1px solid #465466;border-radius:14px;overflow:visible;background:linear-gradient(137deg,#243545,#14212e 58%,#111b27);box-shadow:0 25px 68px #050b1385,inset 0 1px 0 #eac98c1c;}
+.demo-art-heading {margin-bottom:17px;}
+.demo-kicker {color:#eac586;font:850 10px/1.4 ui-monospace,monospace;letter-spacing:.13em;}
+.demo-art-heading h2 {margin:8px 0 0;font-size:clamp(18px,1.72vw,24px);line-height:1.25;color:#f6f0e6;}
+.vtt-comparison {display:grid;grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr);gap:7px;align-items:center;}
+.vtt-panel {min-width:0;background:#111b28;border-radius:9px;overflow:hidden;border:1px solid #475669;}
+.vtt-panel-static {border-color:#405060;}
+.vtt-panel-live {border-color:#bc9055;box-shadow:0 0 0 1px #e8b26127,0 0 35px #db9b2e22;}
+.vtt-panel-top {min-height:38px;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:9px 8px;color:#c9d1d9;font:750 9px/1.3 ui-monospace,monospace;letter-spacing:.04em;}
+.vtt-panel-top strong {color:#f4e4c8;letter-spacing:.01em;}
+.vtt-dot {height:7px;width:7px;background:#8697a8;border-radius:50%;flex:none;}
+.vtt-panel-live .vtt-dot {background:#e7b66e;box-shadow:0 0 9px #e7b66eb0;}
+.vtt-board {height:198px;isolation:isolate;position:relative;display:grid;place-items:center;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 70% 35%,#67926526,transparent 51%),
+    linear-gradient(90deg,#91a1aa28 1px,transparent 1px),
+    linear-gradient(#91a1aa28 1px,transparent 1px),
+    linear-gradient(125deg,#374653,#202d3b);
+  background-size:auto,37px 37px,37px 37px,auto;
+}
+.vtt-board::after {content:"";z-index:0;position:absolute;inset:9px;border:1px solid #a3b6c72d;pointer-events:none;}
+.vtt-panel-static .vtt-board {filter:saturate(.6);}
+.vtt-tile {position:absolute;z-index:1;border:2px solid #263240;background:#6d8092;box-shadow:inset 0 4px #9daebc,0 7px 11px #10192366;}
+.vtt-tile-a {height:19px;width:46px;top:12%;left:5%;}
+.vtt-tile-b {height:59px;width:18px;bottom:7%;right:6%;}
+.vtt-opponent {position:absolute;z-index:1;top:17%;right:11%;height:25px;width:25px;display:grid;place-items:center;background:#75394999;border:1px solid #bf677b;border-radius:50%;color:#f6c4c5;font-size:16px;}
+.vtt-board>.vtt-figure {display:block;z-index:2;position:relative;width:min(94%,176px);height:175px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 10px 12px #060a12bc);}
+.vtt-panel-static .vtt-figure {filter:grayscale(.75) drop-shadow(0 8px 11px #060a12b0);}
+.vtt-panel-bottom {min-height:33px;padding:9px 4px;text-align:center;color:#c0cbd7;font-size:10px;}
+.vtt-panel-live .vtt-panel-bottom {color:#f1d29a;font-weight:750;}
+.vtt-arrow {color:#edc282;text-align:center;font-size:21px;}
+.vtt-playbar {display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:11px;margin-top:16px;}
+.vtt-playbar-description {display:flex;flex-direction:column;gap:5px;min-width:0;}
+.vtt-playbar-description strong {font-size:11px;color:#f8ecd8;}
+.vtt-playbar-description span {color:#b5c0cd;font-size:10px;}
+.hero-art .demo-controls {position:static!important;inset:auto!important;display:flex!important;flex-wrap:wrap;gap:8px;}
+.hero-art .demo-controls .demo-toggle {position:static!important;max-width:none!important;min-height:44px;padding:9px 12px;font-size:11px;white-space:nowrap;}
+.hero-art .demo-controls .demo-toggle[aria-pressed="true"] {background:#ffe2ac;box-shadow:0 0 0 2px #6b4b21;}
+.hero-secondary-action:focus-visible,.hero-art .demo-toggle:focus-visible {outline:3px solid #f5d48e;outline-offset:3px;}
+@media(max-width:1120px) {
+  .brand-tagline {display:none;}
+  .hero {grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;}
+  .hero h1 {font-size:clamp(37px,4.2vw,52px);}
+  .vtt-board {height:171px;}
+  .vtt-board>.vtt-figure {height:156px;}
+  .vtt-playbar {display:block;}
+  .vtt-playbar-description {margin-bottom:13px;}
+}
+@media(max-width:720px) {
+  .hero {grid-template-columns:minmax(0,1fr);gap:30px;padding-block:37px 58px;}
+  .hero h1 {font-size:clamp(37px,8.1vw,54px);}
+  .hero-art {padding:16px;}
+  .vtt-board {height:189px;}
+  .vtt-board>.vtt-figure {height:170px;}
+  .hero-art .demo-controls {display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));}
+  .hero-art .demo-controls .demo-toggle {width:100%;white-space:normal;padding:9px 6px;}
+}
+@media(max-width:390px) {
+  .hero .eyebrow {font-size:9px;}
+  .hero h1 {font-size:38px;}
+  .hero-art {padding:11px;}
+  .vtt-comparison {grid-template-columns:minmax(0,1fr) 16px minmax(0,1fr);gap:4px;}
+  .vtt-board {height:148px;}
+  .vtt-board>.vtt-figure {height:142px;}
+  .vtt-panel-top {font-size:8px;padding:7px 5px;}
+  .vtt-panel-top strong {font-size:8px;}
+  .vtt-arrow {font-size:16px;}
+  .vtt-panel-bottom {font-size:9px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero-art,.vtt-panel-live,.hero-actions * {transition:none!important;animation:none!important;}
+}

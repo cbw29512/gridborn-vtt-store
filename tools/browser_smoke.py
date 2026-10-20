@@ -34,6 +34,11 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
         page.goto(origin, wait_until="load")
         expect(page.locator("#result-summary")).to_have_text("8 results found")
         assert page.locator("h1").count() == 1, "One semantic page h1 is required"
+        headline = page.locator("#hero-title").inner_text()
+        assert "Your VTT maps are static" in headline, "VTT problem must appear immediately"
+        assert "Your battles shouldn't be" in headline, "Animated solution must appear immediately"
+        assert page.locator(".vtt-panel").count() == 2, "Before/after map comparison missing"
+        expect(page.locator("#demo-status")).to_have_text("Press play to see movement")
         if width == 1440:
             page.keyboard.press("Tab")
             assert page.evaluate("document.activeElement?.className") == "skip-link", \
@@ -59,9 +64,11 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
         expect(page.locator("#result-summary")).to_have_text("8 results found")
         page.locator("#demo-toggle").click()
         expect(page.locator("#demo-toggle")).to_have_attribute("aria-pressed", "true")
+        expect(page.locator("#demo-status")).to_have_text("Action animation playing")
         page.locator("#demo-rest-toggle").click()
         expect(page.locator("#demo-toggle")).to_have_attribute("aria-pressed", "false")
         expect(page.locator("#demo-rest-toggle")).to_have_attribute("aria-pressed", "true")
+        expect(page.locator("#demo-status")).to_have_text("Rest animation playing")
         page.locator("#demo-rest-toggle").click()
         expect(page.locator("#demo-rest-toggle")).to_have_attribute("aria-pressed", "false")
         image_is_loaded = page.locator("#demo-token").evaluate(

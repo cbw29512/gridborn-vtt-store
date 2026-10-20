@@ -4,25 +4,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#111721" />
-  <meta name="description" content="Browse classic 16-bit-inspired animated fantasy tokens for virtual tabletops. Grid-scaled characters, NPCs, monsters and animals." />
+  <meta name="description" content="Bring static VTT battle maps to life with animated fantasy token concepts. Explore moving heroes, monsters, NPCs and animals for virtual tabletops." />
   <!-- Keep the development preview out of the index until real assets and a final domain are ready. -->
   <meta name="robots" content="noindex,follow,max-image-preview:large" />
   <link rel="canonical" href="https://cbw29512.github.io/gridborn-vtt-store/" />
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Gridborn" />
-  <meta property="og:title" content="Gridborn — Animated Fantasy Tokens (Preview)" />
-  <meta property="og:description" content="Browse planned pixel-inspired VTT characters, NPCs, monsters, and animals." />
+  <meta property="og:title" content="Gridborn — Bring Static VTT Maps to Life" />
+  <meta property="og:description" content="Your virtual tabletop maps are static. Your battles shouldn’t be. Animated fantasy tokens bring movement to existing VTT maps." />
   <meta property="og:url" content="https://cbw29512.github.io/gridborn-vtt-store/" />
   <meta property="og:image" content="https://cbw29512.github.io/gridborn-vtt-store/assets/social-card.svg" />
   <meta property="og:image:alt" content="Gridborn dark fantasy token concept graphic" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://cbw29512.github.io/gridborn-vtt-store/assets/social-card.svg" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Gridborn","url":"https://cbw29512.github.io/gridborn-vtt-store/","description":"Preview catalog of original fantasy VTT token concepts."}</script>
-  <title>Gridborn | Animated Fantasy VTT Token Concepts</title>
+  <title>Gridborn | Bring Static VTT Battle Maps to Life</title>
   <link rel="stylesheet" href="./src/base.css" />
   <link rel="stylesheet" href="./src/layout.css" />
   <link rel="stylesheet" href="./src/components.css" />
+  <link rel="stylesheet" href="./src/hero.css" />
   <script src="./src/app.js" type="module"></script>
 </head>
 <body>
@@ -30,7 +31,7 @@
   <header class="topbar shell">
     <a class="brand" href="./" aria-label="Gridborn home">
       <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
-      <span>GRID<span class="brand-accent">BORN</span></span>
+      <span>GRID<span class="brand-accent">BORN</span></span><span class="brand-tagline">ANIMATED VTT TOKENS</span>
     </a>
     <nav class="top-nav" aria-label="Primary navigation">
       <a href="#catalog">Browse tokens</a>
@@ -42,41 +43,63 @@
   <main>
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <div class="eyebrow"><span class="eyebrow-dash"></span> BUILT FOR THE BATTLE GRID</div>
-        <h1 id="hero-title">A little movement.<br /><em>A lot more life.</em></h1>
-        <p>Classic 16-bit-inspired fantasy tokens with slow, natural animation. Find your character, creature or monster in seconds.</p>
+        <div class="eyebrow"><span class="eyebrow-dash"></span> ANIMATED TOKENS FOR VTT BATTLE MAPS</div>
+        <h1 id="hero-title">Your VTT maps are static.<br /><em>Your battles shouldn't be.</em></h1>
+        <p class="hero-lede">Gridborn brings movement to virtual tabletop encounters with animated fantasy tokens for <strong>heroes, monsters, NPCs, and animals.</strong> Keep the map you love. Bring the characters to life.</p>
         <div class="hero-actions">
-          <a class="primary-action" href="#catalog">Explore the catalog <span aria-hidden="true">↗</span></a>
-          <span class="hero-note">Planned: 45-second living loop + separate rest animation.</span>
+          <a class="primary-action" href="#live-demo">See static vs. animated <span aria-hidden="true">↗</span></a>
+          <a class="hero-secondary-action" href="#catalog">Browse token concepts <span aria-hidden="true">→</span></a>
         </div>
-        <div class="hero-meta" aria-label="Planned launch specifications">
-          <span><b>136</b> planned designs</span>
-          <span><b>45 sec</b> animation cycle</span>
-          <span><b>$2.99</b> target single price</span>
+        <div class="hero-steps" aria-label="How Gridborn helps your game">
+          <span>YOUR VTT MAP</span><span aria-hidden="true">+</span><span>ANIMATED TOKENS</span><span aria-hidden="true">=</span><strong>LIVING ENCOUNTERS</strong>
         </div>
+        <p class="hero-honesty">Early development preview · Try the original Fighter study below · VTT support not yet verified</p>
       </div>
-      <div class="hero-art" aria-label="Human Fighter animation study">
-        <div class="mock-grid" aria-hidden="true">
-          <span class="terrain terrain-a"></span><span class="terrain terrain-b"></span>
-          <div class="token-scene">
-            <span class="scene-spark scene-spark-1"></span><span class="scene-spark scene-spark-2"></span>
-            <img id="demo-token" class="demo-token-image" src="./assets/demos/human-fighter-still.svg" width="220" height="220" alt="" decoding="async" />
-            <div class="scene-ring"></div>
+      <div class="hero-art" id="live-demo" aria-labelledby="demo-title">
+        <div class="demo-art-heading">
+          <span class="demo-kicker">SEE THE DIFFERENCE</span>
+          <h2 id="demo-title">Same battle map. More life.</h2>
+        </div>
+        <div class="vtt-comparison" aria-label="Static versus animated fantasy token example">
+          <div class="vtt-panel vtt-panel-static">
+            <div class="vtt-panel-top"><span class="vtt-dot" aria-hidden="true"></span><span>BEFORE</span><strong>STATIC</strong></div>
+            <div class="vtt-board">
+              <span class="vtt-tile vtt-tile-a" aria-hidden="true"></span>
+              <span class="vtt-tile vtt-tile-b" aria-hidden="true"></span>
+              <span class="vtt-opponent" aria-hidden="true">☠</span>
+              <img class="vtt-figure vtt-figure-static" src="./assets/demos/human-fighter-still.svg" width="170" height="170" alt="Static Human Fighter token concept on a gridded battle map" decoding="async" />
+            </div>
+            <div class="vtt-panel-bottom">Frozen in place</div>
+          </div>
+          <span class="vtt-arrow" aria-hidden="true">→</span>
+          <div class="vtt-panel vtt-panel-live">
+            <div class="vtt-panel-top"><span class="vtt-dot" aria-hidden="true"></span><span>AFTER</span><strong>GRIDBORN</strong></div>
+            <div class="vtt-board">
+              <span class="vtt-tile vtt-tile-a" aria-hidden="true"></span>
+              <span class="vtt-tile vtt-tile-b" aria-hidden="true"></span>
+              <span class="vtt-opponent" aria-hidden="true">☠</span>
+              <img id="demo-token" class="vtt-figure demo-token-image" src="./assets/demos/human-fighter-still.svg" width="170" height="170" alt="Human Fighter concept token; use the buttons to preview its action or rest animation" decoding="async" />
+            </div>
+            <div class="vtt-panel-bottom" id="demo-status" aria-live="polite">Press play to see movement</div>
           </div>
         </div>
-        <div class="art-tag art-tag-top">5 FT × 5 FT<br /><strong>GRID-READY</strong></div>
-        <div class="art-tag art-tag-bottom"><i></i> <strong>WORKING ANIMATION STUDY</strong><br />NOT A FINISHED TOKEN</div>
-        <div class="demo-controls" role="group" aria-label="Fighter animation studies">
-          <button id="demo-toggle" class="demo-toggle" type="button" aria-controls="demo-token" aria-pressed="false">Play action loop</button>
-          <button id="demo-rest-toggle" class="demo-toggle" type="button" aria-controls="demo-token" aria-pressed="false">Play rest loop</button>
+        <div class="vtt-playbar">
+          <div class="vtt-playbar-description">
+            <strong>Human Fighter · Animation study</strong>
+            <span>5-ft grid concept · Not a finished token</span>
+          </div>
+          <div class="demo-controls" role="group" aria-label="Fighter animation studies">
+            <button id="demo-toggle" class="demo-toggle" type="button" aria-controls="demo-token" aria-pressed="false">Play action loop</button>
+            <button id="demo-rest-toggle" class="demo-toggle" type="button" aria-controls="demo-token" aria-pressed="false">Play rest loop</button>
+          </div>
         </div>
       </div>
     </section>
     <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
       <div class="shell">
         <div class="section-heading">
-          <div><div class="eyebrow">THE COLLECTION</div><h2 id="catalog-title">Find exactly what you need.</h2></div>
-          <p>Choose a category, narrow it down, and see matching results instantly.</p>
+          <div><div class="eyebrow">FROM THE BATTLEFIELD TO THE TAVERN</div><h2 id="catalog-title">Find your next living encounter.</h2></div>
+          <p>Browse animated-token concepts for the VTT maps you already use.</p>
         </div>
         <nav class="collection-nav" aria-label="Explore token collections">
           <a class="collection-shortcut collection-characters" href="?category=Characters#catalog" data-category-link="Characters">
@@ -108,11 +131,11 @@
       </div>
     </section>
     <section class="feature-section shell" id="how-it-works" aria-labelledby="how-title">
-      <div class="feature-title"><div class="eyebrow">DESIGNED TO JUST WORK</div><h2 id="how-title">Designed for battle maps.<br />Built to be simple.</h2></div>
+      <div class="feature-title"><div class="eyebrow">THE GRIDBORN IDEA</div><h2 id="how-title">Your map sets the scene.<br />Movement tells the story.</h2></div>
       <div class="feature-list">
-        <div><span class="feature-number">01 /</span><h3>Scale for your map</h3><p>Planned token footprints correspond to standard 5-foot grid squares.</p></div>
-        <div><span class="feature-number">02 /</span><h3>Preview the animation</h3><p>The intended 45-second loop includes idle, walk, attack and recovery. Final exports still need testing.</p></div>
-        <div><span class="feature-number">03 /</span><h3>Choose a fallback</h3><p>A separate rest loop and still PNG are planned; supported file formats will be verified before launch.</p></div>
+        <div><span class="feature-number">01 /</span><h3>Keep your favorite maps</h3><p>Gridborn is a collection of animated token concepts, not another VTT map editor to learn.</p></div>
+        <div><span class="feature-number">02 /</span><h3>Replace motionless markers</h3><p>Planned action loops bring breathing, movement, attacking and recovery to otherwise static map encounters.</p></div>
+        <div><span class="feature-number">03 /</span><h3>From combat to camp</h3><p>Separate resting loops and static image fallbacks are part of the planned package. Platform support is still unverified.</p></div>
       </div>
     </section>
     <section class="buyer-guide shell" id="faq" aria-labelledby="faq-title">
