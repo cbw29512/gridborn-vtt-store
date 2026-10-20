@@ -77,3 +77,13 @@
 .collection-animals { background:linear-gradient(130deg,#24464e,#172a32); }
 @media (max-width:950px) { .collection-nav { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:460px) { .collection-nav { gap:9px; } .collection-shortcut { min-height:80px; gap:7px; padding:9px; } .shortcut-glyph { width:32px; height:36px; flex-basis:32px; font-size:19px; } .shortcut-copy strong {font-size:13px;} .shortcut-copy small {font-size:10px;} .shortcut-arrow {display:none;} }
+
+/* Two explicit prototype preview modes; no autoplay on load. */
+.hero-art .demo-controls {position:absolute;z-index:5;bottom:18px;right:18px;display:flex;gap:8px;}
+.hero-art .demo-controls .demo-toggle {position:static;max-width:none;min-height:44px;}
+.hero-art .demo-controls .demo-toggle[aria-pressed="true"] {background:#f4d798;box-shadow:0 0 0 2px #41331e;}
+@media(max-width:720px) {
+  .hero-art .demo-controls {left:18px;right:18px;bottom:15px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));}
+  .hero-art .demo-controls .demo-toggle {width:100%;padding:8px 5px;font-size:11px;}
+  .hero-art .art-tag-bottom {bottom:86px;}
+}

@@ -71,3 +71,15 @@ test('buyer FAQ does not make unverified compatibility or legal claims', () => {
   assert.match(html, /license has not yet been published/);
   assert.match(html, /Checkout and paid downloads are disabled/);
 });
+
+test('action and rest previews stay opt-in, explicit and accessible', () => {
+  assert.match(html, /id="demo-rest-toggle"/);
+  assert.match(html, /aria-controls="demo-token"/);
+  assert.match(get('assets/demos/human-fighter-rest.svg'), /rest-breathe 6s/);
+  assert.match(get('assets/demos/human-fighter-rest.svg'), /prefers-reduced-motion:reduce/);
+  const demo = get('src/animation-demo.js');
+  assert.match(demo, /mode === 'rest'/);
+  assert.match(demo, /visibilitychange/);
+  assert.match(demo, /aria-pressed/);
+  assert.ok(demo.split('\n').length <= 150);
+});

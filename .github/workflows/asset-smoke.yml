@@ -1,7 +1,7 @@
 name: Token exporter smoke test
 on:
   push:
-    branches: [feature/token-export-pipeline]
+    branches: [feature/token-export-pipeline, feature/human-fighter-rest-loop]
   workflow_dispatch:
 jobs:
   real-svg-smoke:
@@ -35,3 +35,4 @@ jobs:
           print('PNG export validated: 256x256 RGBA')
           PY
           ffprobe -v error -show_entries stream_tags=alpha_mode -of default=noprint_wrappers=1 "$RUNNER_TEMP/gridborn-smoke/chr-ftr-human-loop.webm" | grep 'alpha_mode=1'
+          ffprobe -v error -show_entries stream_tags=alpha_mode -of default=noprint_wrappers=1 "$RUNNER_TEMP/gridborn-smoke/chr-ftr-human-rest.webm" | grep 'alpha_mode=1'

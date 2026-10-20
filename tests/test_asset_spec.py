@@ -24,6 +24,14 @@ class AssetManifestTests(unittest.TestCase):
     def test_original_sources_validate(self):
         self.assertEqual(validate_manifest(self.sample, ROOT)["status"], "concept-only")
 
+    def test_rest_source_and_duration_are_required(self):
+        for key in ("restSource", "restDurationSec"):
+            with self.subTest(key=key):
+                spec = copy.deepcopy(self.sample)
+                spec.pop(key)
+                with self.assertRaises((ValueError, TypeError)):
+                    validate_manifest(spec, ROOT, False)
+
     def test_cannot_sell_preview(self):
         sample = copy.deepcopy(self.sample)
         sample["purchasable"] = True
