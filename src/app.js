@@ -1,5 +1,6 @@
 import { catalog, categoryConfig } from './catalog.js';
 import { initialState, availableOptions, filterCatalog, validateCatalog } from './filters.js';
+import { initializeDemo } from './animation-demo.js';
 
 // One battle-tested state object drives search and both dependent dropdowns.
 const state = { ...initialState };
@@ -19,6 +20,7 @@ function openConcept(item, trigger) {
       ['Size', item.size], ['Grid footprint', item.squares + ' × ' + item.squares + ' squares'],
       ['Animation', 'Proposed 45-second idle, walk, attack and recovery loop'],
       ['Extras', 'Rest animation and PNG fallback planned'],
+      ['Artwork status', item.previewArt ? 'Original draft illustration; not a VTT-certified asset' : 'Not produced'],
       ['Target price', 'USD ' + (item.priceCents / 100).toFixed(2) + ' — not yet for sale'],
     ];
     nodes.dialogFacts.replaceChildren();
@@ -64,10 +66,21 @@ function makeCard(item) {
     const visual = document.createElement('div'); visual.className = 'product-visual';
     visual.dataset.category = item.category;
     const symbol = document.createElement('span'); symbol.className = 'product-placeholder'; symbol.textContent = item.symbol;
-    const badge = document.createElement('span'); badge.className = 'preview-label'; badge.textContent = 'CONCEPT ONLY';
+    if (item.previewArt) {
+      const illustration = document.createElement('img');
+      illustration.className = 'product-art';
+      illustration.src = item.previewArt;
+      illustration.alt = 'Original pixel-art study for ' + item.name + '; not a finished token';
+      illustration.loading = 'lazy';
+      illustration.decoding = 'async';
+      visual.append(illustration);
+    } else {
+      visual.append(symbol);
+    }
+    const badge = document.createElement('span'); badge.className = 'preview-label'; badge.textContent = item.previewArt ? 'ART STUDY' : 'CONCEPT ONLY';
     const footprint = document.createElement('span'); footprint.className = 'product-footprint';
     footprint.textContent = item.squares + '×' + item.squares + ' GRID';
-    visual.append(symbol, badge, footprint);
+    visual.append(badge, footprint);
     const body = document.createElement('div'); body.className = 'product-body';
     const type = document.createElement('div'); type.className = 'product-type';
     type.textContent = item.primary + ' · ' + item.secondary;
@@ -105,7 +118,7 @@ function resetFilters() {
   try {
     Object.assign(state, initialState);
     nodes.search.value = ''; nodes.category.value = state.category;
-    updateFilters(); renderResults();
+    updateFilters(); renderResults(); initializeDemo();
   } catch (error) { console.error('Unable to reset catalog filters', error); }
 }
 

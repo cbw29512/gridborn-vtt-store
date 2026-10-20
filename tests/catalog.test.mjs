@@ -43,3 +43,11 @@ test('search includes name, category, size and filters', () => {
 test('catalog item footprints follow intended 1x1 / 2x2 demo scaling',()=>{
   assert.ok(catalog.every(item => Number.isInteger(item.squares) && item.squares>=1));
 });
+
+test('the draft visual has explicit preview-only status and no sale status', () => {
+  const candidate = catalog.find(item => item.id === 'chr-ftr-human');
+  assert.equal(candidate.previewArt, './assets/demos/human-fighter-still.svg');
+  assert.equal(candidate.animationStatus, 'art-study');
+  assert.equal(candidate.purchasable, false);
+  assert.ok(catalog.filter(item => item.previewArt).every(item => item.purchasable === false));
+});

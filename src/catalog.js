@@ -13,7 +13,8 @@ const make = (id, category, name, primary, secondary, size, squares, symbol) => 
   creatureType: category === 'Monsters' ? secondary : null,
   animalType: category === 'Animals' ? secondary : null,
   presentation: null,
-  priceCents: 299, purchasable: false, animationStatus: 'not-produced',
+  previewArt: id === 'chr-ftr-human' ? './assets/demos/human-fighter-still.svg' : null,
+  priceCents: 299, purchasable: false, animationStatus: id === 'chr-ftr-human' ? 'art-study' : 'not-produced',
   artLicenseStatus: 'not-verified',
 });
 export const catalog = [

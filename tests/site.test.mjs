@@ -33,3 +33,18 @@ test('keyboard and reduced motion support remains present', () => {
   assert.match(get('src/components.css'), /prefers-reduced-motion/);
   assert.match(get('src/base.css'), /focus-visible/);
 });
+
+test('animation study has a static fallback, explicit control and a 45-second timing plan', () => {
+  assert.match(html, /id="demo-token"/);
+  assert.match(html, /id="demo-toggle"/);
+  assert.match(html, /aria-pressed="false"/);
+  assert.equal(existsSync(new URL('../assets/demos/human-fighter-still.svg', import.meta.url)), true);
+  const animated = get('assets/demos/human-fighter-loop.svg');
+  assert.match(animated, /animation:body-cycle 45s/);
+  assert.match(animated, /77\.77%/);
+  assert.match(animated, /84\.45%/);
+  assert.match(animated, /prefers-reduced-motion:reduce/);
+  const controller = get('src/animation-demo.js');
+  assert.match(controller, /visibilitychange/);
+  assert.match(controller, /aria-pressed/);
+});

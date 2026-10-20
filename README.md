@@ -82,3 +82,10 @@ download links after a verified Stripe webhook grants entitlements.
 - Key accessibility foundations: semantic labels, skip link, visible focus states, preserved mobile browsing link, reduced-motion rules, 44-pixel details control, native modal with Escape and focus return.
 - Automated tests are not proof of ADA or WCAG 2.2 AA compliance. Before launch, do human keyboard, screen-reader, contrast, zoom/reflow, animation, and touch/mobile testing on actual devices.
 - No fake ratings, fake scarcity, Stripe secrets, checkout links, or paid asset files should be committed.
+
+## First original animated art study
+
+- `assets/demos/human-fighter-still.svg` is the static fallback.
+- `assets/demos/human-fighter-loop.svg` animates a hand-authored sprite with a 45-second cycle (idle 27s, move 8s, attack 3s, recover 7s). Playback is user-initiated with a Pause control. It respects reduced-motion preferences and pauses when the tab is hidden.
+- This is a **draft vector pixel-art study**, not the final sprite, not an accepted VTT asset, not a completed WebM / PNG / sleep-loop delivery set, and not available for purchase.
+- Do not add it to a for-sale product or claim VTT compatibility before testing transparency, orientation, compositing, export frame cadence, file size, browser playback, and major VTT import workflows.
