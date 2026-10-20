@@ -83,3 +83,9 @@ test('action and rest previews stay opt-in, explicit and accessible', () => {
   assert.match(demo, /aria-pressed/);
   assert.ok(demo.split('\n').length <= 150);
 });
+
+test('concept details explicitly disclose unverified VTT compatibility', () => {
+  const details = get('src/concept-dialog.js');
+  assert.match(details, /VTT compatibility/);
+  assert.match(details, /Not tested in Foundry, Roll20/);
+});

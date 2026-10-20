@@ -113,3 +113,7 @@ The Fighter now has a distinct original six-second resting animation study (`ass
 ## Full-duration media QA (no storefront exposure)
 
 The first Human Fighter prototype now has optional strict media checks via `python tools/export_demo.py --certify --output-dir ../gridborn-private-qa`. The QA run verifies exact frame count and duration, true transparent PNG/VP9 pixels, meaningful animation changes and loop continuity. Outputs and the media QA JSON stay private and are not committed. Passing automated QA **does not establish artistic quality, universal VTT compatibility or sale readiness**. See [tools/README.md](tools/README.md) for the full contract.
+
+## Platform compatibility release gate
+
+Foundry and Roll20 are **not yet tested** with the Human Fighter exports. Do not advertise any VTT as compatible just because WebM is a documented supported format. The test matrix and evidence requirements are in [docs/VTT_COMPATIBILITY.md](docs/VTT_COMPATIBILITY.md), with a machine-checked, fail-closed record in [docs/compatibility-record.json](docs/compatibility-record.json). Checkout and commercial licensing remain blocked until independently approved.

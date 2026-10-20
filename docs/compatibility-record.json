@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "assetId": "chr-ftr-human",
+  "technicalMediaQA": {
+    "status": "passed",
+    "evidenceUrl": "https://github.com/cbw29512/gridborn-vtt-store/actions/runs/39505415921",
+    "actionFrames": 450,
+    "restFrames": 60
+  },
+  "platforms": [
+    {
+      "id": "foundry-vtt",
+      "status": "not-tested",
+      "testedVersion": null,
+      "testedBrowser": null,
+      "testedAt": null,
+      "evidenceUrl": null
+    },
+    {
+      "id": "roll20",
+      "status": "not-tested",
+      "testedVersion": null,
+      "testedBrowser": null,
+      "testedAt": null,
+      "evidenceUrl": null
+    }
+  ],
+  "artRightsVerified": false,
+  "releaseApproved": false,
+  "purchaseEnabled": false
+}
