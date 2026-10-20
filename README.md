@@ -91,3 +91,7 @@ download links after a verified Stripe webhook grants entitlements.
 - Do not add it to a for-sale product or claim VTT compatibility before testing transparency, orientation, compositing, export frame cadence, file size, browser playback, and major VTT import workflows.
 
 Storefront browser logic is split into `src/app.js`, `src/concept-dialog.js`, and `src/animation-demo.js`. Keep individual modules below 150 lines.
+
+## Navigable catalog routes
+
+Each of the four top-level categories has an ordinary, copyable link. Search and contextual filters are also reflected in stable URL query parameters: `category`, `primary`, `secondary`, and `q`. The URL parser validates those values against the actual catalog and falls back safely. Browser Back/Forward restores filters, while the initial default state retains a clean URL. The development preview stays `noindex`; commercial SEO product pages must be separately planned and server-rendered when the real catalog is ready.
