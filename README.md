@@ -95,3 +95,7 @@ Storefront browser logic is split into `src/app.js`, `src/concept-dialog.js`, an
 ## Navigable catalog routes
 
 Each of the four top-level categories has an ordinary, copyable link. Search and contextual filters are also reflected in stable URL query parameters: `category`, `primary`, `secondary`, and `q`. The URL parser validates those values against the actual catalog and falls back safely. Browser Back/Forward restores filters, while the initial default state retains a clean URL. The development preview stays `noindex`; commercial SEO product pages must be separately planned and server-rendered when the real catalog is ready.
+
+## Chromium browser regression gate
+
+`tests/browser-smoke.mjs` runs on pull requests and `main` through the independent GitHub Actions browser workflow. It covers desktop/390px/320px layouts, live category filtering, URL history, dialog keyboard focus, opt-in animation, JavaScript exceptions, and automated WCAG A/AA findings. Screenshots are retained briefly as CI artifacts. The browser job temporarily installs Playwright + axe-core on the **GitHub runner** only; no storefront JS dependencies, Netlify deployment, or production payments are added. Automated accessibility scans cannot certify full WCAG 2.2 AA compliance.

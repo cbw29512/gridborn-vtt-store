@@ -1,0 +1,31 @@
+name: Gridborn browser and accessibility
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test tools
+        run: npm install --no-save --no-package-lock --ignore-scripts playwright@latest @axe-core/playwright@latest
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Check real-browser layout and accessibility
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/gridborn-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill $server_pid' EXIT
+          node tests/browser-smoke.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gridborn-browser-screenshots
+          path: browser-artifacts/
+          if-no-files-found: ignore
+          retention-days: 7

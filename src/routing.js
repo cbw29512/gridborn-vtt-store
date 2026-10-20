@@ -36,13 +36,19 @@ export function serializeCatalogRoute(state) {
   }
 }
 
-export function writeCatalogRoute(state) {
+export function writeCatalogRoute(state, mode = 'replace', hash = null) {
   try {
     const url = new URL(window.location.href);
     for (const key of ['category', 'q', 'primary', 'secondary']) url.searchParams.delete(key);
     const selected = new URLSearchParams(serializeCatalogRoute(state));
     selected.forEach((value, key) => url.searchParams.set(key, value));
-    window.history.replaceState(window.history.state, '', url.pathname + url.search + url.hash);
+    if (hash !== null) url.hash = hash;
+    const next = url.pathname + url.search + url.hash;
+    const current = window.location.pathname + window.location.search + window.location.hash;
+    if (next !== current) {
+      const action = mode === 'push' ? 'pushState' : 'replaceState';
+      window.history[action](window.history.state, '', next);
+    }
   } catch (error) { console.error('Unable to save catalog URL', error); }
 }
 
@@ -67,10 +73,7 @@ export function connectCatalogNavigation(state, items, onChange) {
           event.preventDefault();
           Object.assign(state, { category, query: '', primary: '', secondary: '' });
           onChange();
-          const url = new URL(window.location.href);
-          url.hash = 'catalog';
-          window.history.replaceState(window.history.state, '', url.pathname + url.search + url.hash);
-          writeCatalogRoute(state);
+          writeCatalogRoute(state, 'push', 'catalog');
           document.getElementById('catalog')?.scrollIntoView({ block: 'start' });
         } catch (error) { console.error('Collection shortcut failed', error); }
       });
