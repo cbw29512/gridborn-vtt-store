@@ -16,6 +16,7 @@ export function openConcept(item, trigger) {
       ['Animation', 'Proposed 45-second idle, walk, attack and recovery loop'],
       ['Extras', 'Rest animation and PNG fallback planned'],
       ['Artwork status', item.previewArt ? 'Original draft illustration; not a VTT-certified asset' : 'Not produced'],
+      ['VTT compatibility', 'Not tested in Foundry, Roll20, or other virtual tabletops'],
       ['Target price', 'USD ' + (item.priceCents / 100).toFixed(2) + ' — not yet for sale'],
     ];
     nodes.dialogFacts.replaceChildren();
