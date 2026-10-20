@@ -5,6 +5,36 @@ import { initialState, availableOptions, filterCatalog, validateCatalog } from '
 const state = { ...initialState };
 const nodes = {};
 const byId = id => document.getElementById(id);
+let lastDialogTrigger = null;
+
+function openConcept(item, trigger) {
+  try {
+    if (!nodes.dialog || typeof nodes.dialog.showModal !== 'function') throw new Error('Native concept dialog unavailable');
+    const config = categoryConfig[item.category];
+    if (!config) throw new Error('Unknown category: ' + item.category);
+    nodes.dialogTitle.textContent = item.name;
+    nodes.dialogDescription.textContent = 'Planned specifications for this ' + item.category.toLowerCase() + ' token.';
+    const specs = [
+      ['Category', item.category], [config.first, item.primary], [config.second, item.secondary],
+      ['Size', item.size], ['Grid footprint', item.squares + ' × ' + item.squares + ' squares'],
+      ['Animation', 'Proposed 45-second idle, walk, attack and recovery loop'],
+      ['Extras', 'Rest animation and PNG fallback planned'],
+      ['Target price', 'USD ' + (item.priceCents / 100).toFixed(2) + ' — not yet for sale'],
+    ];
+    nodes.dialogFacts.replaceChildren();
+    for (const [term, value] of specs) {
+      const dt = document.createElement('dt');
+      const dd = document.createElement('dd');
+      dt.textContent = term;
+      dd.textContent = value;
+      nodes.dialogFacts.append(dt, dd);
+    }
+    lastDialogTrigger = trigger;
+    nodes.dialog.showModal();
+  } catch (error) {
+    console.error('Unable to display token concept', item.id, error);
+  }
+}
 
 function populateSelect(node, values, allText, selected = '') {
   try {
@@ -49,7 +79,12 @@ function makeCard(item) {
     price.textContent = '$' + (item.priceCents / 100).toFixed(2);
     const button = document.createElement('button');
     button.className = 'product-button'; button.disabled = true; button.textContent = 'Coming soon';
-    foot.append(price, button); body.append(type, name, meta, foot); card.append(visual, body);
+    const details = document.createElement('button');
+    details.type = 'button'; details.className = 'details-button';
+    details.textContent = 'View concept details';
+    details.setAttribute('aria-label', 'View concept details for ' + item.name);
+    details.addEventListener('click', () => openConcept(item, details));
+    foot.append(price, button); body.append(type, name, meta, details, foot); card.append(visual, body);
     return card;
   } catch (error) { console.error('Unable to render token preview', item.id, error); return null; }
 }
@@ -83,6 +118,13 @@ function initialize() {
       secondLabel: byId('secondary-label'), results: byId('results'),
       summary: byId('result-summary'), caption: byId('category-caption'),
       empty: byId('empty-state'), clear: byId('clear-filters'),
+      dialog: byId('preview-dialog'), dialogTitle: byId('preview-title'),
+      dialogDescription: byId('preview-description'), dialogFacts: byId('preview-facts'),
+    });
+    if (!nodes.dialog || !nodes.dialogTitle || !nodes.dialogDescription || !nodes.dialogFacts) throw new Error('Missing concept dialog markup');
+    nodes.dialog.addEventListener('close', () => {
+      try { if (lastDialogTrigger?.isConnected) lastDialogTrigger.focus(); }
+      catch (error) { console.error('Unable to return keyboard focus', error); }
     });
     populateSelect(nodes.category, Object.keys(categoryConfig), 'Choose category', state.category);
     nodes.category.value = state.category;

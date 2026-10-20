@@ -1,0 +1,5 @@
+# Project-scoped Pages robots.txt does not control github.io host root.
+User-agent: *
+Allow: /
+
+Sitemap: https://cbw29512.github.io/gridborn-vtt-store/sitemap.xml

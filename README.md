@@ -73,3 +73,12 @@ download links after a verified Stripe webhook grants entitlements.
 - Proposed price $2.99 per single token, not charged by this preview.
 
 **Do not mark assets for sale until art ownership, compatibility, delivery and quality are verified.**
+
+## SEO, accessibility and launch controls
+
+- The preview has SEO titles, canonical and social metadata, an SVG share graphic, favicon, and WebSite structured data; no unverified Product offers or reviews are claimed.
+- The preview **deliberately uses `noindex`**. At production launch, remove that directive and replace all GitHub Pages URLs (canonical, structured data, social metadata, sitemap and robots) with the verified domain.
+- GitHub Pages project-scoped `robots.txt` does not control the host root; publish the final robots policy at the production domain root.
+- Key accessibility foundations: semantic labels, skip link, visible focus states, preserved mobile browsing link, reduced-motion rules, 44-pixel details control, native modal with Escape and focus return.
+- Automated tests are not proof of ADA or WCAG 2.2 AA compliance. Before launch, do human keyboard, screen-reader, contrast, zoom/reflow, animation, and touch/mobile testing on actual devices.
+- No fake ratings, fake scarcity, Stripe secrets, checkout links, or paid asset files should be committed.
