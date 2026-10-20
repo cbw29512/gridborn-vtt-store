@@ -89,3 +89,5 @@ download links after a verified Stripe webhook grants entitlements.
 - `assets/demos/human-fighter-loop.svg` animates a hand-authored sprite with a 45-second cycle (idle 27s, move 8s, attack 3s, recover 7s). Playback is user-initiated with a Pause control. It respects reduced-motion preferences and pauses when the tab is hidden.
 - This is a **draft vector pixel-art study**, not the final sprite, not an accepted VTT asset, not a completed WebM / PNG / sleep-loop delivery set, and not available for purchase.
 - Do not add it to a for-sale product or claim VTT compatibility before testing transparency, orientation, compositing, export frame cadence, file size, browser playback, and major VTT import workflows.
+
+Storefront browser logic is split into `src/app.js`, `src/concept-dialog.js`, and `src/animation-demo.js`. Keep individual modules below 150 lines.

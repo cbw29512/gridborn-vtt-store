@@ -23,8 +23,8 @@ test('native concept dialog has a name, dismiss control and focus restore', () =
   assert.match(html, /<dialog[^>]+aria-labelledby="preview-title"[^>]+aria-describedby="preview-description"/);
   assert.match(html, /method="dialog"/);
   assert.match(html, /aria-label="Close concept details"/);
-  assert.match(get('src/app.js'), /showModal\(\)/);
-  assert.match(get('src/app.js'), /lastDialogTrigger\.focus\(\)/);
+  assert.match(get('src/concept-dialog.js'), /showModal\(\)/);
+  assert.match(get('src/concept-dialog.js'), /lastDialogTrigger\.focus\(\)/);
 });
 test('keyboard and reduced motion support remains present', () => {
   assert.match(html, /class="skip-link" href="#catalog"/);
@@ -47,4 +47,11 @@ test('animation study has a static fallback, explicit control and a 45-second ti
   const controller = get('src/animation-demo.js');
   assert.match(controller, /visibilitychange/);
   assert.match(controller, /aria-pressed/);
+});
+
+test('preview application uses bounded modules', () => {
+  const app = get('src/app.js');
+  assert.ok(app.split('\n').length <= 150, 'app.js should remain under 150 lines');
+  assert.match(app, /initializeDemo\(\)/);
+  assert.match(app, /initializeConceptDialog\(\)/);
 });
