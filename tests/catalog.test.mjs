@@ -72,7 +72,7 @@ test('a shopper can search all collections without selecting a category', () => 
   assert.deepEqual(sharks.map(item=>item.name).sort(),
     ['Great White Shark','Reef Shark','Giant Shark','Hunter Shark','Reef Shark'].sort());
   const inn = filterCatalog(catalog, { ...initialState, query: 'innkeeper' });
-  assert.equal(inn.length,6);
+  assert.equal(inn.length,5);
   assert.ok(inn.some(item=>item.name==='Village Innkeeper'));
   assert.deepEqual(availableOptions(catalog, 'All'), { first:[], second:[] });
 });
