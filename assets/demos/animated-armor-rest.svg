@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="rest" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Animated Armor — rest original motion study</title>
+<desc id="description">Empty visor, articulated metal plates and heavy blade with rest animation. Noncommercial prototype.</desc>
+<style>
+.rig-core{animation:armor-inert 4s steps(1,end) infinite;transform-origin:128px 154px}.rig-weapon{animation:armor-rest-blade 4s steps(1,end) infinite;transform-origin:190px 140px}.rig-visorglow{animation:armor-rest-eye 4s steps(1,end) infinite}
+ @keyframes armor-inert{0%,10%,90%,100%{transform:translateY(12px) rotate(14deg)}48%{transform:translateY(12px) rotate(15deg)}}
+ @keyframes armor-rest-blade{0%,10%,90%,100%{transform:rotate(65deg)}48%{transform:rotate(64deg)}}
+ @keyframes armor-rest-eye{0%,10%,90%,100%{opacity:.2}48%{opacity:.65}}
+@media(prefers-reduced-motion:reduce){.rig-core,.rig-weapon,.rig-head,.rig-boot-l,.rig-boot-r,.rig-foot-left,.rig-foot-right,.rig-visorglow,.rig-glow{animation:none!important}}
+</style>
+<ellipse cx="130" cy="207" rx="58" ry="11" fill="#07101c" opacity=".4"/>
+<ellipse cx="128" cy="199" rx="75" ry="23" fill="none" stroke="#b79b66" stroke-width="3" opacity=".67"/>
+<g class="rig-core">
+<!-- START FIGURE -->
+<path d="M95 103h74l17 72-36 21-37-8-29 8-13-28z" fill="#192a35"/>
+<path d="M103 109h58l17 61-28 16-34-9-25 11-9-23z" fill="#374b59"/>
+<g class="rig-foot-left"><path d="M101 163h20l-3 30-9 7-22-3 4-14z" fill="#233340" stroke="#94a9af" stroke-width="3"/><path d="M93 185h26l4 18H88z" fill="#7f98a3"/></g>
+<g class="rig-foot-right"><path d="M133 160h25l1 36-29 5-6-11z" fill="#2a3844" stroke="#b7bfc3" stroke-width="3"/><path d="M130 186h31l9 18h-43z" fill="#728d99"/></g>
+<path d="M93 102h77l6 53-20 16h-55l-17-17z" fill="#253340" stroke="#0d1b26" stroke-width="5"/>
+<path d="M101 107h61l5 41-18 15h-44l-13-15z" fill="#92a6ae"/>
+<path d="M109 112h45l3 32-16 11h-29l-11-12z" fill="#607886"/>
+<path d="M125 121h17l4 16-12 11-15-9z" fill="#283c50" stroke="#d8c08b" stroke-width="3"/>
+<path d="M129 130l9 4-5 6-9-3z" fill="#b7eaf2"/>
+<path d="M85 100l22-11 18 22-18 30-34-8-9-17z" fill="#3f5666" stroke="#a8b9bc" stroke-width="4"/>
+<path d="M166 91l23 12 12 24-29 17-26-27z" fill="#415568" stroke="#a3b0b4" stroke-width="4"/>
+<path d="M79 126h19l-2 42-13 9-14-14z" fill="#283d4c" stroke="#7b95a1" stroke-width="3"/>
+<path d="M172 132h19l4 39-13 9-15-13z" fill="#293f4d" stroke="#829da6" stroke-width="3"/>
+<path d="M101 71h60l12 20-13 29h-59l-14-27z" fill="#172833" stroke="#b1b9bb" stroke-width="4"/>
+<path d="M109 76h45l7 16-6 22h-49l-7-20z" fill="#718995"/>
+<path d="M108 89h48l-5 12h-39z" fill="#080f19" stroke="#e2c381" stroke-width="3"/>
+<path class="rig-visorglow" d="M115 92h25v4h-25z" fill="#7aafb8" opacity=".65"/>
+<path d="M105 72l13-22 21-9 20 15 7 22z" fill="#364959" stroke="#b6b9b0" stroke-width="4"/>
+<path d="M123 46l8-12 9 13-8 5z" fill="#d9c185"/>
+<path d="M88 144h22v15l-12 26-27-13-8-25z" fill="#24343f" stroke="#a4adb3" stroke-width="4"/>
+<path d="M80 153l20 2-4 14-12 7-14-7z" fill="#a5b8bc"/>
+</g>
+<g class="rig-weapon">
+<!-- START WEAPON -->
+<path d="M177 139l10 1 7 43-9 5-12-25z" fill="#d3b780"/>
+<path d="M183 62h8l13 68-8 14-9-7z" fill="#1b2839" stroke="#9fb6c3" stroke-width="4"/>
+<path d="M188 61h6l11-35-6-12-9 12-2 34z" fill="#b8c9cf"/>
+<path d="M188 79h9l5 8h-15z" fill="#e3d197"/>
+<path d="M186 139h16v7h-17z" fill="#ddc08d"/>
+</g>
+</svg>
