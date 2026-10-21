@@ -105,6 +105,7 @@ export function initializeBundles(catalog) {
         save();refresh();feedback('Token removed from your bundle draft.');
       }
     });
+    document.addEventListener('gridborn:catalog-rendered',refresh);
     nodes.clear.addEventListener('click',()=>{
       selected=[];save();refresh();feedback('Bundle draft cleared.');
     });
