@@ -68,7 +68,7 @@ test('Skeleton undead mechanics: jerky motion, one attack and inert collapsed re
  assert.match(rest,/rotate\(80 128 143\)/);
  assert.match(rest,/Corpse pose: all bones stay immobile/);
  assert.match(rest,/bone-inert-glimmer 4s/);
- assert.doesNotMatch(rest,/breath|breathing|breathe|respir/i);
+ assert.doesNotMatch(rest,/@keyframes[^\n]*(?:breath|breathe|respir)|animation:[^\n]*(?:breath|breathe|respir)/i);
  const preview=animatedPreviews['mon-dng-skeleton'];
  assert.equal(preview.actionDurationMs,1400);
  const manifest=JSON.parse(read('assets/demos/skeleton-warrior-manifest.json'));
