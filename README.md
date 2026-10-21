@@ -317,3 +317,12 @@ four-leg groups. Attack is one strike and returns to Idle in the detail modal.
 Rest tucks the actual leg geometry closer to the body instead of applying
 a humanoid seated pose. Both visible catalog artwork and the production
 roster label this as **animated study only**, not a verified VTT export.
+
+## Paladin pregen artwork / customization study
+
+A Human Paladin has an independent original static illustration in
+`assets/studies/human-paladin.svg`, featuring a long ivory tabard, original
+sun emblem, shield and sword. The modular builder can now start from **eight
+recipes** and mix seven palettes, with the `Paladin tabard` outfit component
+available across ancestries. Final animation exports and VTT compatibility
+have not yet been completed.

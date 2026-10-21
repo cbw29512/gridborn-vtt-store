@@ -6,10 +6,10 @@ import { PARTS,PALETTES,PRESETS,DEFAULT_RECIPE,normalizeRecipe,presetToRecipe,
 import {renderRig} from '../src/builder-rig.js';
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 
-test('seven premade recipes use one validated modular humanoid rig',()=>{
-  assert.equal(Object.keys(PRESETS).length,7);
+test('eight premade recipes use one validated modular humanoid rig',()=>{
+  assert.equal(Object.keys(PRESETS).length,8);
   assert.deepEqual(Object.keys(PARTS),['ancestry','outfit','headgear','hair','weapon','offhand','cape']);
-  assert.equal(Object.keys(PALETTES).length,6);
+  assert.equal(Object.keys(PALETTES).length,7);
   for(const key of Object.keys(PRESETS)){
     const data=presetToRecipe(key);
     assert.equal(normalizeRecipe(data).schemaVersion,1);

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img"
+ aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Human Paladin — original ivory and azure oathguard</title>
+<desc id="description">Armored human Paladin in a blue mantle and long ivory ceremonial tabard, crested steel helm, gilded sunburst insignia, sword and decorated shield. Original static concept only, not completed animated token or licensed VTT export.</desc>
+<ellipse cx="129" cy="205" rx="71" ry="12" fill="#080f18" opacity=".4"/>
+<ellipse cx="129" cy="198" rx="78" ry="24" fill="none" stroke="#cfa869" stroke-width="3" opacity=".73"/>
+<g class="paladin-mantle">
+ <path d="M91 102H170L193 170 177 196 151 186 132 210 104 190 84 197 68 174Z" fill="#253445" stroke="#161f2a" stroke-width="5"/>
+ <path d="M94 108H164L181 169 171 187 149 178 131 201 106 182 89 187 77 171Z" fill="#3c5d8d"/>
+ <path d="M98 115L85 167 92 181 105 171 116 123Z" fill="#6d8aa9"/>
+ <path d="M148 121L170 174 173 184 152 172Z" fill="#273b5e"/>
+ <path d="M104 109H156V121H104Z" fill="#e4bd76"/>
+</g>
+<!-- Leg plates separated for believable foot placement. -->
+<g class="paladin-legs">
+ <path d="M94 155H163V170H94Z" fill="#27333d"/>
+ <path d="M97 166H121V189H97Z M136 166H159V189H136Z" fill="#a7b8c8" stroke="#26333c" stroke-width="3"/>
+ <path d="M100 169H108V181H100Z M140 169H148V181H140Z" fill="#e5e9df"/>
+ <path d="M95 185H123L126 207H91Z M134 185H162L167 207H131Z" fill="#313a45"/>
+ <path d="M97 188H116L123 201H94Z M138 188H156L163 201H135Z" fill="#9bafbd"/>
+ <path d="M95 205H121M139 205H164" stroke="#d3ab67" stroke-width="4"/>
+</g>
+<g class="paladin-arms">
+ <path d="M78 102H108L112 121 100 153 85 168 67 154 64 129Z" fill="#293747"/>
+ <path d="M81 108H103L106 122 97 149 83 159 73 149 70 129Z" fill="#aabdc8"/>
+ <path d="M76 112H87L81 145 74 146Z" fill="#e6eade"/>
+ <path d="M79 150H97L97 167 80 171Z" fill="#d9b877"/>
+ <path d="M156 102H180L194 128 189 152 176 172 158 154 151 126Z" fill="#293747"/>
+ <path d="M159 107H176L186 129 181 150 174 161 158 145Z" fill="#aebdc9"/>
+ <path d="M161 111H169L179 139 173 147Z" fill="#edf0e5"/>
+ <path d="M172 153H190L189 169 177 174Z" fill="#d9b877"/>
+</g>
+<g class="paladin-breastplate">
+ <path d="M103 107H157L169 143 159 168H101L91 143Z" fill="#2d3b49" stroke="#171e27" stroke-width="4"/>
+ <path d="M108 111H153L163 143 155 163H105L98 144Z" fill="#b9c8d0"/>
+ <path d="M107 113L127 121 125 153 105 154 100 142Z" fill="#e9ece6"/>
+ <path d="M130 121L154 113 161 142 150 155 132 153Z" fill="#8496a6"/>
+ <path d="M98 154H162V167H98Z" fill="#303d4b"/>
+ <path d="M105 157H155V162H105Z" fill="#d8b472"/>
+ <path d="M122 155H137V169H122Z" fill="#b88c4b"/>
+</g>
+<!-- Ceremonial tabard adds a new silhouette; it is not the Fighter's chest armor recolored. -->
+<g class="paladin-tabard">
+ <path d="M113 116H146L153 159 151 198 133 211 121 204 105 211 107 159Z" fill="#1e2b3b" stroke="#283541" stroke-width="4"/>
+ <path d="M117 119H141L147 156 145 194 131 202 120 197 111 205 111 159Z" fill="#ded5bb"/>
+ <path d="M114 135H120L116 192 112 198Z" fill="#fff2d7"/>
+ <path d="M137 129H143L146 157 144 190 137 194Z" fill="#c7b799"/>
+ <path d="M120 171H139V178H120Z" fill="#3c5d8d"/>
+ <path d="M126 168H133V191H126Z" fill="#3c5d8d"/>
+ <path d="M124 181H135V190H124Z" fill="#e5b96d"/>
+ <path d="M128 181H131V189H128Z" fill="#fff4bd"/>
+</g>
+<!-- Sunburst is generic and original, not a protected deity/faction insignia. -->
+<g class="paladin-emblem">
+ <circle cx="129" cy="139" r="12" fill="#3b5677"/>
+ <circle cx="129" cy="139" r="8" fill="#c69c60"/>
+ <circle cx="129" cy="139" r="4" fill="#fff2ba"/>
+ <path d="M129 121V126M129 152V157M111 139H116M142 139H148
+ M117 126L121 130M138 148L142 152M117 151L121 147M138 130L142 125" stroke="#f3d291" stroke-width="3"/>
+</g>
+<g class="paladin-face">
+ <path d="M108 59H148L159 72 154 103 144 112 113 111 100 101 99 73Z" fill="#253441"/>
+ <path d="M111 65H146L152 76 149 103 142 108H115L105 98 105 77Z" fill="#d7a27e"/>
+ <path d="M110 85H122V92H110Z M136 85H148V92H136Z" fill="#293847"/>
+ <path d="M116 87H121V90H116Z M137 87H142V90H137Z" fill="#b5d9d3"/>
+ <path d="M124 96H136L132 101H127Z" fill="#b78568"/>
+ <path d="M118 104H140V107H118Z" fill="#5a3f40"/>
+</g>
+<!-- Crested crown and squared cheek guards identify the paladin's rank. -->
+<g class="paladin-helmet">
+ <path d="M96 78V67L108 46H151L164 65V83H153L151 74H110L106 83H96Z" fill="#273642"/>
+ <path d="M102 71L112 52H148L157 69 151 77 145 62H114L108 76Z" fill="#becbd0"/>
+ <path d="M116 51H145L148 57H114Z" fill="#edf1e9"/>
+ <path d="M123 43H137L134 70H125Z" fill="#c3a16c"/>
+ <path d="M128 38H133L136 48 130 53 124 48Z" fill="#f1d4a0"/>
+ <path d="M99 80H109V102H99Z M149 80H161V101H150Z" fill="#869baa"/>
+ <path d="M102 83H106V95H102Z" fill="#f5f4e6"/>
+</g>
+<g class="paladin-shield">
+ <path d="M50 117H101V156L76 192 50 159Z" fill="#1b2734" stroke="#d3b477" stroke-width="4"/>
+ <path d="M57 125H94V155L76 181 57 156Z" fill="#3c5d8d"/>
+ <path d="M62 130H89L91 151 76 172 61 152Z" fill="#597a9b"/>
+ <path d="M72 132H81V168H72Z" fill="#efd7a2"/>
+ <path d="M62 147H91V155H62Z" fill="#e4bd78"/>
+ <circle cx="76" cy="151" r="10" fill="#f7deab" stroke="#33485d" stroke-width="3"/>
+ <circle cx="76" cy="151" r="4" fill="#d7a862"/>
+ <path d="M76 130V137M76 165V171M56 151H64M88 151H95" stroke="#f5dca7" stroke-width="3"/>
+</g>
+<g class="paladin-sword">
+ <path d="M187 52L195 52 198 145H185Z" fill="#3b4e5d"/>
+ <path d="M190 54H195L194 144H190Z" fill="#f1f1df"/>
+ <path d="M191 37L202 55H181Z" fill="#cbd8d7"/>
+ <path d="M192 42L197 54H189Z" fill="#f4f3e7"/>
+ <path d="M174 142H206V151H174Z" fill="#2b3641"/>
+ <path d="M176 144H204V148H176Z" fill="#ddbb79"/>
+ <path d="M188 149H197V181H188Z" fill="#644e3b"/>
+ <path d="M190 153H194V174H190Z" fill="#bd9e73"/>
+ <path d="M186 178H199V184H186Z" fill="#d3b179"/>
+</g>
+</svg>

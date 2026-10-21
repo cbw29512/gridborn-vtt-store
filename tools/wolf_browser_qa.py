@@ -48,6 +48,14 @@ def check_wolf(browser,origin,width,screenshots:Path):
         expect(page.locator('#concept-preview-controls')).to_be_hidden()
         page.screenshot(path=str(screenshots/f'gridborn-dwarf-cleric-{width}px.png'))
         page.keyboard.press('Escape')
+        paladin=page.get_by_role('button',name='View concept details for Human Paladin')
+        paladin.click()
+        expect(page.locator('#preview-title')).to_have_text('Human Paladin')
+        assert page.locator('#concept-preview-image').get_attribute('src').endswith('human-paladin.svg')
+        page.wait_for_function('(node) => node.complete && node.naturalWidth > 0',
+                               arg=page.locator('#concept-preview-image').element_handle(), timeout=6000)
+        page.screenshot(path=str(screenshots/f'gridborn-paladin-{width}px.png'))
+        page.keyboard.press('Escape')
         width_over=page.evaluate('document.documentElement.scrollWidth-document.documentElement.clientWidth')
         assert width_over<=1,f'New previews cause horizontal overflow: {width_over}'
         assert not errors,'; '.join(errors)

@@ -54,7 +54,7 @@ test('the draft visual has explicit preview-only status and no sale status', () 
 
 test('illustrated concepts span every category without claiming completed animations', () => {
   const illustrated = catalog.filter(item => item.previewArt);
-  assert.equal(illustrated.length, 10);
+  assert.equal(illustrated.length, 11);
   for (const category of ['Characters','NPCs','Monsters','Animals'])
     assert.ok(illustrated.some(item => item.category === category), category);
   assert.equal(illustrated.filter(item => item.animationStatus === 'art-study').length, 4);
