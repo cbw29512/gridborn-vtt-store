@@ -5,8 +5,17 @@
 export const animatedPreviews = Object.freeze({
   'chr-ftr-human': Object.freeze({
     still: './assets/demos/human-fighter-still.svg',
-    action: './assets/demos/human-fighter-loop.svg',
+    idle: './assets/demos/human-fighter-idle.svg',
+    move: './assets/demos/human-fighter-move.svg',
+    action: './assets/demos/human-fighter-attack.svg',
     rest: './assets/demos/human-fighter-rest.svg',
+    actionDurationMs: 1400,
+    labels: Object.freeze({
+      idle: 'Idle · shield and cape breathing (prototype)',
+      move: 'Move · alternating armored footsteps (prototype)',
+      action: 'Attack · single guarded sword strike, then Idle (prototype)',
+      rest: 'Rest · lowered sword and gentle breathing (prototype)'
+    }),
   }),
   'mon-cave-spider': Object.freeze({
     still: './assets/studies/giant-cave-spider.svg',

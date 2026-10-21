@@ -10,12 +10,46 @@
   "canvasPx": 256,
   "fps": 10,
   "timeline": [
-    {"phase": "idle", "startSec": 0, "endSec": 27},
-    {"phase": "move", "startSec": 27, "endSec": 35},
-    {"phase": "attack", "startSec": 35, "endSec": 38},
-    {"phase": "recover", "startSec": 38, "endSec": 45}
+    {
+      "phase": "idle",
+      "startSec": 0,
+      "endSec": 27
+    },
+    {
+      "phase": "move",
+      "startSec": 27,
+      "endSec": 35
+    },
+    {
+      "phase": "attack",
+      "startSec": 35,
+      "endSec": 38
+    },
+    {
+      "phase": "recover",
+      "startSec": 38,
+      "endSec": 45
+    }
   ],
-  "plannedOutputs": ["transparent-webm", "static-png", "rest-webm"],
+  "plannedOutputs": [
+    "transparent-webm",
+    "static-png",
+    "rest-webm"
+  ],
   "vttCompatibility": "untested",
-  "purchasable": false
+  "purchasable": false,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/human-fighter-idle.svg",
+      "durationSec": 3.2
+    },
+    "move": {
+      "source": "assets/demos/human-fighter-move.svg",
+      "durationSec": 3.2
+    },
+    "attack": {
+      "source": "assets/demos/human-fighter-attack.svg",
+      "durationSec": 1.4
+    }
+  }
 }
