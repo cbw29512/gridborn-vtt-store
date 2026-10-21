@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="./src/components.css" />
   <link rel="stylesheet" href="./src/hero.css" />
   <link rel="stylesheet" href="./src/chooser.css" />
+  <link rel="stylesheet" href="./src/bundle.css" />
   <script src="./src/app.js" type="module"></script>
 </head>
 <body>
@@ -36,6 +37,7 @@
     </a>
     <nav class="top-nav" aria-label="Primary navigation">
       <a href="#catalog">Browse premade</a>
+      <a href="#bundles">Bundles</a>
       <a href="./builder.html" class="nav-builder-link">Make your own ✦</a>
       <a href="#how-it-works">How it works</a>
       <a href="#faq">FAQ</a>
@@ -130,6 +132,35 @@
       </div>
       <p class="path-disclaimer">Early product preview: premade assets aren't for sale. The builder saves designs and watermarked PNG studies, not VTT-ready animated downloads.</p>
     </section>
+    <section class="bundle-section shell" id="bundles" aria-labelledby="bundle-title">
+      <div class="bundle-heading">
+        <div>
+          <p class="eyebrow">MORE TOKENS · ONE ADVENTURE</p>
+          <h2 id="bundle-title">Build an encounter bundle.</h2>
+          <p>Every finished token is planned at $0.99, or choose a discounted multi-token pack. Start with a themed set or pick any mix of heroes, NPCs, monsters, and animals.</p>
+        </div>
+      </div>
+      <div class="bundle-tiers" id="bundle-tiers" aria-label="Proposed individual and bundle prices"></div>
+      <div class="bundle-template-grid" id="bundle-templates" aria-label="Curated draft bundles"></div>
+      <div class="bundle-draft" id="bundle-studio">
+        <div>
+          <h3>Your bundle plan</h3>
+          <p class="bundle-hint">Use a premade pack above or browse the catalog below and select “Add to bundle.” Each design appears only once. Choose up to 25 different tokens.</p>
+          <div class="bundle-items" id="bundle-items" aria-label="Selected token concepts"></div>
+        </div>
+        <aside class="bundle-summary" aria-label="Proposed bundle pricing">
+          <div class="bundle-count" id="bundle-count">0 / 25 selected</div>
+          <div class="bundle-total" id="bundle-total" aria-live="polite">$0.00</div>
+          <div class="bundle-regular" id="bundle-regular">At $0.99 each: $0.00</div>
+          <div class="bundle-savings" id="bundle-savings">Bundle discount: $0.00</div>
+          <div class="bundle-breakdown" id="bundle-breakdown">Add tokens to estimate bundle pricing.</div>
+          <button type="button" class="bundle-export" id="bundle-export" disabled>Save bundle plan</button>
+          <button type="button" class="bundle-clear" id="bundle-clear" disabled>Clear selection</button>
+          <p class="bundle-caution">Planning preview only. No checkout, reservation, or finished downloads. Prices and pack contents are proposals.</p>
+        </aside>
+      </div>
+      <p class="bundle-feedback" id="bundle-feedback" role="status" aria-live="polite"></p>
+    </section>
     <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
       <div class="shell">
         <div class="section-heading">
@@ -189,6 +220,10 @@
         <details>
           <summary>Are the tokens available to purchase?</summary>
           <p>No. Prices displayed in the catalog are proposed prices only. Checkout and paid downloads are disabled until the artwork, delivery system and commercial terms are ready.</p>
+        </details>
+        <details>
+          <summary>Can I buy a discounted bundle?</summary>
+          <p>The proposed price is $0.99 for one token, or $3.99 for five, $7.49 for ten, and $17.99 for twenty-five. You can plan a custom selection or use a themed pack and save the draft. No purchases, reservations, or downloads are currently enabled.</p>
         </details>
         <details>
           <summary>Which virtual tabletops will work with the animations?</summary>
