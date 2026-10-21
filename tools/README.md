@@ -112,3 +112,22 @@ generated an RGBA PNG and an FFmpeg VP9-alpha WebM with `alpha_mode=1`.
 That smoke test did not use the actual full Human Fighter source and does not
 qualify the public artwork for sale. See `tests/test_asset_spec.py` for
 fail-closed schema tests. Keep modules under 150 lines.
+
+
+### Human Fighter state-exact private clips
+
+The Fighter now has three manifest-backed state sources, each matching its
+catalog concept preview: `human-fighter-idle.svg` (an existing 3.2-second
+source), and new deterministically generated `human-fighter-move.svg` and
+`human-fighter-attack.svg`. Generate/check the latter two with
+`node tools/generate-fighter-states.mjs [--check]`.
+
+The private `--controller-package --certify` workflow now exports Fighter
+Idle (32 frames), Move (32 frames), one-shot Attack (14 frames), and
+the existing Rest (60 frames) as **four independent transparent VP9 clips**.
+The master 45-second reel remains only a showcase export and reference; it no
+longer supplies the private controller clips. A machine-readable source
+receipt and decoded alpha QA verify state sources and frame counts.
+
+Human visual review, rights review, and real Foundry/Roll20 imports are
+independent release blockers. GitHub does not publish the exported media.
