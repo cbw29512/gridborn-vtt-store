@@ -14,7 +14,7 @@ a real Foundry session**. It has no paid media or public licensed tokens.
 4. Right-click an owned token. Open **Gridborn ✦ → Set up token**.
 5. Paste the relative folder path (without `Data/`):
    `worlds/my-campaign/gridborn/chr-ftr-human`.
-   Keep the default **10-second Attack** if using the current action reel.
+   The controller checks that all four WebMs exist in Foundry's Data folder before applying the setup. Keep the default **10-second Attack** if using the current action reel.
 6. Save. **Idle** becomes the token image. Press **Move**, **Rest**, or **Attack**.
    Attack runs the action-and-recovery clip once by *time limit* and returns to Idle.
 7. **Restore original token** removes the configuration and original artwork returns.

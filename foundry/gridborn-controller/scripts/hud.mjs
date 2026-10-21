@@ -1,5 +1,6 @@
 import { MODULE_ID, MODES, canControl } from './contract.mjs';
 import { configureToken, playMode, restoreToken } from './playback.mjs';
+import { verifyAssetFolder } from './asset-check.mjs';
 
 function element(tag, className, label = '') {
   const node = document.createElement(tag);
@@ -75,6 +76,9 @@ export function attachTokenHud(hud, html) {
     setup.addEventListener('submit', async event => {
       event.preventDefault();
       try {
+        const browse = globalThis.foundry?.applications?.apps?.FilePicker?.browse;
+        await verifyAssetFolder(input.value, browse?.bind(
+          globalThis.foundry?.applications?.apps?.FilePicker));
         await configureToken(token, {
           folder: input.value, attackMs: Number(seconds.value) * 1000
         });
