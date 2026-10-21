@@ -22,7 +22,7 @@ function updatePreview(next){
     const image=byId('concept-preview-image');
     if(image.getAttribute('src')!==current[next])image.src=current[next];
     if(!byId('concept-scale-panel').hidden){
-      for(const pixels of (128,64,32)){
+      for(const pixels of [128,64,32]){
         const mapImage=byId('concept-scale-'+pixels);
         if(mapImage.getAttribute('src')!==current[next])mapImage.src=current[next];
       }
