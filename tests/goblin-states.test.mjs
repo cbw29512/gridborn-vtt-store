@@ -16,6 +16,7 @@ test('three Goblin states are deterministic derivations of the original source',
     assert.match(svg,new RegExp('data-gridborn-mode="'+mode+'"'));
     assert.match(svg,/class="goblin-leg-left"/);
     assert.match(svg,/class="goblin-leg-right"/);
+    assert.match(svg,/class="goblin-blink" opacity="0"/);
     assert.match(svg,/Original Cave Goblin study only/);
     assert.match(svg,/prefers-reduced-motion:reduce/);
     assert.doesNotMatch(svg,/45s steps\(1,end\) infinite/);
