@@ -307,3 +307,33 @@ visual indicator. Source-code tests verify source path validation, metadata,
 limits, missing receipts, and independent timings. These **do not certify
 Foundry v13/v14 real-world playback, multiplayer or disconnect recovery**.
 No licensing, commercial release, or Netlify changes.
+
+
+### Full-motion catalog expansion — Wizard / Orc pregen / Animated Armor
+
+Added **three more source-authored public animation studies** without increasing
+the 518 concept-card count or falsely describing source concepts as finished
+products: Elven Wizard (`chr-wiz-elf`), original Orc Axe Vanguard Barbarian
+pregen (`pregen-barbarian-male-3`, male/Orc/Barbarian/Axe Vanguard),
+and Animated Armor (`mon-dng-armor`).
+
+Each study now has an independent **Idle (3.2s), Move (2.4s), one-shot
+Attack (1.4s), and Rest (4s)** animation plus a static original study.
+Original art is preserved in `assets/studies`; the pregen has distinct
+ochre warpaint/brass axe, the caster moves a staff and arcane glow, and
+the construct shuffles articulated metal feet rather than breathing.
+`node tools/generate-wave-two.mjs --check` proves the 12 SVG state files
+match their source rig. All 3 are automatically showcased on catalog
+cards, viewable in detailed state and 128/64/32px previews.
+
+Three **private** state-only manifests feed the same VP9-alpha validation
+pipeline (32/24/14/40 frames, decoded transparency, loop-seam and
+motion QA) as the five existing tokens. The 8-token CI matrix, new Node
+and Python regression suites, and responsive Chromium QA are required
+before acceptance. No pregen character-sheet rules/stat block has
+been produced as part of this art pass: these are *animated visual
+identities*, not complete playable pregenerated D&D characters.
+
+Commercial release remains blocked by visual quality at actual tabletop
+size, rights/license review, real VTT import/playback verification, and
+secure fulfillment. None of the tokens is purchasable.
