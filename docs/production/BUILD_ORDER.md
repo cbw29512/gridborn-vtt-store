@@ -50,3 +50,12 @@ illegible silhouette, loop snap, or unproven platform claims.
 3. Build the first non-humanoid gait (Wolf), then arachnid gait.
 4. Continue adding independent Idle/Move/Attack/Rest source files per approved
    rig family, with CI receipts and preview-only status until release.
+
+### Skeleton art pass (pending visual acceptance)
+
+Skeleton Warrior has a new original static concept with an open rib cage,
+visible pelvis, separately rendered upper/lower bone limbs, hollow sockets,
+chipped jaw and deliberately partial armor. This is a first anatomical art
+pass, not an approved animation, market-ready token, or certified gameplay
+import. Check the new silhouette at 32/64/128/256px before adding its jerky
+Move and fully inert Rest animations.
