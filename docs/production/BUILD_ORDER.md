@@ -175,3 +175,25 @@ source provenance. This removes the prior 10-second Attack clip that included
 seven seconds of unnecessary recovery. Visual approval, genuine VTT imports,
 rights, license and secure downloads remain outstanding. Commercial status
 remains **preview only**.
+
+### Gray Wolf — source-exact private media exporter (October 21, 2026)
+
+The Gray Wolf now has a `stateOnly: true` manifest, so its four
+**independent** original SVG studies export directly to private VP9 alpha
+clips, rather than being split out of a fictional 45-second humanlike reel.
+
+- Idle: **3.2s (32 frames)**. Tail, ear and breathing phases now share
+  the same cycle length to prevent export seams.
+- Move: **2.0s (20 frames)**, with two diagonal-pair trot cycles.
+- Attack: **1.3s (13 frames)**, single forward lunge/bite.
+- Rest: **4.8s (48 frames)**, a curled quadruped pose.
+
+`tools/export_states.py` reuses existing frame rendering, full-decoded
+VP9-alpha QA and Foundry packaging. The state manifest validates paths,
+timings, format, and preview-only status; receipts include the exact source.
+`tools/generate-wolf-studies.mjs --check` confirms authored source consistency.
+
+This is **technical export work, not release approval**. Review the actual
+silhouette/leg motion at 256/128/64/32px; import it into the intended VTT
+and verify looping, facing, transparency and FPS; establish source rights and
+license. It remains unavailable for purchase.

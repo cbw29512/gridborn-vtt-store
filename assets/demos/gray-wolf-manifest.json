@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "ani-forest-wolf",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/gray-wolf.svg",
+  "restSource": "assets/demos/gray-wolf-rest.svg",
+  "restDurationSec": 4.8,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/gray-wolf-idle.svg",
+      "durationSec": 3.2
+    },
+    "move": {
+      "source": "assets/demos/gray-wolf-move.svg",
+      "durationSec": 2
+    },
+    "attack": {
+      "source": "assets/demos/gray-wolf-attack.svg",
+      "durationSec": 1.3
+    }
+  },
+  "plannedOutputs": [
+    "transparent-webm",
+    "static-png",
+    "rest-webm"
+  ],
+  "vttCompatibility": "untested",
+  "purchasable": false
+}
