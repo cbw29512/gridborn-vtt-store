@@ -88,7 +88,7 @@ export const renderSpider=function renderSpider(mode='still'){
  .spider-leg-1,.spider-leg-2,.spider-leg-5,.spider-leg-6{animation:spider-strike-brace 1.4s ease-in-out 1 both}
  `:''}
  ${mode==='rest'?`
- .spider-palps{animation:spider-rest-palps 3.6s ease-in-out infinite}
+ .spider-palps{animation:spider-rest-palps 5s ease-in-out infinite}
  `:''}
  @keyframes spider-idle-breath{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(2px) scale(1.018)}}
  @keyframes spider-leg-settle{0%,100%{transform:rotate(0)}50%{transform:rotate(4deg)}}
