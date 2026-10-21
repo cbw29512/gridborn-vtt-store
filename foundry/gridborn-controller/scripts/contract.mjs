@@ -1,7 +1,7 @@
 /** Pure, version-neutral rules for optional Foundry token animations. */
 export const MODULE_ID = 'gridborn-controller';
 export const MODES = Object.freeze(['idle', 'move', 'attack', 'rest']);
-export const DEFAULT_ATTACK_MS = 10000;
+export const DEFAULT_ATTACK_MS = 1400;
 
 export function normalizeFolder(raw) {
   if (typeof raw !== 'string') throw new TypeError('Asset folder must be text');
