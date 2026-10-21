@@ -13,7 +13,7 @@ test('skeleton anatomy study shows uncovered ribs, pelvis and four bone limbs',(
 });
 test('revised skeleton remains static, original, and does not misrepresent product readiness',()=>{
  assert.match(source,/This is a static|Static concept study/i);
- assert.doesNotMatch(source,/<script\\b|<foreignObject\\b|(?:href|url)\\s*=\\s*["']https?:/i);
+ assert.doesNotMatch(source,/<script\b|<foreignObject\b|(?:href|url)\s*=\s*["']https?:/i);
  assert.match(source,/viewBox="0 0 256 240"/);
  const catalog=readFileSync(new URL('../src/art-studies.js',import.meta.url),'utf8');
  assert.match(catalog,/mon-dng-skeleton.*skeleton-warrior\.svg/);
