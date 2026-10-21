@@ -38,3 +38,13 @@ linear-gradient(#81959a1f 1px,transparent 1px);background-size:auto,32px 32px,32
 @media(max-width:760px){.path-heading{display:block}.path-heading>p{margin-top:12px;max-width:600px}.path-section{padding-bottom:48px}.path-cards{grid-template-columns:1fr}.path-card{grid-template-columns:140px minmax(0,1fr)}}
 @media(max-width:430px){.path-card{grid-template-columns:105px minmax(0,1fr);min-height:206px}.path-card-art{min-height:206px}.path-card-art img{width:105px}.path-card-body{padding:12px}.path-card-body h3{font-size:20px}.path-card-body p{font-size:11px}.path-blocks{grid-template-columns:repeat(2,14px)}.path-blocks i{height:14px}}
 @media(prefers-reduced-motion:reduce){.path-card{transition:none}.path-card:hover{transform:none}}
+
+@media(max-width:420px){
+  .topbar{height:auto;min-height:80px;flex-wrap:wrap;gap:9px;padding-block:12px 10px}
+  .topbar .brand{font-size:18px}
+  .top-nav{width:100%;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:7px}
+  .top-nav .status-pill{display:none}
+  .nav-builder-link{font-size:11px;padding:8px 9px}
+  .path-card-body h3{overflow-wrap:anywhere}
+  .path-card-body,.path-card{min-width:0}
+}
