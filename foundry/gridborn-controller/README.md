@@ -14,7 +14,7 @@ a real Foundry session**. It has no paid media or public licensed tokens.
 4. Right-click an owned token. Open **Gridborn ✦ → Set up token**.
 5. Paste the relative folder path (without `Data/`):
    `worlds/my-campaign/gridborn/chr-ftr-human`.
-   The controller checks that all four WebMs exist in Foundry's Data folder before applying the setup. For current independently exported studies, use **1.4 seconds** for Fighter, Goblin, Skeleton or Spider and **1.3 seconds** for Wolf. The duration field is editable per token.
+   The controller checks that all four WebMs exist in Foundry's Data folder and automatically reads the exact Attack duration from the package's `gridborn-preview.json`. **No manual timing lookup or reprogramming is needed.** Keep **Auto-detect Attack duration** checked when using an exported Gridborn package. To use your own four WebMs without that receipt, uncheck auto-detect and enter your Attack duration in seconds.
 6. Save. **Idle** becomes the token image. Press **Move**, **Rest**, or **Attack**.
    Attack runs once by the configured clip duration and returns to Idle. Idle, Move and Rest repeat until you choose a different state; there is no automatic four-state showcase during gameplay.
 7. **Restore original token** removes the configuration and original artwork returns.
@@ -39,11 +39,19 @@ The original 45-second showcase is **not** the source of the current
 Fighter/Goblin standalone clips. Their actual independent animation SVG
 sources produce calm looping Idle/Move/Rest states, and a one-shot Attack.
 The other creatures use the direct state-only exporter. Each private
-controller folder has a `gridborn-preview.json` file recording the exact
-`attackMs` value; enter this value in **seconds** in the HUD's setup form.
-Current source values are 1.3 seconds (Gray Wolf) and 1.4 seconds (other
-current studies). There is no need to edit code, restart animations manually,
-or play the website's automatic showcase during a tabletop encounter.
+controller folder includes `gridborn-preview.json`, which the setup form
+reads from the **same local Foundry Data directory**. The controller validates
+the package metadata and its Attack timing before applying it to the selected
+token. The current export timings are 1.3 seconds (Gray Wolf) and 1.4 seconds
+(other current studies). Timing is token-specific, not selected by monster
+name; these values may evolve with future animations.
+
+When the receipt is missing, setup does **not** guess an Attack duration:
+the user can opt into the manual override instead. Invalid or inaccessible
+receipts display an error and leave the token unchanged. No remote accounts
+or external URLs are used. Idle, Move and Rest continue indefinitely until
+the authorized GM/player switches states; Attack returns to Idle.
+No website showcase sequence runs during tabletop gameplay.
 Technical alpha/duration checks run on each clip. Do not commit private media.
 
 ## Limitations and release gates
@@ -52,7 +60,8 @@ Technical alpha/duration checks run on each clip. Do not commit private media.
 - Videos in the assigned folder must exist and be accessible to all clients.
   Setup does not upload or validate the underlying files.
 - A timer is owned by the user who selected Attack. If they disconnect, the
-  automatic return might not happen; simply choose Idle again.
+  automatic return might not happen; simply choose Idle again. This remains
+  unverified in real multiplayer Foundry sessions.
 - Attack return is time-based; some browsers/VTT configurations might play
   the underlying clip differently. The per-token duration is editable.
 - Switching scenes or duplicating tokens, GM/player permissions, HUD layout,
