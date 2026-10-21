@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 from builder_browser_qa import check_builder
 from production_browser_qa import check_production
 from wolf_browser_qa import check_wolf
+from spider_browser_qa import check_spider
 SIZES = (1440, 390, 320)
 class PreviewHandler(SimpleHTTPRequestHandler):
     def log_message(self, format_string, *args):
@@ -160,6 +161,7 @@ def main() -> int:
                     check_builder(browser, url, width, screenshots)
                     check_production(browser, url, width, screenshots)
                     check_wolf(browser, url, width, screenshots)
+                    check_spider(browser, url, width, screenshots)
             finally:
                 browser.close()
         LOG.info("All viewport tests passed. Screenshots remain temporary.")

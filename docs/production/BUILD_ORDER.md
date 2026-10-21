@@ -73,3 +73,18 @@ One-shot Bite returns to Idle in the study UI; Rest is a **curled wolf**, not
 a seated humanoid. No WebM exports, human art approval or VTT import test
 have been passed. Do not use this artwork for the separate larger Dire Wolf
 listing without accurate scale and anatomy review.
+
+### Giant Cave Spider eight-leg creature rig — prototype pass
+
+Added an original front-facing arachnid (not a humanoid recolor) with eight
+separately grouped/hinged legs, two distinguishable anatomical body regions,
+eight tiny eyes, pedipalps, and paired fangs. Generated source-controlled
+Idle, Move, one-shot Bite/Strike, and geometry-folded Rest prototypes now
+exist under `assets/demos/giant-cave-spider-*.svg`; its static source is
+`assets/studies/giant-cave-spider.svg`. Regenerate with
+`node tools/generate-spider-studies.mjs` and check drift with `--check`.
+The **Move** state moves alternating sets of four legs and bobs the body;
+**Attack** plays once and returns to Idle in the existing catalog preview;
+**Rest** is an eight-leg folded pose. These need human silhouette reviews,
+loop-seam inspection at 32/64 pixels, licensed asset clearance and proper
+transparent WebM exports before any commercial or VTT compatibility claim.

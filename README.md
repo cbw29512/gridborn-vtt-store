@@ -306,3 +306,14 @@ stat-based D20 Iron Pit pregen roster.
   These are browser SVG studies only, not licensed/commercial alpha-WebM
   packages or verified imports on third-party VTTs.
 - Production review still remains open for all visuals; no asset is sale-ready.
+
+## Giant Cave Spider — eight-leg animation study
+
+A source-generated, independent original spider rig now backs
+`mon-cave-spider` in the catalog. It has eight physical legs, a separate
+abdomen and cephalothorax, eight visible eye points, palps and fangs,
+with independent Idle/Move/Attack/Rest SVG preview files. Move alternates
+four-leg groups. Attack is one strike and returns to Idle in the detail modal.
+Rest tucks the actual leg geometry closer to the body instead of applying
+a humanoid seated pose. Both visible catalog artwork and the production
+roster label this as **animated study only**, not a verified VTT export.

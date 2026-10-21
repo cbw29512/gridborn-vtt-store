@@ -30,7 +30,7 @@ function updatePreview(next){
       }
     }
     const hasFullStates=typeof current.idle==='string';
-    byId('concept-preview-status').textContent=hasFullStates?LABELS[next]||LABELS.still:
+    byId('concept-preview-status').textContent=hasFullStates?(current.labels?.[next]||LABELS[next]||LABELS.still):
       next==='still'?'Static original art study':
       next==='action'?'45-second action study · continuous loop':
       '6-second rest study · continuous loop';
