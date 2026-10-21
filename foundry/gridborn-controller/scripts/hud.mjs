@@ -32,6 +32,13 @@ export function attachTokenHud(hud, html) {
     const actions = element('div', 'gridborn-actions');
     const hint = element('p', 'gridborn-hint',
       'Idle, Move and Rest repeat until you choose another state. Attack plays once, then returns to Idle. No automatic showcase cycle during a game.');
+    const showMode = mode => {
+      status.textContent = mode + (mode === 'attack'
+        ? ' · one strike, then back to Idle'
+        : ' · loops until you choose a different state');
+      actions.querySelectorAll('[data-mode]').forEach(b =>
+        b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
+    };
     const config = token.document.getFlag(MODULE_ID, 'config');
     const activeMode = token.document.getFlag(MODULE_ID, 'playback')?.mode;
     if (config && MODES.includes(activeMode))
@@ -43,12 +50,7 @@ export function attachTokenHud(hud, html) {
       button.addEventListener('click', async () => {
         try {
           button.disabled = true;
-          await playMode(token, mode);
-          status.textContent = mode + (mode === 'attack'
-            ? ' · one strike, then back to Idle'
-            : ' · loops until you choose a different state');
-          actions.querySelectorAll('[data-mode]').forEach(b =>
-            b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
+          await playMode(token, mode, { onPlayback: showMode });
         } catch (error) { notify(error); }
         finally { button.disabled = false; }
       });
@@ -104,7 +106,8 @@ export function attachTokenHud(hud, html) {
         if (auto.checked && !receipt) throw new Error(
           'Timing receipt not found. Uncheck auto-detect and enter Attack seconds.');
         const attackMs = receipt?.attackMs ?? Number(seconds.value) * 1000;
-        await configureToken(token, { folder: input.value, attackMs });
+        await configureToken(token, { folder: input.value, attackMs },
+          { onPlayback: showMode });
         seconds.value = String(attackMs / 1000);
         status.textContent = receipt
           ? 'Idle ready · ' + receipt.assetId + ' · Attack ' + (attackMs / 1000) + 's auto-detected'
