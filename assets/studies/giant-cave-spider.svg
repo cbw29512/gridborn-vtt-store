@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img"
+ aria-labelledby="title description" shape-rendering="crispEdges"
+ class="spider-scene spider-still">
+<title id="title">Giant Cave Spider — still Gridborn original eight-leg study</title>
+<desc id="description">Original arachnid token with eight independently segmented legs, visible cephalothorax, rear abdomen, eight small eyes and venom fangs. Eight-legged recognizable cave spider. Preview only; no VTT export or commercial certification.</desc>
+
+<ellipse cx="128" cy="204" rx="107" ry="15" fill="#091019" opacity=".38"/>
+<ellipse cx="128" cy="195" rx="108" ry="29" fill="none" stroke="#b38e6d" stroke-width="3" opacity=".6"/>
+
+<g class="spider-leg spider-leg-1 spider-phase-a" data-leg="1"
+ style="transform-origin:110px 96px;transform-box:view-box">
+ <path d="M110 96L68 60L27 31" fill="none" stroke="#171e27" stroke-width="14" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M110 96L68 60L27 31" fill="none" stroke="#262936" stroke-width="9" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M108 93L68 56L27 31" fill="none" stroke="#a28c6e" stroke-width="3" stroke-linejoin="round" opacity=".92"/>
+ <circle cx="68" cy="60" r="6" fill="#252833" stroke="#9c8064" stroke-width="2"/>
+ <path d="M30 28L27 33L23 30" fill="none" stroke="#c2a884" stroke-width="2"/>
+ </g>
+<g class="spider-leg spider-leg-2 spider-phase-b" data-leg="2"
+ style="transform-origin:99px 112px;transform-box:view-box">
+ <path d="M99 112L62 105L10 94" fill="none" stroke="#171e27" stroke-width="14" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M99 112L62 105L10 94" fill="none" stroke="#262936" stroke-width="9" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M97 109L62 101L10 94" fill="none" stroke="#7e695e" stroke-width="3" stroke-linejoin="round" opacity=".92"/>
+ <circle cx="62" cy="105" r="6" fill="#252833" stroke="#9c8064" stroke-width="2"/>
+ <path d="M13 91L10 96L6 93" fill="none" stroke="#c2a884" stroke-width="2"/>
+ </g>
+<g class="spider-leg spider-leg-3 spider-phase-b" data-leg="3"
+ style="transform-origin:99px 129px;transform-box:view-box">
+ <path d="M99 129L57 163L10 180" fill="none" stroke="#171e27" stroke-width="14" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M99 129L57 163L10 180" fill="none" stroke="#262936" stroke-width="9" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M97 126L57 159L10 180" fill="none" stroke="#7e695e" stroke-width="3" stroke-linejoin="round" opacity=".92"/>
+ <circle cx="57" cy="163" r="6" fill="#252833" stroke="#9c8064" stroke-width="2"/>
+ <path d="M13 177L10 182L6 179" fill="none" stroke="#c2a884" stroke-width="2"/>
+ </g>
+<g class="spider-leg spider-leg-4 spider-phase-a" data-leg="4"
+ style="transform-origin:106px 149px;transform-box:view-box">
+ <path d="M106 149L67 188L34 211" fill="none" stroke="#171e27" stroke-width="14" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M106 149L67 188L34 211" fill="none" stroke="#262936" stroke-width="9" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M104 146L67 184L34 211" fill="none" stroke="#7e695e" stroke-width="3" stroke-linejoin="round" opacity=".92"/>
+ <circle cx="67" cy="188" r="6" fill="#252833" stroke="#9c8064" stroke-width="2"/>
+ <path d="M37 208L34 213L30 210" fill="none" stroke="#c2a884" stroke-width="2"/>
+ </g>
+<g class="spider-leg spider-leg-5 spider-phase-b" data-leg="5"
+ style="transform-origin:146px 96px;transform-box:view-box">
+ <path d="M146 96L188 60L229 31" fill="none" stroke="#171e27" stroke-width="14" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M146 96L188 60L229 31" fill="none" stroke="#262936" stroke-width="9" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M148 93L188 56L229 31" fill="none" stroke="#a28c6e" stroke-width="3" stroke-linejoin="round" opacity=".92"/>
+ <circle cx="188" cy="60" r="6" fill="#252833" stroke="#9c8064" stroke-width="2"/>
+ <path d="M226 28L229 33L233 30" fill="none" stroke="#c2a884" stroke-width="2"/>
+ </g>
+<g class="spider-leg spider-leg-6 spider-phase-a" data-leg="6"
+ style="transform-origin:157px 112px;transform-box:view-box">
+ <path d="M157 112L194 105L246 94" fill="none" stroke="#171e27" stroke-width="14" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M157 112L194 105L246 94" fill="none" stroke="#262936" stroke-width="9" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M159 109L194 101L246 94" fill="none" stroke="#7e695e" stroke-width="3" stroke-linejoin="round" opacity=".92"/>
+ <circle cx="194" cy="105" r="6" fill="#252833" stroke="#9c8064" stroke-width="2"/>
+ <path d="M243 91L246 96L250 93" fill="none" stroke="#c2a884" stroke-width="2"/>
+ </g>
+<g class="spider-leg spider-leg-7 spider-phase-a" data-leg="7"
+ style="transform-origin:157px 129px;transform-box:view-box">
+ <path d="M157 129L199 163L246 180" fill="none" stroke="#171e27" stroke-width="14" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M157 129L199 163L246 180" fill="none" stroke="#262936" stroke-width="9" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M159 126L199 159L246 180" fill="none" stroke="#7e695e" stroke-width="3" stroke-linejoin="round" opacity=".92"/>
+ <circle cx="199" cy="163" r="6" fill="#252833" stroke="#9c8064" stroke-width="2"/>
+ <path d="M243 177L246 182L250 179" fill="none" stroke="#c2a884" stroke-width="2"/>
+ </g>
+<g class="spider-leg spider-leg-8 spider-phase-b" data-leg="8"
+ style="transform-origin:150px 149px;transform-box:view-box">
+ <path d="M150 149L189 188L222 211" fill="none" stroke="#171e27" stroke-width="14" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M150 149L189 188L222 211" fill="none" stroke="#262936" stroke-width="9" stroke-linejoin="bevel" stroke-linecap="round"/>
+ <path d="M152 146L189 184L222 211" fill="none" stroke="#7e695e" stroke-width="3" stroke-linejoin="round" opacity=".92"/>
+ <circle cx="189" cy="188" r="6" fill="#252833" stroke="#9c8064" stroke-width="2"/>
+ <path d="M219 208L222 213L226 210" fill="none" stroke="#c2a884" stroke-width="2"/>
+ </g>
+<g class="spider-body">
+<g class="spider-abdomen">
+ <path d="M87 127Q81 110 97 97L135 88 171 113 174 152 152 180 101 177 82 150Z" fill="#171e27" />
+ <path d="M93 128Q89 113 103 103L135 96 165 118 167 149 150 173 106 170 91 149Z" fill="#443e43" />
+ <path d="M107 112L135 101 157 117 157 134 134 150 103 136Z" fill="#7e695e" />
+ <path d="M112 132L128 122 146 133 131 148Z" fill="#b78c61" />
+ <path d="M121 137L128 128 136 137 128 143Z" fill="#ddab76" />
+ <path d="M99 147L114 157 109 167M150 157L158 148" fill="none" stroke="#241f29" stroke-width="6" stroke-linecap="round"/>
+ <path d="M99 150L114 163M144 166L159 151" fill="none" stroke="#b39370" stroke-width="3"/>
+ <ellipse cx="128" cy="158" rx="27" ry="12" fill="#1b202a" opacity=".25"/>
+ </g>
+<g class="spider-cephalothorax">
+ <path d="M99 85L113 67 143 69 161 91 153 125 126 141 103 123Z" fill="#171e27" />
+ <path d="M106 91L118 75 139 76 154 95 148 120 127 132 109 118Z" fill="#66554e" />
+ <path d="M113 85L137 75 149 94 135 110 111 108Z" fill="#9a785e" />
+ <path d="M119 103L127 97 138 105 128 119Z" fill="#392f31" />
+ <path d="M124 97L129 92 133 98 130 106Z" fill="#bc8c62" />
+ </g>
+<g class="spider-eyes">
+ <circle cx="111" cy="95" r="5" fill="#171e27"/><circle cx="144" cy="95" r="5" fill="#171e27"/>
+ <circle cx="119" cy="85" r="6" fill="#171e27"/><circle cx="136" cy="85" r="6" fill="#171e27"/>
+ <circle cx="121" cy="87" r="3" fill="#f0ad65"/><circle cx="138" cy="87" r="3" fill="#f0ad65"/>
+ <circle cx="113" cy="96" r="2" fill="#ffd8a0"/><circle cx="145" cy="96" r="2" fill="#ffd8a0"/>
+ <circle cx="108" cy="106" r="3" fill="#23252e"/><circle cx="149" cy="106" r="3" fill="#23252e"/>
+ <circle cx="116" cy="112" r="3" fill="#28303a"/><circle cx="142" cy="112" r="3" fill="#28303a"/>
+ </g>
+<g class="spider-mouth">
+ <g class="spider-palps">
+ <path d="M112 114L104 123 104 135" fill="none" stroke="#171e27" stroke-width="8" stroke-linecap="round"/>
+ <path d="M144 114L153 124 153 135" fill="none" stroke="#171e27" stroke-width="8" stroke-linecap="round"/>
+ <path d="M112 114L105 125" fill="none" stroke="#bd9a77" stroke-width="3"/>
+ <path d="M144 114L152 125" fill="none" stroke="#bd9a77" stroke-width="3"/>
+ </g>
+ <g class="spider-fangs">
+ <path d="M116 115L126 137 127 149 120 144 113 130Z" fill="#e5d5b7" />
+ <path d="M141 115L130 137 130 149 137 144 144 130Z" fill="#e5d5b7" />
+ <path d="M119 119L125 137" fill="none" stroke="#fff0cf" stroke-width="2"/>
+ <path d="M139 119L132 137" fill="none" stroke="#fff0cf" stroke-width="2"/>
+ </g>
+ </g>
+</g>
+</svg>
