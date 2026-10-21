@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Visual asset production targets, not D&D character sheet pregens",
+  "category": "heroes",
+  "total": 12,
+  "assetStandard": "docs/production/ART_BIBLE.md",
+  "assets": [
+    {
+      "id": "chr-ftr-human",
+      "displayName": "Human Fighter",
+      "class": "Fighter",
+      "rigFamily": "humanoid-armored",
+      "size": "Medium",
+      "catalogId": "chr-ftr-human",
+      "colors": "navy #456a94, steel #bacbd4, brass #e6b86c",
+      "silhouette": "Armored shoulders and readable sword-shield silhouette; upright, planted stance",
+      "equipment": "Longsword, round shield, articulated plate, leather belt",
+      "animation": {
+        "idle": "Chest and shield settle; occasional blink",
+        "move": "Alternating heavy steps; shield counterbalances sword hand",
+        "attack": "Single guarded sword slash with deliberate recovery",
+        "rest": "Seated with shield on ground and sword lowered"
+      },
+      "acceptance": "Helmet, sword and shield identifiable at 64 px; equipment never floats",
+      "artStatus": "animated-study",
+      "animationStatus": "prototype",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "chr-wiz-elf",
+      "displayName": "Elven Wizard",
+      "class": "Wizard",
+      "rigFamily": "humanoid-robed",
+      "size": "Medium",
+      "catalogId": "chr-wiz-elf",
+      "colors": "indigo #594d7c, lavender #bba4e1, silver #a8b8d1",
+      "silhouette": "Narrow pointed ears, long robe and staff; avoids fighter proportions",
+      "equipment": "Gem staff, spellbook and layered sleeves",
+      "animation": {
+        "idle": "Robe hem sways; gem flickers slightly",
+        "move": "Short planted steps; sleeves and staff follow hands",
+        "attack": "Single arcane casting gesture with release, then reset",
+        "rest": "Staff laid down; seated with shoulders relaxed"
+      },
+      "acceptance": "Ears and robe profile visible at 64 px; magic not a permanent flash",
+      "artStatus": "static-study",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "chr-clr-dwarf",
+      "displayName": "Dwarven Cleric",
+      "class": "Cleric",
+      "rigFamily": "humanoid-stocky",
+      "size": "Medium",
+      "catalogId": "chr-clr-dwarf",
+      "colors": "oxblood #873e44, pewter #a9b0bc, gold #d7b66e",
+      "silhouette": "Wide torso, short legs and visible beard; compact armored silhouette",
+      "equipment": "Mace, shield, chain/scale, original sunburst motif",
+      "animation": {
+        "idle": "Weight shift and beard motion",
+        "move": "Short deliberate heavy steps",
+        "attack": "One mace strike; optional distinct healing/casting variant later",
+        "rest": "Kneeling in quiet prayer; mace grounded"
+      },
+      "acceptance": "Dwarf not merely smaller human; no copied deity symbols",
+      "artStatus": "catalog-concept",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 3
+    },
+    {
+      "id": "chr-rge-gnome",
+      "displayName": "Gnome Rogue",
+      "class": "Rogue",
+      "rigFamily": "humanoid-small",
+      "size": "Small",
+      "catalogId": "chr-rge-gnome",
+      "colors": "charcoal #313c4d, burgundy #875260, tan #bf9a67",
+      "silhouette": "Small agile crouched figure; light hood, narrow gear silhouette",
+      "equipment": "Daggers, belt pouch, soft leather boots",
+      "animation": {
+        "idle": "Cautious head turn; hands ready",
+        "move": "Quick stealth steps; feet touch ground cleanly",
+        "attack": "One swift knife jab then return to guard",
+        "rest": "Perched on low crate, blades lowered"
+      },
+      "acceptance": "Visibly rogue at 64 px; retain gnome ancestry rather than silently changing catalog",
+      "artStatus": "catalog-concept",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 4
+    },
+    {
+      "id": "chr-bar-orc",
+      "displayName": "Orc Barbarian",
+      "class": "Barbarian",
+      "rigFamily": "humanoid-broad",
+      "size": "Medium",
+      "catalogId": "chr-bar-orc",
+      "colors": "earth #73513e, rust #a14b3b, bronze #cd9a68",
+      "silhouette": "Broad shoulders, tusks and heavy two-hand weapon; fewer armor plates",
+      "equipment": "Greataxe, leather straps, fur wraps, simple bracers",
+      "animation": {
+        "idle": "Deep breathing and shoulder roll",
+        "move": "Powerful forward strides with axe inertia",
+        "attack": "Heavy two-handed overhead strike; believable follow-through",
+        "rest": "Sits heavily, axe set against ground"
+      },
+      "acceptance": "Axe grip actually two-handed; differs from Goblin silhouette",
+      "artStatus": "static-study",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 5
+    },
+    {
+      "id": "chr-pal-human",
+      "displayName": "Human Paladin",
+      "class": "Paladin",
+      "rigFamily": "humanoid-armored",
+      "size": "Medium",
+      "catalogId": "chr-pal-human",
+      "colors": "ivory #ded5bb, blue #3c5d8d, gold #e5b96d",
+      "silhouette": "Ceremonial heavy armor, large shield and tabard; rigid protective posture",
+      "equipment": "Longsword, shield, cape, original radiance emblem",
+      "animation": {
+        "idle": "Tabard movement and subtle light",
+        "move": "Disciplined steps; shield and plate weight",
+        "attack": "Precise sword strike; optional radiance accent",
+        "rest": "Kneels, helmet lowered, blade point down"
+      },
+      "acceptance": "Distinguish from Fighter by tabard, silhouette and trim; no branded faction sigil",
+      "artStatus": "catalog-concept",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 6
+    },
+    {
+      "id": "chr-rng-elf",
+      "displayName": "Elven Ranger",
+      "class": "Ranger",
+      "rigFamily": "humanoid-light",
+      "size": "Medium",
+      "catalogId": "chr-rng-elf",
+      "colors": "moss #3d765b, bark #6a4c35, ivory #d7caac",
+      "silhouette": "Lean elf, visible bow and quiver, compact leaf cloak",
+      "equipment": "Longbow, arrows, leather boots and belt knife",
+      "animation": {
+        "idle": "Scans surroundings; adjusts bow grip",
+        "move": "Soft footfalls, cloak and quiver lag naturally",
+        "attack": "Draws, releases single arrow, recovers",
+        "rest": "Bow unstrung by bedroll; knees bent"
+      },
+      "acceptance": "Bow string/quiver legible at 64 px; do not confuse with Rogue",
+      "artStatus": "catalog-concept",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 7
+    },
+    {
+      "id": "chr-brd-halfling",
+      "displayName": "Halfling Bard",
+      "class": "Bard",
+      "rigFamily": "humanoid-small",
+      "size": "Small",
+      "catalogId": "chr-brd-halfling",
+      "colors": "wine #8c4656, teal #3f7780, brass #dbb37a",
+      "silhouette": "Short expressive silhouette, recognizable instrument, lively coat",
+      "equipment": "Small lute, decorative rapier, travel coat and satchel",
+      "animation": {
+        "idle": "Instrument shifts as posture changes",
+        "move": "Bouncy but grounded rhythmic steps",
+        "attack": "One short lute strum or rapier jab as variant",
+        "rest": "Sits with instrument across lap"
+      },
+      "acceptance": "Instrument reads as lute, not weapon or shield; smaller than human",
+      "artStatus": "catalog-concept",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 8
+    },
+    {
+      "id": "chr-wrl-tiefling",
+      "displayName": "Tiefling Warlock",
+      "class": "Warlock",
+      "rigFamily": "humanoid-horned",
+      "size": "Medium",
+      "catalogId": null,
+      "colors": "plum #57365d, ash #9094a6, ember #d99c69",
+      "silhouette": "Original curved horns and tail; lean arcane silhouette",
+      "equipment": "Mystic focus, asymmetric mantle, robe/armor layers",
+      "animation": {
+        "idle": "Tail curls; restrained occult focus glow",
+        "move": "Measured steps; cape and tail counterbalance",
+        "attack": "Single force-energy casting gesture with discrete release",
+        "rest": "Reclines on low stool; focus dims"
+      },
+      "acceptance": "Distinct horns and tail at 64 px; avoid copyrighted named characters",
+      "artStatus": "not-produced",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 9
+    },
+    {
+      "id": "chr-sor-human",
+      "displayName": "Human Sorcerer",
+      "class": "Sorcerer",
+      "rigFamily": "humanoid-unarmored",
+      "size": "Medium",
+      "catalogId": null,
+      "colors": "midnight #364b78, cyan #65c6c7, silver #b9d0d4",
+      "silhouette": "Free-handed magical silhouette, less formal than staff-carrying Wizard",
+      "equipment": "Focus crystal, asymmetrical cloth mantle and bracers",
+      "animation": {
+        "idle": "Tiny hand glimmer and loose sleeves",
+        "move": "Brisk steps; cloth and floating focus respond",
+        "attack": "One controlled burst from open palm",
+        "rest": "Hands down; focus nearly dark"
+      },
+      "acceptance": "Magic reads at small scale but does not hide facial identity",
+      "artStatus": "not-produced",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 10
+    },
+    {
+      "id": "chr-mnk-human",
+      "displayName": "Human Monk",
+      "class": "Monk",
+      "rigFamily": "humanoid-unarmored",
+      "size": "Medium",
+      "catalogId": null,
+      "colors": "sand #b99568, indigo #465879, ivory #e6d9bc",
+      "silhouette": "Unarmored balanced posture, visible wrapped fists and flexible trousers",
+      "equipment": "Hand wraps, rope belt, soft footwear",
+      "animation": {
+        "idle": "Slow centered breathing; guarded palms",
+        "move": "Light cross-steps; articulated alternating knees",
+        "attack": "One full-body unarmed punch or kick, no floating body",
+        "rest": "Cross-legged seated meditation"
+      },
+      "acceptance": "No plate, shield or oversized weapon; foot placement credible",
+      "artStatus": "not-produced",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 11
+    },
+    {
+      "id": "chr-drd-human",
+      "displayName": "Human Druid",
+      "class": "Druid",
+      "rigFamily": "humanoid-natural",
+      "size": "Medium",
+      "catalogId": null,
+      "colors": "fern #49765b, umber #73543b, amber #c8ae73",
+      "silhouette": "Organic layers, visible staff and natural-cloth shapes",
+      "equipment": "Wood staff, woven pack, leaf-shaped original ornament",
+      "animation": {
+        "idle": "Loose cloth and small twig movement",
+        "move": "Staff tracks floor contact; soft forest pace",
+        "attack": "Single vine/root burst or staff gesture",
+        "rest": "Kneels by bedroll, staff leaned aside"
+      },
+      "acceptance": "Nature traveler differs from robe Wizard; shapeshifts require separate beast rigs",
+      "artStatus": "not-produced",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 12
+    }
+  ]
+}

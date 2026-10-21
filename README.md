@@ -269,3 +269,26 @@ and a static fallback for reduced-motion preferences or failed image loads.
 
 This is an original concept demonstration. It is not a customer VTT-ready export,
 a third-party product video, or proof of production-grade animation quality.
+
+## V1 art production roster — 12 heroes + 12 monsters
+
+The active reviewed production specifications are in
+[`docs/production/ART_BIBLE.md`](docs/production/ART_BIBLE.md),
+[`docs/production/BUILD_ORDER.md`](docs/production/BUILD_ORDER.md), and the
+machine-readable [hero](docs/production/hero-roster.json) / [monster](docs/production/monster-roster.json)
+rosters. A responsive, noindex planning page is available at
+[`production.html`](production.html) on GitHub Pages.
+
+The 12 heroes correspond to the twelve classic fantasy classes (Fighter,
+Wizard, Cleric, Rogue, Barbarian, Paladin, Ranger, Bard, Warlock, Sorcerer,
+Monk, Druid). The 12 monsters are Cave Goblin, Orc Raider, Skeleton Warrior,
+Zombie, Kobold, Gray Wolf, Giant Cave Spider, Bugbear, Hobgoblin, Ogre,
+Troll and Gelatinous Cube. Each has species-specific silhouettes, gear,
+color schemes, anatomy, *separate* Idle/Move/Attack/Rest concepts and
+explicit visual-review gates. The data, browser display and counts are
+unit-tested, and Chromium reviews the page at desktop and two phone widths.
+
+**No asset on the board has passed commercial release.** Existing Fighter
+and Goblin animation studies are still technical prototypes; static art
+and concept listings are not completed pregen tokens. This roster is not the
+stat-based D20 Iron Pit pregen roster.
