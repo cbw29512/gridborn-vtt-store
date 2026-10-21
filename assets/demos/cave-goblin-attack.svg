@@ -43,7 +43,7 @@
 <path d="M109 65h44v46h-44z" fill="#72966a"/>
 <path d="M112 74L83 61l10 34 21 8zM151 74l29-13-10 34-20 8z" fill="#608a5e"/>
 <rect x="115" y="82" width="13" height="10" fill="#342d2b"/><rect x="138" y="82" width="13" height="10" fill="#342d2b"/>
-<rect x="118" y="83" width="7" height="6" fill="#f8c75e"/><rect x="141" y="83" width="7" height="6" fill="#f8c75e"/><g class="goblin-blink"><rect x="115" y="82" width="13" height="10" fill="#608a5e"/><rect x="138" y="82" width="13" height="10" fill="#608a5e"/></g>
+<rect x="118" y="83" width="7" height="6" fill="#f8c75e"/><rect x="141" y="83" width="7" height="6" fill="#f8c75e"/><g class="goblin-blink" opacity="0"><rect x="115" y="82" width="13" height="10" fill="#608a5e"/><rect x="138" y="82" width="13" height="10" fill="#608a5e"/></g>
 <rect x="122" y="99" width="20" height="5" fill="#2f4739"/>
 <path d="M121 103h6v9h-6zM138 103h6v9h-6z" fill="#e5d6a5"/>
 <!-- rough hood -->
