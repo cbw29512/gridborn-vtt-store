@@ -9,7 +9,7 @@ const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 test('All existing four-state animation prototypes visibly participate in autoplay',()=>{
   const ids=Object.keys(animatedPreviews);
   assert.deepEqual(ids.sort(),[
-    'ani-forest-wolf','chr-ftr-human','mon-cave-goblin','mon-cave-spider','mon-dng-skeleton']);
+    'ani-forest-wolf','chr-ftr-human','chr-wiz-elf','mon-cave-goblin','mon-cave-spider','mon-dng-armor','mon-dng-skeleton','pregen-barbarian-male-3']);
   assert.deepEqual(MOTION_STAGES.map(s=>s.key),['idle','move','action','rest']);
   assert.equal(MOTION_STAGES.length,4);
   for(const entry of MOTION_STAGES)assert.ok(entry.durationMs>=0);
