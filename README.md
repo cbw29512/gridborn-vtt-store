@@ -70,7 +70,7 @@ download links after a verified Stripe webhook grants entitlements.
 - Small/Medium use 1x1 footprint; Large 2x2, Huge 3x3, Gargantuan 4x4+.
 - Main 45-second idle -> walk -> fight -> recover: 27/8/3/7 seconds.
 - Bonus sleep/rest/inactive loop + static PNG fallback.
-- Proposed price $2.99 per single token, not charged by this preview.
+- Proposed price $0.99 per single token, not charged by this preview.
 
 **Do not mark assets for sale until art ownership, compatibility, delivery and quality are verified.**
 
@@ -152,7 +152,7 @@ The second contextual dropdown unlocks only after a first selection. **Clear
 search & filters** preserves the chosen category, avoiding the previous surprise
 jump back to Characters. More results load in groups of eight without reloading.
 
-Concept cards display **Target $2.99 / Preview only**, not simulated disabled
+Concept cards display **Target $0.99 / Preview only**, not simulated disabled
 purchase buttons; details and FAQ state that real checkout/delivery do not yet
 exist. This improves discoverability and truthful presentation; full platform
 imports, artistic acceptance, independent accessibility audits, commercial

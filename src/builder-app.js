@@ -131,7 +131,9 @@ function events(){
       attack:'Attack · wind-up, strike and recovery (plays once)',
       rest:'Rest · seated posture, relaxed arms and gentle breathing'
     };
-    status(descriptions[mode]);
+    status(mode==='rest'&&recipe.ancestry==='Skeleton'
+      ? 'Rest · collapsed, unmoving skeleton; no breathing'
+      : descriptions[mode]);
   });
   document.querySelectorAll('[data-bg]').forEach(button=>button.addEventListener('click',()=>{
     $('builder-stage').dataset.background=button.dataset.bg;

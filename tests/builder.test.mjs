@@ -95,12 +95,21 @@ test('rest draws a different seated silhouette with distinct legs and stool',()=
     const recipe=presetToRecipe(key);
     const idle=renderRig(recipe,{mode:'idle',animated:true});
     const rest=renderRig(recipe,{mode:'rest',animated:true});
-    assert.match(rest,/class="rig-rest-seat"/);
-    assert.match(rest,/class="rig-legs rig-legs-rest"/);
-    assert.match(rest,/class="rig-upper"/);
+    if(recipe.ancestry==='Skeleton'){
+      assert.match(rest,/class="rig-skeleton-rest"/);
+      assert.match(rest,/class="rig-skeleton-rest-skull"/);
+      assert.match(rest,/class="rig-skeleton-rest-ribs"/);
+      assert.match(rest,/data-ancestry="Skeleton"/);
+      assert.doesNotMatch(rest,/class="rig-rest-seat"/);
+      assert.doesNotMatch(rest,/class="rig-upper"/);
+    }else{
+      assert.match(rest,/class="rig-rest-seat"/);
+      assert.match(rest,/class="rig-legs rig-legs-rest"/);
+      assert.match(rest,/class="rig-upper"/);
+      assert.match(rest,/class="rig-eyelids"/);
+    }
     assert.doesNotMatch(idle,/class="rig-rest-seat"/);
     assert.notEqual(idle,rest,key);
-    if(recipe.ancestry!=='Skeleton')assert.match(rest,/class="rig-eyelids"/);
   }
   assert.match(css,/gb-seated-breath/);
   assert.match(css,/\.mode-rest \.rig-eyelids\{opacity:1\}/);

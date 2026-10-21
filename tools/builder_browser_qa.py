@@ -44,6 +44,20 @@ def check_builder(browser,origin,width,screenshots:Path):
         expect(page.locator(".rig-paladin-tabard")).to_have_count(1)
         expect(page.locator(".rig-oath-symbol")).to_have_count(1)
         expect(page.locator("#part-weapon")).to_have_value("Sword")
+        # Undead rest is inert collapsed bones, not a breathing seated human.
+        page.locator('[data-preset="mon-dng-skeleton"]').click()
+        page.locator('#builder-modes button[data-mode="idle"]').click()
+        expect(page.locator('#builder-avatar svg')).to_have_attribute("data-ancestry", "Skeleton")
+        idle_animation=page.locator(".rig-figure").evaluate(
+            "(node) => getComputedStyle(node).animationName")
+        assert idle_animation=="gb-undead-settle", idle_animation
+        page.locator('#builder-modes button[data-mode="rest"]').click()
+        expect(page.locator(".rig-skeleton-rest")).to_have_count(1)
+        expect(page.locator(".rig-rest-seat")).to_have_count(0)
+        expect(page.locator("#builder-status")).to_contain_text("no breathing")
+        inert_animation=page.locator(".rig-skeleton-rest").evaluate(
+            "(node) => getComputedStyle(node).animationName")
+        assert inert_animation=="none", inert_animation
         page.locator('[data-preset="mon-cave-goblin"]').click()
         expect(page.locator("#builder-summary")).to_contain_text("Goblin")
         page.locator("#part-weapon").select_option("Bow")
