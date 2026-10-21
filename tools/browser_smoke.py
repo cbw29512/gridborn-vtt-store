@@ -11,6 +11,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 LOG = logging.getLogger("gridborn.browser")
 ROOT = Path(__file__).resolve().parents[1]
+from builder_browser_qa import check_builder
 SIZES = (1440, 390, 320)
 class PreviewHandler(SimpleHTTPRequestHandler):
     def log_message(self, format_string, *args):
@@ -132,6 +133,7 @@ def main() -> int:
             try:
                 for width in SIZES:
                     check_viewport(browser, url, width, screenshots)
+                    check_builder(browser, url, width, screenshots)
             finally:
                 browser.close()
         LOG.info("All viewport tests passed. Screenshots remain temporary.")

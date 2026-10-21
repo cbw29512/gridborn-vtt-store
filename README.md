@@ -181,3 +181,43 @@ committed, and VTT compatibility is unverified.
 The optional **Gridborn Controller** module is in [foundry/gridborn-controller](foundry/gridborn-controller/README.md). It adds a compact token-HUD panel after right-clicking a token. Configure one folder containing `idle.webm`, `move.webm`, `attack.webm` and `rest.webm`; then select Idle, Move, Attack, or Rest. Attack returns to Idle after the configured duration (10 seconds for current art-study action/recovery). A restore action returns to the original token texture. The standalone Idle WebM requires no module, and the optional module is **not tested in real Foundry yet**.
 
 A GitHub Actions workflow packages a **source-only** downloadable development ZIP without any paid artwork. The private exporter accepts `--certify --controller-package` to create four independently timed alpha-WebM loops and static PNG outside the public repository. Foundry and Roll20 integration claims remain blocked pending actual platform testing.
+
+## Two ways to Gridborn — premade catalog and modular character builder
+
+The homepage now leads customers to **Browse Premade Tokens** or **Make Your Own**.
+The builder is at `builder.html`, with shareable preset links such as
+`builder.html?preset=mon-cave-goblin`; compatible catalog cards link directly
+into the exact same modular rig.
+
+V1 has **one shared block-style humanoid rig**, seven interchangeable visual
+slots (species, outfit, headwear, hair/beard, main hand, off hand, cape), six
+starting recipes (Human Fighter, Elf Wizard, Orc Barbarian, Innkeeper, Goblin,
+Skeleton), five editable colors, six color schemes, and CSS animation previews
+for Idle / Move / Attack / Rest. These are **builder concept animations**. They
+are not yet the independent, certified WebM product exports.
+
+All editing happens in the browser with no login. The builder saves validated
+`gridborn-character-recipe` version 1 JSON for later import, autosaves to the
+browser when allowed, and can export a clearly **watermarked static PNG
+preview**, not a commercial transparent animation package. Custom filenames
+are derived from sanitized recipe names. Data import is size-limited and
+strictly validates parts and colors; names are XML-escaped before SVG rendering.
+The studio offers both dark and light map-grid backgrounds for legibility.
+
+Run `npm test` for recipe/rig/storefront validation, and the real Chromium
+suite to exercise the builder on 1440, 390 and 320px screens including live
+controls, downloads, import/autosave, and no horizontal overflow. The new
+builder is a V1 development preview: no payment, protected downloads, completed
+animal rigs, saved cloud account, specific VTT compatibility certification, or
+real-world usability/accessibility sign-off is implied.
+
+### Future production work
+
+- Evolve rigs by body family (humanoid, quadruped, flying, aquatic, giant)
+  with shared anchors, articulation, layers, equipment clipping and consistent art.
+- Render and certify **Idle, Move, Attack, Rest + static PNG** from each
+  user-saved rig with private media workers, not in public GitHub Pages.
+- Verify files on leading VTT platforms and simplify imports without forcing
+  platform-specific modules; retain PNG fallbacks.
+- Add secure delivery, license review, pricing tests, visual QA and human-led
+  mobile and assistive-technology acceptance before commercial launch.

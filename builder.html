@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#0b1018"/>
+  <meta name="robots" content="noindex,follow"/>
+  <meta name="description" content="Prototype Gridborn modular fantasy token builder: personalize a block-style hero, NPC, or humanoid monster, preview movement, and save your design."/>
+  <title>Make Your Own Fantasy Token | Gridborn Builder Preview</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="./src/base.css"/>
+  <link rel="stylesheet" href="./src/layout.css"/>
+  <link rel="stylesheet" href="./src/builder.css"/>
+  <script src="./src/builder-app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#builder-controls">Skip to character builder</a>
+  <header class="topbar shell">
+    <a class="brand" href="./" aria-label="Gridborn home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      <span>GRID<span class="brand-accent">BORN</span></span>
+    </a>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a href="./#catalog">Browse premade</a>
+      <a href="./builder.html" aria-current="page">Make your own</a>
+      <span class="builder-alpha">BUILDER PREVIEW</span>
+    </nav>
+  </header>
+  <main>
+    <section class="builder-intro shell" aria-labelledby="builder-title">
+      <div>
+        <p class="eyebrow">YOUR CHARACTER. YOUR COLORS. YOUR ADVENTURE.</p>
+        <h1 id="builder-title">Build someone <em>legendary.</em></h1>
+        <p>Start with a premade look or mix and match LEGO-style heads, armor, weapons, and colors. Every combination uses the same original block-style character rig.</p>
+      </div>
+      <div class="builder-intro-stat"><strong>01</strong><span>Shared humanoid rig<br/>Unlimited design combinations</span></div>
+    </section>
+    <section class="builder-workspace shell" aria-label="Make your own character">
+      <div class="builder-editor" id="builder-controls">
+        <div class="editor-header"><span class="eyebrow">01 / CHOOSE YOUR START</span><h2>Make it yours.</h2></div>
+        <div id="builder-presets" class="preset-grid" role="group" aria-label="Start from a premade character"></div>
+        <p class="builder-hint">Select a starting character, then customize anything below.</p>
+        <div class="builder-divider"></div>
+        <div class="editor-header"><span class="eyebrow">02 / MIX YOUR PARTS</span><h2>Build your character.</h2></div>
+        <div class="builder-fields">
+          <div class="builder-field builder-field-full"><label for="build-name">Character name</label><input id="build-name" maxlength="48" type="text" autocomplete="off" placeholder="Name your character"/></div>
+          <div id="builder-parts" class="builder-parts-grid"></div>
+        </div>
+        <div class="builder-divider"></div>
+        <div class="editor-header"><span class="eyebrow">03 / MAKE THE PALETTE YOURS</span><h2>Choose your colors.</h2></div>
+        <div id="builder-palettes" class="builder-palettes" role="group" aria-label="Color palettes"></div>
+        <details class="custom-colors">
+          <summary>Fine-tune individual colors <span aria-hidden="true">+</span></summary>
+          <div id="builder-colors" class="color-fields"></div>
+        </details>
+      </div>
+      <aside class="builder-preview" aria-labelledby="builder-preview-title">
+        <div class="preview-heading"><span class="eyebrow">LIVE TOKEN STUDIO</span><span class="preview-mark">ORIGINAL BLOCK ART</span></div>
+        <h2 id="builder-preview-title">Meet your creation.</h2>
+        <div id="builder-stage" class="builder-stage" data-background="dark">
+          <div class="stage-corner corner-a" aria-hidden="true"></div>
+          <div class="stage-corner corner-b" aria-hidden="true"></div>
+          <div id="builder-avatar" class="builder-avatar" aria-label="Live modular character preview"></div>
+          <span class="stage-coordinate" aria-hidden="true">GRID 01 / TOKEN PREVIEW</span>
+        </div>
+        <div class="stage-bottom">
+          <span id="builder-summary" class="builder-summary">Human · Plate armor · Sword</span>
+          <div role="group" aria-label="Preview background" class="stage-backgrounds">
+            <button type="button" data-bg="dark" aria-pressed="true">Dark grid</button>
+            <button type="button" data-bg="light" aria-pressed="false">Light grid</button>
+          </div>
+        </div>
+        <div class="animation-heading"><span class="eyebrow">ANIMATION STUDIO</span><span>Shared motion rig · concept preview</span></div>
+        <div id="builder-modes" class="builder-modes" role="group" aria-label="Preview animation">
+          <button type="button" data-mode="idle" aria-pressed="true">Idle</button>
+          <button type="button" data-mode="move" aria-pressed="false">Move</button>
+          <button type="button" data-mode="attack" aria-pressed="false">Attack</button>
+          <button type="button" data-mode="rest" aria-pressed="false">Rest</button>
+        </div>
+        <p id="builder-status" class="builder-status" role="status" aria-live="polite">Idle animation preview</p>
+        <div class="builder-exports">
+          <button id="download-recipe" type="button" class="builder-primary">Save my design <span aria-hidden="true">↓</span></button>
+          <button id="download-png" type="button" class="builder-outline">Download PNG sample</button>
+          <label class="builder-import" for="import-recipe">Load a saved design <span aria-hidden="true">↑</span></label>
+          <input id="import-recipe" type="file" accept=".json,application/json"/>
+          <button id="builder-reset" class="builder-reset" type="button">Reset design</button>
+        </div>
+        <p class="builder-fineprint">Builder V1 is a working character-design preview. Recipes save locally as JSON, and PNG samples carry a preview label. Full transparent animated exports, purchasing, and VTT compatibility are not available yet.</p>
+      </aside>
+    </section>
+    <section class="builder-next shell">
+      <span class="eyebrow">THE GRIDBORN PROMISE</span>
+      <h2>Premade when you want speed.<br/>Custom when you want character.</h2>
+      <p>One shared system powers both. As finished animation packs become available, modular designs can be prepared for the same platform-neutral token pipeline.</p>
+      <a href="./#catalog" class="builder-text-link">Explore premade token concepts →</a>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><span class="footer-logo">GRID<span>BORN</span></span><span>Modular character builder · early development preview</span><a href="./">Back to store ↑</a></div></footer>
+</body>
+</html>
