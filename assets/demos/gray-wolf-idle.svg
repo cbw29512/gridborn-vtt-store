@@ -13,8 +13,8 @@
  .wolf-leg-front-far{transform-origin:156px 138px}
  .wolf-leg-front-near{transform-origin:177px 156px}
  
- .wolf-tail{animation:wolf-tail-sway 4.1s ease-in-out infinite}
- .wolf-ear{animation:wolf-ear-twitch 5.1s steps(1,end) infinite}
+ .wolf-tail{animation:wolf-tail-sway 3.2s ease-in-out infinite}
+ .wolf-ear{animation:wolf-ear-twitch 3.2s steps(1,end) infinite}
  .wolf-head{animation:wolf-idle-head 3.2s ease-in-out infinite}
  
  
