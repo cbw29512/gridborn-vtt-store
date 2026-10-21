@@ -3,7 +3,7 @@
  * Filter state has exactly four fields, with no hidden or inferred selections.
  */
 export const initialState = Object.freeze({
-  category: 'Characters',
+  category: 'All',
   query: '',
   primary: '',
   secondary: '',
@@ -11,9 +11,12 @@ export const initialState = Object.freeze({
 
 export function availableOptions(items, category, primary = '') {
   try {
+    if (category === 'All') return { first: [], second: [] };
     const pool = items.filter(item => item.category === category);
     const first = [...new Set(pool.map(item => item.primary))].sort();
-    const second = [...new Set(pool.filter(item => !primary || item.primary === primary).map(item => item.secondary))].sort();
+    // Cascading filters: select a first-level option to unlock the second.
+    const second = primary ? [...new Set(pool.filter(item => item.primary === primary)
+      .map(item => item.secondary))].sort() : [];
     return { first, second };
   } catch (error) {
     console.error('Unable to build catalog filter options', error);
@@ -25,7 +28,7 @@ export function filterCatalog(items, state) {
   try {
     const query = String(state.query || '').trim().toLocaleLowerCase();
     return items.filter(item => {
-      if (item.category !== state.category) return false;
+      if (state.category !== 'All' && item.category !== state.category) return false;
       if (state.primary && item.primary !== state.primary) return false;
       if (state.secondary && item.secondary !== state.secondary) return false;
       if (!query) return true;

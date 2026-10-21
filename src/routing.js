@@ -6,14 +6,15 @@ export function readCatalogRoute(search, items) {
   try {
     const params = new URLSearchParams(search);
     const requestedCategory = params.get('category');
-    const category = Object.prototype.hasOwnProperty.call(categoryConfig, requestedCategory)
+    const category = requestedCategory === 'All' ||
+      Object.prototype.hasOwnProperty.call(categoryConfig, requestedCategory)
       ? requestedCategory : initialState.category;
     const options = availableOptions(items, category);
     const requestedPrimary = params.get('primary');
     const primary = options.first.includes(requestedPrimary) ? requestedPrimary : '';
     const secondaryValues = availableOptions(items, category, primary).second;
     const requestedSecondary = params.get('secondary');
-    const secondary = secondaryValues.includes(requestedSecondary) ? requestedSecondary : '';
+    const secondary = primary && secondaryValues.includes(requestedSecondary) ? requestedSecondary : '';
     const query = String(params.get('q') || '').trim().slice(0, 120);
     return { category, query, primary, secondary };
   } catch (error) {

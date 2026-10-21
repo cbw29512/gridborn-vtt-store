@@ -32,7 +32,11 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
         from playwright.sync_api import expect
         page.on("pageerror", lambda err: errors.append(str(err)))
         page.goto(origin, wait_until="load")
-        expect(page.locator("#result-summary")).to_have_text("8 results found")
+        expect(page.locator("#result-summary")).to_have_text("34 results found")
+        assert page.locator(".product-card").count() == 8, "Show a curated first page of eight"
+        assert page.locator("#primary-field").is_hidden(), "All categories should not show context filters"
+        assert page.locator("#secondary-field").is_hidden(), "All categories should not show context filters"
+        assert page.locator(".product-art").count() == 8, "Show illustrated concepts first"
         assert page.locator("h1").count() == 1, "One semantic page h1 is required"
         headline = page.locator("#hero-title").inner_text()
         assert "Your VTT maps are static" in headline, "VTT problem must appear immediately"
@@ -54,10 +58,22 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
             picture.scroll_into_view_if_needed()
             page.wait_for_function("(img) => img.complete && img.naturalWidth > 0",
                                    arg=picture.element_handle())
+        page.locator("#show-more").click()
+        assert page.locator(".product-card").count() == 16, "Show more should reveal eight more concepts"
+        page.locator("#search").fill("shark")
+        expect(page.locator("#result-summary")).to_have_text("2 results found")
+        assert page.locator(".product-card").count() == 2, "Search must work across all categories"
+        page.locator("#search").fill("nothingmatches_abc")
+        expect(page.locator("#empty-state")).to_be_visible()
+        page.locator("#empty-reset").click()
+        expect(page.locator("#result-summary")).to_have_text("34 results found")
         page.locator('[data-category-link="Animals"]').click()
         expect(page.locator("#result-summary")).to_have_text("10 results found")
+        assert page.locator("#primary-field").is_visible(), "Category unlocks contextual first filter"
+        assert page.locator("#secondary-filter").is_disabled(), "Secondary filter waits for a first choice"
         assert page.locator(".product-art").count() >= 2, "Expected illustrated animal studies"
         page.locator("#primary-filter").select_option("Ocean")
+        assert page.locator("#secondary-filter").is_enabled(), "Selecting habitat unlocks type"
         page.locator("#secondary-filter").select_option("Sharks")
         expect(page.locator("#result-summary")).to_have_text("2 results found")
         details = page.get_by_role("button", name="View concept details for Great White Shark")
@@ -69,6 +85,9 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
         expect(page.locator("#preview-dialog")).to_be_hidden()
         expect(details).to_be_focused()
         page.locator("#clear-filters").click()
+        expect(page.locator("#result-summary")).to_have_text("10 results found")
+        assert page.locator("#category").input_value() == "Animals", "Clearing filters must preserve category"
+        page.locator('[data-category-link="Characters"]').click()
         expect(page.locator("#result-summary")).to_have_text("8 results found")
         assert page.locator(".product-art").count() >= 3, "Expected three illustrated characters"
         page.locator("#demo-toggle").click()
