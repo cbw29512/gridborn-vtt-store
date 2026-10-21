@@ -1,4 +1,6 @@
 import { normalizeRecipe } from './builder-data.js';
+import {renderSpecialtyBack,renderSpecialtyFront,renderRightDagger,renderLeftDagger} from './rig-specialty.js';
+import {rigProportions} from './rig-proportions.js';
 const xml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
 const rect=(x,y,w,h,c)=>'<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="'+c+'"/>';
 const path=(d,c)=>'<path d="'+d+'" fill="'+c+'"/>';
@@ -155,7 +157,7 @@ function hand(r){
  path('M187 55L193 68 187 80 182 69Z',tint(p.accent,.48))+
  rect(182,64,12,5,p.metal);
  if(r.weapon==='Bow')item='<path d="M174 55Q220 119 174 180" fill="none" stroke="'+p.accent+'" stroke-width="8"/>'+line(176,57,176,179,p.metal,3);
- return '<g class="rig-weapon">'+item+'</g>';
+ return '<g class="rig-weapon">'+item+renderRightDagger(r)+'</g>';
 }
 function offhand(r){
  const p=r.palette;let item='';
@@ -167,19 +169,24 @@ function offhand(r){
  rect(77,145,6,8,tint(p.accent,.32));
  if(r.offhand==='Spellbook')item=rect(53,119,43,51,edge)+rect(58,124,17,39,p.primary)+rect(76,124,17,39,p.accent)+line(75,125,75,163,p.metal,3);
  if(r.offhand==='Lantern')item=rect(63,133,28,38,edge)+rect(68,139,18,25,p.accent)+rect(71,143,12,18,'#fff3b9')+'<path d="M70 132Q78 115 86 132" stroke="'+p.metal+'" stroke-width="5" fill="none"/>';
- return '<g class="rig-offhand">'+item+'</g>';
+ return '<g class="rig-offhand">'+item+renderLeftDagger(r)+'</g>';
 }
 export function renderRig(input,{mode='idle',animated=false}={}) {
+ try {
  const r=normalizeRecipe(input);
  if(!['idle','move','attack','rest'].includes(mode))throw new Error('Invalid rig preview mode');
  const seated=mode==='rest';
  const layers=(seated?restSeat(r):'')+
-   '<g class="rig-back">'+cape(r)+'</g>'+legs(r,seated)+
-   '<g class="rig-upper">'+arms(r)+torso(r)+face(r)+hat(r)+hand(r)+offhand(r)+'</g>';
+   '<g class="rig-back">'+cape(r)+renderSpecialtyBack(r)+'</g>'+legs(r,seated)+
+   '<g class="rig-upper">'+arms(r)+torso(r)+renderSpecialtyFront(r)+face(r)+hat(r)+hand(r)+offhand(r)+'</g>';
  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="'+xml(r.name)+
  ' modular fantasy token" shape-rendering="crispEdges" class="rig-image mode-'+mode+(animated?' rig-animated':'')+'">'+
  '<title>'+xml(r.name)+'</title><desc>Gridborn original modular block fantasy character concept</desc>'+
  '<ellipse cx="128" cy="209" rx="71" ry="19" fill="#070e18" opacity=".39"/>'+
  '<ellipse cx="128" cy="204" rx="74" ry="24" fill="none" stroke="'+r.palette.accent+'" stroke-width="4" opacity=".85"/>'+
- '<g class="rig-figure">'+layers+'</g></svg>';
+ '<g class="rig-figure"><g class="rig-proportions" transform="'+rigProportions(r.ancestry)+'">'+layers+'</g></g></svg>';
+ } catch(error) {
+  console.error('Unable to render humanoid prebuilt rig',error);
+  throw error;
+ }
 }
