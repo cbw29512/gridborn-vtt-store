@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="move" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Elven Wizard — move original motion study</title>
+<desc id="description">Cyan arcane staff, levitating robes and casting flare with move animation. Noncommercial prototype.</desc>
+<style>
+.rig-core{animation:wiz-walk 1.2s ease-in-out infinite}.rig-weapon{animation:wiz-staff-walk 1.2s ease-in-out infinite;transform-origin:76px 124px}.rig-glow{animation:wiz-glow-walk 1.2s steps(1,end) infinite}
+ @keyframes wiz-walk{0%,10%,90%,100%{transform:translate(0,0)}30%{transform:translate(-5px,-3px)}62%{transform:translate(5px,1px)}}
+ @keyframes wiz-staff-walk{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(-8deg)}62%{transform:rotate(5deg)}}
+ @keyframes wiz-glow-walk{0%,10%,90%,100%{opacity:.4}30%{opacity:1}62%{opacity:.55}}
+@media(prefers-reduced-motion:reduce){.rig-core,.rig-weapon,.rig-head,.rig-boot-l,.rig-boot-r,.rig-foot-left,.rig-foot-right,.rig-visorglow,.rig-glow{animation:none!important}}
+</style>
+<ellipse cx="128" cy="200" rx="58" ry="13" fill="#060b16" opacity=".34"/>
+<ellipse cx="128" cy="195" rx="70" ry="24" fill="none" stroke="#ddb268" stroke-width="3" opacity=".70"/>
+
+<g class="rig-core">
+<!-- Mantle, wide flared indigo robe -->
+<path d="M99 86h60v15h12v38h14v41h-13v13H78v-13H65v-41h14v-39h20z" fill="#13182d"/>
+<path d="M104 90h51v18h9v34h11v41H83v-41h10v-34h11z" fill="#4d3c90"/>
+<path d="M113 94h31v93h-31z" fill="#6c53b3"/><path d="M125 103h10v78h-10z" fill="#8a72db"/>
+<path d="M87 114h19v53H87zM152 114h18v52h-18z" fill="#342663"/>
+<!-- shimmering chest clasp and trim -->
+<path d="M119 124h19v9h-19z" fill="#e4bb69"/><rect x="124" y="126" width="8" height="7" fill="#8de9ee"/>
+<path d="M91 166h66v6H91z" fill="#d4a85d"/><rect x="92" y="184" width="15" height="7" fill="#231b45"/><rect x="147" y="184" width="15" height="7" fill="#231b45"/>
+<g class="rig-head">
+<!-- angled face and elven ears -->
+<path d="M102 69h55v37h-7v9h-39v-9h-9z" fill="#121b2f"/>
+<path d="M110 75h40v30h-40z" fill="#f4c39b"/>
+<path d="M98 86l-13-8v20l15 4zM158 86l13-8v20l-15 4z" fill="#e6af87"/>
+<rect x="115" y="89" width="7" height="4" fill="#213c4a"/><rect x="139" y="89" width="7" height="4" fill="#213c4a"/>
+<rect x="121" y="100" width="16" height="4" fill="#b97977"/>
+<!-- Tall crescent hat, bright embroidered brim -->
+<path d="M87 75h85v10H87z" fill="#141d36"/><path d="M92 74h75v7H92z" fill="#d5b45e"/>
+<path d="M108 61l36-47 10 6 4 17 6 35z" fill="#141d36"/>
+<path d="M117 62l29-38 6 8 7 39h-43z" fill="#433e90"/>
+<path d="M139 35h11v12h-11z" fill="#a7c7ed"/><path d="M121 66h21v5h-21z" fill="#d9b568"/>
+</g>
+</g>
+<g class="rig-weapon">
+<!-- silver staff, held at left, gold prongs and sky-blue arcana -->
+<rect x="69" y="68" width="8" height="123" fill="#11192e"/><rect x="72" y="72" width="4" height="117" fill="#b8c9da"/>
+<path d="M61 65h7V43h9v22h8l-11 14z" fill="#e2b86b"/><rect x="69" y="48" width="9" height="17" fill="#72d9f7"/>
+<path d="M54 54h7v6h-7zM80 31h7v6h-7zM52 90h5v5h-5z" fill="#8ce9f7"/>
+<path d="M78 134h16v16H78z" fill="#f1c6a2"/><rect x="158" y="139" width="13" height="15" fill="#f1c6a2"/>
+
+<g class="rig-glow"><circle cx="75" cy="53" r="17" fill="#7ee8f4" opacity=".55"/><path d="M58 52l17-21 19 22-18 17z" fill="none" stroke="#e4eead" stroke-width="4"/></g>
+</g>
+</svg>
