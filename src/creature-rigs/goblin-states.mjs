@@ -8,7 +8,7 @@ const LEG_PATH='<path d="M107 164h15v23h-15zM136 164h17v23h-17z" fill="#806446"/
 const LEGS='<g class="goblin-leg-left"><path d="M107 164h15v23h-15z" fill="#806446"/></g>'+
   '<g class="goblin-leg-right"><path d="M136 164h17v23h-17z" fill="#806446"/></g>';
 const BLINK_AFTER='<rect x="118" y="83" width="7" height="6" fill="#f8c75e"/><rect x="141" y="83" width="7" height="6" fill="#f8c75e"/>';
-const BLINK=BLINK_AFTER+'<g class="goblin-blink">'+
+const BLINK=BLINK_AFTER+'<g class="goblin-blink" opacity="0">'+
   '<rect x="115" y="82" width="13" height="10" fill="#608a5e"/>'+
   '<rect x="138" y="82" width="13" height="10" fill="#608a5e"/></g>';
 const ANIMATIONS=Object.freeze({
