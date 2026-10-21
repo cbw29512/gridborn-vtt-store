@@ -1,6 +1,7 @@
 import { catalog, categoryConfig } from './catalog.js';
 import { initialState, availableOptions, filterCatalog, validateCatalog } from './filters.js';
 import { initializeDemo } from './animation-demo.js';
+import {initializeBundles} from './bundle-ui.js';
 import { initializeConceptDialog } from './concept-dialog.js';
 import { makeCard } from './product-card.js';
 import { readCatalogRoute, writeCatalogRoute, markActiveCollection, connectCatalogNavigation } from './routing.js';
@@ -46,6 +47,7 @@ function renderResults() {
       Number(Boolean(b.previewArt))-Number(Boolean(a.previewArt)) ||
       (state.category==='Monsters' ? a.name.localeCompare(b.name) : 0));
     nodes.results.replaceChildren(...ordered.slice(0, visibleCount).map(makeCard).filter(Boolean));
+    document.dispatchEvent(new Event('gridborn:catalog-rendered'));
     nodes.empty.hidden = filtered.length > 0;
     nodes.results.hidden = filtered.length === 0;
     nodes.more.hidden = filtered.length <= visibleCount;
@@ -118,7 +120,7 @@ function initialize() {
     byId('empty-reset').addEventListener('click', resetFilters);
     nodes.search.value = state.query;
     visibleCount=pageSize();
-    updateFilters(); renderResults(); initializeDemo();
+    updateFilters(); renderResults(); initializeBundles(catalog); initializeDemo();
   } catch (error) {
     console.error('Storefront failed to initialize', error);
     const summary = byId('result-summary');
