@@ -37,5 +37,19 @@
     "rest-webm"
   ],
   "vttCompatibility": "untested",
-  "purchasable": false
+  "purchasable": false,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/cave-goblin-idle.svg",
+      "durationSec": 3.6
+    },
+    "move": {
+      "source": "assets/demos/cave-goblin-move.svg",
+      "durationSec": 3.6
+    },
+    "attack": {
+      "source": "assets/demos/cave-goblin-attack.svg",
+      "durationSec": 1.4
+    }
+  }
 }
