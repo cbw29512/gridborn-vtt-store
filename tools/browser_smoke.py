@@ -75,6 +75,33 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
             picture.scroll_into_view_if_needed()
             page.wait_for_function("(img) => img.complete && img.naturalWidth > 0",
                                    arg=picture.element_handle())
+        # Build a real draft bundle; no payment or download entitlement is created.
+        assert page.locator("#bundle-templates .bundle-template").count()==4
+        page.locator('[data-bundle-template="starter-party"]').click()
+        expect(page.locator("#bundle-count")).to_have_text("5 / 25 selected")
+        expect(page.locator("#bundle-total")).to_have_text("$3.99")
+        expect(page.locator("#bundle-savings")).to_contain_text("$0.96")
+        expect(page.locator("#bundle-items .bundle-item")).to_have_count(5)
+        page.reload(wait_until="load")
+        expect(page.locator("#bundle-count")).to_have_text("5 / 25 selected")
+        with page.expect_download() as saved_bundle:
+            page.locator("#bundle-export").click()
+        import json
+        bundle=json.loads(Path(saved_bundle.value.path()).read_text(encoding="utf-8"))
+        assert bundle["previewOnly"] is True
+        assert bundle["canPurchase"] is False
+        assert len(bundle["ids"])==5
+        assert bundle["pricing"]["totalCents"]==399
+        page.locator("#search").fill("great white shark")
+        shark_add=page.locator('button[data-bundle-id="ani-ocean-greatwhite"]')
+        shark_add.click()
+        expect(page.locator("#bundle-count")).to_have_text("6 / 25 selected")
+        expect(page.locator("#bundle-total")).to_have_text("$4.98")
+        expect(shark_add).to_be_disabled()
+        page.locator("#bundle-clear").click()
+        expect(page.locator("#bundle-count")).to_have_text("0 / 25 selected")
+        expect(page.locator("#bundle-total")).to_have_text("$0.00")
+        page.locator("#search").fill("")
         page.locator("#show-more").click()
         assert page.locator(".product-card").count() == 16, "Show more should reveal eight more concepts"
         page.locator("#search").fill("shark")
