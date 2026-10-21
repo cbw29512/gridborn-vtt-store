@@ -1,7 +1,7 @@
 name: Gridborn controller-media private full QA
 on:
   push:
-    branches: [feature/foundry-controller-v1]
+    branches: [feature/foundry-controller-v1, feature/goblin-independent-motion-studies]
   workflow_dispatch:
 permissions:
   contents: read
