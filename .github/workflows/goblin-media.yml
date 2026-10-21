@@ -20,7 +20,7 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: Verify FFmpeg and source contract
         run: |
-          command -v ffmpeg
+          command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
           command -v ffprobe
           python -m unittest discover -s tests -p 'test_*.py'
       - name: Render full Cave Goblin action and rest prototypes
