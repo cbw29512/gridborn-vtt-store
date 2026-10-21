@@ -65,22 +65,22 @@ def check_catalog_motion(browser,origin,width,screenshots:Path):
         sk_stage=skeleton.locator('.product-motion-stage')
         expect(sk_stage).to_contain_text('IDLE',timeout=5000)
         expect(sk_image).to_have_attribute(
-            'src',re.compile(r'.*skeleton-warrior-idle\\.svg'))
+            'src',re.compile(r'.*skeleton-warrior-idle\.svg'))
         if width==1440:
             expect(sk_stage).to_contain_text('MOVE',timeout=5000)
             expect(sk_image).to_have_attribute(
-                'src',re.compile(r'.*skeleton-warrior-move\\.svg'))
+                'src',re.compile(r'.*skeleton-warrior-move\.svg'))
             expect(sk_stage).to_contain_text('ATTACK',timeout=5000)
             expect(sk_stage).to_contain_text('REST',timeout=4000)
             expect(sk_image).to_have_attribute(
-                'src',re.compile(r'.*skeleton-warrior-rest\\.svg'))
+                'src',re.compile(r'.*skeleton-warrior-rest\.svg'))
             page.screenshot(path=str(screenshots/'gridborn-skeleton-rest-catalog.png'))
         page.get_by_role('button',name='View concept details for Skeleton Warrior').click()
         for state in ('idle','move','action','rest'):
             expect(page.locator('#concept-preview-'+state)).to_be_visible()
         page.locator('#concept-preview-rest').click()
         expect(page.locator('#concept-preview-image')).to_have_attribute(
-            'src',re.compile(r'.*skeleton-warrior-rest\\.svg'))
+            'src',re.compile(r'.*skeleton-warrior-rest\.svg'))
         page.keyboard.press('Escape')
         expect(page.locator('#preview-dialog')).to_be_hidden()
         # Still-only concepts must never display fake animation claims.
