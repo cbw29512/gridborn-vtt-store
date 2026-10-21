@@ -26,6 +26,7 @@ function updateFilters() {
     nodes.primaryField.hidden = !config;
     nodes.secondaryField.hidden = !config;
     nodes.search.placeholder = config ? config.placeholder : 'Try shark, wizard, innkeeper...';
+    nodes.searchLabel.textContent = config ? 'Search ' + state.category.toLowerCase() : 'Search all tokens';
     if (!config) return;
     nodes.firstLabel.textContent = config.first;
     nodes.secondLabel.textContent = config.second;
@@ -73,7 +74,8 @@ function initialize() {
     if (!validateCatalog(catalog)) throw new Error('Preview catalog validation failed');
     Object.assign(state, readCatalogRoute(window.location.search, catalog));
     Object.assign(nodes, {
-      search: byId('search'), category: byId('category'), primary: byId('primary-filter'),
+      search: byId('search'), searchLabel: byId('search-label'),
+      category: byId('category'), primary: byId('primary-filter'),
       secondary: byId('secondary-filter'), firstLabel: byId('primary-label'),
       secondLabel: byId('secondary-label'), primaryField: byId('primary-field'),
       secondaryField: byId('secondary-field'), results: byId('results'),

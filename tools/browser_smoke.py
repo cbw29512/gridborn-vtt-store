@@ -1,5 +1,4 @@
 """Real Chromium smoke checks for the public Gridborn development preview.
-
 No Netlify deployment. Screenshots remain in the ephemeral GitHub runner.
 A passing smoke test does not replace manual WCAG/ADA accessibility review.
 """
@@ -10,20 +9,15 @@ import shutil
 import threading
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-
 LOG = logging.getLogger("gridborn.browser")
 ROOT = Path(__file__).resolve().parents[1]
 SIZES = (1440, 390, 320)
-
-
 class PreviewHandler(SimpleHTTPRequestHandler):
     def log_message(self, format_string, *args):
         try:
             LOG.debug("HTTP: " + format_string, *args)
         except Exception:
             LOG.exception("HTTP preview logging failed")
-
-
 def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
     """Exercise navigation, keyboard, details and action/rest controls."""
     page = browser.new_page(viewport={"width": width, "height": 850})
@@ -33,6 +27,7 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
         page.on("pageerror", lambda err: errors.append(str(err)))
         page.goto(origin, wait_until="load")
         expect(page.locator("#result-summary")).to_have_text("34 results found")
+        expect(page.locator("#search-label")).to_have_text("Search all tokens")
         assert page.locator(".product-card").count() == 8, "Show a curated first page of eight"
         assert page.locator("#primary-field").is_hidden(), "All categories should not show context filters"
         assert page.locator("#secondary-field").is_hidden(), "All categories should not show context filters"
@@ -69,6 +64,7 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
         expect(page.locator("#result-summary")).to_have_text("34 results found")
         page.locator('[data-category-link="Animals"]').click()
         expect(page.locator("#result-summary")).to_have_text("10 results found")
+        expect(page.locator("#search-label")).to_have_text("Search animals")
         assert page.locator("#primary-field").is_visible(), "Category unlocks contextual first filter"
         assert page.locator("#secondary-filter").is_disabled(), "Secondary filter waits for a first choice"
         assert page.locator(".product-art").count() >= 2, "Expected illustrated animal studies"
