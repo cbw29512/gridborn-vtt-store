@@ -119,6 +119,23 @@ test('quiet Idle, Move and Rest hold indefinitely without timers', async () => {
   }
 });
 
+test('HUD state callbacks update after one-shot Attack returns to Idle', async () => {
+  const token = tokenFixture();
+  const seen = [];
+  const observe = mode => seen.push(mode);
+  await configureToken(token, {folder:'worlds/a',attackMs:1400},
+    {user:owner,nonce:'initial-mode',onPlayback:observe});
+  let finish;
+  const fakeClock={schedule:fn=>{finish=fn;return 8;},cancel:()=>{}};
+  await playMode(token,'attack',{
+    user:owner,nonce:'attack-mode',clock:fakeClock,onPlayback:observe
+  });
+  assert.deepEqual(seen,['idle','attack']);
+  await finish();
+  assert.deepEqual(seen,['idle','attack','idle']);
+  assert.equal(token.flags.playback.mode,'idle');
+});
+
 test('stale playback nonce cannot override a newer attack', () => {
   assert.equal(shouldResetPlayback({ mode:'attack', nonce:'oldNonce' },
     'newNonce', 'worlds/a/attack.webm', 'worlds/a/attack.webm'), false);
