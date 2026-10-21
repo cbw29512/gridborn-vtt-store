@@ -1,0 +1,84 @@
+"""Confirm token motion is visible on product cards without opening detail windows."""
+import logging
+from pathlib import Path
+from playwright.sync_api import expect
+LOG=logging.getLogger('gridborn.catalog-motion')
+
+def check_catalog_motion(browser,origin,width,screenshots:Path):
+    page=browser.new_page(viewport={'width':width,'height':850})
+    errors=[]
+    try:
+        page.on('pageerror',lambda exc:errors.append(str(exc)))
+        page.goto(origin,wait_until='load')
+        expect(page.locator('#catalog-motion-toggle')).to_be_visible() if width==1440 else None
+        assert page.locator('.product-card[data-motion-id]').count()>=1
+        # Re-render one original creature into view to start its first Idle phase.
+        page.locator('#search').fill('Gray Wolf')
+        card=page.locator('.product-card[data-motion-id="ani-forest-wolf"]')
+        expect(card).to_have_count(1)
+        card.scroll_into_view_if_needed()
+        img=card.locator('img.product-art')
+        stage=card.locator('.product-motion-stage')
+        expect(stage).to_contain_text('IDLE',timeout=4500)
+        expect(img).to_have_attribute('src',r'.*gray-wolf-idle\.svg')
+        page.wait_for_function('(img)=>img.complete && img.naturalWidth>0',
+            arg=img.element_handle(),timeout=6500)
+        expect(stage).to_contain_text('MOVE',timeout=4500)
+        expect(img).to_have_attribute('src',r'.*gray-wolf-move\.svg')
+        if width==1440:
+            frame_one=img.screenshot()
+            page.wait_for_timeout(420)
+            frame_two=img.screenshot()
+            assert frame_one!=frame_two,'Visible catalog Wolf must show actual motion'
+            expect(stage).to_contain_text('ATTACK',timeout=4200)
+            expect(img).to_have_attribute('src',r'.*gray-wolf-attack\.svg')
+            expect(stage).to_contain_text('REST',timeout=3500)
+            expect(img).to_have_attribute('src',r'.*gray-wolf-rest\.svg')
+            page.screenshot(path=str(screenshots/'gridborn-catalog-wolf-autoplay.png'))
+        pause=page.locator('#catalog-motion-toggle')
+        pause.click()
+        expect(pause).to_have_attribute('aria-pressed','true')
+        expect(stage).to_contain_text('PAUSED')
+        expect(img).to_have_attribute('src',r'.*gray-wolf\.svg')
+        # No animation may resume while paused, even after a filtered re-render.
+        page.locator('#search').fill('Cave Goblin')
+        goblin=page.locator('.product-card[data-motion-id="mon-cave-goblin"]')
+        goblin.scroll_into_view_if_needed()
+        expect(goblin.locator('.product-motion-stage')).to_contain_text('PAUSED')
+        expect(goblin.locator('img.product-art')).to_have_attribute(
+            'src',r'.*assets/studies/cave-goblin\.svg')
+        pause.click()
+        goblin.scroll_into_view_if_needed()
+        expect(goblin.locator('.product-motion-stage')).to_contain_text('IDLE',timeout=4500)
+        expect(goblin.locator('img.product-art')).to_have_attribute(
+            'src',r'.*assets/demos/cave-goblin-idle\.svg')
+        # Still-only concepts must never display fake animation claims.
+        page.locator('#search').fill('Great White Shark')
+        shark=page.locator('.product-card').filter(has=page.get_by_text('Great White Shark',exact=True))
+        expect(shark).to_have_count(1)
+        expect(shark.locator('.product-motion-stage')).to_have_count(0)
+        expect(shark.locator('img.product-art')).to_have_attribute(
+            'src',r'.*assets/studies/great-white-shark\.svg')
+        assert not errors,'; '.join(errors)
+        LOG.info('PASS token card autoplay and controls at %spx',width)
+    finally:
+        page.close()
+
+def check_reduced_motion(browser,origin):
+    context=browser.new_context(viewport={'width':390,'height':800},reduced_motion='reduce')
+    page=context.new_page()
+    try:
+        page.goto(origin,wait_until='load')
+        page.locator('#search').fill('Gray Wolf')
+        card=page.locator('.product-card[data-motion-id="ani-forest-wolf"]')
+        card.scroll_into_view_if_needed()
+        expect(card.locator('.product-motion-stage')).to_contain_text('STILL · reduced motion')
+        expect(card.locator('img.product-art')).to_have_attribute(
+            'src',r'.*assets/studies/gray-wolf\.svg')
+        expect(page.locator('#catalog-motion-toggle')).to_be_disabled()
+        page.wait_for_timeout(2900)
+        expect(card.locator('img.product-art')).to_have_attribute(
+            'src',r'.*assets/studies/gray-wolf\.svg')
+        LOG.info('PASS reduced-motion static fallback')
+    finally:
+        context.close()
