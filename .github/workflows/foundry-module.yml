@@ -1,0 +1,33 @@
+name: Gridborn Foundry developer controller package
+on:
+  push:
+    branches: [main, feature/foundry-controller-v1]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  module-check-and-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate module scripts and all unit tests
+        run: |
+          for script in foundry/gridborn-controller/scripts/*.mjs; do node --check "$script"; done
+          npm test
+          python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: Build source-only Foundry module ZIP
+        run: |
+          cd foundry
+          zip -qr "$RUNNER_TEMP/gridborn-controller-dev.zip" gridborn-controller
+          unzip -p "$RUNNER_TEMP/gridborn-controller-dev.zip" gridborn-controller/module.json \
+            | python3 -m json.tool >/dev/null
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gridborn-controller-dev
+          path: ${{ runner.temp }}/gridborn-controller-dev.zip
+          if-no-files-found: error
+          retention-days: 14

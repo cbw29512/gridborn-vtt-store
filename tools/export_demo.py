@@ -14,6 +14,7 @@ from pathlib import Path
 
 from asset_spec import load_manifest
 from media_cert import inspect_motion, inspect_png, inspect_video
+from controller_package import create_controller_package
 
 LOG = logging.getLogger("gridborn.export")
 ROOT = Path(__file__).resolve().parents[1]
@@ -66,15 +67,20 @@ def render_frames(spec: dict, frames: Path, sample: int | None = None, mode: str
         raise
 
 
-def encode_webm(frames: Path, target: Path, fps: int) -> None:
+def encode_webm(frames: Path, target: Path, fps: int,
+                start_frame: int = 0, frame_count: int | None = None) -> None:
     try:
         ffmpeg = shutil.which("ffmpeg")
         if not ffmpeg:
             raise FileNotFoundError("FFmpeg is required for VP9-alpha output")
         args = [ffmpeg, "-hide_banner", "-loglevel", "error", "-y",
-                "-framerate", str(fps), "-i", str(frames / "frame_%05d.png"),
+                "-framerate", str(fps), "-start_number", str(start_frame),
+                "-i", str(frames / "frame_%05d.png"),
                 "-c:v", "libvpx-vp9", "-pix_fmt", "yuva420p", "-auto-alt-ref", "0",
-                "-b:v", "0", "-crf", "35", "-threads", "4", str(target)]
+                "-b:v", "0", "-crf", "35", "-threads", "4"]
+        if frame_count is not None:
+            args.extend(["-frames:v", str(frame_count)])
+        args.append(str(target))
         subprocess.run(args, check=True, capture_output=True, text=True)
         LOG.info("Created WebM concept preview: %s", target)
     except subprocess.CalledProcessError as error:
@@ -92,11 +98,15 @@ def main() -> int:
         cli.add_argument("--output-dir", type=Path, required=True)
         cli.add_argument("--sample-frames", type=int, default=None)
         cli.add_argument("--certify", action="store_true", help="Run full technical media QA")
+        cli.add_argument("--controller-package", action="store_true",
+                         help="Build private Idle/Move/Attack/Rest WebMs for Foundry")
         args = cli.parse_args()
         logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
         spec = load_manifest(args.manifest, ROOT)
         if args.sample_frames is not None and args.sample_frames < 1:
             raise ValueError("--sample-frames must be positive")
+        if args.controller_package and not args.certify:
+            raise ValueError("Controller packaging requires complete --certify QA")
         if args.certify and args.sample_frames is not None:
             raise ValueError("Certification requires every action and rest frame")
         output = args.output_dir.resolve()
@@ -132,6 +142,10 @@ def main() -> int:
                 (output / (spec["id"] + "-media-qa.json")).write_text(
                     json.dumps(quality, indent=2) + "\n", encoding="utf-8")
                 LOG.info("Technical media QA passed: %s", json.dumps(quality))
+                if args.controller_package:
+                    bundle = create_controller_package(
+                        spec, action_frames, output, encode_webm, inspect_video)
+                    LOG.info("Private Foundry bundle validated at: %s", bundle)
         LOG.info("Private proof-of-concept exports: %s", output)
         return 0
     except Exception:
