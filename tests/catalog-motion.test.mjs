@@ -9,7 +9,7 @@ const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 test('All existing four-state animation prototypes visibly participate in autoplay',()=>{
   const ids=Object.keys(animatedPreviews);
   assert.deepEqual(ids.sort(),[
-    'ani-forest-wolf','chr-ftr-human','mon-cave-goblin','mon-cave-spider']);
+    'ani-forest-wolf','chr-ftr-human','mon-cave-goblin','mon-cave-spider','mon-dng-skeleton']);
   assert.deepEqual(MOTION_STAGES.map(s=>s.key),['idle','move','action','rest']);
   assert.equal(MOTION_STAGES.length,4);
   for(const entry of MOTION_STAGES)assert.ok(entry.durationMs>=0);
@@ -25,7 +25,7 @@ test('All existing four-state animation prototypes visibly participate in autopl
     assert.ok(Number.isInteger(animatedPreviews[id].actionDurationMs));
   }
   assert.equal(hasCatalogMotion('ani-ocean-greatwhite'),false,'Shark still-only until animated');
-  assert.equal(hasCatalogMotion('mon-dng-skeleton'),false,'Skeleton still-only until animated');
+  assert.equal(hasCatalogMotion('mon-dng-skeleton'),true,'Skeleton now has all four modes');
   assert.equal(hasCatalogMotion('nonexistent'),false);
 });
 
