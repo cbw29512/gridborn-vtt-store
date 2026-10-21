@@ -32,7 +32,16 @@ export const animatedPreviews = Object.freeze({
   }),
   'mon-cave-goblin': Object.freeze({
     still: './assets/studies/cave-goblin.svg',
-    action: './assets/demos/cave-goblin-loop.svg',
+    idle: './assets/demos/cave-goblin-idle.svg',
+    move: './assets/demos/cave-goblin-move.svg',
+    action: './assets/demos/cave-goblin-attack.svg',
     rest: './assets/demos/cave-goblin-rest.svg',
+    actionDurationMs: 1400,
+    labels: Object.freeze({
+      idle: 'Idle · breathing and blinking (prototype)',
+      move: 'Move · alternating goblin leg stride (prototype)',
+      action: 'Attack · one curved blade strike, then Idle (prototype)',
+      rest: 'Rest · relaxed breathing pose (prototype)'
+    }),
   }),
 });

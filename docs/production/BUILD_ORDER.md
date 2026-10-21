@@ -117,3 +117,29 @@ Idle/Move/Attack/Rest exports remain future work and all review checks open.
 - Next production priorities: approve shark profile at 64px; revise giant
   spider to side profile; build Rogue and Ranger class visuals; then wolf and
   dragon size variants. Distinct animations and manual VTT tests still required.
+
+### Cave Goblin four-state public study (October 21, 2026)
+
+The existing Cave Goblin design now has independently reviewable **Idle**,
+**Move**, one-shot **Attack**, and **Rest** SVG studies, without adding
+another catalog entry or claiming a ready-for-sale product.
+
+- Generated source `src/creature-rigs/goblin-states.mjs` keeps the same
+  original body/ears/blade/buckler art from the 45-second master SVG.
+- `assets/demos/cave-goblin-idle.svg` breathes/blinks without attacking.
+- `assets/demos/cave-goblin-move.svg` shows opposing independently animated
+  legs, body bob, buckler and blade movement.
+- `assets/demos/cave-goblin-attack.svg` performs one wind-up, swing and
+  reset over 1.4 seconds; its catalog controller returns to Idle.
+- `assets/demos/cave-goblin-rest.svg` retains the earlier six-second loop.
+- Rebuild deterministically: `node tools/generate-goblin-states.mjs`.
+  Detect drift: `node tools/generate-goblin-states.mjs --check`.
+- Chromium regression opens the real catalog dialog in three viewport sizes
+  and tests movement, action reset, rest, and keyboard focus.
+
+**Still not complete:** the 45-second master is what the *private* VP9-alpha
+media exporter currently samples. These public SVG studies are not
+independently WebM-exported or tested in a commercial VTT. Human review of
+appearance/stride and loop seams at 256/128/64/32px on light/dark grids,
+licensed art approval, full decoded-alpha technical QA, and direct target-VTT
+import are still release blockers. `purchasable` stays `false`.

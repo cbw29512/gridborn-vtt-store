@@ -15,6 +15,7 @@ from builder_browser_qa import check_builder
 from production_browser_qa import check_production
 from wolf_browser_qa import check_wolf
 from spider_browser_qa import check_spider
+from goblin_browser_qa import check_goblin
 from catalog_expansion_browser_qa import check_full_catalog
 SIZES = (1440, 390, 320)
 class PreviewHandler(SimpleHTTPRequestHandler):
@@ -191,6 +192,7 @@ def main() -> int:
                     check_production(browser, url, width, screenshots)
                     check_wolf(browser, url, width, screenshots)
                     check_spider(browser, url, width, screenshots)
+                    check_goblin(browser, url, width, screenshots)
                     check_full_catalog(browser, url, width, screenshots)
             finally:
                 browser.close()

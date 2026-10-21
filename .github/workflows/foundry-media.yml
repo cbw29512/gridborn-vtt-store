@@ -2,6 +2,16 @@ name: Gridborn controller-media private full QA
 on:
   push:
     branches: [feature/foundry-controller-v1]
+  pull_request:
+    paths:
+      - 'assets/demos/**'
+      - 'assets/studies/cave-goblin.svg'
+      - 'src/creature-rigs/**'
+      - 'tools/export_demo.py'
+      - 'tools/media_cert.py'
+      - 'tools/controller_package.py'
+      - 'tools/asset_spec.py'
+      - '.github/workflows/foundry-media.yml'
   workflow_dispatch:
 permissions:
   contents: read

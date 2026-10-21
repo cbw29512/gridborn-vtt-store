@@ -1,4 +1,5 @@
 import { categoryConfig } from './catalog.js';
+import {animatedPreviews} from './animated-previews.js';
 import { initializeConceptPreview, setConceptPreview, stopConceptPreview } from './concept-preview.js';
 
 let lastDialogTrigger = null;
@@ -11,6 +12,8 @@ export function openConcept(item, trigger) {
     if (!config) throw new Error('Unknown category: ' + item.category);
     nodes.dialogTitle.textContent = item.name;
     nodes.dialogDescription.textContent = 'Planned specifications for this ' + item.category.toLowerCase() + ' token.';
+    const states=animatedPreviews[item.id];
+    const hasIndividualModes=Boolean(states?.idle&&states?.move&&states?.action&&states?.rest);
     const specs = [
       ['Category', item.category], [config.first, item.primary], [config.second, item.secondary],
       ['Size', item.size], ['Grid footprint', item.squares + ' × ' + item.squares + ' squares'],
@@ -20,9 +23,11 @@ export function openConcept(item, trigger) {
       ...(item.category==='Monsters' ? [['Artwork camera', item.artDirection]] : []),
       ...(item.gender ? [['Character identity', item.gender],
         ['Design specialty', item.specialty||item.distinguishingGear||'Original concept']] : []),
-      ['Animation', item.id === 'ani-forest-wolf'
-        ? 'Separate prototype Idle, Move, one-shot Bite and curled Rest states'
-        : 'Planned 45-second action showcase; independent state clips are intended for final export'],
+      ['Animation', hasIndividualModes
+        ? 'Four separate preview states: looping Idle, Move and Rest, plus a one-shot Attack. Still prototype artwork, not exported VTT media.'
+        : states?.action
+          ? 'Action and Rest prototype studies exist; final independent state exports are pending'
+          : 'Planned 45-second action showcase; independent state clips are intended for final export'],
       ['Extras', 'Rest animation and PNG fallback planned'],
       ['Artwork status', item.previewArt ? 'Original draft illustration; not a VTT-certified asset' : 'Not produced'],
       ['Animation status', item.animationStatus === 'art-study'
