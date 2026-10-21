@@ -118,7 +118,7 @@ export const CLASS_ARCHETYPES=Object.freeze([
   ],
   "equipment": {
    "weapon": "Bow",
-   "outfit": "Leather armor",
+   "outfit": "Ranger field gear",
    "offhand": "None",
    "headgear": "Hood"
   },
@@ -132,8 +132,8 @@ export const CLASS_ARCHETYPES=Object.freeze([
    "Nightblade"
   ],
   "equipment": {
-   "weapon": "Sword",
-   "outfit": "Leather armor",
+   "weapon": "Twin daggers",
+   "outfit": "Rogue leathers",
    "offhand": "None",
    "headgear": "Hood"
   },

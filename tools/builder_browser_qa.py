@@ -11,11 +11,22 @@ def check_builder(browser,origin,width,screenshots:Path):
         page.on("pageerror",lambda error: errors.append(str(error)))
         page.goto(origin+"builder.html",wait_until="load")
         expect(page.locator("#builder-title")).to_contain_text("Build someone")
-        assert page.locator("#builder-presets button").count()==8
+        assert page.locator("#builder-presets button").count()==10
         assert page.locator("#builder-parts select").count()==7
         assert page.locator("#builder-palettes button").count()==7
         assert page.locator("#builder-avatar svg").count()==1
         expect(page.locator("#builder-summary")).to_contain_text("Human")
+        # Newly added prebuilt classes must render distinct parts, not a blank rig.
+        page.locator('[data-preset="chr-rge-gnome"]').click()
+        expect(page.locator("#part-outfit")).to_have_value("Rogue leathers")
+        expect(page.locator("#part-weapon")).to_have_value("Twin daggers")
+        expect(page.locator(".rig-rogue-leathers")).to_have_count(1)
+        expect(page.locator(".rig-ranger-quiver")).to_have_count(0)
+        page.locator('[data-preset="chr-rng-elf"]').click()
+        expect(page.locator("#part-outfit")).to_have_value("Ranger field gear")
+        expect(page.locator("#part-weapon")).to_have_value("Bow")
+        expect(page.locator(".rig-ranger-quiver")).to_have_count(1)
+        expect(page.locator(".rig-ranger-field-gear")).to_have_count(1)
         page.locator('[data-preset="chr-pal-human"]').click()
         expect(page.locator("#builder-summary")).to_contain_text("Paladin")
         expect(page.locator("#part-outfit")).to_have_value("Paladin tabard")
