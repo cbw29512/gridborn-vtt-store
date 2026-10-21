@@ -21,6 +21,7 @@ export async function playMode(token, mode, options = {}) {
   const state = nextState(mode, nonce);
   stopTimer(token);
   await doc.update({ 'texture.src': paths[mode], ['flags.' + MODULE_ID + '.playback']: state });
+  if (typeof options.onPlayback === 'function') options.onPlayback(mode);
   if (mode !== 'attack') return state;
   const time = options.clock ?? clock;
   const id = time.schedule(async () => {

@@ -287,3 +287,23 @@ or a guaranteed physical 1-inch size; VTT zoom and display density vary.
 Final artwork leg readability at 32px, genuine Foundry/Roll20 imports,
 source rights, purchase license, protected downloads and human QA still
 block commercial release.
+
+### One-step private Foundry package timing setup
+
+The optional Foundry developer HUD now auto-loads the validated
+`gridborn-preview.json` receipt from the same locally selected Data
+folder as the four WebM clips. All five existing private export packages
+contain their **own actual `attackMs`**. Setup verifies the four local WebMs
+and the receipt, automatically selects the correct one-shot Attack duration,
+and starts Idle. No monster-name switch, manually transcribed timing,
+asset editing, or programming is required. A checkbox allows experienced
+users to disable auto-detection and enter a duration for externally supplied
+clips. Missing or malformed receipts fail closed while auto-detection is on.
+
+Mode choices are one-click Idle / Move / Attack / Rest in the optional HUD.
+Idle, Move and Rest remain indefinitely until the owner/GM switches mode;
+Attack returns to Idle. The selected mode has an accessible pressed-state
+visual indicator. Source-code tests verify source path validation, metadata,
+limits, missing receipts, and independent timings. These **do not certify
+Foundry v13/v14 real-world playback, multiplayer or disconnect recovery**.
+No licensing, commercial release, or Netlify changes.
