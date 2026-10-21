@@ -48,7 +48,7 @@ test('single attack, curled rest and reduced motion have distinct contracts',()=
  assert.match(attack,/spider-fang-jab 1\.4s ease-in-out 1 both/);
  assert.match(rest,/Folded resting pose/);
  assert.match(rest,/class="spider-rest-web"/);
- assert.doesNotMatch(rest,/spider-tetrapod-a 1\.16s/);
+ assert.doesNotMatch(rest,/spider-tetrapod-a 1\.2s/);
  assert.match(rest,/spider-rest-breath 5s ease-in-out infinite/);
  assert.match(idle,/spider-idle-breath 3\.6s ease-in-out infinite/);
  assert.match(rest,/prefers-reduced-motion:reduce/);
