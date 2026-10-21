@@ -1,39 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
-<title id="title">Skeleton Warrior — original Gridborn art study</title>
-<desc id="description">Dungeon skeleton wearing weathered armor with an old sword and shield This is a static artwork concept, not a completed VTT token.</desc>
-<ellipse cx="128" cy="200" rx="58" ry="13" fill="#060b16" opacity=".34"/>
-<ellipse cx="128" cy="195" rx="70" ry="24" fill="none" stroke="#ddb268" stroke-width="3" opacity=".70"/>
-
-<!-- tattered cloak and bone legs -->
-<path d="M95 93h64l24 73-19 14-20-13h-30l-22 15-18-20z" fill="#242438"/>
-<path d="M99 98h59l15 56-20 16h-50l-17-16z" fill="#57465e"/>
-<path d="M99 147h22v45H99zM137 147h23v45h-23z" fill="#20242d"/>
-<rect x="104" y="152" width="12" height="34" fill="#e3ddbf"/><rect x="144" y="153" width="12" height="34" fill="#e3ddbf"/>
-<rect x="99" y="183" width="27" height="9" fill="#50454b"/><rect x="138" y="183" width="26" height="9" fill="#50454b"/>
-<!-- breastplate and spine -->
-<path d="M101 100h59v57h-59z" fill="#252c35"/><rect x="108" y="104" width="43" height="47" fill="#6a7a85"/>
-<path d="M117 113h25v25h-25z" fill="#323945"/><rect x="127" y="118" width="5" height="32" fill="#ddd6be"/>
-<rect x="115" y="125" width="30" height="5" fill="#c6bd9f"/><rect x="117" y="138" width="26" height="4" fill="#c6bd9f"/>
-<path d="M96 104h-13v38h15zM161 104h15v38h-15z" fill="#d7d0af"/>
-<!-- shoulders -->
-<path d="M79 98h33v24H79zM150 98h34v24h-34z" fill="#323945"/>
-<path d="M84 101h23v16H84zM157 101h24v16h-24z" fill="#8a9192"/>
-<!-- skull with sockets, chipped teeth -->
-<path d="M105 62h49v45h-9v12h-30v-12h-10z" fill="#242b34"/>
-<path d="M109 66h40v39h-6v10h-24v-10h-10z" fill="#e7dfc2"/>
-<rect x="113" y="82" width="12" height="13" fill="#262b30"/><rect x="135" y="82" width="12" height="13" fill="#262b30"/>
-<rect x="116" y="84" width="6" height="4" fill="#9be4c9"/><rect x="139" y="84" width="6" height="4" fill="#9be4c9"/>
-<path d="M129 96h6v8h-6z" fill="#67716d"/>
-<path d="M118 108h25v5h-25z" fill="#393d39"/><path d="M124 109v5M130 109v5M136 109v5" stroke="#e1d9be" stroke-width="2"/>
-<!-- aged sword -->
-<path d="M188 47h10v88h-10z" fill="#2c313a"/><path d="M191 47h4v84h-4z" fill="#ced7d3"/>
-<path d="M189 36h8v17h-8z" fill="#faf2dc"/>
-<rect x="180" y="132" width="27" height="9" fill="#292d36"/><rect x="184" y="134" width="19" height="5" fill="#b59a70"/>
-<rect x="190" y="141" width="7" height="30" fill="#836348"/>
-<!-- shield left -->
-<path d="M68 125h43v35l-19 28-24-28z" fill="#1e252e"/>
-<path d="M73 130h33v28l-14 22-19-22z" fill="#7b4f58"/>
-<rect x="87" y="135" width="8" height="34" fill="#d3b47b"/><rect x="79" y="148" width="25" height="7" fill="#d3b47b"/>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240"
+ role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Skeleton Warrior — anatomy-first Gridborn token study</title>
+<desc id="description">Original fantasy skeletal warrior. Open ribcage, exposed pelvis and jointed bone limbs distinguish it from an armored human. Tarnished sword and damaged shield. Static concept study, not a VTT-tested product.</desc>
+<!-- Neutral battle-map ring. No imported visual references. -->
+<ellipse cx="127" cy="204" rx="61" ry="12" fill="#050911" opacity=".48"/>
+<ellipse cx="128" cy="194" rx="74" ry="23" fill="none" stroke="#bf9d6a" stroke-width="3" opacity=".70"/>
+<g class="bone-cape">
+ <path d="M100 91H158L185 166 164 184 149 171 137 187 110 177 92 188 74 166Z" fill="#242534" stroke="#101722" stroke-width="5"/>
+ <path d="M102 96H157L174 164 160 175 146 160 136 179 110 168 92 178 82 163Z" fill="#56465b"/>
+ <path d="M102 112L87 165 97 167 109 116Z" fill="#857085" opacity=".48"/>
+ <path d="M153 110L169 166 158 163 146 115Z" fill="#322d41"/>
+</g>
+<!-- Separate left and right bone legs, open negative space at the knees. -->
+<g class="bone-leg-left">
+ <path d="M106 152L116 153 112 178 102 177Z" fill="#e1d8bd"/>
+ <path d="M107 155L111 156 107 172 104 171Z" fill="#f7eccb"/>
+ <circle cx="105" cy="180" r="7" fill="#cabd9f" stroke="#202932" stroke-width="3"/>
+ <path d="M101 185H110L107 200H97Z" fill="#dfd5b9"/>
+ <path d="M96 198H111L121 205V210H91V204Z" fill="#5f5658" stroke="#1c2530" stroke-width="3"/>
+</g>
+<g class="bone-leg-right">
+ <path d="M141 152L151 152 156 178 146 180Z" fill="#e2d9c0"/>
+ <path d="M144 155L148 155 152 173 148 175Z" fill="#fff0cf"/>
+ <circle cx="152" cy="181" r="7" fill="#c7ba9f" stroke="#202932" stroke-width="3"/>
+ <path d="M148 186H158L161 200H152Z" fill="#ddd1b4"/>
+ <path d="M151 198H167L177 206V211H147V204Z" fill="#625a59" stroke="#1c2530" stroke-width="3"/>
+</g>
+<g class="bone-pelvis">
+ <path d="M104 145H154L157 154 143 165H115L101 153Z" fill="#d7ceb1" stroke="#25303a" stroke-width="3"/>
+ <path d="M109 150H123V158H113Z M136 150H151L145 158H136Z" fill="#34363b"/>
+ <path d="M123 145H136V164L128 168 122 162Z" fill="#9b937f"/>
+</g>
+<!-- Dark gaps between rib arcs are intentional: this is an open skeleton. -->
+<g class="bone-ribcage">
+ <path d="M103 108H153L158 145 141 154 116 154 98 143Z" fill="#1d2530" stroke="#101821" stroke-width="5"/>
+ <path d="M127 111H134L134 155H126Z" fill="#e6dec4"/>
+ <path d="M129 113H132V155H129Z" fill="#aa9c80"/>
+ <path d="M128 117Q116 113 109 120M132 117Q144 113 151 120" fill="none" stroke="#e4dbc1" stroke-width="5" stroke-linecap="square"/>
+<path d="M128 125Q115 121 112 128M132 125Q145 121 148 128" fill="none" stroke="#e4dbc1" stroke-width="5" stroke-linecap="square"/>
+<path d="M128 133Q114 129 115 136M132 133Q146 129 145 136" fill="none" stroke="#cec3a9" stroke-width="5" stroke-linecap="square"/>
+<path d="M128 141Q113 137 118 144M132 141Q147 137 142 144" fill="none" stroke="#cec3a9" stroke-width="4" stroke-linecap="square"/>
+ <path d="M104 142L112 150 119 151M152 142L145 150 138 151" fill="none" stroke="#c5b99f" stroke-width="4"/>
+ <path d="M106 115L105 135M152 115L153 135" fill="none" stroke="#8a7770" stroke-width="3"/>
+</g>
+<!-- Segmented skeletal arms: visible shoulders, elbows, wrists. -->
+<g class="bone-arm-left">
+ <circle cx="100" cy="109" r="9" fill="#d5ccb3" stroke="#26303a" stroke-width="3"/>
+ <path d="M93 115L85 135 91 139 103 117Z" fill="#eadfc0"/>
+ <circle cx="87" cy="139" r="6" fill="#cabda4" stroke="#26303a" stroke-width="3"/>
+ <path d="M83 143L76 166 83 168 93 144Z" fill="#dfd6bd"/>
+ <rect x="75" y="167" width="10" height="12" rx="2" fill="#e6d9b8"/>
+</g>
+<g class="bone-arm-right">
+ <circle cx="157" cy="109" r="9" fill="#d9cdb3" stroke="#26303a" stroke-width="3"/>
+ <path d="M156 116L168 139 175 134 165 112Z" fill="#f1e4c6"/>
+ <circle cx="172" cy="140" r="6" fill="#c8bea7" stroke="#26303a" stroke-width="3"/>
+ <path d="M172 145L182 170 189 166 178 141Z" fill="#e5dbc0"/>
+ <path d="M179 168H192V180H183Z" fill="#d5c5a7"/>
+</g>
+<!-- Partial armor cannot conceal the ribs or pelvis. -->
+<g class="bone-armor">
+ <path d="M89 94H112L116 109 103 123 84 116Z" fill="#313f4a" stroke="#192430" stroke-width="3"/>
+ <path d="M145 109L149 94H174L181 116 160 123Z" fill="#313f4a" stroke="#192430" stroke-width="3"/>
+ <path d="M91 100H108L108 109 90 113Z M151 100H170L174 113 158 109Z" fill="#8b9292"/>
+ <path d="M101 106H106M156 105H170" stroke="#d3c3a3" stroke-width="3"/>
+ <path d="M105 155L151 155" stroke="#51464c" stroke-width="8"/>
+ <rect x="125" y="149" width="10" height="12" fill="#c4ad77"/>
+</g>
+<g class="bone-skull">
+ <path d="M111 53H147L157 65 155 99 145 109 143 121H118L115 108 105 100 104 67Z" fill="#202832"/>
+ <path d="M111 58H145L151 66 149 96 141 104 140 117H120L119 103 109 97 108 69Z" fill="#e7ddc1"/>
+ <path d="M111 69H119V79H109Z M140 69H148V79H140Z" fill="#f9edcf"/>
+ <path d="M113 82H125V96H112Z M136 82H149V96H135Z" fill="#222b31"/>
+ <path d="M115 85H120V89H115Z M139 85H145V89H139Z" fill="#92c4b3"/>
+ <path d="M129 93H136L134 104H126Z" fill="#555d57"/>
+ <path d="M119 107H141V116H119Z" fill="#34383c"/>
+ <path d="M120 109V115M126 109V116M133 109V116M140 109V115" stroke="#efe5ca" stroke-width="2"/>
+ <path d="M111 58L117 57M141 59L146 61" stroke="#fff4d4" stroke-width="3"/>
+</g>
+<g class="bone-blade">
+ <path d="M192 38H198L200 140H189Z" fill="#384650"/>
+ <path d="M194 39H196L196 137H193Z" fill="#d3d9d2"/>
+ <path d="M191 35L196 22 201 39Z" fill="#e7e6d8"/>
+ <rect x="180" y="137" width="30" height="8" fill="#363b3d"/>
+ <rect x="183" y="139" width="24" height="3" fill="#c3a271"/>
+ <path d="M193 145H199V170H193Z" fill="#886643"/>
+ <rect x="191" y="169" width="11" height="6" fill="#bf9c68"/>
+</g>
+<g class="bone-shield">
+ <path d="M62 124H103V158L83 186 62 159Z" fill="#18222e" stroke="#111b24" stroke-width="3"/>
+ <path d="M68 130H97V156L83 177 68 154Z" fill="#855760"/>
+ <path d="M72 133H80V160L83 168 73 151Z" fill="#b47f7d"/>
+ <path d="M81 131H88V170H81Z" fill="#c9ab78"/>
+ <path d="M72 149H95V156H72Z" fill="#c9ab78"/>
+ <path d="M80 149H89V156H80Z" fill="#ebd4a0"/>
+</g>
 </svg>
