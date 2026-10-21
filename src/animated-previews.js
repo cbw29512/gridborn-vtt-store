@@ -17,6 +17,20 @@ export const animatedPreviews = Object.freeze({
       rest: 'Rest · lowered sword and gentle breathing (prototype)'
     }),
   }),
+  'mon-dng-skeleton': Object.freeze({
+    still: './assets/studies/skeleton-warrior.svg',
+    idle: './assets/demos/skeleton-warrior-idle.svg',
+    move: './assets/demos/skeleton-warrior-move.svg',
+    action: './assets/demos/skeleton-warrior-attack.svg',
+    rest: './assets/demos/skeleton-warrior-rest.svg',
+    actionDurationMs: 1400,
+    labels: Object.freeze({
+      idle: 'Idle · undead skull and weapon fidgets; no breathing (prototype)',
+      move: 'Move · alternating, jerky skeletal shuffle (prototype)',
+      action: 'Attack · one bone-arm sword strike, then Idle (prototype)',
+      rest: 'Rest · collapsed, inert bones; faint spectral glimmer (prototype)'
+    }),
+  }),
   'mon-cave-spider': Object.freeze({
     still: './assets/studies/giant-cave-spider.svg',
     idle: './assets/demos/giant-cave-spider-idle.svg',
@@ -38,6 +52,12 @@ export const animatedPreviews = Object.freeze({
     action: './assets/demos/gray-wolf-attack.svg',
     rest: './assets/demos/gray-wolf-rest.svg',
     actionDurationMs: 1300,
+    labels: Object.freeze({
+      idle: 'Idle · gentle breathing loop with synchronized ears and tail (prototype)',
+      move: 'Move · four-legged trot in diagonal pairs (prototype)',
+      action: 'Attack · one bite with a forward lunge, then Idle (prototype)',
+      rest: 'Rest · curled breathing wolf pose (prototype)'
+    }),
   }),
   'mon-cave-goblin': Object.freeze({
     still: './assets/studies/cave-goblin.svg',

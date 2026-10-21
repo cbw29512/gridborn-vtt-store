@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "mon-dng-skeleton",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/skeleton-warrior.svg",
+  "restSource": "assets/demos/skeleton-warrior-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/skeleton-warrior-idle.svg",
+      "durationSec": 3
+    },
+    "move": {
+      "source": "assets/demos/skeleton-warrior-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/skeleton-warrior-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "plannedOutputs": [
+    "transparent-webm",
+    "static-png",
+    "rest-webm"
+  ],
+  "vttCompatibility": "untested",
+  "purchasable": false
+}

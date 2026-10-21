@@ -219,3 +219,34 @@ search rerenders, and reduced-motion stills.
 **Important:** These are existing public SVG *art studies*, not the actual
 private WebM deliverables, commercially approved purchases, or verified
 VTT imports. Catalog labeling remains preview-only and checkout disabled.
+
+### Hard rule: every moving catalog study must show all motion (October 21, 2026)
+
+`src/production-motion-gate.mjs` runs at storefront initialization and in
+unit tests. A token marked `animationStatus: art-study` must have canonical
+**Still, Idle, Move, one-shot Attack, and Rest** SVGs and a positive
+`actionDurationMs`, labels for each animation, and matching original art.
+Incomplete or incorrectly linked animation entries fail the gate instead of
+being deceptively promoted as moving catalog products. Static concepts
+remain explicitly labelled as static concepts and cannot claim sale readiness.
+The catalog automatically places verified moving studies first and cycles
+their actual source files on the cards.
+
+### Skeleton Warrior prototype: fifth full-motion showcase
+
+Skeleton Warrior now derives four public states from its existing original
+anatomy-first static study (`node tools/generate-skeleton-states.mjs --check`).
+Idle is an unnatural three-second skeletal fidget, not breathing. Move
+alternates separate skeletal legs on a 1.2s cadence over a **2.4s** repeating
+clip. Attack is a **1.4s** single sword strike with a bracing shield. Rest
+shows a **collapsed, inert corpse** with only a faint spectral eye glimmer,
+not a living character's breathing or sleep animation; **4.0s**.
+
+All four states are available in the catalog's automatic card showcase and
+individual detail-preview controls. The state-only private manifest declares
+3.0s Idle / 2.4s Move / 1.4s Attack / 4.0s Rest at 10 FPS,
+creating 30/24/14/40-frame VP9-alpha study clips when technically certified
+in the private full-media CI job. The visual silhouette, bone placement,
+lighting, 32/64/128/256px usability, original-art rights, real target-VTT
+imports, protected downloads and buyer license still require review.
+**No purchase is enabled**, and no Netlify production deployment is made.

@@ -5,6 +5,7 @@ import {initializeBundles} from './bundle-ui.js';
 import { initializeConceptDialog } from './concept-dialog.js';
 import { makeCard } from './product-card.js';
 import { initializeCatalogMotion, hasCatalogMotion } from './catalog-motion.js';
+import {verifyMotionCatalog} from './production-motion-gate.mjs';
 import { readCatalogRoute, writeCatalogRoute, markActiveCollection, connectCatalogNavigation } from './routing.js';
 
 // One battle-tested state object drives search and both dependent dropdowns.
@@ -77,6 +78,7 @@ function resetFilters() {
 function initialize() {
   try {
     if (!validateCatalog(catalog)) throw new Error('Preview catalog validation failed');
+    verifyMotionCatalog(catalog);
     Object.assign(state, readCatalogRoute(window.location.search, catalog));
     Object.assign(nodes, {
       search: byId('search'), searchLabel: byId('search-label'),
