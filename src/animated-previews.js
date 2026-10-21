@@ -10,6 +10,9 @@ export const animatedPreviews = Object.freeze({
     action: './assets/demos/human-fighter-attack.svg',
     rest: './assets/demos/human-fighter-rest.svg',
     actionDurationMs: 1400,
+    idleDurationMs: 3200,
+    moveDurationMs: 3200,
+    restDurationMs: 6000,
     labels: Object.freeze({
       idle: 'Idle · shield and cape breathing (prototype)',
       move: 'Move · alternating armored footsteps (prototype)',
@@ -24,6 +27,9 @@ export const animatedPreviews = Object.freeze({
     action: './assets/demos/skeleton-warrior-attack.svg',
     rest: './assets/demos/skeleton-warrior-rest.svg',
     actionDurationMs: 1400,
+    idleDurationMs: 3000,
+    moveDurationMs: 2400,
+    restDurationMs: 4000,
     labels: Object.freeze({
       idle: 'Idle · undead skull and weapon fidgets; no breathing (prototype)',
       move: 'Move · alternating, jerky skeletal shuffle (prototype)',
@@ -38,6 +44,9 @@ export const animatedPreviews = Object.freeze({
     action: './assets/demos/giant-cave-spider-attack.svg',
     rest: './assets/demos/giant-cave-spider-rest.svg',
     actionDurationMs: 1400,
+    idleDurationMs: 3600,
+    moveDurationMs: 2400,
+    restDurationMs: 5000,
     labels: Object.freeze({
       idle: 'Idle · abdomen breathing and palp motion (prototype)',
       move: 'Move · eight legs in alternating tetrapod gait (prototype)',
@@ -52,6 +61,9 @@ export const animatedPreviews = Object.freeze({
     action: './assets/demos/gray-wolf-attack.svg',
     rest: './assets/demos/gray-wolf-rest.svg',
     actionDurationMs: 1300,
+    idleDurationMs: 3200,
+    moveDurationMs: 2000,
+    restDurationMs: 4800,
     labels: Object.freeze({
       idle: 'Idle · gentle breathing loop with synchronized ears and tail (prototype)',
       move: 'Move · four-legged trot in diagonal pairs (prototype)',
@@ -66,6 +78,9 @@ export const animatedPreviews = Object.freeze({
     action: './assets/demos/cave-goblin-attack.svg',
     rest: './assets/demos/cave-goblin-rest.svg',
     actionDurationMs: 1400,
+    idleDurationMs: 3600,
+    moveDurationMs: 3600,
+    restDurationMs: 6000,
     labels: Object.freeze({
       idle: 'Idle · breathing and blinking (prototype)',
       move: 'Move · alternating goblin leg stride (prototype)',
