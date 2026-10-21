@@ -1,6 +1,7 @@
 import { normalizeRecipe } from './builder-data.js';
 import {renderSpecialtyBack,renderSpecialtyFront,renderRightDagger,renderLeftDagger} from './rig-specialty.js';
 import {rigProportions} from './rig-proportions.js';
+import {renderSkeletonRest} from './rig-skeleton-rest.js';
 import {performerBack,performerFront,performerOffhand} from './rig-performer-gear.js';
 import {casterBack,casterFront,casterWeapon} from './rig-caster-gear.js';
 const xml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
@@ -178,11 +179,11 @@ export function renderRig(input,{mode='idle',animated=false}={}) {
  const r=normalizeRecipe(input);
  if(!['idle','move','attack','rest'].includes(mode))throw new Error('Invalid rig preview mode');
  const seated=mode==='rest';
- const layers=(seated?restSeat(r):'')+
+ const layers=r.ancestry==='Skeleton'&&seated?renderSkeletonRest(r):(seated?restSeat(r):'')+
    '<g class="rig-back">'+cape(r)+renderSpecialtyBack(r)+performerBack(r)+casterBack(r)+'</g>'+legs(r,seated)+
-   '<g class="rig-upper">'+arms(r)+torso(r)+renderSpecialtyFront(r)+performerFront(r)+casterFront(r)+face(r)+hat(r)+hand(r)+offhand(r)+'</g>';
+   '<g class="rig-upper">'+arms(r)+torso(r)+renderSpecialtyFront(r)+performerFront(r)+casterFront(r)+face(r)+hat(r)+hand(r)+offhand(r)+'</g>');
  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="'+xml(r.name)+
- ' modular fantasy token" shape-rendering="crispEdges" class="rig-image mode-'+mode+(animated?' rig-animated':'')+'">'+
+ ' modular fantasy token" shape-rendering="crispEdges" data-ancestry="'+r.ancestry+'" class="rig-image mode-'+mode+(animated?' rig-animated':'')+'">'+
  '<title>'+xml(r.name)+'</title><desc>Gridborn original modular block fantasy character concept</desc>'+
  '<ellipse cx="128" cy="209" rx="71" ry="19" fill="#070e18" opacity=".39"/>'+
  '<ellipse cx="128" cy="204" rx="74" ry="24" fill="none" stroke="'+r.palette.accent+'" stroke-width="4" opacity=".85"/>'+
