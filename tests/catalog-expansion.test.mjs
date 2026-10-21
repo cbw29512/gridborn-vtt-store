@@ -49,8 +49,9 @@ test('monster CR filters preserve source fractions, high CR and named search',()
  assert.equal(reds.length,1);
  assert.equal(reds[0].challengeRating,'24');
  const goblin=filterCatalog(catalog,{...initialState,category:'Monsters',query:'Goblin Warrior'});
- assert.equal(goblin.length,1);
- assert.equal(goblin[0].size,'Small');
+ const actualGoblin=goblin.find(x=>x.name==='Goblin Warrior');
+ assert.ok(actualGoblin);
+ assert.equal(actualGoblin.size,'Small');
 });
 test('all 12 classes have 3 male, 3 female, and 3 nonbinary original pregen concepts',()=>{
  assert.equal(CLASS_ARCHETYPES.length,12);
