@@ -1,0 +1,22 @@
+/* Experimental HUD extension. Uses native controls and no external assets. */
+.gridborn-hud{position:absolute;top:46%;left:calc(100% + 10px);z-index:100;min-width:145px;
+  font:12px/1.4 system-ui,sans-serif;color:#f5ebd8}
+.gridborn-hud button{font:inherit;border:1px solid #cda869;border-radius:5px;
+ background:#1e2b3c;color:#f8eacc;min-height:36px;padding:6px 11px;cursor:pointer}
+.gridborn-hud button:hover{background:#344d67}
+.gridborn-hud button:focus-visible{outline:3px solid #e9c17b;outline-offset:2px}
+.gridborn-hud button:disabled{cursor:not-allowed;opacity:.5}
+.gridborn-panel{margin-top:5px;padding:10px;border:1px solid #b38c51;border-radius:9px;
+ background:#111c2b;box-shadow:0 12px 30px #0009;min-width:175px;max-width:270px}
+.gridborn-panel[hidden],.gridborn-setup[hidden]{display:none}
+.gridborn-status{font-size:11px;color:#e3cca5;margin-bottom:7px;min-height:16px}
+.gridborn-actions{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin:6px 0}
+.gridborn-configure{width:100%;margin-top:7px}
+.gridborn-setup{display:grid;gap:8px;margin-top:9px;padding-top:9px;border-top:1px solid #5d6774}
+.gridborn-field{display:grid;gap:4px;font-size:11px}
+.gridborn-input{font:inherit;width:100%;min-width:0;box-sizing:border-box;min-height:32px;padding:5px;
+ background:#e7dfce;color:#172334;border:1px solid #9a886e;border-radius:3px}
+.gridborn-save,.gridborn-remove{width:100%}
+.gridborn-remove{border-color:#ad7575!important}
+@media(max-width:540px){.gridborn-hud{left:auto;right:0;top:calc(100% + 8px)}}
+@media(prefers-reduced-motion:reduce){.gridborn-hud *{transition:none!important}}

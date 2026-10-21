@@ -1,0 +1,20 @@
+{
+  "id": "gridborn-controller",
+  "title": "Gridborn — Token Animation Controller (Developer Preview)",
+  "description": "Idle, Move, Attack and Rest controls for user-supplied animated token files. Experimental; no Foundry version certification.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "13"
+  },
+  "authors": [
+    {
+      "name": "Gridborn"
+    }
+  ],
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/controller.css"
+  ]
+}

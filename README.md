@@ -175,3 +175,9 @@ Action/Rest controls are offered only for assets with actual animations.
 The current public catalog includes **two animated prototypes** (Human Fighter
 and Cave Goblin), not two finished licensed products. No private exports are
 committed, and VTT compatibility is unverified.
+
+## Foundry Controller — developer preview
+
+The optional **Gridborn Controller** module is in [foundry/gridborn-controller](foundry/gridborn-controller/README.md). It adds a compact token-HUD panel after right-clicking a token. Configure one folder containing `idle.webm`, `move.webm`, `attack.webm` and `rest.webm`; then select Idle, Move, Attack, or Rest. Attack returns to Idle after the configured duration (10 seconds for current art-study action/recovery). A restore action returns to the original token texture. The standalone Idle WebM requires no module, and the optional module is **not tested in real Foundry yet**.
+
+A GitHub Actions workflow packages a **source-only** downloadable development ZIP without any paid artwork. The private exporter accepts `--certify --controller-package` to create four independently timed alpha-WebM loops and static PNG outside the public repository. Foundry and Roll20 integration claims remain blocked pending actual platform testing.

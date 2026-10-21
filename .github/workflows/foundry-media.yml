@@ -1,0 +1,55 @@
+name: Gridborn controller-media private full QA
+on:
+  push:
+    branches: [feature/foundry-controller-v1]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate-private-controller-bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - manifest: assets/demos/manifest.json
+            id: chr-ftr-human
+          - manifest: assets/demos/cave-goblin-manifest.json
+            id: mon-cave-goblin
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install render and image dependencies
+        run: |
+          python -m pip install 'playwright==1.57.0' 'Pillow==11.3.0'
+          python -m playwright install --with-deps chromium
+          command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+          command -v ffprobe
+      - name: Generate private controller files and verify decoded alpha
+        run: |
+          python tools/export_demo.py --certify --controller-package \
+            --manifest "${{ matrix.manifest }}" \
+            --output-dir "$RUNNER_TEMP/gridborn-private"
+      - name: Check four individual clips and no commercial claims
+        env:
+          TOKEN_ID: ${{ matrix.id }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          base = Path(os.environ['RUNNER_TEMP']) / 'gridborn-private'
+          folder = base / (os.environ['TOKEN_ID'] + '-foundry')
+          data = json.loads((folder / 'gridborn-preview.json').read_text())
+          assert data['purchaseEnabled'] is False
+          assert data['vttCompatibility'] == 'untested'
+          assert data['attackMs'] == 10000
+          for name in ['idle.webm', 'move.webm', 'attack.webm', 'rest.webm', 'still.png']:
+              assert (folder / name).stat().st_size > 0
+          for label, seconds in [('idle', 27), ('move', 8), ('attack', 10), ('rest', 6)]:
+              assert data['technicalQA'][label]['frames'] == seconds * 10
+              assert data['technicalQA'][label]['decodedAlphaVerified']
+          print('Private Foundry clips passed; no artwork uploaded or published')
+          PY
