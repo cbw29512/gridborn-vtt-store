@@ -53,10 +53,10 @@ export const animatedPreviews = Object.freeze({
     rest: './assets/demos/gray-wolf-rest.svg',
     actionDurationMs: 1300,
     labels: Object.freeze({
-      idle: 'Idle · gentle breathing, synchronized ears and tail (prototype)',
-      move: 'Move · diagonal-pair gray wolf trot (prototype)',
-      action: 'Attack · single lunge and bite, then Idle (prototype)',
-      rest: 'Rest · curled wolf with gentle breathing (prototype)'
+      idle: 'Idle · gentle breathing loop with synchronized ears and tail (prototype)',
+      move: 'Move · four-legged trot in diagonal pairs (prototype)',
+      action: 'Attack · one bite with a forward lunge, then Idle (prototype)',
+      rest: 'Rest · curled breathing wolf pose (prototype)'
     }),
   }),
   'mon-cave-goblin': Object.freeze({
