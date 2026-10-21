@@ -157,3 +157,21 @@ purchase buttons; details and FAQ state that real checkout/delivery do not yet
 exist. This improves discoverability and truthful presentation; full platform
 imports, artistic acceptance, independent accessibility audits, commercial
 licensing and protected payment/download architecture still block production sale.
+
+## Cave Goblin — second animated concept
+
+Cave Goblin now has original action (45 seconds) and rest (6 seconds) SVG
+motion studies, with a separate `assets/demos/cave-goblin-manifest.json`.
+The existing private exporter can use `--manifest` to render either study to
+alpha WebM plus still PNG without changing any species-specific code:
+
+```sh
+python tools/export_demo.py --manifest assets/demos/cave-goblin-manifest.json \
+  --certify --output-dir ../gridborn-goblin-private-qa
+```
+
+The art-study details dialog displays a static illustration by default.
+Action/Rest controls are offered only for assets with actual animations.
+The current public catalog includes **two animated prototypes** (Human Fighter
+and Cave Goblin), not two finished licensed products. No private exports are
+committed, and VTT compatibility is unverified.

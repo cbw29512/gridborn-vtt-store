@@ -1,4 +1,5 @@
 import { categoryConfig } from './catalog.js';
+import { initializeConceptPreview, setConceptPreview, stopConceptPreview } from './concept-preview.js';
 
 let lastDialogTrigger = null;
 const nodes = {};
@@ -30,6 +31,7 @@ export function openConcept(item, trigger) {
       dd.textContent = value;
       nodes.dialogFacts.append(dt, dd);
     }
+    setConceptPreview(item);
     lastDialogTrigger = trigger;
     nodes.dialog.showModal();
   } catch (error) {
@@ -47,11 +49,15 @@ export function initializeConceptDialog() {
       dialogDescription: byId('preview-description'),
       dialogFacts: byId('preview-facts'),
     });
+    initializeConceptPreview();
     if (!nodes.dialog || !nodes.dialogTitle || !nodes.dialogDescription || !nodes.dialogFacts) {
       throw new Error('Incomplete token details dialog');
     }
     nodes.dialog.addEventListener('close', () => {
-      try { if (lastDialogTrigger?.isConnected) lastDialogTrigger.focus(); }
+      try {
+        stopConceptPreview();
+        if (lastDialogTrigger?.isConnected) lastDialogTrigger.focus();
+      }
       catch (error) { console.error('Unable to restore concept detail focus', error); }
     });
   } catch (error) { console.error('Unable to initialize details dialog', error); }
