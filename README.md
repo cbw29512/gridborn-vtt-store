@@ -221,3 +221,21 @@ real-world usability/accessibility sign-off is implied.
   platform-specific modules; retain PNG fallbacks.
 - Add secure delivery, license review, pricing tests, visual QA and human-led
   mobile and assistive-technology acceptance before commercial launch.
+
+## Modular studio motion + art refinement (V2 prototype)
+
+The reusable humanoid rig has independently rendered and animated legs, arms,
+cape, head, main-hand and off-hand accessories. Movement is now a coordinated
+alternating stride with opposing arm swing and equipment attachment, rather than
+whole-body bouncing. Attack winds up, strikes and recovers **once**, returning
+to Idle automatically. Idle adds occasional eye blinks. Rest changes actual
+geometry into a seated figure with feet out, eyes closed where appropriate,
+relaxed equipment and a stool; a decorative campfire appears **only on the
+preview stage** and is not included in exported token PNG art. All block parts
+share a north-west light/shadow rule and derive highlights from the selected
+palette rather than hard-coded premium artwork.
+
+Reduced-motion preferences retain a static seated silhouette with no animated
+flame. Chromium checks validate actual computed animations, seated anatomy,
+one-shot return, preview asset export, and small phone screen fit. These remain
+**browser studies**, not downloadable certified custom animated WebMs.

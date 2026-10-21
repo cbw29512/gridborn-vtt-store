@@ -20,6 +20,7 @@ function draft(){
 }
 function render(){
   const safe=normalizeRecipe(recipe);
+  $('builder-stage').dataset.mode=mode;
   $('builder-avatar').innerHTML=renderRig(safe,{mode,animated:true});
   $('builder-summary').textContent=safe.ancestry+' · '+safe.outfit+' · '+safe.weapon;
   for(const button of $('builder-modes').querySelectorAll('button'))
@@ -114,10 +115,21 @@ function events(){
     try{apply({...recipe,name:$('build-name').value});status('Character renamed');}
     catch(error){$('build-name').value=recipe.name;status(error.message);}
   });
+  $('builder-avatar').addEventListener('animationend',event=>{
+    if(event.animationName!=='gb-attack-lunge' || mode!=='attack') return;
+    // The attack is a one-shot; a new user selection always wins.
+    mode='idle';render();status('Attack complete · returned to Idle');
+  });
   $('builder-modes').addEventListener('click',event=>{
     const button=event.target.closest('button[data-mode]');if(!button)return;
     mode=button.dataset.mode;render();
-    status(mode==='attack'?'Attack motion study · loops for preview':mode+' animation preview');
+    const descriptions={
+      idle:'Idle · subtle breathing and occasional blinking',
+      move:'Move · alternating strides, arm swings and trailing cape',
+      attack:'Attack · wind-up, strike and recovery (plays once)',
+      rest:'Rest · seated posture, relaxed arms and gentle breathing'
+    };
+    status(descriptions[mode]);
   });
   document.querySelectorAll('[data-bg]').forEach(button=>button.addEventListener('click',()=>{
     $('builder-stage').dataset.background=button.dataset.bg;
