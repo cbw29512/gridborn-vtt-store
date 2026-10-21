@@ -140,3 +140,20 @@ Paths are keyed by immutable catalog ID in `src/art-studies.js`; the SVGs are
 validated in CI before deployment. Images have loading-failure fallbacks and
 motion-respecting hover polish. **Only Human Fighter has action/rest animation
 studies**, and no concept is purchasable or certified for a specific VTT.
+
+## Customer-first browse flow (production UX foundation)
+
+The catalog now opens in **All categories** with the eight existing original art
+studies prioritized as the first results. Search genuinely scans the complete
+34-item concept catalog; typing `shark` finds Animals immediately without
+navigating from the default Characters tab. The four collection shortcuts and
+one dropdown narrow categories, and only then reveal the two contextual fields.
+The second contextual dropdown unlocks only after a first selection. **Clear
+search & filters** preserves the chosen category, avoiding the previous surprise
+jump back to Characters. More results load in groups of eight without reloading.
+
+Concept cards display **Target $2.99 / Preview only**, not simulated disabled
+purchase buttons; details and FAQ state that real checkout/delivery do not yet
+exist. This improves discoverability and truthful presentation; full platform
+imports, artistic acceptance, independent accessibility audits, commercial
+licensing and protected payment/download architecture still block production sale.

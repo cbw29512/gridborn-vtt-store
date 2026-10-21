@@ -95,3 +95,6 @@
  .product-art {transition:none!important;}
  .product-card:hover .product-art,.product-card:focus-within .product-art {transform:none!important;}
 }
+
+/* Honor hidden state despite explicit grid and block display declarations. */
+.product-grid[hidden],.empty-state[hidden] {display:none!important;}

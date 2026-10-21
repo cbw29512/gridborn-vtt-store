@@ -117,16 +117,17 @@
         </nav>
         <div class="filter-panel" role="search" aria-label="Search token catalog">
           <div class="filter-field filter-search">
-            <label for="search">Search anything</label>
+            <label id="search-label" for="search">Search all tokens</label>
             <div class="input-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Try shark, wizard, innkeeper..." autocomplete="off" /></div>
           </div>
           <div class="filter-field"><label for="category">Category</label><select id="category"></select></div>
-          <div class="filter-field"><label for="primary-filter" id="primary-label">Race</label><select id="primary-filter"></select></div>
-          <div class="filter-field"><label for="secondary-filter" id="secondary-label">Class</label><select id="secondary-filter"></select></div>
+          <div class="filter-field" id="primary-field" hidden><label for="primary-filter" id="primary-label">First filter</label><select id="primary-filter"></select></div>
+          <div class="filter-field" id="secondary-field" hidden><label for="secondary-filter" id="secondary-label">Second filter</label><select id="secondary-filter"></select></div>
         </div>
-        <div class="results-heading"><div><span class="section-kicker" id="category-caption">Characters</span><h3 id="result-summary" aria-live="polite">Loading catalog…</h3></div><button id="clear-filters" class="clear-button" type="button">Clear filters <span aria-hidden="true">×</span></button></div>
+        <div class="results-heading"><div><span class="section-kicker" id="category-caption">All categories</span><h3 id="result-summary" aria-live="polite">Loading catalog…</h3></div><button id="clear-filters" class="clear-button" type="button" hidden>Clear search &amp; filters <span aria-hidden="true">×</span></button></div>
         <div id="results" class="product-grid"></div>
-        <div id="empty-state" class="empty-state" hidden><div class="empty-glyph">⌕</div><h3>No matches found</h3><p>Try a different search or change the category.</p><button id="empty-reset" type="button" class="secondary-action">Show all tokens</button></div>
+        <button id="show-more" class="show-more-button" type="button" hidden>Show more concepts</button>
+        <div id="empty-state" class="empty-state" hidden><div class="empty-glyph">⌕</div><h3>No matches found</h3><p id="empty-message">Try a different search or category.</p><button id="empty-reset" type="button" class="secondary-action">Clear search &amp; filters</button></div>
         <p class="catalog-disclaimer">Preview catalog only. Artwork and animations are not yet for sale; these cards demonstrate filtering and store layout.</p>
       </div>
     </section>

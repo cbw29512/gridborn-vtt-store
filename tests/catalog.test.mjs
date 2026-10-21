@@ -62,3 +62,16 @@ test('illustrated concepts span every category without claiming completed animat
     .every(item => item.animationStatus === 'static-art-study'));
   assert.ok(illustrated.every(item => item.purchasable === false));
 });
+
+test('a shopper can search all collections without selecting a category', () => {
+  assert.equal(filterCatalog(catalog, initialState).length, 34);
+  const sharks = filterCatalog(catalog, { ...initialState, query: 'shark' });
+  assert.deepEqual(sharks.map(item => item.name), ['Great White Shark','Reef Shark']);
+  const inn = filterCatalog(catalog, { ...initialState, query: 'innkeeper' });
+  assert.deepEqual(inn.map(item => item.name), ['Village Innkeeper','Dwarven Tavern Keeper']);
+  assert.deepEqual(availableOptions(catalog, 'All'), { first:[], second:[] });
+});
+test('dependent filter choices only appear after the first selection', () => {
+  assert.deepEqual(availableOptions(catalog,'Animals').second, []);
+  assert.ok(availableOptions(catalog,'Animals','Ocean').second.includes('Sharks'));
+});
