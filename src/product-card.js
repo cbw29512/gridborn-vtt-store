@@ -61,7 +61,15 @@ export function makeCard(item) {
       personalize.setAttribute('aria-label','Customize ' + item.name + ' in the builder');
       body.append(personalize);
     }
-    foot.append(price, availability); body.append(type, name, meta, details, foot); card.append(visual, body);
+    const bundleAdd=document.createElement('button');
+    bundleAdd.type='button';
+    bundleAdd.className='product-bundle-add';
+    bundleAdd.dataset.bundleId=item.id;
+    bundleAdd.setAttribute('aria-label','Add '+item.name+' to bundle plan');
+    bundleAdd.textContent='Add to bundle +';
+    foot.append(price, availability);
+    body.append(type, name, meta, details, bundleAdd, foot);
+    card.append(visual, body);
     return card;
   } catch (error) { console.error('Unable to render token preview', item.id, error); return null; }
 }
