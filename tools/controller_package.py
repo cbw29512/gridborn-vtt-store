@@ -45,7 +45,11 @@ def create_controller_package(spec: dict, frames: Path, exports: Path,
             raise ValueError("All independently sourced clips must be rendered")
         if clips and (not independent_motion or set(independent_motion) != set(clips)):
             raise ValueError("Missing independent motion and loop QA receipts")
-        for mode, start, count in phase_clips(spec):
+        segments=([] if spec.get("stateOnly") else phase_clips(spec))
+        if spec.get("stateOnly"):
+            segments=[(mode,0,round(clips[mode]["durationSec"]*spec["fps"]))
+                      for mode in ("idle","move","attack")]
+        for mode, start, count in segments:
             dest = target / (mode + ".webm")
             if mode in clips:
                 origin = independent_frames[mode]
@@ -74,6 +78,8 @@ def create_controller_package(spec: dict, frames: Path, exports: Path,
             "independentMotionQA": independent_motion if clips else {},
             "sourceFiles": ({state: clips[state]["source"] for state in clips}
                             if clips else {}),
+            "stateOnly": spec.get("stateOnly") is True,
+            "restSourceFile": spec.get("restSource") if spec.get("stateOnly") else None,
         }
         (target / "gridborn-preview.json").write_text(
             json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
