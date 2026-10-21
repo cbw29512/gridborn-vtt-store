@@ -20,3 +20,10 @@
 .gridborn-remove{border-color:#ad7575!important}
 @media(max-width:540px){.gridborn-hud{left:auto;right:0;top:calc(100% + 8px)}}
 @media(prefers-reduced-motion:reduce){.gridborn-hud *{transition:none!important}}
+
+.gridborn-hud button[aria-pressed="true"]{background:#506a4b;border-color:#e3cb88;color:#fff9de;font-weight:750}
+.gridborn-auto-label{display:flex;align-items:center;gap:6px;font-size:11px;line-height:1.45;cursor:pointer}
+.gridborn-auto-timing{width:18px;height:18px;accent-color:#d6b073;flex-shrink:0}
+.gridborn-auto-timing:focus-visible{outline:3px solid #e9c17b;outline-offset:2px}
+.gridborn-input:disabled{opacity:.7}
+.gridborn-hint{font-size:10px;line-height:1.45;color:#c9cfcd;margin:5px 0}
