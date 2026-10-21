@@ -12,6 +12,23 @@ export const MOTION_STAGES=Object.freeze([
   Object.freeze({key:'rest',label:'REST',durationMs:2400})
 ]);
 
+/** Quick buyer cycle uses real source motion at original speed.
+ * A partial Rest view is enough to show the quiet pose, without delaying the card.
+ */
+export function showcaseDurationMs(preview,key){
+ if(!preview||!['idle','move','action','rest'].includes(key))
+   throw new Error('Missing showcase animation');
+ const ms=key==='action'?preview.actionDurationMs:
+   key==='rest'?2400:preview[key+'DurationMs'];
+ if(!Number.isInteger(ms)||ms<500)throw Error('Missing accurate '+key+' duration');
+ return ms;
+}
+
+export function fullShowcaseMs(preview){
+ return ['idle','move','action','rest'].reduce((total,key)=>
+   total+showcaseDurationMs(preview,key),0);
+}
+
 export function hasCatalogMotion(itemId){
  const preview=animatedPreviews[itemId];
  return Boolean(preview?.idle&&preview?.move&&preview?.action&&preview?.rest
@@ -59,9 +76,7 @@ export function initializeCatalogMotion(){
    session.stage.textContent=frame.label+' · animated study';
    // Match actual Idle/Move source cycles without accelerating their animation.
    // Rest is previewed briefly to complete all four states within ~9–11 seconds.
-   const duration=frame.key==='action'?session.preview.actionDurationMs:
-     frame.key==='rest'?frame.durationMs:session.preview[frame.key+'DurationMs'];
-   if(!Number.isInteger(duration)||duration<500)throw Error('Invalid state duration for '+session.card.dataset.motionId);
+   const duration=showcaseDurationMs(session.preview,frame.key);
    session.timer=setTimeout(()=>{
      session.timer=null;
      startPhase(session,(index+1)%MOTION_STAGES.length);
