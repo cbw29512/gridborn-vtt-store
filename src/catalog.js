@@ -4,6 +4,7 @@
  * representation, pricing and explicit non-purchasable status.
  */
 import { artStudies } from './art-studies.js';
+import { animatedPreviews } from './animated-previews.js';
 
 const make = (id, category, name, primary, secondary, size, squares, symbol) => ({
   id, category, name, primary, secondary, size, squares, symbol,
@@ -16,7 +17,7 @@ const make = (id, category, name, primary, secondary, size, squares, symbol) => 
   animalType: category === 'Animals' ? secondary : null,
   presentation: null,
   previewArt: artStudies[id] || null,
-  priceCents: 299, purchasable: false, animationStatus: id === 'chr-ftr-human' ? 'art-study' : artStudies[id] ? 'static-art-study' : 'not-produced',
+  priceCents: 299, purchasable: false, animationStatus: animatedPreviews[id] ? 'art-study' : artStudies[id] ? 'static-art-study' : 'not-produced',
   artLicenseStatus: 'not-verified',
 });
 export const catalog = [

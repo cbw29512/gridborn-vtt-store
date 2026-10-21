@@ -98,3 +98,21 @@
 
 /* Honor hidden state despite explicit grid and block display declarations. */
 .product-grid[hidden],.empty-state[hidden] {display:none!important;}
+
+/* Per-token static/animated study inside the native accessible details dialog. */
+.concept-preview-panel[hidden],.concept-preview-controls[hidden] {display:none!important;}
+.concept-preview-panel {margin:16px 0;padding:16px;background:#202e3d;
+ border:1px solid #536478;border-radius:10px;text-align:center;}
+.concept-preview-panel img {display:block;width:200px;height:200px;max-width:100%;
+ margin:0 auto;object-fit:contain;image-rendering:pixelated;
+ background:linear-gradient(90deg,#9eb7c026 1px,transparent 1px),
+ linear-gradient(#9eb7c026 1px,transparent 1px),#243545;background-size:32px 32px;}
+.concept-preview-status {font-size:12px;min-height:24px;margin:11px 0;color:#f4d59c;}
+.concept-preview-controls {display:flex;justify-content:center;flex-wrap:wrap;gap:10px;}
+.concept-preview-controls button {min-height:44px;padding:10px 16px;
+ background:#e6bf80;border:1px solid #f1d29e;border-radius:5px;
+ color:#211a12;font-weight:800;cursor:pointer;}
+.concept-preview-controls button[aria-pressed="true"] {background:#f8e4ba;
+ outline:2px solid #ffe7b7;outline-offset:2px;}
+.concept-preview-controls button:focus-visible {outline:3px solid white;outline-offset:2px;}
+.concept-preview-caution {font-size:11px;color:#d5dee8;line-height:1.5;margin:13px 0 0;}

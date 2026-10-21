@@ -57,8 +57,8 @@ test('illustrated concepts span every category without claiming completed animat
   assert.equal(illustrated.length, 8);
   for (const category of ['Characters','NPCs','Monsters','Animals'])
     assert.ok(illustrated.some(item => item.category === category), category);
-  assert.equal(illustrated.filter(item => item.animationStatus === 'art-study').length, 1);
-  assert.ok(illustrated.filter(item => item.id !== 'chr-ftr-human')
+  assert.equal(illustrated.filter(item => item.animationStatus === 'art-study').length, 2);
+  assert.ok(illustrated.filter(item => !['chr-ftr-human','mon-cave-goblin'].includes(item.id))
     .every(item => item.animationStatus === 'static-art-study'));
   assert.ok(illustrated.every(item => item.purchasable === false));
 });
@@ -74,4 +74,11 @@ test('a shopper can search all collections without selecting a category', () => 
 test('dependent filter choices only appear after the first selection', () => {
   assert.deepEqual(availableOptions(catalog,'Animals').second, []);
   assert.ok(availableOptions(catalog,'Animals','Ocean').second.includes('Sharks'));
+});
+
+test('Cave Goblin is a second opt-in action/rest animation study', () => {
+  const goblin = catalog.find(item => item.id === 'mon-cave-goblin');
+  assert.equal(goblin?.animationStatus, 'art-study');
+  assert.equal(goblin?.purchasable, false);
+  assert.equal(goblin?.previewArt, './assets/studies/cave-goblin.svg');
 });
