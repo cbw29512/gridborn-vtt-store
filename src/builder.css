@@ -105,6 +105,19 @@ background-size:auto,40px 40px,40px 40px,auto}
 .rig-animated.mode-idle .rig-head,.rig-animated.mode-idle .rig-headgear{
   animation:gb-idle-head 5.2s ease-in-out infinite}
 .rig-animated.mode-idle .rig-eyelids{animation:gb-blink 6.3s steps(1,end) infinite}
+/* Undead Skeleton idle must never use the living breathing loop.
+   One rare bone-settle jerk is deliberately discrete and seam-safe. */
+.rig-animated.mode-idle[data-ancestry="Skeleton"] .rig-figure{
+  animation:gb-undead-settle 6s steps(1,end) infinite;
+}
+.rig-animated.mode-idle[data-ancestry="Skeleton"] .rig-head,
+.rig-animated.mode-idle[data-ancestry="Skeleton"] .rig-headgear{
+  animation:none;
+}
+@keyframes gb-undead-settle{
+  0%,91%,95%,100%{transform:translateX(0)}
+  92%,94%{transform:translateX(1px)}
+}
 /* Alternating stride and opposing arm swing, coordinated on a 760ms beat. */
 .rig-animated.mode-move .rig-figure{animation:gb-walk-bob .76s ease-in-out infinite}
 .rig-animated.mode-move .rig-leg-left{animation:gb-left-stride .76s ease-in-out infinite}
