@@ -60,6 +60,38 @@ attack, and the first/last-frame loop seam. The private output includes
 with `--sample-frames` is rejected. The GitHub full-media QA workflow
 runs this in an ephemeral runner without uploading any products.
 
+### State-exact Cave Goblin controller clips
+
+The Goblin manifest declares `stateClips` with the **real sources used in
+the storefront**: `cave-goblin-idle.svg`, `cave-goblin-move.svg`, and
+`cave-goblin-attack.svg`. The three clips are now rendered separately,
+not extracted from the 45-second master showcase. Private outputs:
+
+- Idle: 3.6 s / 36 frames, looping.
+- Move: 3.6 s / 36 frames, five complete .72-second walk cycles.
+- Attack: 1.4 s / 14 frames, one-shot, followed by Idle in the controller.
+- Rest: 6 s / 60 frames from the original rest study.
+
+Every decoded video must pass alpha, duration, and frame verification; the
+rendered state frames undergo distinct-motion checks and loop-seam checks
+for Idle and Move. The private `gridborn-preview.json` additionally records
+`clipSource: independent-svg-states`, the exact source paths, and QA facts.
+Source declarations that are missing, path-traversing, or off the frame grid
+fail closed. The Human Fighter retains the legacy source-reel split until
+its own independent SVG states are authored and verified.
+
+Render/test without publishing files:
+
+```sh
+python tools/export_demo.py --certify --controller-package \
+  --manifest assets/demos/cave-goblin-manifest.json \
+  --output-dir ../gridborn-private-goblin
+python -m unittest discover -s tests -p 'test_*.py'
+```
+
+**These clips are still art prototypes**, not a completed, licensed,
+import-tested sale or delivery system.
+
 **Technical QA is not VTT import certification, an art-quality review,
 a legal license verification or production approval.** The visible loop
 should still be inspected manually at its actual duration on a desktop
