@@ -1,4 +1,5 @@
 /** Gridborn shared editable rig contract — entirely local, no checkout. */
+import { HERO_VARIANTS } from './hero-variants.js';
 export const PARTS = Object.freeze({
   ancestry: ['Human','Elf','Dwarf','Orc','Goblin','Skeleton'],
   outfit: ['Plate armor','Paladin tabard','Leather armor','Wizard robes','Village clothes'],
@@ -60,6 +61,28 @@ export function normalizeRecipe(input) {
   result.palette=palette;
   return result;
 }
+/** Deterministic, editable *prototype* appearance for an authored class
+ * concept; not a finished individual art/animation package.
+ */
+const GENERATED_RECIPES=new Map(HERO_VARIANTS.map(variant=>[variant.id,variant]));
+export function variantToRecipe(id) {
+  const variant=GENERATED_RECIPES.get(id);
+  if(!variant) throw new Error('Unknown class concept');
+  const hair=['Short','Long','Braided'][(variant.variation-1)%3];
+  const cape=['None','Short cape','Long cape'][(variant.variation-1)%3];
+  const paletteKeys=['royal','forest','ember','shadow','village','radiant','bone'];
+  const index=paletteKeys.indexOf(variant.palette);
+  const paletteKey=paletteKeys[(index+variant.variation-1)%paletteKeys.length];
+  const gear=variant.gear;
+  return normalizeRecipe({
+    ...DEFAULT_RECIPE,name:variant.name,
+    ancestry:variant.ancestry,outfit:gear.outfit,
+    headgear:gear.headgear,hair,weapon:gear.weapon,
+    offhand:gear.offhand,cape,palette:PALETTES[paletteKey]
+  });
+}
+export function hasVariantRecipe(id) { return GENERATED_RECIPES.has(id); }
+
 export function toPortableRecipe(recipe) {
   const validated=normalizeRecipe(recipe);
   return JSON.stringify({format:'gridborn-character-recipe',...validated},null,2)+'\n';

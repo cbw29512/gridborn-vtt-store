@@ -18,6 +18,8 @@ export function openConcept(item, trigger) {
         ['Challenge rating (source)', item.challengeRating],
         ['Creature type (source)', item.creatureType]] : []),
       ...(item.category==='Monsters' ? [['Artwork camera', item.artDirection]] : []),
+      ...(item.gender ? [['Character identity', item.gender],
+        ['Design specialty', item.specialty||item.distinguishingGear||'Original concept']] : []),
       ['Animation', item.id === 'ani-forest-wolf'
         ? 'Separate prototype Idle, Move, one-shot Bite and curled Rest states'
         : 'Planned 45-second action showcase; independent state clips are intended for final export'],

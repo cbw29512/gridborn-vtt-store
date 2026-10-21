@@ -30,7 +30,7 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
         from playwright.sync_api import expect
         page.on("pageerror", lambda err: errors.append(str(err)))
         page.goto(origin, wait_until="load")
-        expect(page.locator("#result-summary")).to_have_text("34 results found")
+        expect(page.locator("#result-summary")).to_have_text("518 results found")
         expect(page.locator("#search-label")).to_have_text("Search all tokens")
         assert page.locator(".product-card").count() == 8, "Show a curated first page of eight"
         assert page.locator("#primary-field").is_hidden(), "All categories should not show context filters"
@@ -77,12 +77,12 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
         page.locator("#show-more").click()
         assert page.locator(".product-card").count() == 16, "Show more should reveal eight more concepts"
         page.locator("#search").fill("shark")
-        expect(page.locator("#result-summary")).to_have_text("2 results found")
-        assert page.locator(".product-card").count() == 2, "Search must work across all categories"
+        expect(page.locator("#result-summary")).to_have_text("5 results found")
+        assert page.locator(".product-card").count() == 5, "Search must work across all categories"
         page.locator("#search").fill("nothingmatches_abc")
         expect(page.locator("#empty-state")).to_be_visible()
         page.locator("#empty-reset").click()
-        expect(page.locator("#result-summary")).to_have_text("34 results found")
+        expect(page.locator("#result-summary")).to_have_text("518 results found")
         page.locator('[data-category-link="Animals"]').click()
         expect(page.locator("#result-summary")).to_have_text("10 results found")
         expect(page.locator("#search-label")).to_have_text("Search animals")
@@ -105,7 +105,7 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
         expect(page.locator("#result-summary")).to_have_text("10 results found")
         assert page.locator("#category").input_value() == "Animals", "Clearing filters must preserve category"
         page.locator('[data-category-link="Characters"]').click()
-        expect(page.locator("#result-summary")).to_have_text("8 results found")
+        expect(page.locator("#result-summary")).to_have_text("116 results found")
         assert page.locator(".product-art").count() >= 3, "Expected three illustrated characters"
         page.locator("#demo-pause").click()
         expect(page.locator("#demo-pause")).to_have_attribute("aria-pressed", "true")

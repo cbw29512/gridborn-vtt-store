@@ -1,5 +1,7 @@
 import { openConcept } from './concept-dialog.js';
 import { PRESETS } from './builder-data.js';
+import { HERO_VARIANTS } from './hero-variants.js';
+const generatedHeroIds=new Set(HERO_VARIANTS.map(x=>x.id));
 
 export function makeCard(item) {
   try {
@@ -50,7 +52,7 @@ export function makeCard(item) {
     details.textContent = 'View concept details';
     details.setAttribute('aria-label', 'View concept details for ' + item.name);
     details.addEventListener('click', () => openConcept(item, details));
-    if (Object.hasOwn(PRESETS,item.id)) {
+    if (Object.hasOwn(PRESETS,item.id)||generatedHeroIds.has(item.id)) {
       const personalize = document.createElement('a');
       personalize.href = './builder.html?preset=' + encodeURIComponent(item.id);
       personalize.className = 'customize-link';

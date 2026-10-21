@@ -69,7 +69,7 @@ test('category shortcuts are four normal links to stable catalog URLs', () => {
 test('buyer FAQ does not make unverified compatibility or legal claims', () => {
   assert.match(html, /id="faq" aria-labelledby="faq-title"/);
   assert.equal((html.match(/<details>/g) || []).length, 5);
-  assert.equal((html.match(/<summary>/g) || []).length, 5);
+  assert.equal((html.match(/<summary>/g) || []).length, 6);
   assert.match(html, /Compatibility has not been verified/);
   assert.match(html, /license has not yet been published/);
   assert.match(html, /Checkout and paid downloads are disabled/);

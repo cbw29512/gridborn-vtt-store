@@ -6,6 +6,9 @@
 import { artStudies } from './art-studies.js';
 import { animatedPreviews } from './animated-previews.js';
 import { monsterSRD } from './monster-srd.js';
+import { HERO_VARIANTS } from './hero-variants.js';
+import { NPC_CONCEPTS } from './npc-roster.js';
+import { viewForMonster } from './creature-view.js';
 
 const make = (id, category, name, primary, secondary, size, squares, symbol) => ({
   id, category, name, primary, secondary, size, squares, symbol,
@@ -100,7 +103,7 @@ const indexedMonsters=monsterSRD.map(source=>{
     challengeRating:source.cr,source:'SRD 5.2.1',sourcePage:source.page,
     sourceRecordId:source.id,
     // Unchanged source portrait is never assumed to be the SRD's own image.
-    artDirection:'Three-quarter side/profile view targeted'
+    artDirection:viewForMonster(source.type,source.name)
   };
 });
 const ORIGINAL_MONSTER_FAMILIES=Object.freeze({
@@ -112,16 +115,33 @@ const originalVariants=originalMonsters.filter(item=>!matchedOriginals.has(item.
  ...item,primary:ORIGINAL_MONSTER_FAMILIES[item.id]||'Monstrosity',
  secondary:'Unrated concept',creatureType:ORIGINAL_MONSTER_FAMILIES[item.id]||'Monstrosity',
  location:item.primary,challengeRating:null,source:'Gridborn original variant',
- artDirection:'Three-quarter side/profile view targeted'
+ artDirection:viewForMonster(ORIGINAL_MONSTER_FAMILIES[item.id]||'Monstrosity',item.name)
+}));
+const heroVariants=HERO_VARIANTS.map(hero=>({
+ ...make(hero.id,'Characters',hero.name,hero.ancestry,hero.characterClass,
+   ['Goblin'].includes(hero.ancestry)?'Small':'Medium',1,'⚔'),
+ gender:hero.gender,presentation:hero.gender,specialty:hero.specialty,
+ builderVariantId:hero.id,source:'Gridborn hero design concept',
+ gear:hero.gear,artDirection:'Three-quarter front; gender identity does not impose body shape'
+}));
+const npcVariants=NPC_CONCEPTS.map(npc=>({
+ ...make(npc.id,'NPCs',npc.name,npc.ancestry,npc.occupation,
+   'Dwarf'===npc.ancestry?'Medium':'Medium',1,'⌂'),
+ gender:npc.gender,presentation:npc.gender,
+ distinguishingGear:npc.distinguishingGear,source:'Gridborn NPC design concept',
+ artDirection:'Three-quarter front'
 }));
 export const catalog = Object.freeze([
  ...starterCatalog.filter(item=>item.category!=='Monsters'),
- ...indexedMonsters, ...originalVariants
+ ...heroVariants,...npcVariants,
+ ...indexedMonsters,...originalVariants
 ]);
 export const monsterCatalogStats = Object.freeze({
  srd:monsterSRD.length,
  originalVariants:originalVariants.length,
  monsterCards:indexedMonsters.length+originalVariants.length,
+ heroVariantConcepts:heroVariants.length,
+ npcVariantConcepts:npcVariants.length,
  allCategories:catalog.length
 });
 

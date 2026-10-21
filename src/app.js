@@ -10,7 +10,7 @@ const state = { ...initialState };
 const nodes = {};
 const byId = id => document.getElementById(id);
 let visibleCount = 8;
-const pageSize=()=>state.category==='Monsters'?24:8;
+const pageSize=()=>['Monsters','Characters','NPCs'].includes(state.category)?24:8;
 function populateSelect(node, values, allText, selected = '') {
   try {
     node.replaceChildren();
@@ -49,7 +49,7 @@ function renderResults() {
     nodes.empty.hidden = filtered.length > 0;
     nodes.results.hidden = filtered.length === 0;
     nodes.more.hidden = filtered.length <= visibleCount;
-    nodes.more.textContent = 'Show more creatures (' + (filtered.length - visibleCount) + ' remaining)';
+    nodes.more.textContent = 'Show more designs (' + (filtered.length - visibleCount) + ' remaining)';
     nodes.summary.textContent = filtered.length + (filtered.length === 1 ? ' result found' : ' results found');
     nodes.caption.textContent = [state.category === 'All' ? 'All categories' : state.category,
       state.primary, state.secondary].filter(Boolean).join(' / ');

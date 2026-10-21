@@ -33,7 +33,8 @@ export function filterCatalog(items, state) {
       if (state.secondary && item.secondary !== state.secondary) return false;
       if (!query) return true;
       const haystack = [item.name, item.primary, item.secondary, item.category, item.size,
-        item.creatureType, item.challengeRating, item.location, item.source]
+        item.creatureType, item.challengeRating, item.location, item.source,
+        item.presentation, item.specialty, item.distinguishingGear]
         .join(' ').toLocaleLowerCase();
       return haystack.includes(query);
     });
