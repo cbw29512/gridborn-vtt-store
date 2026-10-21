@@ -15,6 +15,7 @@ from builder_browser_qa import check_builder
 from production_browser_qa import check_production
 from wolf_browser_qa import check_wolf
 from spider_browser_qa import check_spider
+from catalog_expansion_browser_qa import check_full_catalog
 SIZES = (1440, 390, 320)
 class PreviewHandler(SimpleHTTPRequestHandler):
     def log_message(self, format_string, *args):
@@ -162,6 +163,7 @@ def main() -> int:
                     check_production(browser, url, width, screenshots)
                     check_wolf(browser, url, width, screenshots)
                     check_spider(browser, url, width, screenshots)
+                    check_full_catalog(browser, url, width, screenshots)
             finally:
                 browser.close()
         LOG.info("All viewport tests passed. Screenshots remain temporary.")

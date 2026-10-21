@@ -326,3 +326,34 @@ sun emblem, shield and sword. The modular builder can now start from **eight
 recipes** and mix seven palettes, with the `Paladin tabard` outfit component
 available across ancestries. Final animation exports and VTT compatibility
 have not yet been completed.
+
+## Full SRD monster browse catalog and creature camera standard
+
+The storefront now integrates **330 SRD 5.2.1 monster index entries** from the
+corrected Iron Pit source roster. These are names/types/sizes/CR only, **not
+finished tokens or source artwork**. The new Monsters filters are
+**Creature family → Challenge range**, with search across name, type, CR and
+environment. Original Gridborn monster variants remain distinct where they
+aren't exact SRD matches; indexed art studies retain stable IDs when names
+match. Credits and CC BY 4.0 source notice:
+[`docs/SRD_5_2_1_ATTRIBUTION.md`](docs/SRD_5_2_1_ATTRIBUTION.md).
+
+The catalog also includes **108 additional pregen hero concepts** (12 classes,
+with **3 male, 3 female, and 3 nonbinary** original fictional designs per
+class), plus **48 NPC occupation/ancestry concepts**. They are searchable
+noncommercial concept cards; all 108 hero concept recipes can open and be
+customized in the existing browser builder, but they do **not** have 108
+independently finished character illustrations or commercial animation
+exports. NPC concepts are descriptions and equipment briefs pending art.
+
+The user-approved monster art direction is **profile-first for all
+nonhumanoids**, while upright humanoid monsters can stay three-quarter
+front. See [`docs/production/MONSTER_CAMERA.md`](docs/production/MONSTER_CAMERA.md).
+The Great White Shark artwork was replaced with a new right-facing
+side-profile illustration clearly showing snout, dorsal fin, crescent tail,
+pectoral fins, five gills and white belly. Other pre-existing nonhumanoid
+art requires separate silhouette approval before being treated as final.
+
+**No checkout is enabled**, all indexed entries remain nonpurchasable, and
+the new browse/recipe records are *production commitments*, not 500+
+completed animated files.

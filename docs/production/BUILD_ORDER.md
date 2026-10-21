@@ -99,3 +99,21 @@ starting recipe. Its tabard keeps the same leg/arm/equipment attachment
 system but changes the character silhouette independently of the Fighter.
 Static artwork is not a certified VTT or animation product. Animated
 Idle/Move/Attack/Rest exports remain future work and all review checks open.
+
+## Full catalog expansion and 108 class variant requirements
+
+- Index complete: **330 SRD monster names** (CC BY attribution on site),
+  plus distinct Gridborn flavor-variant monster concepts.
+- **12 class queues × (3 male + 3 female + 3 nonbinary) = 108 individual
+  planned hero character designs.** Nine per class require their own
+  completed original appearance and animation artwork; choosing an editable
+  starter recipe is **not** completing that requirement.
+- **48 NPC concepts**: twelve occupations across four ancestries. Add
+  equipment silhouettes and individually authored appearances.
+- **Profile camera**: nonhumanoids (including sharks, wolf, dragon, spider,
+  ooze) side/three-quarter side. Humanoid monster front/three-quarter.
+- Completed new shark first static **profile** study; existing frontal
+  nonhumanoid spider and other drawings remain **visual prototypes**.
+- Next production priorities: approve shark profile at 64px; revise giant
+  spider to side profile; build Rogue and Ranger class visuals; then wolf and
+  dragon size variants. Distinct animations and manual VTT tests still required.
