@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description">
+<title id="title">Human Fighter — seamlessly looping Gridborn idle token study</title>
+<desc id="description">Original Human Fighter breathing and equipment motion on a 3.2-second continuous idle loop. Development prototype, not a finished VTT product.</desc>
+<style>
+  /* Genuine repeating idle motion, independent of clicking the storefront. */
+  .body { animation: fighter-breathe 3.2s ease-in-out infinite; }
+  .cape { animation: fighter-cloak 3.2s ease-in-out infinite; }
+  .shield { transform-origin:97px 115px; animation: fighter-shield 3.2s ease-in-out infinite; }
+  .sword { transform-origin:168px 142px; animation: fighter-blade 3.2s ease-in-out infinite; }
+  .eye { animation: fighter-blink 6.4s steps(1,end) infinite; }
+  @keyframes fighter-breathe {
+    0%,100% { transform:translateY(0); }
+    25% { transform:translateY(-2px); }
+    50% { transform:translateY(-5px); }
+    75% { transform:translateY(-2px); }
+  }
+  @keyframes fighter-cloak {
+    0%,100% { transform:translateX(0); }
+    25% { transform:translateX(-3px); }
+    50% { transform:translateX(6px); }
+    75% { transform:translateX(3px); }
+  }
+  @keyframes fighter-shield {
+    0%,100% { transform:rotate(-2deg); }
+    50% { transform:rotate(4deg); }
+  }
+  @keyframes fighter-blade {
+    0%,100% { transform:rotate(0deg); }
+    50% { transform:rotate(8deg); }
+  }
+  @keyframes fighter-blink {
+    0%,47%,49%,100% { opacity:1; }
+    48% { opacity:0; }
+  }
+  @media(prefers-reduced-motion:reduce) {
+    .body,.cape,.shield,.sword,.eye { animation:none!important; }
+  }
+</style>
+<ellipse cx="129" cy="194" rx="53" ry="13" fill="#080f1c" opacity=".32"/>
+<ellipse cx="128" cy="192" rx="67" ry="22" fill="none" stroke="#e9b967" stroke-width="3" opacity=".72"/>
+
+<g class="body">
+  
+<g class="cape">
+  <path d="M79 87h87v23h9v28h-10v21h-12v16h-13v-13h-40v12H82v-14H69v-28h7v-25h3z" fill="#171a27"/>
+  <path d="M82 90h73v21h8v22h-8v22h-15v10h-29v-9H88v9H78v-34h5z" fill="#992f47"/>
+  <path d="M85 95h11v51h-8z M139 99h12v44h-10z" fill="#c95362"/>
+</g>
+  <!-- Boots and small overlapping panels read clearly at token scale. -->
+  <rect x="99" y="165" width="22" height="25" fill="#171a27"/> <rect x="127" y="164" width="23" height="26" fill="#171a27"/>
+  <rect x="102" y="166" width="17" height="20" fill="#493c3a"/> <rect x="130" y="165" width="17" height="21" fill="#493c3a"/>
+  <rect x="101" y="184" width="22" height="8" fill="#171a27"/> <rect x="128" y="184" width="23" height="8" fill="#171a27"/>
+  <rect x="96" y="147" width="59" height="25" fill="#171a27"/> <rect x="102" y="148" width="48" height="18" fill="#253144"/>
+  <rect x="119" y="151" width="11" height="19" fill="#d9ae67"/>
+  <!-- A 3/4 top-down steel breastplate, with gold belt and vambraces. -->
+  <rect x="91" y="92" width="69" height="61" fill="#171a27"/> <rect x="96" y="95" width="59" height="54" fill="#516d89"/>
+  <rect x="102" y="100" width="47" height="42" fill="#253144"/> <rect x="109" y="104" width="33" height="33" fill="#516d89"/>
+  <rect x="113" y="105" width="7" height="29" fill="#93adc2"/> <rect x="132" y="105" width="7" height="29" fill="#93adc2"/>
+  <rect x="119" y="105" width="14" height="33" fill="#253144"/> <rect x="121" y="108" width="10" height="19" fill="#d9ae67"/>
+  <rect x="100" y="142" width="54" height="9" fill="#d9ae67"/> <rect x="105" y="144" width="44" height="5" fill="#67412e"/>
+  <rect x="106" y="146" width="9" height="6" fill="#f9d690"/>
+  <g class="shield">
+  <!-- Left arm and shield. -->
+  <rect x="83" y="99" width="19" height="53" fill="#171a27"/> <rect x="87" y="101" width="13" height="46" fill="#516d89"/>
+  <rect x="75" y="115" width="38" height="47" fill="#171a27"/> <rect x="79" y="119" width="29" height="36" fill="#253144"/>
+  <rect x="84" y="123" width="20" height="29" fill="#516d89"/> <rect x="91" y="125" width="6" height="24" fill="#d9ae67"/>
+  <rect x="86" y="134" width="17" height="6" fill="#d9ae67"/> <rect x="88" y="128" width="13" height="18" fill="#93adc2"/>
+  <rect x="93" y="131" width="5" height="13" fill="#d9ae67"/>
+  </g>
+  <!-- Right armored arm, hand grips hilt. -->
+  <rect x="152" y="98" width="18" height="48" fill="#171a27"/> <rect x="155" y="102" width="12" height="38" fill="#516d89"/>
+  <rect x="157" y="138" width="15" height="16" fill="#171a27"/> <rect x="158" y="140" width="11" height="12" fill="#f0be8c"/>
+  <!-- Helm and face. -->
+  <rect x="104" y="58" width="49" height="48" fill="#171a27"/>
+  <rect x="108" y="63" width="40" height="40" fill="#516d89"/> <rect x="111" y="65" width="33" height="32" fill="#ce9668"/>
+  <rect x="116" y="73" width="25" height="21" fill="#f0be8c"/>
+  <rect x="114" y="82" width="7" height="6" fill="#171a27"/> <rect x="133" y="82" width="7" height="6" fill="#171a27"/>
+  <g class="eye"><rect x="117" y="83" width="3" height="3" fill="#f9d690"/> <rect x="136" y="83" width="3" height="3" fill="#f9d690"/></g>
+  <rect x="123" y="89" width="9" height="5" fill="#67412e"/>
+  <rect x="103" y="55" width="51" height="16" fill="#171a27"/> <rect x="107" y="56" width="43" height="12" fill="#516d89"/>
+  <rect x="116" y="49" width="27" height="10" fill="#171a27"/> <rect x="121" y="47" width="17" height="15" fill="#d9ae67"/>
+  <rect x="106" y="70" width="8" height="19" fill="#93adc2"/> <rect x="143" y="70" width="8" height="19" fill="#253144"/>
+  <rect x="106" y="93" width="43" height="9" fill="#253144"/> <rect x="116" y="95" width="24" height="8" fill="#d9ae67"/>
+  
+<g class="sword">
+  <path d="M172 150h9v-57h-9z" fill="#171a27"/>
+  <path d="M174 96h5V42h-5z" fill="#d8e5ea"/>
+  <path d="M175 45h3v48h-3z" fill="#ffffff"/>
+  <path d="M174 37h5v10h-5z" fill="#f9d690"/>
+  <path d="M160 92h33v7h-33z" fill="#171a27"/>
+  <path d="M164 92h25v4h-25z" fill="#d9ae67"/>
+  <path d="M171 100h11v43h-11z" fill="#67412e"/>
+  <path d="M170 141h13v8h-13z" fill="#d9ae67"/>
+</g>
+</g>
+</svg>

@@ -1,55 +1,60 @@
 /**
- * Human Fighter art-study state:
- * still (default) | action (45s) | rest (6s).
- * Both animations are user initiated and all variants remain concept-only.
+ * Both Human Fighter art studies play automatically and repeat indefinitely:
+ * sleeping and a complete Idle > Move > Attack > Recover showcase.
+ * An optional accessible pause stops both; no Play buttons are needed.
  */
-const SOURCES = Object.freeze({
-  still: './assets/demos/human-fighter-still.svg',
-  action: './assets/demos/human-fighter-loop.svg',
-  rest: './assets/demos/human-fighter-rest.svg',
+const ASSETS=Object.freeze({
+  sleep:'./assets/demos/human-fighter-sleep.svg',
+  sleepStill:'./assets/demos/human-fighter-sleep-still.svg',
+  motion:'./assets/demos/human-fighter-showcase.svg',
+  motionStill:'./assets/demos/human-fighter-still.svg',
 });
-
 export function initializeDemo() {
   try {
-    const action = document.getElementById('demo-toggle');
-    const rest = document.getElementById('demo-rest-toggle');
-    const image = document.getElementById('demo-token');
-    const status = document.getElementById('demo-status');
-    if (!action || !rest || !image || !status) throw new Error('Missing fighter preview controls');
-
-    let mode = 'still';
-
-    function selectMode(next) {
-      try {
-        if (!Object.prototype.hasOwnProperty.call(SOURCES, next)) {
-          throw new Error('Invalid preview mode');
+    const sleep=document.getElementById('demo-sleep-token');
+    const motion=document.getElementById('demo-token');
+    const pause=document.getElementById('demo-pause');
+    const status=document.getElementById('demo-status');
+    const sleepStatus=document.getElementById('demo-sleep-status');
+    const panels=[
+      document.querySelector('.vtt-panel-rest'),
+      document.querySelector('.vtt-panel-live'),
+    ];
+    if(!sleep||!motion||!pause||!status||!sleepStatus||panels.some(p=>!p))
+      throw new Error('Missing automatic looping previews');
+    const preference=window.matchMedia?.('(prefers-reduced-motion: reduce)');
+    let userPaused=Boolean(preference?.matches);
+    let hiddenPaused=document.hidden;
+    const unavailable=new Set();
+    const update=()=>{
+      try{
+        const paused=userPaused||hiddenPaused;
+        const sources=[
+          paused||unavailable.has('sleep')?ASSETS.sleepStill:ASSETS.sleep,
+          paused||unavailable.has('motion')?ASSETS.motionStill:ASSETS.motion
+        ];
+        for(const [i,img] of [sleep,motion].entries()){
+          if(img.getAttribute('src')!==sources[i])img.setAttribute('src',sources[i]);
+          panels[i].dataset.paused=String(paused);
         }
-        mode = next;
-        image.src = SOURCES[mode];
-        status.textContent = mode === 'action' ? 'Action animation playing' :
-          mode === 'rest' ? 'Rest animation playing' : 'Press play to see movement';
-        action.setAttribute('aria-pressed', String(mode === 'action'));
-        rest.setAttribute('aria-pressed', String(mode === 'rest'));
-        action.textContent = mode === 'action' ? 'Stop action loop' : 'Play action loop';
-        rest.textContent = mode === 'rest' ? 'Stop rest loop' : 'Play rest loop';
-      } catch (error) { console.error('Unable to set Fighter animation mode', error); }
+        pause.setAttribute('aria-pressed',String(userPaused));
+        pause.textContent=userPaused?'Resume motion':'Pause motion';
+        sleepStatus.textContent=unavailable.has('sleep')?'Sleep preview unavailable':
+          paused?'Sleep · paused':'Sleep · repeats automatically';
+        status.textContent=unavailable.has('motion')?'Motion preview unavailable':
+          paused?'Full motion · paused':'Idle → Move → Attack → Recover · repeats';
+      }catch(error){console.error('Unable to update looping Fighter previews',error);}
+    };
+    pause.addEventListener('click',()=>{userPaused=!userPaused;update();});
+    document.addEventListener('visibilitychange',()=>{hiddenPaused=document.hidden;update();});
+    preference?.addEventListener?.('change',event=>{userPaused=event.matches;update();});
+    for(const [key,img] of [['sleep',sleep],['motion',motion]]){
+      img.addEventListener('error',()=>{
+        unavailable.add(key);
+        update();
+        console.warn('Gridborn animation asset failed to load:',key);
+      });
     }
-
-    action.addEventListener('click', () => {
-      try { selectMode(mode === 'action' ? 'still' : 'action'); }
-      catch (error) { console.error('Fighter action preview failed', error); }
-    });
-    rest.addEventListener('click', () => {
-      try { selectMode(mode === 'rest' ? 'still' : 'rest'); }
-      catch (error) { console.error('Fighter rest preview failed', error); }
-    });
-    document.addEventListener('visibilitychange', () => {
-      try { if (document.hidden && mode !== 'still') selectMode('still'); }
-      catch (error) { console.error('Unable to stop hidden preview', error); }
-    });
-    image.addEventListener('error', () => {
-      try { if (mode !== 'still') selectMode('still'); }
-      catch (error) { console.error('Unable to recover image preview', error); }
-    });
-  } catch (error) { console.error('Animation preview failed to initialize', error); }
+    update();
+  }catch(error){console.error('Could not start Gridborn automatic animation previews',error);}
 }

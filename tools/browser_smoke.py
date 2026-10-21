@@ -38,7 +38,24 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
         assert "Your VTT maps are static" in headline, "VTT problem must appear immediately"
         assert "Your battles shouldn't be" in headline, "Animated solution must appear immediately"
         assert page.locator(".vtt-panel").count() == 2, "Before/after map comparison missing"
-        expect(page.locator("#demo-status")).to_have_text("Press play to see movement")
+        expect(page.locator("#demo-sleep-status")).to_have_text("Sleep · repeats automatically")
+        expect(page.locator("#demo-status")).to_have_text("Idle → Move → Attack → Recover · repeats")
+        assert page.locator("#demo-sleep-token").get_attribute("src").endswith("human-fighter-sleep.svg")
+        assert page.locator("#demo-token").get_attribute("src").endswith("human-fighter-showcase.svg")
+        assert page.locator("#demo-toggle").count() == 0, "No Play button should be needed"
+        assert page.locator("#demo-rest-toggle").count() == 0, "No Play button should be needed"
+        for selector in ["#demo-sleep-token", "#demo-token"]:
+            image=page.locator(selector)
+            expect(image).to_be_visible()
+            assert image.evaluate("(img) => img.complete && img.naturalWidth > 0"), \
+                selector + " did not load"
+        sleep_frame_one = page.locator("#demo-sleep-token").screenshot()
+        motion_frame_one = page.locator("#demo-token").screenshot()
+        page.wait_for_timeout(2100)
+        sleep_frame_two = page.locator("#demo-sleep-token").screenshot()
+        motion_frame_two = page.locator("#demo-token").screenshot()
+        assert sleep_frame_one != sleep_frame_two, "Sleeping preview should change frames automatically"
+        assert motion_frame_one != motion_frame_two, "Full motion preview should change frames automatically"
         if width == 1440:
             page.keyboard.press("Tab")
             assert page.evaluate("document.activeElement?.className") == "skip-link", \
@@ -87,18 +104,23 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
         page.locator('[data-category-link="Characters"]').click()
         expect(page.locator("#result-summary")).to_have_text("8 results found")
         assert page.locator(".product-art").count() >= 3, "Expected three illustrated characters"
-        page.locator("#demo-toggle").click()
-        expect(page.locator("#demo-toggle")).to_have_attribute("aria-pressed", "true")
-        expect(page.locator("#demo-status")).to_have_text("Action animation playing")
-        page.locator("#demo-rest-toggle").click()
-        expect(page.locator("#demo-toggle")).to_have_attribute("aria-pressed", "false")
-        expect(page.locator("#demo-rest-toggle")).to_have_attribute("aria-pressed", "true")
-        expect(page.locator("#demo-status")).to_have_text("Rest animation playing")
-        page.locator("#demo-rest-toggle").click()
-        expect(page.locator("#demo-rest-toggle")).to_have_attribute("aria-pressed", "false")
+        page.locator("#demo-pause").click()
+        expect(page.locator("#demo-pause")).to_have_attribute("aria-pressed", "true")
+        expect(page.locator("#demo-status")).to_contain_text("paused")
+        expect(page.locator("#demo-sleep-status")).to_contain_text("paused")
+        assert page.locator("#demo-token").get_attribute("src").endswith("human-fighter-still.svg")
+        assert page.locator("#demo-sleep-token").get_attribute("src").endswith("human-fighter-sleep-still.svg")
+        fixed_before = page.locator("#demo-sleep-token").screenshot()
+        page.wait_for_timeout(250)
+        fixed_after = page.locator("#demo-sleep-token").screenshot()
+        assert fixed_before == fixed_after, "Pause must freeze both animations"
+        page.locator("#demo-pause").click()
+        expect(page.locator("#demo-pause")).to_have_attribute("aria-pressed", "false")
+        assert page.locator("#demo-token").get_attribute("src").endswith("human-fighter-showcase.svg")
+        assert page.locator("#demo-sleep-token").get_attribute("src").endswith("human-fighter-sleep.svg")
         image_is_loaded = page.locator("#demo-token").evaluate(
             "(img) => img.complete && img.naturalWidth > 0")
-        assert image_is_loaded, "Static fighter preview artwork failed to load"
+        assert image_is_loaded, "Full-motion Fighter artwork failed to load"
         final_overflow = page.evaluate(
             "() => document.documentElement.scrollWidth - document.documentElement.clientWidth")
         assert final_overflow <= 1, f"Page overflows after navigation at {width}px"
