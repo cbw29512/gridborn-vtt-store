@@ -23,7 +23,7 @@ def check_builder(browser,origin,width,screenshots:Path):
         assert page.locator("#builder-avatar svg").count()==1
         page.locator('[data-palette="shadow"]').click()
         expect(page.locator('[data-palette="shadow"]')).to_have_attribute("aria-pressed","true")
-        page.locator('[data-mode="move"]').click()
+        page.locator('#builder-modes button[data-mode="move"]').click()
         expect(page.locator("#builder-avatar svg")).to_have_class("rig-image mode-move rig-animated")
         motion = page.evaluate("""() => {
           const style = selector => getComputedStyle(document.querySelector('#builder-avatar '+selector)).animationName;
@@ -33,7 +33,7 @@ def check_builder(browser,origin,width,screenshots:Path):
         assert motion == ["gb-left-stride","gb-right-stride","gb-right-stride",
                           "gb-left-stride","gb-walk-cape"], f"Rig motion not articulated: {motion}"
         expect(page.locator("#builder-stage")).to_have_attribute("data-mode", "move")
-        page.locator('[data-mode="rest"]').click()
+        page.locator('#builder-modes button[data-mode="rest"]').click()
         expect(page.locator(".rig-rest-seat")).to_have_count(1)
         expect(page.locator(".rig-legs-rest")).to_have_count(1)
         expect(page.locator("#builder-status")).to_contain_text("seated posture")
@@ -41,10 +41,10 @@ def check_builder(browser,origin,width,screenshots:Path):
         assert page.locator(".stage-campfire").evaluate(
             "(node) => getComputedStyle(node).display") != "none"
         page.screenshot(path=str(screenshots/f"gridborn-rest-{width}px.png"))
-        page.locator('[data-mode="attack"]').click()
-        expect(page.locator('[data-mode="attack"]')).to_have_attribute("aria-pressed","true")
+        page.locator('#builder-modes button[data-mode="attack"]').click()
+        expect(page.locator('#builder-modes button[data-mode="attack"]')).to_have_attribute("aria-pressed","true")
         expect(page.locator("#builder-status")).to_contain_text("plays once")
-        expect(page.locator('[data-mode="idle"]')).to_have_attribute("aria-pressed","true",timeout=4000)
+        expect(page.locator('#builder-modes button[data-mode="idle"]')).to_have_attribute("aria-pressed","true",timeout=4000)
         expect(page.locator("#builder-status")).to_contain_text("returned to Idle")
         page.locator('[data-bg="light"]').click()
         assert page.locator("#builder-stage").get_attribute("data-background")=="light"
@@ -72,7 +72,7 @@ def check_builder(browser,origin,width,screenshots:Path):
         assert asset[:8]==b"\x89PNG\r\n\x1a\n","PNG preview must encode correctly"
         assert len(asset)>2500,"Rendered preview image is suspiciously small"
         page.emulate_media(reduced_motion="reduce")
-        page.locator('[data-mode="rest"]').click()
+        page.locator('#builder-modes button[data-mode="rest"]').click()
         expect(page.locator(".rig-rest-seat")).to_have_count(1)
         reduced_animation = page.locator(".rig-upper").evaluate(
             "(node) => getComputedStyle(node).animationName")
