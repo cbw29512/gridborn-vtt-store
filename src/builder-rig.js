@@ -181,7 +181,7 @@ export function renderRig(input,{mode='idle',animated=false}={}) {
  const seated=mode==='rest';
  const layers=r.ancestry==='Skeleton'&&seated?renderSkeletonRest(r):(seated?restSeat(r):'')+
    '<g class="rig-back">'+cape(r)+renderSpecialtyBack(r)+performerBack(r)+casterBack(r)+'</g>'+legs(r,seated)+
-   '<g class="rig-upper">'+arms(r)+torso(r)+renderSpecialtyFront(r)+performerFront(r)+casterFront(r)+face(r)+hat(r)+hand(r)+offhand(r)+'</g>');
+   '<g class="rig-upper">'+arms(r)+torso(r)+renderSpecialtyFront(r)+performerFront(r)+casterFront(r)+face(r)+hat(r)+hand(r)+offhand(r)+'</g>';
  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="'+xml(r.name)+
  ' modular fantasy token" shape-rendering="crispEdges" data-ancestry="'+r.ancestry+'" class="rig-image mode-'+mode+(animated?' rig-animated':'')+'">'+
  '<title>'+xml(r.name)+'</title><desc>Gridborn original modular block fantasy character concept</desc>'+
