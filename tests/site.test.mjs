@@ -36,7 +36,8 @@ test('keyboard and reduced motion support remains present', () => {
 
 test('animation study has a static fallback, explicit control and a 45-second timing plan', () => {
   assert.match(html, /id="demo-token"/);
-  assert.match(html, /id="demo-toggle"/);
+  assert.match(html, /id="demo-sleep-token"/);
+  assert.match(html, /id="demo-pause"/);
   assert.match(html, /aria-pressed="false"/);
   assert.equal(existsSync(new URL('../assets/demos/human-fighter-still.svg', import.meta.url)), true);
   const animated = get('assets/demos/human-fighter-loop.svg');
@@ -74,14 +75,15 @@ test('buyer FAQ does not make unverified compatibility or legal claims', () => {
   assert.match(html, /Checkout and paid downloads are disabled/);
 });
 
-test('Idle and Rest are switchable looping studies with explicit pause and accessible status', () => {
-  assert.match(html, /id="demo-rest-toggle"/);
-  assert.match(html, /aria-controls="demo-token"/);
+test('sleep and full motion automatically repeat while Pause remains optional', () => {
+  assert.match(html, /id="demo-sleep-token"/);
+  assert.doesNotMatch(html, /id="demo-toggle"|id="demo-rest-toggle"/);
+  assert.match(html, /aria-controls="demo-token demo-sleep-token"/);
   assert.match(get('assets/demos/human-fighter-rest.svg'), /rest-breathe 6s/);
   assert.match(get('assets/demos/human-fighter-rest.svg'), /prefers-reduced-motion:reduce/);
   const demo = get('src/animation-demo.js');
-  assert.match(demo, /mode==='idle'/);
-  assert.match(demo, /mode='idle'/);
+  assert.match(demo, /ASSETS\.sleep/);
+  assert.match(demo, /ASSETS\.motion/);
   assert.match(demo, /userPaused/);
   assert.match(demo, /visibilitychange/);
   assert.match(demo, /aria-pressed/);
@@ -100,9 +102,9 @@ test('first screen clearly defines Gridborn as a solution for static VTT maps', 
   assert.match(hero, /Your battles shouldn't be/);
   assert.match(hero, /animated fantasy tokens for/);
   assert.match(hero, /heroes, monsters, NPCs, and animals/);
-  assert.match(hero, /See static vs\. animated/);
-  assert.match(hero, /BEFORE/);
-  assert.match(hero, /GRIDBORN/);
+  assert.match(hero, /Watch living tokens/);
+  assert.match(hero, /SLEEPING/);
+  assert.match(hero, /FULL MOTION/);
   assert.match(hero, /VTT support not yet verified/);
   assert.match(html, /href="#live-demo"/);
   assert.match(html, /src\/hero\.css/);
@@ -152,20 +154,26 @@ test('two animation studies have static defaults and explicit modal playback con
   assert.match(get('src/catalog.js'), /animatedPreviews\[id\]/);
 });
 
-test('hero compares a fixed still token against a continuously looping Idle by default', () => {
-  assert.match(html, /class="vtt-figure vtt-figure-static" src="\.\/assets\/demos\/human-fighter-still\.svg"/);
-  assert.match(html, /id="demo-token"[^>]+src="\.\/assets\/demos\/human-fighter-idle\.svg"/);
-  assert.match(html, /Idle · loops automatically/);
-  assert.match(html, /vtt-loop-badge/);
-  assert.match(html, /id="demo-pause"/);
-  assert.match(html, /id="demo-toggle"[^>]+aria-pressed="true"/);
-  const idle = get('assets/demos/human-fighter-idle.svg');
-  for (const name of ['fighter-breathe','fighter-cloak','fighter-blade','fighter-shield','fighter-blink'])
-    assert.match(idle, new RegExp('animation: '+name+' 3\\.2s|animation: '+name+' 6\\.4s'));
-  assert.match(idle, /infinite/);
-  assert.match(idle, /prefers-reduced-motion:reduce/);
-  assert.match(get('src/animation-demo.js'), /let mode='idle'/);
-  assert.match(get('src/animation-demo.js'), /window\.matchMedia/);
+
+test('homepage displays sleeping and full combat showcases which autoplay with no Play buttons', () => {
+  assert.match(html, /id="demo-sleep-token"[^>]+human-fighter-sleep\.svg/);
+  assert.match(html, /id="demo-token"[^>]+human-fighter-showcase\.svg/);
+  assert.match(html, /Sleep · repeats automatically/);
+  assert.match(html, /Idle → Move → Attack → Recover · repeats/);
+  assert.doesNotMatch(html, /id="demo-toggle"|id="demo-rest-toggle"/);
+  const sleep=get('assets/demos/human-fighter-sleep.svg');
+  const showcase=get('assets/demos/human-fighter-showcase.svg');
+  assert.match(sleep, /class="sleep-pose"/);
+  assert.match(sleep, /sleep-letters/);
+  assert.match(sleep, /gridborn-sleep-breathe 4\.8s/);
+  assert.match(showcase, /gridborn-full-body 9s/);
+  assert.match(showcase, /gridborn-full-weapon 9s/);
+  assert.match(sleep, /infinite/);
+  assert.match(showcase, /infinite/);
+  assert.match(sleep, /prefers-reduced-motion:reduce/);
+  assert.match(showcase, /prefers-reduced-motion:reduce/);
   assert.match(get('src/animation-demo.js'), /visibilitychange/);
   assert.match(get('src/animation-demo.js'), /userPaused/);
+  assert.match(get('src/animation-demo.js'), /matchMedia/);
+  assert.equal(existsSync(new URL('../assets/demos/human-fighter-sleep-still.svg',import.meta.url)),true);
 });

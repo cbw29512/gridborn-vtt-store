@@ -115,3 +115,27 @@
 @media(prefers-reduced-motion:reduce) {
  .vtt-panel-live .vtt-loop-badge>span{animation:none!important}
 }
+
+/* Both columns demonstrate endlessly animated product states; no start controls. */
+.vtt-panel-rest{border-color:#907b8a;box-shadow:0 0 30px #b49ab325;background:#111d2b}
+.vtt-panel-rest .vtt-dot{background:#b9abe4;box-shadow:0 0 10px #b9abe495}
+.vtt-panel-rest .vtt-board{
+ background:radial-gradient(circle at 53% 42%,#65708d55,transparent 64%),
+ linear-gradient(90deg,#91a1aa23 1px,transparent 1px),
+ linear-gradient(#91a1aa23 1px,transparent 1px),#283443;
+ background-size:auto,37px 37px,37px 37px,auto}
+.vtt-panel-rest .vtt-panel-bottom{color:#cdbfdf;font-weight:750}
+.vtt-panel-rest .vtt-panel-top strong{color:#d7c9f4}
+.vtt-panel .vtt-panel-bottom{line-height:1.35}
+.hero-art>.vtt-playbar>.demo-pause{
+ min-height:39px;padding:9px 12px;border-radius:6px;cursor:pointer;
+ color:#f0e6d8;border:1px solid #64778a;background:#1d2d3d;
+ font-weight:750;font-size:11px;
+}
+.hero-art>.vtt-playbar>.demo-pause:hover{border-color:#e8c383;background:#304155}
+.hero-art>.vtt-playbar>.demo-pause:focus-visible{outline:3px solid #efc986;outline-offset:3px}
+.vtt-panel-rest[data-paused="true"],.vtt-panel-live[data-paused="true"]{opacity:.93}
+@media(max-width:450px){
+ .vtt-panel-top{gap:4px}
+ .vtt-panel-bottom{font-size:9px;padding:8px 3px}
+}

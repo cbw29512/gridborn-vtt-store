@@ -49,7 +49,7 @@
         <h1 id="hero-title">Your VTT maps are static.<br /><em>Your battles shouldn't be.</em></h1>
         <p class="hero-lede">Gridborn brings movement to virtual tabletop encounters with animated fantasy tokens for <strong>heroes, monsters, NPCs, and animals.</strong> Keep the map you love. Bring the characters to life.</p>
         <div class="hero-actions">
-          <a class="primary-action" href="#live-demo">See static vs. animated <span aria-hidden="true">↗</span></a>
+          <a class="primary-action" href="#live-demo">Watch living tokens <span aria-hidden="true">↗</span></a>
           <a class="hero-secondary-action" href="#catalog">Browse premade <span aria-hidden="true">→</span></a>
           <a class="hero-builder-link" href="./builder.html">Build your own token <span aria-hidden="true">✦</span></a>
         </div>
@@ -61,41 +61,37 @@
       <div class="hero-art" id="live-demo" aria-labelledby="demo-title">
         <div class="demo-art-heading">
           <span class="demo-kicker">SEE THE DIFFERENCE</span>
-          <h2 id="demo-title">Same battle map. More life.</h2>
+          <h2 id="demo-title">Two ways to bring tokens to life.</h2>
         </div>
         <div class="vtt-comparison" aria-label="Static versus animated fantasy token example">
-          <div class="vtt-panel vtt-panel-static">
-            <div class="vtt-panel-top"><span class="vtt-dot" aria-hidden="true"></span><span>BEFORE</span><strong>STATIC</strong></div>
+          <div class="vtt-panel vtt-panel-rest" data-paused="false">
+            <div class="vtt-panel-top"><span class="vtt-dot" aria-hidden="true"></span><span>SLEEPING</span><strong>LOOP ↻</strong></div>
             <div class="vtt-board">
               <span class="vtt-tile vtt-tile-a" aria-hidden="true"></span>
               <span class="vtt-tile vtt-tile-b" aria-hidden="true"></span>
               <span class="vtt-opponent" aria-hidden="true">☠</span>
-              <img class="vtt-figure vtt-figure-static" src="./assets/demos/human-fighter-still.svg" width="170" height="170" alt="Static Human Fighter token concept on a gridded battle map" decoding="async" />
+              <img id="demo-sleep-token" class="vtt-figure vtt-figure-sleep" src="./assets/demos/human-fighter-sleep.svg" width="170" height="170" alt="Human Fighter sleeping on a bedroll with closed eyes, gently breathing and dreaming in an endless loop" decoding="async" />
             </div>
-            <div class="vtt-panel-bottom">Frozen in place</div>
+            <div class="vtt-panel-bottom" id="demo-sleep-status">Sleep · repeats automatically</div>
           </div>
           <span class="vtt-arrow" aria-hidden="true">→</span>
           <div class="vtt-panel vtt-panel-live" data-paused="false">
-            <div class="vtt-panel-top"><span class="vtt-dot" aria-hidden="true"></span><span>AFTER</span><strong>GRIDBORN</strong><span class="vtt-loop-badge" aria-label="Looping preview"><span aria-hidden="true">↻</span> LOOP</span></div>
+            <div class="vtt-panel-top"><span class="vtt-dot" aria-hidden="true"></span><span>FULL MOTION</span><strong>LOOP ↻</strong><span class="vtt-loop-badge" aria-label="Looping preview"><span aria-hidden="true">↻</span> LOOP</span></div>
             <div class="vtt-board">
               <span class="vtt-tile vtt-tile-a" aria-hidden="true"></span>
               <span class="vtt-tile vtt-tile-b" aria-hidden="true"></span>
               <span class="vtt-opponent" aria-hidden="true">☠</span>
-              <img id="demo-token" class="vtt-figure demo-token-image" src="./assets/demos/human-fighter-idle.svg" width="170" height="170" alt="Human Fighter token concept with a continuously looping idle animation, breathing and shifting equipment" decoding="async" />
+              <img id="demo-token" class="vtt-figure demo-token-image" src="./assets/demos/human-fighter-showcase.svg" width="170" height="170" alt="Human Fighter automatically cycling through Idle, Move, Attack and Recovery before repeating" decoding="async" />
             </div>
-            <div class="vtt-panel-bottom" id="demo-status" role="status" aria-live="polite">Idle · loops automatically</div>
+            <div class="vtt-panel-bottom" id="demo-status" role="status" aria-live="polite">Idle → Move → Attack → Recover · repeats</div>
           </div>
         </div>
         <div class="vtt-playbar">
           <div class="vtt-playbar-description">
-            <strong>Human Fighter · Animation study</strong>
-            <span>Continuously animated concept · Not a finished VTT token</span>
+            <strong>Human Fighter · Two repeating animation studies</strong>
+            <span>Both previews play automatically · Not finished VTT tokens</span>
           </div>
-          <div class="demo-controls" role="group" aria-label="Switch animated Fighter loop">
-            <button id="demo-toggle" class="demo-toggle" type="button" aria-controls="demo-token" aria-pressed="true">Idle loop ↻</button>
-            <button id="demo-rest-toggle" class="demo-toggle" type="button" aria-controls="demo-token" aria-pressed="false">Rest loop ↻</button>
-            <button id="demo-pause" class="demo-pause" type="button" aria-controls="demo-token" aria-pressed="false">Pause</button>
-          </div>
+          <button id="demo-pause" class="demo-pause" type="button" aria-controls="demo-token demo-sleep-token" aria-pressed="false">Pause motion</button>
         </div>
       </div>
     </section>

@@ -256,3 +256,16 @@ technical demo source; it is **not** the product's default loop, because a
 character attacking on its own every 45 seconds is unsuitable for VTT use.
 Real customer download/export certification remains separate from website
 preview animation. No Netlify, Stripe or product-sale status changes.
+
+## Zero-click, repeating hero demo
+
+The homepage hero now demonstrates **two animated token modes side by side**,
+each autoplaying with no Play buttons: sleeping Fighter (4.8-second breathing,
+closed eyes, bedroll and rising Zs), and full-motion Fighter (9-second repeating
+Idle → Move → Attack → Recovery). Both actually change token pixels over time,
+not only their container badges. Motion plays whenever the tab is visible,
+with one optional **Pause motion** control to satisfy motion accessibility,
+and a static fallback for reduced-motion preferences or failed image loads.
+
+This is an original concept demonstration. It is not a customer VTT-ready export,
+a third-party product video, or proof of production-grade animation quality.
