@@ -1,4 +1,4 @@
-import { MODULE_ID, MODES, canControl } from './contract.mjs';
+import { MODULE_ID, MODES, canControl, DEFAULT_ATTACK_MS } from './contract.mjs';
 import { configureToken, playMode, restoreToken } from './playback.mjs';
 import { verifyAssetFolder } from './asset-check.mjs';
 
@@ -29,6 +29,8 @@ export function attachTokenHud(hud, html) {
     panel.setAttribute('aria-label', 'Gridborn token animations');
     const status = element('div', 'gridborn-status');
     const actions = element('div', 'gridborn-actions');
+    const hint = element('p', 'gridborn-hint',
+      'Idle, Move and Rest repeat until you choose another state. Attack plays once, then returns to Idle. No automatic showcase cycle during a game.');
     const config = token.document.getFlag(MODULE_ID, 'config');
     for (const mode of MODES) {
       const button = element('button', 'gridborn-action', mode[0].toUpperCase() + mode.slice(1));
@@ -37,8 +39,9 @@ export function attachTokenHud(hud, html) {
         try {
           button.disabled = true;
           await playMode(token, mode);
-          status.textContent = mode + ' selected' +
-            (mode === 'attack' ? ' · returning to Idle' : '');
+          status.textContent = mode + (mode === 'attack'
+            ? ' · one strike, then back to Idle'
+            : ' · loops until you choose a different state');
         } catch (error) { notify(error); }
         finally { button.disabled = false; }
       });
@@ -54,9 +57,9 @@ export function attachTokenHud(hud, html) {
     input.value = config?.folder ?? ''; field.append(input);
     const duration = element('label', 'gridborn-field', 'Attack duration (seconds)');
     const seconds = element('input', 'gridborn-input');
-    seconds.type = 'number'; seconds.min = '.5'; seconds.max = '60'; seconds.step = '.5';
+    seconds.type = 'number'; seconds.min = '.5'; seconds.max = '60'; seconds.step = '.1';
     seconds.name = 'attackSeconds'; seconds.required = true;
-    seconds.value = String((config?.attackMs ?? 10000) / 1000);
+    seconds.value = String((config?.attackMs ?? DEFAULT_ATTACK_MS) / 1000);
     duration.append(seconds);
     const save = element('button', 'gridborn-save', 'Save & use Idle');
     save.type = 'submit';
@@ -88,7 +91,7 @@ export function attachTokenHud(hud, html) {
       } catch (error) { notify(error); }
     });
     configure.addEventListener('click', () => { setup.hidden = !setup.hidden; });
-    panel.append(status, actions, configure, setup);
+    panel.append(status, hint, actions, configure, setup);
     trigger.addEventListener('click', () => {
       panel.hidden = !panel.hidden;
       trigger.setAttribute('aria-expanded', String(!panel.hidden));
