@@ -6,6 +6,7 @@ on:
     paths:
       - 'assets/demos/**'
       - 'assets/studies/cave-goblin.svg'
+      - 'assets/studies/skeleton-warrior.svg'
       - 'src/creature-rigs/**'
       - 'tools/export_demo.py'
       - 'tools/export_states.py'
@@ -33,6 +34,9 @@ jobs:
             exporter: tools/export_demo.py
           - manifest: assets/demos/gray-wolf-manifest.json
             id: ani-forest-wolf
+            exporter: tools/export_states.py
+          - manifest: assets/demos/skeleton-warrior-manifest.json
+            id: mon-dng-skeleton
             exporter: tools/export_states.py
     steps:
       - uses: actions/checkout@v4
@@ -67,19 +71,21 @@ jobs:
               'mon-cave-goblin': [('idle', 3.6), ('move', 3.6), ('attack', 1.4), ('rest', 6)],
               'chr-ftr-human': [('idle', 3.2), ('move', 3.2), ('attack', 1.4), ('rest', 6)],
               'ani-forest-wolf': [('idle', 3.2), ('move', 2), ('attack', 1.3), ('rest', 4.8)],
+              'mon-dng-skeleton': [('idle', 3), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
           }
           stem_by_id = {
               'mon-cave-goblin': 'cave-goblin',
               'chr-ftr-human': 'human-fighter',
               'ani-forest-wolf': 'gray-wolf',
+              'mon-dng-skeleton': 'skeleton-warrior',
           }
           durations = durations_by_id[token]
           assert data['attackMs'] == (1300 if token == 'ani-forest-wolf' else 1400)
           assert data['clipSource'] == 'independent-svg-states'
-          assert data['stateOnly'] == (token == 'ani-forest-wolf')
+          assert data['stateOnly'] == token in ('ani-forest-wolf', 'mon-dng-skeleton')
           assert set(data['sourceFiles']) == {'idle', 'move', 'attack'}
-          if token == 'ani-forest-wolf':
-              assert data['restSourceFile'] == 'assets/demos/gray-wolf-rest.svg'
+          if token in ('ani-forest-wolf','mon-dng-skeleton'):
+              assert data['restSourceFile'] == 'assets/demos/' + stem_by_id[token] + '-rest.svg'
           stem = stem_by_id[token]
           for label in ('idle', 'move', 'attack'):
               assert data['sourceFiles'][label] == 'assets/demos/' + stem + '-' + label + '.svg'
