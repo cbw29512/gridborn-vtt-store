@@ -36,4 +36,8 @@ test('Gameplay stays manual and calm: looping states hold until changed, Attack 
  assert.match(playback,/if \(mode !== 'attack'\) return state;/);
  assert.match(playback,/playMode\(token, 'idle', options\)/);
  assert.doesNotMatch(playback,/MOTION_STAGES|fullShowcaseMs/);
+ const detail=read('src/concept-preview.js');
+ assert.match(detail,/for\(const pixels of \[128,64,32\]\)/);
+ assert.match(detail,/Play attack once/);
+ assert.match(detail,/Hold rest loop/);
 });
