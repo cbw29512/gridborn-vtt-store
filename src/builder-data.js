@@ -4,7 +4,7 @@ export const PARTS = Object.freeze({
   outfit: ['Plate armor','Leather armor','Wizard robes','Village clothes'],
   headgear: ['None','Helmet','Hood','Circlet'],
   hair: ['None','Short','Long','Braided'],
-  weapon: ['None','Sword','Axe','Staff','Bow'],
+  weapon: ['None','Sword','Axe','Mace','Staff','Bow'],
   offhand: ['None','Shield','Spellbook','Lantern'],
   cape: ['None','Short cape','Long cape']
 });
@@ -23,6 +23,7 @@ export const DEFAULT_RECIPE = Object.freeze({
 });
 export const PRESETS = Object.freeze({
   'chr-ftr-human': Object.freeze({name:'Human Fighter',ancestry:'Human',outfit:'Plate armor',headgear:'Helmet',hair:'Short',weapon:'Sword',offhand:'Shield',cape:'Short cape',palette:'royal'}),
+  'chr-clr-dwarf': Object.freeze({name:'Dwarven Cleric',ancestry:'Dwarf',outfit:'Plate armor',headgear:'Helmet',hair:'Braided',weapon:'Mace',offhand:'Shield',cape:'Short cape',palette:'village'}),
   'chr-wiz-elf': Object.freeze({name:'Elven Wizard',ancestry:'Elf',outfit:'Wizard robes',headgear:'Hood',hair:'Long',weapon:'Staff',offhand:'Spellbook',cape:'Long cape',palette:'shadow'}),
   'chr-bar-orc': Object.freeze({name:'Orc Barbarian',ancestry:'Orc',outfit:'Leather armor',headgear:'None',hair:'Braided',weapon:'Axe',offhand:'None',cape:'Short cape',palette:'ember'}),
   'npc-inn-human': Object.freeze({name:'Village Innkeeper',ancestry:'Human',outfit:'Village clothes',headgear:'None',hair:'Short',weapon:'None',offhand:'Lantern',cape:'None',palette:'village'}),

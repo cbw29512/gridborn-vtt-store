@@ -59,3 +59,17 @@ chipped jaw and deliberately partial armor. This is a first anatomical art
 pass, not an approved animation, market-ready token, or certified gameplay
 import. Check the new silhouette at 32/64/128/256px before adding its jerky
 Move and fully inert Rest animations.
+
+### Gray Wolf quadruped source rig — prototype pass
+
+The first original four-legged rig now uses distinct near/far forelegs and
+hindlegs (four separately articulated groups), a long muzzle, erect ears,
+and tail. Independent generated SVG **Idle, Move, Attack, Rest** studies live
+in `assets/demos/gray-wolf-*.svg`; the still is
+`assets/studies/gray-wolf.svg`. Source and deterministic build/check are in
+`src/creature-rigs/wolf.mjs` and `tools/generate-wolf-studies.mjs`.
+The catalog's existing **Gray Wolf animal** entry previews these states.
+One-shot Bite returns to Idle in the study UI; Rest is a **curled wolf**, not
+a seated humanoid. No WebM exports, human art approval or VTT import test
+have been passed. Do not use this artwork for the separate larger Dire Wolf
+listing without accurate scale and anatomy review.

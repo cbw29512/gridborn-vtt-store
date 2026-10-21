@@ -132,6 +132,12 @@ function hand(r){
  path('M173 73L203 57 221 70 217 114 191 103 173 101Z',p.metal)+
  path('M203 61L216 72 214 85 199 79Z',tint(p.metal,.5))+
  rect(190,81,10,13,edge);
+ if(r.weapon==='Mace')item=rect(182,83,10,102,'#745b43')+
+ rect(185,85,3,98,tint(p.metal,.22))+
+ path('M175 65H198L204 74 202 99 196 105H177L171 97 170 76Z',p.metal)+
+ path('M179 70H192L196 78 196 95 188 101 177 94Z',tint(p.metal,.35))+
+ rect(169,80,37,7,p.accent)+rect(169,91,37,7,p.accent)+
+ rect(184,65,7,40,tint(p.metal,.55));
  if(r.weapon==='Staff')item=rect(183,70,8,119,'#805939')+
  rect(184,75,3,109,'#bc9163')+
  path('M175 68L188 47 202 68 188 91Z',p.accent)+

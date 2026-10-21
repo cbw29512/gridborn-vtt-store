@@ -1,61 +1,85 @@
 import { animatedPreviews } from './animated-previews.js';
 
-const byId = name => document.getElementById(name);
-let current = null;
-let mode = 'still';
-
-function updatePreview(next) {
-  try {
-    if (!current) return;
-    if (!Object.prototype.hasOwnProperty.call(current, next)) return;
-    mode = next;
-    const image = byId('concept-preview-image');
-    image.src = current[next];
-    byId('concept-preview-action').setAttribute('aria-pressed', String(next === 'action'));
-    byId('concept-preview-rest').setAttribute('aria-pressed', String(next === 'rest'));
-    byId('concept-preview-action').textContent = next === 'action' ? 'Stop action' : 'Play action';
-    byId('concept-preview-rest').textContent = next === 'rest' ? 'Stop rest' : 'Play rest';
-    byId('concept-preview-status').textContent = next === 'still' ? 'Static image study' :
-      next === 'action' ? 'Action study playing · 45-second loop' :
-        'Rest study playing · 6-second loop';
-  } catch (error) { console.error('Unable to update concept preview', error); }
+const byId=id=>document.getElementById(id);
+const MODES=['idle','move','action','rest'];
+const LABELS={
+  still:'Static original art study',
+  idle:'Idle · breathing loop (prototype)',
+  move:'Move · four-legged trot (prototype)',
+  action:'Attack · one bite and recovery (prototype)',
+  rest:'Rest · curled breathing loop (prototype)'
+};
+let current=null,mode='still',timer=null,sequence=0;
+function clearReset(){
+  sequence++;
+  if(timer!==null){clearTimeout(timer);timer=null;}
 }
-
-export function setConceptPreview(item) {
-  try {
-    const stage = byId('concept-preview-panel');
-    const controls = byId('concept-preview-controls');
-    current = item && (animatedPreviews[item.id] ||
-      (item.previewArt ? { still: item.previewArt } : null));
-    stage.hidden = !current;
-    controls.hidden = !current?.action;
-    if (!current) return;
-    byId('concept-preview-image').alt = 'Static or animated original art study for ' + item.name;
+function updatePreview(next){
+  try{
+    if(!current||!Object.hasOwn(current,next)||typeof current[next]!=='string')return;
+    clearReset();
+    mode=next;
+    const image=byId('concept-preview-image');
+    if(image.getAttribute('src')!==current[next])image.src=current[next];
+    for(const key of MODES){
+      const button=byId('concept-preview-'+key);
+      button.setAttribute('aria-pressed',String(next===key));
+      if(key==='action'||key==='rest'){
+        const label=key==='action'?'action':'rest';
+        button.textContent=next===key?'Show still':'Play '+label;
+      }
+    }
+    const hasFullStates=typeof current.idle==='string';
+    byId('concept-preview-status').textContent=hasFullStates?LABELS[next]||LABELS.still:
+      next==='still'?'Static original art study':
+      next==='action'?'45-second action study · continuous loop':
+      '6-second rest study · continuous loop';
+    // Attack clips are one-shot states, not continuously cycling auto-attacks.
+    if(next==='action'&&Number.isInteger(current.actionDurationMs)&&current.idle){
+      const expected=sequence;
+      timer=setTimeout(()=>{
+        if(expected===sequence&&mode==='action')updatePreview('idle');
+      },current.actionDurationMs);
+    }
+  }catch(error){console.error('Gridborn concept preview could not update',error);}
+}
+export function setConceptPreview(item){
+  try{
+    clearReset();
+    const stage=byId('concept-preview-panel');
+    const controls=byId('concept-preview-controls');
+    current=item&&(animatedPreviews[item.id]||
+      (item.previewArt?{still:item.previewArt}:null));
+    stage.hidden=!current;
+    controls.hidden=!current?.action;
+    for(const key of MODES){
+      const button=byId('concept-preview-'+key);
+      button.hidden=!current?.[key];
+    }
+    if(!current)return;
+    byId('concept-preview-image').alt='Original static or animated token study of '+item.name;
+    mode='still';
     updatePreview('still');
-  } catch (error) { console.error('Unable to prepare concept preview', error); }
+  }catch(error){console.error('Could not set concept preview',error);}
 }
-
-export function stopConceptPreview() {
-  try { if (current && mode !== 'still') updatePreview('still'); }
-  catch (error) { console.error('Unable to stop concept animation', error); }
+export function stopConceptPreview(){
+  clearReset();
+  if(current&&mode!=='still')updatePreview('still');
 }
-
-export function initializeConceptPreview() {
-  try {
-    const action = byId('concept-preview-action');
-    const rest = byId('concept-preview-rest');
-    action.addEventListener('click', () => updatePreview(mode === 'action' ? 'still' : 'action'));
-    rest.addEventListener('click', () => updatePreview(mode === 'rest' ? 'still' : 'rest'));
-    document.addEventListener('visibilitychange', () => {
-      try { if (document.hidden) stopConceptPreview(); }
-      catch (error) { console.error('Could not pause hidden concept animation', error); }
+export function initializeConceptPreview(){
+  try{
+    for(const key of MODES){
+      const button=byId('concept-preview-'+key);
+      button.addEventListener('click',()=>updatePreview(mode===key?'still':key));
+    }
+    document.addEventListener('visibilitychange',()=>{
+      if(document.hidden)stopConceptPreview();
     });
-    byId('concept-preview-image').addEventListener('error', () => {
-      try {
-        if (!current) return;
-        if (mode !== 'still') updatePreview('still');
-        else byId('concept-preview-status').textContent = 'Artwork could not be loaded';
-      } catch (error) { console.error('Concept image load failure', error); }
+    byId('concept-preview-image').addEventListener('error',()=>{
+      if(!current)return;
+      const failed=mode;
+      if(mode!=='still')updatePreview('still');
+      byId('concept-preview-status').textContent='Preview could not load: '+failed;
     });
-  } catch (error) { console.error('Unable to initialize concept previews', error); }
+  }catch(error){console.error('Could not initialize concept preview',error);}
 }

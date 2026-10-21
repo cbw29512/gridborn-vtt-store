@@ -11,7 +11,7 @@ def check_builder(browser,origin,width,screenshots:Path):
         page.on("pageerror",lambda error: errors.append(str(error)))
         page.goto(origin+"builder.html",wait_until="load")
         expect(page.locator("#builder-title")).to_contain_text("Build someone")
-        assert page.locator("#builder-presets button").count()==6
+        assert page.locator("#builder-presets button").count()==7
         assert page.locator("#builder-parts select").count()==7
         assert page.locator("#builder-palettes button").count()==6
         assert page.locator("#builder-avatar svg").count()==1

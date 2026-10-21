@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" shape-rendering="crispEdges"
+ role="img" aria-labelledby="title description" class="wolf-scene wolf-rest">
+<title id="title">Gray Wolf — rest Gridborn quadruped study</title>
+<desc id="description">Original four-legged Gray Wolf with long muzzle, pointed ears, thick tail and four individually drawn paws. Curled resting pose. Preview only; not a certified VTT animation or sale-ready asset.</desc>
+<style>
+ .wolf-body{transform-origin:129px 145px;animation:wolf-sleep-breath 4.8s ease-in-out infinite}
+ .wolf-tail{transform-origin:83px 135px}
+ .wolf-head{transform-origin:185px 129px}
+ .wolf-leg{transform-box:view-box}
+ .wolf-leg-hind-far{transform-origin:88px 147px}
+ .wolf-leg-hind-near{transform-origin:108px 158px}
+ .wolf-leg-front-far{transform-origin:156px 138px}
+ .wolf-leg-front-near{transform-origin:177px 156px}
+ 
+ 
+ 
+ 
+ .wolf-tail{animation:wolf-sleep-tail 4.8s ease-in-out infinite}
+ .wolf-head{animation:wolf-sleep-head 4.8s ease-in-out infinite}
+ 
+ @keyframes wolf-idle-breath{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}}
+ @keyframes wolf-idle-head{0%,100%{transform:rotate(0)}50%{transform:rotate(2deg)}}
+ @keyframes wolf-tail-sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(8deg)}}
+ @keyframes wolf-ear-twitch{0%,68%,72%,100%{transform:rotate(0)}69%,71%{transform:rotate(4deg)}}
+ @keyframes wolf-stride-body{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-5px)}}
+ @keyframes wolf-leg-a{0%,100%{transform:rotate(-17deg)}50%{transform:rotate(19deg) translateY(-6px)}}
+ @keyframes wolf-leg-b{0%,100%{transform:rotate(19deg) translateY(-6px)}50%{transform:rotate(-17deg)}}
+ @keyframes wolf-tail-run{0%,100%{transform:rotate(7deg)}50%{transform:rotate(-8deg)}}
+ @keyframes wolf-run-head{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(4deg)}}
+ @keyframes wolf-lunge{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}47%{transform:translate(13px,-8px)}70%{transform:translateX(5px)}}
+ @keyframes wolf-bite{0%,22%,100%{transform:rotate(0)}47%{transform:rotate(16deg)}61%{transform:rotate(-9deg)}}
+ @keyframes wolf-tail-strike{0%,100%{transform:rotate(0)}45%{transform:rotate(-19deg)}}
+ @keyframes wolf-brace{0%,100%{transform:rotate(0)}47%{transform:rotate(-12deg)}}
+ @keyframes wolf-sleep-breath{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}}
+ @keyframes wolf-sleep-tail{0%,100%{transform:rotate(0)}50%{transform:rotate(5deg)}}
+ @keyframes wolf-sleep-head{0%,100%{transform:translateY(0)}50%{transform:translateY(1px)}}
+ @media(prefers-reduced-motion:reduce){
+  .wolf-body,.wolf-tail,.wolf-head,.wolf-leg,.wolf-ear{animation:none!important}
+ }
+ </style><ellipse cx="132" cy="205" rx="91" ry="13" fill="#08121b" opacity=".31"/>
+ <g class="wolf-body">
+ <g class="wolf-tail">
+  <path d="M84 137L59 147 39 159 55 176 84 162 105 162Z" fill="#273846" />
+  <path d="M82 141L59 151 48 162 60 169 89 155Z" fill="#819397" />
+  <path d="M48 163L60 169 72 161 62 158Z" fill="#c3c6b8" />
+ </g>
+ <g class="wolf-leg wolf-leg-hind-far">
+   <path d="M72 158 L95 162 L98 179 L83 184 L66 177Z" fill="#526a76" />
+   <path d="M65 176L92 176L98 185L62 185Z" fill="#324451" />
+   <rect x="70" y="177" width="12" height="3" fill="#829ba0"/></g>
+ <g class="wolf-leg wolf-leg-front-far">
+   <path d="M140 158 L163 162 L166 179 L151 184 L134 177Z" fill="#526a76" />
+   <path d="M133 176L160 176L166 185L130 185Z" fill="#324451" />
+   <rect x="138" y="177" width="12" height="3" fill="#829ba0"/></g>
+ <g class="wolf-torso">
+  <path d="M75 117Q97 97 136 114L174 132 174 161 145 178 94 173 72 151Z" fill="#24343f" />
+  <path d="M80 119Q110 105 140 122L169 136 168 161 142 173 94 167 78 148Z" fill="#748c94" />
+  <path d="M84 128Q109 116 136 129L145 151 115 161 85 152Z" fill="#a2b7b8" />
+  <path d="M103 154L148 150 158 159 120 167 94 160Z" fill="#d1d0c2" />
+ </g>
+ <g class="wolf-leg wolf-leg-hind-near">
+   <path d="M91 158 L114 162 L117 179 L102 184 L85 177Z" fill="#82979a" />
+   <path d="M84 176L111 176L117 185L81 185Z" fill="#324451" />
+   <rect x="89" y="177" width="12" height="3" fill="#afc0bb"/></g>
+ <g class="wolf-leg wolf-leg-front-near">
+   <path d="M159 158 L182 162 L185 179 L170 184 L153 177Z" fill="#82979a" />
+   <path d="M152 176L179 176L185 185L149 185Z" fill="#324451" />
+   <rect x="157" y="177" width="12" height="3" fill="#afc0bb"/></g>
+ <g class="wolf-head">
+  <path d="M151 137L172 123 198 131 207 150 192 165 167 167 148 151Z" fill="#263642" />
+  <path d="M154 137L174 128 197 137 201 150 185 161 164 159Z" fill="#8fa6a8" />
+  <path d="M170 135L173 111 187 128 194 130 203 119 202 142Z" fill="#314552" />
+  <path d="M176 122L179 115 186 130Z" fill="#caaca1" />
+  <path d="M183 148L215 145 222 152 205 165 181 164Z" fill="#e6e0cb" />
+  <path d="M213 149L223 152 220 156 211 155Z" fill="#1b2a33" />
+  <path d="M175 147L193 149" fill="#20333c" stroke="#22323b" stroke-width="3"/>
+  <path d="M179 149L194 149" fill="none" stroke="#24323a" stroke-width="3"/>
+ </g>
+ </g>
+</svg>

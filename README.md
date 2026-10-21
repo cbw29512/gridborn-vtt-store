@@ -292,3 +292,17 @@ unit-tested, and Chromium reviews the page at desktop and two phone widths.
 and Goblin animation studies are still technical prototypes; static art
 and concept listings are not completed pregen tokens. This roster is not the
 stat-based D20 Iron Pit pregen roster.
+
+## Visual production progress: Dwarf Cleric + quadruped Gray Wolf
+
+- `chr-clr-dwarf` now has an original **static Dwarven Cleric** concept:
+  squat armored proportions, a large beard, mace and shield with an original
+  radial emblem. Added a Dwarf + Mace starting model to the modular builder,
+  now **seven** starter recipes, though the generic preview rig needs further
+  dwarf-specific proportional refinements.
+- `ani-forest-wolf` now has separate generated SVGs for still, Idle, Move,
+  one-shot Bite and curled Rest, derived from one anatomically distinct
+  quadruped source. Independent joint groups are used for all **four** paws.
+  These are browser SVG studies only, not licensed/commercial alpha-WebM
+  packages or verified imports on third-party VTTs.
+- Production review still remains open for all visuals; no asset is sale-ready.

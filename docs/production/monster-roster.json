@@ -182,8 +182,8 @@
         "rest": "Curls with muzzle near forepaws"
       },
       "acceptance": "Anatomical four-leg gait required; do not use humanoid rig",
-      "artStatus": "static-related",
-      "animationStatus": "not-produced",
+      "artStatus": "animated-study",
+      "animationStatus": "prototype",
       "commercialRelease": false,
       "review": {
         "silhouette": false,
