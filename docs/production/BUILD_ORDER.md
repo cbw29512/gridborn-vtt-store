@@ -143,3 +143,16 @@ independently WebM-exported or tested in a commercial VTT. Human review of
 appearance/stride and loop seams at 256/128/64/32px on light/dark grids,
 licensed art approval, full decoded-alpha technical QA, and direct target-VTT
 import are still release blockers. `purchasable` stays `false`.
+
+### Cave Goblin — state-exact private media packaging
+
+The independent Idle / Move / Attack source SVGs now flow directly through
+the private media renderer when `--controller-package` is used, with a
+manifest-validated source, duration and decoded VP9-alpha QA for each clip.
+Goblin action no longer lasts ten seconds merely because the old master
+showcase's Attack and Recovery sections were combined; the one-shot is
+**1.4 seconds**. Rest remains a distinct six-second clip. The technical
+receipt distinguishes `independent-svg-states` from the older
+`master-reel-split` Fighter package. Human visual reviews at 32/64px,
+real Foundry/Roll20 imports, original-art rights and secure delivery are
+still required before approving either asset for sale.
