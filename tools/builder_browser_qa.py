@@ -11,12 +11,23 @@ def check_builder(browser,origin,width,screenshots:Path):
         page.on("pageerror",lambda error: errors.append(str(error)))
         page.goto(origin+"builder.html",wait_until="load")
         expect(page.locator("#builder-title")).to_contain_text("Build someone")
-        assert page.locator("#builder-presets button").count()==10
+        assert page.locator("#builder-presets button").count()==15
         assert page.locator("#builder-parts select").count()==7
         assert page.locator("#builder-palettes button").count()==7
         assert page.locator("#builder-avatar svg").count()==1
         expect(page.locator("#builder-summary")).to_contain_text("Human")
         # Newly added prebuilt classes must render distinct parts, not a blank rig.
+        # Each new archetype must show actual distinctive SVG gear in Chromium.
+        for preset, outfit, selector in [
+            ("chr-brd-halfling", "Bard performance coat", ".rig-bard-lute"),
+            ("studio-monk-human", "Monk wraps", ".rig-monk-wraps"),
+            ("studio-druid-elf", "Druid leaf mantle", ".rig-druid-living-staff"),
+            ("studio-sorcerer-human", "Sorcerer regalia", ".rig-sorcerer-regalia"),
+            ("studio-warlock-orc", "Warlock pact coat", ".rig-warlock-pact-coat"),
+        ]:
+            page.locator('[data-preset="' + preset + '"]').click()
+            expect(page.locator("#part-outfit")).to_have_value(outfit)
+            expect(page.locator(selector)).to_have_count(1)
         page.locator('[data-preset="chr-rge-gnome"]').click()
         expect(page.locator("#part-outfit")).to_have_value("Rogue leathers")
         expect(page.locator("#part-weapon")).to_have_value("Twin daggers")
