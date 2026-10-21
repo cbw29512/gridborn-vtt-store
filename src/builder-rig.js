@@ -11,12 +11,24 @@ function cape(r){
  path('M95 97H161L173 '+(end-17)+' 155 '+(end-4)+' 123 '+(end-15)+' 91 '+(end-4)+' 80 '+(end-17)+'Z',p.primary)+
  line(96,102,91,end-27,p.accent,4)+line(160,102,164,end-27,p.accent,4)+'</g>';
 }
-function legs(r) {
+function legs(r,rest=false) {
  const p=r.palette,boots=r.outfit==='Plate armor'?p.metal:dark;
- return '<g class="rig-legs">'+path('M94 154H161V195H143L132 173 120 195H95Z',edge)+
- rect(99,161,25,37,boots)+rect(136,161,25,37,boots)+rect(99,186,26,12,edge)+rect(135,186,27,12,edge)+
- rect(103,187,19,6,p.primary)+rect(139,187,19,6,p.primary)+
- line(110,163,110,184,p.accent,2)+line(147,163,147,184,p.accent,2)+'</g>';
+ if(rest) return '<g class="rig-legs rig-legs-rest">'+path('M94 166H162L167 181H89Z',edge)+
+   '<g class="rig-leg-left">'+path('M102 174H128L117 197 78 206 67 192 98 184Z',boots)+
+     rect(65,193,34,15,edge)+rect(71,197,25,8,p.primary)+line(106,182,94,196,p.accent,3)+'</g>'+
+   '<g class="rig-leg-right">'+path('M133 175H159L178 193 193 198 184 212 149 199Z',boots)+
+     rect(165,195,30,16,edge)+rect(169,197,21,9,p.primary)+line(148,181,167,195,p.accent,3)+'</g></g>';
+ return '<g class="rig-legs">'+path('M94 154H161V169H94Z',edge)+
+ '<g class="rig-leg-left">'+rect(99,160,25,37,boots)+rect(99,186,26,12,edge)+
+ rect(103,187,19,6,p.primary)+line(110,163,110,184,p.accent,2)+'</g>'+
+ '<g class="rig-leg-right">'+rect(136,160,25,37,boots)+rect(135,186,27,12,edge)+
+ rect(139,187,19,6,p.primary)+line(147,163,147,184,p.accent,2)+'</g></g>';
+}
+function restSeat(r) {
+ const p=r.palette;
+ return '<g class="rig-rest-seat">'+
+ rect(94,176,69,30,edge)+rect(100,177,58,13,p.primary)+rect(103,191,12,24,'#584230')+
+ rect(145,191,12,24,'#584230')+rect(99,191,60,5,p.accent)+'</g>';
 }
 function arms(r){
  const p=r.palette,guard=r.outfit==='Plate armor'?p.metal:r.outfit==='Wizard robes'?p.primary:p.skin;
@@ -43,7 +55,10 @@ function face(r){
   out+=rect(112,82,13,12,dark)+rect(139,82,13,12,dark)+rect(127,96,7,8,dark)+rect(115,107,34,7,edge);
   for(let x=120;x<148;x+=7)out+=line(x,108,x,114,p.skin,2);
  }else{
-  out+=rect(113,85,11,7,edge)+rect(136,85,11,7,edge)+rect(117,85,5,3,orc?'#ffca7b':'#a3dfda')+rect(140,85,5,3,orc?'#ffca7b':'#a3dfda');
+  out+='<g class="rig-eyes">'+rect(113,85,11,7,edge)+rect(136,85,11,7,edge)+
+    rect(117,85,5,3,orc?'#ffca7b':'#a3dfda')+rect(140,85,5,3,orc?'#ffca7b':'#a3dfda')+
+    '</g><g class="rig-eyelids">'+rect(113,84,11,9,p.skin)+rect(136,84,11,9,p.skin)+
+    line(114,90,123,90,edge,2)+line(137,90,146,90,edge,2)+'</g>';
   out+=rect(122,100,19,5,orc?'#38533f':'#88534e');
   if(orc||goblin)out+=rect(120,102,5,10,'#ede4c5')+rect(141,102,5,10,'#ede4c5');
  }
@@ -81,7 +96,10 @@ function offhand(r){
 export function renderRig(input,{mode='idle',animated=false}={}) {
  const r=normalizeRecipe(input);
  if(!['idle','move','attack','rest'].includes(mode))throw new Error('Invalid rig preview mode');
- const layers=cape(r)+legs(r)+arms(r)+torso(r)+face(r)+hat(r)+hand(r)+offhand(r);
+ const seated=mode==='rest';
+ const layers=(seated?restSeat(r):'')+
+   '<g class="rig-back">'+cape(r)+'</g>'+legs(r,seated)+
+   '<g class="rig-upper">'+arms(r)+torso(r)+face(r)+hat(r)+hand(r)+offhand(r)+'</g>';
  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="'+xml(r.name)+
  ' modular fantasy token" shape-rendering="crispEdges" class="rig-image mode-'+mode+(animated?' rig-animated':'')+'">'+
  '<title>'+xml(r.name)+'</title><desc>Gridborn original modular block fantasy character concept</desc>'+
