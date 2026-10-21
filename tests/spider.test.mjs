@@ -37,8 +37,8 @@ test('Spider locomotion truly uses alternating sets of four legs',()=>{
  const svg=get(paths.move);
  assert.equal((svg.match(/class="spider-leg spider-leg-\d+ spider-phase-a"/g)||[]).length,4);
  assert.equal((svg.match(/class="spider-leg spider-leg-\d+ spider-phase-b"/g)||[]).length,4);
- assert.match(svg,/\.spider-phase-a\{animation:spider-tetrapod-a 1\.16s ease-in-out infinite/);
- assert.match(svg,/\.spider-phase-b\{animation:spider-tetrapod-b 1\.16s ease-in-out infinite/);
+ assert.match(svg,/\.spider-phase-a\{animation:spider-tetrapod-a 1\.2s ease-in-out infinite/);
+ assert.match(svg,/\.spider-phase-b\{animation:spider-tetrapod-b 1\.2s ease-in-out infinite/);
  assert.match(svg,/@keyframes spider-walk-body/);
  assert.match(svg,/@keyframes spider-palp-walk/);
 });
