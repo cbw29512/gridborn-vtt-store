@@ -66,6 +66,6 @@ test('Foundry setup retains per-token manual override and never guesses from unr
  assert.match(hud,/Timing receipt not found/);
  assert.match(hud,/aria-pressed/);
  assert.match(media,/"attackMs": round\(seconds \* 1000\)/);
- assert.match(media,/'\"files\"'/);
+ assert.match(media,/"files": \[/);
  assert.doesNotMatch(hud,/mon-cave-spider|chr-ftr-human|ani-forest-wolf|mon-dng-skeleton/);
 });
