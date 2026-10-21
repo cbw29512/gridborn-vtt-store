@@ -35,3 +35,32 @@ target VTTs prior to enabling sales.
 
 The proposed price and work quality are separate decisions: unfinished token
 concepts remain unavailable regardless of attractive pricing.
+
+## Proposed bundles (October 21, 2026)
+
+| Pack size | Price | Regular total | Savings |
+| ---: | ---: | ---: | ---: |
+| 1 | $0.99 | $0.99 | $0.00 |
+| 5 | $3.99 | $4.95 | $0.96 |
+| 10 | $7.49 | $9.90 | $2.41 |
+| 25 | $17.99 | $24.75 | $6.76 |
+
+The browser prototype computes the cheapest combination of those pack sizes
+and individual $0.99 items for up to **25 distinct tokens**. Users are not
+required to buy a predefined bundle: four five-token themed draft packs and
+a mix-and-match draft editor coexist with individual-token browsing. Drafts
+are saved in local browser storage and can be exported as an explicitly
+non-purchasable JSON wish list. They are not reservations, completed orders,
+license grants, download entitlements or assets.
+
+The launch implementation must use **the same validated pricing rules on the
+server** for a complete order after checking which selected assets have
+actually passed every release gate. Never trust a submitted browser subtotal,
+localStorage record, or downloaded JSON as a charge authorization. A paid
+bundle must entitle its buyer to *all* included, approved source files, with
+all refunds/partial failures handled explicitly. Process the full selection as
+**one payment** rather than separate $0.99 charges, and verify all backend
+details before opening checkout.
+
+Bundle Studio source: `src/bundle-data.js`, `src/bundle-ui.js`, and
+`tests/bundles.test.mjs`. The product catalog count remains unchanged.
