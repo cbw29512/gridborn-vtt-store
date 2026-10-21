@@ -55,11 +55,21 @@ jobs:
           data = json.loads((folder / 'gridborn-preview.json').read_text())
           assert data['purchaseEnabled'] is False
           assert data['vttCompatibility'] == 'untested'
-          assert data['attackMs'] == 10000
+          goblin = os.environ['TOKEN_ID'] == 'mon-cave-goblin'
+          durations = ([('idle', 3.6), ('move', 3.6), ('attack', 1.4), ('rest', 6)]
+                       if goblin else
+                       [('idle', 27), ('move', 8), ('attack', 10), ('rest', 6)])
+          assert data['attackMs'] == (1400 if goblin else 10000)
+          assert data['clipSource'] == ('independent-svg-states' if goblin else 'master-reel-split')
+          if goblin:
+              assert set(data['sourceFiles']) == {'idle', 'move', 'attack'}
+              for label in ('idle', 'move', 'attack'):
+                  assert data['sourceFiles'][label] == 'assets/demos/cave-goblin-' + label + '.svg'
+                  assert data['independentMotionQA'][label]['distinctSampleFrames'] >= 2
           for name in ['idle.webm', 'move.webm', 'attack.webm', 'rest.webm', 'still.png']:
               assert (folder / name).stat().st_size > 0
-          for label, seconds in [('idle', 27), ('move', 8), ('attack', 10), ('rest', 6)]:
-              assert data['technicalQA'][label]['frames'] == seconds * 10
+          for label, seconds in durations:
+              assert data['technicalQA'][label]['frames'] == round(seconds * 10)
               assert data['technicalQA'][label]['decodedAlphaVerified']
-          print('Private Foundry clips passed; no artwork uploaded or published')
+          print('Private state-exact Foundry media passed; no artwork published')
           PY
