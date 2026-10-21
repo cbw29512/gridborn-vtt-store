@@ -265,7 +265,16 @@
         <button id="concept-preview-action" type="button" aria-pressed="false" aria-controls="concept-preview-image">Play action</button>
         <button id="concept-preview-rest" type="button" aria-pressed="false" aria-controls="concept-preview-image">Play rest</button>
       </div>
-      <p class="concept-preview-caution">Original prototype artwork. Video exports and compatibility are still under review.</p>
+      <div id="concept-scale-panel" class="concept-scale-panel" role="group" aria-label="Animated token shown at three map-grid sizes" hidden>
+        <p class="concept-scale-heading">Battle-map size check <span>Same moving study at three grid scales</span></p>
+        <div class="concept-scale-gallery">
+          <figure><div class="concept-scale-cell" style="--tile-px:128px"><img id="concept-scale-128" src="" alt="" width="128" height="128" decoding="async" /></div><figcaption>128 px · zoomed in</figcaption></figure>
+          <figure><div class="concept-scale-cell" style="--tile-px:64px"><img id="concept-scale-64" src="" alt="" width="64" height="64" decoding="async" /></div><figcaption>64 px · common grid</figcaption></figure>
+          <figure><div class="concept-scale-cell" style="--tile-px:32px"><img id="concept-scale-32" src="" alt="" width="32" height="32" decoding="async" /></div><figcaption>32 px · zoomed out</figcaption></figure>
+        </div>
+        <p class="concept-scale-note">These are CSS pixels per square, not guaranteed physical inches. Actual tabletop size depends on your VTT zoom and display.</p>
+      </div>
+      <p class="concept-preview-caution">Idle, Move and Rest play continuously when selected here; Attack plays once and returns to Idle. On catalog cards, all four states cycle in roughly 9–11 seconds. Gameplay controls do not auto-cycle. Original prototype artwork; real VTT compatibility remains unverified.</p>
     </section>
     <dl id="preview-facts" class="preview-facts"></dl>
     <p class="preview-disclaimer">Preview artwork may be available to inspect; no finished downloadable products are for sale. Specifications and pricing may change.</p>

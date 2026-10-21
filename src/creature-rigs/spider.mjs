@@ -71,16 +71,16 @@ export const renderSpider=function renderSpider(mode='still'){
  ${P('M79 157L180 157M91 180L169 180M113 192L145 192M88 166L124 195M168 167L134 196','none',`stroke="#b9bdc1" stroke-width="1.5"`)}
  </g>`:'';
  const css=animated?`<style>
- .spider-body{transform-origin:128px 129px;animation:spider-${mode==='move'?'walk-body':mode==='attack'?'strike-body':mode==='rest'?'rest-breath':'idle-breath'} ${mode==='move'?'1.16s ease-in-out infinite':mode==='attack'?'1.4s ease-in-out 1 both':mode==='rest'?'5s ease-in-out infinite':'3.6s ease-in-out infinite'}}
+ .spider-body{transform-origin:128px 129px;animation:spider-${mode==='move'?'walk-body':mode==='attack'?'strike-body':mode==='rest'?'rest-breath':'idle-breath'} ${mode==='move'?'1.2s ease-in-out infinite':mode==='attack'?'1.4s ease-in-out 1 both':mode==='rest'?'5s ease-in-out infinite':'3.6s ease-in-out infinite'}}
  .spider-palps,.spider-fangs{transform-origin:128px 115px}
  ${mode==='idle'?`
- .spider-palps{animation:spider-palp-twitch 4.4s ease-in-out infinite}
- .spider-leg-1,.spider-leg-8{animation:spider-leg-settle 5s ease-in-out infinite}
+ .spider-palps{animation:spider-palp-twitch 3.6s ease-in-out infinite}
+ .spider-leg-1,.spider-leg-8{animation:spider-leg-settle 3.6s ease-in-out infinite}
  `:''}
  ${mode==='move'?`
- .spider-phase-a{animation:spider-tetrapod-a 1.16s ease-in-out infinite}
- .spider-phase-b{animation:spider-tetrapod-b 1.16s ease-in-out infinite}
- .spider-palps{animation:spider-palp-walk 1.16s ease-in-out infinite}
+ .spider-phase-a{animation:spider-tetrapod-a 1.2s ease-in-out infinite}
+ .spider-phase-b{animation:spider-tetrapod-b 1.2s ease-in-out infinite}
+ .spider-palps{animation:spider-palp-walk 1.2s ease-in-out infinite}
  `:''}
  ${mode==='attack'?`
  .spider-fangs{animation:spider-fang-jab 1.4s ease-in-out 1 both}

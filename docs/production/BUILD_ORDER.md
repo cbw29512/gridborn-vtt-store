@@ -250,3 +250,40 @@ in the private full-media CI job. The visual silhouette, bone placement,
 lighting, 32/64/128/256px usability, original-art rights, real target-VTT
 imports, protected downloads and buyer license still require review.
 **No purchase is enabled**, and no Netlify production deployment is made.
+
+### Buyer showcase versus calm game playback (October 21, 2026)
+
+These are **different controls**. The storefront automatically showcases
+all four states at the artwork's real animation rate: one full authored
+Idle loop, one full Move loop, one complete one-shot Attack, then **2.4s of
+Rest**. This is roughly **8.9–11 seconds per catalog cycle** across the five
+current art studies. Nothing is artificially sped up. Rest's full private
+video still loops for its authored 4–6 seconds and is never truncated in
+the delivered asset; only the storefront's on-card preview of Rest is short.
+
+The existing optional *unverified* Foundry developer HUD is deliberately
+**manual**, not coupled to marketing playback. A chosen Idle, Move or Rest
+loops **indefinitely** until an authorized user clicks another mode.
+Attack plays once and returns to Idle after that token's duration. The
+HUD lets a user configure the asset folder and exact Attack duration in
+seconds, without editing or rebuilding files. Its default is now **1.4s**
+instead of the obsolete ten-second reel; Gray Wolf currently uses **1.3s**.
+A private source receipt also declares the precise `attackMs` per token.
+
+### Giant Cave Spider true 1-square motion QA and source media
+
+The original eight separately articulated legs and diagonal tetrapod gait
+are preserved; do not flatten them into a pulsing blob. Idle breathing,
+palps and settling legs now all align to the **3.6s** idle cycle; Move
+repeats its gait every **1.2s**, twice in the **2.4s** export. Attack
+plays one **1.4s** fang lunge; folded Rest remains a **5s** animation.
+
+The source-only private manifest uses 36/24/14/50 frames at 10 FPS,
+producing four verified VP9-alpha WebM clips and a PNG only in temporary
+private CI storage. Browsers check actual animation movement at 128px,
+64px and 32px map-square sizes within the detail modal, on each viewport.
+This measures real pixel change, **not human visual discernibility**
+or a guaranteed physical 1-inch size; VTT zoom and display density vary.
+Final artwork leg readability at 32px, genuine Foundry/Roll20 imports,
+source rights, purchase license, protected downloads and human QA still
+block commercial release.

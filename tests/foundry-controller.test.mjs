@@ -108,6 +108,17 @@ test('manual Rest prevents stale Attack timers from overwriting the token', asyn
   assert.match(token.document.texture.src, /rest\.webm$/);
 });
 
+test('quiet Idle, Move and Rest hold indefinitely without timers', async () => {
+  const token=tokenFixture();
+  const clock={schedule:()=>{throw new Error('Non-attack modes must never advance on a timer');},cancel:()=>{}};
+  await configureToken(token,{folder:'worlds/a',attackMs:1400},{user:owner,nonce:'started-idle',clock});
+  for(const mode of ['idle','move','rest']){
+    await playMode(token,mode,{user:owner,nonce:'select-'+mode,clock});
+    assert.equal(token.document.texture.src.endsWith(mode+'.webm'),true);
+    assert.equal(token.flags.playback.mode,mode);
+  }
+});
+
 test('stale playback nonce cannot override a newer attack', () => {
   assert.equal(shouldResetPlayback({ mode:'attack', nonce:'oldNonce' },
     'newNonce', 'worlds/a/attack.webm', 'worlds/a/attack.webm'), false);

@@ -37,8 +37,8 @@ test('Spider locomotion truly uses alternating sets of four legs',()=>{
  const svg=get(paths.move);
  assert.equal((svg.match(/class="spider-leg spider-leg-\d+ spider-phase-a"/g)||[]).length,4);
  assert.equal((svg.match(/class="spider-leg spider-leg-\d+ spider-phase-b"/g)||[]).length,4);
- assert.match(svg,/\.spider-phase-a\{animation:spider-tetrapod-a 1\.16s ease-in-out infinite/);
- assert.match(svg,/\.spider-phase-b\{animation:spider-tetrapod-b 1\.16s ease-in-out infinite/);
+ assert.match(svg,/\.spider-phase-a\{animation:spider-tetrapod-a 1\.2s ease-in-out infinite/);
+ assert.match(svg,/\.spider-phase-b\{animation:spider-tetrapod-b 1\.2s ease-in-out infinite/);
  assert.match(svg,/@keyframes spider-walk-body/);
  assert.match(svg,/@keyframes spider-palp-walk/);
 });
@@ -48,7 +48,7 @@ test('single attack, curled rest and reduced motion have distinct contracts',()=
  assert.match(attack,/spider-fang-jab 1\.4s ease-in-out 1 both/);
  assert.match(rest,/Folded resting pose/);
  assert.match(rest,/class="spider-rest-web"/);
- assert.doesNotMatch(rest,/spider-tetrapod-a 1\.16s/);
+ assert.doesNotMatch(rest,/spider-tetrapod-a 1\.2s/);
  assert.match(rest,/spider-rest-breath 5s ease-in-out infinite/);
  assert.match(idle,/spider-idle-breath 3\.6s ease-in-out infinite/);
  assert.match(rest,/prefers-reduced-motion:reduce/);

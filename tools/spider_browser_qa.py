@@ -28,6 +28,22 @@ def check_spider(browser,origin,width,screenshots:Path):
         page.wait_for_timeout(450)
         after=art.screenshot()
         assert before!=after,'Spider body and legs must animate visually'
+        scale=page.locator('#concept-scale-panel')
+        expect(scale).to_be_visible()
+        for px in (128,64,32):
+            tile=page.locator('#concept-scale-'+str(px))
+            expect(tile).to_have_attribute('src',art.get_attribute('src'))
+            assert tile.bounding_box()['width']==px, f'Expected {px}px actual grid preview'
+            page.wait_for_function('(img)=>img.complete && img.naturalWidth>0',
+                arg=tile.element_handle(),timeout=6000)
+        if width==1440:
+            for px in (64,32):
+                small=page.locator('#concept-scale-'+str(px))
+                first=small.screenshot()
+                page.wait_for_timeout(375)
+                second=small.screenshot()
+                assert first!=second, f'Spider leg movement invisible at {px}px map-grid scale'
+                page.screenshot(path=str(screenshots/f'gridborn-spider-{px}px-actual-grid.png'))
         page.screenshot(path=str(screenshots/f'gridborn-spider-move-{width}px.png'))
         page.locator('#concept-preview-action').click()
         expect(page.locator('#concept-preview-status')).to_contain_text('single fang jab')
@@ -36,6 +52,10 @@ def check_spider(browser,origin,width,screenshots:Path):
         page.locator('#concept-preview-rest').click()
         expect(page.locator('#concept-preview-status')).to_contain_text('eight legs folded')
         assert art.get_attribute('src').endswith('giant-cave-spider-rest.svg')
+        for px in (128,64,32):
+            assert page.locator('#concept-scale-'+str(px)).get_attribute('src').endswith(
+                'giant-cave-spider-rest.svg')
+
         page.wait_for_function('(node) => node.complete && node.naturalWidth > 0',
                                arg=art.element_handle(),timeout=6000)
         page.screenshot(path=str(screenshots/f'gridborn-spider-rest-{width}px.png'))

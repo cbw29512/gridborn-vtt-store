@@ -8,8 +8,8 @@
  .spider-body{transform-origin:128px 129px;animation:spider-idle-breath 3.6s ease-in-out infinite}
  .spider-palps,.spider-fangs{transform-origin:128px 115px}
  
- .spider-palps{animation:spider-palp-twitch 4.4s ease-in-out infinite}
- .spider-leg-1,.spider-leg-8{animation:spider-leg-settle 5s ease-in-out infinite}
+ .spider-palps{animation:spider-palp-twitch 3.6s ease-in-out infinite}
+ .spider-leg-1,.spider-leg-8{animation:spider-leg-settle 3.6s ease-in-out infinite}
  
  
  

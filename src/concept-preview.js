@@ -21,12 +21,19 @@ function updatePreview(next){
     mode=next;
     const image=byId('concept-preview-image');
     if(image.getAttribute('src')!==current[next])image.src=current[next];
+    if(!byId('concept-scale-panel').hidden){
+      for(const pixels of [128,64,32]){
+        const mapImage=byId('concept-scale-'+pixels);
+        if(mapImage.getAttribute('src')!==current[next])mapImage.src=current[next];
+      }
+    }
     for(const key of MODES){
       const button=byId('concept-preview-'+key);
       button.setAttribute('aria-pressed',String(next===key));
       if(key==='action'||key==='rest'){
-        const label=key==='action'?'action':'rest';
-        button.textContent=next===key?'Show still':'Play '+label;
+
+        button.textContent=next===key?'Show still':
+          key==='action'?'Play attack once':'Hold rest loop';
       }
     }
     const hasFullStates=typeof current.idle==='string';
@@ -52,6 +59,8 @@ export function setConceptPreview(item){
       (item.previewArt?{still:item.previewArt}:null));
     stage.hidden=!current;
     controls.hidden=!current?.action;
+    const scale=byId('concept-scale-panel');
+    scale.hidden=!(current?.idle&&current?.move&&current?.action&&current?.rest);
     for(const key of MODES){
       const button=byId('concept-preview-'+key);
       button.hidden=!current?.[key];

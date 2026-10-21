@@ -14,9 +14,9 @@ a real Foundry session**. It has no paid media or public licensed tokens.
 4. Right-click an owned token. Open **Gridborn ✦ → Set up token**.
 5. Paste the relative folder path (without `Data/`):
    `worlds/my-campaign/gridborn/chr-ftr-human`.
-   The controller checks that all four WebMs exist in Foundry's Data folder before applying the setup. Keep the default **10-second Attack** if using the current action reel.
+   The controller checks that all four WebMs exist in Foundry's Data folder before applying the setup. For current independently exported studies, use **1.4 seconds** for Fighter, Goblin, Skeleton or Spider and **1.3 seconds** for Wolf. The duration field is editable per token.
 6. Save. **Idle** becomes the token image. Press **Move**, **Rest**, or **Attack**.
-   Attack runs the action-and-recovery clip once by *time limit* and returns to Idle.
+   Attack runs once by the configured clip duration and returns to Idle. Idle, Move and Rest repeat until you choose a different state; there is no automatic four-state showcase during gameplay.
 7. **Restore original token** removes the configuration and original artwork returns.
 
 No network accounts, required purchases, macros, API keys or game-system-specific
@@ -35,10 +35,16 @@ python tools/export_demo.py --manifest assets/demos/cave-goblin-manifest.json \
  --certify --controller-package --output-dir ../gridborn-private-goblin
 ```
 
-The action reel is split by **source metadata**, never a monster's name:
-27-second Idle, 8-second Move, and 10-second Attack **including recovery**.
-The separate six-second Rest is copied into the same private folder. Technical
-alpha/duration checks run on each clip. Do not commit exported media to GitHub.
+The original 45-second showcase is **not** the source of the current
+Fighter/Goblin standalone clips. Their actual independent animation SVG
+sources produce calm looping Idle/Move/Rest states, and a one-shot Attack.
+The other creatures use the direct state-only exporter. Each private
+controller folder has a `gridborn-preview.json` file recording the exact
+`attackMs` value; enter this value in **seconds** in the HUD's setup form.
+Current source values are 1.3 seconds (Gray Wolf) and 1.4 seconds (other
+current studies). There is no need to edit code, restart animations manually,
+or play the website's automatic showcase during a tabletop encounter.
+Technical alpha/duration checks run on each clip. Do not commit private media.
 
 ## Limitations and release gates
 
@@ -48,7 +54,7 @@ alpha/duration checks run on each clip. Do not commit exported media to GitHub.
 - A timer is owned by the user who selected Attack. If they disconnect, the
   automatic return might not happen; simply choose Idle again.
 - Attack return is time-based; some browsers/VTT configurations might play
-  the underlying clip differently. The 10-second duration is editable.
+  the underlying clip differently. The per-token duration is editable.
 - Switching scenes or duplicating tokens, GM/player permissions, HUD layout,
   animation smoothness, multiplayer synchronization and file-size behavior
   require real Foundry testing before a compatibility claim.

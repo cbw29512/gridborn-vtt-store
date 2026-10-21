@@ -6,11 +6,28 @@
 import {animatedPreviews} from './animated-previews.js';
 
 export const MOTION_STAGES=Object.freeze([
-  Object.freeze({key:'idle',label:'IDLE',durationMs:2400}),
-  Object.freeze({key:'move',label:'MOVE',durationMs:2200}),
+  Object.freeze({key:'idle',label:'IDLE',durationMs:0}),
+  Object.freeze({key:'move',label:'MOVE',durationMs:0}),
   Object.freeze({key:'action',label:'ATTACK',durationMs:0}),
-  Object.freeze({key:'rest',label:'REST',durationMs:2600})
+  Object.freeze({key:'rest',label:'REST',durationMs:2400})
 ]);
+
+/** Quick buyer cycle uses real source motion at original speed.
+ * A partial Rest view is enough to show the quiet pose, without delaying the card.
+ */
+export function showcaseDurationMs(preview,key){
+ if(!preview||!['idle','move','action','rest'].includes(key))
+   throw new Error('Missing showcase animation');
+ const ms=key==='action'?preview.actionDurationMs:
+   key==='rest'?2400:preview[key+'DurationMs'];
+ if(!Number.isInteger(ms)||ms<500)throw Error('Missing accurate '+key+' duration');
+ return ms;
+}
+
+export function fullShowcaseMs(preview){
+ return ['idle','move','action','rest'].reduce((total,key)=>
+   total+showcaseDurationMs(preview,key),0);
+}
 
 export function hasCatalogMotion(itemId){
  const preview=animatedPreviews[itemId];
@@ -57,7 +74,9 @@ export function initializeCatalogMotion(){
    const asset=session.preview[frame.key];
    session.image.setAttribute('src',asset);
    session.stage.textContent=frame.label+' · animated study';
-   const duration=frame.key==='action'?session.preview.actionDurationMs:frame.durationMs;
+   // Match actual Idle/Move source cycles without accelerating their animation.
+   // Rest is previewed briefly to complete all four states within ~9–11 seconds.
+   const duration=showcaseDurationMs(session.preview,frame.key);
    session.timer=setTimeout(()=>{
      session.timer=null;
      startPhase(session,(index+1)%MOTION_STAGES.length);

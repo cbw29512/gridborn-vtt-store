@@ -23,6 +23,11 @@ export function verifyMotionCatalog(entries,previews=animatedPreviews,art=artStu
       throw Error('Still study does not match source art: '+id);
     if(!Number.isInteger(preview.actionDurationMs)||preview.actionDurationMs<200)
       throw Error('Missing one-shot attack duration: '+id);
+    for(const state of ['idle','move','rest']){
+      const duration=preview[state+'DurationMs'];
+      if(!Number.isInteger(duration)||duration<500||duration>30000)
+        throw Error('Missing real '+state+' timing for '+id);
+    }
     if(!preview.labels||REQUIRED_STATES.slice(1).some(s=>
         typeof preview.labels[s]!=='string'||preview.labels[s].length<12))
       throw Error(id+' must label all four motions');

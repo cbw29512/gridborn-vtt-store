@@ -5,13 +5,13 @@
 <title id="title">Giant Cave Spider — move Gridborn original eight-leg study</title>
 <desc id="description">Original arachnid token with eight independently segmented legs, visible cephalothorax, rear abdomen, eight small eyes and venom fangs. Alternating diagonal tetrapod gait. Preview only; no VTT export or commercial certification.</desc>
 <style>
- .spider-body{transform-origin:128px 129px;animation:spider-walk-body 1.16s ease-in-out infinite}
+ .spider-body{transform-origin:128px 129px;animation:spider-walk-body 1.2s ease-in-out infinite}
  .spider-palps,.spider-fangs{transform-origin:128px 115px}
  
  
- .spider-phase-a{animation:spider-tetrapod-a 1.16s ease-in-out infinite}
- .spider-phase-b{animation:spider-tetrapod-b 1.16s ease-in-out infinite}
- .spider-palps{animation:spider-palp-walk 1.16s ease-in-out infinite}
+ .spider-phase-a{animation:spider-tetrapod-a 1.2s ease-in-out infinite}
+ .spider-phase-b{animation:spider-tetrapod-b 1.2s ease-in-out infinite}
+ .spider-palps{animation:spider-palp-walk 1.2s ease-in-out infinite}
  
  
  
