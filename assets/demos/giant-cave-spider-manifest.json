@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "mon-cave-spider",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/giant-cave-spider.svg",
+  "restSource": "assets/demos/giant-cave-spider-rest.svg",
+  "restDurationSec": 5,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/giant-cave-spider-idle.svg",
+      "durationSec": 3.6
+    },
+    "move": {
+      "source": "assets/demos/giant-cave-spider-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/giant-cave-spider-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "plannedOutputs": [
+    "transparent-webm",
+    "static-png",
+    "rest-webm"
+  ],
+  "vttCompatibility": "untested",
+  "purchasable": false
+}
