@@ -25,12 +25,18 @@ def render_frames(spec: dict, frames: Path, sample: int | None = None, mode: str
     """Playwright seeks each CSS keyframe deterministically at frame midpoint."""
     try:
         from playwright.sync_api import sync_playwright
-        if mode not in ("action", "rest"):
+        if mode in spec.get("stateClips", {}):
+            clip = spec["stateClips"][mode]
+            source = clip["source"]
+            duration = clip["durationSec"]
+        elif mode in ("action", "rest"):
+            source = spec["source"] if mode == "action" else spec["restSource"]
+            duration = (spec["timeline"][-1]["endSec"] if mode == "action"
+                        else spec["restDurationSec"])
+        else:
             raise ValueError("Unsupported animation export mode")
-        source_key = "source" if mode == "action" else "restSource"
-        animated = (ROOT / spec[source_key]).read_text(encoding="utf-8")
+        animated = (ROOT / source).read_text(encoding="utf-8")
         size, fps = spec["canvasPx"], spec["fps"]
-        duration = spec["timeline"][-1]["endSec"] if mode == "action" else spec["restDurationSec"]
         count = int(duration * fps)
         if sample is not None:
             count = min(sample, count)
@@ -53,7 +59,7 @@ def render_frames(spec: dict, frames: Path, sample: int | None = None, mode: str
                     page.locator("svg").screenshot(
                         path=str(frames / f"frame_{index:05d}.png"),
                         omit_background=True, animations="allow")
-                if mode == "rest":
+                if mode != "action":
                     return None
                 still = (ROOT / spec["stillSource"]).read_text(encoding="utf-8")
                 page.set_content(html_start + still + "</body></html>", wait_until="load")
@@ -143,8 +149,18 @@ def main() -> int:
                     json.dumps(quality, indent=2) + "\n", encoding="utf-8")
                 LOG.info("Technical media QA passed: %s", json.dumps(quality))
                 if args.controller_package:
+                    independent_frames = {}
+                    independent_motion = {}
+                    for state in spec.get("stateClips", {}):
+                        state_dir = Path(directory) / ("state-" + state)
+                        state_dir.mkdir()
+                        render_frames(spec, state_dir, mode=state)
+                        independent_frames[state] = state_dir
+                        independent_motion[state] = inspect_motion(state_dir, spec, state)
                     bundle = create_controller_package(
-                        spec, action_frames, output, encode_webm, inspect_video)
+                        spec, action_frames, output, encode_webm, inspect_video,
+                        independent_frames=independent_frames,
+                        independent_motion=independent_motion)
                     LOG.info("Private Foundry bundle validated at: %s", bundle)
         LOG.info("Private proof-of-concept exports: %s", output)
         return 0

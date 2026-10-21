@@ -66,7 +66,9 @@ def inspect_motion(frames: Path, spec: dict, mode: str) -> dict:
     try:
         from PIL import Image
         fps = spec["fps"]
-        seconds = (spec["restDurationSec"] if mode == "rest"
+        seconds = (spec["stateClips"][mode]["durationSec"]
+                   if mode in spec.get("stateClips", {})
+                   else spec["restDurationSec"] if mode == "rest"
                    else spec["timeline"][-1]["endSec"])
         frame_count = int(seconds * fps)
         step = max(1, fps // 2)
@@ -77,7 +79,7 @@ def inspect_motion(frames: Path, spec: dict, mode: str) -> dict:
                 rgba = img.convert("RGBA").tobytes()
             observed[index] = rgba
         hashes = {i: hashlib.sha256(raw).hexdigest() for i, raw in observed.items()}
-        minimum = 2 if mode == "rest" else 4
+        minimum = 2 if mode in ("rest", "idle", "move", "attack") else 4
         if len(set(hashes.values())) < minimum:
             raise ValueError(f"{mode} animation contains too little rendered motion")
         phase_counts = {}
@@ -93,7 +95,7 @@ def inspect_motion(frames: Path, spec: dict, mode: str) -> dict:
         changed_pixels = sum(start[i:i + 4] != end[i:i + 4]
                              for i in range(0, len(start), 4))
         seam_ratio = changed_pixels / (len(start) / 4)
-        if seam_ratio > 0.01:
+        if mode != "attack" and seam_ratio > 0.01:
             raise ValueError(f"Loop seam changes {seam_ratio:.1%} of pixels")
         return {"frames": frame_count, "distinctSampleFrames": len(set(hashes.values())),
                 "seamChangedPixelRatio": round(seam_ratio, 5),

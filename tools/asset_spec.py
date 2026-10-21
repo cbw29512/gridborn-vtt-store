@@ -65,6 +65,20 @@ def validate_manifest(data: dict, root: Path, check_files: bool = True) -> dict:
             raise ValueError("Unexpected output contract")
         if type(data.get("restDurationSec")) not in (int, float) or not 2 <= data["restDurationSec"] <= 30:
             raise ValueError("Rest loop duration must be between 2 and 30 seconds")
+        independent = data.get("stateClips")
+        if independent is not None:
+            if not isinstance(independent, dict) or set(independent) != {"idle", "move", "attack"}:
+                raise ValueError("Independent state clips must specify Idle, Move and Attack")
+            for state in ("idle", "move", "attack"):
+                clip = independent[state]
+                if not isinstance(clip, dict) or set(clip) != {"source", "durationSec"}:
+                    raise ValueError("Independent state clip requires source and durationSec")
+                seconds = clip["durationSec"]
+                if type(seconds) not in (int, float) or not 0.5 <= seconds <= 30:
+                    raise ValueError("Invalid independent state duration")
+                frames = seconds * data["fps"]
+                if abs(frames - round(frames)) > 1e-8:
+                    raise ValueError("Independent state duration must align to complete frames")
         for field in ("source", "stillSource", "restSource"):
             relative = Path(data.get(field, ""))
             if relative.is_absolute() or relative.suffix != ".svg" or ".." in relative.parts:
@@ -76,6 +90,18 @@ def validate_manifest(data: dict, root: Path, check_files: bool = True) -> dict:
                 if not resolved.is_file():
                     raise FileNotFoundError(f"Missing SVG source: {relative}")
                 validate_svg(resolved)
+        if independent is not None:
+            for state, clip in independent.items():
+                relative = Path(clip["source"])
+                if relative.is_absolute() or relative.suffix != ".svg" or ".." in relative.parts:
+                    raise ValueError(f"Unsafe independent {state} source")
+                resolved = (root / relative).resolve()
+                if not resolved.is_relative_to(root.resolve()):
+                    raise ValueError(f"Independent {state} source escapes repository")
+                if check_files:
+                    if not resolved.is_file():
+                        raise FileNotFoundError(f"Missing independent {state} SVG")
+                    validate_svg(resolved)
         return data
     except Exception:
         LOG.exception("Invalid Gridborn asset manifest")
