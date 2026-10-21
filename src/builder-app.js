@@ -20,6 +20,7 @@ function draft(){
 }
 function render(){
   const safe=normalizeRecipe(recipe);
+  $('builder-stage').dataset.mode=mode;
   $('builder-avatar').innerHTML=renderRig(safe,{mode,animated:true});
   $('builder-summary').textContent=safe.ancestry+' · '+safe.outfit+' · '+safe.weapon;
   for(const button of $('builder-modes').querySelectorAll('button'))

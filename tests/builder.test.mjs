@@ -74,3 +74,62 @@ test('builder page and catalog expose both journeys and keep checkout disabled',
     'src/builder.css','src/chooser.css'])
     assert.ok(existsSync(new URL('../'+path,import.meta.url)),path);
 });
+
+test('each limb animates independently with equipped parts following the same motion',()=>{
+  const css=read('src/builder.css');
+  const move=renderRig(presetToRecipe('chr-ftr-human'),{mode:'move',animated:true});
+  for(const group of ['rig-leg-left','rig-leg-right','rig-arm-left','rig-arm-right',
+    'rig-weapon','rig-offhand','rig-head','rig-cape']){
+    assert.match(move,new RegExp('class="'+group+'"'));
+    assert.ok(css.includes('.'+group),'Missing '+group+' motion hook');
+  }
+  assert.match(css,/gb-left-stride/);
+  assert.match(css,/gb-right-stride/);
+  assert.match(css,/gb-walk-head/);
+  assert.match(css,/gb-walk-cape/);
+  assert.doesNotMatch(css,/gb-step \.65s/);
+});
+test('rest draws a different seated silhouette with distinct legs and stool',()=>{
+  const css=read('src/builder.css');
+  for(const key of Object.keys(PRESETS)){
+    const recipe=presetToRecipe(key);
+    const idle=renderRig(recipe,{mode:'idle',animated:true});
+    const rest=renderRig(recipe,{mode:'rest',animated:true});
+    assert.match(rest,/class="rig-rest-seat"/);
+    assert.match(rest,/class="rig-legs rig-legs-rest"/);
+    assert.match(rest,/class="rig-upper"/);
+    assert.doesNotMatch(idle,/class="rig-rest-seat"/);
+    assert.notEqual(idle,rest,key);
+    if(recipe.ancestry!=='Skeleton')assert.match(rest,/class="rig-eyelids"/);
+  }
+  assert.match(css,/gb-seated-breath/);
+  assert.match(css,/\.mode-rest \.rig-eyelids\{opacity:1\}/);
+  assert.match(css,/prefers-reduced-motion:reduce/);
+});
+test('attack is one windup, strike, and recovery before returning to Idle',()=>{
+  const css=read('src/builder.css');
+  const app=read('src/builder-app.js');
+  assert.match(css,/gb-attack-lunge \.94s ease-in-out 1 both/);
+  assert.match(app,/animationend/);
+  assert.match(app,/event\.animationName!=='gb-attack-lunge'/);
+  assert.match(app,/mode='idle';render\(\)/);
+});
+test('shading responds to the selected palette without embedding unsafe values',()=>{
+  const base=renderRig(presetToRecipe('chr-ftr-human'));
+  const switched=renderRig(presetToRecipe('chr-bar-orc'));
+  assert.notEqual(base,switched);
+  assert.match(read('src/builder-rig.js'),/const tint=/);
+  assert.match(base,/rig-headgear/);
+  assert.match(base,/rig-weapon/);
+  assert.match(base,/rig-offhand/);
+  assert.doesNotMatch(base,/<script/i);
+});
+test('preview campfire is only a decorative builder stage element',()=>{
+  const html=read('builder.html'),css=read('src/builder.css');
+  assert.match(html,/class="stage-campfire"/);
+  assert.match(html,/class="stage-atmosphere"/);
+  assert.match(css,/\[data-mode="rest"\] \.stage-campfire/);
+  assert.match(read('src/builder-app.js'),/dataset\.mode=mode/);
+  const png=renderRig(DEFAULT_RECIPE,{mode:'idle',animated:false});
+  assert.doesNotMatch(png,/campfire|stage-atmosphere/);
+});

@@ -186,3 +186,52 @@ background-size:auto,40px 40px,40px 40px,auto}
   .top-nav{width:100%;flex-wrap:wrap;justify-content:space-between;gap:7px}
   .builder-intro,.builder-workspace{min-width:0}
 }
+
+
+/* An atmospheric preview stage with subtle background cues, never exported as token art. */
+.builder-preview{border-color:#697382;background:
+  radial-gradient(ellipse at 55% 8%,#55759c30,transparent 55%),
+  linear-gradient(150deg,#2a3c4d,#141e2d 67%);
+  box-shadow:0 19px 55px #04090e99,inset 0 1px #edd19a26}
+.builder-stage{box-shadow:inset 0 0 0 1px #f8db9533,0 0 0 3px #0a14204d;
+  transition:background-color .25s,border-color .25s}
+.builder-stage[data-mode="rest"]{border-color:#b49358;
+  background:radial-gradient(circle at 72% 63%,#c88c3c63,transparent 32%),
+    radial-gradient(circle at 50% 39%,#4e5f7488,transparent 60%),
+    linear-gradient(90deg,#8095aa25 1px,transparent 1px),
+    linear-gradient(#8095aa25 1px,transparent 1px),#202a35;
+  background-size:auto,auto,40px 40px,40px 40px,auto}
+.builder-stage[data-background="light"][data-mode="rest"]{
+ background:radial-gradient(circle at 72% 63%,#f3cf8390,transparent 32%),
+   radial-gradient(circle at 50% 40%,#fff8e3a3,transparent 65%),
+   linear-gradient(90deg,#4b617330 1px,transparent 1px),
+   linear-gradient(#4b617330 1px,transparent 1px),#b8bba9;
+ background-size:auto,auto,40px 40px,40px 40px,auto}
+.stage-atmosphere{position:absolute;inset:0;pointer-events:none;z-index:0}
+.stage-orbit{position:absolute;left:50%;top:76%;width:55%;height:18%;
+  transform:translate(-50%,-50%) skewX(-10deg);
+  border:2px solid #d8ae6866;border-radius:50%;box-shadow:0 0 18px #f1c67914}
+.stage-orbit-small{top:76%;width:38%;height:11%;border-color:#dcb26c4a}
+.stage-orbit::after{content:"";position:absolute;left:18%;right:18%;top:50%;height:1px;background:#d8ba7642}
+.stage-campfire{display:none;position:absolute;right:11%;bottom:21%;height:58px;
+  width:42px;z-index:1;pointer-events:none;filter:drop-shadow(0 0 17px #eeba5e99)}
+.builder-stage[data-mode="rest"] .stage-campfire{display:block}
+.campfire-logs{position:absolute;left:3px;right:0;bottom:3px;height:9px;
+  background:#64402d;border:2px solid #2b2320;transform:rotate(13deg)}
+.campfire-logs::after{content:"";position:absolute;left:0;top:0;width:38px;height:8px;
+  background:#8b5331;border:1px solid #39271e;transform:rotate(-31deg)}
+.campfire-flame{position:absolute;left:11px;bottom:11px;width:22px;height:36px;
+  background:linear-gradient(#ffeab0 0 37%,#edaf56 37% 77%,#c4703c 77%);
+  clip-path:polygon(50% 0,73% 30%,100% 55%,87% 100%,17% 100%,0 60%,24% 39%);
+  animation:gb-fire 1.6s ease-in-out infinite}
+@keyframes gb-fire{0%,100%{transform:scale(.95) translateY(1px)}
+  50%{transform:scaleX(1.12) scaleY(1.07) translateY(-2px)}}
+.builder-stage[data-mode="move"] .stage-orbit{
+  border-color:#eac78499;box-shadow:0 0 21px #eac78433}
+.builder-stage[data-mode="attack"] .stage-orbit{border-color:#e99c6f9c}
+.builder-stage[data-mode="rest"] .stage-orbit{border-color:#d6a45b4b}
+@media(max-width:440px){.stage-campfire{right:6%;bottom:19%;transform:scale(.8)}}
+@media(prefers-reduced-motion:reduce){
+ .builder-stage{transition:none}
+ .campfire-flame{animation:none!important}
+}

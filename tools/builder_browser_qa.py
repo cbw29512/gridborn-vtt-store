@@ -25,8 +25,27 @@ def check_builder(browser,origin,width,screenshots:Path):
         expect(page.locator('[data-palette="shadow"]')).to_have_attribute("aria-pressed","true")
         page.locator('[data-mode="move"]').click()
         expect(page.locator("#builder-avatar svg")).to_have_class("rig-image mode-move rig-animated")
+        motion = page.evaluate("""() => {
+          const style = selector => getComputedStyle(document.querySelector('#builder-avatar '+selector)).animationName;
+          return [style('.rig-leg-left'),style('.rig-leg-right'),
+            style('.rig-arm-left'),style('.rig-arm-right'),style('.rig-cape')];
+        }""")
+        assert motion == ["gb-left-stride","gb-right-stride","gb-right-stride",
+                          "gb-left-stride","gb-walk-cape"], f"Rig motion not articulated: {motion}"
+        expect(page.locator("#builder-stage")).to_have_attribute("data-mode", "move")
+        page.locator('[data-mode="rest"]').click()
+        expect(page.locator(".rig-rest-seat")).to_have_count(1)
+        expect(page.locator(".rig-legs-rest")).to_have_count(1)
+        expect(page.locator("#builder-status")).to_contain_text("seated posture")
+        expect(page.locator("#builder-stage")).to_have_attribute("data-mode", "rest")
+        assert page.locator(".stage-campfire").evaluate(
+            "(node) => getComputedStyle(node).display") != "none"
+        page.screenshot(path=str(screenshots/f"gridborn-rest-{width}px.png"))
         page.locator('[data-mode="attack"]').click()
         expect(page.locator('[data-mode="attack"]')).to_have_attribute("aria-pressed","true")
+        expect(page.locator("#builder-status")).to_contain_text("plays once")
+        expect(page.locator('[data-mode="idle"]')).to_have_attribute("aria-pressed","true",timeout=4000)
+        expect(page.locator("#builder-status")).to_contain_text("returned to Idle")
         page.locator('[data-bg="light"]').click()
         assert page.locator("#builder-stage").get_attribute("data-background")=="light"
         page.locator("#build-name").fill("My Goblin Captain")
@@ -52,6 +71,13 @@ def check_builder(browser,origin,width,screenshots:Path):
         asset=Path(preview.value.path()).read_bytes()
         assert asset[:8]==b"\x89PNG\r\n\x1a\n","PNG preview must encode correctly"
         assert len(asset)>2500,"Rendered preview image is suspiciously small"
+        page.emulate_media(reduced_motion="reduce")
+        page.locator('[data-mode="rest"]').click()
+        expect(page.locator(".rig-rest-seat")).to_have_count(1)
+        reduced_animation = page.locator(".rig-upper").evaluate(
+            "(node) => getComputedStyle(node).animationName")
+        assert reduced_animation == "none", "Reduced motion should show still seated pose"
+        page.emulate_media(reduced_motion="no-preference")
         overflow=page.evaluate("document.documentElement.scrollWidth-document.documentElement.clientWidth")
         assert overflow<=1,f"Builder horizontal overflow at {width}px: {overflow}"
         page.screenshot(path=str(screenshots/f"gridborn-builder-{width}px.png"),full_page=True)
