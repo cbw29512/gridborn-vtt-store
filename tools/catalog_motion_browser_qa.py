@@ -12,10 +12,10 @@ def check_catalog_motion(browser,origin,width,screenshots:Path):
         page.on('pageerror',lambda exc:errors.append(str(exc)))
         page.goto(origin,wait_until='load')
         expect(page.locator('#catalog-motion-toggle')).to_be_visible() if width==1440 else None
-        assert page.locator('.product-card[data-motion-id]').count()==4, (
-            'All four actual animated token studies should lead the catalog')
+        assert page.locator('.product-card[data-motion-id]').count()==5, (
+            'All five actual animated token studies should lead the catalog')
         expect(page.locator('.product-card').first).to_have_attribute(
-            'data-motion-id',re.compile(r'chr-ftr-human|mon-cave-goblin|ani-forest-wolf|mon-cave-spider'))
+            'data-motion-id',re.compile(r'chr-ftr-human|mon-cave-goblin|ani-forest-wolf|mon-cave-spider|mon-dng-skeleton'))
         # Re-render one original creature into view to start its first Idle phase.
         page.locator('#search').fill('Gray Wolf')
         card=page.locator('.product-card[data-motion-id="ani-forest-wolf"]')
