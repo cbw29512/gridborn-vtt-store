@@ -34,27 +34,46 @@ def phase_clips(spec: dict) -> list[tuple[str, int, int]]:
 
 
 def create_controller_package(spec: dict, frames: Path, exports: Path,
-                              encoder, inspect_video) -> Path:
+                              encoder, inspect_video, independent_frames=None,
+                              independent_motion=None) -> Path:
     try:
         target = exports / (spec["id"] + "-foundry")
         target.mkdir(parents=True, exist_ok=True)
         checks = {}
+        clips = spec.get("stateClips", {})
+        if clips and (not independent_frames or set(independent_frames) != set(clips)):
+            raise ValueError("All independently sourced clips must be rendered")
+        if clips and (not independent_motion or set(independent_motion) != set(clips)):
+            raise ValueError("Missing independent motion and loop QA receipts")
         for mode, start, count in phase_clips(spec):
             dest = target / (mode + ".webm")
-            encoder(frames, dest, spec["fps"], start_frame=start, frame_count=count)
+            if mode in clips:
+                origin = independent_frames[mode]
+                start = 0
+                count = round(clips[mode]["durationSec"] * spec["fps"])
+                source_seconds = clips[mode]["durationSec"]
+            else:
+                origin = frames
+                source_seconds = count / spec["fps"]
+            encoder(origin, dest, spec["fps"], start_frame=start, frame_count=count)
             checks[mode] = inspect_video(dest, spec["canvasPx"], spec["fps"],
-                                         count // spec["fps"])
+                                         source_seconds)
         shutil.copyfile(exports / (spec["id"] + "-rest.webm"), target / "rest.webm")
         shutil.copyfile(exports / (spec["id"] + "-still.png"), target / "still.png")
         checks["rest"] = inspect_video(target / "rest.webm", spec["canvasPx"],
                                       spec["fps"], spec["restDurationSec"])
-        seconds = next(count // spec["fps"] for label, _, count in phase_clips(spec)
-                       if label == "attack")
+        seconds = (clips["attack"]["durationSec"] if clips else
+                   next(count / spec["fps"] for label, _, count in phase_clips(spec)
+                        if label == "attack"))
         receipt = {
             "assetId": spec["id"], "status": "technical-preview-pass",
             "purchaseEnabled": False, "vttCompatibility": "untested",
             "files": ["idle.webm", "move.webm", "attack.webm", "rest.webm", "still.png"],
-            "attackMs": seconds * 1000, "technicalQA": checks,
+            "attackMs": round(seconds * 1000), "technicalQA": checks,
+            "clipSource": "independent-svg-states" if clips else "master-reel-split",
+            "independentMotionQA": independent_motion if clips else {},
+            "sourceFiles": ({state: clips[state]["source"] for state in clips}
+                            if clips else {}),
         }
         (target / "gridborn-preview.json").write_text(
             json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
