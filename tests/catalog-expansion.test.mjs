@@ -25,6 +25,7 @@ test('330 unique SRD creature names have accurate source-index fields',()=>{
  assert.equal(catalog.filter(x=>x.category==='NPCs').length,56);
  assert.equal(catalog.filter(x=>x.category==='Animals').length,10);
  assert.ok(catalog.every(x=>x.purchasable===false));
+ assert.ok(catalog.every(x=>x.priceCents===99),'Every proposed individual token should cost 99 cents');
  for(const record of monsterSRD){
    const index=catalog.find(x=>x.sourceRecordId===record.id);
    assert.ok(index,'Missing SRD monster: '+record.name);
