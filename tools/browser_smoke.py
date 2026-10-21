@@ -17,6 +17,7 @@ from wolf_browser_qa import check_wolf
 from spider_browser_qa import check_spider
 from goblin_browser_qa import check_goblin
 from fighter_browser_qa import check_fighter
+from catalog_motion_browser_qa import check_catalog_motion, check_reduced_motion
 from catalog_expansion_browser_qa import check_full_catalog
 SIZES = (1440, 390, 320)
 class PreviewHandler(SimpleHTTPRequestHandler):
@@ -195,6 +196,8 @@ def main() -> int:
                     check_spider(browser, url, width, screenshots)
                     check_goblin(browser, url, width, screenshots)
                     check_fighter(browser, url, width, screenshots)
+                    check_catalog_motion(browser, url, width, screenshots)
+                    if width==1440: check_reduced_motion(browser, url)
                     check_full_catalog(browser, url, width, screenshots)
             finally:
                 browser.close()

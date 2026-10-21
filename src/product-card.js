@@ -1,4 +1,5 @@
 import { openConcept } from './concept-dialog.js';
+import { animatedPreviews } from './animated-previews.js';
 import { PRESETS } from './builder-data.js';
 import { HERO_VARIANTS } from './hero-variants.js';
 import {hasNPCRecipe} from './npc-recipes.js';
@@ -9,23 +10,43 @@ export function makeCard(item) {
     const card = document.createElement('article'); card.className = 'product-card';
     const visual = document.createElement('div'); visual.className = 'product-visual';
     visual.dataset.category = item.category;
+    const preview=animatedPreviews[item.id];
+    const hasMotion=Boolean(preview?.idle&&preview?.move&&preview?.action&&preview?.rest);
+    if(hasMotion){
+      card.dataset.motionId=item.id;
+      const stage=document.createElement('span');
+      stage.className='product-motion-stage';
+      stage.textContent='IDLE · animated preview';
+      stage.setAttribute('aria-hidden','true');
+      visual.append(stage);
+    }
     const symbol = document.createElement('span'); symbol.className = 'product-placeholder'; symbol.textContent = item.symbol;
     if (item.previewArt) {
       const illustration = document.createElement('img');
       illustration.className = 'product-art';
       illustration.src = item.previewArt;
-      illustration.alt = 'Original pixel-art study for ' + item.name + '; not a finished token';
+      illustration.alt = (hasMotion?'Automatic Idle, Move, Attack, Rest animation study of ':'Original pixel-art study for ')
+        +item.name+'; not a finished token';
       illustration.loading = 'lazy';
       illustration.decoding = 'async';
       illustration.addEventListener('error', () => {
-        try { illustration.replaceWith(symbol); badge.textContent = 'CONCEPT ONLY'; }
+        try {
+          if(hasMotion&&illustration.getAttribute('src')!==item.previewArt){
+            card.dataset.motionFailed='true';
+            illustration.src=item.previewArt;
+            const stage=visual.querySelector('.product-motion-stage');
+            if(stage)stage.textContent='STATIC · motion unavailable';
+          }else{
+            illustration.replaceWith(symbol); badge.textContent='CONCEPT ONLY';
+          }
+        }
         catch (error) { console.error('Cannot recover preview artwork', item.id, error); }
       });
       visual.append(illustration);
     } else {
       visual.append(symbol);
     }
-    const badge = document.createElement('span'); badge.className = 'preview-label'; badge.textContent = item.animationStatus === 'art-study' ? 'ANIMATION STUDY' :
+    const badge = document.createElement('span'); badge.className = 'preview-label'; badge.textContent = hasMotion ? 'MOVING ART STUDY' : item.animationStatus === 'art-study' ? 'ANIMATION STUDY' :
       item.previewArt ? 'ART STUDY' : 'CONCEPT ONLY';
     const footprint = document.createElement('span'); footprint.className = 'product-footprint';
     footprint.textContent = item.squares + '×' + item.squares + ' GRID';

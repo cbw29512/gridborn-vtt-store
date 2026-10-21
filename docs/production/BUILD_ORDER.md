@@ -197,3 +197,25 @@ This is **technical export work, not release approval**. Review the actual
 silhouette/leg motion at 256/128/64/32px; import it into the intended VTT
 and verify looping, facing, transparency and FPS; establish source rights and
 license. It remains unavailable for purchase.
+
+### Automatic storefront animation previews (October 21, 2026)
+
+The actual catalog cards—not just the detail modal or homepage banner—now
+cycle through **Idle → Move → one-shot Attack → Rest** automatically for
+art-studies that have all four existing SVG states: Human Fighter, Cave
+Goblin, Gray Wolf and Giant Cave Spider. Each card identifies the current
+animation; no Play button is required. The source files are identical to
+the ones used in the corresponding individual state preview.
+
+The shared `src/catalog-motion.js` controller starts motion only when a
+card is near the viewport, stops/cleans timers when filtered away, pauses
+when the page is hidden, provides a visible Pause/Resume control, and
+respects the operating system's reduced-motion preference. Cards without
+real motion sources stay static. Media failures revert to the original
+static concept art. The unit and Chromium browser suites verify all four
+states, actual frame changes, 320/390/1440px layouts, pause/restart,
+search rerenders, and reduced-motion stills.
+
+**Important:** These are existing public SVG *art studies*, not the actual
+private WebM deliverables, commercially approved purchases, or verified
+VTT imports. Catalog labeling remains preview-only and checkout disabled.

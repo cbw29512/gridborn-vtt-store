@@ -4,6 +4,7 @@ import { initializeDemo } from './animation-demo.js';
 import {initializeBundles} from './bundle-ui.js';
 import { initializeConceptDialog } from './concept-dialog.js';
 import { makeCard } from './product-card.js';
+import { initializeCatalogMotion, hasCatalogMotion } from './catalog-motion.js';
 import { readCatalogRoute, writeCatalogRoute, markActiveCollection, connectCatalogNavigation } from './routing.js';
 
 // One battle-tested state object drives search and both dependent dropdowns.
@@ -44,6 +45,7 @@ function renderResults() {
   try {
     const filtered = filterCatalog(catalog, state);
     const ordered = [...filtered].sort((a,b)=>
+      (!state.query ? Number(hasCatalogMotion(b.id))-Number(hasCatalogMotion(a.id)) : 0) ||
       Number(Boolean(b.previewArt))-Number(Boolean(a.previewArt)) ||
       (state.category==='Monsters' ? a.name.localeCompare(b.name) : 0));
     nodes.results.replaceChildren(...ordered.slice(0, visibleCount).map(makeCard).filter(Boolean));
@@ -120,7 +122,7 @@ function initialize() {
     byId('empty-reset').addEventListener('click', resetFilters);
     nodes.search.value = state.query;
     visibleCount=pageSize();
-    updateFilters(); renderResults(); initializeBundles(catalog); initializeDemo();
+    updateFilters(); renderResults(); initializeCatalogMotion(); initializeBundles(catalog); initializeDemo();
   } catch (error) {
     console.error('Storefront failed to initialize', error);
     const summary = byId('result-summary');
