@@ -1,5 +1,6 @@
 import { PARTS, PALETTES, PRESETS,
-  normalizeRecipe, presetToRecipe, toPortableRecipe, fromPortableRecipe } from './builder-data.js';
+  normalizeRecipe, presetToRecipe, toPortableRecipe, fromPortableRecipe,
+  variantToRecipe, hasVariantRecipe } from './builder-data.js';
 import { renderRig } from './builder-rig.js';
 const $=id=>document.getElementById(id);
 const DRAFT='gridborn.builder.draft.v1';
@@ -159,7 +160,10 @@ function events(){
 try{
   controls();events();
   const params=new URLSearchParams(window.location.search),starting=params.get('preset');
-  if(starting&&Object.hasOwn(PRESETS,starting)){
+  if(starting&&hasVariantRecipe(starting)){
+    apply(variantToRecipe(starting));
+    status('Class concept loaded · preview rig only; customize freely');
+  }else if(starting&&Object.hasOwn(PRESETS,starting)){
     apply(presetToRecipe(starting),{selectedPreset:starting,selectedPalette:PRESETS[starting].palette});
     status('Premade design loaded · customize it');
   }else{

@@ -1,5 +1,7 @@
 import { openConcept } from './concept-dialog.js';
 import { PRESETS } from './builder-data.js';
+import { HERO_VARIANTS } from './hero-variants.js';
+const generatedHeroIds=new Set(HERO_VARIANTS.map(x=>x.id));
 
 export function makeCard(item) {
   try {
@@ -32,12 +34,17 @@ export function makeCard(item) {
     type.textContent = item.primary + ' · ' + item.secondary;
     const name = document.createElement('h4'); name.className = 'product-name'; name.textContent = item.name;
     const meta = document.createElement('div'); meta.className = 'product-meta';
-    meta.textContent = item.size + (item.animationStatus === 'art-study'
-      ? ' · Action + rest studies' : ' · Animation planned');
+    meta.textContent = item.size +
+      (item.challengeRating!==null&&item.challengeRating!==undefined?' · CR '+item.challengeRating:'') +
+      (item.animationStatus === 'art-study'
+        ? ' · Animation prototype' : ' · Animation not produced');
     const foot = document.createElement('div'); foot.className = 'product-foot';
     const price = document.createElement('strong'); price.className = 'product-price';
-    price.textContent = 'Target $' + (item.priceCents / 100).toFixed(2);
-    price.setAttribute('aria-label', 'Proposed price ' + price.textContent);
+    price.textContent = item.previewArt
+      ? 'Target $' + (item.priceCents / 100).toFixed(2)
+      : 'Artwork pending';
+    price.setAttribute('aria-label', item.previewArt
+      ? 'Proposed price ' + price.textContent : 'Original artwork not yet produced');
     const availability = document.createElement('span');
     availability.className = 'product-unavailable'; availability.textContent = 'Preview only';
     const details = document.createElement('button');
@@ -45,7 +52,7 @@ export function makeCard(item) {
     details.textContent = 'View concept details';
     details.setAttribute('aria-label', 'View concept details for ' + item.name);
     details.addEventListener('click', () => openConcept(item, details));
-    if (Object.hasOwn(PRESETS,item.id)) {
+    if (Object.hasOwn(PRESETS,item.id)||generatedHeroIds.has(item.id)) {
       const personalize = document.createElement('a');
       personalize.href = './builder.html?preset=' + encodeURIComponent(item.id);
       personalize.className = 'customize-link';

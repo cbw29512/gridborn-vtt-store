@@ -20,18 +20,21 @@ test('Animals -> Ocean -> Sharks returns only sharks', () => {
 
 test('NPCs -> Human -> Innkeeper returns the innkeeper', () => {
   const results = filterCatalog(catalog, {category:'NPCs',query:'',primary:'Human',secondary:'Innkeeper'});
-  assert.deepEqual(results.map(item => item.name), ['Village Innkeeper']);
+  assert.deepEqual(results.map(item => item.name).sort(), ['Human Innkeeper · Male','Village Innkeeper'].sort());
 });
 
 test('Characters -> Elf -> Wizard returns elven wizard', () => {
   const results = filterCatalog(catalog, {category:'Characters',query:'',primary:'Elf',secondary:'Wizard'});
-  assert.deepEqual(results.map(item => item.name), ['Elven Wizard']);
+  assert.ok(results.some(item=>item.name==='Elven Wizard'));
+  assert.ok(results.length>1,'Elf Wizard variants should be available');
 });
 
-test('Monsters -> Cave limits monster types and results correctly', () => {
-  const options = availableOptions(catalog, 'Monsters', 'Cave');
-  assert.deepEqual(options.second, ['Goblin','Ogre','Spider']);
-  assert.equal(filterCatalog(catalog, {category:'Monsters',query:'',primary:'Cave',secondary:'Ogre'}).length,1);
+test('Monsters -> family -> CR supports the 330-creature source index', () => {
+  const options = availableOptions(catalog, 'Monsters', 'Dragon');
+  assert.ok(options.second.includes('CR 17+'));
+  const ancient = filterCatalog(catalog,{category:'Monsters',query:'Ancient Red Dragon',primary:'Dragon',secondary:''});
+  assert.equal(ancient.length,1);
+  assert.equal(ancient[0].challengeRating,'24');
 });
 
 test('search includes name, category, size and filters', () => {
@@ -64,11 +67,13 @@ test('illustrated concepts span every category without claiming completed animat
 });
 
 test('a shopper can search all collections without selecting a category', () => {
-  assert.equal(filterCatalog(catalog, initialState).length, 34);
+  assert.equal(filterCatalog(catalog, initialState).length, 518);
   const sharks = filterCatalog(catalog, { ...initialState, query: 'shark' });
-  assert.deepEqual(sharks.map(item => item.name), ['Great White Shark','Reef Shark']);
+  assert.deepEqual(sharks.map(item=>item.name).sort(),
+    ['Great White Shark','Reef Shark','Giant Shark','Hunter Shark','Reef Shark'].sort());
   const inn = filterCatalog(catalog, { ...initialState, query: 'innkeeper' });
-  assert.deepEqual(inn.map(item => item.name), ['Village Innkeeper','Dwarven Tavern Keeper']);
+  assert.equal(inn.length,6);
+  assert.ok(inn.some(item=>item.name==='Village Innkeeper'));
   assert.deepEqual(availableOptions(catalog, 'All'), { first:[], second:[] });
 });
 test('dependent filter choices only appear after the first selection', () => {

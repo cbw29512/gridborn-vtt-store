@@ -117,3 +117,12 @@
  outline:2px solid #ffe7b7;outline-offset:2px;}
 .concept-preview-controls button:focus-visible {outline:3px solid white;outline-offset:2px;}
 .concept-preview-caution {font-size:11px;color:#d5dee8;line-height:1.5;margin:13px 0 0;}
+
+/* Larger SRD index needs clear noncommercial metadata and visible attribution. */
+.product-price{font-size:clamp(12px,1.25vw,18px)}
+.product-card:has(.product-placeholder) .product-price{font-size:12px;color:#64717e}
+.catalog-attribution{margin-top:18px;padding:12px 16px;border:1px solid #c8c2b7;
+ border-radius:7px;background:#f6f4ef;color:#33424b}
+.catalog-attribution summary{cursor:pointer;font-size:12px;font-weight:800;min-height:28px}
+.catalog-attribution p{font-size:12px;color:#4c5963;line-height:1.6}
+.catalog-attribution a{color:#6d4921;text-decoration:underline}

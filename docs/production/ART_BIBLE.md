@@ -13,8 +13,12 @@ characters from the separate Iron Pit project. Source of truth:
 
 ## Visual DNA
 
-- **Camera:** one consistent 3/4 tabletop view with visible top planes; all
-  weapons, feet and equipment obey the same perspective.
+- **Camera:** anatomically grounded **side or three-quarter side** view for all
+  nonhumanoid monsters and animals (sharks, wolves, dragons, spiders, oozes).
+  Upright humanoids and humanoid-bodied undead/constructs may remain
+  three-quarter/front when their face, armor and held equipment read better.
+  Follow [MONSTER_CAMERA.md](MONSTER_CAMERA.md) and check true silhouette at
+  64/32px; do not call frontal spider or overhead shark study final.
 - **Shape:** original modular block-inspired forms—not Minecraft/Roblox art
   copies. Silhouettes must be identifiable with all surface markings removed.
   Organic monsters should **not** be forced into the human rig.

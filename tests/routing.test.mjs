@@ -30,7 +30,7 @@ test('search text is normalized and length-limited', () => {
   assert.equal(readCatalogRoute('?q='+'z'.repeat(200),catalog).query.length,120);
 });
 test('routing round-trip preserves meaningful categories and Unicode search', () => {
-  const input={category:'Monsters',query:'drágon',primary:'Cave',secondary:'Goblin'};
+  const input={category:'Monsters',query:'drágon',primary:'Dragon',secondary:'CR 17+'};
   assert.deepEqual(readCatalogRoute('?'+serializeCatalogRoute(input),catalog),input);
 });
 test('default route omits redundant query parameters', () => {

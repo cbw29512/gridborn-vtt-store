@@ -14,6 +14,12 @@ export function openConcept(item, trigger) {
     const specs = [
       ['Category', item.category], [config.first, item.primary], [config.second, item.secondary],
       ['Size', item.size], ['Grid footprint', item.squares + ' × ' + item.squares + ' squares'],
+      ...(item.sourceRecordId ? [['Source', 'SRD 5.2.1 · page '+item.sourcePage],
+        ['Challenge rating (source)', item.challengeRating],
+        ['Creature type (source)', item.creatureType]] : []),
+      ...(item.category==='Monsters' ? [['Artwork camera', item.artDirection]] : []),
+      ...(item.gender ? [['Character identity', item.gender],
+        ['Design specialty', item.specialty||item.distinguishingGear||'Original concept']] : []),
       ['Animation', item.id === 'ani-forest-wolf'
         ? 'Separate prototype Idle, Move, one-shot Bite and curled Rest states'
         : 'Planned 45-second action showcase; independent state clips are intended for final export'],
@@ -23,7 +29,9 @@ export function openConcept(item, trigger) {
         ? 'Original animated studies exist; not VTT-certified'
         : 'Animated asset not produced; any visible image is a static art study'],
       ['VTT compatibility', 'Not tested in Foundry, Roll20, or other virtual tabletops'],
-      ['Target price', 'USD ' + (item.priceCents / 100).toFixed(2) + ' — not yet for sale'],
+      ['Availability', item.previewArt ?
+        'Original art preview only; proposed USD ' + (item.priceCents / 100).toFixed(2) +
+          ', no checkout available' : 'Concept listing only; no art, animation or purchase available'],
     ];
     nodes.dialogFacts.replaceChildren();
     for (const [term, value] of specs) {
