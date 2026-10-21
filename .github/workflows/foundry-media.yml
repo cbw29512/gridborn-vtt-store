@@ -8,6 +8,8 @@ on:
       - 'assets/studies/cave-goblin.svg'
       - 'src/creature-rigs/**'
       - 'tools/export_demo.py'
+      - 'tools/export_states.py'
+      - 'tools/state_only_spec.py'
       - 'tools/media_cert.py'
       - 'tools/controller_package.py'
       - 'tools/asset_spec.py'
@@ -25,8 +27,13 @@ jobs:
         include:
           - manifest: assets/demos/manifest.json
             id: chr-ftr-human
+            exporter: tools/export_demo.py
           - manifest: assets/demos/cave-goblin-manifest.json
             id: mon-cave-goblin
+            exporter: tools/export_demo.py
+          - manifest: assets/demos/gray-wolf-manifest.json
+            id: ani-forest-wolf
+            exporter: tools/export_states.py
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -40,7 +47,7 @@ jobs:
           command -v ffprobe
       - name: Generate private controller files and verify decoded alpha
         run: |
-          python tools/export_demo.py --certify --controller-package \
+          python "${{ matrix.exporter }}" --certify --controller-package \
             --manifest "${{ matrix.manifest }}" \
             --output-dir "$RUNNER_TEMP/gridborn-private"
       - name: Check four individual clips and no commercial claims
@@ -56,14 +63,24 @@ jobs:
           assert data['purchaseEnabled'] is False
           assert data['vttCompatibility'] == 'untested'
           token = os.environ['TOKEN_ID']
-          assert token in ('mon-cave-goblin', 'chr-ftr-human')
-          durations = ([('idle', 3.6), ('move', 3.6), ('attack', 1.4), ('rest', 6)]
-                       if token == 'mon-cave-goblin'
-                       else [('idle', 3.2), ('move', 3.2), ('attack', 1.4), ('rest', 6)])
-          assert data['attackMs'] == 1400
+          durations_by_id = {
+              'mon-cave-goblin': [('idle', 3.6), ('move', 3.6), ('attack', 1.4), ('rest', 6)],
+              'chr-ftr-human': [('idle', 3.2), ('move', 3.2), ('attack', 1.4), ('rest', 6)],
+              'ani-forest-wolf': [('idle', 3.2), ('move', 2), ('attack', 1.3), ('rest', 4.8)],
+          }
+          stem_by_id = {
+              'mon-cave-goblin': 'cave-goblin',
+              'chr-ftr-human': 'human-fighter',
+              'ani-forest-wolf': 'gray-wolf',
+          }
+          durations = durations_by_id[token]
+          assert data['attackMs'] == (1300 if token == 'ani-forest-wolf' else 1400)
           assert data['clipSource'] == 'independent-svg-states'
+          assert data['stateOnly'] == (token == 'ani-forest-wolf')
           assert set(data['sourceFiles']) == {'idle', 'move', 'attack'}
-          stem = 'cave-goblin' if token == 'mon-cave-goblin' else 'human-fighter'
+          if token == 'ani-forest-wolf':
+              assert data['restSourceFile'] == 'assets/demos/gray-wolf-rest.svg'
+          stem = stem_by_id[token]
           for label in ('idle', 'move', 'attack'):
               assert data['sourceFiles'][label] == 'assets/demos/' + stem + '-' + label + '.svg'
               assert data['independentMotionQA'][label]['distinctSampleFrames'] >= 2
