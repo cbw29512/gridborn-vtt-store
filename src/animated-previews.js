@@ -17,6 +17,20 @@ export const animatedPreviews = Object.freeze({
       rest: 'Rest · lowered sword and gentle breathing (prototype)'
     }),
   }),
+  'mon-dng-skeleton': Object.freeze({
+    still: './assets/studies/skeleton-warrior.svg',
+    idle: './assets/demos/skeleton-warrior-idle.svg',
+    move: './assets/demos/skeleton-warrior-move.svg',
+    action: './assets/demos/skeleton-warrior-attack.svg',
+    rest: './assets/demos/skeleton-warrior-rest.svg',
+    actionDurationMs: 1400,
+    labels: Object.freeze({
+      idle: 'Idle · undead skull and weapon fidgets; no breathing (prototype)',
+      move: 'Move · alternating, jerky skeletal shuffle (prototype)',
+      action: 'Attack · one bone-arm sword strike, then Idle (prototype)',
+      rest: 'Rest · collapsed, inert bones; faint spectral glimmer (prototype)'
+    }),
+  }),
   'mon-cave-spider': Object.freeze({
     still: './assets/studies/giant-cave-spider.svg',
     idle: './assets/demos/giant-cave-spider-idle.svg',
