@@ -76,6 +76,7 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
             page.wait_for_function("(img) => img.complete && img.naturalWidth > 0",
                                    arg=picture.element_handle())
         # Build a real draft bundle; no payment or download entitlement is created.
+        expect(page.locator('a[href="#bundles"]')).to_be_visible()
         assert page.locator("#bundle-templates .bundle-template").count()==4
         page.locator('[data-bundle-template="starter-party"]').click()
         expect(page.locator("#bundle-count")).to_have_text("5 / 25 selected")
