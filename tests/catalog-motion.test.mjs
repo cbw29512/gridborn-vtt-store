@@ -45,6 +45,7 @@ test('Motion begins on catalog cards without Play buttons and stays preview-only
   assert.match(controller,/setTimeout/);
   assert.match(controller,/clearTimeout/);
   assert.match(app,/initializeCatalogMotion\(\)/);
+  assert.match(app,/!state\.query \? Number\(hasCatalogMotion\(b\.id\)\)/, 'Unfiltered store must prioritize real moving studies');
   assert.match(html,/id="catalog-motion-toggle"/);
   assert.match(html,/Idle → Move → Attack → Rest/);
   assert.match(html,/src\/catalog-motion\.css/);
