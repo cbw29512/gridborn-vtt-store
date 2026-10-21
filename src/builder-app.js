@@ -2,6 +2,7 @@ import { PARTS, PALETTES, PRESETS,
   normalizeRecipe, presetToRecipe, toPortableRecipe, fromPortableRecipe,
   variantToRecipe, hasVariantRecipe } from './builder-data.js';
 import { renderRig } from './builder-rig.js';
+import {npcToRecipe,hasNPCRecipe} from './npc-recipes.js';
 const $=id=>document.getElementById(id);
 const DRAFT='gridborn.builder.draft.v1';
 const COLORS=['skin','primary','accent','hair','metal'];
@@ -160,7 +161,10 @@ function events(){
 try{
   controls();events();
   const params=new URLSearchParams(window.location.search),starting=params.get('preset');
-  if(starting&&hasVariantRecipe(starting)){
+  if(starting&&hasNPCRecipe(starting)){
+    apply(npcToRecipe(starting));
+    status('NPC concept loaded · editable preview only; equipment may be simplified');
+  }else if(starting&&hasVariantRecipe(starting)){
     apply(variantToRecipe(starting));
     status('Class concept loaded · preview rig only; customize freely');
   }else if(starting&&Object.hasOwn(PRESETS,starting)){
