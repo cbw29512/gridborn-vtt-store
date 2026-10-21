@@ -21,7 +21,7 @@ const make = (id, category, name, primary, secondary, size, squares, symbol) => 
   animalType: category === 'Animals' ? secondary : null,
   presentation: null,
   previewArt: artStudies[id] || null,
-  priceCents: 299, purchasable: false, animationStatus: animatedPreviews[id] ? 'art-study' : artStudies[id] ? 'static-art-study' : 'not-produced',
+  priceCents: 99, purchasable: false, animationStatus: animatedPreviews[id] ? 'art-study' : artStudies[id] ? 'static-art-study' : 'not-produced',
   artLicenseStatus: 'not-verified',
   source: 'Gridborn original concept',
   challengeRating: null,
