@@ -2,11 +2,11 @@
 import { HERO_VARIANTS } from './hero-variants.js';
 export const PARTS = Object.freeze({
   ancestry: ['Human','Elf','Dwarf','Orc','Goblin','Gnome','Halfling','Skeleton'],
-  outfit: ['Plate armor','Paladin tabard','Leather armor','Rogue leathers','Ranger field gear','Wizard robes','Village clothes'],
+  outfit: ['Plate armor','Paladin tabard','Leather armor','Rogue leathers','Ranger field gear','Bard performance coat','Monk wraps','Druid leaf mantle','Sorcerer regalia','Warlock pact coat','Wizard robes','Village clothes'],
   headgear: ['None','Helmet','Hood','Circlet'],
   hair: ['None','Short','Long','Braided'],
   weapon: ['None','Sword','Axe','Mace','Staff','Bow','Twin daggers'],
-  offhand: ['None','Shield','Spellbook','Lantern'],
+  offhand: ['None','Shield','Spellbook','Lantern','Lute'],
   cape: ['None','Short cape','Long cape']
 });
 export const PALETTES = Object.freeze({
@@ -28,6 +28,11 @@ export const PRESETS = Object.freeze({
   'chr-pal-human': Object.freeze({name:'Human Paladin',ancestry:'Human',outfit:'Paladin tabard',headgear:'Helmet',hair:'Short',weapon:'Sword',offhand:'Shield',cape:'Long cape',palette:'radiant'}),
   'chr-rge-gnome': Object.freeze({name:'Gnome Rogue',ancestry:'Gnome',outfit:'Rogue leathers',headgear:'Hood',hair:'Short',weapon:'Twin daggers',offhand:'None',cape:'Short cape',palette:'shadow'}),
   'chr-rng-elf': Object.freeze({name:'Elven Ranger',ancestry:'Elf',outfit:'Ranger field gear',headgear:'Hood',hair:'Long',weapon:'Bow',offhand:'None',cape:'Short cape',palette:'forest'}),
+  'chr-brd-halfling': Object.freeze({name:'Halfling Bard',ancestry:'Halfling',outfit:'Bard performance coat',headgear:'Circlet',hair:'Braided',weapon:'Sword',offhand:'Lute',cape:'None',palette:'ember'}),
+  'studio-monk-human': Object.freeze({name:'Human Monk',ancestry:'Human',outfit:'Monk wraps',headgear:'None',hair:'Short',weapon:'None',offhand:'None',cape:'None',palette:'radiant'}),
+  'studio-druid-elf': Object.freeze({name:'Elven Druid',ancestry:'Elf',outfit:'Druid leaf mantle',headgear:'None',hair:'Long',weapon:'Staff',offhand:'None',cape:'None',palette:'forest'}),
+  'studio-sorcerer-human': Object.freeze({name:'Human Sorcerer',ancestry:'Human',outfit:'Sorcerer regalia',headgear:'Circlet',hair:'Long',weapon:'Staff',offhand:'None',cape:'None',palette:'shadow'}),
+  'studio-warlock-orc': Object.freeze({name:'Orc Warlock',ancestry:'Orc',outfit:'Warlock pact coat',headgear:'Hood',hair:'Long',weapon:'Staff',offhand:'Spellbook',cape:'None',palette:'bone'}),
   'chr-clr-dwarf': Object.freeze({name:'Dwarven Cleric',ancestry:'Dwarf',outfit:'Plate armor',headgear:'Helmet',hair:'Braided',weapon:'Mace',offhand:'Shield',cape:'Short cape',palette:'village'}),
   'chr-wiz-elf': Object.freeze({name:'Elven Wizard',ancestry:'Elf',outfit:'Wizard robes',headgear:'Hood',hair:'Long',weapon:'Staff',offhand:'Spellbook',cape:'Long cape',palette:'shadow'}),
   'chr-bar-orc': Object.freeze({name:'Orc Barbarian',ancestry:'Orc',outfit:'Leather armor',headgear:'None',hair:'Braided',weapon:'Axe',offhand:'None',cape:'Short cape',palette:'ember'}),

@@ -43,8 +43,8 @@ export const CLASS_ARCHETYPES=Object.freeze([
   ],
   "equipment": {
    "weapon": "Sword",
-   "outfit": "Village clothes",
-   "offhand": "None",
+   "outfit": "Bard performance coat",
+   "offhand": "Lute",
    "headgear": "Circlet"
   },
   "palette": "ember"
@@ -73,7 +73,7 @@ export const CLASS_ARCHETYPES=Object.freeze([
   ],
   "equipment": {
    "weapon": "Staff",
-   "outfit": "Wizard robes",
+   "outfit": "Druid leaf mantle",
    "offhand": "None",
    "headgear": "None"
   },
@@ -88,7 +88,7 @@ export const CLASS_ARCHETYPES=Object.freeze([
   ],
   "equipment": {
    "weapon": "None",
-   "outfit": "Village clothes",
+   "outfit": "Monk wraps",
    "offhand": "None",
    "headgear": "None"
   },
@@ -148,7 +148,7 @@ export const CLASS_ARCHETYPES=Object.freeze([
   ],
   "equipment": {
    "weapon": "Staff",
-   "outfit": "Wizard robes",
+   "outfit": "Sorcerer regalia",
    "offhand": "None",
    "headgear": "None"
   },
@@ -163,7 +163,7 @@ export const CLASS_ARCHETYPES=Object.freeze([
   ],
   "equipment": {
    "weapon": "Staff",
-   "outfit": "Wizard robes",
+   "outfit": "Warlock pact coat",
    "offhand": "Spellbook",
    "headgear": "Hood"
   },
