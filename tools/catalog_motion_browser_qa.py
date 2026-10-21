@@ -56,6 +56,33 @@ def check_catalog_motion(browser,origin,width,screenshots:Path):
         expect(goblin.locator('.product-motion-stage')).to_contain_text('IDLE',timeout=4500)
         expect(goblin.locator('img.product-art')).to_have_attribute(
             'src',re.compile(r'.*assets/demos/cave-goblin-idle\.svg'))
+        # A newly produced Skeleton must autoplay all four real studies.
+        page.locator('#search').fill('Skeleton Warrior')
+        skeleton=page.locator('.product-card[data-motion-id="mon-dng-skeleton"]')
+        expect(skeleton).to_have_count(1)
+        skeleton.scroll_into_view_if_needed()
+        sk_image=skeleton.locator('img.product-art')
+        sk_stage=skeleton.locator('.product-motion-stage')
+        expect(sk_stage).to_contain_text('IDLE',timeout=5000)
+        expect(sk_image).to_have_attribute(
+            'src',re.compile(r'.*skeleton-warrior-idle\\.svg'))
+        if width==1440:
+            expect(sk_stage).to_contain_text('MOVE',timeout=5000)
+            expect(sk_image).to_have_attribute(
+                'src',re.compile(r'.*skeleton-warrior-move\\.svg'))
+            expect(sk_stage).to_contain_text('ATTACK',timeout=5000)
+            expect(sk_stage).to_contain_text('REST',timeout=4000)
+            expect(sk_image).to_have_attribute(
+                'src',re.compile(r'.*skeleton-warrior-rest\\.svg'))
+            page.screenshot(path=str(screenshots/'gridborn-skeleton-rest-catalog.png'))
+        page.get_by_role('button',name='View concept details for Skeleton Warrior').click()
+        for state in ('idle','move','action','rest'):
+            expect(page.locator('#concept-preview-'+state)).to_be_visible()
+        page.locator('#concept-preview-rest').click()
+        expect(page.locator('#concept-preview-image')).to_have_attribute(
+            'src',re.compile(r'.*skeleton-warrior-rest\\.svg'))
+        page.keyboard.press('Escape')
+        expect(page.locator('#preview-dialog')).to_be_hidden()
         # Still-only concepts must never display fake animation claims.
         page.locator('#search').fill('Great White Shark')
         shark=page.locator('.product-card').filter(has=page.get_by_text('Great White Shark',exact=True))
