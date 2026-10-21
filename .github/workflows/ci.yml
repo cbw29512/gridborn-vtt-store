@@ -26,10 +26,12 @@ jobs:
           sys.path.insert(0, str(Path('tools').resolve()))
           from asset_spec import validate_svg
           studies = sorted(Path('assets/studies').glob('*.svg'))
-          assert len(studies) == 7, 'Exactly seven new static studies expected'
-          for item in studies:
+          assert len(studies) >= 7, 'Original concept studies are missing'
+          demos = sorted(Path('assets/demos').glob('*.svg'))
+          assert demos, 'Original animated studies are missing'
+          for item in [*studies, *demos]:
               validate_svg(item)
-          print(f'Validated {len(studies)} original static SVG studies')
+          print(f'Validated {len(studies)} original static studies and {len(demos)} animated SVG studies')
           PY
       - name: Validate Python asset contract
         run: |

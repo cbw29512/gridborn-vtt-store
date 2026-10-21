@@ -37,7 +37,7 @@ test('referenced catalog concepts exist and moving studies are not sale-ready',(
  const byId=new Set(catalog.map(x=>x.id));
  for(const item of all)if(item.catalogId)assert.ok(byId.has(item.catalogId),item.catalogId);
  const moving=all.filter(x=>x.artStatus==='animated-study');
- assert.deepEqual(moving.map(x=>x.id),['chr-ftr-human','mon-cave-goblin']);
+ assert.deepEqual(moving.map(x=>x.id),['chr-ftr-human','mon-cave-goblin','mon-forest-wolf-common']);
  assert.ok(moving.every(x=>x.animationStatus==='prototype'&&!x.commercialRelease));
  assert.ok(all.filter(x=>x.rigFamily.includes('quadruped')||x.rigFamily.includes('arachnid')||
   x.rigFamily.includes('ooze')).every(x=>x.family));

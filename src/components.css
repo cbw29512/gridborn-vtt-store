@@ -100,7 +100,8 @@
 .product-grid[hidden],.empty-state[hidden] {display:none!important;}
 
 /* Per-token static/animated study inside the native accessible details dialog. */
-.concept-preview-panel[hidden],.concept-preview-controls[hidden] {display:none!important;}
+.concept-preview-panel[hidden],.concept-preview-controls[hidden],
+.concept-preview-controls button[hidden] {display:none!important;}
 .concept-preview-panel {margin:16px 0;padding:16px;background:#202e3d;
  border:1px solid #536478;border-radius:10px;text-align:center;}
 .concept-preview-panel img {display:block;width:200px;height:200px;max-width:100%;
