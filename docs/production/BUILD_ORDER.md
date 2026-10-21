@@ -88,3 +88,14 @@ The **Move** state moves alternating sets of four legs and bobs the body;
 **Rest** is an eight-leg folded pose. These need human silhouette reviews,
 loop-seam inspection at 32/64 pixels, licensed asset clearance and proper
 transparent WebM exports before any commercial or VTT compatibility claim.
+
+### Human Paladin — distinct class art and tabard outfit prototype
+
+Human Paladin now has a separate original artwork study with a long ivory
+ceremonial tabard, blue mantle, crest helm, original radial sun insignia,
+ornate shield and sword. The editable humanoid builder adds a distinct
+`Paladin tabard` outfit slot, the `radiant` palette and its own class
+starting recipe. Its tabard keeps the same leg/arm/equipment attachment
+system but changes the character silhouette independently of the Fighter.
+Static artwork is not a certified VTT or animation product. Animated
+Idle/Move/Attack/Rest exports remain future work and all review checks open.

@@ -24,7 +24,7 @@ function cape(r){
  rect(119,101,18,5,tint(p.accent,.26))+'</g>';
 }
 function legs(r,rest=false) {
- const p=r.palette,boots=r.outfit==='Plate armor'?p.metal:dark;
+ const p=r.palette,boots=['Plate armor','Paladin tabard'].includes(r.outfit)?p.metal:dark;
  if(rest) return '<g class="rig-legs rig-legs-rest">'+path('M94 166H162L167 181H89Z',edge)+
    '<g class="rig-leg-left">'+path('M102 174H128L117 197 78 206 67 192 98 184Z',boots)+
      rect(65,193,34,15,edge)+rect(71,197,25,8,p.primary)+rect(73,199,16,3,tint(p.primary,.28))+
@@ -49,14 +49,14 @@ function restSeat(r) {
  rect(147,195,5,16,'#987751')+'</g>';
 }
 function arms(r){
- const p=r.palette,guard=r.outfit==='Plate armor'?p.metal:r.outfit==='Wizard robes'?p.primary:p.skin;
+ const p=r.palette,guard=['Plate armor','Paladin tabard'].includes(r.outfit)?p.metal:r.outfit==='Wizard robes'?p.primary:p.skin;
  return '<g class="rig-arm-left">'+rect(73,108,29,56,edge)+rect(78,112,20,45,guard)+rect(78,142,20,14,p.accent)+rect(80,156,16,13,p.skin)+
  rect(79,114,5,24,tint(guard,.28))+rect(82,158,4,7,tint(p.skin,.24))+'</g>'+
  '<g class="rig-arm-right">'+rect(154,108,29,56,edge)+rect(159,112,20,45,guard)+rect(160,142,18,14,p.accent)+rect(160,156,17,13,p.skin)+
  rect(160,114,5,24,tint(guard,.26))+rect(162,158,4,8,tint(p.skin,.25))+'</g>';
 }
 function torso(r){
- const p=r.palette,robe=r.outfit==='Wizard robes',village=r.outfit==='Village clothes',plate=r.outfit==='Plate armor';
+ const p=r.palette,robe=r.outfit==='Wizard robes',village=r.outfit==='Village clothes',plate=['Plate armor','Paladin tabard'].includes(r.outfit),oath=r.outfit==='Paladin tabard';
  let body=rect(89,101,80,65,edge)+rect(94,105,70,55,robe?p.primary:village?'#e4d2ae':p.primary);
  if(robe)body+=path('M101 105H155L174 172H82Z',p.primary)+
  path('M99 112H107L92 161H84Z',tint(p.primary,.24))+
@@ -81,6 +81,17 @@ function torso(r){
  rect(112,114,7,29,p.accent)+rect(139,114,7,29,p.accent)+
  rect(108,145,42,3,tint(p.accent,.3));
  body+=rect(94,153,70,12,edge)+rect(99,155,60,7,p.accent)+rect(123,151,12,15,p.metal)+rect(127,153,4,6,tint(p.metal,.49));
+ if(oath){
+   const sun='<g class="rig-oath-symbol">'+
+     rect(124,130,10,10,p.accent)+rect(127,127,4,16,tint(p.accent,.43))+
+     rect(121,133,16,4,tint(p.accent,.2))+'</g>';
+   body+='<g class="rig-paladin-tabard">'+
+     path('M109 143H148L158 199 135 217 127 209 116 220 101 205Z',edge)+
+     path('M114 146H144L151 196 135 207 127 200 117 211 108 200Z',p.primary)+
+     path('M116 151H121L116 193 110 201Z',tint(p.primary,.38))+
+     path('M139 151H145L151 195 141 203Z',tint(p.primary,-.19))+
+     line(129,160,129,200,p.accent,4)+sun+'</g>';
+ }
  return '<g class="rig-torso">'+body+'</g>';
 }
 function face(r){

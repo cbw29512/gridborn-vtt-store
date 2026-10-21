@@ -11,11 +11,17 @@ def check_builder(browser,origin,width,screenshots:Path):
         page.on("pageerror",lambda error: errors.append(str(error)))
         page.goto(origin+"builder.html",wait_until="load")
         expect(page.locator("#builder-title")).to_contain_text("Build someone")
-        assert page.locator("#builder-presets button").count()==7
+        assert page.locator("#builder-presets button").count()==8
         assert page.locator("#builder-parts select").count()==7
-        assert page.locator("#builder-palettes button").count()==6
+        assert page.locator("#builder-palettes button").count()==7
         assert page.locator("#builder-avatar svg").count()==1
         expect(page.locator("#builder-summary")).to_contain_text("Human")
+        page.locator('[data-preset="chr-pal-human"]').click()
+        expect(page.locator("#builder-summary")).to_contain_text("Paladin")
+        expect(page.locator("#part-outfit")).to_have_value("Paladin tabard")
+        expect(page.locator(".rig-paladin-tabard")).to_have_count(1)
+        expect(page.locator(".rig-oath-symbol")).to_have_count(1)
+        expect(page.locator("#part-weapon")).to_have_value("Sword")
         page.locator('[data-preset="mon-cave-goblin"]').click()
         expect(page.locator("#builder-summary")).to_contain_text("Goblin")
         page.locator("#part-weapon").select_option("Bow")

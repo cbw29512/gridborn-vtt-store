@@ -1,7 +1,7 @@
 /** Gridborn shared editable rig contract — entirely local, no checkout. */
 export const PARTS = Object.freeze({
   ancestry: ['Human','Elf','Dwarf','Orc','Goblin','Skeleton'],
-  outfit: ['Plate armor','Leather armor','Wizard robes','Village clothes'],
+  outfit: ['Plate armor','Paladin tabard','Leather armor','Wizard robes','Village clothes'],
   headgear: ['None','Helmet','Hood','Circlet'],
   hair: ['None','Short','Long','Braided'],
   weapon: ['None','Sword','Axe','Mace','Staff','Bow'],
@@ -14,6 +14,7 @@ export const PALETTES = Object.freeze({
   ember: { label:'Ember warrior', skin:'#87a66c',primary:'#944b40',accent:'#e6aa61',hair:'#322a31',metal:'#bfc7c8' },
   shadow: { label:'Shadow wanderer', skin:'#c9957d',primary:'#594d7c',accent:'#bba4e1',hair:'#221e31',metal:'#9eacc1' },
   village: { label:'Village traveler', skin:'#d9a27a',primary:'#93744c',accent:'#ead29c',hair:'#614331',metal:'#a1aeb4' },
+  radiant: { label:'Ivory oathkeeper', skin:'#dbab85',primary:'#ded5bb',accent:'#e5b96d',hair:'#68483b',metal:'#c7d2d9' },
   bone: { label:'Undead legion', skin:'#e1dcc3',primary:'#635b72',accent:'#c8a36b',hair:'#25232b',metal:'#9ea7aa' }
 });
 export const DEFAULT_RECIPE = Object.freeze({
@@ -23,6 +24,7 @@ export const DEFAULT_RECIPE = Object.freeze({
 });
 export const PRESETS = Object.freeze({
   'chr-ftr-human': Object.freeze({name:'Human Fighter',ancestry:'Human',outfit:'Plate armor',headgear:'Helmet',hair:'Short',weapon:'Sword',offhand:'Shield',cape:'Short cape',palette:'royal'}),
+  'chr-pal-human': Object.freeze({name:'Human Paladin',ancestry:'Human',outfit:'Paladin tabard',headgear:'Helmet',hair:'Short',weapon:'Sword',offhand:'Shield',cape:'Long cape',palette:'radiant'}),
   'chr-clr-dwarf': Object.freeze({name:'Dwarven Cleric',ancestry:'Dwarf',outfit:'Plate armor',headgear:'Helmet',hair:'Braided',weapon:'Mace',offhand:'Shield',cape:'Short cape',palette:'village'}),
   'chr-wiz-elf': Object.freeze({name:'Elven Wizard',ancestry:'Elf',outfit:'Wizard robes',headgear:'Hood',hair:'Long',weapon:'Staff',offhand:'Spellbook',cape:'Long cape',palette:'shadow'}),
   'chr-bar-orc': Object.freeze({name:'Orc Barbarian',ancestry:'Orc',outfit:'Leather armor',headgear:'None',hair:'Braided',weapon:'Axe',offhand:'None',cape:'Short cape',palette:'ember'}),
