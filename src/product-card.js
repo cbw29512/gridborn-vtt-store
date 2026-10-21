@@ -1,4 +1,5 @@
 import { openConcept } from './concept-dialog.js';
+import { PRESETS } from './builder-data.js';
 
 export function makeCard(item) {
   try {
@@ -44,6 +45,14 @@ export function makeCard(item) {
     details.textContent = 'View concept details';
     details.setAttribute('aria-label', 'View concept details for ' + item.name);
     details.addEventListener('click', () => openConcept(item, details));
+    if (Object.hasOwn(PRESETS,item.id)) {
+      const personalize = document.createElement('a');
+      personalize.href = './builder.html?preset=' + encodeURIComponent(item.id);
+      personalize.className = 'customize-link';
+      personalize.textContent = 'Customize this look ✦';
+      personalize.setAttribute('aria-label','Customize ' + item.name + ' in the builder');
+      body.append(personalize);
+    }
     foot.append(price, availability); body.append(type, name, meta, details, foot); card.append(visual, body);
     return card;
   } catch (error) { console.error('Unable to render token preview', item.id, error); return null; }

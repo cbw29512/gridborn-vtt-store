@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="./src/layout.css" />
   <link rel="stylesheet" href="./src/components.css" />
   <link rel="stylesheet" href="./src/hero.css" />
+  <link rel="stylesheet" href="./src/chooser.css" />
   <script src="./src/app.js" type="module"></script>
 </head>
 <body>
@@ -34,7 +35,8 @@
       <span>GRID<span class="brand-accent">BORN</span></span><span class="brand-tagline">ANIMATED VTT TOKENS</span>
     </a>
     <nav class="top-nav" aria-label="Primary navigation">
-      <a href="#catalog">Browse tokens</a>
+      <a href="#catalog">Browse premade</a>
+      <a href="./builder.html" class="nav-builder-link">Make your own ✦</a>
       <a href="#how-it-works">How it works</a>
       <a href="#faq">FAQ</a>
       <span class="status-pill">Store preview</span>
@@ -48,7 +50,8 @@
         <p class="hero-lede">Gridborn brings movement to virtual tabletop encounters with animated fantasy tokens for <strong>heroes, monsters, NPCs, and animals.</strong> Keep the map you love. Bring the characters to life.</p>
         <div class="hero-actions">
           <a class="primary-action" href="#live-demo">See static vs. animated <span aria-hidden="true">↗</span></a>
-          <a class="hero-secondary-action" href="#catalog">Browse token concepts <span aria-hidden="true">→</span></a>
+          <a class="hero-secondary-action" href="#catalog">Browse premade <span aria-hidden="true">→</span></a>
+          <a class="hero-builder-link" href="./builder.html">Build your own token <span aria-hidden="true">✦</span></a>
         </div>
         <div class="hero-steps" aria-label="How Gridborn helps your game">
           <span>YOUR VTT MAP</span><span aria-hidden="true">+</span><span>ANIMATED TOKENS</span><span aria-hidden="true">=</span><strong>LIVING ENCOUNTERS</strong>
@@ -94,6 +97,41 @@
           </div>
         </div>
       </div>
+    </section>
+    <section class="path-section shell" aria-labelledby="paths-title">
+      <div class="path-heading">
+        <div><p class="eyebrow">TWO WAYS TO BRING YOUR TABLE TO LIFE</p><h2 id="paths-title">Choose your adventure.</h2></div>
+        <p>A ready-made creature in seconds or a unique character you've built block by block. Every token starts with the same Gridborn design system.</p>
+      </div>
+      <div class="path-cards">
+        <a class="path-card path-premade" href="#catalog">
+          <div class="path-card-art" aria-hidden="true">
+            <img src="./assets/studies/elven-wizard.svg" alt="" width="135" height="135" loading="lazy" decoding="async"/>
+            <img src="./assets/studies/skeleton-warrior.svg" alt="" width="135" height="135" loading="lazy" decoding="async"/>
+            <img src="./assets/studies/village-innkeeper.svg" alt="" width="135" height="135" loading="lazy" decoding="async"/>
+          </div>
+          <div class="path-card-body">
+            <span class="path-overline">01 / READY WHEN YOU ARE</span>
+            <h3>Browse premade tokens</h3>
+            <p>Heroes, townsfolk, beasts, and monsters for encounters that need life right now.</p>
+            <span class="path-card-cta">Explore the collection <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+        <a class="path-card path-custom" href="./builder.html">
+          <div class="path-card-art path-card-custom-art" aria-hidden="true">
+            <img src="./assets/studies/orc-barbarian.svg" alt="" width="150" height="150" loading="lazy" decoding="async"/>
+            <span class="path-connector">+</span>
+            <span class="path-blocks"><i></i><i></i><i></i><i></i></span>
+          </div>
+          <div class="path-card-body">
+            <span class="path-overline">02 / MAKE IT YOUR OWN</span>
+            <h3>Build a living character</h3>
+            <p>Swap body type, gear, weapons, and colors. Preview four animations and save your design.</p>
+            <span class="path-card-cta">Open character builder <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+      </div>
+      <p class="path-disclaimer">Early product preview: premade assets aren't for sale. The builder saves designs and watermarked PNG studies, not VTT-ready animated downloads.</p>
     </section>
     <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
       <div class="shell">

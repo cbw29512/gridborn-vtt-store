@@ -1,0 +1,64 @@
+"""Real Chrome check for Gridborn modular token builder on three viewports."""
+import logging
+from pathlib import Path
+from playwright.sync_api import expect
+
+LOG=logging.getLogger("gridborn.builder-browser")
+def check_builder(browser,origin,width,screenshots:Path):
+    page=browser.new_page(viewport={"width":width,"height":850},accept_downloads=True)
+    errors=[]
+    try:
+        page.on("pageerror",lambda error: errors.append(str(error)))
+        page.goto(origin+"builder.html",wait_until="load")
+        expect(page.locator("#builder-title")).to_contain_text("Build someone")
+        assert page.locator("#builder-presets button").count()==6
+        assert page.locator("#builder-parts select").count()==7
+        assert page.locator("#builder-palettes button").count()==6
+        assert page.locator("#builder-avatar svg").count()==1
+        expect(page.locator("#builder-summary")).to_contain_text("Human")
+        page.locator('[data-preset="mon-cave-goblin"]').click()
+        expect(page.locator("#builder-summary")).to_contain_text("Goblin")
+        page.locator("#part-weapon").select_option("Bow")
+        assert page.locator("#part-weapon").input_value()=="Bow"
+        assert page.locator("#builder-avatar svg").count()==1
+        page.locator('[data-palette="shadow"]').click()
+        expect(page.locator('[data-palette="shadow"]')).to_have_attribute("aria-pressed","true")
+        page.locator('[data-mode="move"]').click()
+        expect(page.locator("#builder-avatar svg")).to_have_class("rig-image mode-move rig-animated")
+        page.locator('[data-mode="attack"]').click()
+        expect(page.locator('[data-mode="attack"]')).to_have_attribute("aria-pressed","true")
+        page.locator('[data-bg="light"]').click()
+        assert page.locator("#builder-stage").get_attribute("data-background")=="light"
+        page.locator("#build-name").fill("My Goblin Captain")
+        page.locator("#build-name").press("Tab")
+        with page.expect_download() as record:
+            page.locator("#download-recipe").click()
+        import json
+        saved=json.loads(Path(record.value.path()).read_text(encoding="utf-8"))
+        assert saved["name"]=="My Goblin Captain"
+        assert saved["weapon"]=="Bow"
+        assert saved["palette"]["primary"]=="#594d7c"
+        page.locator("#builder-reset").click()
+        expect(page.locator("#builder-summary")).to_contain_text("Human")
+        page.locator("#import-recipe").set_input_files({
+            "name":"hero.json","mimeType":"application/json",
+            "buffer":json.dumps(saved).encode("utf-8")})
+        expect(page.locator("#build-name")).to_have_value("My Goblin Captain")
+        expect(page.locator("#part-weapon")).to_have_value("Bow")
+        page.reload(wait_until="load")
+        expect(page.locator("#build-name")).to_have_value("My Goblin Captain")
+        with page.expect_download() as preview:
+            page.locator("#download-png").click()
+        asset=Path(preview.value.path()).read_bytes()
+        assert asset[:8]==b"\x89PNG\r\n\x1a\n","PNG preview must encode correctly"
+        assert len(asset)>2500,"Rendered preview image is suspiciously small"
+        overflow=page.evaluate("document.documentElement.scrollWidth-document.documentElement.clientWidth")
+        assert overflow<=1,f"Builder horizontal overflow at {width}px: {overflow}"
+        page.screenshot(path=str(screenshots/f"gridborn-builder-{width}px.png"),full_page=True)
+        assert not errors,"Builder JS failures: "+";".join(errors)
+        LOG.info("PASS builder Chromium at %spx: presets/parts/modes/save/load/png",width)
+    except Exception:
+        LOG.exception("Gridborn builder QA failed at %spx",width)
+        raise
+    finally:
+        page.close()
