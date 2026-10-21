@@ -10,6 +10,7 @@ const state = { ...initialState };
 const nodes = {};
 const byId = id => document.getElementById(id);
 let visibleCount = 8;
+const pageSize=()=>state.category==='Monsters'?24:8;
 function populateSelect(node, values, allText, selected = '') {
   try {
     node.replaceChildren();
@@ -41,14 +42,14 @@ function updateFilters() {
 function renderResults() {
   try {
     const filtered = filterCatalog(catalog, state);
-    const ordered = state.category === 'All'
-      ? [...filtered].sort((a, b) => Number(Boolean(b.previewArt)) - Number(Boolean(a.previewArt)))
-      : filtered;
+    const ordered = [...filtered].sort((a,b)=>
+      Number(Boolean(b.previewArt))-Number(Boolean(a.previewArt)) ||
+      (state.category==='Monsters' ? a.name.localeCompare(b.name) : 0));
     nodes.results.replaceChildren(...ordered.slice(0, visibleCount).map(makeCard).filter(Boolean));
     nodes.empty.hidden = filtered.length > 0;
     nodes.results.hidden = filtered.length === 0;
     nodes.more.hidden = filtered.length <= visibleCount;
-    nodes.more.textContent = 'Show more concepts (' + (filtered.length - visibleCount) + ' remaining)';
+    nodes.more.textContent = 'Show more creatures (' + (filtered.length - visibleCount) + ' remaining)';
     nodes.summary.textContent = filtered.length + (filtered.length === 1 ? ' result found' : ' results found');
     nodes.caption.textContent = [state.category === 'All' ? 'All categories' : state.category,
       state.primary, state.secondary].filter(Boolean).join(' / ');
@@ -65,7 +66,7 @@ function resetFilters() {
     const currentCategory = state.category;
     Object.assign(state, { ...initialState, category: currentCategory });
     nodes.search.value = ''; nodes.category.value = state.category;
-    visibleCount = 8; updateFilters(); renderResults(); writeCatalogRoute(state);
+    visibleCount = pageSize(); updateFilters(); renderResults(); writeCatalogRoute(state);
   } catch (error) { console.error('Unable to reset catalog filters', error); }
 }
 
@@ -88,34 +89,35 @@ function initialize() {
     for (const label of Object.keys(categoryConfig)) nodes.category.add(new Option(label, label));
     nodes.category.value = state.category;
     nodes.category.addEventListener('change', () => {
-      try { state.category = nodes.category.value; state.primary = ''; state.secondary = ''; visibleCount = 8; updateFilters(); renderResults(); writeCatalogRoute(state); }
+      try { state.category = nodes.category.value; state.primary = ''; state.secondary = ''; visibleCount = pageSize(); updateFilters(); renderResults(); writeCatalogRoute(state); }
       catch (error) { console.error('Category change failed', error); }
     });
     nodes.primary.addEventListener('change', () => {
-      try { state.primary = nodes.primary.value; state.secondary = ''; visibleCount = 8; updateFilters(); renderResults(); writeCatalogRoute(state); }
+      try { state.primary = nodes.primary.value; state.secondary = ''; visibleCount = pageSize(); updateFilters(); renderResults(); writeCatalogRoute(state); }
       catch (error) { console.error('Primary filter change failed', error); }
     });
     nodes.secondary.addEventListener('change', () => {
-      try { state.secondary = nodes.secondary.value; visibleCount = 8; renderResults(); writeCatalogRoute(state); }
+      try { state.secondary = nodes.secondary.value; visibleCount = pageSize(); renderResults(); writeCatalogRoute(state); }
       catch (error) { console.error('Secondary filter change failed', error); }
     });
     nodes.search.addEventListener('input', () => {
-      try { state.query = nodes.search.value; visibleCount = 8; renderResults(); writeCatalogRoute(state); }
+      try { state.query = nodes.search.value; visibleCount = pageSize(); renderResults(); writeCatalogRoute(state); }
       catch (error) { console.error('Search update failed', error); }
     });
     connectCatalogNavigation(state, catalog, () => {
       try {
         nodes.search.value = state.query; nodes.category.value = state.category;
-        visibleCount = 8; updateFilters(); renderResults();
+        visibleCount = pageSize(); updateFilters(); renderResults();
       } catch (error) { console.error('Unable to refresh routed catalog', error); }
     });
     nodes.more.addEventListener('click', () => {
-      try { visibleCount += 8; renderResults(); }
+      try { visibleCount += pageSize(); renderResults(); }
       catch (error) { console.error('Could not show more token concepts', error); }
     });
     nodes.clear.addEventListener('click', resetFilters);
     byId('empty-reset').addEventListener('click', resetFilters);
     nodes.search.value = state.query;
+    visibleCount=pageSize();
     updateFilters(); renderResults(); initializeDemo();
   } catch (error) {
     console.error('Storefront failed to initialize', error);

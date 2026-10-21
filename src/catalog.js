@@ -5,6 +5,7 @@
  */
 import { artStudies } from './art-studies.js';
 import { animatedPreviews } from './animated-previews.js';
+import { monsterSRD } from './monster-srd.js';
 
 const make = (id, category, name, primary, secondary, size, squares, symbol) => ({
   id, category, name, primary, secondary, size, squares, symbol,
@@ -19,8 +20,12 @@ const make = (id, category, name, primary, secondary, size, squares, symbol) => 
   previewArt: artStudies[id] || null,
   priceCents: 299, purchasable: false, animationStatus: animatedPreviews[id] ? 'art-study' : artStudies[id] ? 'static-art-study' : 'not-produced',
   artLicenseStatus: 'not-verified',
+  source: 'Gridborn original concept',
+  challengeRating: null,
+  artDirection: category === 'Monsters' || category === 'Animals'
+    ? 'Three-quarter side/profile view targeted' : 'Three-quarter tabletop view targeted',
 });
-export const catalog = [
+const starterCatalog = [
   make('chr-wiz-elf','Characters','Elven Wizard','Elf','Wizard','Medium',1,'✧'),
   make('chr-bar-orc','Characters','Orc Barbarian','Orc','Barbarian','Medium',1,'⚔'),
   make('chr-ftr-human','Characters','Human Fighter','Human','Fighter','Medium',1,'⚒'),
@@ -57,9 +62,72 @@ export const catalog = [
   make('ani-arctic-polar','Animals','Polar Bear','Arctic','Bears','Large',2,'♜'),
 ];
 
+/** One SRD name = one discoverable card. Existing exact-name Gridborn studies
+ * retain their stable IDs; flavor variants remain separate original concepts.
+ * Listing an SRD name does not imply artwork exists.
+ */
+const FAMILIES=Object.freeze({
+  Aberration:'✧',Beast:'♣',Celestial:'☼',Construct:'⛨',Dragon:'♜',
+  Elemental:'◈',Fey:'❀',Fiend:'♠',Giant:'♜',Humanoid:'⚔',
+  Monstrosity:'✣',Ooze:'◉',Plant:'♣',
+  'Swarm of Tiny Beasts':'≋','Swarm of Tiny Undead':'≋',Undead:'☠'
+});
+export function monsterFamily(type) {
+  return String(type).split(' (')[0];
+}
+export function challengeBand(cr) {
+  const text=String(cr).trim();
+  const number=text.includes('/')?Number(text.split('/')[0])/Number(text.split('/')[1]):Number(text);
+  if (!Number.isFinite(number)||number<0) throw new Error('Invalid source CR: '+cr);
+  if(number<=0.5)return 'CR 0–½';
+  if(number<=4)return 'CR 1–4';
+  if(number<=10)return 'CR 5–10';
+  if(number<=16)return 'CR 11–16';
+  return 'CR 17+';
+}
+const originalMonsters=starterCatalog.filter(item=>item.category==='Monsters');
+const originalsByName=new Map(originalMonsters.map(item=>[item.name.toLocaleLowerCase(),item]));
+const matchedOriginals=new Set();
+const indexedMonsters=monsterSRD.map(source=>{
+  const original=originalsByName.get(source.name.toLocaleLowerCase());
+  const family=monsterFamily(source.type),band=challengeBand(source.cr);
+  if (!Object.hasOwn(FAMILIES,family)) throw new Error('Unsupported monster family: '+family);
+  if(original) matchedOriginals.add(original.id);
+  const item=original??make('mon-'+source.id,'Monsters',source.name,family,band,
+    source.size,source.size==='Gargantuan'?4:source.size==='Huge'?3:source.size==='Large'?2:1,FAMILIES[family]);
+  return {
+    ...item, primary:family,secondary:band,creatureType:source.type,
+    challengeRating:source.cr,source:'SRD 5.2.1',sourcePage:source.page,
+    sourceRecordId:source.id,
+    // Unchanged source portrait is never assumed to be the SRD's own image.
+    artDirection:'Three-quarter side/profile view targeted'
+  };
+});
+const ORIGINAL_MONSTER_FAMILIES=Object.freeze({
+ 'mon-cave-goblin':'Fey','mon-cave-ogre':'Giant','mon-cave-spider':'Beast',
+ 'mon-dng-skeleton':'Undead','mon-dng-armor':'Construct',
+ 'mon-swamp-lizard':'Humanoid','mon-forest-wolf':'Beast','mon-mtn-troll':'Giant'
+});
+const originalVariants=originalMonsters.filter(item=>!matchedOriginals.has(item.id)).map(item=>({
+ ...item,primary:ORIGINAL_MONSTER_FAMILIES[item.id]||'Monstrosity',
+ secondary:'Unrated concept',creatureType:ORIGINAL_MONSTER_FAMILIES[item.id]||'Monstrosity',
+ location:item.primary,challengeRating:null,source:'Gridborn original variant',
+ artDirection:'Three-quarter side/profile view targeted'
+}));
+export const catalog = Object.freeze([
+ ...starterCatalog.filter(item=>item.category!=='Monsters'),
+ ...indexedMonsters, ...originalVariants
+]);
+export const monsterCatalogStats = Object.freeze({
+ srd:monsterSRD.length,
+ originalVariants:originalVariants.length,
+ monsterCards:indexedMonsters.length+originalVariants.length,
+ allCategories:catalog.length
+});
+
 export const categoryConfig = Object.freeze({
   Characters: { first: 'Race', second: 'Class', placeholder: 'Search heroes...' },
   NPCs: { first: 'Race', second: 'Occupation', placeholder: 'Search innkeeper, farmer...' },
-  Monsters: { first: 'Location', second: 'Monster type', placeholder: 'Search goblin, skeleton...' },
+  Monsters: { first: 'Creature family', second: 'Challenge range', placeholder: 'Search dragon, skeleton, wolf, cave...' },
   Animals: { first: 'Habitat', second: 'Animal type', placeholder: 'Search shark, wolf, whale...' },
 });
