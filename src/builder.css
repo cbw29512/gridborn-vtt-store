@@ -84,25 +84,97 @@ background-size:auto,40px 40px,40px 40px,auto}
 .builder-next h2{font-size:clamp(29px,3.7vw,47px);line-height:1.14;margin:15px 0}
 .builder-next p{max-width:600px;margin:0 auto 20px;color:#bec5ce;font-size:13px}
 .builder-text-link{color:#eed199;text-decoration:underline;text-underline-offset:4px;font-size:14px;font-weight:750}
-.rig-figure{transform-origin:128px 139px}
-.rig-arm-right,.rig-weapon{transform-origin:166px 116px}
-.rig-legs{transform-origin:128px 159px}
-.rig-cape{transform-origin:128px 108px}
-.rig-animated.mode-idle .rig-figure,.rig-animated.mode-rest .rig-figure{animation:gb-breathe 2.5s steps(2,end) infinite}
-.rig-animated.mode-idle .rig-cape{animation:gb-cape 3.5s steps(2,end) infinite}
-.rig-animated.mode-move .rig-figure{animation:gb-step .65s steps(2,end) infinite}
-.rig-animated.mode-move .rig-legs{animation:gb-legs .65s steps(2,end) infinite}
-.rig-animated.mode-move .rig-arm-right{animation:gb-swing .65s steps(2,end) infinite}
-.rig-animated.mode-attack .rig-arm-right,.rig-animated.mode-attack .rig-weapon{animation:gb-strike 1s ease-in-out infinite}
-.rig-animated.mode-attack .rig-figure{animation:gb-lunge 1s ease-in-out infinite}
-.rig-animated.mode-rest .rig-arm-right{transform:rotate(19deg)}
-@keyframes gb-breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}}
-@keyframes gb-cape{0%,100%{transform:translateX(0)}50%{transform:translateX(3px)}}
-@keyframes gb-step{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-@keyframes gb-legs{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
-@keyframes gb-swing{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
-@keyframes gb-strike{0%,15%,100%{transform:rotate(0)}40%{transform:rotate(-43deg)}65%{transform:rotate(61deg)}}
-@keyframes gb-lunge{0%,100%{transform:translateY(0)}55%{transform:translate(-3px,-6px)}}
+/* Shared skeletal motion: both legs, both arms and attached gear move independently.
+   Animations belong to the SVG preview, not the exported PNG recipe. */
+.rig-figure{transform-origin:128px 143px;transform-box:view-box}
+.rig-upper,.rig-back{transform-origin:128px 166px;transform-box:view-box}
+.rig-leg-left{transform-origin:111px 164px;transform-box:view-box}
+.rig-leg-right{transform-origin:148px 164px;transform-box:view-box}
+.rig-arm-left,.rig-offhand{transform-origin:92px 116px;transform-box:view-box}
+.rig-arm-right,.rig-weapon{transform-origin:167px 116px;transform-box:view-box}
+.rig-head,.rig-headgear{transform-origin:129px 109px;transform-box:view-box}
+.rig-cape{transform-origin:128px 106px;transform-box:view-box}
+.rig-eyelids{opacity:0}
+.mode-rest .rig-eyelids{opacity:1}
+.mode-rest .rig-upper,.mode-rest .rig-back{transform:translateY(22px)}
+.mode-rest .rig-arm-left,.mode-rest .rig-offhand{transform:rotate(-18deg)}
+.mode-rest .rig-arm-right,.mode-rest .rig-weapon{transform:rotate(27deg)}
+/* Idle is intentionally subtle, so tabletop pieces don't become distracting. */
+.rig-animated.mode-idle .rig-figure{animation:gb-idle-breath 3.4s ease-in-out infinite}
+.rig-animated.mode-idle .rig-cape{animation:gb-idle-cape 4.8s ease-in-out infinite}
+.rig-animated.mode-idle .rig-head,.rig-animated.mode-idle .rig-headgear{
+  animation:gb-idle-head 5.2s ease-in-out infinite}
+.rig-animated.mode-idle .rig-eyelids{animation:gb-blink 6.3s steps(1,end) infinite}
+/* Alternating stride and opposing arm swing, coordinated on a 760ms beat. */
+.rig-animated.mode-move .rig-figure{animation:gb-walk-bob .76s ease-in-out infinite}
+.rig-animated.mode-move .rig-leg-left{animation:gb-left-stride .76s ease-in-out infinite}
+.rig-animated.mode-move .rig-leg-right{animation:gb-right-stride .76s ease-in-out infinite}
+.rig-animated.mode-move .rig-arm-left,.rig-animated.mode-move .rig-offhand{
+  animation:gb-right-stride .76s ease-in-out infinite}
+.rig-animated.mode-move .rig-arm-right,.rig-animated.mode-move .rig-weapon{
+  animation:gb-left-stride .76s ease-in-out infinite}
+.rig-animated.mode-move .rig-cape{animation:gb-walk-cape .76s ease-in-out infinite}
+.rig-animated.mode-move .rig-head,.rig-animated.mode-move .rig-headgear{
+  animation:gb-walk-head .76s ease-in-out infinite}
+/* One deliberate draw-swing-recover sequence; JS returns to Idle on completion. */
+.rig-animated.mode-attack .rig-figure{animation:gb-attack-lunge .94s ease-in-out 1 both}
+.rig-animated.mode-attack .rig-arm-right,.rig-animated.mode-attack .rig-weapon{
+  animation:gb-attack-strike .94s cubic-bezier(.25,.72,.35,1) 1 both}
+.rig-animated.mode-attack .rig-arm-left,.rig-animated.mode-attack .rig-offhand{
+  animation:gb-attack-guard .94s ease-in-out 1 both}
+.rig-animated.mode-attack .rig-leg-left{animation:gb-attack-brace .94s ease-in-out 1 both}
+/* Rest changes the actual silhouette: seated on a stool, feet out and arms relaxed. */
+.rig-animated.mode-rest .rig-upper{animation:gb-seated-breath 4.4s ease-in-out infinite}
+.rig-animated.mode-rest .rig-back{animation:gb-seated-breath 4.4s ease-in-out infinite}
+.rig-animated.mode-rest .rig-head,.rig-animated.mode-rest .rig-headgear{
+  animation:gb-drowsy-head 4.4s ease-in-out infinite}
+.rig-animated.mode-rest .rig-cape{animation:gb-rest-cape 4.4s ease-in-out infinite}
+@keyframes gb-idle-breath{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}}
+@keyframes gb-idle-head{0%,100%{transform:rotate(0)}45%{transform:rotate(2deg)}}
+@keyframes gb-idle-cape{0%,100%{transform:translateX(0)}50%{transform:translateX(3px)}}
+@keyframes gb-blink{0%,46%,49%,100%{opacity:0}47%,48%{opacity:1}}
+@keyframes gb-walk-bob{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-5px)}}
+@keyframes gb-left-stride{
+  0%,100%{transform:rotate(-17deg) translateY(-1px)}
+  50%{transform:rotate(17deg) translateY(2px)}
+}
+@keyframes gb-right-stride{
+  0%,100%{transform:rotate(17deg) translateY(2px)}
+  50%{transform:rotate(-17deg) translateY(-1px)}
+}
+@keyframes gb-walk-cape{
+  0%,100%{transform:translateX(-4px) rotate(-3deg)}
+  50%{transform:translateX(4px) rotate(3deg)}
+}
+@keyframes gb-walk-head{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes gb-attack-lunge{
+  0%,100%{transform:translate(0,0)}
+  23%{transform:translate(4px,2px)}
+  48%{transform:translate(-10px,-6px)}
+  69%{transform:translate(-6px,-3px)}
+}
+@keyframes gb-attack-strike{
+  0%,100%{transform:rotate(0)}
+  23%{transform:rotate(-42deg)}
+  48%{transform:rotate(70deg)}
+  68%{transform:rotate(37deg)}
+}
+@keyframes gb-attack-guard{0%,100%{transform:rotate(0)}48%{transform:rotate(-24deg)}}
+@keyframes gb-attack-brace{0%,100%{transform:rotate(0)}48%{transform:rotate(-10deg)}}
+@keyframes gb-seated-breath{
+  0%,100%{transform:translateY(22px)}
+  50%{transform:translateY(24px)}
+}
+@keyframes gb-drowsy-head{
+  0%,100%{transform:rotate(7deg)}
+  45%{transform:rotate(12deg)}
+}
+@keyframes gb-rest-cape{0%,100%{transform:translateX(0)}50%{transform:translateX(2px)}}
+@media(prefers-reduced-motion:reduce){
+  .rig-animated *{animation:none!important;transition:none!important}
+  .rig-animated.mode-rest .rig-upper,.rig-animated.mode-rest .rig-back{transform:translateY(22px)}
+}
+
 @media(max-width:1000px){.builder-workspace{grid-template-columns:minmax(0,1fr) minmax(0,.94fr)}.preset-grid,.builder-palettes{grid-template-columns:repeat(2,minmax(0,1fr))}.builder-intro-stat{display:none}}
 @media(max-width:780px){.builder-workspace{grid-template-columns:1fr}.builder-preview{position:static;grid-row:1}.builder-intro{padding-top:28px}.builder-stage{height:310px}.preset-grid,.builder-palettes{grid-template-columns:repeat(3,minmax(0,1fr))}.top-nav{gap:13px}}
 @media(max-width:440px){.top-nav{font-size:11px}.builder-alpha{display:none}.builder-editor,.builder-preview{padding:15px}.builder-intro h1{font-size:40px}.preset-grid,.builder-palettes{grid-template-columns:repeat(2,minmax(0,1fr))}.builder-stage{height:267px}.builder-parts-grid{gap:10px}.builder-modes{gap:4px}.builder-modes button{font-size:11px;padding:8px 0}.builder-exports{grid-template-columns:1fr}.builder-reset{grid-column:auto}.animation-heading>span:last-child{display:none}}
