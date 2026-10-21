@@ -108,22 +108,13 @@ test('manual Rest prevents stale Attack timers from overwriting the token', asyn
   assert.match(token.document.texture.src, /rest\.webm$/);
 });
 
-test('quiet Idle, Move and Rest hold indefinitely without ever scheduling a switch', async () => {
+test('quiet Idle, Move and Rest hold indefinitely without timers', async () => {
   const token=tokenFixture();
-  const clock={schedule:()=>{throw new Error('non-attack mode must never advance automatically');},
-               cancel:()=>{}};
-  await configureToken(token,{folder:'worlds/a',attackMs:1400},
-    {user:owner,nonce:'start-idle',clock});
+  const clock={schedule:()=>{throw new Error('Non-attack modes must never advance on a timer');},cancel:()=>{}};
+  await configureToken(token,{folder:'worlds/a',attackMs:1400},{user:owner,nonce:'started-idle',clock});
   for(const mode of ['idle','move','rest']){
-    await playMode(token,mode,{user:owner,nonce:'manual-'+mode,clock});
-    assert.match(token.document.texture.src,new RegExp(mode+'\\.webm
-  assert.equal(shouldResetPlayback({ mode:'attack', nonce:'oldNonce' },
-    'newNonce', 'worlds/a/attack.webm', 'worlds/a/attack.webm'), false);
-  assert.equal(shouldResetPlayback({ mode:'attack', nonce:'newNonce' },
-    'newNonce', 'worlds/a/attack.webm', 'worlds/a/attack.webm'), true);
-  assert.throws(() => nextState('dance', 'abcxyz'));
-});
-));
+    await playMode(token,mode,{user:owner,nonce:'select-'+mode,clock});
+    assert.equal(token.document.texture.src.endsWith(mode+'.webm'),true);
     assert.equal(token.flags.playback.mode,mode);
   }
 });
