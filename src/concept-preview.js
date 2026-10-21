@@ -31,8 +31,9 @@ function updatePreview(next){
       const button=byId('concept-preview-'+key);
       button.setAttribute('aria-pressed',String(next===key));
       if(key==='action'||key==='rest'){
-        const label=key==='action'?'action':'rest';
-        button.textContent=next===key?'Show still':'Play '+label;
+
+        button.textContent=next===key?'Show still':
+          key==='action'?'Play attack once':'Hold rest loop';
       }
     }
     const hasFullStates=typeof current.idle==='string';
