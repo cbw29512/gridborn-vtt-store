@@ -6,10 +6,10 @@
 import {animatedPreviews} from './animated-previews.js';
 
 export const MOTION_STAGES=Object.freeze([
-  Object.freeze({key:'idle',label:'IDLE',durationMs:2400}),
-  Object.freeze({key:'move',label:'MOVE',durationMs:2200}),
+  Object.freeze({key:'idle',label:'IDLE',durationMs:0}),
+  Object.freeze({key:'move',label:'MOVE',durationMs:0}),
   Object.freeze({key:'action',label:'ATTACK',durationMs:0}),
-  Object.freeze({key:'rest',label:'REST',durationMs:2600})
+  Object.freeze({key:'rest',label:'REST',durationMs:2400})
 ]);
 
 export function hasCatalogMotion(itemId){
@@ -57,7 +57,11 @@ export function initializeCatalogMotion(){
    const asset=session.preview[frame.key];
    session.image.setAttribute('src',asset);
    session.stage.textContent=frame.label+' · animated study';
-   const duration=frame.key==='action'?session.preview.actionDurationMs:frame.durationMs;
+   // Match actual Idle/Move source cycles without accelerating their animation.
+   // Rest is previewed briefly to complete all four states within ~9–11 seconds.
+   const duration=frame.key==='action'?session.preview.actionDurationMs:
+     frame.key==='rest'?frame.durationMs:session.preview[frame.key+'DurationMs'];
+   if(!Number.isInteger(duration)||duration<500)throw Error('Invalid state duration for '+session.card.dataset.motionId);
    session.timer=setTimeout(()=>{
      session.timer=null;
      startPhase(session,(index+1)%MOTION_STAGES.length);
