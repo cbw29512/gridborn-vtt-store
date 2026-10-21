@@ -22,7 +22,8 @@ def check_wolf(browser,origin,width,screenshots:Path):
         expect(page.locator('#concept-preview-status')).to_contain_text('four-legged trot')
         assert page.locator('#concept-preview-image').get_attribute('src').endswith('gray-wolf-move.svg')
         picture=page.locator('#concept-preview-image')
-        assert picture.evaluate('(node) => node.complete && node.naturalWidth > 0')
+        page.wait_for_function('(node) => node.complete && node.naturalWidth > 0',
+                               arg=picture.element_handle(), timeout=6000)
         first=picture.screenshot()
         page.wait_for_timeout(380)
         second=picture.screenshot()
@@ -42,7 +43,8 @@ def check_wolf(browser,origin,width,screenshots:Path):
         cleric.click()
         expect(page.locator('#preview-title')).to_have_text('Dwarven Cleric')
         assert page.locator('#concept-preview-image').get_attribute('src').endswith('dwarven-cleric.svg')
-        assert page.locator('#concept-preview-image').evaluate('(node) => node.complete && node.naturalWidth > 0')
+        page.wait_for_function('(node) => node.complete && node.naturalWidth > 0',
+                               arg=page.locator('#concept-preview-image').element_handle(), timeout=6000)
         expect(page.locator('#concept-preview-controls')).to_be_hidden()
         page.screenshot(path=str(screenshots/f'gridborn-dwarf-cleric-{width}px.png'))
         page.keyboard.press('Escape')
