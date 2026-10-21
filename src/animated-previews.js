@@ -3,6 +3,57 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'chr-wiz-elf': Object.freeze({
+    still: './assets/studies/elven-wizard.svg',
+    idle: './assets/demos/elven-wizard-idle.svg',
+    move: './assets/demos/elven-wizard-move.svg',
+    action: './assets/demos/elven-wizard-attack.svg',
+    rest: './assets/demos/elven-wizard-rest.svg',
+    idleDurationMs: 3200,
+    moveDurationMs: 2400,
+    actionDurationMs: 1400,
+    restDurationMs: 4000,
+    labels: Object.freeze({
+      idle: 'Idle · quiet staff glow and floating robe (prototype)',
+      move: 'Move · levitating stride with swaying staff (prototype)',
+      action: 'Attack · one bright arcane staff cast then Idle (prototype)',
+      rest: 'Rest · calm wizard stance with dimmed spell aura (prototype)'
+    })
+  }),
+  'pregen-barbarian-male-3': Object.freeze({
+    still: './assets/studies/orc-axe-vanguard-pregen.svg',
+    idle: './assets/demos/orc-axe-vanguard-pregen-idle.svg',
+    move: './assets/demos/orc-axe-vanguard-pregen-move.svg',
+    action: './assets/demos/orc-axe-vanguard-pregen-attack.svg',
+    rest: './assets/demos/orc-axe-vanguard-pregen-rest.svg',
+    idleDurationMs: 3200,
+    moveDurationMs: 2400,
+    actionDurationMs: 1400,
+    restDurationMs: 4000,
+    labels: Object.freeze({
+      idle: 'Idle · orc pregen hefting a battle axe (prototype)',
+      move: 'Move · heavy alternating boot march (prototype)',
+      action: 'Attack · one overhead axe cleave then Idle (prototype)',
+      rest: 'Rest · lowered axe and steady breathing (prototype)'
+    })
+  }),
+  'mon-dng-armor': Object.freeze({
+    still: './assets/studies/animated-armor.svg',
+    idle: './assets/demos/animated-armor-idle.svg',
+    move: './assets/demos/animated-armor-move.svg',
+    action: './assets/demos/animated-armor-attack.svg',
+    rest: './assets/demos/animated-armor-rest.svg',
+    idleDurationMs: 3200,
+    moveDurationMs: 2400,
+    actionDurationMs: 1400,
+    restDurationMs: 4000,
+    labels: Object.freeze({
+      idle: 'Idle · hollow armor creak and visor glimmer (prototype)',
+      move: 'Move · hard segmented metal footfalls (prototype)',
+      action: 'Attack · single sword cleave then Idle (prototype)',
+      rest: 'Rest · slumped inert armor, no breathing (prototype)'
+    })
+  }),
   'chr-ftr-human': Object.freeze({
     still: './assets/demos/human-fighter-still.svg',
     idle: './assets/demos/human-fighter-idle.svg',

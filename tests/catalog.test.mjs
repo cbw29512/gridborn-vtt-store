@@ -57,11 +57,11 @@ test('the draft visual has explicit preview-only status and no sale status', () 
 
 test('illustrated concepts span every category without claiming completed animations', () => {
   const illustrated = catalog.filter(item => item.previewArt);
-  assert.equal(illustrated.length, 11);
+  assert.equal(illustrated.length, 13);
   for (const category of ['Characters','NPCs','Monsters','Animals'])
     assert.ok(illustrated.some(item => item.category === category), category);
-  assert.equal(illustrated.filter(item => item.animationStatus === 'art-study').length, 5);
-  assert.ok(illustrated.filter(item => !['chr-ftr-human','mon-cave-goblin','ani-forest-wolf','mon-cave-spider','mon-dng-skeleton'].includes(item.id))
+  assert.equal(illustrated.filter(item => item.animationStatus === 'art-study').length, 8);
+  assert.ok(illustrated.filter(item => !['chr-ftr-human','chr-wiz-elf','pregen-barbarian-male-3','mon-dng-armor','mon-cave-goblin','ani-forest-wolf','mon-cave-spider','mon-dng-skeleton'].includes(item.id))
     .every(item => item.animationStatus === 'static-art-study'));
   assert.ok(illustrated.every(item => item.purchasable === false));
 });

@@ -4,6 +4,8 @@
  */
 export const artStudies = Object.freeze({
   'chr-ftr-human': './assets/demos/human-fighter-still.svg',
+  'pregen-barbarian-male-3': './assets/studies/orc-axe-vanguard-pregen.svg',
+  'mon-dng-armor': './assets/studies/animated-armor.svg',
   'chr-wiz-elf': './assets/studies/elven-wizard.svg',
   'chr-clr-dwarf': './assets/studies/dwarven-cleric.svg',
   'chr-pal-human': './assets/studies/human-paladin.svg',
