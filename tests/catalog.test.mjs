@@ -68,7 +68,7 @@ test('a shopper can search all collections without selecting a category', () => 
   const sharks = filterCatalog(catalog, { ...initialState, query: 'shark' });
   assert.deepEqual(sharks.map(item => item.name), ['Great White Shark','Reef Shark']);
   const inn = filterCatalog(catalog, { ...initialState, query: 'innkeeper' });
-  assert.deepEqual(inn.map(item => item.name), ['Village Innkeeper']);
+  assert.deepEqual(inn.map(item => item.name), ['Village Innkeeper','Dwarven Tavern Keeper']);
   assert.deepEqual(availableOptions(catalog, 'All'), { first:[], second:[] });
 });
 test('dependent filter choices only appear after the first selection', () => {
