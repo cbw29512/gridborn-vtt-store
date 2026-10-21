@@ -137,7 +137,7 @@ test('concept pricing is clearly marked as a target, without pretend buy buttons
   assert.doesNotMatch(cards, /Coming soon|button\.disabled = true/);
 });
 
-test('two animation studies have static defaults and explicit modal playback controls', () => {
+test('concept previews keep static defaults and expose supported animation states', () => {
   for (const asset of ['cave-goblin-loop.svg','cave-goblin-rest.svg']) {
     assert.ok(existsSync(new URL('../assets/demos/' + asset, import.meta.url)));
   }
@@ -146,8 +146,8 @@ test('two animation studies have static defaults and explicit modal playback con
   assert.match(dialog, /setConceptPreview\(item\)/);
   assert.match(dialog, /stopConceptPreview\(\)/);
   assert.match(preview, /visibilitychange/);
-  assert.match(preview, /mode === 'action'/);
-  assert.match(preview, /mode === 'rest'/);
+  assert.match(preview, /next==='action'/);
+  assert.match(preview, /next==='rest'/);
   assert.match(html, /id="concept-preview-panel"/);
   assert.match(html, /id="concept-preview-action"/);
   assert.match(html, /id="concept-preview-rest"/);
