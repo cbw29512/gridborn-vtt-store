@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Creature visual identity and motion requirements, not game statistics",
+  "category": "monsters",
+  "total": 12,
+  "assetStandard": "docs/production/ART_BIBLE.md",
+  "assets": [
+    {
+      "id": "mon-cave-goblin",
+      "displayName": "Cave Goblin",
+      "family": "Goblinoid",
+      "size": "Small",
+      "rigFamily": "humanoid-hunched",
+      "catalogId": "mon-cave-goblin",
+      "colors": "olive #72966a / umber #965b36 / amber #e7ba62",
+      "silhouette": "Short hunch, pointed ears, triangular face, long thin limbs",
+      "equipment": "Curved blade, worn buckler, patchwork clothing",
+      "animation": {
+        "idle": "Peeks around, ear twitch and toe tap",
+        "move": "Fast low skitter, grounded feet and leading head",
+        "attack": "One nimble blade swipe, rapid recovery",
+        "rest": "Crouches or curls by gear; never human-style chair rest"
+      },
+      "acceptance": "Must not look like a miniature Orc; pointed ears and bent knees read at 64px",
+      "artStatus": "animated-study",
+      "animationStatus": "prototype",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "mon-raid-orc",
+      "displayName": "Orc Raider",
+      "family": "Humanoid",
+      "size": "Medium",
+      "rigFamily": "humanoid-broad",
+      "catalogId": null,
+      "colors": "dark olive #618966 / iron #879299 / rust #a35442",
+      "silhouette": "Huge shoulders, lower tusks, thick hands and neck",
+      "equipment": "Heavy axe, battered hide, asymmetrical pauldrons",
+      "animation": {
+        "idle": "Chest swell, neck shift, heavy axe settles",
+        "move": "Driving deliberate steps with weapon drag",
+        "attack": "Single brutal overhead cleave with follow-through",
+        "rest": "Slumps against weapon; still subtly alive"
+      },
+      "acceptance": "Orc distinctly larger than Goblin, with long arms and broad chest",
+      "artStatus": "not-produced",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "mon-dng-skeleton",
+      "displayName": "Skeleton Warrior",
+      "family": "Undead",
+      "size": "Medium",
+      "rigFamily": "humanoid-skeletal",
+      "catalogId": "mon-dng-skeleton",
+      "colors": "bone #e3dcc0 / rusty iron #805b58 / cold steel #98a3ae",
+      "silhouette": "Exposed rib cage, thin detached-looking bones, skull with empty eye sockets",
+      "equipment": "Rusty sword, chipped shield, hanging armor straps",
+      "animation": {
+        "idle": "Joint rattle and unnatural micro-adjustment",
+        "move": "Jerky uneven gait and delayed arm swing",
+        "attack": "Loose-limbed sword arc then reset",
+        "rest": "Collapses into inert sitting slump, no breathing"
+      },
+      "acceptance": "Visible ribs/jaw gaps at 64px; cannot resemble pale armored human",
+      "artStatus": "static-study",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 3
+    },
+    {
+      "id": "mon-dng-zombie",
+      "displayName": "Zombie",
+      "family": "Undead",
+      "size": "Medium",
+      "rigFamily": "humanoid-shambling",
+      "catalogId": null,
+      "colors": "sickly #82906c / torn gray #62656a / earth #705848",
+      "silhouette": "Sagged spinal curve, uneven shoulders, heavy tilted head",
+      "equipment": "Torn civilian clothes, bare reaching hand",
+      "animation": {
+        "idle": "Listless sway and arm hang",
+        "move": "One dragging leg, mismatched foot timing",
+        "attack": "Slow grab and reach, then sag",
+        "rest": "Slumps inert with no breathing"
+      },
+      "acceptance": "Do not reuse Fighter gait; unmistakably shambling undead",
+      "artStatus": "not-produced",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 4
+    },
+    {
+      "id": "mon-cave-kobold",
+      "displayName": "Kobold Scout",
+      "family": "Humanoid",
+      "size": "Small",
+      "rigFamily": "reptile-biped",
+      "catalogId": null,
+      "colors": "ochre #b68a50 / red-brown #71443c / ivory #ded3aa",
+      "silhouette": "Angular reptile snout, short legs, narrow tail, clawed feet",
+      "equipment": "Light spear, rough leather, sling pouch",
+      "animation": {
+        "idle": "Tail flick and fast head scan",
+        "move": "Rapid short steps, tail balances motion",
+        "attack": "Single quick spear thrust then reverse step",
+        "rest": "Curled tail, head tucked low"
+      },
+      "acceptance": "Must be unmistakably reptilian, not a Goblin palette swap",
+      "artStatus": "not-produced",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 5
+    },
+    {
+      "id": "mon-forest-wolf-common",
+      "displayName": "Gray Wolf",
+      "family": "Beast",
+      "size": "Medium",
+      "rigFamily": "quadruped-canine",
+      "catalogId": "ani-forest-wolf",
+      "colors": "slate #687f88 / gray fur #b2bfbd / amber #e0b66e",
+      "silhouette": "Four distinct paws, long muzzle, erect ears and carried tail",
+      "equipment": "Fur patches, teeth, subtle nose highlight; no armor",
+      "animation": {
+        "idle": "Breathing flank, ear twitch and tail settling",
+        "move": "Four-beat trot/canter with real paw contact",
+        "attack": "Short lunging bite with front-paw brace",
+        "rest": "Curls with muzzle near forepaws"
+      },
+      "acceptance": "Anatomical four-leg gait required; do not use humanoid rig",
+      "artStatus": "static-related",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 6
+    },
+    {
+      "id": "mon-cave-spider",
+      "displayName": "Giant Cave Spider",
+      "family": "Beast",
+      "size": "Large",
+      "rigFamily": "arachnid-eight-leg",
+      "catalogId": "mon-cave-spider",
+      "colors": "charcoal #343a46 / brown #78614e / amber #c78a4e",
+      "silhouette": "Eight countable segmented legs, abdomen behind cephalothorax, paired fangs",
+      "equipment": "Chitin plating, pedipalps, subtle body markings",
+      "animation": {
+        "idle": "Individual leg repositioning; abdomen rises subtly",
+        "move": "Alternating groups of four legs, grounded tips",
+        "attack": "Fang jab or web-casting variant separately",
+        "rest": "Folded legs and stationary abdomen pulse"
+      },
+      "acceptance": "Eight legs must remain countable from 64 to 256px",
+      "artStatus": "catalog-concept",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 7
+    },
+    {
+      "id": "mon-forest-bugbear",
+      "displayName": "Bugbear Marauder",
+      "family": "Goblinoid",
+      "size": "Medium",
+      "rigFamily": "humanoid-hairy-longarm",
+      "catalogId": null,
+      "colors": "umber #876343 / moss #5b7154 / iron #96969e",
+      "silhouette": "Shaggy long-armed broad hunched humanoid, distinct from Orc",
+      "equipment": "Heavy club/morningstar, rough fur patches, leather satchel",
+      "animation": {
+        "idle": "Shoulder shrug and fur sway",
+        "move": "Long low strides with swinging forearms",
+        "attack": "Single reach-heavy club blow",
+        "rest": "Squats heavily, arms hang far down"
+      },
+      "acceptance": "Long arms and shaggy silhouette carry identity; no generic troll proportions",
+      "artStatus": "not-produced",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 8
+    },
+    {
+      "id": "mon-camp-hobgoblin",
+      "displayName": "Hobgoblin Soldier",
+      "family": "Goblinoid",
+      "size": "Medium",
+      "rigFamily": "humanoid-disciplined",
+      "catalogId": null,
+      "colors": "brick #98473f / dark blue #344e71 / steel #a9b0b7",
+      "silhouette": "Sharp upright martial posture, uniform armor outline, compact helm",
+      "equipment": "Straight spear or longsword, military shield, matching pauldrons",
+      "animation": {
+        "idle": "Small disciplined stance correction",
+        "move": "March-like precise steps; shield forward",
+        "attack": "Controlled thrust or regimented shield strike",
+        "rest": "Seated at attention with spear grounded"
+      },
+      "acceptance": "Reads disciplined armored soldier, not Cave Goblin clone",
+      "artStatus": "not-produced",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 9
+    },
+    {
+      "id": "mon-cave-ogre",
+      "displayName": "Cave Ogre",
+      "family": "Giant",
+      "size": "Large",
+      "rigFamily": "brute-bulky",
+      "catalogId": "mon-cave-ogre",
+      "colors": "stone #8c8374 / hide #745841 / iron #a3a2a2",
+      "silhouette": "Massive belly and shoulders, short thick neck, oversized club",
+      "equipment": "Crude club, torn hide, belt and large hands",
+      "animation": {
+        "idle": "Heavy breath, weight shift and shoulder droop",
+        "move": "Heavy stumping steps with delayed mass",
+        "attack": "Overhead two-hand club slam and recoil",
+        "rest": "Sits heavily with club laid against ground"
+      },
+      "acceptance": "Large size and mass should read at true token footprint",
+      "artStatus": "catalog-concept",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 10
+    },
+    {
+      "id": "mon-mtn-troll",
+      "displayName": "Mountain Troll",
+      "family": "Giant",
+      "size": "Large",
+      "rigFamily": "brute-longlimb",
+      "catalogId": "mon-mtn-troll",
+      "colors": "moss #657a63 / stone #606d63 / bone #d5c9a4",
+      "silhouette": "Tall long limbs, hunched shoulders, extended claws and heavy jaw",
+      "equipment": "Oversized claws, rough skin and torn wrap; no required armor",
+      "animation": {
+        "idle": "Slow flexing shoulders and hand twitch",
+        "move": "Long asymmetric loping gait with heavy contact",
+        "attack": "Broad claw rake and forward recovery",
+        "rest": "Crouches with forearms down, rather than human chair rest"
+      },
+      "acceptance": "Longer armed and narrower than Ogre; do not reuse giant silhouette unchanged",
+      "artStatus": "catalog-concept",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 11
+    },
+    {
+      "id": "mon-dng-gelatinous-cube",
+      "displayName": "Gelatinous Cube",
+      "family": "Ooze",
+      "size": "Large",
+      "rigFamily": "ooze-cube",
+      "catalogId": null,
+      "colors": "teal #74c6bf / pale aqua #c9f0db / amber #d4ba8f",
+      "silhouette": "Translucent cubic volume with edges visible on all four sides",
+      "equipment": "Original trapped debris silhouettes, bubbles and depth shading",
+      "animation": {
+        "idle": "Pulses, internal material drifts",
+        "move": "Glides and shears as a single mass; never legged walking",
+        "attack": "Cubical compression and contact surge; no arms or mouth",
+        "rest": "Settles into low nearly still pulse"
+      },
+      "acceptance": "Must stay cube-shaped; avoid misleading humanoid or beast rig",
+      "artStatus": "not-produced",
+      "animationStatus": "not-produced",
+      "commercialRelease": false,
+      "review": {
+        "silhouette": false,
+        "anatomy": false,
+        "equipment": false,
+        "motion": false,
+        "loop": false,
+        "atTokenSize": false,
+        "vttImport": false,
+        "rights": false
+      },
+      "priority": 12
+    }
+  ]
+}
