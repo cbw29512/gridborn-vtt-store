@@ -156,3 +156,22 @@ receipt distinguishes `independent-svg-states` from the older
 `master-reel-split` Fighter package. Human visual reviews at 32/64px,
 real Foundry/Roll20 imports, original-art rights and secure delivery are
 still required before approving either asset for sale.
+
+
+### Fighter four-state source production (October 21, 2026)
+
+The existing Human Fighter Idle source remains canonical. Its Move SVG now
+uses independently rotating legs, body bob and attached sword/shield motion;
+its Attack SVG is a single 1.4-second wind-up, hit and return to guard.
+Both are generated deterministically from the existing Fighter Idle art
+(`node tools/generate-fighter-states.mjs --check`), and are available in the
+catalog's Idle/Move/Attack/Rest study viewer. The separate automatically
+looping homepage Fighter marketing showcase is unchanged.
+
+The **private** media manifest maps all three actual state SVGs, with
+3.2-second Idle/Move and 1.4-second Attack durations. Private certification
+produces 32/32/14/60-frame Idle/Move/Attack/Rest WebMs with decoded alpha and
+source provenance. This removes the prior 10-second Attack clip that included
+seven seconds of unnecessary recovery. Visual approval, genuine VTT imports,
+rights, license and secure downloads remain outstanding. Commercial status
+remains **preview only**.
