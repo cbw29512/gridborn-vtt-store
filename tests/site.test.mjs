@@ -147,7 +147,7 @@ test('concept previews keep static defaults and expose supported animation state
   assert.match(dialog, /stopConceptPreview\(\)/);
   assert.match(preview, /visibilitychange/);
   assert.match(preview, /next==='action'/);
-  assert.match(preview, /next==='rest'/);
+  assert.match(preview, /key==='rest'/);
   assert.match(html, /id="concept-preview-panel"/);
   assert.match(html, /id="concept-preview-action"/);
   assert.match(html, /id="concept-preview-rest"/);
