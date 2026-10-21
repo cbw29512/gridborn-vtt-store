@@ -131,3 +131,25 @@ receipt and decoded alpha QA verify state sources and frame counts.
 
 Human visual review, rights review, and real Foundry/Roll20 imports are
 independent release blockers. GitHub does not publish the exported media.
+
+### State-only creature exporter (Gray Wolf)
+
+Some creatures already have standalone Idle/Move/Attack/Rest SVGs and **no**
+45-second master reel. Run the private state-only path directly:
+
+```sh
+node tools/generate-wolf-studies.mjs --check
+python tools/export_states.py --certify --controller-package \
+  --manifest assets/demos/gray-wolf-manifest.json \
+  --output-dir ../gridborn-private-wolf
+```
+
+The `stateOnly` schema is verified by `tools/state_only_spec.py`.
+The exporter reuses deterministic Chromium seeking, the existing VP9-alpha
+encoder, rendered frame motion/seam inspection, and the Foundry clip
+packaging. This ensures that a wolf doesn't need a fabricated showcase reel
+just to obtain independent real VTT clips.
+
+Gray Wolf draft state durations are 3.2s Idle, 2s Move, 1.3s one-shot
+Attack, and 4.8s Rest. Preview-only, not yet tested in actual VTTs; all
+exports stay out of the public repository and away from checkout.
