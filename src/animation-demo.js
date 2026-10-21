@@ -1,55 +1,69 @@
 /**
- * Human Fighter art-study state:
- * still (default) | action (45s) | rest (6s).
- * Both animations are user initiated and all variants remain concept-only.
+ * Gridborn homepage: an animated Idle loop appears immediately beside
+ * the static BEFORE. Visitors can switch Idle/Rest or pause moving content.
+ * Both assets are development prototypes, not downloadable paid videos.
  */
-const SOURCES = Object.freeze({
-  still: './assets/demos/human-fighter-still.svg',
-  action: './assets/demos/human-fighter-loop.svg',
-  rest: './assets/demos/human-fighter-rest.svg',
+const SOURCES=Object.freeze({
+  still:'./assets/demos/human-fighter-still.svg',
+  idle:'./assets/demos/human-fighter-idle.svg',
+  rest:'./assets/demos/human-fighter-rest.svg',
 });
 
 export function initializeDemo() {
   try {
-    const action = document.getElementById('demo-toggle');
-    const rest = document.getElementById('demo-rest-toggle');
-    const image = document.getElementById('demo-token');
-    const status = document.getElementById('demo-status');
-    if (!action || !rest || !image || !status) throw new Error('Missing fighter preview controls');
+    const idle=document.getElementById('demo-toggle');
+    const rest=document.getElementById('demo-rest-toggle');
+    const pause=document.getElementById('demo-pause');
+    const image=document.getElementById('demo-token');
+    const status=document.getElementById('demo-status');
+    const panel=document.querySelector('.vtt-panel-live');
+    if (!idle||!rest||!pause||!image||!status||!panel)
+      throw new Error('Missing Fighter comparison controls');
 
-    let mode = 'still';
+    let mode='idle';
+    let userPaused=false;
+    let hiddenPaused=false;
+    // Honor system reduced-motion preferences without blocking other users.
+    const reduced=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false;
+    if (reduced) userPaused=true;
 
-    function selectMode(next) {
+    function update() {
       try {
-        if (!Object.prototype.hasOwnProperty.call(SOURCES, next)) {
-          throw new Error('Invalid preview mode');
-        }
-        mode = next;
-        image.src = SOURCES[mode];
-        status.textContent = mode === 'action' ? 'Action animation playing' :
-          mode === 'rest' ? 'Rest animation playing' : 'Press play to see movement';
-        action.setAttribute('aria-pressed', String(mode === 'action'));
-        rest.setAttribute('aria-pressed', String(mode === 'rest'));
-        action.textContent = mode === 'action' ? 'Stop action loop' : 'Play action loop';
-        rest.textContent = mode === 'rest' ? 'Stop rest loop' : 'Play rest loop';
-      } catch (error) { console.error('Unable to set Fighter animation mode', error); }
+        const paused=userPaused||hiddenPaused;
+        const next=paused?SOURCES.still:SOURCES[mode];
+        if(image.getAttribute('src')!==next) image.setAttribute('src',next);
+        idle.setAttribute('aria-pressed',String(mode==='idle'));
+        rest.setAttribute('aria-pressed',String(mode==='rest'));
+        pause.setAttribute('aria-pressed',String(userPaused));
+        pause.textContent=userPaused?'Resume':'Pause';
+        panel.dataset.paused=String(paused);
+        status.textContent=paused?(hiddenPaused?'Paused while tab is hidden':
+          reduced?'Paused · reduced-motion preference':'Paused · choose Resume') :
+          mode==='idle'?'Idle · loops automatically':'Rest · loops continuously';
+      }catch(error){console.error('Unable to update Gridborn animated preview',error);}
     }
-
-    action.addEventListener('click', () => {
-      try { selectMode(mode === 'action' ? 'still' : 'action'); }
-      catch (error) { console.error('Fighter action preview failed', error); }
+    function choose(next){
+      if(next!=='idle'&&next!=='rest')return;
+      mode=next;
+      userPaused=false;
+      update();
+    }
+    idle.addEventListener('click',()=>choose('idle'));
+    rest.addEventListener('click',()=>choose('rest'));
+    pause.addEventListener('click',()=>{userPaused=!userPaused;update();});
+    document.addEventListener('visibilitychange',()=>{
+      hiddenPaused=document.hidden;
+      update();
     });
-    rest.addEventListener('click', () => {
-      try { selectMode(mode === 'rest' ? 'still' : 'rest'); }
-      catch (error) { console.error('Fighter rest preview failed', error); }
+    image.addEventListener('error',()=>{
+      if(image.getAttribute('src')===SOURCES.still){
+        status.textContent='Fighter preview could not load';
+        return;
+      }
+      userPaused=true;
+      update();
+      status.textContent='Animation unavailable · showing still image';
     });
-    document.addEventListener('visibilitychange', () => {
-      try { if (document.hidden && mode !== 'still') selectMode('still'); }
-      catch (error) { console.error('Unable to stop hidden preview', error); }
-    });
-    image.addEventListener('error', () => {
-      try { if (mode !== 'still') selectMode('still'); }
-      catch (error) { console.error('Unable to recover image preview', error); }
-    });
-  } catch (error) { console.error('Animation preview failed to initialize', error); }
+    update();
+  }catch(error){console.error('Animation preview failed to initialize',error);}
 }

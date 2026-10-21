@@ -239,3 +239,20 @@ Reduced-motion preferences retain a static seated silhouette with no animated
 flame. Chromium checks validate actual computed animations, seated anatomy,
 one-shot return, preview asset export, and small phone screen fit. These remain
 **browser studies**, not downloadable certified custom animated WebMs.
+
+## Homepage comparison now loops automatically
+
+The BEFORE preview stays an unmoving static Fighter. The AFTER preview now
+starts directly on an original, three-second-style continuously repeating
+**Idle animation study** (actual cycle: 3.2 seconds, breathing, cloak, sword,
+shield and occasional blink), without requiring the visitor to press Play.
+The illustration itself animates, not just the badge surrounding it.
+Idle and six-second Rest are switchable. A visible Pause/Resume button allows
+visitors to stop all motion; the page pauses the image while the tab is hidden
+and honors reduced-motion preferences.
+
+The original 45-second Idle→Move→Attack→Recovery reel still exists as a private
+technical demo source; it is **not** the product's default loop, because a
+character attacking on its own every 45 seconds is unsuitable for VTT use.
+Real customer download/export certification remains separate from website
+preview animation. No Netlify, Stripe or product-sale status changes.

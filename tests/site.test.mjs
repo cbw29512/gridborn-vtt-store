@@ -74,13 +74,15 @@ test('buyer FAQ does not make unverified compatibility or legal claims', () => {
   assert.match(html, /Checkout and paid downloads are disabled/);
 });
 
-test('action and rest previews stay opt-in, explicit and accessible', () => {
+test('Idle and Rest are switchable looping studies with explicit pause and accessible status', () => {
   assert.match(html, /id="demo-rest-toggle"/);
   assert.match(html, /aria-controls="demo-token"/);
   assert.match(get('assets/demos/human-fighter-rest.svg'), /rest-breathe 6s/);
   assert.match(get('assets/demos/human-fighter-rest.svg'), /prefers-reduced-motion:reduce/);
   const demo = get('src/animation-demo.js');
-  assert.match(demo, /mode === 'rest'/);
+  assert.match(demo, /mode==='idle'/);
+  assert.match(demo, /mode='idle'/);
+  assert.match(demo, /userPaused/);
   assert.match(demo, /visibilitychange/);
   assert.match(demo, /aria-pressed/);
   assert.ok(demo.split('\n').length <= 150);
@@ -148,4 +150,22 @@ test('two animation studies have static defaults and explicit modal playback con
   assert.match(html, /id="concept-preview-action"/);
   assert.match(html, /id="concept-preview-rest"/);
   assert.match(get('src/catalog.js'), /animatedPreviews\[id\]/);
+});
+
+test('hero compares a fixed still token against a continuously looping Idle by default', () => {
+  assert.match(html, /class="vtt-figure vtt-figure-static" src="\.\/assets\/demos\/human-fighter-still\.svg"/);
+  assert.match(html, /id="demo-token"[^>]+src="\.\/assets\/demos\/human-fighter-idle\.svg"/);
+  assert.match(html, /Idle · loops automatically/);
+  assert.match(html, /vtt-loop-badge/);
+  assert.match(html, /id="demo-pause"/);
+  assert.match(html, /id="demo-toggle"[^>]+aria-pressed="true"/);
+  const idle = get('assets/demos/human-fighter-idle.svg');
+  for (const name of ['fighter-breathe','fighter-cloak','fighter-blade','fighter-shield','fighter-blink'])
+    assert.match(idle, new RegExp('animation: '+name+' 3\\.2s|animation: '+name+' 6\\.4s'));
+  assert.match(idle, /infinite/);
+  assert.match(idle, /prefers-reduced-motion:reduce/);
+  assert.match(get('src/animation-demo.js'), /let mode='idle'/);
+  assert.match(get('src/animation-demo.js'), /window\.matchMedia/);
+  assert.match(get('src/animation-demo.js'), /visibilitychange/);
+  assert.match(get('src/animation-demo.js'), /userPaused/);
 });
