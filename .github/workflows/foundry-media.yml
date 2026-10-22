@@ -20,6 +20,7 @@ on:
       - 'assets/studies/halfling-bard.svg'
       - 'assets/studies/human-wildspeaker-druid.svg'
       - 'assets/studies/human-wayfarer-monk.svg'
+      - 'assets/studies/elf-sparkweaver-sorcerer.svg'
       - 'assets/studies/swamp-lizardfolk.svg'
       - 'assets/studies/human-paladin.svg'
       - 'assets/studies/great-white-shark.svg'
@@ -96,6 +97,9 @@ jobs:
           - manifest: assets/demos/human-wayfarer-monk-manifest.json
             id: pregen-monk-male-1
             exporter: tools/export_states.py
+          - manifest: assets/demos/elf-sparkweaver-sorcerer-manifest.json
+            id: pregen-sorcerer-nonbinary-1
+            exporter: tools/export_states.py
           - manifest: assets/demos/swamp-lizardfolk-manifest.json
             id: mon-swamp-lizard
             exporter: tools/export_states.py
@@ -150,6 +154,7 @@ jobs:
               'chr-brd-halfling': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'pregen-druid-female-1': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'pregen-monk-male-1': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
+              'pregen-sorcerer-nonbinary-1': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'mon-swamp-lizard': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'ani-ocean-greatwhite': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
           }
@@ -172,6 +177,7 @@ jobs:
               'chr-brd-halfling': 'halfling-bard',
               'pregen-druid-female-1': 'human-wildspeaker-druid',
               'pregen-monk-male-1': 'human-wayfarer-monk',
+              'pregen-sorcerer-nonbinary-1': 'elf-sparkweaver-sorcerer',
               'mon-swamp-lizard': 'swamp-lizardfolk',
               'ani-ocean-greatwhite': 'great-white-shark',
           }
