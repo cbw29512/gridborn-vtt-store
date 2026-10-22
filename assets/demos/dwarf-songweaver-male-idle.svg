@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="idle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Dwarf Songweaver Bard — original Gridborn stonehall troubadour — idle source animation study</title>
+<desc id="description">Male Dwarf Songweaver in heavy copper-navy performance jerkin, ash-brown square braided beard, gold circlet, side-sheathed sword and physically plucked short-neck eight-course lute. The left fretting hand secures the neck while the right strumming hand arcs over rosette and visible string rows. A separate original amber harmonic rune ring travels toward target. Original noncommercial study.</desc>
+<style>
+.dwarf-bard-core{animation:dwarf-bard-sway 3.2s steps(1,end) infinite}.dwarf-bard-strum-hand{transform-origin:146px 159px;animation:dwarf-bard-light-pick 3.2s steps(1,end) infinite}
+@keyframes dwarf-bard-sway{0%,85%,100%{transform:translate(0,0)}26%{transform:translate(-2px,-2px)}56%{transform:translate(1px,0)}}
+@keyframes dwarf-bard-light-pick{0%,85%,100%{transform:rotate(0)}26%{transform:rotate(8deg)}45%{transform:rotate(-7deg)}56%{transform:rotate(4deg)}}
+@media(prefers-reduced-motion:reduce){.dwarf-bard-core,.dwarf-bard-strum-hand,.dwarf-bard-left-leg,.dwarf-bard-right-leg,.dwarf-bard-strings,.dwarf-bard-rune,.dwarf-bard-lute{animation:none!important}}
+</style>
+<ellipse cx="128" cy="211" rx="69" ry="12" opacity=".43" fill="#1b2327"/>
+<ellipse cx="128" cy="199" rx="75" ry="24" stroke="#d4b180" stroke-width="3" fill="none" opacity=".54"/>
+<g class="dwarf-bard-core">
+ <g class="dwarf-bard-sword" data-weapon="sheathed-sword">
+  <path d="M97 143L75 196L71 211L80 214L88 197L113 148Z" fill="#554849" stroke="#272c38" stroke-width="4"/>
+  <path d="M106 145L79 203" stroke="#c7a375" stroke-width="5" fill="none"/>
+  <path d="M100 141L116 152" stroke="#e0bd87" stroke-width="7" stroke-linecap="round"/>
+  <path d="M102 137L94 131" stroke="#41373c" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="94" cy="129" r="4" fill="#d5c79f"/>
+ </g>
+ <g class="dwarf-bard-coat">
+  <path d="M98 119Q81 140 78 175L83 193L106 183L122 204L142 185L165 201L180 188L159 116Z" fill="#324a59" stroke="#28343e" stroke-width="5"/>
+  <path d="M91 153L88 174L108 176L125 192L146 174L167 182" fill="none" stroke="#d2ad72" stroke-width="4"/>
+  <path d="M96 174L111 166L123 185L137 171L154 182L169 170" fill="none" stroke="#8e8990" stroke-width="3"/>
+ </g>
+ <g class="dwarf-bard-left-leg">
+  <path d="M106 165L132 166L125 194L110 210L90 201L92 183Z" fill="#49555a" stroke="#303f40" stroke-width="4"/>
+  <path d="M91 193L116 199L118 216L77 219L73 209Z" fill="#56473a" stroke="#b99d79" stroke-width="4"/>
+  <path d="M82 209L112 210M84 215L113 215" stroke="#e4c9a1" stroke-width="3"/>
+ </g>
+ <g class="dwarf-bard-right-leg">
+  <path d="M137 166L158 166L172 192L165 209L143 206L137 184Z" fill="#41565a" stroke="#30444a" stroke-width="4"/>
+  <path d="M145 199L167 199L185 212L179 218L145 216Z" fill="#56473a" stroke="#b99d79" stroke-width="4"/>
+  <path d="M153 210L178 212M154 214L181 216" stroke="#e4c9a1" stroke-width="3"/>
+ </g>
+ <g class="dwarf-bard-torso">
+  <path d="M95 116L113 105L151 105L175 125L170 164L145 178L104 169L89 144Z" fill="#5e5761" stroke="#343946" stroke-width="5"/>
+  <path d="M109 113L135 111L149 161L127 171L103 149Z" fill="#af8b68" stroke="#6e594f" stroke-width="3"/>
+  <path d="M110 118L128 135L113 161L100 141Z" fill="#516e75" stroke="#dbc397" stroke-width="3"/>
+  <path d="M144 115L160 133L150 162L128 170L139 136Z" fill="#54767b" stroke="#dbc397" stroke-width="3"/>
+  <path d="M100 150L163 156" stroke="#3f3838" stroke-width="11"/>
+  <path d="M116 152L141 156L145 168L125 173L113 162Z" fill="#dfbf8c" stroke="#6e584a" stroke-width="3"/>
+  <path d="M124 158L139 160L130 167Z" fill="#425d5f" stroke="#988368" stroke-width="2"/>
+  <path d="M110 124L120 140L115 153M142 124L150 139L144 153" stroke="#eed5a6" stroke-width="4" fill="none"/>
+  <path d="M120 146L130 151L140 145" stroke="#caa674" stroke-width="3" fill="none"/>
+ </g>
+ <g class="dwarf-bard-head">
+  <path d="M109 69L121 52L142 51L159 73L157 109L142 121L117 118L104 102Z" fill="#aa836c" stroke="#665149" stroke-width="4"/>
+  <path d="M116 76L132 61L152 80L150 102L136 114L116 107Z" fill="#c49b7b"/>
+  <path d="M107 88L90 81L106 102L114 94M151 88L169 82L156 103L144 95" fill="#bd9880" stroke="#815e48" stroke-width="3"/>
+  <path d="M104 83L103 62L118 46L144 46L158 60L168 85L153 76L144 58L127 61L109 89Z" fill="#544b45" stroke="#353b3b" stroke-width="4"/>
+  <path d="M108 63L123 50L140 50L155 67" stroke="#b5a08a" stroke-width="4" fill="none"/>
+  <path d="M118 88L128 86M141 87L152 89" stroke="#493b37" stroke-width="4"/>
+  <path d="M124 99L138 101" stroke="#98715c" stroke-width="3"/>
+ </g>
+ <g class="dwarf-bard-beard">
+  <path d="M109 95L122 104L134 100L148 101L155 114L149 134L141 149L128 140L112 151L108 132L101 116Z" fill="#9d8175" stroke="#584d4b" stroke-width="4"/>
+  <path d="M109 111L114 132L121 141M146 106L142 130L139 143" stroke="#d3bd9b" stroke-width="5" fill="none"/>
+  <path d="M125 108L127 130L125 137M136 109L134 132L138 143" stroke="#5d5051" stroke-width="3" fill="none"/>
+  <path d="M111 129L125 131L127 138L116 147L108 138ZM133 132L144 128L148 138L140 148L132 138Z" fill="#c1a373" stroke="#604e43" stroke-width="3"/>
+  <path d="M112 106L128 110L145 105" fill="none" stroke="#645452" stroke-width="4"/>
+ </g>
+ <g class="dwarf-bard-circlet">
+  <path d="M109 69L122 58L141 58L156 72" stroke="#e0c68c" stroke-width="5" fill="none"/>
+  <path d="M126 57L132 65L139 58L134 71Z" fill="#82aaad" stroke="#d6c69c" stroke-width="2"/>
+ </g>
+ <g class="dwarf-bard-fretting-arm">
+  <path d="M153 125L176 135L189 120" stroke="#b48f73" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M159 127L176 137" stroke="#496477" stroke-width="13" stroke-linecap="round"/>
+  <path d="M181 115L195 111L203 118L199 131L186 135L179 124Z" fill="#c1a085" stroke="#695b54" stroke-width="3"/>
+  <path d="M186 122L199 122" stroke="#f0d4a9" stroke-width="3"/>
+ </g>
+ <g class="dwarf-bard-pluck-arm">
+  <path d="M104 126L92 151L117 166L145 159" fill="none" stroke="#b48f73" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M96 150L117 165" stroke="#4e6974" stroke-width="13"/>
+ </g>
+ <g class="dwarf-bard-lute" data-instrument="dwarf-eight-course-lute">
+  <!-- Compact dwarf mandora-like lute with physically fretted neck, pegbox, rosette and bridge. -->
+  <path d="M170 154L187 126L201 102L211 86" stroke="#4d3833" stroke-width="20" stroke-linecap="round" fill="none"/>
+  <path d="M171 153L188 127L201 102L210 86" stroke="#be9063" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M210 88L223 81L223 70L234 67" stroke="#654632" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M214 85L227 89M218 77L231 80M221 69L214 64M207 95L215 99M196 108L185 102" stroke="#d9ba8f" stroke-width="5" fill="none"/>
+  <path d="M187 124L200 130M181 132L194 138M176 141L187 148" stroke="#715442" stroke-width="3" fill="none"/>
+  <path d="M117 142Q132 120 158 128Q185 133 188 157Q188 188 157 198Q128 195 115 173Q110 158 117 142Z" fill="#825538" stroke="#49362e" stroke-width="5"/>
+  <path d="M120 143Q137 132 158 134Q181 140 182 159Q184 185 158 192Q130 187 118 170Z" fill="#dcb17c" stroke="#624938" stroke-width="3"/>
+  <path d="M122 155Q133 184 157 189M128 139L150 134M172 143Q181 155 176 176" fill="none" stroke="#f0cb98" stroke-width="3"/>
+  <circle cx="151" cy="161" r="15" fill="#503b35" stroke="#efce99" stroke-width="4"/>
+  <path d="M138 161L164 161M151 148L151 174M143 153L159 169M143 169L159 153" stroke="#cda877" stroke-width="2.4"/>
+  <g class="dwarf-bard-strings" data-instrument-part="eight-courses">
+   <path d="M188 123L141 178M190 119L144 180M192 117L147 181M195 112L151 182M197 110L154 183M199 105L158 184M203 101L161 183M205 97L164 181" stroke="#f4e3bb" stroke-width="1.5" fill="none"/>
+  </g>
+  <path d="M139 178L166 184" stroke="#6a4838" stroke-width="5"/>
+ </g>
+ <g class="dwarf-bard-strum-hand" data-instrument-action="thumb-strum">
+  <path d="M135 154L144 148L153 152L158 162L148 169L138 168L133 162Z" fill="#c5a486" stroke="#715e51" stroke-width="3"/>
+  <path d="M138 159L153 159M141 164L152 165" stroke="#f4dbb4" stroke-width="3"/>
+ </g>
+</g>
+<g class="dwarf-bard-rune" data-spell-effect="stonehall-chord" opacity="0">
+ <circle cx="214" cy="153" r="20" fill="none" stroke="#d9ac6e" stroke-width="5"/>
+ <circle cx="214" cy="153" r="12" fill="none" stroke="#739da0" stroke-width="3"/>
+ <path d="M214 132L214 174M193 153L234 153M199 138L228 168M199 168L228 138" stroke="#f0d4a2" stroke-width="3"/>
+ <path d="M208 149L216 141L221 151L216 162L208 159Z" fill="#d1bb93" stroke="#7d867a" stroke-width="3"/>
+ <path d="M233 138L241 131M234 168L246 176" stroke="#f4d7a4" stroke-width="4" stroke-linecap="round"/>
+</g>
+</svg>
