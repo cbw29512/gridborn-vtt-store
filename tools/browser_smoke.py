@@ -148,6 +148,13 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
         expect(page.locator("#demo-sleep-status")).to_contain_text("paused")
         assert page.locator("#demo-token").get_attribute("src").endswith("human-fighter-still.svg")
         assert page.locator("#demo-sleep-token").get_attribute("src").endswith("human-fighter-sleep-still.svg")
+        # Await both newly assigned static SVGs before comparing stable screenshots.
+        # A src attribute change is synchronous; image decoding/loading is not.
+        for selector in ("#demo-token", "#demo-sleep-token"):
+            page.wait_for_function(
+                "(img) => img.complete && img.naturalWidth > 0",
+                arg=page.locator(selector).element_handle(),
+                timeout=6000)
         fixed_before = page.locator("#demo-sleep-token").screenshot()
         page.wait_for_timeout(250)
         fixed_after = page.locator("#demo-sleep-token").screenshot()
