@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Swamp Lizardfolk — original three-quarter side creature study</title>
+<desc id="description">Reptilian side-profile swamp hunter with long crocodilian snout pointed right, amber eye, ridged dorsal scales, separate thick tapering tail, reverse-jointed legs, reed shield and a jagged long spear. Distinct from humans and armored ogres. Original prototype only.</desc>
+<ellipse cx="127" cy="206" rx="90" ry="12" fill="#09121a" opacity=".38"/>
+<ellipse cx="128" cy="199" rx="101" ry="24" fill="none" stroke="#b99863" stroke-width="3" opacity=".7"/>
+<g class="rig-tail">
+ <path d="M106 155Q65 146 30 157Q20 159 10 144Q9 180 49 186Q83 190 116 176z" fill="#324e42" stroke="#152f32" stroke-width="5"/>
+ <path d="M104 156Q64 153 29 166Q53 177 100 171z" fill="#6f9463"/>
+ <path d="M29 165l-12-15 18 4 9-7 5 12 12-10 5 15 9-9 9 13" fill="#9cab70"/>
+</g>
+<g class="rig-core">
+ <g class="rig-leg-left"><path d="M109 152l25 15-21 29-30-4-10-15z" fill="#405d47" stroke="#1d3b35" stroke-width="4"/><path d="M78 184l36 8-8 15-36-5-13-11z" fill="#566b4d"/><path d="M60 190l-11 8 21 5" stroke="#a8a77a" stroke-width="4"/></g>
+ <g class="rig-leg-right"><path d="M137 158l29 11-8 31-30 1-14-23z" fill="#3e604e" stroke="#1d3c35" stroke-width="4"/><path d="M130 189h35l16 15h-58z" fill="#556c52"/><path d="M172 200l10 7-30-1" stroke="#bab58a" stroke-width="4"/></g>
+ <path d="M91 105Q125 90 164 115l17 51-29 22-43-13-23-39z" fill="#244539" stroke="#123333" stroke-width="5"/>
+ <path d="M101 112Q126 103 155 120l12 39-18 19-35-13-19-30z" fill="#668663"/>
+ <path d="M120 123l21-4 17 27-6 19-23-15z" fill="#a9ae79"/>
+ <path d="M110 150l48 9 4 12-52-11z" fill="#604e3d"/>
+ <path d="M131 157h13v11h-13z" fill="#c9aa71"/>
+ <path d="M107 110l-10-13 13-3 8 11 4-15 13 9 6-13 15 16" fill="#3c6a4d"/>
+ <g class="rig-head">
+  <path d="M111 104Q107 76 129 62Q153 51 177 69l19 23 28 6 13 13-13 17-33 2-30 9-39-22z" fill="#2c5946" stroke="#173a37" stroke-width="5"/>
+  <path d="M120 101l18-28 25-9 23 12 19 26 23 5-9 11-31 3-28 6-30-16z" fill="#75936b"/>
+  <path d="M185 100l25 6 21 2-9 14-35-1z" fill="#a9aa77"/>
+  <path d="M201 114l19 2-7 5-13-3z" fill="#243c3b"/>
+  <path d="M136 84l17-10 17 9-14 13z" fill="#365947"/>
+  <ellipse cx="156" cy="86" rx="5" ry="6" fill="#d7b66a" stroke="#253a35" stroke-width="2"/>
+  <path d="M157 82v7" stroke="#24342f" stroke-width="2"/>
+  <path d="M165 115l39 4-22 8z" fill="#4c6e52"/>
+  <path d="M182 117l4 9 5-9 5 8 4-7" stroke="#f4e8b6" stroke-width="2" fill="none"/>
+  <path d="M105 96l-11-15 18 7-4-18 21 10" fill="#587a55"/>
+ </g>
+ <g class="rig-arm-left"><path d="M98 120l22 13-10 42-25 13-11-22z" fill="#4e765b" stroke="#204037" stroke-width="4"/></g>
+ <g class="rig-arm-right"><path d="M152 118l22 12 19 40-21 19-17-16-7-25z" fill="#5e8462" stroke="#1d4239" stroke-width="4"/></g>
+</g>
+<g class="rig-offhand">
+ <path d="M53 130l45 0 5 44-29 28-24-30z" fill="#36504b" stroke="#d1aa71" stroke-width="4"/>
+ <path d="M61 139h31l3 29-22 25-16-27z" fill="#72856b"/>
+ <path d="M75 136v48M60 157l30 2" stroke="#e7ca8e" stroke-width="4"/>
+ <path d="M60 139l31 34M92 139l-31 34" stroke="#31554c" stroke-width="3"/>
+</g>
+<g class="rig-weapon">
+ <path d="M192 31l7 0-16 171-8-1z" fill="#634d38" stroke="#302c2a" stroke-width="3"/>
+ <path d="M187 16l8-11 7 17-6 24-9-9z" fill="#afbbb1" stroke="#51635c" stroke-width="3"/>
+ <path d="M178 89l15 9-3 14-15-9z" fill="#b39d62"/>
+ <path d="M182 161l11 3-5 20-12-1z" fill="#789070"/>
+</g>
+<g class="rig-effect"><path d="M63 204l-15 7m46-2-10 7" stroke="#92bc9a" stroke-width="3" opacity=".5"/></g>
+</svg>
