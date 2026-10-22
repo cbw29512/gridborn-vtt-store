@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Halfling Bard — original Gridborn lute performer</title>
+<desc id="description">Small halfling performer with curly chestnut hair, wine-red tailored coat, gold embroidered trim, deep green waistcoat and historically inspired pear-bodied lute with bent pegbox, frets and rosette. The two hands visibly fret and pluck. Original prototype art; not for purchase.</desc>
+<ellipse cx="128" cy="210" rx="57" ry="11" fill="#101525" opacity=".47"/>
+<ellipse cx="131" cy="203" rx="72" ry="22" fill="none" stroke="#bb8c62" stroke-width="3" opacity=".58"/>
+<g class="bard-core">
+ <g class="bard-coat-tails">
+  <path d="M89 125Q76 157 72 188L91 200L103 180L117 191L129 179L149 198L165 188L158 131Z" fill="#512c42" stroke="#2e293e" stroke-width="4"/>
+  <path d="M84 153L86 185L100 172M139 154L151 186L160 180" fill="none" stroke="#d3a866" stroke-width="3"/>
+  <path d="M94 167L89 189L105 181M139 174L150 190L155 170" fill="#864353"/>
+ </g>
+ <g class="bard-left-leg">
+  <path d="M103 164L124 164L121 191L113 205L96 198L94 181Z" fill="#515142" stroke="#2d3435" stroke-width="3"/>
+  <path d="M96 194L115 197L113 211L89 215L82 206Z" fill="#3b3030" stroke="#b59b6b" stroke-width="3"/>
+  <path d="M88 207L109 207" stroke="#d2b37c" stroke-width="3"/>
+ </g>
+ <g class="bard-right-leg">
+  <path d="M128 162L146 160L154 187L149 202L133 204L125 185Z" fill="#474b3d" stroke="#2b3733" stroke-width="3"/>
+  <path d="M132 193L151 194L162 207L158 213L134 213Z" fill="#3b3030" stroke="#b59b6b" stroke-width="3"/>
+  <path d="M135 206L154 206" stroke="#d2b37c" stroke-width="3"/>
+ </g>
+ <g class="bard-torso">
+  <path d="M95 122L109 113L140 114L155 125L157 164L144 176L105 173L90 160Z" fill="#683347" stroke="#33283b" stroke-width="4"/>
+  <path d="M109 123L132 121L140 163L123 171L106 157Z" fill="#427060" stroke="#254e4a" stroke-width="3"/>
+  <path d="M108 121L120 143L112 166L96 152Z" fill="#944d55" stroke="#d7a76b" stroke-width="3"/>
+  <path d="M132 119L142 143L139 161L121 173L125 145Z" fill="#9b4d59" stroke="#d7aa6d" stroke-width="3"/>
+  <path d="M103 154L144 160" stroke="#372834" stroke-width="7"/>
+  <rect x="121" y="152" width="12" height="12" rx="2" fill="#d7bd7e" stroke="#5d4943" stroke-width="2"/>
+  <path d="M110 132L117 135M133 135L140 132" stroke="#dfbc85" stroke-width="3"/>
+ </g>
+ <g class="bard-head">
+  <path d="M98 81L106 65L123 61L142 69L151 88L146 110L131 121L107 114L98 100Z" fill="#c99174" stroke="#734e47" stroke-width="3"/>
+  <path d="M104 92L90 85L105 106L111 97M144 90L157 84L146 105L140 96" fill="#dda387" stroke="#7c5542" stroke-width="3"/>
+  <path d="M94 88Q91 64 108 57Q113 47 126 52Q143 48 152 65Q161 74 153 92L146 78L135 71L120 75L102 77Z" fill="#693e38" stroke="#332c33" stroke-width="4"/>
+  <path d="M97 70Q100 57 111 63M113 61Q119 51 128 62M134 59Q146 58 148 70" fill="none" stroke="#a26b48" stroke-width="6" stroke-linecap="round"/>
+  <path d="M94 88L88 79L101 78M149 82L161 82" stroke="#9b674a" stroke-width="5" fill="none"/>
+  <path d="M109 95L118 93M133 94L141 96" stroke="#352e2d" stroke-width="3"/>
+  <path d="M118 106Q125 112 136 105" fill="none" stroke="#824d4c" stroke-width="3"/>
+  <path d="M123 97L126 102L131 102" fill="none" stroke="#a56e5b" stroke-width="2"/>
+  <path d="M102 117L115 125L134 123L146 114" fill="none" stroke="#cfad80" stroke-width="4"/>
+ </g>
+ <g class="bard-left-arm">
+  <path d="M96 128Q104 135 119 142L159 120" fill="none" stroke="#6b344b" stroke-width="15" stroke-linecap="round"/>
+  <path d="M116 141L142 131" stroke="#d0a265" stroke-width="6"/>
+  <path d="M152 123L166 114" stroke="#d9a38c" stroke-width="11" stroke-linecap="round"/>
+ </g>
+ <g class="bard-right-arm">
+  <path d="M150 127Q158 143 147 155" fill="none" stroke="#70364b" stroke-width="15" stroke-linecap="round"/>
+  <path d="M153 143L146 154" stroke="#dab287" stroke-width="10" stroke-linecap="round"/>
+ </g>
+ <g class="bard-lute" data-weapon="six-course-lute">
+  <path d="M149 144L178 101L190 107L160 157Z" fill="#704c30" stroke="#47372c" stroke-width="7"/>
+  <path d="M156 139L182 100" stroke="#b28a59" stroke-width="8"/>
+  <path d="M179 100L192 91L198 96L196 108L187 110" fill="#392f30" stroke="#b78b56" stroke-width="3"/>
+  <path d="M191 91L182 82L185 78L198 86L201 94L197 97" fill="#493632" stroke="#aa8156" stroke-width="3"/>
+  <path d="M185 80L180 76M191 84L194 76M198 89L205 85M190 100L200 103" stroke="#dfb577" stroke-width="5" stroke-linecap="round"/>
+  <path d="M164 119L177 128M169 112L182 120M173 107L184 114" stroke="#dfc49a" stroke-width="2"/>
+  <!-- Pear-shaped lute belly with wood ribs and central carved rosette. -->
+  <path d="M156 131Q164 135 169 150Q183 174 165 190Q151 204 129 196Q107 192 106 169Q108 144 136 134Q149 129 156 131Z" fill="#d1a268" stroke="#623e31" stroke-width="5"/>
+  <path d="M139 136Q120 145 117 170Q118 190 135 194M153 136Q165 149 166 168Q165 188 153 197" stroke="#9c6c47" stroke-width="4" fill="none"/>
+  <path d="M147 134Q156 152 153 190M129 140Q115 163 127 188" stroke="#f4d39a" stroke-width="3" fill="none" opacity=".72"/>
+  <circle cx="145" cy="160" r="15" fill="#593e35" stroke="#e7be7f" stroke-width="3"/>
+  <circle cx="145" cy="160" r="10" fill="none" stroke="#caa169" stroke-width="2"/>
+  <path d="M135 160L155 160M145 150L145 170M138 153L152 167M152 153L138 167" stroke="#cfb181" stroke-width="2"/>
+  <path d="M123 181L155 183" stroke="#4b3731" stroke-width="7"/>
+  <path d="M124 178L155 180" stroke="#f0d9a5" stroke-width="2"/>
+  <g class="bard-strings">
+   <path d="M128 183L180 98M133 183L183 99M138 184L186 99M143 184L189 100M148 184L192 101" stroke="#f8e2bb" stroke-width="1.6" opacity=".88"/>
+  </g>
+ </g>
+ <g class="bard-fret-hand">
+  <path d="M166 117L173 111L178 117L171 127L165 125Z" fill="#dba38d" stroke="#8e6d55" stroke-width="2"/>
+  <path d="M169 116L174 110M173 120L181 117" stroke="#eec0a2" stroke-width="3" stroke-linecap="round"/>
+ </g>
+ <g class="bard-pluck-hand">
+  <path d="M152 141L150 152L140 159L133 154L141 144Z" fill="#dea48d" stroke="#8c6656" stroke-width="2"/>
+  <path d="M147 151L140 158M151 148L145 157" stroke="#f0baa0" stroke-width="3" stroke-linecap="round"/>
+ </g>
+</g>
+<g class="bard-spell" data-spell-effect="resonant-chord" opacity="0">
+ <path d="M171 153Q189 135 202 151Q211 164 221 147" fill="none" stroke="#f7d78c" stroke-width="7" stroke-linecap="round"/>
+ <path d="M181 166Q199 152 210 163Q218 169 230 157" fill="none" stroke="#8ed9d2" stroke-width="5" stroke-linecap="round"/>
+ <path d="M176 144Q194 126 206 134Q215 141 222 132" fill="none" stroke="#f4c16e" stroke-width="4" stroke-linecap="round"/>
+ <path d="M202 128L207 118L212 128M217 175L224 166L231 174" fill="none" stroke="#fff0b1" stroke-width="3" stroke-linecap="round"/>
+ <circle cx="194" cy="155" r="4" fill="#fff4c7"/><circle cx="213" cy="148" r="3" fill="#a7ece1"/>
+</g>
+</svg>

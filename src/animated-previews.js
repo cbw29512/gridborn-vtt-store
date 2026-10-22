@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'chr-brd-halfling': Object.freeze({
+    still:'./assets/studies/halfling-bard.svg',
+    idle:'./assets/demos/halfling-bard-idle.svg',
+    move:'./assets/demos/halfling-bard-move.svg',
+    action:'./assets/demos/halfling-bard-attack.svg',
+    rest:'./assets/demos/halfling-bard-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · original halfling lute recital with moving plucking fingers (prototype)',
+      move:'Move · agile short-stride walk with instrument held close (prototype)',
+      action:'Attack · fretted lute chord sends directed magical harmonics (prototype)',
+      rest:'Rest · lowered pear-bodied lute and calmer posture (prototype)'
+    })
+  }),
   'chr-rng-elf': Object.freeze({
     still:'./assets/studies/elven-ranger.svg',
     idle:'./assets/demos/elven-ranger-idle.svg',
