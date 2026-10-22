@@ -87,3 +87,20 @@ test('Wizard caster, Orc pregen and Armor have characteristic, distinguishable m
   assert.doesNotMatch(svg,/1\.4s[^\n]*infinite/);
  }
 });
+
+test('wizard casts a separate, one-shot arcane projectile instead of only moving the staff glow',()=>{
+ const art=read('assets/studies/elven-wizard.svg');
+ const shot=read('assets/demos/elven-wizard-attack.svg');
+ assert.equal(shot,renderWave('wizard','attack',art),'Projectile must regenerate from canonical rig');
+ assert.match(shot,/<\/g>\n<g class="rig-projectile" data-weapon-projectile="arcane-bolt" opacity="0"/);
+ assert.match(shot,/<path d="M63 53L42 48L53 45L47 51L53 59Z"/,'Drawn spell glyph is visible at 64px');
+ assert.match(shot,/\.rig-projectile\{animation:wiz-projectile-flight 1\.4s linear 1 both\}/);
+ assert.match(shot,/@keyframes wiz-projectile-flight\{0%,33%\{opacity:0;transform:translate\(0,0\)\}/);
+ assert.match(shot,/56%\{opacity:1;transform:translate\(-24px,-6px\)\}/);
+ assert.match(shot,/\.rig-glow,\.rig-projectile\{animation:none!important\}/);
+ for(const mode of ['idle','move','rest']){
+  const svg=read('assets/demos/elven-wizard-'+mode+'.svg');
+  assert.equal(svg,renderWave('wizard',mode,art));
+  assert.doesNotMatch(svg,/data-weapon-projectile="arcane-bolt"/);
+ }
+});

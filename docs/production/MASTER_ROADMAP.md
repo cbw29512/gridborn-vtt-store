@@ -146,6 +146,12 @@ Produce the recognizable **common/base species first**, then build roles on that
 - **Counts unchanged:** 16 public four-state art studies, zero approved retail tokens. Still awaiting human visual signoff at 32/64/128px, in-game VTT review, art-rights review and commercial certification.
 - Follow-up audit: Fighter, Paladin, Cleric, Goblin, Ogre and Skeleton melee arcs, and remaining caster spell launch effects.
 
+## Wizard spell-cast QC — October 22, 2026
+
+- **Elven Wizard (`chr-wiz-elf`)**: Attack now releases an independently animated, visible arcane bolt from the focus; the projectile no longer inherits staff rotation and returns to an absent state outside Attack. The existing staff charge remains a separate effect.
+- Source: the existing original Elven Wizard illustration and the source-specific `wave-two` animation generator; added a deterministic export-and-projectile regression test. No new catalog entry or commercial approval is claimed.
+- **Counts unchanged:** 16 public four-state animated art studies; zero retail-ready tokens. Human 32/64/128px visual checks, real VTT playback, original-art rights review and fulfillment signoff remain mandatory.
+
 ## Batch update log
 
 | Date | Source | Result | Still open |

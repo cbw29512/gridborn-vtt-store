@@ -3,11 +3,12 @@
 <title id="title">Elven Wizard — attack original motion study</title>
 <desc id="description">Cyan arcane staff, levitating robes and casting flare with attack animation. Noncommercial prototype.</desc>
 <style>
-.rig-core{animation:wiz-cast 1.4s ease-in-out 1 both}.rig-weapon{animation:wiz-staff-cast 1.4s ease-in-out 1 both;transform-origin:76px 124px}.rig-glow{animation:wiz-burst 1.4s steps(1,end) 1 both}
+.rig-core{animation:wiz-cast 1.4s ease-in-out 1 both}.rig-weapon{animation:wiz-staff-cast 1.4s ease-in-out 1 both;transform-origin:76px 124px}.rig-glow{animation:wiz-burst 1.4s steps(1,end) 1 both}.rig-projectile{animation:wiz-projectile-flight 1.4s linear 1 both}
  @keyframes wiz-cast{0%,100%{transform:translate(0,0)}23%{transform:translate(4px,1px)}52%{transform:translate(-6px,-4px)}75%{transform:translate(-2px,0)}}
  @keyframes wiz-staff-cast{0%,100%{transform:rotate(0)}23%{transform:rotate(18deg)}52%{transform:rotate(-28deg)}75%{transform:rotate(-9deg)}}
  @keyframes wiz-burst{0%,14%,79%,100%{opacity:.25;transform:translate(0,0)}40%{opacity:1;transform:translate(-16px,-10px)}57%{opacity:.75;transform:translate(-30px,-12px)}}
-@media(prefers-reduced-motion:reduce){.rig-core,.rig-weapon,.rig-head,.rig-boot-l,.rig-boot-r,.rig-foot-left,.rig-foot-right,.rig-visorglow,.rig-glow{animation:none!important}}
+ @keyframes wiz-projectile-flight{0%,33%{opacity:0;transform:translate(0,0)}40%{opacity:1;transform:translate(-4px,-2px)}56%{opacity:1;transform:translate(-24px,-6px)}68%,100%{opacity:0;transform:translate(-33px,-9px)}}
+@media(prefers-reduced-motion:reduce){.rig-core,.rig-weapon,.rig-head,.rig-boot-l,.rig-boot-r,.rig-foot-left,.rig-foot-right,.rig-visorglow,.rig-glow,.rig-projectile{animation:none!important}}
 </style>
 <ellipse cx="128" cy="200" rx="58" ry="13" fill="#060b16" opacity=".34"/>
 <ellipse cx="128" cy="195" rx="70" ry="24" fill="none" stroke="#ddb268" stroke-width="3" opacity=".70"/>
@@ -44,4 +45,5 @@
 
 <g class="rig-glow"><circle cx="75" cy="53" r="17" fill="#7ee8f4" opacity=".55"/><path d="M58 52l17-21 19 22-18 17z" fill="none" stroke="#e4eead" stroke-width="4"/></g>
 </g>
+<g class="rig-projectile" data-weapon-projectile="arcane-bolt" opacity="0"><path d="M63 53L42 48L53 45L47 51L53 59Z" fill="#9be8f7" stroke="#386f9b" stroke-width="2"/><path d="M64 53L43 50" stroke="#f2fcff" stroke-width="3" stroke-linecap="round"/></g>
 </svg>
