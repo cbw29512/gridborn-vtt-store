@@ -60,8 +60,8 @@ export const renderWave=function renderWave(kind,mode,source){
  @keyframes armor-foot-right{0%,10%,90%,100%{transform:rotate(0)}32%{transform:rotate(16deg)}66%{transform:rotate(-14deg)}}
  @keyframes armor-weapon-march{0%,10%,90%,100%{transform:rotate(0)}32%{transform:rotate(-8deg)}66%{transform:rotate(7deg)}}`,
  attack:`.rig-core{animation:armor-lunge 1.4s steps(1,end) 1 both}.rig-weapon{animation:armor-cleave 1.4s steps(1,end) 1 both;transform-origin:195px 150px}
- @keyframes armor-lunge{0%,100%{transform:translate(0,0)}25%{transform:translate(3px,0)}53%{transform:translate(-9px,-3px)}77%{transform:translate(-2px,0)}}
- @keyframes armor-cleave{0%,100%{transform:rotate(-8deg)}25%{transform:rotate(-20deg)}53%{transform:rotate(19deg)}77%{transform:rotate(5deg)}}`,
+ @keyframes armor-lunge{0%,100%{transform:translate(0,0)}25%{transform:translate(-3px,0)}53%{transform:translate(7px,-3px)}77%{transform:translate(2px,0)}}
+ @keyframes armor-cleave{0%,100%{transform:rotate(-8deg)}25%{transform:rotate(-20deg)}53%{transform:rotate(6deg)}77%{transform:rotate(2deg)}}`,
  rest:`.rig-core{animation:armor-inert 4s steps(1,end) infinite;transform-origin:128px 154px}.rig-weapon{animation:armor-rest-blade 4s steps(1,end) infinite;transform-origin:190px 140px}.rig-visorglow{animation:armor-rest-eye 4s steps(1,end) infinite}
  @keyframes armor-inert{0%,10%,90%,100%{transform:translateY(12px) rotate(14deg)}48%{transform:translateY(12px) rotate(15deg)}}
  @keyframes armor-rest-blade{0%,10%,90%,100%{transform:rotate(65deg)}48%{transform:rotate(64deg)}}
