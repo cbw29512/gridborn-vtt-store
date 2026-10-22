@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="rest" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240"
+ role="img" aria-labelledby="title description" shape-rendering="geometricPrecision">
+<title id="title">Great White Shark — rest original motion study</title>
+<desc id="description">Side-profile blue-and-white shark with sweeping tail, dorsal and pectoral fins, rest motion prototype only. Not a paid product.</desc>
+<style>
+.rig-body{animation:shark-rest-drift 4s ease-in-out infinite}.rig-tail{transform-origin:61px 127px;animation:shark-rest-tail 4s ease-in-out infinite}.rig-fin{transform-origin:151px 145px;animation:shark-rest-fin 4s ease-in-out infinite}
+   @keyframes shark-rest-drift{0%,10%,90%,100%{transform:translateY(0)}48%{transform:translateY(-2px)}}
+   @keyframes shark-rest-tail{0%,10%,90%,100%{transform:rotate(-4deg)}48%{transform:rotate(5deg)}}
+   @keyframes shark-rest-fin{0%,10%,90%,100%{transform:rotate(0)}48%{transform:rotate(-3deg)}}
+@media(prefers-reduced-motion:reduce){.rig-core,.rig-body,.rig-tail,.rig-fin,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-leg-left,.rig-leg-right,.paladin-legs{animation:none!important}}
+</style>
+<!-- Grid ring and water shadows are presentation only. Transparent otherwise. -->
+<ellipse cx="127" cy="191" rx="101" ry="15" fill="#0a1822" opacity=".25"/>
+<ellipse cx="128" cy="186" rx="107" ry="24" fill="none" stroke="#c6a477" stroke-width="2.5" opacity=".56"/>
+<path d="M29 177h31m120 3h39M44 88h32" fill="none" stroke="#91cdd3" stroke-width="2.5" opacity=".34"/>
+<!-- Powerful vertical crescent caudal fin: long upper and lower lobes. -->
+<g class="shark-tail rig-tail">
+ <path d="M55 123Q32 118 26 91Q22 74 14 63Q37 75 47 87Q59 105 64 125
+ Q53 144 42 158Q31 172 21 193Q15 209 17 220Q8 198 9 179Q12 153 28 138Z"
+ fill="#213e50" stroke="#142736" stroke-width="3"/>
+ <path d="M52 123Q37 101 23 76Q44 89 54 113L59 124Q42 148 22 205Q16 178 25 154Z"
+ fill="#66899a"/>
+ <path d="M43 112Q31 94 24 78M39 151Q24 179 18 207" fill="none" stroke="#a1b5b7" stroke-width="3" opacity=".5"/>
+ <path d="M51 124L76 117L81 137L52 137Z" fill="#54798d"/>
+</g>
+<!-- Small secondary dorsal fin and anal fin, true shark features. -->
+<g class="shark-rear-fins">
+ <path d="M85 113Q78 102 85 90Q88 98 99 109Z" fill="#3c6479"/>
+ <path d="M84 145L71 169Q86 160 102 147Z" fill="#5a7d8c"/>
+ <path d="M65 125L72 119L95 128L75 143Z" fill="#496d82"/>
+</g>
+<!-- High triangular main dorsal fin clearly projects above the body. -->
+<g class="shark-dorsal-fin">
+ <path d="M112 116Q129 79 145 39Q143 72 163 115Z" fill="#203e53" stroke="#172e42" stroke-width="3"/>
+ <path d="M119 109Q135 77 142 53Q140 91 155 115Z" fill="#54768c"/>
+ <path d="M139 73Q140 96 151 111" fill="none" stroke="#a4c1c3" stroke-width="3" opacity=".6"/>
+ </g>
+<!-- Broad pectoral fin (far side) projects below chest and belly. -->
+<g class="shark-far-fin">
+ <path d="M160 143Q152 158 160 175Q166 165 178 149Z" fill="#314f64"/>
+</g>
+<!-- Streamlined head/body: caudal peduncle left, pointed snout to right. -->
+<g class="shark-body rig-body">
+ <path d="M53 120Q88 106 123 104Q163 101 193 108Q213 114 232 128
+ Q239 132 239 138Q230 148 211 151Q184 165 146 161Q96 157 64 142Z"
+ fill="#142c3b" stroke="#192e3b" stroke-width="3"/>
+ <path d="M55 121Q88 110 125 107Q167 102 192 111Q218 119 237 135
+ Q219 133 206 134Q167 137 119 136Q84 134 55 127Z"
+ fill="#648aa0"/>
+ <path d="M68 121Q118 108 169 113Q194 115 219 130Q186 125 146 124Q101 125 68 126Z"
+ fill="#8db1ba" opacity=".8"/>
+ <!-- Gray-above / white-below countershading with sawtooth transitions. -->
+ <path d="M59 130Q86 130 107 134L120 132 132 136 147 134 162 138
+ 180 134 195 139 209 135Q227 135 237 137
+ Q221 151 201 155Q179 161 145 158Q102 155 68 139Z"
+ fill="#e5e8de"/>
+ <path d="M73 140Q116 148 149 150Q177 152 203 145L218 142
+ Q192 157 149 161Q110 156 73 140Z" fill="#bdcbd0"/>
+ <!-- Strong upper shadow near belly separates fins from torso. -->
+ <path d="M59 128Q90 125 119 132Q159 134 186 132Q207 130 237 137"
+ fill="none" stroke="#314e61" stroke-width="3.5" opacity=".62"/>
+</g>
+<!-- Large pectoral fin closer to the camera with clear swept-back tip. -->
+<g class="shark-pectoral-fin rig-fin">
+ <path d="M149 141Q139 163 127 184Q120 196 110 207
+ Q142 186 177 150Z" fill="#1d3f53" stroke="#172d3d" stroke-width="2.5"/>
+ <path d="M151 145Q139 169 118 199Q146 177 169 150Z" fill="#567e94"/>
+ <path d="M150 151Q139 176 126 194" stroke="#93adbb" stroke-width="3" opacity=".65" fill="none"/>
+</g>
+<!-- Head identity: small black lateral eye and *five* vertical gill slits. -->
+<g class="shark-head-features rig-head">
+ <circle cx="211" cy="125" r="5" fill="#15252f"/>
+ <circle cx="212" cy="124" r="1.6" fill="#f3e7c8"/>
+ <g fill="none" stroke="#263c49" stroke-linecap="round" stroke-width="3.3">
+  <path d="M188 132L185 147"/>
+  <path d="M182 132L178 148"/>
+  <path d="M176 132L172 148"/>
+  <path d="M170 131L166 146"/>
+  <path d="M164 132L161 145"/>
+ </g>
+ <path d="M217 141Q227 139 238 137Q228 150 211 151" fill="#273844"/>
+ <path d="M216 143Q228 141 236 139L231 146 220 150Z" fill="#faf2da"/>
+ <path d="M219 143L222 149 225 143 228 148 231 141 234 144"
+ fill="none" stroke="#3c4650" stroke-width="1.8" stroke-linejoin="round"/>
+ <path d="M224 131Q228 129 234 130" fill="none" stroke="#3e5a6a" stroke-width="2"/>
+</g>
+<!-- Small reflected edge highlight emphasizes recognizable profile at 64px. -->
+<path d="M70 120Q125 104 175 111Q196 113 213 120" stroke="#d8e8de"
+ stroke-width="2" opacity=".57" fill="none"/>
+</svg>
