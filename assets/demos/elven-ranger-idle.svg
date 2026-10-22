@@ -3,9 +3,9 @@
 <title id="title">Elven Ranger — original Gridborn forest longbow scout — idle preview</title>
 <desc id="description">Elven pointed-ear wilderness archer with dark hood, leather forest tunic, quiver, braced curved longbow, visible drawing hand, and separate fletched arrow. Original noncommercial concept.</desc>
 <style>
-.ranger-core{animation:ranger-guard 3.2s ease-in-out infinite}.ranger-bow{transform-origin:200px 122px;animation:ranger-bow-watch 3.2s ease-in-out infinite}
-@keyframes ranger-guard{0%,100%{transform:translateY(0)}42%{transform:translateY(-2px)}70%{transform:translateY(1px)}}
-@keyframes ranger-bow-watch{0%,100%{transform:rotate(0)}42%{transform:rotate(3deg)}70%{transform:rotate(-2deg)}}
+.ranger-core{animation:ranger-guard 3.2s steps(1,end) infinite}.ranger-bow{transform-origin:200px 122px;animation:ranger-bow-watch 3.2s steps(1,end) infinite}
+@keyframes ranger-guard{0%,100%{transform:translateY(0)}42%{transform:translateY(-2px)}70%{transform:translateY(1px)}83%{transform:translateY(0)}}
+@keyframes ranger-bow-watch{0%,100%{transform:rotate(0)}42%{transform:rotate(3deg)}70%{transform:rotate(-2deg)}83%{transform:rotate(0)}}
 @media(prefers-reduced-motion:reduce){.ranger-core,.ranger-bow,.ranger-draw-arm,.ranger-leg-left,.ranger-leg-right,.ranger-string-rest,.ranger-string-drawn,.ranger-arrow{animation:none!important}}
 </style>
 <ellipse cx="130" cy="208" rx="65" ry="12" fill="#101922" opacity=".4"/>
