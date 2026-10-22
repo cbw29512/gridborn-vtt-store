@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'pregen-ranger-nonbinary-1': Object.freeze({
+    still:'./assets/studies/goblin-pathfinder-nonbinary.svg',
+    idle:'./assets/demos/goblin-pathfinder-nonbinary-idle.svg',
+    move:'./assets/demos/goblin-pathfinder-nonbinary-move.svg',
+    action:'./assets/demos/goblin-pathfinder-nonbinary-attack.svg',
+    rest:'./assets/demos/goblin-pathfinder-nonbinary-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · compact Goblin Pathfinder scouts with shortbow (prototype)',
+      move:'Move · low fast strides with a narrow fletched quiver (prototype)',
+      action:'Attack · hand draws shortbow string to cheek and releases arrow (prototype)',
+      rest:'Rest · Goblin lowers shortbow in crouched resting stance (prototype)'
+    })
+  }),
   'pregen-ranger-female-1': Object.freeze({
     still:'./assets/studies/orc-pathfinder-female.svg',
     idle:'./assets/demos/orc-pathfinder-female-idle.svg',
