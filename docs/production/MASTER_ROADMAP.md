@@ -37,8 +37,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **25** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **23** | **15 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
+| Original illustrated concepts | **26** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **24** | **16 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -194,6 +194,12 @@ Produce the recognizable **common/base species first**, then build roles on that
 - This is a **separate anatomy and action** from Human male Wayfarer (palm/front kick), not a palette variation. Research brief, deterministic renderer, prototype media contract and regression tests included.
 - Planned stack counts: original illustrated **24→25**, four-state public studies **22→23**, character studies **14→15**, authored hero-variant animation studies **7→8 /108** (100 still need moving first studies). Total catalog concepts 518 unchanged, retail-certified assets 0. Class coverage remains at least one prototype per 12 classes.
 - No commercial signoff: check full CI, manual 32/64/128px pose bounds/grips, actual VTT imports, rights, storefront checkout/fulfillment separately.
+
+## Goblin Stonefist — third Monk gender study, October 22, 2026
+
+- Original `pregen-monk-nonbinary-3`: short nonbinary-authored Goblin Stonefist, green compact limbs, tall ears, orange zigzag trim, guarded short-arm feint plus a **fully attached low heel-sweep limb** at separate hip pivot. New source-backed still/Idle/Move/Attack/Rest, generator, research, source parity, prototype media export and tests.
+- Monk now has **one moving study for each authored gender** (male Human Wayfarer, female Orc Stonefist, nonbinary Goblin Stonefist). Distinct body silhouettes and separate attacks are mandatory; do not count these as nine completed monk variants.
+- Planned stack counts: source-illustrated **25→26**, four-state studies **23→24**, character studies **15→16**, authored hero variant studies **8→9 /108** (99 still lack these studies). 518 concepts unchanged, zero commercially approved tokens. Individual human 32/64/128px, real VTT, encoded alpha, rights, fulfillment remain blocking.
 
 ## Batch update log
 

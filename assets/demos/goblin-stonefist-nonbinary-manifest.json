@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "pregen-monk-nonbinary-3",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/goblin-stonefist-nonbinary.svg",
+  "restSource": "assets/demos/goblin-stonefist-nonbinary-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/goblin-stonefist-nonbinary-idle.svg",
+      "durationSec": 3.2
+    },
+    "move": {
+      "source": "assets/demos/goblin-stonefist-nonbinary-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/goblin-stonefist-nonbinary-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "plannedOutputs": [
+    "transparent-webm",
+    "static-png",
+    "rest-webm"
+  ],
+  "vttCompatibility": "untested",
+  "purchasable": false
+}

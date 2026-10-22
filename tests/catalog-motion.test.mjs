@@ -9,7 +9,7 @@ const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 test('All existing four-state animation prototypes visibly participate in autoplay',()=>{
   const ids=Object.keys(animatedPreviews);
   assert.deepEqual(ids.sort(),[
-    'ani-forest-wolf','ani-ocean-greatwhite','chr-brd-halfling','chr-clr-dwarf','chr-ftr-human','chr-pal-human','chr-rge-gnome','chr-rng-elf','chr-wiz-elf','mon-cave-goblin','mon-cave-ogre','mon-cave-spider','mon-dng-armor','mon-dng-skeleton','mon-swamp-lizard','pregen-barbarian-male-3','pregen-cleric-female-2','pregen-druid-female-1','pregen-monk-female-3','pregen-monk-male-1','pregen-rogue-nonbinary-1','pregen-sorcerer-nonbinary-1','pregen-warlock-nonbinary-1']);
+    'ani-forest-wolf','ani-ocean-greatwhite','chr-brd-halfling','chr-clr-dwarf','chr-ftr-human','chr-pal-human','chr-rge-gnome','chr-rng-elf','chr-wiz-elf','mon-cave-goblin','mon-cave-ogre','mon-cave-spider','mon-dng-armor','mon-dng-skeleton','mon-swamp-lizard','pregen-barbarian-male-3','pregen-cleric-female-2','pregen-druid-female-1','pregen-monk-female-3','pregen-monk-male-1','pregen-monk-nonbinary-3','pregen-rogue-nonbinary-1','pregen-sorcerer-nonbinary-1','pregen-warlock-nonbinary-1']);
   assert.deepEqual(MOTION_STAGES.map(s=>s.key),['idle','move','action','rest']);
   assert.equal(MOTION_STAGES.length,4);
   for(const entry of MOTION_STAGES)assert.ok(entry.durationMs>=0);

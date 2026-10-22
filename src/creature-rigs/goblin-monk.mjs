@@ -1,0 +1,20 @@
+/** Original nonbinary Goblin Stonefist; heel sweep has full hip-knee-foot linkage. */
+export const GOBLIN_MONK_STATES=Object.freeze(['idle','move','attack','rest']);
+const MOTIONS=Object.freeze({
+ "idle": ".gob-core{animation:gob-watch-breath 3.2s steps(1,end) infinite}.gob-left-guard{transform-origin:113px 145px;animation:gob-nervous-guard 3.2s steps(1,end) infinite}\n@keyframes gob-watch-breath{0%,85%,100%{transform:translate(0,0)}31%{transform:translateY(-2px)}60%{transform:translate(1px,1px)}}\n@keyframes gob-nervous-guard{0%,85%,100%{transform:rotate(0)}31%{transform:rotate(4deg)}60%{transform:rotate(-3deg)}}",
+ "move": ".gob-core{animation:gob-fast-crouch 1.2s steps(1,end) infinite}.gob-left-leg{transform-origin:119px 172px;animation:gob-scamper-left 1.2s steps(1,end) infinite}.gob-right-leg{transform-origin:147px 174px;animation:gob-scamper-right 1.2s steps(1,end) infinite}\n@keyframes gob-fast-crouch{0%,84%,100%{transform:translate(0,0)}23%{transform:translate(-5px,-4px)}57%{transform:translate(5px,-2px)}}\n@keyframes gob-scamper-left{0%,84%,100%{transform:rotate(0)}23%{transform:rotate(-17deg)}57%{transform:rotate(15deg)}}\n@keyframes gob-scamper-right{0%,84%,100%{transform:rotate(0)}23%{transform:rotate(14deg)}57%{transform:rotate(-18deg)}}",
+ "attack": ".gob-core{animation:gob-sweep-brace 1.4s steps(1,end) 1 both}.gob-right-guard{animation:gob-sweep-guard-hide 1.4s steps(1,end) 1 both}.gob-feint-arm{animation:gob-elbow-feint 1.4s steps(1,end) 1 both}.gob-right-leg{animation:gob-sweep-leg-hide 1.4s steps(1,end) 1 both}.gob-heel-sweep{transform-origin:145px 173px;animation:gob-low-heel-kick 1.4s steps(1,end) 1 both}.gob-sweep-dust{animation:gob-ground-scuff 1.4s steps(1,end) 1 both}\n@keyframes gob-sweep-brace{0%,100%{transform:translate(0,0)}20%{transform:translate(-3px,-3px)}46%{transform:translate(-1px,4px)}66%{transform:translate(2px,1px)}84%{transform:translate(0,0)}}\n@keyframes gob-sweep-guard-hide{0%,19%,46%,100%{opacity:1}23%,42%{opacity:0}}\n@keyframes gob-elbow-feint{0%,19%,46%,100%{opacity:0}23%,42%{opacity:1}}\n@keyframes gob-sweep-leg-hide{0%,48%,78%,100%{opacity:1}53%,72%{opacity:0}}\n@keyframes gob-low-heel-kick{0%,48%,78%,100%{opacity:0;transform:translate(-24px,6px) rotate(-18deg)}53%{opacity:1;transform:translate(-22px,5px) rotate(-14deg)}59%,67%{opacity:1;transform:translate(0,0) rotate(0)}72%{opacity:1;transform:translate(-16px,5px) rotate(-11deg)}}\n@keyframes gob-ground-scuff{0%,54%,77%,100%{opacity:0;transform:translateY(0)}61%,68%{opacity:1;transform:translateY(-2px)}73%{opacity:.4;transform:translateY(-3px)}}",
+ "rest": ".gob-core{animation:gob-compact-rest 4s steps(1,end) infinite}.gob-left-guard{animation:gob-rest-left 4s steps(1,end) infinite}.gob-right-guard{animation:gob-rest-right 4s steps(1,end) infinite}\n@keyframes gob-compact-rest{0%,85%,100%{transform:translateY(9px)}50%{transform:translateY(10px)}}\n@keyframes gob-rest-left{0%,85%,100%{transform:translateY(9px)}50%{transform:translateY(10px)}}\n@keyframes gob-rest-right{0%,85%,100%{transform:translateY(9px)}50%{transform:translateY(11px)}}"
+});
+const REDUCED='@media(prefers-reduced-motion:reduce){.gob-core,.gob-left-guard,.gob-right-guard,.gob-left-leg,.gob-right-leg,.gob-feint-arm,.gob-heel-sweep,.gob-sweep-dust{animation:none!important}}';
+export function renderGoblinMonk(mode,art){
+ try{
+  if(!GOBLIN_MONK_STATES.includes(mode))throw new Error('Unsupported Goblin monk state: '+mode);
+  if(typeof art!=='string'||!art.includes('data-attack-pose="elbow-feint"')||
+   !art.includes('data-attack-pose="low-heel-sweep"')||!art.includes('data-effect="low-ground-dust"')||!art.endsWith('</svg>\n'))
+   throw new Error('Goblin source anatomy rig changed');
+  return art.replace('<svg xmlns=','<svg data-gridborn-mode="'+mode+'" xmlns=')
+    .replace('</title>',' — '+mode+' study</title>')
+    .replace('</desc>','</desc>\n<style>\n'+MOTIONS[mode]+'\n'+REDUCED+'\n</style>');
+ }catch(error){console.error('Goblin Monk source rendering failed',mode,error);throw error;}
+}

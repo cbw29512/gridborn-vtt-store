@@ -57,11 +57,11 @@ test('the draft visual has explicit preview-only status and no sale status', () 
 
 test('illustrated concepts span every category without claiming completed animations', () => {
   const illustrated = catalog.filter(item => item.previewArt);
-  assert.equal(illustrated.length, 25);
+  assert.equal(illustrated.length, 26);
   for (const category of ['Characters','NPCs','Monsters','Animals'])
     assert.ok(illustrated.some(item => item.category === category), category);
-  assert.equal(illustrated.filter(item => item.animationStatus === 'art-study').length, 23);
-  assert.ok(illustrated.filter(item => !['pregen-monk-female-3','pregen-warlock-nonbinary-1','pregen-sorcerer-nonbinary-1','pregen-monk-male-1','pregen-druid-female-1','chr-brd-halfling','chr-rng-elf','chr-ftr-human','chr-clr-dwarf','chr-wiz-elf','pregen-barbarian-male-3','pregen-cleric-female-2','pregen-rogue-nonbinary-1','mon-dng-armor','mon-cave-ogre','mon-cave-goblin','ani-forest-wolf','mon-cave-spider','mon-dng-skeleton','chr-pal-human','chr-rge-gnome','mon-swamp-lizard','ani-ocean-greatwhite'].includes(item.id))
+  assert.equal(illustrated.filter(item => item.animationStatus === 'art-study').length, 24);
+  assert.ok(illustrated.filter(item => !['pregen-monk-nonbinary-3','pregen-monk-female-3','pregen-warlock-nonbinary-1','pregen-sorcerer-nonbinary-1','pregen-monk-male-1','pregen-druid-female-1','chr-brd-halfling','chr-rng-elf','chr-ftr-human','chr-clr-dwarf','chr-wiz-elf','pregen-barbarian-male-3','pregen-cleric-female-2','pregen-rogue-nonbinary-1','mon-dng-armor','mon-cave-ogre','mon-cave-goblin','ani-forest-wolf','mon-cave-spider','mon-dng-skeleton','chr-pal-human','chr-rge-gnome','mon-swamp-lizard','ani-ocean-greatwhite'].includes(item.id))
     .every(item => item.animationStatus === 'static-art-study'));
   assert.ok(illustrated.every(item => item.purchasable === false));
 });

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Goblin Stonefist Monk — original Gridborn sweep fighter</title>
+<desc id="description">Original nonbinary goblin martial artist: compact green short-limbed anatomy, prominent paired pointed ears, small nose, orange shoulder wrap with zigzag woven trim, irregular dark indigo tunic, webbed cloth fist bindings and a low lateral heel-sweep unarmed attack that replaces the complete hip-to-toe leg. No weapons and no generic humanoid rig. Noncommercial animation study.</desc>
+<ellipse cx="135" cy="213" rx="58" ry="10" fill="#1b2129" opacity=".42"/>
+<ellipse cx="135" cy="202" rx="71" ry="23" stroke="#a7aa7d" stroke-width="3" fill="none" opacity=".53"/>
+<g class="gob-core">
+ <g class="gob-sash">
+  <path d="M116 143L150 146L166 190L150 200L139 186L126 202L108 190Z" fill="#47455a" stroke="#283340" stroke-width="4"/>
+  <path d="M112 146L128 157L119 173L137 184L151 171L158 181" fill="none" stroke="#e4a760" stroke-width="4"/>
+  <path d="M114 177L123 180L130 193L138 185L148 189" stroke="#8fa88a" stroke-width="3" fill="none"/>
+ </g>
+ <g class="gob-left-leg">
+  <path d="M115 169L136 173L132 196L115 211L100 207L99 184Z" fill="#526257" stroke="#334b45" stroke-width="3"/>
+  <path d="M98 200L118 202L116 215L88 216L81 210Z" fill="#46413f" stroke="#d4b084" stroke-width="3"/>
+  <path d="M89 211L113 211" stroke="#e4c49a" stroke-width="3"/>
+ </g>
+ <g class="gob-right-leg">
+  <path d="M140 172L156 172L170 192L164 209L146 210L137 189Z" fill="#4e6358" stroke="#334b45" stroke-width="3"/>
+  <path d="M148 203L165 201L183 210L179 216L146 217Z" fill="#46413f" stroke="#d2b58f" stroke-width="3"/>
+  <path d="M153 213L178 214" stroke="#e4c49a" stroke-width="3"/>
+ </g>
+ <g class="gob-torso">
+  <path d="M110 128L123 120L149 123L168 138L164 174L140 184L113 174L104 147Z" fill="#414859" stroke="#293344" stroke-width="4"/>
+  <path d="M117 128L141 125L152 167L137 178L116 164Z" fill="#687166"/>
+  <path d="M117 127L151 154L145 169L110 141Z" fill="#b96f44" stroke="#714d41" stroke-width="4"/>
+  <path d="M120 132L137 147L144 159" stroke="#f0b777" stroke-width="4" fill="none"/>
+  <path d="M120 145L138 159L121 160L136 171" stroke="#ebd098" stroke-width="3" fill="none"/>
+  <path d="M105 159L155 162" stroke="#3f3739" stroke-width="9"/>
+  <path d="M123 155L135 156L139 170L128 174L118 166Z" fill="#c1ae84" stroke="#5f544a" stroke-width="3"/>
+  <path d="M125 158L134 164L122 165" fill="none" stroke="#516956" stroke-width="3"/>
+ </g>
+ <g class="gob-neck">
+  <path d="M120 111L144 113L148 130L128 136L115 129Z" fill="#758e69" stroke="#3d594e" stroke-width="3"/>
+ </g>
+ <g class="gob-head">
+  <path d="M109 82L124 69L145 73L159 88L157 117L141 130L117 124L106 104Z" fill="#67885f" stroke="#315a4f" stroke-width="4"/>
+  <path d="M116 84L132 78L152 91L152 114L138 123L119 117Z" fill="#88a477" />
+  <path d="M107 93L77 80L87 110L113 109M152 93L184 79L175 112L147 112" fill="#7b9a6f" stroke="#355b4b" stroke-width="4"/>
+  <path d="M83 87L99 103M180 87L162 105" fill="none" stroke="#c2ba82" stroke-width="3"/>
+  <path d="M108 91L107 77L121 66L141 68L161 80L162 93L146 82L131 79L116 88Z" fill="#41434e" stroke="#29303c" stroke-width="4"/>
+  <path d="M115 79L129 72L147 80" stroke="#a49b80" stroke-width="4" fill="none"/>
+  <path d="M117 101L128 99M142 101L152 99" stroke="#2b3b39" stroke-width="4"/>
+  <path d="M127 109L145 109L137 115Z" fill="#64816c" stroke="#3b5c4f" stroke-width="2"/>
+  <path d="M129 119Q138 123 146 115" fill="none" stroke="#405d4c" stroke-width="3"/>
+  <path d="M119 121L122 128L131 124" stroke="#a9c299" stroke-width="2" fill="none"/>
+ </g>
+ <g class="gob-left-guard">
+  <path d="M113 141L105 153L127 160L142 145" fill="none" stroke="#779474" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M107 151L126 159" stroke="#c07a4e" stroke-width="8"/>
+  <path d="M134 139L145 139L151 150L140 159L129 154Z" fill="#90a27d" stroke="#345c4e" stroke-width="3"/>
+  <path d="M134 145L147 148" stroke="#e4c7a0" stroke-width="3"/>
+ </g>
+ <g class="gob-right-guard">
+  <path d="M158 142L178 151L186 143" fill="none" stroke="#749073" stroke-width="15" stroke-linecap="round"/>
+  <path d="M163 143L181 152" stroke="#be7a4f" stroke-width="8"/>
+  <path d="M184 138L194 135L202 144L198 155L187 158L181 149Z" fill="#98a37c" stroke="#345b4e" stroke-width="3"/>
+  <path d="M187 145L199 147" stroke="#e3c8a4" stroke-width="3"/>
+ </g>
+ <g class="gob-feint-arm" data-attack-pose="elbow-feint" opacity="0">
+  <path d="M154 139L170 145L193 134" fill="none" stroke="#729071" stroke-width="16" stroke-linecap="round"/>
+  <path d="M158 139L175 144" stroke="#c37b4f" stroke-width="9"/>
+  <path d="M192 128L204 132L207 144L198 153L186 147L185 136Z" fill="#8aa384" stroke="#366051" stroke-width="3"/>
+  <path d="M192 137L204 139" stroke="#e8d5b0" stroke-width="3"/>
+ </g>
+ <g class="gob-heel-sweep" data-attack-pose="low-heel-sweep" opacity="0">
+  <path d="M145 173Q158 180 177 191L207 195" fill="none" stroke="#54685f" stroke-width="19" stroke-linecap="round"/>
+  <path d="M158 181L191 193" fill="none" stroke="#a5a77b" stroke-width="8"/>
+  <path d="M200 187L225 191L232 200L225 210L205 211L194 203Z" fill="#4d5148" stroke="#c4ae83" stroke-width="4"/>
+  <path d="M206 197L226 201M204 205L225 205" stroke="#e3d1a0" stroke-width="3"/>
+ </g>
+</g>
+<g class="gob-sweep-dust" data-effect="low-ground-dust" opacity="0">
+ <path d="M209 212L228 205L244 211M208 220L223 217L237 220" fill="none" stroke="#c3b18b" stroke-width="5" stroke-linecap="round"/>
+ <path d="M226 196L230 189M240 202L246 200" stroke="#d9c395" stroke-width="3" stroke-linecap="round"/>
+ <circle cx="233" cy="212" r="4" fill="#b8a077"/>
+</g>
+</svg>

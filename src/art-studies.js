@@ -3,6 +3,7 @@
  * Keys are immutable catalog IDs; drawings are not implied to be animations.
  */
 export const artStudies = Object.freeze({
+  'pregen-monk-nonbinary-3':'./assets/studies/goblin-stonefist-nonbinary.svg',
   'pregen-monk-female-3':'./assets/studies/orc-stonefist-female.svg',
   'pregen-warlock-nonbinary-1':'./assets/studies/dwarf-hexwarden-warlock.svg',
   'pregen-sorcerer-nonbinary-1':'./assets/studies/elf-sparkweaver-sorcerer.svg',
