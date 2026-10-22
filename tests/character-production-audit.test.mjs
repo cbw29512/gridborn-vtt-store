@@ -7,10 +7,10 @@ test('report distinguishes concepts, animated classes and animated hero identiti
   const report=characterProductionAudit();
   assert.equal(report.classCount,12);
   assert.equal(report.variantConcepts,108);
-  assert.deepEqual(report.classesMissingStudy,['Sorcerer','Warlock']);
-  assert.equal(report.animatedCharacterStudies,12);
-  assert.equal(report.animatedHeroVariants,5);
-  assert.equal(report.classes.reduce((n,c)=>n+c.remainingVariantStudies,0),103);
+  assert.deepEqual(report.classesMissingStudy,['Warlock']);
+  assert.equal(report.animatedCharacterStudies,13);
+  assert.equal(report.animatedHeroVariants,6);
+  assert.equal(report.classes.reduce((n,c)=>n+c.remainingVariantStudies,0),102);
   for(const row of report.classes){
     assert.equal(row.concepts,9);
     assert.deepEqual(row.genderConcepts,{male:3,female:3,nonbinary:3});

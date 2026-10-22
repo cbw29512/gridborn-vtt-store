@@ -37,8 +37,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **22** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **20** | **12 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
+| Original illustrated concepts | **23** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **21** | **13 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -93,13 +93,13 @@ Do not mark a demographic slot complete merely because a base class art study ex
 
 ### Wave C — Complete missing class coverage (CURRENT PRIORITY; FIRST CHARACTER BATCH)
 
-Classes represented by moving studies after Ranger, Bard, Druid and Wayfarer: **Fighter, Barbarian, Wizard, Cleric, Paladin, Rogue, Ranger, Bard, Druid, Monk**. The six class families below remain the top missing *class coverage* targets, independent of the expansion in Wave B.
+Classes with original four-state studies after Ranger, Bard, Druid, Monk, Sorcerer: **Fighter, Barbarian, Wizard, Cleric, Paladin, Rogue, Ranger, Bard, Druid, Monk, Sorcerer**. The six class families below remain the top missing *class coverage* targets, independent of the expansion in Wave B.
 
 - [x] **Ranger** — original longbow/quiver source and one-shot nock, draw and released-arrow SVG study; human art and media certification still required.
 - [x] **Bard** — source-backed Halfling lute with a real string-plucking hand and directional resonant-chord spell; human art/media certification pending.
 - [x] **Druid** — original female Human Wildspeaker with an oak-leaf mantle, living quarterstaff and directed thorn-vine spell. Media and human art review pending.
 - [x] **Monk** — original Human Wayfarer with unarmored hand wraps, braced palm strike followed by attached front-kick pose; media and human visual QC pending.
-- [ ] **Sorcerer** — innate magical aura/gesture distinct from Wizard.
+- [x] **Sorcerer** — original Elf Sparkweaver focus in the open hand, separate branching charged bolt and grounded gesture distinct from Wizard or Druid; human art/media QC pending.
 - [ ] **Warlock** — pact focus and eldritch cast distinct from Wizard/Sorcerer.
 - [ ] Each of the 12 core classes has at least one technically certified visual study.
 - [ ] Each class reaches the 1 male / 1 female / 1 nonbinary approved-animation baseline (36 studies).
@@ -175,6 +175,12 @@ Produce the recognizable **common/base species first**, then build roles on that
 - Human male authored variant `pregen-monk-male-1` receives original sprite still and four distinct source-derived Idle, Move, Attack, Rest studies, separate attached unarmed palm and full front-kick anatomical poses, practical hand wraps, no weapon; data-driven preview, research brief, private media manifest and tests.
 - Technical study counts **19→20**, original illustrated concepts **21→22**, class coverage **9→10 of 12**; gendered completed *engineering prototypes* **4→5** across 108 hero-variant concepts. 518 total concepts and **zero** retail-cleared items unchanged.
 - Prior class studies must still pass final CI and human 128/64/32px, live VTT import, IP and licensing and full checkout fulfillment review. No unapproved sale or Netlify deploy.
+
+## Original Elf Sparkweaver Sorcerer study — October 22, 2026
+
+- Existing nonbinary-authored Elf Sparkweaver `pregen-sorcerer-nonbinary-1`: copper-haired three-quarter sprite, crystal focus hovering over anatomically attached casting hand, low-carried staff, embroidered innate-energy seams. Four original source-derived states, one-shot two-stage gathering/releasing electric bolt, research, generator, manifest and tests.
+- Technical studies **20→21**, original illustrated concepts **22→23**, class coverage **10→11 of 12**; authored animated hero identities **5→6**. Catalog concepts still 518, sale-approved 0. This does not establish human art signoff or live VTT compatibility.
+- Release blockers: 32/64/128px face/hand/clearance QC, alpha WebM and seam validation, actual Foundry/Roll20 import, character uniqueness, original rights/fulfillment. Keep GitHub-first.
 
 ## Batch update log
 
