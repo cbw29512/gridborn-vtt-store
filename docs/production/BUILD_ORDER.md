@@ -1,5 +1,8 @@
 # Gridborn V1 — production queue and morning review
 
+> **Current priorities and verified progress:** see [Gridborn Master Roadmap](MASTER_ROADMAP.md). This build-order file preserves earlier chronological production notes, some of which refer to completed historical prototypes and are **not** the latest status. Update the Master Roadmap with each future batch/PR.
+
+
 The two JSON rosters contain the authoritative **12 hero + 12 monster**
 specifications. This board defines sequence and expected dependency, not a
 claim that art has been completed.
