@@ -16,6 +16,18 @@
 
 This priority order changes sequencing only; **current verified counts do not increase**. The Wave A/B/C headings below are historical batch labels, not execution order. Each production PR must record truthful status and check outcomes.
 
+## Production method — complete first, improve in passes
+
+**User direction:** Produce an individually recognizable, working first version of **every planned token** before spending multiple batches polishing isolated favorites. Preserve category order: **108 characters → 100+ monsters → 48 NPCs → animals**. After broad coverage, conduct systematic refinement rounds.
+
+**Pass 1 — Coverage:** Audit identities/IDs; create original recognizable still art and distinct Idle, Move, one-shot Attack, and Rest sources for each planned token. Complete source-linked storefront preview and technical export checks. Do **not** count a generic rig recipe, palette-only swap, SRD index entry, or unfinished concept as a produced token. Work in small tested PR batches rather than a monolithic change.
+
+**Pass 2 — Visual improvement:** Compare entire class/species/job family at 128/64/32px on light/dark maps; fix silhouette duplication, anatomy, clothing, props, and animation timing. Keep card height/width aligned.
+
+**Pass 3 — Release certification:** Validate transparency, frame fidelity, loops, PNG fallback, real Foundry/Roll20 import, human review, original-art rights, accessibility, and fulfillment. No token is **sellable** merely because Pass 1 or Pass 2 is done. Keep checkout disabled until this gate clears.
+
+The first passes aim for **complete coverage without mistaking rough prototypes for commercial-ready art**. A failed test, duplicated silhouette, or missing state blocks counting even in Pass 1. Update verified totals and blockers in each PR.
+
 ## Snapshot — October 21, 2026
 
 | Scope | Currently evidenced | Target / explanation |
