@@ -7,8 +7,8 @@ test('report distinguishes concepts, animated classes and animated hero identiti
   const report=characterProductionAudit();
   assert.equal(report.classCount,12);
   assert.equal(report.variantConcepts,108);
-  assert.deepEqual(report.classesMissingStudy,['Bard','Druid','Monk','Sorcerer','Warlock']);
-  assert.equal(report.animatedCharacterStudies,9);
+  assert.deepEqual(report.classesMissingStudy,['Druid','Monk','Sorcerer','Warlock']);
+  assert.equal(report.animatedCharacterStudies,10);
   assert.equal(report.animatedHeroVariants,3);
   assert.equal(report.classes.reduce((n,c)=>n+c.remainingVariantStudies,0),105);
   for(const row of report.classes){
