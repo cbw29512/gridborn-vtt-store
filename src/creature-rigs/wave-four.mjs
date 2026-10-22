@@ -106,6 +106,6 @@ export const renderWaveFour=function renderWaveFour(kind,mode,source){
    @keyframes shark-rest-fin{0%,10%,90%,100%{transform:rotate(0)}48%{transform:rotate(-3deg)}}`
   }
  }[kind][mode];
- const reduced='@media(prefers-reduced-motion:reduce){.rig-core,.rig-body,.rig-tail,.rig-fin,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-bolt,.rig-leg-left,.rig-leg-right,.paladin-legs{animation:none!important}}';
+ const reduced='@media(prefers-reduced-motion:reduce){.rig-core,.rig-body,.rig-tail,.rig-fin,.rig-head,.rig-weapon,.rig-offhand,.rig-effect'+(kind==='gnome'?',.rig-bolt':'')+',.rig-leg-left,.rig-leg-right,.paladin-legs{animation:none!important}}';
  return s.replace('</desc>','</desc>\n<style>\n'+anim+'\n'+reduced+'\n</style>');
 };
