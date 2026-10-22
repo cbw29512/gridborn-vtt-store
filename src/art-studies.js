@@ -3,6 +3,7 @@
  * Keys are immutable catalog IDs; drawings are not implied to be animations.
  */
 export const artStudies = Object.freeze({
+  'chr-rng-elf': './assets/studies/elven-ranger.svg',
   'chr-ftr-human': './assets/demos/human-fighter-still.svg',
   'pregen-barbarian-male-3': './assets/studies/orc-axe-vanguard-pregen.svg',
   'mon-dng-armor': './assets/studies/animated-armor.svg',
