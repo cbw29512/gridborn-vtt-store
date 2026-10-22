@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'pregen-warlock-nonbinary-1': Object.freeze({
+    still:'./assets/studies/dwarf-hexwarden-warlock.svg',
+    idle:'./assets/demos/dwarf-hexwarden-warlock-idle.svg',
+    move:'./assets/demos/dwarf-hexwarden-warlock-move.svg',
+    action:'./assets/demos/dwarf-hexwarden-warlock-attack.svg',
+    rest:'./assets/demos/dwarf-hexwarden-warlock-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · Dwarf Hexwarden studies held occult tome with staff at side (prototype)',
+      move:'Move · stout short-stride travel with book carried close (prototype)',
+      action:'Attack · occult rune invokes a separate eldritch bolt (prototype)',
+      rest:'Rest · book and staff lower while rune disappears (prototype)'
+    })
+  }),
   'pregen-sorcerer-nonbinary-1': Object.freeze({
     still:'./assets/studies/elf-sparkweaver-sorcerer.svg',
     idle:'./assets/demos/elf-sparkweaver-sorcerer-idle.svg',
