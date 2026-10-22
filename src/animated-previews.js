@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'pregen-ranger-female-1': Object.freeze({
+    still:'./assets/studies/orc-pathfinder-female.svg',
+    idle:'./assets/demos/orc-pathfinder-female-idle.svg',
+    move:'./assets/demos/orc-pathfinder-female-move.svg',
+    action:'./assets/demos/orc-pathfinder-female-attack.svg',
+    rest:'./assets/demos/orc-pathfinder-female-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · Orc Pathfinder surveys the trail with recurve bow at hand (prototype)',
+      move:'Move · grounded ranger prowl under a quiver of fletched arrows (prototype)',
+      action:'Attack · anchor bowstring under chin then release distinct arrow (prototype)',
+      rest:'Rest · lower bow arm into settled scout stance (prototype)'
+    })
+  }),
   'pregen-monk-nonbinary-3': Object.freeze({
     still:'./assets/studies/goblin-stonefist-nonbinary.svg',
     idle:'./assets/demos/goblin-stonefist-nonbinary-idle.svg',

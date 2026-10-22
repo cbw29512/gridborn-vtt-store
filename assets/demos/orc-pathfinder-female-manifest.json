@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "pregen-ranger-female-1",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/orc-pathfinder-female.svg",
+  "restSource": "assets/demos/orc-pathfinder-female-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/orc-pathfinder-female-idle.svg",
+      "durationSec": 3.2
+    },
+    "move": {
+      "source": "assets/demos/orc-pathfinder-female-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/orc-pathfinder-female-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "plannedOutputs": [
+    "transparent-webm",
+    "static-png",
+    "rest-webm"
+  ],
+  "vttCompatibility": "untested",
+  "purchasable": false
+}
