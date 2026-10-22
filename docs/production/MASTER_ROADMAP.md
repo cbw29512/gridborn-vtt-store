@@ -4,6 +4,8 @@
 
 **Current focus:** finish distinctive monsters and playable-looking character visuals at scale. Do not confuse catalog concepts, animated studies, or technically exported prototypes with visually approved products ready for sale.
 
+**Mandatory before any new artwork:** follow [Research-to-Art Gate](RESEARCH_ART_GATE.md), recording individual source-backed anatomy, equipment, motion and licensing briefs before rendering. No study can be counted as a production asset without its research brief.
+
 ## Priority override — characters first (October 21, 2026)
 
 **Current production focus: finish the full character roster before expanding monster families.** [Character production issue #44](https://github.com/cbw29512/gridborn-vtt-store/issues/44) supersedes the former Wave A Ogre-first ordering. Ogre production [issue #43](https://github.com/cbw29512/gridborn-vtt-store/issues/43) is deferred, not canceled. Existing completed studies and art direction remain valid.
