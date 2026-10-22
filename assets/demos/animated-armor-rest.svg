@@ -36,12 +36,13 @@
 <path d="M80 153l20 2-4 14-12 7-14-7z" fill="#a5b8bc"/>
 </g>
 <g class="rig-weapon">
- <!-- Articulated gauntlet joins the hilt below the helmet; blade rises outside the visor. -->
+<!-- START WEAPON -->
  <path d="M174 145L188 136L204 145L201 158L185 164Z" fill="#435b6b" stroke="#a7b9bb" stroke-width="3"/>
  <path d="M194 155L210 112" stroke="#2a3541" stroke-width="9" stroke-linecap="round"/>
  <path d="M194 155L210 112" stroke="#b8975c" stroke-width="5" stroke-linecap="round"/>
  <path d="M203 119L224 123" stroke="#d2bc81" stroke-width="6" stroke-linecap="round"/>
  <path d="M208 115L218 48L231 27L231 55L219 116Z" fill="#b8c9cf" stroke="#394e5b" stroke-width="3"/>
  <path d="M217 52L223 43L217 108" fill="none" stroke="#e4edf0" stroke-width="3"/>
+
 </g>
 </svg>
