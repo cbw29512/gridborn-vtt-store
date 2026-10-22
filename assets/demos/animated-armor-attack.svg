@@ -3,9 +3,9 @@
 <title id="title">Animated Armor — attack original motion study</title>
 <desc id="description">Empty visor, articulated metal plates and heavy blade with attack animation. Noncommercial prototype.</desc>
 <style>
-.rig-core{animation:armor-lunge 1.4s steps(1,end) 1 both}.rig-weapon{animation:armor-cleave 1.4s steps(1,end) 1 both;transform-origin:190px 140px}
+.rig-core{animation:armor-lunge 1.4s steps(1,end) 1 both}.rig-weapon{animation:armor-cleave 1.4s steps(1,end) 1 both;transform-origin:195px 150px}
  @keyframes armor-lunge{0%,100%{transform:translate(0,0)}25%{transform:translate(3px,0)}53%{transform:translate(-9px,-3px)}77%{transform:translate(-2px,0)}}
- @keyframes armor-cleave{0%,100%{transform:rotate(0)}25%{transform:rotate(-40deg)}53%{transform:rotate(62deg)}77%{transform:rotate(13deg)}}
+ @keyframes armor-cleave{0%,100%{transform:rotate(-8deg)}25%{transform:rotate(-20deg)}53%{transform:rotate(19deg)}77%{transform:rotate(5deg)}}}
 @media(prefers-reduced-motion:reduce){.rig-core,.rig-weapon,.rig-head,.rig-boot-l,.rig-boot-r,.rig-foot-left,.rig-foot-right,.rig-visorglow,.rig-glow{animation:none!important}}
 </style>
 <ellipse cx="130" cy="207" rx="58" ry="11" fill="#07101c" opacity=".4"/>
@@ -35,11 +35,12 @@
 <path d="M80 153l20 2-4 14-12 7-14-7z" fill="#a5b8bc"/>
 </g>
 <g class="rig-weapon">
-<!-- START WEAPON -->
-<path d="M177 139l10 1 7 43-9 5-12-25z" fill="#d3b780"/>
-<path d="M183 62h8l13 68-8 14-9-7z" fill="#1b2839" stroke="#9fb6c3" stroke-width="4"/>
-<path d="M188 61h6l11-35-6-12-9 12-2 34z" fill="#b8c9cf"/>
-<path d="M188 79h9l5 8h-15z" fill="#e3d197"/>
-<path d="M186 139h16v7h-17z" fill="#ddc08d"/>
+ <!-- Articulated gauntlet joins the hilt below the helmet; blade rises outside the visor. -->
+ <path d="M174 145L188 136L204 145L201 158L185 164Z" fill="#435b6b" stroke="#a7b9bb" stroke-width="3"/>
+ <path d="M194 155L210 112" stroke="#2a3541" stroke-width="9" stroke-linecap="round"/>
+ <path d="M194 155L210 112" stroke="#b8975c" stroke-width="5" stroke-linecap="round"/>
+ <path d="M203 119L224 123" stroke="#d2bc81" stroke-width="6" stroke-linecap="round"/>
+ <path d="M208 115L218 48L231 27L231 55L219 116Z" fill="#b8c9cf" stroke="#394e5b" stroke-width="3"/>
+ <path d="M217 52L223 43L217 108" fill="none" stroke="#e4edf0" stroke-width="3"/>
 </g>
 </svg>
