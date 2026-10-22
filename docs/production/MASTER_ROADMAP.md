@@ -37,8 +37,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **26** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **24** | **16 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
+| Original illustrated concepts | **27** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **25** | **17 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -200,6 +200,13 @@ Produce the recognizable **common/base species first**, then build roles on that
 - Original `pregen-monk-nonbinary-3`: short nonbinary-authored Goblin Stonefist, green compact limbs, tall ears, orange zigzag trim, guarded short-arm feint plus a **fully attached low heel-sweep limb** at separate hip pivot. New source-backed still/Idle/Move/Attack/Rest, generator, research, source parity, prototype media export and tests.
 - Monk now has **one moving study for each authored gender** (male Human Wayfarer, female Orc Stonefist, nonbinary Goblin Stonefist). Distinct body silhouettes and separate attacks are mandatory; do not count these as nine completed monk variants.
 - Planned stack counts: source-illustrated **25→26**, four-state studies **23→24**, character studies **15→16**, authored hero variant studies **8→9 /108** (99 still lack these studies). 518 concepts unchanged, zero commercially approved tokens. Individual human 32/64/128px, real VTT, encoded alpha, rights, fulfillment remain blocking.
+
+## Orc Pathfinder Ranger: second authored Ranger study — October 22, 2026
+
+- `pregen-ranger-female-1`: original female Orc Pathfinder anatomy, tusks/braid/fur-trimmed leather field armor, separate visible back quiver, recurve longbow with stable bow-hand grip; an independent draw-hand anchored at chin and resting/taut bowstring states drive a single separately released fletched arrow. No recolor of the Elven Ranger.
+- Independently researched 2024 Ranger equipment and World Archery recurve stance/anchor/release. Each Idle/Move/one-shot Attack/Rest export is rendered deterministically from original SVG and tested for source parity and one-shot mechanics.
+- Provisional source counts after this PR: illustrated studies **26→27**, four-state moving **24→25**, character studies **16→17**, gender-authored hero studies **9→10 of 108** (98 remain), total catalog 518, retail approved 0. This is development-only until full technical media + human 32/64/128px, VTT interoperability, original art rights and fulfillment checks pass.
+- Ranger gender coverage: generic Elven Ranger and a female-authored Orc Pathfinder; nonbinary-authored Ranger variants remain unproduced.
 
 ## Batch update log
 

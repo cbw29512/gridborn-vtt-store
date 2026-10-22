@@ -24,6 +24,7 @@ on:
       - 'assets/studies/dwarf-hexwarden-warlock.svg'
       - 'assets/studies/orc-stonefist-female.svg'
       - 'assets/studies/goblin-stonefist-nonbinary.svg'
+      - 'assets/studies/orc-pathfinder-female.svg'
       - 'assets/studies/swamp-lizardfolk.svg'
       - 'assets/studies/human-paladin.svg'
       - 'assets/studies/great-white-shark.svg'
@@ -112,6 +113,9 @@ jobs:
           - manifest: assets/demos/goblin-stonefist-nonbinary-manifest.json
             id: pregen-monk-nonbinary-3
             exporter: tools/export_states.py
+          - manifest: assets/demos/orc-pathfinder-female-manifest.json
+            id: pregen-ranger-female-1
+            exporter: tools/export_states.py
           - manifest: assets/demos/swamp-lizardfolk-manifest.json
             id: mon-swamp-lizard
             exporter: tools/export_states.py
@@ -170,6 +174,7 @@ jobs:
               'pregen-warlock-nonbinary-1': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'pregen-monk-female-3': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'pregen-monk-nonbinary-3': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
+              'pregen-ranger-female-1': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'mon-swamp-lizard': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'ani-ocean-greatwhite': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
           }
@@ -196,6 +201,7 @@ jobs:
               'pregen-warlock-nonbinary-1': 'dwarf-hexwarden-warlock',
               'pregen-monk-female-3': 'orc-stonefist-female',
               'pregen-monk-nonbinary-3': 'goblin-stonefist-nonbinary',
+              'pregen-ranger-female-1': 'orc-pathfinder-female',
               'mon-swamp-lizard': 'swamp-lizardfolk',
               'ani-ocean-greatwhite': 'great-white-shark',
           }
