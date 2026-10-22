@@ -24,10 +24,11 @@ export const renderWave=function renderWave(kind,mode,source){
  @keyframes wiz-walk{0%,10%,90%,100%{transform:translate(0,0)}30%{transform:translate(-5px,-3px)}62%{transform:translate(5px,1px)}}
  @keyframes wiz-staff-walk{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(-8deg)}62%{transform:rotate(5deg)}}
  @keyframes wiz-glow-walk{0%,10%,90%,100%{opacity:.4}30%{opacity:1}62%{opacity:.55}}`,
- attack:`.rig-core{animation:wiz-cast 1.4s ease-in-out 1 both}.rig-weapon{animation:wiz-staff-cast 1.4s ease-in-out 1 both;transform-origin:76px 124px}.rig-glow{animation:wiz-burst 1.4s steps(1,end) 1 both}
+ attack:`.rig-core{animation:wiz-cast 1.4s ease-in-out 1 both}.rig-weapon{animation:wiz-staff-cast 1.4s ease-in-out 1 both;transform-origin:76px 124px}.rig-glow{animation:wiz-burst 1.4s steps(1,end) 1 both}.rig-projectile{animation:wiz-projectile-flight 1.4s linear 1 both}
  @keyframes wiz-cast{0%,100%{transform:translate(0,0)}23%{transform:translate(4px,1px)}52%{transform:translate(-6px,-4px)}75%{transform:translate(-2px,0)}}
  @keyframes wiz-staff-cast{0%,100%{transform:rotate(0)}23%{transform:rotate(18deg)}52%{transform:rotate(-28deg)}75%{transform:rotate(-9deg)}}
- @keyframes wiz-burst{0%,14%,79%,100%{opacity:.25;transform:translate(0,0)}40%{opacity:1;transform:translate(-16px,-10px)}57%{opacity:.75;transform:translate(-30px,-12px)}}`,
+ @keyframes wiz-burst{0%,14%,79%,100%{opacity:.25;transform:translate(0,0)}40%{opacity:1;transform:translate(-16px,-10px)}57%{opacity:.75;transform:translate(-30px,-12px)}}
+ @keyframes wiz-projectile-flight{0%,33%{opacity:0;transform:translate(0,0)}40%{opacity:1;transform:translate(-4px,-2px)}56%{opacity:1;transform:translate(-24px,-6px)}68%,100%{opacity:0;transform:translate(-33px,-9px)}}`,
  rest:`.rig-core{animation:wiz-rest 4s ease-in-out infinite}.rig-weapon{animation:wiz-rest-staff 4s ease-in-out infinite;transform-origin:76px 124px}.rig-glow{animation:wiz-rest-glow 4s steps(1,end) infinite}
  @keyframes wiz-rest{0%,10%,90%,100%{transform:translateY(7px) rotate(-3deg)}45%{transform:translateY(5px) rotate(-3deg)}}
  @keyframes wiz-rest-staff{0%,10%,90%,100%{transform:rotate(-25deg)}45%{transform:rotate(-28deg)}}
@@ -68,7 +69,7 @@ export const renderWave=function renderWave(kind,mode,source){
  @keyframes armor-rest-eye{0%,10%,90%,100%{opacity:.2}48%{opacity:.65}}`
  }
  }[kind][mode];
- const reduced='@media(prefers-reduced-motion:reduce){.rig-core,.rig-weapon,.rig-head,.rig-boot-l,.rig-boot-r,.rig-foot-left,.rig-foot-right,.rig-visorglow,.rig-glow{animation:none!important}}';
+ const reduced='@media(prefers-reduced-motion:reduce){.rig-core,.rig-weapon,.rig-head,.rig-boot-l,.rig-boot-r,.rig-foot-left,.rig-foot-right,.rig-visorglow,.rig-glow'+(kind==='wizard'&&mode==='attack'?',.rig-projectile':'')+'{animation:none!important}}';
  let svg=source.replace(/<title id="title">[^<]*<\/title>/,`<title id="title">${{wizard:'Elven Wizard',vanguard:'Orc Axe Vanguard Barbarian pregen',armor:'Animated Armor'}[kind]} — ${mode} original motion study</title>`)
  .replace(/<desc id="description">[^<]*<\/desc>/,`<desc id="description">${{wizard:'Cyan arcane staff, levitating robes and casting flare',vanguard:'Orc warpaint and massive brass axe',armor:'Empty visor, articulated metal plates and heavy blade'}[kind]} with ${mode} animation. Noncommercial prototype.</desc>`);
  svg=svg.replace('</desc>','</desc>\n<style>\n'+base+'\n'+reduced+'\n</style>');
@@ -84,6 +85,11 @@ export const renderWave=function renderWave(kind,mode,source){
   svg=svg.replace(h,'<g class="rig-head">\n'+h);
   svg=svg.replace('</g>\n<g class="rig-weapon">','</g>\n</g>\n<g class="rig-weapon">');
   svg=svg.replace('</g>\n</svg>','<g class="rig-glow"><circle cx="75" cy="53" r="17" fill="#7ee8f4" opacity=".55"/><path d="M58 52l17-21 19 22-18 17z" fill="none" stroke="#e4eead" stroke-width="4"/></g>\n</g>\n</svg>');
+  // The spell leaves the focus as an independent layer; it must not inherit staff rotation.
+  // Source-specific glyph is intentionally narrow and remains within the 256x240 frame.
+  if(mode==='attack'){
+   svg=svg.replace('</svg>','<g class="rig-projectile" data-weapon-projectile="arcane-bolt" opacity="0"><path d="M63 53L42 48L53 45L47 51L53 59Z" fill="#9be8f7" stroke="#386f9b" stroke-width="2"/><path d="M64 53L43 50" stroke="#f2fcff" stroke-width="3" stroke-linecap="round"/></g>\\n</svg>');
+  }
  }
  if(kind==='vanguard'){
   const boots='<rect x="96" y="159" width="25" height="34" fill="#1d2530"/><rect x="135" y="159" width="25" height="34" fill="#1d2530"/>';
