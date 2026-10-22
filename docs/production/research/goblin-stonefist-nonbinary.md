@@ -1,0 +1,11 @@
+# Goblin Stonefist Monk — original authored nonbinary production study
+
+**Existing immutable identity:** pregen-monk-nonbinary-3 · Goblin Stonefist Monk · Nonbinary from HERO_VARIANTS. Identity is established by source data, never inferred from hair or body. Smaller goblin anatomy has enlarged paired pointed ears, short legs, angular nose, jade-olive face, no human-proportion clone; dark indigo short martial coat, ocher-trimmed diagonal shoulder wrap and woven cloth fist braces.
+
+**Rules and functional references:** 2024 Monk Basic Rules (https://www.dndbeyond.com/sources/dnd/br-2024/character-classes) establishes Unarmed Strike, unarmored movement and agile defense. Movement is original low foot sweep preceded by a quick guarded arm feint, without claiming a specific printed subclass feature or game damage. Internal Gridborn ART_BIBLE, RESEARCH_ART_GATE and WEAPON_ATTACK_QC require source-led action, anchored limbs and no clipping; original SVG paths do not copy third-party images.
+
+**Different from the other Monk studies:** Human male Wayfarer has upright palm/front-kick combo. Female Orc Stonefist has broad powerful shoulders and a raised hammerfist. This nonbinary Goblin Stonefist is compact with low weight distribution, quick elbow feint, a hip-to-knee-to-heel lateral sweep and small ground dust. It has no weapon, steel armor or magical projectiles. The source uses a fully articulated replacement limb connected to right hip (145,173) with foot beyond body at (220,201), while the other foot stays planted. The normal leg disappears only during low-sweep frames and returns on recovery.
+
+**States:** Idle 3.2 sec guard/breath; Move 2.4 sec compact opposing strides; Attack 1.4 sec once: 23–42% complete attached forearm feint, 53–72% low foot sweep in place, 61–73% dust, recovery at 78–100%; Rest 4 sec soft lower stance. Loop end frame held at original pose before final 10 fps export.
+
+**Acceptance:** New 256×240 original transparent SVG + separate four-mode generated exports. Technical source/media checks plus manual 256/128/64/32px, face/limb/ear clearance, light/dark map, distinctive silhouettes, real Foundry and Roll20 integration, rights review and checkout/fulfillment are required. Retail remain disabled; vttCompatibility untested.

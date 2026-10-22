@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'pregen-monk-nonbinary-3': Object.freeze({
+    still:'./assets/studies/goblin-stonefist-nonbinary.svg',
+    idle:'./assets/demos/goblin-stonefist-nonbinary-idle.svg',
+    move:'./assets/demos/goblin-stonefist-nonbinary-move.svg',
+    action:'./assets/demos/goblin-stonefist-nonbinary-attack.svg',
+    rest:'./assets/demos/goblin-stonefist-nonbinary-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · nimble Goblin Stonefist guarded low stance (prototype)',
+      move:'Move · fast crouched steps on both feet (prototype)',
+      action:'Attack · elbow feint and separate low heel sweep (prototype)',
+      rest:'Rest · crouched stance with quiet fists (prototype)'
+    })
+  }),
   'pregen-monk-female-3': Object.freeze({
     still:'./assets/studies/orc-stonefist-female.svg',
     idle:'./assets/demos/orc-stonefist-female-idle.svg',
