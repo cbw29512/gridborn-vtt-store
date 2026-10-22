@@ -61,7 +61,7 @@ test('illustrated concepts span every category without claiming completed animat
   for (const category of ['Characters','NPCs','Monsters','Animals'])
     assert.ok(illustrated.some(item => item.category === category), category);
   assert.equal(illustrated.filter(item => item.animationStatus === 'art-study').length, 12);
-  assert.ok(illustrated.filter(item => !['chr-ftr-human','chr-wiz-elf','pregen-barbarian-male-3','mon-dng-armor','mon-cave-goblin','ani-forest-wolf','mon-cave-spider','mon-dng-skeleton'].includes(item.id))
+  assert.ok(illustrated.filter(item => !['chr-ftr-human','chr-clr-dwarf','chr-wiz-elf','pregen-barbarian-male-3','pregen-cleric-female-2','pregen-rogue-nonbinary-1','mon-dng-armor','mon-cave-ogre','mon-cave-goblin','ani-forest-wolf','mon-cave-spider','mon-dng-skeleton'].includes(item.id))
     .every(item => item.animationStatus === 'static-art-study'));
   assert.ok(illustrated.every(item => item.purchasable === false));
 });
