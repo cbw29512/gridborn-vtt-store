@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'chr-rng-elf': Object.freeze({
+    still:'./assets/studies/elven-ranger.svg',
+    idle:'./assets/demos/elven-ranger-idle.svg',
+    move:'./assets/demos/elven-ranger-move.svg',
+    action:'./assets/demos/elven-ranger-attack.svg',
+    rest:'./assets/demos/elven-ranger-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · Elven longbow scout watches for movement (prototype)',
+      move:'Move · opposing leg strides with balanced bow (prototype)',
+      action:'Attack · draw and release arrow toward target (prototype)',
+      rest:'Rest · bow lowered and body relaxed (prototype)'
+    })
+  }),
   'chr-pal-human': Object.freeze({
     still:'./assets/studies/human-paladin.svg',
     idle:'./assets/demos/human-paladin-idle.svg',

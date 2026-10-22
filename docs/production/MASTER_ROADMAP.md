@@ -37,9 +37,9 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **18** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **16** | **8 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
-| Private animation packages | **16 technically certified** | Private export pipeline; **not** real VTT import or artistic approval |
+| Original illustrated concepts | **19** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **17** | **9 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
+| Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
 | NPC concept roster | **48** | Concepts, not finished animated tokens |
@@ -93,9 +93,9 @@ Do not mark a demographic slot complete merely because a base class art study ex
 
 ### Wave C — Complete missing class coverage (CURRENT PRIORITY; FIRST CHARACTER BATCH)
 
-Classes already represented by at least one moving character study: **Fighter, Barbarian, Wizard, Cleric, Paladin, Rogue**. The six class families below remain the top missing *class coverage* targets, independent of the expansion in Wave B.
+Classes represented by moving studies after Ranger: **Fighter, Barbarian, Wizard, Cleric, Paladin, Rogue, Ranger**. The six class families below remain the top missing *class coverage* targets, independent of the expansion in Wave B.
 
-- [ ] **Ranger** — bow, quiver, wilderness gear, readable ranged Attack.
+- [x] **Ranger** — original longbow/quiver source and one-shot nock, draw and released-arrow SVG study; human art and media certification still required.
 - [ ] **Bard** — instrument, costume, distinctive musical or blade motion.
 - [ ] **Druid** — nature staff, organic mantle and nature-themed cast.
 - [ ] **Monk** — unarmored silhouette, grounded martial combo, non-weapon stance.
@@ -151,6 +151,12 @@ Produce the recognizable **common/base species first**, then build roles on that
 - **Elven Wizard (`chr-wiz-elf`)**: Attack now releases an independently animated, visible arcane bolt from the focus; the projectile no longer inherits staff rotation and returns to an absent state outside Attack. The existing staff charge remains a separate effect.
 - Source: the existing original Elven Wizard illustration and the source-specific `wave-two` animation generator; added a deterministic export-and-projectile regression test. No new catalog entry or commercial approval is claimed.
 - **Counts unchanged:** 16 public four-state animated art studies; zero retail-ready tokens. Human 32/64/128px visual checks, real VTT playback, original-art rights review and fulfillment signoff remain mandatory.
+
+## Ranger class coverage — October 22, 2026
+
+- Original authored Elven Ranger (`chr-rng-elf`) still and independent four-state SVG studies, bowstring tension and released arrow, generator, manifest, individual art research and regression tests. Existing catalog identity retained.
+- Public illustration count **18 → 19**; source-backed animated studies **16 → 17**; class coverage **6 → 7 of 12**. Total 518 searchable concepts unchanged and **0** commercial tokens. Prior 16 validated private packages do not automatically establish the new Ranger export.
+- Pending source/human QC: visual 128/64/32px on light/dark maps, true frame boundaries, Foundry/Roll20 import, rights and fulfillment signoff. No production deployment.
 
 ## Batch update log
 
