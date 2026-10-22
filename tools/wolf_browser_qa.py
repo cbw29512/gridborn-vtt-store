@@ -45,7 +45,13 @@ def check_wolf(browser,origin,width,screenshots:Path):
         assert page.locator('#concept-preview-image').get_attribute('src').endswith('dwarven-cleric.svg')
         page.wait_for_function('(node) => node.complete && node.naturalWidth > 0',
                                arg=page.locator('#concept-preview-image').element_handle(), timeout=6000)
-        expect(page.locator('#concept-preview-controls')).to_be_hidden()
+        expect(page.locator('#concept-preview-controls')).to_be_visible()
+        for mode in ('idle','move','action','rest'):
+            expect(page.locator('#concept-preview-'+mode)).to_be_visible()
+        page.locator('#concept-preview-move').click()
+        assert page.locator('#concept-preview-image').get_attribute('src').endswith('dwarven-cleric-move.svg')
+        page.locator('#concept-preview-rest').click()
+        assert page.locator('#concept-preview-image').get_attribute('src').endswith('dwarven-cleric-rest.svg')
         page.screenshot(path=str(screenshots/f'gridborn-dwarf-cleric-{width}px.png'))
         page.keyboard.press('Escape')
         paladin=page.get_by_role('button',name='View concept details for Human Paladin')

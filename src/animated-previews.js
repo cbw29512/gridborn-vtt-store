@@ -3,6 +3,66 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'chr-clr-dwarf': Object.freeze({
+    still:'./assets/studies/dwarven-cleric.svg',
+    idle:'./assets/demos/dwarven-cleric-idle.svg',
+    move:'./assets/demos/dwarven-cleric-move.svg',
+    action:'./assets/demos/dwarven-cleric-attack.svg',
+    rest:'./assets/demos/dwarven-cleric-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · stocky dwarf prayer and mace ready (prototype)',
+      move:'Move · heavy shielded dwarf marching (prototype)',
+      action:'Attack · one flanged mace smite, then Idle (prototype)',
+      rest:'Rest · kneeling prayer with shield and mace lowered (prototype)'
+    })
+  }),
+  'pregen-cleric-female-2': Object.freeze({
+    still:'./assets/studies/human-mercywarden-female.svg',
+    idle:'./assets/demos/human-mercywarden-female-idle.svg',
+    move:'./assets/demos/human-mercywarden-female-move.svg',
+    action:'./assets/demos/human-mercywarden-female-attack.svg',
+    rest:'./assets/demos/human-mercywarden-female-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · braided healer with warm golden aura (prototype)',
+      move:'Move · guarded strides and raised healing shield (prototype)',
+      action:'Attack · one healing-mace flash then Idle (prototype)',
+      rest:'Rest · quiet healing prayer and soft aura (prototype)'
+    })
+  }),
+  'pregen-rogue-nonbinary-1': Object.freeze({
+    still:'./assets/studies/human-shadowstep-nonbinary.svg',
+    idle:'./assets/demos/human-shadowstep-nonbinary-idle.svg',
+    move:'./assets/demos/human-shadowstep-nonbinary-move.svg',
+    action:'./assets/demos/human-shadowstep-nonbinary-attack.svg',
+    rest:'./assets/demos/human-shadowstep-nonbinary-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · hooded rogue keeps watch with twin daggers (prototype)',
+      move:'Move · low silent sidesteps and trailing cloak (prototype)',
+      action:'Attack · rapid paired dagger strike then Idle (prototype)',
+      rest:'Rest · crouched stillness with sheathed daggers (prototype)'
+    })
+  }),
+  'mon-cave-ogre': Object.freeze({
+    still:'./assets/studies/cave-ogre.svg',
+    idle:'./assets/demos/cave-ogre-idle.svg',
+    move:'./assets/demos/cave-ogre-move.svg',
+    action:'./assets/demos/cave-ogre-attack.svg',
+    rest:'./assets/demos/cave-ogre-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · huge ogre shifts club weight (prototype)',
+      move:'Move · heavy uneven ogre footfalls (prototype)',
+      action:'Attack · one crushing stone-club smash then Idle (prototype)',
+      rest:'Rest · ogre slumps with grounded club (prototype)'
+    })
+  }),
   'chr-wiz-elf': Object.freeze({
     still: './assets/studies/elven-wizard.svg',
     idle: './assets/demos/elven-wizard-idle.svg',

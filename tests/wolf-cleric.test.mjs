@@ -75,6 +75,6 @@ test('Dwarf Cleric has original mace-and-shield source plus builder recipe',()=>
  assert.equal(dwarf.weapon,'Mace');
  assert.equal(dwarf.offhand,'Shield');
  assert.match(renderRig(dwarf),/rig-weapon/);
- assert.equal(catalog.find(x=>x.id==='chr-clr-dwarf').animationStatus,'static-art-study');
+ assert.equal(catalog.find(x=>x.id==='chr-clr-dwarf').animationStatus,'art-study');
  assert.equal(catalog.find(x=>x.id==='chr-clr-dwarf').purchasable,false);
 });

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "pregen-cleric-female-2",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/human-mercywarden-female.svg",
+  "restSource": "assets/demos/human-mercywarden-female-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/human-mercywarden-female-idle.svg",
+      "durationSec": 3.2
+    },
+    "move": {
+      "source": "assets/demos/human-mercywarden-female-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/human-mercywarden-female-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "plannedOutputs": [
+    "transparent-webm",
+    "static-png",
+    "rest-webm"
+  ],
+  "vttCompatibility": "untested",
+  "purchasable": false
+}

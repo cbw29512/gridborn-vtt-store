@@ -18,6 +18,7 @@ from spider_browser_qa import check_spider
 from goblin_browser_qa import check_goblin
 from fighter_browser_qa import check_fighter
 from wave_two_browser_qa import check_wave_two
+from card_alignment_browser_qa import check_consistent_cards
 from catalog_motion_browser_qa import check_catalog_motion, check_reduced_motion
 from catalog_expansion_browser_qa import check_full_catalog
 SIZES = (1440, 390, 320)
@@ -198,6 +199,7 @@ def main() -> int:
                     check_goblin(browser, url, width, screenshots)
                     check_fighter(browser, url, width, screenshots)
                     check_wave_two(browser, url, width, screenshots)
+                    check_consistent_cards(browser, url, width, screenshots)
                     check_catalog_motion(browser, url, width, screenshots)
                     if width==1440: check_reduced_motion(browser, url)
                     check_full_catalog(browser, url, width, screenshots)
