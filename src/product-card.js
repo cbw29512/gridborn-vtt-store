@@ -8,6 +8,7 @@ const generatedHeroIds=new Set(HERO_VARIANTS.map(x=>x.id));
 export function makeCard(item) {
   try {
     const card = document.createElement('article'); card.className = 'product-card';
+    card.dataset.cardCategory=item.category;
     const visual = document.createElement('div'); visual.className = 'product-visual';
     visual.dataset.category = item.category;
     const preview=animatedPreviews[item.id];
@@ -74,13 +75,15 @@ export function makeCard(item) {
     details.textContent = 'View concept details';
     details.setAttribute('aria-label', 'View concept details for ' + item.name);
     details.addEventListener('click', () => openConcept(item, details));
+    const customizeSlot=document.createElement('div');
+    customizeSlot.className='product-customize-slot';
     if (Object.hasOwn(PRESETS,item.id)||generatedHeroIds.has(item.id)||hasNPCRecipe(item.id)) {
       const personalize = document.createElement('a');
       personalize.href = './builder.html?preset=' + encodeURIComponent(item.id);
       personalize.className = 'customize-link';
       personalize.textContent = 'Customize this look ✦';
       personalize.setAttribute('aria-label','Customize ' + item.name + ' in the builder');
-      body.append(personalize);
+      customizeSlot.append(personalize);
     }
     const bundleAdd=document.createElement('button');
     bundleAdd.type='button';
@@ -89,7 +92,7 @@ export function makeCard(item) {
     bundleAdd.setAttribute('aria-label','Add '+item.name+' to bundle plan');
     bundleAdd.textContent='Add to bundle +';
     foot.append(price, availability);
-    body.append(type, name, meta, details, bundleAdd, foot);
+    body.append(type, name, meta, customizeSlot, details, bundleAdd, foot);
     card.append(visual, body);
     return card;
   } catch (error) { console.error('Unable to render token preview', item.id, error); return null; }
