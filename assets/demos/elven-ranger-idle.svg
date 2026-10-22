@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="idle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Elven Ranger — original Gridborn forest longbow scout — idle preview</title>
+<desc id="description">Elven pointed-ear wilderness archer with dark hood, leather forest tunic, quiver, braced curved longbow, visible drawing hand, and separate fletched arrow. Original noncommercial concept.</desc>
+<style>
+.ranger-core{animation:ranger-guard 3.2s ease-in-out infinite}.ranger-bow{transform-origin:200px 122px;animation:ranger-bow-watch 3.2s ease-in-out infinite}
+@keyframes ranger-guard{0%,100%{transform:translateY(0)}42%{transform:translateY(-2px)}70%{transform:translateY(1px)}}
+@keyframes ranger-bow-watch{0%,100%{transform:rotate(0)}42%{transform:rotate(3deg)}70%{transform:rotate(-2deg)}}
+@media(prefers-reduced-motion:reduce){.ranger-core,.ranger-bow,.ranger-draw-arm,.ranger-leg-left,.ranger-leg-right,.ranger-string-rest,.ranger-string-drawn,.ranger-arrow{animation:none!important}}
+</style>
+<ellipse cx="130" cy="208" rx="65" ry="12" fill="#101922" opacity=".4"/>
+<ellipse cx="130" cy="198" rx="72" ry="23" fill="none" stroke="#af9b70" stroke-width="3" opacity=".65"/>
+<g class="ranger-core">
+ <g class="ranger-quiver">
+  <path d="M78 87L102 80L112 163L93 168Z" fill="#4d3729" stroke="#b49667" stroke-width="3"/>
+  <path d="M85 65L90 111M95 61L98 112M105 67L103 114" stroke="#e5d6a7" stroke-width="4"/>
+  <path d="M80 68L92 78L99 65L106 77L111 69" stroke="#a5bd91" stroke-width="5" fill="none"/>
+ </g>
+ <g class="ranger-cloak">
+  <path d="M106 111Q82 127 76 167L78 196L104 187L126 200L149 184L174 195L182 163L164 107Z" fill="#284b40" stroke="#18302b" stroke-width="4"/>
+  <path d="M100 126L88 179L108 167L124 188L146 166L168 183L171 160L157 120Z" fill="#63816a"/>
+ </g>
+ <g class="ranger-leg-left">
+  <path d="M110 162L133 164L129 195L122 207L104 206L99 183Z" fill="#4a4b38" stroke="#273c30" stroke-width="3"/>
+  <path d="M102 195L124 196L122 214L91 214L87 207Z" fill="#3e3831" stroke="#c0a275" stroke-width="3"/>
+ </g>
+ <g class="ranger-leg-right">
+  <path d="M135 163L155 163L167 194L162 207L145 210L136 185Z" fill="#505341" stroke="#253b30" stroke-width="3"/>
+  <path d="M146 198L166 198L181 211L174 215L146 215Z" fill="#3e3831" stroke="#b9a273" stroke-width="3"/>
+ </g>
+ <g class="ranger-torso">
+  <path d="M100 111L114 101L154 103L171 118L162 162L143 176L111 169L94 151Z" fill="#344b3b" stroke="#182f2d" stroke-width="4"/>
+  <path d="M112 113L146 112L151 156L132 170L111 152Z" fill="#739079"/>
+  <path d="M127 109L136 111L139 161L128 166Z" fill="#c3a679"/>
+  <path d="M99 151L158 155" stroke="#4d3326" stroke-width="8"/>
+  <rect x="130" y="151" width="14" height="12" rx="2" fill="#d3b77d"/>
+  <path d="M97 116L112 103L126 127L109 140L93 131Z" fill="#436452" stroke="#a1b08a" stroke-width="3"/>
+ </g>
+ <g class="ranger-head">
+  <path d="M100 72L109 49L132 43L154 57L164 77L153 109L131 121L109 107Z" fill="#263f38" stroke="#142d2c" stroke-width="4"/>
+  <path d="M107 76L125 63L149 77L149 100L133 110L112 105Z" fill="#d1a084" stroke="#715742" stroke-width="2"/>
+  <path d="M104 81L88 75L104 97L113 91M148 83L169 76L154 98L144 90" fill="#d6a887" stroke="#75523b" stroke-width="3"/>
+  <path d="M97 80L106 52L124 43L146 49L166 72L166 89L151 73L142 59L121 62L106 85Z" fill="#2d4c41" stroke="#102b2b" stroke-width="4"/>
+  <path d="M111 62L135 55L150 65" fill="none" stroke="#9bae87" stroke-width="4"/>
+  <path d="M119 90L127 88M139 89L147 90" stroke="#29362c" stroke-width="3"/>
+ </g>
+ <g class="ranger-draw-arm">
+  <path d="M111 125L136 127L154 120" fill="none" stroke="#314b3e" stroke-width="15" stroke-linecap="round"/>
+  <path d="M133 125L153 121" stroke="#99a885" stroke-width="8"/>
+  <path d="M150 119L159 119" stroke="#dbad8c" stroke-width="10" stroke-linecap="round"/>
+ </g>
+ <g class="ranger-bow-arm">
+  <path d="M158 132L179 138L199 121" fill="none" stroke="#36513e" stroke-width="15" stroke-linecap="round"/>
+  <path d="M178 137L193 126" stroke="#91a785" stroke-width="8"/>
+  <path d="M197 119L206 122" stroke="#dba88c" stroke-width="10" stroke-linecap="round"/>
+ </g>
+</g>
+<g class="ranger-bow" data-weapon="longbow">
+ <path d="M200 59Q233 122 200 187" fill="none" stroke="#443022" stroke-width="11" stroke-linecap="round"/>
+ <path d="M200 59Q225 122 200 187" fill="none" stroke="#c69a5e" stroke-width="6" stroke-linecap="round"/>
+ <path d="M195 114L207 114L207 127L196 127Z" fill="#4d3b31" stroke="#b4a075" stroke-width="2"/>
+ <g class="ranger-string-rest"><path d="M200 60L193 121L200 185" fill="none" stroke="#ebdabe" stroke-width="2.5"/></g>
+ <g class="ranger-string-drawn" opacity="0"><path d="M200 60L154 120L200 185" fill="none" stroke="#f1e2c1" stroke-width="3"/></g>
+</g>
+<g class="ranger-arrow" data-weapon-projectile="arrow" opacity="0">
+ <path d="M159 120L221 120" stroke="#f0d2a0" stroke-width="4" stroke-linecap="round"/>
+ <path d="M216 115L228 120L216 125Z" fill="#c9d1bd" stroke="#526a60" stroke-width="2"/>
+ <path d="M159 114L168 120L159 126M167 114L176 120L167 126" fill="none" stroke="#a6b88d" stroke-width="3"/>
+</g>
+</svg>
