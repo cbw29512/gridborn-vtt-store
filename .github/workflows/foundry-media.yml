@@ -16,6 +16,7 @@ on:
       - 'assets/studies/human-shadowstep-nonbinary.svg'
       - 'assets/studies/cave-ogre.svg'
       - 'assets/studies/gnome-rogue.svg'
+      - 'assets/studies/elven-ranger.svg'
       - 'assets/studies/swamp-lizardfolk.svg'
       - 'assets/studies/human-paladin.svg'
       - 'assets/studies/great-white-shark.svg'
@@ -80,6 +81,9 @@ jobs:
           - manifest: assets/demos/gnome-rogue-manifest.json
             id: chr-rge-gnome
             exporter: tools/export_states.py
+          - manifest: assets/demos/elven-ranger-manifest.json
+            id: chr-rng-elf
+            exporter: tools/export_states.py
           - manifest: assets/demos/swamp-lizardfolk-manifest.json
             id: mon-swamp-lizard
             exporter: tools/export_states.py
@@ -130,6 +134,7 @@ jobs:
               'mon-cave-ogre': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'chr-pal-human': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'chr-rge-gnome': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
+              'chr-rng-elf': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'mon-swamp-lizard': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'ani-ocean-greatwhite': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
           }
@@ -148,6 +153,7 @@ jobs:
               'mon-cave-ogre': 'cave-ogre',
               'chr-pal-human': 'human-paladin',
               'chr-rge-gnome': 'gnome-rogue',
+              'chr-rng-elf': 'elven-ranger',
               'mon-swamp-lizard': 'swamp-lizardfolk',
               'ani-ocean-greatwhite': 'great-white-shark',
           }
