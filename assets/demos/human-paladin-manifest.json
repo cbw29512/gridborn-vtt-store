@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "chr-pal-human",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/human-paladin.svg",
+  "restSource": "assets/demos/human-paladin-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/human-paladin-idle.svg",
+      "durationSec": 3.2
+    },
+    "move": {
+      "source": "assets/demos/human-paladin-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/human-paladin-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "plannedOutputs": [
+    "transparent-webm",
+    "static-png",
+    "rest-webm"
+  ],
+  "vttCompatibility": "untested",
+  "purchasable": false
+}
