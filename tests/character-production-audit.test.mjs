@@ -8,9 +8,9 @@ test('report distinguishes concepts, animated classes and animated hero identiti
   assert.equal(report.classCount,12);
   assert.equal(report.variantConcepts,108);
   assert.deepEqual(report.classesMissingStudy,[]);
-  assert.equal(report.animatedCharacterStudies,20);
-  assert.equal(report.animatedHeroVariants,13);
-  assert.equal(report.classes.reduce((n,c)=>n+c.remainingVariantStudies,0),95);
+  assert.equal(report.animatedCharacterStudies,21);
+  assert.equal(report.animatedHeroVariants,14);
+  assert.equal(report.classes.reduce((n,c)=>n+c.remainingVariantStudies,0),94);
   for(const row of report.classes){
     assert.equal(row.concepts,9);
     assert.deepEqual(row.genderConcepts,{male:3,female:3,nonbinary:3});
