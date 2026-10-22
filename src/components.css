@@ -126,3 +126,70 @@
 .catalog-attribution summary{cursor:pointer;font-size:12px;font-weight:800;min-height:28px}
 .catalog-attribution p{font-size:12px;color:#4c5963;line-height:1.6}
 .catalog-attribution a{color:#6d4921;text-decoration:underline}
+
+
+/* Equal-card contract: identical visual stage, content tracks and footer anchors.
+ * Long names wrap to two lines without making adjacent cards stagger.
+ * The optional builder shortcut reserves its track on every card.
+ */
+.product-grid{align-items:stretch;grid-auto-rows:1fr}
+.product-card{
+ display:flex;flex-direction:column;align-self:stretch;height:100%;
+ box-sizing:border-box;min-height:0;
+}
+.product-visual{
+ flex:0 0 180px;height:180px;min-height:180px;
+ width:100%;box-sizing:border-box;
+}
+.product-art{
+ display:block;flex:none;width:min(82%,160px);height:160px;
+ object-fit:contain;object-position:center center;max-width:95%;
+}
+.product-body{
+ display:flex;flex-direction:column;gap:0;flex:1;min-width:0;
+ padding:15px;box-sizing:border-box;
+}
+.product-type{
+ line-height:1.45;min-height:30px;max-height:30px;
+ display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+ overflow:hidden;overflow-wrap:anywhere;
+}
+.product-name{
+ line-height:1.3;min-height:44px;max-height:44px;margin:7px 0 8px;
+ display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+ overflow:hidden;overflow-wrap:anywhere;
+}
+.product-meta{
+ line-height:1.5;min-height:34px;max-height:34px;
+ display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+ overflow:hidden;
+}
+.product-customize-slot{
+ min-height:36px;display:flex;align-items:center;justify-content:flex-start;
+ padding:3px 0;box-sizing:border-box;
+}
+.product-customize-slot:empty{visibility:hidden}
+.product-customize-slot .customize-link{margin:0}
+.product-body .details-button{width:100%;min-height:44px;margin:4px 0 8px}
+.product-body .product-bundle-add{width:100%;min-height:40px;margin:0 0 11px}
+.product-foot{
+ margin-top:auto;min-height:44px;align-items:center;flex-wrap:wrap;
+ box-sizing:border-box;padding-top:9px;
+}
+.product-unavailable{font-size:11px;text-align:right}
+.product-price{font-size:clamp(12px,1.1vw,16px);line-height:1.3}
+.product-card[data-card-category="Characters"] .product-visual{border-bottom-color:#b7a3c8}
+.product-card[data-card-category="Monsters"] .product-visual{border-bottom-color:#b9948d}
+.product-card[data-card-category="Animals"] .product-visual{border-bottom-color:#7faaa1}
+.product-card[data-card-category="NPCs"] .product-visual{border-bottom-color:#aaa084}
+@media(max-width:460px){
+ .product-visual{flex-basis:144px;height:144px;min-height:144px}
+ .product-art{height:126px;width:min(85%,126px)}
+ .product-body{padding:11px}
+ .product-type{min-height:29px;max-height:29px;font-size:9px}
+ .product-name{line-height:1.25;min-height:40px;max-height:40px;font-size:14px}
+ .product-meta{line-height:1.4;min-height:42px;max-height:42px}
+ .product-customize-slot{min-height:42px}
+ .product-body .product-foot{min-height:47px;flex-direction:row;align-items:center}
+ .product-unavailable{font-size:10px}
+}
