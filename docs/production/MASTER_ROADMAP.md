@@ -4,6 +4,18 @@
 
 **Current focus:** finish distinctive monsters and playable-looking character visuals at scale. Do not confuse catalog concepts, animated studies, or technically exported prototypes with visually approved products ready for sale.
 
+## Priority override — characters first (October 21, 2026)
+
+**Current production focus: finish the full character roster before expanding monster families.** [Character production issue #44](https://github.com/cbw29512/gridborn-vtt-store/issues/44) supersedes the former Wave A Ogre-first ordering. Ogre production [issue #43](https://github.com/cbw29512/gridborn-vtt-store/issues/43) is deferred, not canceled. Existing completed studies and art direction remain valid.
+
+1. Audit the 108 planned character identities and existing art/studies; do not count a concept as finished.
+2. Establish at least one moving study for **all 12 classes** by filling Ranger, Bard, Druid, Monk, Sorcerer and Warlock gaps.
+3. Complete distinct **male, female and nonbinary** character designs across each class (**36** unique studies).
+4. Expand to **three male, three female and three nonbinary per class** (**108** distinct authored character variants) with Still, Idle, Move, one-shot Attack and Rest and the complete technical/media gate.
+5. After the character milestone, return to Ogre Mage/Knight/King, remaining monster families, NPCs and animals.
+
+This priority order changes sequencing only; **current verified counts do not increase**. The Wave A/B/C headings below are historical batch labels, not execution order. Each production PR must record truthful status and check outcomes.
+
 ## Snapshot — October 21, 2026
 
 | Scope | Currently evidenced | Target / explanation |
@@ -36,7 +48,7 @@ Progress snapshots must change when code and checks establish new facts. Never i
 
 **Status legend:** ✅ merged source-backed four-state art study with technical media checks (still requires human/VTT approval); ☐ not yet produced or not proven complete. *Role examples are original Gridborn proposals, not necessarily official stat-block variants.*
 
-### Wave A — Ogre family (NEXT)
+### Wave A — Ogre family (DEFERRED until character roster milestone)
 
 Use the existing **Cave Ogre** anatomy as one consistent body-plan reference: hulking shoulders, massive forearms, tusks, broad face and heavy gait. The common Ogre sets the baseline; role variants must change apparel, weapons and motions visibly while keeping the Ogre recognizable.
 
@@ -48,7 +60,7 @@ Use the existing **Cave Ogre** anatomy as one consistent body-plan reference: hu
 
 **Delivery rule:** a checked-off role must have its own drawn accessories and source-specific four-state media, not merely the family profile metadata in [creature-family-standards.mjs](../../src/creature-family-standards.mjs). Check catalog legality/licensing and whether the variant is a new original Gridborn product before adding IDs.
 
-### Wave B — Character coverage: Fighter, Rogue, Wizard, Cleric
+### Wave B — Character coverage: Fighter, Rogue, Wizard, Cleric (CURRENT PRIORITY)
 
 Preserve each class's recognizable gear. Expand male / female / nonbinary *authored identities* with different faces, hair, clothing construction, stance, weapons and signature moves—not cloned bodies with recolored outfits. Gender is defined by the character record, not inferred from appearance.
 
@@ -63,7 +75,7 @@ Preserve each class's recognizable gear. Expand male / female / nonbinary *autho
 
 Do not mark a demographic slot complete merely because a base class art study exists; verify the variant's intended gender, distinct art ID, four states and tests.
 
-### Wave C — Complete missing class coverage
+### Wave C — Complete missing class coverage (CURRENT PRIORITY; FIRST CHARACTER BATCH)
 
 Classes already represented by at least one moving character study: **Fighter, Barbarian, Wizard, Cleric, Paladin, Rogue**. The six class families below remain the top missing *class coverage* targets, independent of the expansion in Wave B.
 
