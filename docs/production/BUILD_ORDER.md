@@ -337,3 +337,38 @@ identities*, not complete playable pregenerated D&D characters.
 Commercial release remains blocked by visual quality at actual tabletop
 size, rights/license review, real VTT import/playback verification, and
 secure fulfillment. None of the tokens is purchasable.
+
+
+### Motion Wave Three and uniform storefront card grid
+
+The storefront now uses **one uniform card geometry** for every filtered result:
+equally sized visual stages, identical title/metadata line slots, an always
+reserved customization row, vertically aligned Details / Add-to-Bundle
+controls and matching bottom prices. Responsive grid columns are four on
+desktop, three on medium screens, two on mobile. Chromium QA measures
+actual card boundaries, row and button alignment, 180/144px artwork
+stages and overflow at 1440/390/320px. The goal is symmetrical product
+comparison despite varying title lengths and optional builder actions.
+
+The next four **individually authored original** token studies use existing
+catalog IDs, not new look-alike records: Dwarven Cleric
+(`chr-clr-dwarf`) has a low-set armored build, braids/beard, sun mace
+and shield; Human Mercywarden Cleric female pregen
+(`pregen-cleric-female-2`) has a tall lighter surcoat, blue shield,
+auburn braid and healing halo; Human Shadowstep Rogue nonbinary pregen
+(`pregen-rogue-nonbinary-1`) has a hooded narrow silhouette, twin
+copper daggers and stealth trail; Cave Ogre (`mon-cave-ogre`) is a
+hulking **Large**, heavy-limbed brute with a stone club.
+
+Each original source feeds separate Idle, Move, one-shot Attack and Rest
+SVGs via `src/creature-rigs/wave-three.mjs`;
+`node tools/generate-wave-three.mjs --check` enforces deterministic output.
+The **12** total full-motion catalog studies loop automatically for
+buyers; the four new studies have private manifests for 3.2s / 2.4s /
+1.4s / 4.0s state clips at 10 FPS. Tests check nonduplicated still
+drawings, distinct weapon/effect rigs, real video transparency, loop
+quality, VTT scale previews and runtime motion requirements.
+
+The two new **pregen identities remain visual studies, not playable
+D&D character sheets**. All artwork is unlicensed/unreviewed for sale,
+real VTT import untested, purchase unavailable, and Netlify is unchanged.
