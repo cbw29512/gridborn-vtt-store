@@ -139,6 +139,13 @@ Produce the recognizable **common/base species first**, then build roles on that
 - [ ] Merge source study; update **snapshot, queue checkboxes and PR link in this roadmap in the same PR**.
 - [ ] **Separate release gate:** visually approve, test actual Foundry/Roll20 import, inspect 1-square gameplay footage, verify original-art rights, accessibility and licensed downloadable packaging. Until then keep purchase disabled.
 
+## Crossbow QC follow-up — October 22, 2026
+
+- **Gnome Rogue (`chr-rge-gnome`)**: existing animated character study retained; original source artwork now contains a distinct, nocked crossbow bolt and its Attack generator separates and launches it toward the target. The bolt remains hidden in Idle/Move/Rest. New one-shot source/output regression coverage guards against a decorative flash being mistaken for a projectile.
+- Reference rationale: National Museum of Finland crossbows and quarrels (https://www.kansallismuseo.fi/en/digitaalinen-kokoelma/tutkijan-valinta/jalkajousia-ja-vasamia); mechanical firing sequence (https://ms.copernicus.org/articles/17/359/2026/). The drawing remains original; references are for functional construction, not copied imagery.
+- **Counts unchanged:** 16 public four-state art studies, zero approved retail tokens. Still awaiting human visual signoff at 32/64/128px, in-game VTT review, art-rights review and commercial certification.
+- Follow-up audit: Fighter, Paladin, Cleric, Goblin, Ogre and Skeleton melee arcs, and remaining caster spell launch effects.
+
 ## Batch update log
 
 | Date | Source | Result | Still open |

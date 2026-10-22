@@ -3,11 +3,12 @@
 <title id="title">Gnome Rogue — attack original motion study</title>
 <desc id="description">Small wide-goggled scout holding mechanical crossbow, attack motion prototype only. Not a paid product.</desc>
 <style>
-.rig-core{animation:gnome-fire-brace 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:178px 140px;animation:gnome-crossbow-shot 1.4s steps(1,end) 1 both}.rig-effect{animation:gnome-bolt-launch 1.4s steps(1,end) 1 both}
+.rig-core{animation:gnome-fire-brace 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:178px 140px;animation:gnome-crossbow-shot 1.4s steps(1,end) 1 both}.rig-effect{animation:gnome-bolt-launch 1.4s steps(1,end) 1 both}.rig-bolt{animation:gnome-bolt-flight 1.4s linear 1 both}
    @keyframes gnome-fire-brace{0%,100%{transform:translate(0,0)}23%{transform:translate(2px,1px)}51%{transform:translate(-7px,-2px)}75%{transform:translate(-1px,0)}}
    @keyframes gnome-crossbow-shot{0%,100%{transform:rotate(0)}23%{transform:rotate(-13deg)}51%{transform:rotate(18deg)}75%{transform:rotate(3deg)}}
    @keyframes gnome-bolt-launch{0%,12%,85%,100%{opacity:.12;transform:translateX(0)}45%{opacity:1;transform:translateX(12px)}62%{opacity:.58;transform:translateX(26px)}}
-@media(prefers-reduced-motion:reduce){.rig-core,.rig-body,.rig-tail,.rig-fin,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-leg-left,.rig-leg-right,.paladin-legs{animation:none!important}}
+   @keyframes gnome-bolt-flight{0%,22%{opacity:1;transform:translate(0,0)}39%{opacity:1;transform:translate(0,0)}56%{opacity:1;transform:translate(19px,-8px)}63%,100%{opacity:0;transform:translate(22px,-9px)}}
+@media(prefers-reduced-motion:reduce){.rig-core,.rig-body,.rig-tail,.rig-fin,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-bolt,.rig-leg-left,.rig-leg-right,.paladin-legs{animation:none!important}}
 </style>
 <ellipse cx="129" cy="206" rx="55" ry="12" fill="#0b1520" opacity=".42"/>
 <ellipse cx="127" cy="197" rx="66" ry="20" fill="none" stroke="#c9a16e" stroke-width="3" opacity=".62"/>
@@ -52,4 +53,11 @@
  <circle cx="183" cy="132" r="5" fill="#a7bdbe"/>
 </g>
 <g class="rig-effect"><path d="M211 108l14-10M218 122l18-5" stroke="#d4bd88" stroke-width="3" opacity=".65"/></g>
+<g class="rig-bolt" data-weapon-projectile="crossbow-bolt" opacity="0">
+ <!-- One physically separate bolt: nocked over the tiller, metal tip pointing toward the target. -->
+ <path d="M198 124L215 117" stroke="#312b29" stroke-width="5" stroke-linecap="round"/>
+ <path d="M198 124L215 117" stroke="#efd5a0" stroke-width="3" stroke-linecap="round"/>
+ <path d="M212 112L222 114L214 123Z" fill="#d9e8e1" stroke="#687a7b" stroke-width="1.5"/>
+ <path d="M202 119L197 127L205 125Z" fill="#c69569"/>
+</g>
 </svg>
