@@ -86,13 +86,22 @@ def check_catalog_motion(browser,origin,width,screenshots:Path):
             'src',re.compile(r'.*skeleton-warrior-rest\.svg'))
         page.keyboard.press('Escape')
         expect(page.locator('#preview-dialog')).to_be_hidden()
-        # Still-only concepts must never display fake animation claims.
+        # New Shark is a real motion study, with all states, not static art.
         page.locator('#search').fill('Great White Shark')
-        shark=page.locator('.product-card').filter(has=page.get_by_text('Great White Shark',exact=True))
+        shark=page.locator('.product-card[data-motion-id="ani-ocean-greatwhite"]')
         expect(shark).to_have_count(1)
-        expect(shark.locator('.product-motion-stage')).to_have_count(0)
+        shark.scroll_into_view_if_needed()
+        expect(shark.locator('.product-motion-stage')).to_contain_text('IDLE',timeout=4500)
         expect(shark.locator('img.product-art')).to_have_attribute(
-            'src',re.compile(r'.*assets/studies/great-white-shark\.svg'))
+            'src',re.compile(r'.*assets/demos/great-white-shark-idle\.svg'))
+        # Original Orc Barbarian remains static until it has its own full set.
+        page.locator('#search').fill('Orc Barbarian')
+        plain=page.locator('.product-card').filter(
+            has=page.get_by_text('Orc Barbarian',exact=True))
+        expect(plain).to_have_count(1)
+        expect(plain.locator('.product-motion-stage')).to_have_count(0)
+        expect(plain.locator('img.product-art')).to_have_attribute(
+            'src',re.compile(r'.*assets/studies/orc-barbarian\.svg'))
         assert not errors,'; '.join(errors)
         LOG.info('PASS token card autoplay and controls at %spx',width)
     finally:
