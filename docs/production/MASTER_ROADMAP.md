@@ -37,8 +37,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **29** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **27** | **19 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
+| Original illustrated concepts | **30** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **28** | **20 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -220,6 +220,12 @@ Produce the recognizable **common/base species first**, then build roles on that
 - Idle, Move, one-shot Attack and Rest SVG studies derived deterministically from original source rig; Node/Python source-parity, original identity, equipment and one-shot tests; private media matrix and browser full-pagination checks.
 - Male Dwarf, female Orc and nonbinary Goblin now have three **different anatomy-first** Ranger studies rather than three recolors. This does not imply 9/9 of Ranger variants or live VTT readiness.
 - If stack merges: illustrated concepts **28→29**, four-state studies **26→27** (character moving **18→19**), authored hero variant studies **11→12 /108** (96 missing). Catalog still 518, retail approved 0. Human small-size QC, real Foundry/Roll20 import, alpha seam, rights and fulfillment remain blocked.
+
+## Original female Orc Songweaver Bard — October 22, 2026
+
+- Existing immutable `pregen-bard-female-1`: source-backed female Orc Songweaver with broad original species anatomy, braid/tusks/circlet, stage-performance coat, sword fully sheathed (not an impossible held weapon), realistically pear-bodied 11-course lute with frets, tuning pegs, bridge and rosette. Plucking and fretting hands are separately attached to the instrument.
+- Source-linked Idle/Move/one-shot Attack/Rest, 1.4s Attack produces visible pluck and vibrating strings, then releases separate original harmonic gold/violet spell wave from the instrument (not sword). Research grounded in 2024 Bard instrument focus and Met Museum's lute construction.
+- Provisional stacked counts: **30** originals, **28** four-state animated studies (**20 Characters**, **6 Monsters**, **2 Animals**), **13/108** authored-gender hero variants with source-backed animations; 95 lack a first study, class coverage 12/12; catalog concepts 518, retail-certified 0. Human 256/128/64/32px, source/RGBA/loop checks, actual VTT import, IP rights and fulfillment remain release gates.
 
 ## Batch update log
 
