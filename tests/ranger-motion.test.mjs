@@ -23,6 +23,11 @@ test('Ranger source-derived bow draws and fires one arrow toward target',()=>{
   assert.match(output,/prefers-reduced-motion:reduce/);
   assert.equal(preview[mode==='attack'?'action':mode],'./assets/demos/elven-ranger-'+mode+'.svg');
  }
+ // The loop end settles to the exact starting pose before the final encoded frame.
+ for(const mode of ['idle','move','rest']){
+  const motion=read('assets/demos/elven-ranger-'+mode+'.svg');
+  assert.match(motion,mode==='move'?/84%\{transform:/i:/83%\{transform:/i);
+ }
  const attack=read('assets/demos/elven-ranger-attack.svg');
  assert.match(attack,/ranger-string-tension 1\.4s/);
  assert.match(attack,/ranger-arrow-flight 1\.4s linear 1 both/);
