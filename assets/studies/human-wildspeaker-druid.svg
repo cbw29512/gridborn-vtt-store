@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Human Wildspeaker Druid — original Gridborn grove spellcaster</title>
+<desc id="description">Female Human Wildspeaker druid with practical moss-brown layered leather, distinct oak-leaf shoulder mantle, long dark braid, bone and acorn charms, live gnarled quarterstaff held by one hand, and free right hand forming a directed thornvine spell. Original noncommercial artwork.</desc>
+<ellipse cx="129" cy="210" rx="65" ry="12" fill="#122022" opacity=".4"/>
+<ellipse cx="129" cy="199" rx="72" ry="23" fill="none" stroke="#97aa70" stroke-width="3" opacity=".62"/>
+<g class="druid-core">
+ <g class="druid-braid">
+  <path d="M104 75Q86 97 91 132Q94 155 85 171" fill="none" stroke="#322d30" stroke-width="15" stroke-linecap="round"/>
+  <path d="M96 115L91 125L101 136L89 149L97 159L86 169" stroke="#715342" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <circle cx="86" cy="169" r="5" fill="#caac79"/>
+ </g>
+ <g class="druid-mantle">
+  <path d="M107 116Q91 136 78 175L91 201L119 186L136 198L160 187L177 200L176 166L155 114Z" fill="#30473b" stroke="#1c352e" stroke-width="4"/>
+  <path d="M95 133L85 173L107 166L124 181L143 165L167 179L165 139Z" fill="#556d4a"/>
+  <path d="M91 163L104 146L106 162L93 179L83 174M152 156L165 169L174 158L178 179L165 184Z" fill="#829764" stroke="#3c623b" stroke-width="2"/>
+  <path d="M95 149L91 166L105 160M161 162L170 175" fill="none" stroke="#bad094" stroke-width="2"/>
+ </g>
+ <g class="druid-left-leg">
+  <path d="M110 162L130 164L125 197L112 211L97 199L100 178Z" fill="#625643" stroke="#394a37" stroke-width="3"/>
+  <path d="M97 196L120 199L117 213L85 215L90 203Z" fill="#514435" stroke="#aa986e" stroke-width="3"/>
+  <path d="M96 208L112 208" stroke="#c4b18d" stroke-width="3"/>
+ </g>
+ <g class="druid-right-leg">
+  <path d="M135 162L156 165L167 197L160 211L146 209L137 185Z" fill="#58543f" stroke="#374a37" stroke-width="3"/>
+  <path d="M144 198L166 197L181 213L174 217L145 214Z" fill="#514435" stroke="#ac936d" stroke-width="3"/>
+  <path d="M150 209L171 209" stroke="#c4b18d" stroke-width="3"/>
+ </g>
+ <g class="druid-body">
+  <path d="M99 115L115 103L145 104L160 115L165 164L144 177L111 169L93 155Z" fill="#425840" stroke="#213a34" stroke-width="4"/>
+  <path d="M115 113L135 109L145 155L130 169L112 157Z" fill="#7d845d"/>
+  <path d="M104 142L155 150" stroke="#4d3d34" stroke-width="8"/>
+  <path d="M121 145L133 142L139 160L129 163Z" fill="#d3b478" stroke="#64543c" stroke-width="3"/>
+  <path d="M104 115L89 133L107 149L125 123Z" fill="#567450" stroke="#c1c28c" stroke-width="3"/>
+  <path d="M148 113L163 128L154 149L133 127Z" fill="#5b784f" stroke="#babe85" stroke-width="3"/>
+  <path d="M100 123Q88 121 84 138Q88 153 104 145" stroke="#87a46e" stroke-width="4" fill="none"/>
+  <!-- Oak leaves are rounded-lobed rather than needle-like generic triangles. -->
+  <path d="M95 116Q89 110 97 108Q95 99 104 101Q108 95 113 102Q123 99 119 109Q126 116 116 121Q111 130 104 124Q94 130 95 116Z" fill="#98af73" stroke="#436342" stroke-width="3"/>
+  <path d="M105 105L109 121M99 112L114 116" fill="none" stroke="#dae0aa" stroke-width="2"/>
+  <path d="M147 112Q142 107 148 103Q151 96 156 103Q165 100 166 107Q175 111 167 119Q167 128 156 125Q145 130 147 112Z" fill="#809c65" stroke="#405e3c" stroke-width="3"/>
+  <path d="M154 107L157 122M150 114L165 116" fill="none" stroke="#c8d5a1" stroke-width="2"/>
+  <circle cx="136" cy="121" r="5" fill="#bca66f"/>
+  <path d="M133 122L133 132L138 135" stroke="#a1b77b" stroke-width="2" fill="none"/>
+ </g>
+ <g class="druid-face">
+  <path d="M104 72L115 56L137 54L153 72L154 98L143 118L124 127L108 114L100 95Z" fill="#b77c61" stroke="#68483d" stroke-width="4"/>
+  <path d="M109 76L127 65L151 77L147 100L128 115L110 105Z" fill="#d59d7c"/>
+  <path d="M104 82L90 79L105 97M151 83L166 80L150 99" fill="#cb9073" stroke="#89654a" stroke-width="3"/>
+  <path d="M101 85Q91 62 109 53Q126 42 144 53Q157 60 161 83L152 76L140 64L126 70L110 75L107 96Z" fill="#3b3032" stroke="#302b31" stroke-width="4"/>
+  <path d="M108 61L116 54L132 60L145 61" fill="none" stroke="#7b5b47" stroke-width="5"/>
+  <path d="M116 89L126 87M138 89L148 90" stroke="#37332f" stroke-width="3"/>
+  <path d="M125 105Q133 110 141 104" fill="none" stroke="#8f514d" stroke-width="3"/>
+  <path d="M130 92L132 101L138 101" stroke="#bd836c" stroke-width="2" fill="none"/>
+ </g>
+ <g class="druid-staff-arm">
+  <path d="M107 123L90 135L76 126" fill="none" stroke="#446345" stroke-width="16" stroke-linecap="round"/>
+  <path d="M90 134L78 130" stroke="#a8a97b" stroke-width="8" stroke-linecap="round"/>
+  <path d="M75 123L69 137" stroke="#d2a080" stroke-width="10" stroke-linecap="round"/>
+ </g>
+ <g class="druid-casting-arm">
+  <path d="M153 128L171 135L191 121" fill="none" stroke="#4b6448" stroke-width="15" stroke-linecap="round"/>
+  <path d="M172 134L190 121" stroke="#adac80" stroke-width="8"/>
+  <path d="M190 121L198 113" stroke="#d5a285" stroke-width="11" stroke-linecap="round"/>
+ </g>
+ <g class="druid-staff" data-weapon="living-quarterstaff">
+  <path d="M74 201Q78 157 75 124Q65 85 72 43" fill="none" stroke="#493b2e" stroke-width="13" stroke-linecap="round"/>
+  <path d="M73 197Q75 160 74 123Q68 89 74 50" fill="none" stroke="#8c7250" stroke-width="7" stroke-linecap="round"/>
+  <path d="M72 52L59 34M72 52L88 31" stroke="#715638" stroke-width="7" stroke-linecap="round"/>
+  <path d="M59 34Q50 28 56 18Q67 20 65 31Z" fill="#7ca266" stroke="#314e37" stroke-width="3"/>
+  <path d="M88 31Q90 16 101 20Q104 33 89 38Z" fill="#9cb67c" stroke="#385939" stroke-width="3"/>
+  <path d="M73 89Q63 81 60 71M73 147Q88 153 90 164" stroke="#6b4c37" stroke-width="5" fill="none"/>
+  <path d="M58 69Q48 57 54 52Q66 54 65 65Z" fill="#76945a" stroke="#385539" stroke-width="3"/>
+  <path d="M92 166Q103 167 104 179Q91 187 88 172Z" fill="#76945a" stroke="#385539" stroke-width="3"/>
+  <path d="M76 119L70 132L82 141" stroke="#c8ae79" stroke-width="4" fill="none"/>
+ </g>
+</g>
+<g class="druid-vine" data-spell-effect="thorn-whip" opacity="0">
+ <path d="M192 119Q209 106 216 127Q224 141 233 127" fill="none" stroke="#335d3d" stroke-width="10" stroke-linecap="round"/>
+ <path d="M192 119Q209 106 216 127Q224 141 233 127" fill="none" stroke="#a4cb76" stroke-width="4" stroke-linecap="round"/>
+ <path d="M203 114L211 103L215 112M215 130L229 143L226 130M227 135L240 123L237 136" fill="#83a968" stroke="#32533a" stroke-width="2"/>
+ <path d="M206 118L201 127L208 122M220 126L216 135L224 132" fill="#d6d598" stroke="#4e693b" stroke-width="2"/>
+</g>
+</svg>
