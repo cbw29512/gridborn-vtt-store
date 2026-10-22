@@ -1,0 +1,20 @@
+/** Original male Dwarf Pathfinder, bow/string/arrow distinct from Orc/Goblin sources. */
+export const DWARF_RANGER_STATES=Object.freeze(['idle','move','attack','rest']);
+const MOTIONS=Object.freeze({
+ "idle": ".dwarf-ranger-core{animation:dwarf-ranger-stance 3.2s steps(1,end) infinite}.dwarf-ranger-beard{animation:dwarf-ranger-breath 3.2s steps(1,end) infinite}\n@keyframes dwarf-ranger-stance{0%,85%,100%{transform:translate(0,0)}26%{transform:translate(-1px,-2px)}57%{transform:translate(1px,0)}}\n@keyframes dwarf-ranger-breath{0%,85%,100%{transform:translate(0,0)}26%{transform:translateY(-1px)}57%{transform:translateY(1px)}}",
+ "move": ".dwarf-ranger-core{animation:dwarf-ranger-tread 1.2s steps(1,end) infinite}.dwarf-ranger-left-leg{transform-origin:110px 173px;animation:dwarf-ranger-left-step 1.2s steps(1,end) infinite}.dwarf-ranger-right-leg{transform-origin:149px 173px;animation:dwarf-ranger-right-step 1.2s steps(1,end) infinite}\n@keyframes dwarf-ranger-tread{0%,84%,100%{transform:translate(0,0)}30%{transform:translate(-4px,-2px)}60%{transform:translate(4px,-1px)}}\n@keyframes dwarf-ranger-left-step{0%,84%,100%{transform:rotate(0)}30%{transform:rotate(-11deg)}60%{transform:rotate(12deg)}}\n@keyframes dwarf-ranger-right-step{0%,84%,100%{transform:rotate(0)}30%{transform:rotate(12deg)}60%{transform:rotate(-11deg)}}",
+ "attack": ".dwarf-ranger-core{animation:dwarf-ranger-stable-bow 1.4s steps(1,end) 1 both}.dwarf-ranger-relaxed-arm{animation:dwarf-ranger-rest-fade 1.4s steps(1,end) 1 both}.dwarf-ranger-anchored-arm{animation:dwarf-ranger-chin-anchor 1.4s steps(1,end) 1 both}.dwarf-ranger-rest-string{animation:dwarf-ranger-rest-string-fade 1.4s steps(1,end) 1 both}.dwarf-ranger-drawn-string{animation:dwarf-ranger-tension 1.4s steps(1,end) 1 both}.dwarf-ranger-fletched-arrow{animation:dwarf-ranger-arrow-flight 1.4s linear 1 both}\n@keyframes dwarf-ranger-stable-bow{0%,100%{transform:translate(0,0)}22%{transform:translate(-3px,0)}61%{transform:translate(-2px,-1px)}78%{transform:translate(0,0)}}\n@keyframes dwarf-ranger-rest-fade{0%,20%,68%,100%{opacity:1}24%,62%{opacity:0}}\n@keyframes dwarf-ranger-chin-anchor{0%,20%,68%,100%{opacity:0}24%,62%{opacity:1}}\n@keyframes dwarf-ranger-rest-string-fade{0%,20%,68%,100%{opacity:1}24%,62%{opacity:0}}\n@keyframes dwarf-ranger-tension{0%,20%,68%,100%{opacity:0}24%,62%{opacity:1}}\n@keyframes dwarf-ranger-arrow-flight{0%,25%,68%,100%{opacity:0;transform:translate(0,0)}29%,59%{opacity:1;transform:translate(0,0)}62%{opacity:1;transform:translate(5px,0)}65%{opacity:1;transform:translate(11px,0)}67%{opacity:.8;transform:translate(15px,0)}}",
+ "rest": ".dwarf-ranger-core{animation:dwarf-ranger-rest 4s steps(1,end) infinite}.dwarf-ranger-bow-arm{animation:dwarf-ranger-lower-bow 4s steps(1,end) infinite}\n@keyframes dwarf-ranger-rest{0%,85%,100%{transform:translateY(9px)}45%{transform:translateY(10px)}}\n@keyframes dwarf-ranger-lower-bow{0%,85%,100%{transform:translateY(7px)}45%{transform:translateY(8px)}}"
+});
+const REDUCED='@media(prefers-reduced-motion:reduce){.dwarf-ranger-core,.dwarf-ranger-beard,.dwarf-ranger-left-leg,.dwarf-ranger-right-leg,.dwarf-ranger-bow-arm,.dwarf-ranger-relaxed-arm,.dwarf-ranger-anchored-arm,.dwarf-ranger-rest-string,.dwarf-ranger-drawn-string,.dwarf-ranger-fletched-arrow{animation:none!important}}';
+export function renderDwarfRanger(mode,art){
+ try{
+  if(!DWARF_RANGER_STATES.includes(mode))throw new Error('Unsupported Dwarf Pathfinder state: '+mode);
+  if(typeof art!=='string'||!art.includes('data-weapon="dwarf-yew-recurve-bow"')||
+   !art.includes('data-projectile="dwarf-fletched-arrow"')||!art.includes('data-pose="beard-anchor"')||!art.endsWith('</svg>\n'))
+   throw new Error('Dwarf Pathfinder source art or anchored bow rig changed');
+  return art.replace('<svg xmlns=','<svg data-gridborn-mode="'+mode+'" xmlns=')
+   .replace('</title>',' — '+mode+' source study</title>')
+   .replace('</desc>','</desc>\n<style>\n'+MOTIONS[mode]+'\n'+REDUCED+'\n</style>');
+ }catch(error){console.error('Dwarf Ranger render failed',mode,error);throw error;}
+}

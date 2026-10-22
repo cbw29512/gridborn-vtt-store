@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="move" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Dwarf Pathfinder Ranger — original Gridborn bow scout — move source study</title>
+<desc id="description">Original male Dwarf Pathfinder ranger, compact wide shoulders, weathered warm brown face, thick two-fork ash-grey beard, moss field hood, weathered copper leather and heavy trekking boots, a rune-carved quiver and large curved yew field bow. Bow arm remains extended at the grip; draw arm anchors under the cheek then independently nocks, releases and follows through with a fletched arrow. Noncommercial study.</desc>
+<style>
+.dwarf-ranger-core{animation:dwarf-ranger-tread 1.2s steps(1,end) infinite}.dwarf-ranger-left-leg{transform-origin:110px 173px;animation:dwarf-ranger-left-step 1.2s steps(1,end) infinite}.dwarf-ranger-right-leg{transform-origin:149px 173px;animation:dwarf-ranger-right-step 1.2s steps(1,end) infinite}
+@keyframes dwarf-ranger-tread{0%,84%,100%{transform:translate(0,0)}30%{transform:translate(-4px,-2px)}60%{transform:translate(4px,-1px)}}
+@keyframes dwarf-ranger-left-step{0%,84%,100%{transform:rotate(0)}30%{transform:rotate(-11deg)}60%{transform:rotate(12deg)}}
+@keyframes dwarf-ranger-right-step{0%,84%,100%{transform:rotate(0)}30%{transform:rotate(12deg)}60%{transform:rotate(-11deg)}}
+@media(prefers-reduced-motion:reduce){.dwarf-ranger-core,.dwarf-ranger-beard,.dwarf-ranger-left-leg,.dwarf-ranger-right-leg,.dwarf-ranger-bow-arm,.dwarf-ranger-relaxed-arm,.dwarf-ranger-anchored-arm,.dwarf-ranger-rest-string,.dwarf-ranger-drawn-string,.dwarf-ranger-fletched-arrow{animation:none!important}}
+</style>
+<ellipse cx="127" cy="211" rx="67" ry="11" fill="#17221e" opacity=".4"/>
+<ellipse cx="127" cy="201" rx="73" ry="23" fill="none" stroke="#b5a77c" stroke-width="3" opacity=".53"/>
+<g class="dwarf-ranger-core">
+ <g class="dwarf-ranger-quiver">
+  <path d="M159 111L181 82L192 99L171 157L155 151Z" fill="#53473a" stroke="#2e322a" stroke-width="4"/>
+  <path d="M166 111L184 94L170 144" fill="none" stroke="#c5ab7d" stroke-width="4"/>
+  <path d="M166 100L161 70M174 94L172 66M181 96L187 74" stroke="#78634d" stroke-width="4" stroke-linecap="round"/>
+  <path d="M158 73L153 64L164 66L169 61L168 77M170 69L167 59L176 62L183 58L179 73M187 76L182 67L193 70L199 67L193 80" fill="#c2ad81" stroke="#705743" stroke-width="2"/>
+  <path d="M161 135L174 143M165 144L176 139" stroke="#d3ad79" stroke-width="3"/>
+ </g>
+ <g class="dwarf-ranger-cloak">
+  <path d="M94 119Q77 139 78 170L86 199L106 188L124 204L145 190L165 200L175 184L162 121Z" fill="#405f4a" stroke="#253e36" stroke-width="4"/>
+  <path d="M85 169L100 180L113 166L128 189L143 172L163 185" fill="none" stroke="#c0af83" stroke-width="4"/>
+  <path d="M91 164L102 156M148 160L163 173" stroke="#718565" stroke-width="3"/>
+ </g>
+ <g class="dwarf-ranger-left-leg">
+  <path d="M104 163L129 169L124 194L112 207L91 198L94 181Z" fill="#586153" stroke="#303f38" stroke-width="4"/>
+  <path d="M91 193L116 198L119 215L79 218L73 208Z" fill="#544537" stroke="#bba078" stroke-width="4"/>
+  <path d="M84 208L112 209M81 213L111 214" stroke="#e0c89d" stroke-width="3"/>
+ </g>
+ <g class="dwarf-ranger-right-leg">
+  <path d="M134 170L155 167L171 191L165 208L144 204L135 185Z" fill="#4d6054" stroke="#32473b" stroke-width="4"/>
+  <path d="M145 199L170 196L189 211L181 218L144 214Z" fill="#544537" stroke="#bba078" stroke-width="4"/>
+  <path d="M152 207L180 211M154 212L181 215" stroke="#e0c89d" stroke-width="3"/>
+ </g>
+ <g class="dwarf-ranger-chest">
+  <path d="M94 118L114 105L152 105L176 128L164 167L143 182L103 172L86 144Z" fill="#415747" stroke="#283e36" stroke-width="5"/>
+  <path d="M109 111L136 112L151 159L128 169L101 151Z" fill="#8b7d5f" stroke="#d4b587" stroke-width="3"/>
+  <path d="M109 114L129 131L120 161L98 143Z" fill="#996a48" stroke="#644534" stroke-width="3"/>
+  <path d="M142 113L162 129L148 166L126 170L138 136Z" fill="#785d44" stroke="#d0ad81" stroke-width="3"/>
+  <path d="M97 148L162 154" stroke="#4a3930" stroke-width="11"/>
+  <path d="M118 150L138 151L143 166L124 170L113 160Z" fill="#c5ae82" stroke="#5d503a" stroke-width="3"/>
+  <path d="M119 157L138 157L129 165Z" fill="#617359" stroke="#766549" stroke-width="2"/>
+  <path d="M105 123L120 137L112 149M143 127L151 146" stroke="#cdb58c" stroke-width="3" fill="none"/>
+ </g>
+ <g class="dwarf-ranger-head">
+  <path d="M110 66L120 54L142 52L155 65L159 89L154 109L137 119L116 114L104 93Z" fill="#aa8066" stroke="#71563e" stroke-width="4"/>
+  <path d="M111 74L133 60L150 75L149 101L135 110L115 101Z" fill="#c8a07b"/>
+  <path d="M106 82L89 80L104 96L114 89M152 83L170 79L156 99L146 89" fill="#c7a080" stroke="#775b42" stroke-width="3"/>
+  <path d="M103 81L103 63L117 45L143 45L155 59L166 84L152 75L140 59L126 62L109 86Z" fill="#54504c" stroke="#333d38" stroke-width="4"/>
+  <path d="M107 64L123 49L143 51L156 69" stroke="#b1a187" stroke-width="4" fill="none"/>
+  <path d="M117 88L129 85M141 86L153 88" stroke="#493f36" stroke-width="4"/>
+  <path d="M119 96Q130 102 141 95" stroke="#8a7059" stroke-width="3" fill="none"/>
+ </g>
+ <g class="dwarf-ranger-beard">
+  <path d="M115 95L126 100L138 97L149 98L155 110L145 130L139 153L128 140L114 150L111 129L104 113Z" fill="#aaa59a" stroke="#595750" stroke-width="4"/>
+  <path d="M112 105L117 133L124 139M146 103L144 128L138 143" stroke="#d8c7a7" stroke-width="5" fill="none"/>
+  <path d="M123 107L128 128L126 137M135 107L134 132L138 145" stroke="#665e56" stroke-width="3" fill="none"/>
+  <path d="M114 130L122 130L125 138L115 145L110 138ZM136 134L143 128L146 137L140 146L134 139Z" fill="#b79b6f" stroke="#63563e" stroke-width="2"/>
+  <path d="M112 103Q124 108 134 106Q144 107 152 102" stroke="#625b56" stroke-width="4" fill="none"/>
+ </g>
+ <g class="dwarf-ranger-hood">
+  <path d="M104 76Q98 62 108 48L124 39L150 43L165 60L174 77L162 91L158 69L147 55L126 54L111 72Z" fill="#49694f" stroke="#263f36" stroke-width="4"/>
+  <path d="M106 58L126 45L151 50L163 68" fill="none" stroke="#9ca57b" stroke-width="4"/>
+ </g>
+ <g class="dwarf-ranger-bow-arm">
+  <path d="M155 129L177 139L196 129" fill="none" stroke="#aa8267" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M161 130L178 140" stroke="#71836c" stroke-width="13" stroke-linecap="round"/>
+  <path d="M188 124L204 120L213 130L204 143L190 142L185 133Z" fill="#ae9879" stroke="#4e604a" stroke-width="4"/>
+  <path d="M193 129L204 132" stroke="#e8d4ad" stroke-width="3"/>
+ </g>
+ <g class="dwarf-ranger-relaxed-arm">
+  <path d="M107 130L95 147L120 158L172 148" fill="none" stroke="#a58066" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M103 146L134 153" stroke="#697963" stroke-width="10"/>
+  <path d="M163 142L177 139L185 147L180 158L165 159L160 150Z" fill="#b8a081" stroke="#58674f" stroke-width="3"/>
+ </g>
+ <g class="dwarf-ranger-anchored-arm" data-pose="beard-anchor" opacity="0">
+  <path d="M107 130L102 147L121 144L139 124" fill="none" stroke="#ad886d" stroke-width="17" stroke-linecap="round"/>
+  <path d="M107 144L129 137" stroke="#6e816a" stroke-width="10"/>
+  <path d="M132 120L145 116L153 123L150 134L136 135L129 128Z" fill="#baa489" stroke="#576952" stroke-width="3"/>
+  <path d="M135 127L150 129" stroke="#ead0a7" stroke-width="3"/>
+ </g>
+ <g class="dwarf-ranger-longbow" data-weapon="dwarf-yew-recurve-bow">
+  <path d="M190 54Q212 71 211 92Q227 121 214 152Q210 185 190 201" fill="none" stroke="#463c2e" stroke-width="12" stroke-linecap="round"/>
+  <path d="M190 54Q212 71 211 92Q227 121 214 152Q210 185 190 201" fill="none" stroke="#b8955b" stroke-width="7" stroke-linecap="round"/>
+  <path d="M191 53L183 62L190 73M190 201L182 193L190 181" fill="none" stroke="#e0c58d" stroke-width="4"/>
+  <path d="M208 121L216 137" stroke="#6b513b" stroke-width="13" stroke-linecap="round"/>
+  <path d="M209 123L216 137" stroke="#d3ba85" stroke-width="7" stroke-linecap="round"/>
+  <path class="dwarf-ranger-rest-string" d="M190 55L215 128L190 199" fill="none" stroke="#e5dfcf" stroke-width="2.7"/>
+  <path class="dwarf-ranger-drawn-string" d="M190 55L144 128L190 199" fill="none" stroke="#e5dfcf" stroke-width="2.7" opacity="0"/>
+ </g>
+</g>
+<g class="dwarf-ranger-fletched-arrow" data-projectile="dwarf-fletched-arrow" opacity="0">
+  <path d="M144 128L224 128" fill="none" stroke="#76583e" stroke-width="4" stroke-linecap="round"/>
+  <path d="M217 121L231 128L217 135Z" fill="#bfd0ba" stroke="#566353" stroke-width="2"/>
+  <path d="M148 126L140 120L153 125L145 130L140 137L153 132" fill="#e0b578" stroke="#7e553d" stroke-width="2"/>
+</g>
+</svg>
