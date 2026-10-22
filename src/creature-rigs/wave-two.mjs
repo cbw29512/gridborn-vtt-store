@@ -88,7 +88,7 @@ export const renderWave=function renderWave(kind,mode,source){
   // The spell leaves the focus as an independent layer; it must not inherit staff rotation.
   // Source-specific glyph is intentionally narrow and remains within the 256x240 frame.
   if(mode==='attack'){
-   svg=svg.replace('</svg>','<g class="rig-projectile" data-weapon-projectile="arcane-bolt" opacity="0"><path d="M63 53L42 48L53 45L47 51L53 59Z" fill="#9be8f7" stroke="#386f9b" stroke-width="2"/><path d="M64 53L43 50" stroke="#f2fcff" stroke-width="3" stroke-linecap="round"/></g>\\n</svg>');
+   svg=svg.replace('</svg>','<g class="rig-projectile" data-weapon-projectile="arcane-bolt" opacity="0"><path d="M63 53L42 48L53 45L47 51L53 59Z" fill="#9be8f7" stroke="#386f9b" stroke-width="2"/><path d="M64 53L43 50" stroke="#f2fcff" stroke-width="3" stroke-linecap="round"/></g>\n</svg>');
   }
  }
  if(kind==='vanguard'){

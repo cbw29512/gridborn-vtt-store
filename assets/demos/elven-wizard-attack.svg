@@ -45,4 +45,5 @@
 
 <g class="rig-glow"><circle cx="75" cy="53" r="17" fill="#7ee8f4" opacity=".55"/><path d="M58 52l17-21 19 22-18 17z" fill="none" stroke="#e4eead" stroke-width="4"/></g>
 </g>
-<g class="rig-projectile" data-weapon-projectile="arcane-bolt" opacity="0"><path d="M63 53L42 48L53 45L47 51L53 59Z" fill="#9be8f7" stroke="#386f9b" stroke-width="2"/><path d="M64 53L43 50" stroke="#f2fcff" stroke-width="3" stroke-linecap="round"/></g>\n</svg>
+<g class="rig-projectile" data-weapon-projectile="arcane-bolt" opacity="0"><path d="M63 53L42 48L53 45L47 51L53 59Z" fill="#9be8f7" stroke="#386f9b" stroke-width="2"/><path d="M64 53L43 50" stroke="#f2fcff" stroke-width="3" stroke-linecap="round"/></g>
+</svg>
