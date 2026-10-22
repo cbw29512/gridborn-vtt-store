@@ -152,6 +152,11 @@ Produce the recognizable **common/base species first**, then build roles on that
 - Source: the existing original Elven Wizard illustration and the source-specific `wave-two` animation generator; added a deterministic export-and-projectile regression test. No new catalog entry or commercial approval is claimed.
 - **Counts unchanged:** 16 public four-state animated art studies; zero retail-ready tokens. Human 32/64/128px visual checks, real VTT playback, original-art rights review and fulfillment signoff remain mandatory.
 
+## Mercywarden Cleric mace-halo QC — October 22, 2026
+
+- **`pregen-cleric-female-2`**: existing original mace halo now inherits the mace's motion in Idle, Move, Attack and Rest; 1.4-second strike radiance peaks at impact rather than during windup. Original still artwork is unchanged. [Source-backed brief](briefs/pregen-cleric-female-2.md).
+- Four source-derived SVG exports and regression checks updated together. **No new token**: 16 public four-state art studies, zero retail-ready tokens. Human 128/64/32px review, real VTT import, legal approval and fulfillment are still pending. Checkout remains disabled.
+
 ## Batch update log
 
 | Date | Source | Result | Still open |
