@@ -37,8 +37,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **28** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **26** | **18 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
+| Original illustrated concepts | **29** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **27** | **19 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -213,6 +213,13 @@ Produce the recognizable **common/base species first**, then build roles on that
 - Existing immutable `pregen-ranger-nonbinary-1`: small-body original Goblin Pathfinder with pronounced paired ears, green/ochre stitched scout clothes, narrow back quiver and a compact hand-gripped recurve shortbow, not a size/skin recolor of female Orc or Elven Ranger. Source-backed Idle, Move, Attack and Rest; separate anchored string/drawing hand and one-shot independently released fletched shortbow arrow. Research grounded in 2024 Ranger equipment and real recurve archery.
 - After proposed merge: illustrated studies **27→28**, full-motion **25→26**, character studies **17→18**, source-backed gender-authored hero variants **10→11 of 108** (97 still lacking). Catalog concepts 518, commercial approvals 0. Ranger has an authored female Orc and nonbinary Goblin study, but no *male-authored roster variant* yet.
 - Production prerequisites remain genuine moving hand/string/arrow, actual full-frame 32/64/128px human QA, encoded alpha and zero seams, Foundry/Roll20 import, licensed art and VTT delivery. Existing prototype class coverage does not mean finished class product lines.
+
+## Male Dwarf Pathfinder Ranger — third Ranger gender study, October 22, 2026
+
+- New source-backed study for immutable `pregen-ranger-male-1`: original barrel-chested Dwarf Ranger with weathered face, two-fork braided gray beard, hood, rust leather field gear, sturdy low boots, individually fletched back-quiver arrows and physically braced field-yew recurve. Complete anchored drawing arm and dual-state three-point string fire an independent arrow; the right-hand anchor sits below beard and the gripped bow stays away from face.
+- Idle, Move, one-shot Attack and Rest SVG studies derived deterministically from original source rig; Node/Python source-parity, original identity, equipment and one-shot tests; private media matrix and browser full-pagination checks.
+- Male Dwarf, female Orc and nonbinary Goblin now have three **different anatomy-first** Ranger studies rather than three recolors. This does not imply 9/9 of Ranger variants or live VTT readiness.
+- If stack merges: illustrated concepts **28→29**, four-state studies **26→27** (character moving **18→19**), authored hero variant studies **11→12 /108** (96 missing). Catalog still 518, retail approved 0. Human small-size QC, real Foundry/Roll20 import, alpha seam, rights and fulfillment remain blocked.
 
 ## Batch update log
 

@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'pregen-ranger-male-1': Object.freeze({
+    still:'./assets/studies/dwarf-pathfinder-male.svg',
+    idle:'./assets/demos/dwarf-pathfinder-male-idle.svg',
+    move:'./assets/demos/dwarf-pathfinder-male-move.svg',
+    action:'./assets/demos/dwarf-pathfinder-male-attack.svg',
+    rest:'./assets/demos/dwarf-pathfinder-male-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · stocky Dwarf Pathfinder watches with yew recurve at side (prototype)',
+      move:'Move · braced short travel steps under weathered quiver (prototype)',
+      action:'Attack · drawhand anchors under beard before arrow release (prototype)',
+      rest:'Rest · grounded Dwarf lowers bow arm and catches breath (prototype)'
+    })
+  }),
   'pregen-ranger-nonbinary-1': Object.freeze({
     still:'./assets/studies/goblin-pathfinder-nonbinary.svg',
     idle:'./assets/demos/goblin-pathfinder-nonbinary-idle.svg',
