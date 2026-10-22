@@ -160,9 +160,9 @@ jobs:
           durations = durations_by_id[token]
           assert data['attackMs'] == (1300 if token == 'ani-forest-wolf' else 1400)
           assert data['clipSource'] == 'independent-svg-states'
-          assert data['stateOnly'] == (token in ('ani-forest-wolf', 'mon-dng-skeleton', 'mon-cave-spider', 'chr-wiz-elf', 'pregen-barbarian-male-3', 'mon-dng-armor', 'chr-clr-dwarf', 'pregen-cleric-female-2', 'pregen-rogue-nonbinary-1', 'mon-cave-ogre', 'chr-pal-human', 'chr-rge-gnome', 'mon-swamp-lizard', 'ani-ocean-greatwhite'))
+          assert data['stateOnly'] == (token not in ('chr-ftr-human', 'mon-cave-goblin'))
           assert set(data['sourceFiles']) == {'idle', 'move', 'attack'}
-          if token in ('ani-forest-wolf','mon-dng-skeleton','mon-cave-spider','chr-wiz-elf','pregen-barbarian-male-3','mon-dng-armor','chr-clr-dwarf','pregen-cleric-female-2','pregen-rogue-nonbinary-1','mon-cave-ogre','chr-pal-human','chr-rge-gnome','mon-swamp-lizard','ani-ocean-greatwhite'):
+          if data['stateOnly']:
               assert data['restSourceFile'] == 'assets/demos/' + stem_by_id[token] + '-rest.svg'
           stem = stem_by_id[token]
           for label in ('idle', 'move', 'attack'):
