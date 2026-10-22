@@ -156,6 +156,12 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
         expect(page.locator("#demo-pause")).to_have_attribute("aria-pressed", "false")
         assert page.locator("#demo-token").get_attribute("src").endswith("human-fighter-showcase.svg")
         assert page.locator("#demo-sleep-token").get_attribute("src").endswith("human-fighter-sleep.svg")
+        # An image-src change starts a network fetch. Completion may lag behind the
+        # click, especially at 320px on a busy CI runner; await the actual load.
+        page.wait_for_function(
+            "(img) => img.complete && img.naturalWidth > 0",
+            arg=page.locator("#demo-token").element_handle(),
+            timeout=6000)
         image_is_loaded = page.locator("#demo-token").evaluate(
             "(img) => img.complete && img.naturalWidth > 0")
         assert image_is_loaded, "Full-motion Fighter artwork failed to load"
