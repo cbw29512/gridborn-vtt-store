@@ -12,6 +12,8 @@ export const artStudies = Object.freeze({
   'pregen-rogue-nonbinary-1': './assets/studies/human-shadowstep-nonbinary.svg',
   'mon-cave-ogre': './assets/studies/cave-ogre.svg',
   'chr-pal-human': './assets/studies/human-paladin.svg',
+  'chr-rge-gnome': './assets/studies/gnome-rogue.svg',
+  'mon-swamp-lizard': './assets/studies/swamp-lizardfolk.svg',
   'chr-bar-orc': './assets/studies/orc-barbarian.svg',
   'npc-inn-human': './assets/studies/village-innkeeper.svg',
   'mon-dng-skeleton': './assets/studies/skeleton-warrior.svg',
