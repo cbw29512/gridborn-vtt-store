@@ -24,7 +24,7 @@ test('All existing four-state animation prototypes visibly participate in autopl
     }
     assert.ok(Number.isInteger(animatedPreviews[id].actionDurationMs));
   }
-  assert.equal(hasCatalogMotion('ani-ocean-greatwhite'),false,'Shark still-only until animated');
+  assert.equal(hasCatalogMotion('ani-ocean-greatwhite'),true,'The Great White Shark has four real motions');
   assert.equal(hasCatalogMotion('mon-dng-skeleton'),true,'Skeleton now has all four modes');
   assert.equal(hasCatalogMotion('nonexistent'),false);
 });
