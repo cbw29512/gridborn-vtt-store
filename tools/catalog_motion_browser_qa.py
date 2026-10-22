@@ -21,8 +21,8 @@ def check_catalog_motion(browser,origin,width,screenshots:Path):
             'Show more must reveal all sixteen full-motion studies')
         # Third page contains the new Ranger: 17 source-backed motion cards.
         page.locator('#show-more').click()
-        assert page.locator('.product-card[data-motion-id]').count() == 23, (
-            'All 23 noncommercial motion studies must be shown')
+        assert page.locator('.product-card[data-motion-id]').count() == 24, (
+            'All 24 noncommercial motion studies must be shown')
         # Re-render one original creature into view to start its first Idle phase.
         page.locator('#search').fill('Gray Wolf')
         card=page.locator('.product-card[data-motion-id="ani-forest-wolf"]')
