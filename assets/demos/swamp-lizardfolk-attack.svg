@@ -3,9 +3,10 @@
 <title id="title">Swamp Lizardfolk — attack original motion study</title>
 <desc id="description">Snouted swamp hunter with separate thick tail and spear, attack motion prototype only. Not a paid product.</desc>
 <style>
-.rig-core{animation:lizard-thrust-body 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:182px 156px;animation:lizard-spear-thrust 1.4s steps(1,end) 1 both}.rig-tail{transform-origin:106px 162px;animation:lizard-tail-counterweight 1.4s steps(1,end) 1 both}
-   @keyframes lizard-thrust-body{0%,100%{transform:translate(0,0)}24%{transform:translate(5px,0)}54%{transform:translate(-11px,-2px)}74%{transform:translate(-2px,0)}}
-   @keyframes lizard-spear-thrust{0%,100%{transform:translate(0,0)}24%{transform:translate(-5px,4px)}54%{transform:translate(8px,-3px)}74%{transform:translate(2px,-1px)}}
+.rig-core{animation:lizard-thrust-body 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:182px 156px;animation:lizard-spear-thrust 1.4s steps(1,end) 1 both}.rig-offhand{animation:lizard-shield-brace 1.4s steps(1,end) 1 both}.rig-tail{transform-origin:106px 162px;animation:lizard-tail-counterweight 1.4s steps(1,end) 1 both}
+   @keyframes lizard-thrust-body{0%,100%{transform:translate(0,0)}24%{transform:translate(-3px,1px)}54%{transform:translate(9px,-2px)}74%{transform:translate(2px,0)}}
+   @keyframes lizard-spear-thrust{0%,100%{transform:translate(0,0)}24%{transform:translate(-5px,4px)}54%{transform:translate(14px,-3px)}74%{transform:translate(3px,-1px)}}
+   @keyframes lizard-shield-brace{0%,100%{transform:translate(0,0)}24%{transform:translate(-3px,1px)}54%{transform:translate(9px,-2px)}74%{transform:translate(2px,0)}}
    @keyframes lizard-tail-counterweight{0%,100%{transform:rotate(0)}24%{transform:rotate(-9deg)}54%{transform:rotate(16deg)}74%{transform:rotate(4deg)}}
 @media(prefers-reduced-motion:reduce){.rig-core,.rig-body,.rig-tail,.rig-fin,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-leg-left,.rig-leg-right,.paladin-legs{animation:none!important}}
 </style>
@@ -47,9 +48,9 @@
  <path d="M60 139l31 34M92 139l-31 34" stroke="#31554c" stroke-width="3"/>
 </g>
 <g class="rig-weapon">
- <path d="M139 180L231 143" stroke="#302c2a" stroke-width="11" stroke-linecap="round"/>
- <path d="M139 180L231 143" stroke="#806449" stroke-width="6" stroke-linecap="round"/>
- <path d="M228 144L246 132L242 151L233 153Z" fill="#bac7bc" stroke="#51635c" stroke-width="2"/>
+ <path d="M139 180L221 143" stroke="#302c2a" stroke-width="11" stroke-linecap="round"/>
+ <path d="M139 180L221 143" stroke="#806449" stroke-width="6" stroke-linecap="round"/>
+ <path d="M218 144L236 132L232 151L223 153Z" fill="#bac7bc" stroke="#51635c" stroke-width="2"/>
  <path d="M177 160L188 155L192 164L181 169Z" fill="#7b9d71" stroke="#244239" stroke-width="2"/>
  <path d="M173 159L181 155L191 162L182 170L174 168Z" fill="#537d60" stroke="#204037" stroke-width="2"/>
 </g>
