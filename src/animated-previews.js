@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'pregen-bard-nonbinary-3': Object.freeze({
+    still:'./assets/studies/elf-court-nonbinary.svg',
+    idle:'./assets/demos/elf-court-nonbinary-idle.svg',
+    move:'./assets/demos/elf-court-nonbinary-move.svg',
+    action:'./assets/demos/elf-court-nonbinary-attack.svg',
+    rest:'./assets/demos/elf-court-nonbinary-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · nonbinary Elf court musician picks long-neck archlute (prototype)',
+      move:'Move · measured court stride with fitted silver-blue stagecoat (prototype)',
+      action:'Attack · fretting hand anchors as arpeggio releases luminous notes (prototype)',
+      rest:'Rest · performer lowers the long-neck archlute (prototype)'
+    })
+  }),
   'pregen-bard-female-1': Object.freeze({
     still:'./assets/studies/orc-songweaver-female.svg',
     idle:'./assets/demos/orc-songweaver-female-idle.svg',

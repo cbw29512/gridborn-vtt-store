@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "pregen-bard-nonbinary-3",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/elf-court-nonbinary.svg",
+  "restSource": "assets/demos/elf-court-nonbinary-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/elf-court-nonbinary-idle.svg",
+      "durationSec": 3.2
+    },
+    "move": {
+      "source": "assets/demos/elf-court-nonbinary-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/elf-court-nonbinary-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "plannedOutputs": [
+    "transparent-webm",
+    "static-png",
+    "rest-webm"
+  ],
+  "vttCompatibility": "untested",
+  "purchasable": false
+}
