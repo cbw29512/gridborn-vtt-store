@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="move" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Human Wayfarer Monk — original Gridborn unarmed martial artist — move motion study</title>
+<desc id="description">A human male wayfarer martial artist in plain deep-indigo and ocher travel wraps, braided waist sash, practical foot bindings, exposed forearms with padded handwraps, balanced fighting guard and a distinct anatomical palm strike followed by a chambered front kick. No armor or held weapon. Original preview study, not sellable.</desc>
+<style>
+.monk-core{animation:monk-footwork 1.2s steps(1,end) infinite}.monk-left-leg{transform-origin:116px 167px;animation:monk-left-step 1.2s steps(1,end) infinite}.monk-right-leg{transform-origin:145px 167px;animation:monk-right-step 1.2s steps(1,end) infinite}
+@keyframes monk-footwork{0%,84%,100%{transform:translate(0,0)}25%{transform:translate(-4px,-3px)}59%{transform:translate(5px,-1px)}}
+@keyframes monk-left-step{0%,84%,100%{transform:rotate(0)}25%{transform:rotate(-17deg)}59%{transform:rotate(13deg)}}
+@keyframes monk-right-step{0%,84%,100%{transform:rotate(0)}25%{transform:rotate(15deg)}59%{transform:rotate(-15deg)}}
+@media(prefers-reduced-motion:reduce){.monk-core,.monk-left-guard,.monk-right-guard,.monk-left-leg,.monk-right-leg,.monk-palm-strike,.monk-kick-leg,.monk-strike-trail{animation:none!important}}
+</style>
+<ellipse cx="134" cy="212" rx="65" ry="11" opacity=".45" fill="#111c27"/>
+<ellipse cx="134" cy="202" rx="76" ry="22" fill="none" stroke="#bc9f71" stroke-width="3" opacity=".55"/>
+<g class="monk-core">
+ <g class="monk-tunic-tails">
+  <path d="M102 140L155 143L169 189L149 202L133 179L115 205L93 189Z" fill="#2f4860" stroke="#152d43" stroke-width="4"/>
+  <path d="M106 149L104 181L117 177M145 151L154 185" fill="none" stroke="#c3a26e" stroke-width="3"/>
+ </g>
+ <g class="monk-left-leg">
+  <path d="M107 161L130 165L121 195L111 208L95 202L96 183Z" fill="#3c515a" stroke="#24383f" stroke-width="3"/>
+  <path d="M95 191L117 198L112 215L83 218L79 207Z" fill="#524c3f" stroke="#c4a875" stroke-width="3"/>
+  <path d="M87 207L108 209M89 213L110 213" stroke="#cfb58b" stroke-width="3"/>
+ </g>
+ <g class="monk-right-leg">
+  <path d="M135 163L156 161L172 188L162 209L145 205L136 185Z" fill="#40575b" stroke="#263e42" stroke-width="3"/>
+  <path d="M147 196L170 197L184 213L177 218L145 214Z" fill="#524b41" stroke="#c4a875" stroke-width="3"/>
+  <path d="M150 207L176 210M154 213L174 214" stroke="#cdb184" stroke-width="3"/>
+ </g>
+ <g class="monk-body">
+  <path d="M107 113L123 107L151 109L171 125L161 161L142 177L110 169L96 151Z" fill="#405b69" stroke="#1d3445" stroke-width="4"/>
+  <path d="M117 116L137 111L146 157L126 165L111 148Z" fill="#ced2b0" stroke="#747965" stroke-width="3"/>
+  <path d="M116 116L135 132L124 166L107 144Z" fill="#9b9376" stroke="#d6bf90" stroke-width="3"/>
+  <path d="M136 111L153 124L145 166L126 168L139 132Z" fill="#566d79" stroke="#d0b47b" stroke-width="3"/>
+  <path d="M101 150L153 156" stroke="#3d3736" stroke-width="9"/>
+  <path d="M116 156L126 162L139 156L146 163L137 169L121 167Z" fill="#bf8657" stroke="#684e3e" stroke-width="2"/>
+  <path d="M136 162L143 177L154 184" fill="none" stroke="#d5b17e" stroke-width="5" stroke-linecap="round"/>
+  <path d="M155 183L162 188" stroke="#6b4b39" stroke-width="4" stroke-linecap="round"/>
+  <path d="M104 121L100 141L116 147" stroke="#c6af88" stroke-width="4" fill="none"/>
+ </g>
+ <g class="monk-head">
+  <path d="M109 76L117 61L134 56L148 65L158 81L151 109L137 123L117 120L105 102Z" fill="#a77458" stroke="#674e42" stroke-width="4"/>
+  <path d="M112 78L131 65L150 80L147 103L133 114L117 107Z" fill="#c88e69"/>
+  <path d="M105 89L92 85L105 100L114 94M151 88L165 83L151 100L144 93" fill="#b78062" stroke="#79553c" stroke-width="3"/>
+  <path d="M105 83L107 62L117 52L143 54L155 67L159 83L147 76L137 66L119 71L111 87Z" fill="#36373a" stroke="#242d38" stroke-width="4"/>
+  <path d="M114 66L130 60L146 66" fill="none" stroke="#727075" stroke-width="4"/>
+  <path d="M119 93L127 91M140 93L148 92" stroke="#353339" stroke-width="3"/>
+  <path d="M130 102L138 102" stroke="#825646" stroke-width="3"/>
+  <path d="M127 109L139 110" stroke="#996049" stroke-width="2"/>
+  <path d="M118 117L126 125L143 123L153 114" fill="none" stroke="#c5a47d" stroke-width="4"/>
+ </g>
+ <g class="monk-left-guard">
+  <path d="M107 126L91 138L110 151L129 139" fill="none" stroke="#b17e5f" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M92 137L108 149" fill="none" stroke="#3a5361" stroke-width="10"/>
+  <path d="M119 143L129 136L136 140L131 149L123 151Z" fill="#d5aa86" stroke="#805f4d" stroke-width="3"/>
+  <path d="M125 141L134 144" stroke="#ede0c6" stroke-width="4"/>
+ </g>
+ <g class="monk-right-guard">
+  <path d="M155 127L173 140L184 131" fill="none" stroke="#b88466" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M156 129L170 139" fill="none" stroke="#425c6b" stroke-width="10"/>
+  <path d="M178 126L189 121L196 130L191 139L182 140L178 135Z" fill="#d5a280" stroke="#7f6152" stroke-width="3"/>
+  <path d="M181 132L193 131M184 136L192 136" stroke="#e8d9bc" stroke-width="3"/>
+ </g>
+ <!-- These anatomically complete alternate limbs are visible only during Attack. -->
+ <g class="monk-palm-strike" data-attack-pose="palm-strike" opacity="0">
+  <path d="M155 128Q172 125 188 119L210 113" fill="none" stroke="#b78464" stroke-width="16" stroke-linecap="round"/>
+  <path d="M157 129L177 124" stroke="#405a66" stroke-width="10" stroke-linecap="round"/>
+  <path d="M200 109L216 101L225 104L227 119L216 125L205 120Z" fill="#d5a080" stroke="#815e4a" stroke-width="3"/>
+  <path d="M213 104L218 118M219 104L223 116" fill="none" stroke="#f0caa5" stroke-width="3"/>
+  <path d="M208 120L215 122" stroke="#775947" stroke-width="3"/>
+ </g>
+ <g class="monk-kick-leg" data-attack-pose="front-kick" opacity="0">
+  <path d="M142 166Q158 148 174 147L201 145" fill="none" stroke="#3f5962" stroke-width="19" stroke-linecap="round"/>
+  <path d="M159 150L181 144" fill="none" stroke="#6e8080" stroke-width="8"/>
+  <path d="M192 140L214 141L225 148L224 160L207 163L195 154Z" fill="#514c3f" stroke="#d5b78e" stroke-width="4"/>
+  <path d="M206 147L219 148M206 153L220 154" stroke="#e8d4b0" stroke-width="3"/>
+ </g>
+</g>
+<g class="monk-strike-trail" opacity="0" data-effect="unarmed-motion-line">
+ <path d="M223 101L237 100M224 110L245 109M223 119L239 122" fill="none" stroke="#dfc58d" stroke-width="4" stroke-linecap="round"/>
+</g>
+</svg>
