@@ -37,8 +37,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **21** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **19** | **11 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
+| Original illustrated concepts | **22** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **20** | **12 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -93,12 +93,12 @@ Do not mark a demographic slot complete merely because a base class art study ex
 
 ### Wave C — Complete missing class coverage (CURRENT PRIORITY; FIRST CHARACTER BATCH)
 
-Classes represented by moving studies after Ranger, Bard and Wildspeaker: **Fighter, Barbarian, Wizard, Cleric, Paladin, Rogue, Ranger, Bard, Druid**. The six class families below remain the top missing *class coverage* targets, independent of the expansion in Wave B.
+Classes represented by moving studies after Ranger, Bard, Druid and Wayfarer: **Fighter, Barbarian, Wizard, Cleric, Paladin, Rogue, Ranger, Bard, Druid, Monk**. The six class families below remain the top missing *class coverage* targets, independent of the expansion in Wave B.
 
 - [x] **Ranger** — original longbow/quiver source and one-shot nock, draw and released-arrow SVG study; human art and media certification still required.
 - [x] **Bard** — source-backed Halfling lute with a real string-plucking hand and directional resonant-chord spell; human art/media certification pending.
 - [x] **Druid** — original female Human Wildspeaker with an oak-leaf mantle, living quarterstaff and directed thorn-vine spell. Media and human art review pending.
-- [ ] **Monk** — unarmored silhouette, grounded martial combo, non-weapon stance.
+- [x] **Monk** — original Human Wayfarer with unarmored hand wraps, braced palm strike followed by attached front-kick pose; media and human visual QC pending.
 - [ ] **Sorcerer** — innate magical aura/gesture distinct from Wizard.
 - [ ] **Warlock** — pact focus and eldritch cast distinct from Wizard/Sorcerer.
 - [ ] Each of the 12 core classes has at least one technically certified visual study.
@@ -169,6 +169,12 @@ Produce the recognizable **common/base species first**, then build roles on that
 - New source-backed `pregen-druid-female-1`: original female Human Wildspeaker with braided hair, asymmetric oak-leaf mantle, bark/acorn charms, gripped living quarterstaff and a separate right-hand thornvine Attack. Five original source-linked art files (Still and Idle/Move/Attack/Rest), source generator, design research, testing and prototype media manifest.
 - Illustrated concepts **20→21**, public moving studies **18→19**, class coverage **8→9 of 12**; verified authored gender-specific animated variants **4** (prior 3). 518 searchable concepts and **0** purchasable tokens unchanged. Human quality, export certification, VTT import, rights and fulfillment remain separate blocking gates.
 - Drawing references use the official Druid starting-equipment description and USDA Forest Service oak morphology; no official or photographic imagery copied.
+
+## Original Human Wayfarer Monk motion — October 22, 2026
+
+- Human male authored variant `pregen-monk-male-1` receives original sprite still and four distinct source-derived Idle, Move, Attack, Rest studies, separate attached unarmed palm and full front-kick anatomical poses, practical hand wraps, no weapon; data-driven preview, research brief, private media manifest and tests.
+- Technical study counts **19→20**, original illustrated concepts **21→22**, class coverage **9→10 of 12**; gendered completed *engineering prototypes* **4→5** across 108 hero-variant concepts. 518 total concepts and **zero** retail-cleared items unchanged.
+- Prior class studies must still pass final CI and human 128/64/32px, live VTT import, IP and licensing and full checkout fulfillment review. No unapproved sale or Netlify deploy.
 
 ## Batch update log
 
