@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="move" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Dwarf Hexwarden Warlock — original Gridborn occult scholar — move animation study</title>
+<desc id="description">Original nonbinary dwarf with sturdy compact limbs, warm umber complexion, short ash-plum cropped hair, asymmetrical violet-black hooded leather coat and rune-stitched edges. Left hand anchors a plain dark staff away from the face while a right-hand held open grimoire produces an independent occult rune and directed eldritch bolt. No paid-rights clearance.</desc>
+<style>
+.hex-core{animation:hex-short-stride 1.2s steps(1,end) infinite}.hex-left-leg{transform-origin:112px 174px;animation:hex-left-step 1.2s steps(1,end) infinite}.hex-right-leg{transform-origin:145px 174px;animation:hex-right-step 1.2s steps(1,end) infinite}
+@keyframes hex-short-stride{0%,84%,100%{transform:translate(0,0)}29%{transform:translate(-4px,-2px)}63%{transform:translate(4px,-1px)}}
+@keyframes hex-left-step{0%,84%,100%{transform:rotate(0)}29%{transform:rotate(-13deg)}63%{transform:rotate(12deg)}}
+@keyframes hex-right-step{0%,84%,100%{transform:rotate(0)}29%{transform:rotate(13deg)}63%{transform:rotate(-12deg)}}
+@media(prefers-reduced-motion:reduce){.hex-core,.hex-book,.hex-left-leg,.hex-right-leg,.hex-rune,.hex-bolt,.hex-staff{animation:none!important}}
+</style>
+<ellipse cx="134" cy="215" rx="63" ry="12" fill="#11171e" opacity=".5"/>
+<ellipse cx="134" cy="203" rx="72" ry="23" fill="none" stroke="#9b87ad" stroke-width="3" opacity=".6"/>
+<g class="hex-core">
+ <g class="hex-cloak">
+  <path d="M103 113Q82 139 75 182L87 205L107 192L127 206L146 190L173 206L181 179L159 116Z" fill="#282a3b" stroke="#151e2c" stroke-width="4"/>
+  <path d="M98 132L84 175L98 190L112 176L128 197L151 176L166 192L172 166L158 129Z" fill="#4f3a59"/>
+  <path d="M84 168L98 157L105 174M156 160L171 174" stroke="#b3a1bf" stroke-width="3" fill="none"/>
+  <path d="M103 136L91 152L99 160M161 143L167 154L156 161" stroke="#8674a1" stroke-width="3" fill="none"/>
+ </g>
+ <g class="hex-left-leg">
+  <path d="M108 167L131 169L126 195L113 208L100 205L96 185Z" fill="#4e4850" stroke="#292e36" stroke-width="3"/>
+  <path d="M99 198L123 199L119 218L90 220L84 212Z" fill="#413d42" stroke="#afa18d" stroke-width="3"/>
+  <path d="M94 212L116 211" stroke="#cbba9d" stroke-width="3"/>
+ </g>
+ <g class="hex-right-leg">
+  <path d="M134 168L155 166L169 193L162 208L146 210L137 190Z" fill="#514a56" stroke="#30313b" stroke-width="3"/>
+  <path d="M145 201L167 199L184 216L177 219L147 218Z" fill="#413d42" stroke="#afa18d" stroke-width="3"/>
+  <path d="M153 212L175 213" stroke="#cbbb9f" stroke-width="3"/>
+ </g>
+ <g class="hex-torso">
+  <path d="M99 118L118 111L153 113L175 129L170 169L144 181L108 174L91 154Z" fill="#323243" stroke="#1b2333" stroke-width="4"/>
+  <path d="M112 118L134 115L150 165L128 174L106 150Z" fill="#877187" stroke="#534c67" stroke-width="3"/>
+  <path d="M108 126L124 141L114 166L99 146Z" fill="#6f566b" stroke="#b79ab6" stroke-width="3"/>
+  <path d="M146 124L158 143L147 171L125 176L138 142Z" fill="#705c78" stroke="#c0a6bf" stroke-width="3"/>
+  <path d="M102 155L160 159" stroke="#45343c" stroke-width="10"/>
+  <path d="M122 153L136 153L143 167L130 173L118 165Z" fill="#b6a077" stroke="#524b55" stroke-width="3"/>
+  <path d="M105 132L115 132L113 148L125 150M146 131L155 137L148 148" stroke="#d1b68c" stroke-width="3" fill="none"/>
+  <path d="M114 151L122 145L131 152L138 144L145 151" fill="none" stroke="#729b92" stroke-width="3"/>
+  <circle cx="131" cy="158" r="4" fill="#a4cfb2"/>
+ </g>
+ <g class="hex-head">
+  <path d="M107 78L120 63L143 64L155 83L157 103L142 122L115 122L103 107Z" fill="#9d735c" stroke="#644744" stroke-width="4"/>
+  <path d="M112 80L127 72L146 79L151 98L139 113L116 109Z" fill="#bd8a70" stroke="#815e56" stroke-width="2"/>
+  <path d="M107 88L91 83L108 102M153 87L167 83L152 102" fill="#b48567" stroke="#765442" stroke-width="3"/>
+  <path d="M107 89L104 67L116 53L138 53L158 65L165 90L153 78L143 67L128 70L113 91Z" fill="#473c4c" stroke="#242938" stroke-width="4"/>
+  <path d="M107 75L120 59L140 58L154 72" fill="none" stroke="#826779" stroke-width="5"/>
+  <path d="M117 92L127 91M140 90L151 93" stroke="#3d3644" stroke-width="4"/>
+  <path d="M122 107L136 108" stroke="#885f58" stroke-width="3"/>
+  <path d="M118 116L127 125L146 124L154 113" stroke="#c3a183" stroke-width="4" fill="none"/>
+  <path d="M119 73L139 73" stroke="#c3b29c" stroke-width="3"/>
+ </g>
+ <g class="hex-staff-arm">
+  <path d="M108 129L86 143L75 126" fill="none" stroke="#a77f66" stroke-width="16" stroke-linecap="round"/>
+  <path d="M95 137L85 142" stroke="#5d5265" stroke-width="9"/>
+  <path d="M75 127L68 129" stroke="#cf9d7a" stroke-width="11" stroke-linecap="round"/>
+ </g>
+ <g class="hex-book-arm">
+  <path d="M158 133L172 148L188 139" fill="none" stroke="#aa8069" stroke-width="15" stroke-linecap="round"/>
+  <path d="M161 137L172 148" stroke="#5a4b65" stroke-width="10"/>
+  <path d="M184 139L195 132" stroke="#d4a184" stroke-width="10" stroke-linecap="round"/>
+ </g>
+ <g class="hex-book" data-focus="occult-book">
+  <path d="M163 126L181 121L192 127L209 118L213 153L196 159L186 153L165 157Z" fill="#4f394d" stroke="#251d33" stroke-width="5"/>
+  <path d="M168 130L183 127L193 132L207 125L208 149L195 154L186 148L170 152Z" fill="#e6d4b2" stroke="#9d8a72" stroke-width="2"/>
+  <path d="M191 132L194 153" stroke="#655364" stroke-width="3" fill="none"/>
+  <path d="M174 136L186 138L179 141L186 144M197 136L205 133L201 143L207 143" stroke="#725871" stroke-width="2" fill="none"/>
+  <path d="M176 147L185 146M198 148L205 146" stroke="#b18a90" stroke-width="2"/>
+  <path d="M172 151L194 155L209 151" fill="none" stroke="#a47c6b" stroke-width="3"/>
+  <circle cx="191" cy="139" r="4" fill="none" stroke="#739b8f" stroke-width="2"/>
+  <path d="M190 126L189 119L198 116L198 127" stroke="#5b4663" stroke-width="4" fill="none"/>
+ </g>
+ <g class="hex-staff" data-weapon="staff-carried">
+  <path d="M68 210L68 126L67 56" stroke="#332b3c" stroke-width="13" fill="none" stroke-linecap="round"/>
+  <path d="M68 207L68 126L67 58" stroke="#846879" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M61 59L58 44L65 29L74 41L75 56L68 65Z" fill="#4f455b" stroke="#a694a2" stroke-width="3"/>
+  <path d="M65 33L67 51L74 44" stroke="#a0c4aa" stroke-width="3" fill="none"/>
+  <path d="M62 141L73 149L68 157" stroke="#c0a27e" stroke-width="4" fill="none"/>
+ </g>
+</g>
+<g class="hex-rune" data-spell-phase="invoke" opacity="0">
+ <circle cx="212" cy="116" r="18" fill="none" stroke="#b3c5aa" stroke-width="4"/>
+ <circle cx="212" cy="116" r="12" fill="none" stroke="#755c9c" stroke-width="3"/>
+ <path d="M212 98L212 134M196 116L229 116M201 104L223 128M201 128L223 104" stroke="#c6b69e" stroke-width="2.5"/>
+ <path d="M208 112L215 108L217 118L210 123Z" fill="#b6dbad" stroke="#465b66" stroke-width="2"/>
+</g>
+<g class="hex-bolt" data-spell-phase="eldritch-bolt" opacity="0">
+ <path d="M209 119L226 109L239 111L231 121L246 127" fill="none" stroke="#4b376b" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M209 119L226 109L239 111L231 121L246 127" fill="none" stroke="#a3d5aa" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M224 110L224 100M232 122L239 137M212 119L209 133" stroke="#e0d7a1" stroke-width="3" stroke-linecap="round"/>
+</g>
+</svg>
