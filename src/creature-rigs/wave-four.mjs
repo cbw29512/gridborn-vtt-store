@@ -76,9 +76,10 @@ export const renderWaveFour=function renderWaveFour(kind,mode,source){
    @keyframes lizard-left{0%,10%,90%,100%{transform:rotate(0)}32%{transform:rotate(-14deg)}65%{transform:rotate(11deg)}}
    @keyframes lizard-right{0%,10%,90%,100%{transform:rotate(0)}32%{transform:rotate(13deg)}65%{transform:rotate(-14deg)}}
    @keyframes lizard-tail-balance{0%,10%,90%,100%{transform:rotate(0)}32%{transform:rotate(-14deg)}65%{transform:rotate(12deg)}}`,
-   attack:`.rig-core{animation:lizard-thrust-body 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:182px 156px;animation:lizard-spear-thrust 1.4s steps(1,end) 1 both}.rig-tail{transform-origin:106px 162px;animation:lizard-tail-counterweight 1.4s steps(1,end) 1 both}
-   @keyframes lizard-thrust-body{0%,100%{transform:translate(0,0)}24%{transform:translate(5px,0)}54%{transform:translate(-11px,-2px)}74%{transform:translate(-2px,0)}}
-   @keyframes lizard-spear-thrust{0%,100%{transform:translate(0,0) rotate(0)}24%{transform:translate(0,8px) rotate(22deg)}54%{transform:translate(14px,-10px) rotate(-30deg)}74%{transform:translate(4px,-2px) rotate(-6deg)}}
+   attack:`.rig-core{animation:lizard-thrust-body 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:182px 156px;animation:lizard-spear-thrust 1.4s steps(1,end) 1 both}.rig-offhand{animation:lizard-shield-brace 1.4s steps(1,end) 1 both}.rig-tail{transform-origin:106px 162px;animation:lizard-tail-counterweight 1.4s steps(1,end) 1 both}
+   @keyframes lizard-thrust-body{0%,100%{transform:translate(0,0)}24%{transform:translate(-3px,1px)}54%{transform:translate(9px,-2px)}74%{transform:translate(2px,0)}}
+   @keyframes lizard-spear-thrust{0%,100%{transform:translate(0,0)}24%{transform:translate(-5px,4px)}54%{transform:translate(14px,-3px)}74%{transform:translate(3px,-1px)}}
+   @keyframes lizard-shield-brace{0%,100%{transform:translate(0,0)}24%{transform:translate(-3px,1px)}54%{transform:translate(9px,-2px)}74%{transform:translate(2px,0)}}
    @keyframes lizard-tail-counterweight{0%,100%{transform:rotate(0)}24%{transform:rotate(-9deg)}54%{transform:rotate(16deg)}74%{transform:rotate(4deg)}}`,
    rest:`.rig-core{animation:lizard-low-rest 4s steps(1,end) infinite}.rig-tail{transform-origin:106px 162px;animation:lizard-tail-rest 4s steps(1,end) infinite}.rig-weapon{transform-origin:183px 156px;animation:lizard-spear-ground 4s steps(1,end) infinite}
    @keyframes lizard-low-rest{0%,10%,90%,100%{transform:translateY(10px)}48%{transform:translateY(9px)}}
