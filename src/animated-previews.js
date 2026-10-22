@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'pregen-sorcerer-nonbinary-1': Object.freeze({
+    still:'./assets/studies/elf-sparkweaver-sorcerer.svg',
+    idle:'./assets/demos/elf-sparkweaver-sorcerer-idle.svg',
+    move:'./assets/demos/elf-sparkweaver-sorcerer-move.svg',
+    action:'./assets/demos/elf-sparkweaver-sorcerer-attack.svg',
+    rest:'./assets/demos/elf-sparkweaver-sorcerer-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · spontaneous crystal power flickers at the open hand (prototype)',
+      move:'Move · agile elf travel steps and steady carried staff (prototype)',
+      action:'Attack · arc charge gathers and releases a branching bolt (prototype)',
+      rest:'Rest · lowered staff and dimmed crystal focus (prototype)'
+    })
+  }),
   'pregen-monk-male-1': Object.freeze({
     still:'./assets/studies/human-wayfarer-monk.svg',
     idle:'./assets/demos/human-wayfarer-monk-idle.svg',
