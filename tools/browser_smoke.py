@@ -155,10 +155,32 @@ def check_viewport(browser, origin: str, width: int, screenshots: Path) -> None:
                 "(img) => img.complete && img.naturalWidth > 0",
                 arg=page.locator(selector).element_handle(),
                 timeout=6000)
-        fixed_before = page.locator("#demo-sleep-token").screenshot()
+        # Verify what the user actually receives when paused: both loaded SVGs
+        # must be static sources with no SVG/SMIL/CSS animation or animated IMG.
+        # Screenshot byte identity is not a reliable static-motion assertion;
+        # Chromium may rerasterize an unchanged image with different pixels.
+        paused_sources = page.evaluate("""async () => {
+            const nodes = ['#demo-token', '#demo-sleep-token'].map(
+                selector => document.querySelector(selector));
+            return await Promise.all(nodes.map(async img => {
+                const response = await fetch(img.src);
+                if (!response.ok) throw new Error('Static preview failed: '+response.status);
+                const svg = await response.text();
+                return {
+                    loaded: img.complete && img.naturalWidth > 0,
+                    animation: getComputedStyle(img).animationName,
+                    svgAnimated: /@keyframes|<animate(?:motion|transform)?\\b|animation\\s*:/i.test(svg),
+                    src: img.getAttribute('src')
+                };
+            }));
+        }""")
+        assert all(item["loaded"] and item["animation"] == "none"
+                   and not item["svgAnimated"] for item in paused_sources), \
+            "Pause must swap both previews to static, fully loaded SVGs"
         page.wait_for_timeout(250)
-        fixed_after = page.locator("#demo-sleep-token").screenshot()
-        assert fixed_before == fixed_after, "Pause must freeze both animations"
+        assert page.locator("#demo-pause").get_attribute("aria-pressed") == "true"
+        assert page.locator("#demo-token").get_attribute("src") == paused_sources[0]["src"]
+        assert page.locator("#demo-sleep-token").get_attribute("src") == paused_sources[1]["src"]
         page.locator("#demo-pause").click()
         expect(page.locator("#demo-pause")).to_have_attribute("aria-pressed", "false")
         assert page.locator("#demo-token").get_attribute("src").endswith("human-fighter-showcase.svg")
