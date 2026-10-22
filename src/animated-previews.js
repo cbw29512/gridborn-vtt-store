@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'pregen-bard-female-1': Object.freeze({
+    still:'./assets/studies/orc-songweaver-female.svg',
+    idle:'./assets/demos/orc-songweaver-female-idle.svg',
+    move:'./assets/demos/orc-songweaver-female-move.svg',
+    action:'./assets/demos/orc-songweaver-female-attack.svg',
+    rest:'./assets/demos/orc-songweaver-female-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · female Orc Songweaver sways and plucks traveling lute (prototype)',
+      move:'Move · broad grounded performance steps, sword stays sheathed (prototype)',
+      action:'Attack · attached plucking hand strikes the strings and casts harmonic wave (prototype)',
+      rest:'Rest · performer lowers the large pear-bodied lute (prototype)'
+    })
+  }),
   'pregen-ranger-male-1': Object.freeze({
     still:'./assets/studies/dwarf-pathfinder-male.svg',
     idle:'./assets/demos/dwarf-pathfinder-male-idle.svg',
