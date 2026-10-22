@@ -45,4 +45,11 @@
  <circle cx="183" cy="132" r="5" fill="#a7bdbe"/>
 </g>
 <g class="rig-effect"><path d="M211 108l14-10M218 122l18-5" stroke="#d4bd88" stroke-width="3" opacity=".65"/></g>
+<g class="rig-bolt" data-weapon-projectile="crossbow-bolt" opacity="0">
+ <!-- One physically separate bolt: nocked over the tiller, metal tip pointing toward the target. -->
+ <path d="M198 124L215 117" stroke="#312b29" stroke-width="5" stroke-linecap="round"/>
+ <path d="M198 124L215 117" stroke="#efd5a0" stroke-width="3" stroke-linecap="round"/>
+ <path d="M212 112L222 114L214 123Z" fill="#d9e8e1" stroke="#687a7b" stroke-width="1.5"/>
+ <path d="M202 119L197 127L205 125Z" fill="#c69569"/>
+</g>
 </svg>

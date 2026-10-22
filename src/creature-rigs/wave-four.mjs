@@ -57,10 +57,11 @@ export const renderWaveFour=function renderWaveFour(kind,mode,source){
    @keyframes gnome-left-boot{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(-20deg)}65%{transform:rotate(14deg)}}
    @keyframes gnome-right-boot{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(18deg)}65%{transform:rotate(-15deg)}}
    @keyframes gnome-crossbow-bob{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(7deg)}65%{transform:rotate(-5deg)}}`,
-   attack:`.rig-core{animation:gnome-fire-brace 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:178px 140px;animation:gnome-crossbow-shot 1.4s steps(1,end) 1 both}.rig-effect{animation:gnome-bolt-launch 1.4s steps(1,end) 1 both}
+   attack:`.rig-core{animation:gnome-fire-brace 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:178px 140px;animation:gnome-crossbow-shot 1.4s steps(1,end) 1 both}.rig-effect{animation:gnome-bolt-launch 1.4s steps(1,end) 1 both}.rig-bolt{animation:gnome-bolt-flight 1.4s linear 1 both}
    @keyframes gnome-fire-brace{0%,100%{transform:translate(0,0)}23%{transform:translate(2px,1px)}51%{transform:translate(-7px,-2px)}75%{transform:translate(-1px,0)}}
    @keyframes gnome-crossbow-shot{0%,100%{transform:rotate(0)}23%{transform:rotate(-13deg)}51%{transform:rotate(18deg)}75%{transform:rotate(3deg)}}
-   @keyframes gnome-bolt-launch{0%,12%,85%,100%{opacity:.12;transform:translateX(0)}45%{opacity:1;transform:translateX(12px)}62%{opacity:.58;transform:translateX(26px)}}`,
+   @keyframes gnome-bolt-launch{0%,12%,85%,100%{opacity:.12;transform:translateX(0)}45%{opacity:1;transform:translateX(12px)}62%{opacity:.58;transform:translateX(26px)}}
+   @keyframes gnome-bolt-flight{0%,22%{opacity:1;transform:translate(0,0)}39%{opacity:1;transform:translate(0,0)}56%{opacity:1;transform:translate(19px,-8px)}63%,100%{opacity:0;transform:translate(22px,-9px)}}`,
    rest:`.rig-core{animation:gnome-crouch-rest 4s steps(1,end) infinite}.rig-weapon{transform-origin:178px 140px;animation:gnome-crossbow-lower 4s steps(1,end) infinite}.rig-effect{animation:gnome-bolt-rest 4s steps(1,end) infinite}
    @keyframes gnome-crouch-rest{0%,10%,90%,100%{transform:translateY(13px) rotate(-5deg)}50%{transform:translateY(12px) rotate(-5deg)}}
    @keyframes gnome-crossbow-lower{0%,10%,90%,100%{transform:rotate(43deg)}50%{transform:rotate(40deg)}}
@@ -105,6 +106,6 @@ export const renderWaveFour=function renderWaveFour(kind,mode,source){
    @keyframes shark-rest-fin{0%,10%,90%,100%{transform:rotate(0)}48%{transform:rotate(-3deg)}}`
   }
  }[kind][mode];
- const reduced='@media(prefers-reduced-motion:reduce){.rig-core,.rig-body,.rig-tail,.rig-fin,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-leg-left,.rig-leg-right,.paladin-legs{animation:none!important}}';
+ const reduced='@media(prefers-reduced-motion:reduce){.rig-core,.rig-body,.rig-tail,.rig-fin,.rig-head,.rig-weapon,.rig-offhand,.rig-effect'+(kind==='gnome'?',.rig-bolt':'')+',.rig-leg-left,.rig-leg-right,.paladin-legs{animation:none!important}}';
  return s.replace('</desc>','</desc>\n<style>\n'+anim+'\n'+reduced+'\n</style>');
 };

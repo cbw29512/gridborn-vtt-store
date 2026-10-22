@@ -7,7 +7,7 @@
    @keyframes gnome-scan{0%,10%,90%,100%{transform:translateX(0)}38%{transform:translateX(-3px)}68%{transform:translateX(2px)}}
    @keyframes gnome-crossbow-check{0%,10%,90%,100%{transform:rotate(0)}38%{transform:rotate(-11deg)}68%{transform:rotate(7deg)}}
    @keyframes gnome-bolt-gleam{0%,10%,90%,100%{opacity:.25}38%{opacity:.8}68%{opacity:.4}}
-@media(prefers-reduced-motion:reduce){.rig-core,.rig-body,.rig-tail,.rig-fin,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-leg-left,.rig-leg-right,.paladin-legs{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.rig-core,.rig-body,.rig-tail,.rig-fin,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-bolt,.rig-leg-left,.rig-leg-right,.paladin-legs{animation:none!important}}
 </style>
 <ellipse cx="129" cy="206" rx="55" ry="12" fill="#0b1520" opacity=".42"/>
 <ellipse cx="127" cy="197" rx="66" ry="20" fill="none" stroke="#c9a16e" stroke-width="3" opacity=".62"/>
@@ -52,4 +52,11 @@
  <circle cx="183" cy="132" r="5" fill="#a7bdbe"/>
 </g>
 <g class="rig-effect"><path d="M211 108l14-10M218 122l18-5" stroke="#d4bd88" stroke-width="3" opacity=".65"/></g>
+<g class="rig-bolt" data-weapon-projectile="crossbow-bolt" opacity="0">
+ <!-- One physically separate bolt: nocked over the tiller, metal tip pointing toward the target. -->
+ <path d="M198 124L215 117" stroke="#312b29" stroke-width="5" stroke-linecap="round"/>
+ <path d="M198 124L215 117" stroke="#efd5a0" stroke-width="3" stroke-linecap="round"/>
+ <path d="M212 112L222 114L214 123Z" fill="#d9e8e1" stroke="#687a7b" stroke-width="1.5"/>
+ <path d="M202 119L197 127L205 125Z" fill="#c69569"/>
+</g>
 </svg>

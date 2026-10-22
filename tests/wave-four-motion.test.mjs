@@ -80,3 +80,20 @@ test('Specialized attack and locomotion preserve different anatomy',()=>{
   assert.doesNotMatch(attack,/1\.4s[^\n]*infinite/);
  }
 });
+
+test('Gnome crossbow holds and fires a separate visible bolt with one-shot flight',()=>{
+ const source=read('assets/studies/gnome-rogue.svg');
+ const shot=read('assets/demos/gnome-rogue-attack.svg');
+ assert.match(source,/data-weapon-projectile="crossbow-bolt"/);
+ assert.match(source,/M198 124L215 117/,'Visible bolt shaft must come from original artwork');
+ assert.match(shot,/\.rig-bolt\{animation:gnome-bolt-flight 1\.4s linear 1 both\}/);
+ assert.match(shot,/@keyframes gnome-bolt-flight\{[\s\S]*?56%\{opacity:1;transform:translate\(19px,-8px\)\}/);
+ assert.match(shot,/63%,100%\{opacity:0;transform:translate\(22px,-9px\)\}/);
+ assert.match(shot,/prefers-reduced-motion:reduce[^\n]*\.rig-bolt/);
+ for(const state of ['idle','move','rest']){
+  const svg=read('assets/demos/gnome-rogue-'+state+'.svg');
+  assert.doesNotMatch(svg,/gnome-bolt-flight/,'No fired projectile in '+state);
+  assert.match(svg,/data-weapon-projectile="crossbow-bolt" opacity="0"/,'Projectile remains hidden in '+state);
+ }
+ assert.match(read('assets/demos/gnome-rogue-manifest.json'),/"purchasable"\s*:\s*false/);
+});
