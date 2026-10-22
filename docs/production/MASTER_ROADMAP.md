@@ -37,8 +37,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **24** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **22** | **14 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
+| Original illustrated concepts | **25** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **23** | **15 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -187,6 +187,13 @@ Produce the recognizable **common/base species first**, then build roles on that
 - New original nonbinary Dwarf Hexwarden `pregen-warlock-nonbinary-1`: compact dwarf anatomy, asymmetric hood, held staff and open occult-lore book, autonomous invocation seal above the book and one-shot independent eldritch bolt. Source generator, Idle/Move/Attack/Rest studies, research, noncommercial manifest and Node/Python/media QA.
 - Technical original-illustrated concepts **23→24**, four-state technical studies **21→22**; class-first *engineering* coverage **11→12 of 12**; authored-gender hero prototypes **6→7 of 108** (101 remain). Total 518 searchable concepts unchanged, retail cleared **0**.
 - **Critical:** 12/12 at least one technical study is not 12/12 finished class product lines. Small-size human reviews, engine/browser/VTT media, license and sales delivery must still pass before selling; continue gender/style variants and NPC/monster/animal production.
+
+## Orc Stonefist Monk variant — October 22, 2026
+
+- Existing authored female Orc Stonefist `pregen-monk-female-3` now has a distinctly broad original sprite, stone-engraved waist wrap and gauntlets, side-shaved hair and braid, complete animated shoulder-to-fist downward hammer strike, dust recoil and source-derived Idle/Move/Attack/Rest.
+- This is a **separate anatomy and action** from Human male Wayfarer (palm/front kick), not a palette variation. Research brief, deterministic renderer, prototype media contract and regression tests included.
+- Planned stack counts: original illustrated **24→25**, four-state public studies **22→23**, character studies **14→15**, authored hero-variant animation studies **7→8 /108** (100 still need moving first studies). Total catalog concepts 518 unchanged, retail-certified assets 0. Class coverage remains at least one prototype per 12 classes.
+- No commercial signoff: check full CI, manual 32/64/128px pose bounds/grips, actual VTT imports, rights, storefront checkout/fulfillment separately.
 
 ## Batch update log
 

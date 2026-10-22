@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'pregen-monk-female-3': Object.freeze({
+    still:'./assets/studies/orc-stonefist-female.svg',
+    idle:'./assets/demos/orc-stonefist-female-idle.svg',
+    move:'./assets/demos/orc-stonefist-female-move.svg',
+    action:'./assets/demos/orc-stonefist-female-attack.svg',
+    rest:'./assets/demos/orc-stonefist-female-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · Orc Stonefist heavy unarmed guard (prototype)',
+      move:'Move · deliberate grounded alternating strides (prototype)',
+      action:'Attack · shoulder-linked hammerfist windup, slam and recoil (prototype)',
+      rest:'Rest · settled stance with hands lowered (prototype)'
+    })
+  }),
   'pregen-warlock-nonbinary-1': Object.freeze({
     still:'./assets/studies/dwarf-hexwarden-warlock.svg',
     idle:'./assets/demos/dwarf-hexwarden-warlock-idle.svg',

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "pregen-monk-female-3",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/orc-stonefist-female.svg",
+  "restSource": "assets/demos/orc-stonefist-female-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/orc-stonefist-female-idle.svg",
+      "durationSec": 3.2
+    },
+    "move": {
+      "source": "assets/demos/orc-stonefist-female-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/orc-stonefist-female-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "plannedOutputs": [
+    "transparent-webm",
+    "static-png",
+    "rest-webm"
+  ],
+  "vttCompatibility": "untested",
+  "purchasable": false
+}
