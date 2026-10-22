@@ -97,7 +97,7 @@ test('concept details explicitly disclose unverified VTT compatibility', () => {
 });
 
 test('first screen clearly defines Gridborn as a solution for static VTT maps', () => {
-  const hero = html.slice(html.indexOf('<section class="hero shell"'), html.indexOf('<section class="catalog-section"'));
+  const hero = html.slice(html.indexOf('<section class="hero shell"'), html.indexOf('<section class="path-section shell"'));
   assert.match(hero, /Your VTT maps are static/);
   assert.match(hero, /Your battles shouldn't be/);
   assert.match(hero, /animated fantasy tokens for/);

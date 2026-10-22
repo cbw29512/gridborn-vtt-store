@@ -32,7 +32,7 @@
 <body>
   <a class="skip-link" href="#catalog">Skip to catalog</a>
   <header class="topbar shell">
-    <a class="brand" href="./" aria-label="Gridborn home">
+    <a class="brand" href="#catalog" aria-label="Gridborn home">
       <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
       <span>GRID<span class="brand-accent">BORN</span></span><span class="brand-tagline">ANIMATED VTT TOKENS</span>
     </a>
@@ -46,6 +46,51 @@
     </nav>
   </header>
   <main>
+    <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div><div class="eyebrow">FROM THE BATTLEFIELD TO THE TAVERN</div><h2 id="catalog-title">Find your next living encounter.</h2></div>
+          <p>Explore the full 330-creature SRD index alongside original Gridborn concepts. Illustrated designs remain in development.</p>
+        </div>
+        <nav class="collection-nav" aria-label="Explore token collections">
+          <a class="collection-shortcut collection-characters" href="?category=Characters#catalog" data-category-link="Characters">
+            <span class="shortcut-portrait"><img src="./assets/studies/elven-wizard.svg" alt="" width="66" height="70" loading="lazy" decoding="async" /></span><span class="shortcut-copy"><strong>Characters</strong><small>Race &amp; class</small></span><span class="shortcut-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="collection-shortcut collection-npcs" href="?category=NPCs#catalog" data-category-link="NPCs">
+            <span class="shortcut-portrait"><img src="./assets/studies/village-innkeeper.svg" alt="" width="66" height="70" loading="lazy" decoding="async" /></span><span class="shortcut-copy"><strong>NPCs</strong><small>Race &amp; occupation</small></span><span class="shortcut-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="collection-shortcut collection-monsters" href="?category=Monsters#catalog" data-category-link="Monsters">
+            <span class="shortcut-portrait"><img src="./assets/studies/skeleton-warrior.svg" alt="" width="66" height="70" loading="lazy" decoding="async" /></span><span class="shortcut-copy"><strong>Monsters</strong><small>Family &amp; challenge</small></span><span class="shortcut-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="collection-shortcut collection-animals" href="?category=Animals#catalog" data-category-link="Animals">
+            <span class="shortcut-portrait"><img src="./assets/studies/great-white-shark.svg" alt="" width="66" height="70" loading="lazy" decoding="async" /></span><span class="shortcut-copy"><strong>Animals</strong><small>Habitat &amp; type</small></span><span class="shortcut-arrow" aria-hidden="true">↗</span>
+          </a>
+        </nav>
+        <div class="filter-panel" role="search" aria-label="Search token catalog">
+          <div class="filter-field filter-search">
+            <label id="search-label" for="search">Search all tokens</label>
+            <div class="input-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Try shark, wizard, innkeeper..." autocomplete="off" /></div>
+          </div>
+          <div class="filter-field"><label for="category">Category</label><select id="category"></select></div>
+          <div class="filter-field" id="primary-field" hidden><label for="primary-filter" id="primary-label">First filter</label><select id="primary-filter"></select></div>
+          <div class="filter-field" id="secondary-field" hidden><label for="secondary-filter" id="secondary-label">Second filter</label><select id="secondary-filter"></select></div>
+        </div>
+        <div class="results-heading"><div><span class="section-kicker" id="category-caption">All categories</span><h3 id="result-summary" aria-live="polite">Loading catalog…</h3></div><button id="clear-filters" class="clear-button" type="button" hidden>Clear search &amp; filters <span aria-hidden="true">×</span></button></div>
+        <div class="catalog-motion-toolbar">
+          <p>See the motion before choosing: animated studies cycle through <strong>Idle → Move → Attack → Rest</strong> automatically. Only illustrated motion prototypes animate; unmade designs remain static.</p>
+          <button id="catalog-motion-toggle" class="catalog-motion-toggle" type="button" aria-pressed="false">Pause catalog motion</button>
+        </div>
+        <div id="results" class="product-grid"></div>
+        <button id="show-more" class="show-more-button" type="button" hidden>Show more concepts</button>
+        <div id="empty-state" class="empty-state" hidden><div class="empty-glyph">⌕</div><h3>No matches found</h3><p id="empty-message">Try a different search or category.</p><button id="empty-reset" type="button" class="secondary-action">Clear search &amp; filters</button></div>
+        <p class="catalog-disclaimer">Complete SRD monster index for planning—not 330 finished tokens. Original Gridborn artwork appears only where available. All purchases remain disabled.</p>
+        <details class="catalog-attribution">
+          <summary>Monster index source &amp; Creative Commons attribution</summary>
+          <p>This work includes material from the System Reference Document 5.2.1 (“SRD 5.2.1”) by Wizards of the Coast LLC, available at <a href="https://www.dndbeyond.com/srd">https://www.dndbeyond.com/srd</a>. The SRD 5.2.1 is licensed under the Creative Commons Attribution 4.0 International License, available at <a href="https://creativecommons.org/licenses/by/4.0/legalcode">https://creativecommons.org/licenses/by/4.0/legalcode</a>.</p>
+          <p>Gridborn's illustrations and animation prototypes are original development artwork, not official SRD illustrations. No endorsement is implied.</p>
+        </details>
+      </div>
+    </section>
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-copy">
         <div class="eyebrow"><span class="eyebrow-dash"></span> ANIMATED TOKENS FOR VTT BATTLE MAPS</div>
@@ -96,51 +141,6 @@
           </div>
           <button id="demo-pause" class="demo-pause" type="button" aria-controls="demo-token demo-sleep-token" aria-pressed="false">Pause motion</button>
         </div>
-      </div>
-    </section>
-    <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
-      <div class="shell">
-        <div class="section-heading">
-          <div><div class="eyebrow">FROM THE BATTLEFIELD TO THE TAVERN</div><h2 id="catalog-title">Find your next living encounter.</h2></div>
-          <p>Explore the full 330-creature SRD index alongside original Gridborn concepts. Illustrated designs remain in development.</p>
-        </div>
-        <nav class="collection-nav" aria-label="Explore token collections">
-          <a class="collection-shortcut collection-characters" href="?category=Characters#catalog" data-category-link="Characters">
-            <span class="shortcut-portrait"><img src="./assets/studies/elven-wizard.svg" alt="" width="66" height="70" loading="lazy" decoding="async" /></span><span class="shortcut-copy"><strong>Characters</strong><small>Race &amp; class</small></span><span class="shortcut-arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="collection-shortcut collection-npcs" href="?category=NPCs#catalog" data-category-link="NPCs">
-            <span class="shortcut-portrait"><img src="./assets/studies/village-innkeeper.svg" alt="" width="66" height="70" loading="lazy" decoding="async" /></span><span class="shortcut-copy"><strong>NPCs</strong><small>Race &amp; occupation</small></span><span class="shortcut-arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="collection-shortcut collection-monsters" href="?category=Monsters#catalog" data-category-link="Monsters">
-            <span class="shortcut-portrait"><img src="./assets/studies/skeleton-warrior.svg" alt="" width="66" height="70" loading="lazy" decoding="async" /></span><span class="shortcut-copy"><strong>Monsters</strong><small>Family &amp; challenge</small></span><span class="shortcut-arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="collection-shortcut collection-animals" href="?category=Animals#catalog" data-category-link="Animals">
-            <span class="shortcut-portrait"><img src="./assets/studies/great-white-shark.svg" alt="" width="66" height="70" loading="lazy" decoding="async" /></span><span class="shortcut-copy"><strong>Animals</strong><small>Habitat &amp; type</small></span><span class="shortcut-arrow" aria-hidden="true">↗</span>
-          </a>
-        </nav>
-        <div class="filter-panel" role="search" aria-label="Search token catalog">
-          <div class="filter-field filter-search">
-            <label id="search-label" for="search">Search all tokens</label>
-            <div class="input-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Try shark, wizard, innkeeper..." autocomplete="off" /></div>
-          </div>
-          <div class="filter-field"><label for="category">Category</label><select id="category"></select></div>
-          <div class="filter-field" id="primary-field" hidden><label for="primary-filter" id="primary-label">First filter</label><select id="primary-filter"></select></div>
-          <div class="filter-field" id="secondary-field" hidden><label for="secondary-filter" id="secondary-label">Second filter</label><select id="secondary-filter"></select></div>
-        </div>
-        <div class="results-heading"><div><span class="section-kicker" id="category-caption">All categories</span><h3 id="result-summary" aria-live="polite">Loading catalog…</h3></div><button id="clear-filters" class="clear-button" type="button" hidden>Clear search &amp; filters <span aria-hidden="true">×</span></button></div>
-        <div class="catalog-motion-toolbar">
-          <p>See the motion before choosing: animated studies cycle through <strong>Idle → Move → Attack → Rest</strong> automatically. Only illustrated motion prototypes animate; unmade designs remain static.</p>
-          <button id="catalog-motion-toggle" class="catalog-motion-toggle" type="button" aria-pressed="false">Pause catalog motion</button>
-        </div>
-        <div id="results" class="product-grid"></div>
-        <button id="show-more" class="show-more-button" type="button" hidden>Show more concepts</button>
-        <div id="empty-state" class="empty-state" hidden><div class="empty-glyph">⌕</div><h3>No matches found</h3><p id="empty-message">Try a different search or category.</p><button id="empty-reset" type="button" class="secondary-action">Clear search &amp; filters</button></div>
-        <p class="catalog-disclaimer">Complete SRD monster index for planning—not 330 finished tokens. Original Gridborn artwork appears only where available. All purchases remain disabled.</p>
-        <details class="catalog-attribution">
-          <summary>Monster index source &amp; Creative Commons attribution</summary>
-          <p>This work includes material from the System Reference Document 5.2.1 (“SRD 5.2.1”) by Wizards of the Coast LLC, available at <a href="https://www.dndbeyond.com/srd">https://www.dndbeyond.com/srd</a>. The SRD 5.2.1 is licensed under the Creative Commons Attribution 4.0 International License, available at <a href="https://creativecommons.org/licenses/by/4.0/legalcode">https://creativecommons.org/licenses/by/4.0/legalcode</a>.</p>
-          <p>Gridborn's illustrations and animation prototypes are original development artwork, not official SRD illustrations. No endorsement is implied.</p>
-        </details>
       </div>
     </section>
     <section class="path-section shell" aria-labelledby="paths-title">
