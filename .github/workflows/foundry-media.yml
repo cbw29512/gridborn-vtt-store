@@ -15,6 +15,10 @@ on:
       - 'assets/studies/human-mercywarden-female.svg'
       - 'assets/studies/human-shadowstep-nonbinary.svg'
       - 'assets/studies/cave-ogre.svg'
+      - 'assets/studies/gnome-rogue.svg'
+      - 'assets/studies/swamp-lizardfolk.svg'
+      - 'assets/studies/human-paladin.svg'
+      - 'assets/studies/great-white-shark.svg'
       - 'src/creature-rigs/**'
       - 'tools/export_demo.py'
       - 'tools/export_states.py'
@@ -70,6 +74,18 @@ jobs:
           - manifest: assets/demos/cave-ogre-manifest.json
             id: mon-cave-ogre
             exporter: tools/export_states.py
+          - manifest: assets/demos/human-paladin-manifest.json
+            id: chr-pal-human
+            exporter: tools/export_states.py
+          - manifest: assets/demos/gnome-rogue-manifest.json
+            id: chr-rge-gnome
+            exporter: tools/export_states.py
+          - manifest: assets/demos/swamp-lizardfolk-manifest.json
+            id: mon-swamp-lizard
+            exporter: tools/export_states.py
+          - manifest: assets/demos/great-white-shark-manifest.json
+            id: ani-ocean-greatwhite
+            exporter: tools/export_states.py
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -112,6 +128,10 @@ jobs:
               'pregen-cleric-female-2': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'pregen-rogue-nonbinary-1': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'mon-cave-ogre': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
+              'chr-pal-human': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
+              'chr-rge-gnome': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
+              'mon-swamp-lizard': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
+              'ani-ocean-greatwhite': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
           }
           stem_by_id = {
               'mon-cave-goblin': 'cave-goblin',
@@ -126,13 +146,17 @@ jobs:
               'pregen-cleric-female-2': 'human-mercywarden-female',
               'pregen-rogue-nonbinary-1': 'human-shadowstep-nonbinary',
               'mon-cave-ogre': 'cave-ogre',
+              'chr-pal-human': 'human-paladin',
+              'chr-rge-gnome': 'gnome-rogue',
+              'mon-swamp-lizard': 'swamp-lizardfolk',
+              'ani-ocean-greatwhite': 'great-white-shark',
           }
           durations = durations_by_id[token]
           assert data['attackMs'] == (1300 if token == 'ani-forest-wolf' else 1400)
           assert data['clipSource'] == 'independent-svg-states'
-          assert data['stateOnly'] == (token in ('ani-forest-wolf', 'mon-dng-skeleton', 'mon-cave-spider', 'chr-wiz-elf', 'pregen-barbarian-male-3', 'mon-dng-armor', 'chr-clr-dwarf', 'pregen-cleric-female-2', 'pregen-rogue-nonbinary-1', 'mon-cave-ogre'))
+          assert data['stateOnly'] == (token in ('ani-forest-wolf', 'mon-dng-skeleton', 'mon-cave-spider', 'chr-wiz-elf', 'pregen-barbarian-male-3', 'mon-dng-armor', 'chr-clr-dwarf', 'pregen-cleric-female-2', 'pregen-rogue-nonbinary-1', 'mon-cave-ogre', 'chr-pal-human', 'chr-rge-gnome', 'mon-swamp-lizard', 'ani-ocean-greatwhite'))
           assert set(data['sourceFiles']) == {'idle', 'move', 'attack'}
-          if token in ('ani-forest-wolf','mon-dng-skeleton','mon-cave-spider','chr-wiz-elf','pregen-barbarian-male-3','mon-dng-armor','chr-clr-dwarf','pregen-cleric-female-2','pregen-rogue-nonbinary-1','mon-cave-ogre'):
+          if token in ('ani-forest-wolf','mon-dng-skeleton','mon-cave-spider','chr-wiz-elf','pregen-barbarian-male-3','mon-dng-armor','chr-clr-dwarf','pregen-cleric-female-2','pregen-rogue-nonbinary-1','mon-cave-ogre','chr-pal-human','chr-rge-gnome','mon-swamp-lizard','ani-ocean-greatwhite'):
               assert data['restSourceFile'] == 'assets/demos/' + stem_by_id[token] + '-rest.svg'
           stem = stem_by_id[token]
           for label in ('idle', 'move', 'attack'):

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="move" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Gnome Rogue — move original motion study</title>
+<desc id="description">Small wide-goggled scout holding mechanical crossbow, move motion prototype only. Not a paid product.</desc>
+<style>
+.rig-core{animation:gnome-scurry 1.2s steps(1,end) infinite}.rig-leg-left{transform-origin:111px 160px;animation:gnome-left-boot 1.2s steps(1,end) infinite}.rig-leg-right{transform-origin:144px 161px;animation:gnome-right-boot 1.2s steps(1,end) infinite}.rig-weapon{transform-origin:178px 140px;animation:gnome-crossbow-bob 1.2s steps(1,end) infinite}
+   @keyframes gnome-scurry{0%,10%,90%,100%{transform:translate(0,0)}30%{transform:translate(-10px,-3px)}65%{transform:translate(7px,-1px)}}
+   @keyframes gnome-left-boot{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(-20deg)}65%{transform:rotate(14deg)}}
+   @keyframes gnome-right-boot{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(18deg)}65%{transform:rotate(-15deg)}}
+   @keyframes gnome-crossbow-bob{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(7deg)}65%{transform:rotate(-5deg)}}
+@media(prefers-reduced-motion:reduce){.rig-core,.rig-body,.rig-tail,.rig-fin,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-leg-left,.rig-leg-right,.paladin-legs{animation:none!important}}
+</style>
+<ellipse cx="129" cy="206" rx="55" ry="12" fill="#0b1520" opacity=".42"/>
+<ellipse cx="127" cy="197" rx="66" ry="20" fill="none" stroke="#c9a16e" stroke-width="3" opacity=".62"/>
+<g class="rig-core">
+ <path d="M102 116h64l20 73-19 7-27-12-25 16-21-10-14-51z" fill="#33243e" stroke="#1b1f2e" stroke-width="4"/>
+ <path d="M100 130h54l20 60-16-12-22 8-26 2-16-43z" fill="#65506a"/>
+ <g class="rig-leg-left"><path d="M106 157h22l-8 37-23 3-7-17z" fill="#293849" stroke="#8b806e" stroke-width="3"/><path d="M89 187h36l3 18H82z" fill="#392f39"/><path d="M96 193h24v6H94z" fill="#be916a"/></g>
+ <g class="rig-leg-right"><path d="M131 156h24l9 40-26 7-13-16z" fill="#324452" stroke="#8b8977" stroke-width="3"/><path d="M132 191h32l10 14h-43z" fill="#342d34"/><path d="M139 194h25v5h-25z" fill="#c39667"/></g>
+ <path d="M99 121h69l8 36-22 23h-43l-24-24z" fill="#3b524c" stroke="#1c2b32" stroke-width="4"/>
+ <path d="M112 129h46l11 26-19 17-34-5-16-17z" fill="#738c73"/>
+ <path d="M119 135h24v33h-24z" fill="#4d393c"/>
+ <path d="M127 141h8v25h-8z" fill="#c0a476"/>
+ <path d="M105 163h61v10h-61z" fill="#302c31"/><rect x="129" y="162" width="11" height="12" fill="#d5a776"/>
+ <g class="rig-head">
+  <path d="M92 83l18-32 28-13 35 24 8 35-17 28-57 6-21-24z" fill="#2f2a44" stroke="#161d30" stroke-width="5"/>
+  <path d="M104 79l32-24 30 24-4 34-19 19-34-11-13-19z" fill="#d5a78c"/>
+  <path d="M98 84l-23 6 21 21 16-12zM163 83l22 7-19 20-14-10z" fill="#cba280" stroke="#4b3946" stroke-width="3"/>
+  <path d="M94 88l9-32 29-19 31 18 13 36-31-20-25-2-24 30z" fill="#403b59"/>
+  <path d="M108 75l15-16 22-5 15 17-19-6-23 9z" fill="#716387"/>
+  <path d="M105 93h53l-6 29-38 1z" fill="#70475b"/>
+  <circle cx="117" cy="89" r="11" fill="#bca47c" stroke="#483f47" stroke-width="4"/>
+  <circle cx="144" cy="89" r="11" fill="#bca47c" stroke="#483f47" stroke-width="4"/>
+  <circle cx="117" cy="89" r="6" fill="#4a7080"/>
+  <circle cx="144" cy="89" r="6" fill="#4a7080"/>
+  <path d="M129 87h4" stroke="#f8d194" stroke-width="4"/>
+  <path d="M127 103l9 2-4 8-9-2z" fill="#9c695b"/>
+ </g>
+ <g class="rig-arm-left"><path d="M97 127h19l1 35-17 13-13-13z" fill="#43514c" stroke="#99826e" stroke-width="3"/></g>
+ <g class="rig-arm-right"><path d="M157 128h19l14 31-20 21-12-14z" fill="#4b5b52" stroke="#a98b73" stroke-width="3"/></g>
+</g>
+<g class="rig-offhand">
+ <path d="M79 160l12-4 8 20-10 16-15-7z" fill="#c7a283"/>
+ <path d="M82 174h12l4 17-10 10-11-11z" fill="#345d68" stroke="#d8c185" stroke-width="3"/>
+ <path d="M83 175h11l-3 9h-7z" fill="#b4e9de" opacity=".8"/>
+</g>
+<g class="rig-weapon">
+ <path d="M165 133l9-7 32 29-9 12-29-18z" fill="#7f664d"/>
+ <path d="M158 134l53-23 8 7-9 7-42 30z" fill="#b58b58" stroke="#6c4835" stroke-width="3"/>
+ <path d="M163 134l9-14 38-12 14 9-13 10-18 2-20 22z" fill="#3e4850" stroke="#c7a978" stroke-width="3"/>
+ <path d="M168 126l29 9" stroke="#d9c89d" stroke-width="2.5"/>
+ <path d="M196 116l14 14M196 116l16-12" stroke="#cfb184" stroke-width="4"/>
+ <circle cx="183" cy="132" r="5" fill="#a7bdbe"/>
+</g>
+<g class="rig-effect"><path d="M211 108l14-10M218 122l18-5" stroke="#d4bd88" stroke-width="3" opacity=".65"/></g>
+</svg>

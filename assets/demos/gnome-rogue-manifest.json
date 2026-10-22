@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "chr-rge-gnome",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/gnome-rogue.svg",
+  "restSource": "assets/demos/gnome-rogue-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/gnome-rogue-idle.svg",
+      "durationSec": 3.2
+    },
+    "move": {
+      "source": "assets/demos/gnome-rogue-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/gnome-rogue-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "plannedOutputs": [
+    "transparent-webm",
+    "static-png",
+    "rest-webm"
+  ],
+  "vttCompatibility": "untested",
+  "purchasable": false
+}

@@ -372,3 +372,43 @@ quality, VTT scale previews and runtime motion requirements.
 The two new **pregen identities remain visual studies, not playable
 D&D character sheets**. All artwork is unlicensed/unreviewed for sale,
 real VTT import untested, purchase unavailable, and Netlify is unchanged.
+
+
+### Creature families — shared anatomy; role identity in the details
+
+Treat a **species/body family** as the source of recognizable proportions and
+anatomical landmarks. **Roles are layered design variants**, not copy/paste
+products with a different color. A basic Ogre should look clearly like the
+same species as an Ogre spellcaster, armored champion or monarch. Vary role-
+specific clothing silhouette, fit, headgear, weapon, distinctive accessories,
+and the correct Idle/Move/Attack/Rest motions. For example:
+
+- Common Ogre: worn hide and rough club; unrefined, lumbering attack
+- Ogre mage: oversized fitted ritual robes, arcane staff, runes, casting attack
+- Ogre knight: polished plate, high-quality sword and shield, guarded strike
+- Ogre king: crown, luxurious fur-trimmed regalia, gold scepter, commanding pose
+
+Those are **art-direction examples, not completed additional products**.
+`src/creature-family-standards.mjs` defines a reusable anatomical reference
+and distinct equipment/detail/motion requirements. The shared-family gate
+rejects identical gear and clothing loadouts masquerading as unique roles.
+Retain species-defining tusks, head/body ratios and stature across the family.
+The same rule extends to goblins, dragons, skeletons, wolves, and other
+families. Static concept indexes must not be confused with completed product
+art; create role variants only when original artwork and all four
+animations actually exist.
+
+### Four-state production wave — Paladin, Gnome, Lizardfolk and Shark
+
+Four more **existing** catalog concepts receive unique full-motion studies:
+the crested armored Paladin with sword/shield, small goggled Gnome crossbow
+Rogue, long-snouted/tail-balanced swamp Lizardfolk with reed shield and spear,
+and a streamlined, countershaded side-profile Great White Shark with dorsal
+fin and crescent tail. Each source is an original distinct drawing, with
+three independent repeating modes and a single 1.4s action (Idle 3.2s,
+Move 2.4s, Rest 4s). Export manifests declare 32/24/14/40 frames at 10 FPS
+for private decoded-alpha validation. Source synchronization is checked
+with `node tools/generate-wave-four.mjs --check`.
+Public catalog autoplay and exact 128px/64px/32px inspection use these
+same studies. Keep uniform card dimensions and prices. All four remain
+**unreviewed, preview-only**, pending art approval and real VTT imports.

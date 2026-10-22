@@ -1,5 +1,6 @@
 """Full Gridborn index QA: source catalog, profile shark, heroes and NPCs."""
 import logging
+import re
 from pathlib import Path
 from playwright.sync_api import expect
 LOG=logging.getLogger('gridborn.full-catalog')
@@ -30,8 +31,11 @@ def check_full_catalog(browser,origin,width,screenshots:Path):
         page.locator('#primary-filter').select_option('Ocean')
         page.locator('#secondary-filter').select_option('Sharks')
         expect(page.locator('#result-summary')).to_have_text('2 results found')
-        shark=page.locator('.product-art[src$="great-white-shark.svg"]')
-        expect(shark).to_be_visible()
+        shark_card=page.locator('.product-card[data-motion-id="ani-ocean-greatwhite"]')
+        shark_card.scroll_into_view_if_needed()
+        expect(shark_card).to_be_visible()
+        shark=shark_card.locator('img.product-art')
+        expect(shark).to_have_attribute('src',re.compile(r'.*great-white-shark-idle\.svg'))
         page.wait_for_function('(img)=>img.complete && img.naturalWidth>0',
             arg=shark.element_handle(),timeout=7000)
         shark.screenshot(path=str(screenshots/f'gridborn-profile-shark-{width}px.png'))

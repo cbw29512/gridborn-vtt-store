@@ -43,7 +43,7 @@ test('Paladin catalog and production tracker do not claim completion',()=>{
  const paladin=catalog.find(x=>x.id==='chr-pal-human');
  assert.equal(paladin.previewArt,artStudies[paladin.id]);
  assert.equal(paladin.previewArt,'./assets/studies/human-paladin.svg');
- assert.equal(paladin.animationStatus,'static-art-study');
+ assert.equal(paladin.animationStatus,'art-study');
  assert.equal(paladin.purchasable,false);
  const heroes=JSON.parse(read('docs/production/hero-roster.json')).assets;
  const record=heroes.find(x=>x.id==='chr-pal-human');

@@ -19,7 +19,11 @@ test('Website showcases use source cycle timings without changing animation spee
   'chr-clr-dwarf':[3200,2400,1400,2400],
   'pregen-cleric-female-2':[3200,2400,1400,2400],
   'pregen-rogue-nonbinary-1':[3200,2400,1400,2400],
-  'mon-cave-ogre':[3200,2400,1400,2400]
+  'mon-cave-ogre':[3200,2400,1400,2400],
+  'chr-pal-human':[3200,2400,1400,2400],
+  'chr-rge-gnome':[3200,2400,1400,2400],
+  'mon-swamp-lizard':[3200,2400,1400,2400],
+  'ani-ocean-greatwhite':[3200,2400,1400,2400]
  };
  assert.deepEqual(MOTION_STAGES.map(x=>x.key),['idle','move','action','rest']);
  for(const [id,times] of Object.entries(expected)){

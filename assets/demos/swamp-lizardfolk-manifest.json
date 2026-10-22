@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "mon-swamp-lizard",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/swamp-lizardfolk.svg",
+  "restSource": "assets/demos/swamp-lizardfolk-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/swamp-lizardfolk-idle.svg",
+      "durationSec": 3.2
+    },
+    "move": {
+      "source": "assets/demos/swamp-lizardfolk-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/swamp-lizardfolk-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "plannedOutputs": [
+    "transparent-webm",
+    "static-png",
+    "rest-webm"
+  ],
+  "vttCompatibility": "untested",
+  "purchasable": false
+}
