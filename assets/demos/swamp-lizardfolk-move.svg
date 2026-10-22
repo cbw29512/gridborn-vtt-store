@@ -48,7 +48,6 @@
  <path d="M60 139l31 34M92 139l-31 34" stroke="#31554c" stroke-width="3"/>
 </g>
 <g class="rig-weapon">
- <!-- Spear held across the chest, below the projecting snout; the forward tip stays inside the stage. -->
  <path d="M139 180L231 143" stroke="#302c2a" stroke-width="11" stroke-linecap="round"/>
  <path d="M139 180L231 143" stroke="#806449" stroke-width="6" stroke-linecap="round"/>
  <path d="M228 144L246 132L242 151L233 153Z" fill="#bac7bc" stroke="#51635c" stroke-width="2"/>
