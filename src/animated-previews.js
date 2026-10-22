@@ -3,6 +3,66 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'chr-pal-human': Object.freeze({
+    still:'./assets/studies/human-paladin.svg',
+    idle:'./assets/demos/human-paladin-idle.svg',
+    move:'./assets/demos/human-paladin-move.svg',
+    action:'./assets/demos/human-paladin-attack.svg',
+    rest:'./assets/demos/human-paladin-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · guarded sword and shield watch (prototype)',
+      move:'Move · measured plated march with sword balanced (prototype)',
+      action:'Attack · one oathguard sword smite, then Idle (prototype)',
+      rest:'Rest · shield lowered during solemn prayer (prototype)'
+    })
+  }),
+  'chr-rge-gnome': Object.freeze({
+    still:'./assets/studies/gnome-rogue.svg',
+    idle:'./assets/demos/gnome-rogue-idle.svg',
+    move:'./assets/demos/gnome-rogue-move.svg',
+    action:'./assets/demos/gnome-rogue-attack.svg',
+    rest:'./assets/demos/gnome-rogue-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · goggled scout checks loaded crossbow (prototype)',
+      move:'Move · quick short-boot scurry (prototype)',
+      action:'Attack · one hand-crossbow bolt, then Idle (prototype)',
+      rest:'Rest · low concealed crouch with crossbow lowered (prototype)'
+    })
+  }),
+  'mon-swamp-lizard': Object.freeze({
+    still:'./assets/studies/swamp-lizardfolk.svg',
+    idle:'./assets/demos/swamp-lizardfolk-idle.svg',
+    move:'./assets/demos/swamp-lizardfolk-move.svg',
+    action:'./assets/demos/swamp-lizardfolk-attack.svg',
+    rest:'./assets/demos/swamp-lizardfolk-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · crocodilian snout and tail sway (prototype)',
+      move:'Move · reptilian spear hunter stride, tail counterbalances (prototype)',
+      action:'Attack · one thrusting spear jab, then Idle (prototype)',
+      rest:'Rest · low reptile rest with spear grounded (prototype)'
+    })
+  }),
+  'ani-ocean-greatwhite': Object.freeze({
+    still:'./assets/studies/great-white-shark.svg',
+    idle:'./assets/demos/great-white-shark-idle.svg',
+    move:'./assets/demos/great-white-shark-move.svg',
+    action:'./assets/demos/great-white-shark-attack.svg',
+    rest:'./assets/demos/great-white-shark-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · slow fin and crescent tail movement (prototype)',
+      move:'Move · side-view swimming with sweeping tail strokes (prototype)',
+      action:'Attack · one lunging shark bite, then Idle (prototype)',
+      rest:'Rest · gentle drifting swim, never a human sleep pose (prototype)'
+    })
+  }),
   'chr-clr-dwarf': Object.freeze({
     still:'./assets/studies/dwarven-cleric.svg',
     idle:'./assets/demos/dwarven-cleric-idle.svg',
