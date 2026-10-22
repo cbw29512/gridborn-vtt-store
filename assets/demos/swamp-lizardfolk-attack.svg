@@ -5,7 +5,7 @@
 <style>
 .rig-core{animation:lizard-thrust-body 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:182px 156px;animation:lizard-spear-thrust 1.4s steps(1,end) 1 both}.rig-tail{transform-origin:106px 162px;animation:lizard-tail-counterweight 1.4s steps(1,end) 1 both}
    @keyframes lizard-thrust-body{0%,100%{transform:translate(0,0)}24%{transform:translate(5px,0)}54%{transform:translate(-11px,-2px)}74%{transform:translate(-2px,0)}}
-   @keyframes lizard-spear-thrust{0%,100%{transform:translate(0,0)}24%{transform:translate(-5px,4px)}54%{transform:translate(8px,-3px)}74%{transform:translate(2px,-1px)}}}
+   @keyframes lizard-spear-thrust{0%,100%{transform:translate(0,0)}24%{transform:translate(-5px,4px)}54%{transform:translate(8px,-3px)}74%{transform:translate(2px,-1px)}}
    @keyframes lizard-tail-counterweight{0%,100%{transform:rotate(0)}24%{transform:rotate(-9deg)}54%{transform:rotate(16deg)}74%{transform:rotate(4deg)}}
 @media(prefers-reduced-motion:reduce){.rig-core,.rig-body,.rig-tail,.rig-fin,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-leg-left,.rig-leg-right,.paladin-legs{animation:none!important}}
 </style>
