@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'pregen-druid-female-1': Object.freeze({
+    still:'./assets/studies/human-wildspeaker-druid.svg',
+    idle:'./assets/demos/human-wildspeaker-druid-idle.svg',
+    move:'./assets/demos/human-wildspeaker-druid-move.svg',
+    action:'./assets/demos/human-wildspeaker-druid-attack.svg',
+    rest:'./assets/demos/human-wildspeaker-druid-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · braided Wildspeaker balances living oak staff (prototype)',
+      move:'Move · split-leg stride with oak leaf mantle (prototype)',
+      action:'Attack · casting hand lashes a thornvine toward target (prototype)',
+      rest:'Rest · crouches with lowered staff and quiet leaves (prototype)'
+    })
+  }),
   'chr-brd-halfling': Object.freeze({
     still:'./assets/studies/halfling-bard.svg',
     idle:'./assets/demos/halfling-bard-idle.svg',
