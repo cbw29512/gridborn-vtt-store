@@ -5,7 +5,7 @@
 <style>
 .rig-core{animation:armor-lunge 1.4s steps(1,end) 1 both}.rig-weapon{animation:armor-cleave 1.4s steps(1,end) 1 both;transform-origin:195px 150px}
  @keyframes armor-lunge{0%,100%{transform:translate(0,0)}25%{transform:translate(3px,0)}53%{transform:translate(-9px,-3px)}77%{transform:translate(-2px,0)}}
- @keyframes armor-cleave{0%,100%{transform:rotate(-8deg)}25%{transform:rotate(-20deg)}53%{transform:rotate(19deg)}77%{transform:rotate(5deg)}}}
+ @keyframes armor-cleave{0%,100%{transform:rotate(-8deg)}25%{transform:rotate(-20deg)}53%{transform:rotate(19deg)}77%{transform:rotate(5deg)}}
 @media(prefers-reduced-motion:reduce){.rig-core,.rig-weapon,.rig-head,.rig-boot-l,.rig-boot-r,.rig-foot-left,.rig-foot-right,.rig-visorglow,.rig-glow{animation:none!important}}
 </style>
 <ellipse cx="130" cy="207" rx="58" ry="11" fill="#07101c" opacity=".4"/>
