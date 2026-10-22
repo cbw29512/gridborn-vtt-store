@@ -18,6 +18,7 @@ on:
       - 'assets/studies/gnome-rogue.svg'
       - 'assets/studies/elven-ranger.svg'
       - 'assets/studies/halfling-bard.svg'
+      - 'assets/studies/human-wildspeaker-druid.svg'
       - 'assets/studies/swamp-lizardfolk.svg'
       - 'assets/studies/human-paladin.svg'
       - 'assets/studies/great-white-shark.svg'
@@ -88,6 +89,9 @@ jobs:
           - manifest: assets/demos/halfling-bard-manifest.json
             id: chr-brd-halfling
             exporter: tools/export_states.py
+          - manifest: assets/demos/human-wildspeaker-druid-manifest.json
+            id: pregen-druid-female-1
+            exporter: tools/export_states.py
           - manifest: assets/demos/swamp-lizardfolk-manifest.json
             id: mon-swamp-lizard
             exporter: tools/export_states.py
@@ -140,6 +144,7 @@ jobs:
               'chr-rge-gnome': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'chr-rng-elf': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'chr-brd-halfling': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
+              'pregen-druid-female-1': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'mon-swamp-lizard': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
               'ani-ocean-greatwhite': [('idle', 3.2), ('move', 2.4), ('attack', 1.4), ('rest', 4)],
           }
@@ -160,6 +165,7 @@ jobs:
               'chr-rge-gnome': 'gnome-rogue',
               'chr-rng-elf': 'elven-ranger',
               'chr-brd-halfling': 'halfling-bard',
+              'pregen-druid-female-1': 'human-wildspeaker-druid',
               'mon-swamp-lizard': 'swamp-lizardfolk',
               'ani-ocean-greatwhite': 'great-white-shark',
           }
