@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="attack" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" shape-rendering="crispEdges" role="img" aria-labelledby="title description">
+<title id="title">Female Orc Pathfinder Ranger — original Gridborn recurve archer — attack Gridborn study</title>
+<desc id="description">Original broad-shouldered female Orc wilderness pathfinder with ash-gray-green skin, two tusks, long asymmetric braided hair, fur-edged rust-ochre hood, practical dark leather vest, layered field skirt and boots, back quiver of separate arrows. Left bow hand firmly holds an outward recurve riser; the other hand draws bowstring to a consistent chin anchor and releases an independently flying fletched arrow. Prototype only.</desc>
+<style>
+.pathfinder-body{animation:pathfinder-planted-stance 1.4s steps(1,end) 1 both}.pathfinder-draw-arm-rest{animation:pathfinder-hand-leaves-rest 1.4s steps(1,end) 1 both}.pathfinder-draw-arm-anchored{animation:pathfinder-anchor-hand 1.4s steps(1,end) 1 both}.pathfinder-string-rest{animation:pathfinder-string-release 1.4s steps(1,end) 1 both}.pathfinder-string-anchored{animation:pathfinder-string-draw 1.4s steps(1,end) 1 both}.pathfinder-arrow{animation:pathfinder-arrow-release 1.4s linear 1 both}
+@keyframes pathfinder-planted-stance{0%,100%{transform:translate(0,0)}24%{transform:translate(-3px,1px)}54%{transform:translate(-2px,-1px)}75%{transform:translate(0,0)}}
+@keyframes pathfinder-hand-leaves-rest{0%,17%,67%,100%{opacity:1}22%,61%{opacity:0}}
+@keyframes pathfinder-anchor-hand{0%,17%,67%,100%{opacity:0}22%,61%{opacity:1}}
+@keyframes pathfinder-string-release{0%,17%,67%,100%{opacity:1}22%,61%{opacity:0}}
+@keyframes pathfinder-string-draw{0%,17%,67%,100%{opacity:0}22%,61%{opacity:1}}
+@keyframes pathfinder-arrow-release{0%,20%,68%,100%{opacity:0;transform:translate(0,0)}28%,59%{opacity:1;transform:translate(0,0)}62%{opacity:1;transform:translate(7px,0)}65%{opacity:1;transform:translate(15px,0)}67%{opacity:.8;transform:translate(17px,0)}}
+@media(prefers-reduced-motion:reduce){.pathfinder-body,.pathfinder-quiver,.pathfinder-leg-left,.pathfinder-leg-right,.pathfinder-bow-arm,.pathfinder-draw-arm-rest,.pathfinder-draw-arm-anchored,.pathfinder-string-rest,.pathfinder-string-anchored,.pathfinder-arrow{animation:none!important}}
+</style>
+<ellipse cx="129" cy="214" rx="66" ry="11" fill="#17201e" opacity=".44"/>
+<ellipse cx="129" cy="201" rx="76" ry="22" fill="none" stroke="#b9a178" stroke-width="3" opacity=".5"/>
+<g class="pathfinder-body">
+ <g class="pathfinder-quiver">
+  <path d="M151 102L177 83L189 104L165 153L151 146Z" fill="#554339" stroke="#241f2d" stroke-width="5"/>
+  <path d="M158 107L180 93L183 102L164 139" stroke="#c5a36d" stroke-width="4" fill="none"/>
+  <path d="M162 109L165 71M170 102L174 64M178 102L185 73" stroke="#80654b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M164 74L156 64L168 68L173 63L170 78M174 68L167 59L178 62L184 57L179 72M185 74L178 66L190 69L195 64L191 79" fill="#c9ab71" stroke="#634d43" stroke-width="2"/>
+  <path d="M152 135L168 144" stroke="#c1a272" stroke-width="5"/>
+ </g>
+ <g class="pathfinder-coat">
+  <path d="M96 122Q82 139 82 169L90 198L110 190L128 204L146 187L166 201L177 188L165 131Z" fill="#4a4a42" stroke="#293834" stroke-width="4"/>
+  <path d="M96 148L88 176L107 176L122 190L140 171L162 181" fill="none" stroke="#b17f55" stroke-width="5"/>
+  <path d="M94 165L104 155L110 174M148 165L164 177" stroke="#d1b58d" stroke-width="3" fill="none"/>
+ </g>
+ <g class="pathfinder-leg-left">
+  <path d="M102 165L127 163L129 193L114 209L96 199L92 179Z" fill="#4e5546" stroke="#32433b" stroke-width="3"/>
+  <path d="M94 194L117 199L113 214L82 217L79 205Z" fill="#4b392f" stroke="#c39a6d" stroke-width="3"/>
+  <path d="M88 207L108 208M87 213L110 214" stroke="#e0bb83" stroke-width="3"/>
+ </g>
+ <g class="pathfinder-leg-right">
+  <path d="M132 163L152 161L166 188L162 207L142 206L134 185Z" fill="#49584e" stroke="#314138" stroke-width="3"/>
+  <path d="M141 195L165 196L182 212L175 218L145 215Z" fill="#4b392f" stroke="#c39a6d" stroke-width="3"/>
+  <path d="M148 208L176 212M147 214L173 215" stroke="#e2bb83" stroke-width="3"/>
+ </g>
+ <g class="pathfinder-torso">
+  <path d="M96 118L115 107L148 107L169 128L165 167L141 179L109 169L88 150Z" fill="#3e5144" stroke="#233730" stroke-width="5"/>
+  <path d="M109 114L142 113L151 159L124 168L101 150Z" fill="#6a6950" stroke="#998365" stroke-width="3"/>
+  <path d="M112 117L133 131L124 165L97 141Z" fill="#9c643f" stroke="#d8ac77" stroke-width="3"/>
+  <path d="M139 117L157 139L147 163L129 170L137 136Z" fill="#836549" stroke="#dfba86" stroke-width="3"/>
+  <path d="M101 152L159 158" stroke="#443831" stroke-width="10"/>
+  <rect x="121" y="151" width="18" height="16" rx="3" fill="#beaa7a" stroke="#574737" stroke-width="3"/>
+  <path d="M127 156L134 163L123 163" fill="none" stroke="#665946" stroke-width="3"/>
+  <path d="M113 130L109 138L124 146M142 128L153 145L143 152" stroke="#d6b387" stroke-width="3" fill="none"/>
+ </g>
+ <g class="pathfinder-head">
+  <path d="M109 68L121 53L145 57L157 76L159 104L145 122L119 122L105 104Z" fill="#738b70" stroke="#35534b" stroke-width="4"/>
+  <path d="M115 77L134 69L149 80L151 100L139 113L119 109Z" fill="#93a383"/>
+  <path d="M106 88L89 83L103 102L114 95M155 88L169 83L155 102L146 95" fill="#839b7b" stroke="#35564a" stroke-width="3"/>
+  <path d="M107 85L104 67L117 48L140 47L156 61L166 88L153 75L143 62L123 66L111 88Z" fill="#3c3836" stroke="#262c31" stroke-width="4"/>
+  <path d="M106 65Q113 44 136 48M146 53L157 69" stroke="#8b674a" stroke-width="6" fill="none"/>
+  <path d="M155 68Q170 88 160 127L152 147" stroke="#40383a" stroke-width="13" fill="none" stroke-linecap="round"/>
+  <path d="M155 88L167 95L157 105L168 114L153 133L157 142" fill="none" stroke="#a37e5e" stroke-width="5"/>
+  <path d="M119 91L129 90M140 90L151 92" stroke="#314b44" stroke-width="4"/>
+  <path d="M126 100L137 100" stroke="#6f7864" stroke-width="3"/>
+  <path d="M122 108L132 112L145 106" stroke="#455f4e" stroke-width="3" fill="none"/>
+  <path d="M120 107L122 119L129 112M141 107L145 118L149 108" fill="#e0d6a8" stroke="#667a65" stroke-width="2"/>
+ </g>
+ <g class="pathfinder-fur">
+  <path d="M101 120L91 132L101 130L96 141L116 137L120 128L132 125L144 129L154 138L168 135L163 126L171 128L158 117L144 111L118 111Z" fill="#a59678" stroke="#655b48" stroke-width="4"/>
+  <path d="M108 121L118 129L128 122L141 128L151 122" fill="none" stroke="#d9c49a" stroke-width="4"/>
+ </g>
+ <g class="pathfinder-bow-arm">
+  <path d="M159 133L178 139L194 123" fill="none" stroke="#788b73" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M169 139L189 128" fill="none" stroke="#a97049" stroke-width="10" stroke-linecap="round"/>
+  <path d="M192 116L203 114L210 123L204 135L192 135L188 125Z" fill="#99ac8a" stroke="#3b5a4b" stroke-width="3"/>
+  <path d="M196 123L205 124" stroke="#dec199" stroke-width="4"/>
+ </g>
+ <g class="pathfinder-draw-arm-rest">
+  <path d="M109 131L102 149L130 159L167 147" fill="none" stroke="#87987c" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M115 151L154 150" fill="none" stroke="#a96f4d" stroke-width="8"/>
+  <path d="M160 140L173 138L182 145L179 156L165 157L158 149Z" fill="#92a381" stroke="#405d4c" stroke-width="3"/>
+ </g>
+ <g class="pathfinder-draw-arm-anchored" data-pose="string-anchor" opacity="0">
+  <path d="M109 131L104 147L125 145L139 124" fill="none" stroke="#869c7f" stroke-width="16" stroke-linecap="round"/>
+  <path d="M107 145L129 137" stroke="#aa704b" stroke-width="8" stroke-linecap="round"/>
+  <path d="M133 118L144 113L150 120L146 131L135 130Z" fill="#94a586" stroke="#405d50" stroke-width="3"/>
+  <path d="M140 121L149 125" stroke="#dcc499" stroke-width="3"/>
+ </g>
+ <g class="pathfinder-bow" data-weapon="wood-recurve-longbow">
+  <path d="M194 53Q212 69 214 90Q226 121 211 151Q207 180 192 195" fill="none" stroke="#40382c" stroke-width="12" stroke-linecap="round"/>
+  <path d="M194 53Q212 69 214 90Q226 121 211 151Q207 180 192 195" fill="none" stroke="#ab8559" stroke-width="7" stroke-linecap="round"/>
+  <path d="M192 51L187 59L194 69M193 196L186 190L191 179" fill="none" stroke="#dcba85" stroke-width="4"/>
+  <path d="M208 117L213 132" stroke="#534334" stroke-width="13" stroke-linecap="round"/>
+  <path d="M207 116L213 132" stroke="#d5b17b" stroke-width="7" stroke-linecap="round"/>
+  <path d="M195 54L212 123L193 193" stroke="#d9cfb4" stroke-width="2.7" fill="none" class="pathfinder-string-rest"/>
+  <path d="M195 54L144 122L193 193" stroke="#e4e0cb" stroke-width="2.7" fill="none" class="pathfinder-string-anchored" opacity="0"/>
+ </g>
+</g>
+<g class="pathfinder-arrow" data-projectile="fletched-arrow" opacity="0">
+  <path d="M144 122L223 122" stroke="#664b34" stroke-width="4" stroke-linecap="round"/>
+  <path d="M213 115L228 122L213 129Z" fill="#c6d2c8" stroke="#4e605c" stroke-width="2"/>
+  <path d="M148 120L139 112L155 118L148 124L139 130L155 124" fill="#d5b17c" stroke="#6c4d36" stroke-width="1.5"/>
+</g>
+</svg>

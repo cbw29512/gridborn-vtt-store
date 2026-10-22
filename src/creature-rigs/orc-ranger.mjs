@@ -1,0 +1,20 @@
+/** Original female Orc Pathfinder Ranger; source-backed independent fletched arrow shot. */
+export const ORC_RANGER_STATES=Object.freeze(['idle','move','attack','rest']);
+const MOTIONS=Object.freeze({
+ "idle": ".pathfinder-body{animation:pathfinder-lookout 3.2s steps(1,end) infinite}.pathfinder-quiver{animation:pathfinder-quiver-breathe 3.2s steps(1,end) infinite}\n@keyframes pathfinder-lookout{0%,85%,100%{transform:translate(0,0)}30%{transform:translate(-2px,-2px)}56%{transform:translate(1px,0)}}\n@keyframes pathfinder-quiver-breathe{0%,85%,100%{transform:translate(0,0)}30%{transform:translate(-2px,0)}56%{transform:translate(1px,1px)}}",
+ "move": ".pathfinder-body{animation:pathfinder-stalk 1.2s steps(1,end) infinite}.pathfinder-leg-left{transform-origin:112px 165px;animation:pathfinder-step-left 1.2s steps(1,end) infinite}.pathfinder-leg-right{transform-origin:148px 167px;animation:pathfinder-step-right 1.2s steps(1,end) infinite}\n@keyframes pathfinder-stalk{0%,84%,100%{transform:translate(0,0)}28%{transform:translate(-4px,-3px)}60%{transform:translate(4px,-1px)}}\n@keyframes pathfinder-step-left{0%,84%,100%{transform:rotate(0)}28%{transform:rotate(-13deg)}60%{transform:rotate(15deg)}}\n@keyframes pathfinder-step-right{0%,84%,100%{transform:rotate(0)}28%{transform:rotate(13deg)}60%{transform:rotate(-14deg)}}",
+ "attack": ".pathfinder-body{animation:pathfinder-planted-stance 1.4s steps(1,end) 1 both}.pathfinder-draw-arm-rest{animation:pathfinder-hand-leaves-rest 1.4s steps(1,end) 1 both}.pathfinder-draw-arm-anchored{animation:pathfinder-anchor-hand 1.4s steps(1,end) 1 both}.pathfinder-string-rest{animation:pathfinder-string-release 1.4s steps(1,end) 1 both}.pathfinder-string-anchored{animation:pathfinder-string-draw 1.4s steps(1,end) 1 both}.pathfinder-arrow{animation:pathfinder-arrow-release 1.4s linear 1 both}\n@keyframes pathfinder-planted-stance{0%,100%{transform:translate(0,0)}24%{transform:translate(-3px,1px)}54%{transform:translate(-2px,-1px)}75%{transform:translate(0,0)}}\n@keyframes pathfinder-hand-leaves-rest{0%,17%,67%,100%{opacity:1}22%,61%{opacity:0}}\n@keyframes pathfinder-anchor-hand{0%,17%,67%,100%{opacity:0}22%,61%{opacity:1}}\n@keyframes pathfinder-string-release{0%,17%,67%,100%{opacity:1}22%,61%{opacity:0}}\n@keyframes pathfinder-string-draw{0%,17%,67%,100%{opacity:0}22%,61%{opacity:1}}\n@keyframes pathfinder-arrow-release{0%,20%,68%,100%{opacity:0;transform:translate(0,0)}28%,59%{opacity:1;transform:translate(0,0)}62%{opacity:1;transform:translate(7px,0)}65%{opacity:1;transform:translate(15px,0)}67%{opacity:.8;transform:translate(17px,0)}}",
+ "rest": ".pathfinder-body{animation:pathfinder-rest-crouch 4s steps(1,end) infinite}.pathfinder-bow-arm{animation:pathfinder-relax-bow 4s steps(1,end) infinite}\n@keyframes pathfinder-rest-crouch{0%,85%,100%{transform:translateY(10px)}48%{transform:translateY(12px)}}\n@keyframes pathfinder-relax-bow{0%,85%,100%{transform:translateY(5px)}48%{transform:translateY(7px)}}"
+});
+const REDUCED='@media(prefers-reduced-motion:reduce){.pathfinder-body,.pathfinder-quiver,.pathfinder-leg-left,.pathfinder-leg-right,.pathfinder-bow-arm,.pathfinder-draw-arm-rest,.pathfinder-draw-arm-anchored,.pathfinder-string-rest,.pathfinder-string-anchored,.pathfinder-arrow{animation:none!important}}';
+export function renderOrcRanger(mode,source){
+ try{
+  if(!ORC_RANGER_STATES.includes(mode))throw new Error('Unsupported Orc Pathfinder mode: '+mode);
+  if(typeof source!=='string'||!source.includes('data-weapon="wood-recurve-longbow"')||
+     !source.includes('data-projectile="fletched-arrow"')||!source.includes('data-pose="string-anchor"')||!source.endsWith('</svg>\n'))
+   throw new Error('Orc Pathfinder canonical source anatomy or bow string anchors missing');
+  return source.replace('<svg xmlns=','<svg data-gridborn-mode="'+mode+'" xmlns=')
+   .replace('</title>',' — '+mode+' Gridborn study</title>')
+   .replace('</desc>','</desc>\n<style>\n'+MOTIONS[mode]+'\n'+REDUCED+'\n</style>');
+ }catch(error){console.error('Orc Pathfinder source rendering failed',mode,error);throw error;}
+}
