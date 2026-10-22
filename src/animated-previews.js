@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'pregen-monk-male-1': Object.freeze({
+    still:'./assets/studies/human-wayfarer-monk.svg',
+    idle:'./assets/demos/human-wayfarer-monk-idle.svg',
+    move:'./assets/demos/human-wayfarer-monk-move.svg',
+    action:'./assets/demos/human-wayfarer-monk-attack.svg',
+    rest:'./assets/demos/human-wayfarer-monk-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · balanced Wayfarer with wrapped hands in guard (prototype)',
+      move:'Move · light opposite-foot steps and active guard (prototype)',
+      action:'Attack · braced palm strike followed by chambered front kick (prototype)',
+      rest:'Rest · settled stance and lowered guard (prototype)'
+    })
+  }),
   'pregen-druid-female-1': Object.freeze({
     still:'./assets/studies/human-wildspeaker-druid.svg',
     idle:'./assets/demos/human-wildspeaker-druid-idle.svg',
