@@ -1,5 +1,8 @@
 # Gridborn — animated VTT token shop (working title)
 
+> **Current character & monster production plan:** [Gridborn Master Roadmap](docs/production/MASTER_ROADMAP.md). It tracks priority families, missing classes, distinct role artwork, the 36 → 108 character coverage milestones, per-token five-source/CI requirements, and verified progress. **Start there for new batches.** Historical notes farther down this README may describe earlier stages; catalog source and CI are authoritative.
+
+
 A **GitHub Pages-first**, dependency-free static preview of an original 16-bit-inspired fantasy token storefront.
 
 **Preview only. No product is available for purchase. No Stripe keys or paid assets are published.**
