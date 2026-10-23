@@ -38,7 +38,7 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
 | Original illustrated concepts | **31** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **29** | **21 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
+| Public four-state animated art studies | **29 merged; 30 if this PR passes and merges** | **21 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** on main at branch creation; this PR adds the first NPC |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -119,6 +119,7 @@ Produce the recognizable **common/base species first**, then build roles on that
 
 ### Wave E — NPCs, animals and browsing quality
 
+- [ ] Village Innkeeper starter ID `npc-inn-human`: source-linked four-state animation proposed in current PR (not one of 48 roster concepts; final CI pending).
 - [ ] Begin animating the **48 existing NPC role/ancestry concepts**, prioritizing Innkeeper, Guard, Blacksmith, Healer and Merchant; verify unmistakable occupational props.
 - [x] Gray Wolf and Great White Shark have technical four-state studies. [ ] Continue land, air and ocean animal families with authentic movement anatomy.
 - [ ] Regularly compare new product cards against adjacent old cards for equal visual/vertical alignment and readability.
