@@ -1,5 +1,7 @@
 # Gridborn — active cross-category batch queue · 2026-10-23
 
+**Build from reusable species/body-plan foundations:** read [Shared Foundation Contract](SHARED_FOUNDATION_CONTRACT.md) and reuse anatomy, joint anchors, motion interfaces and attachment slots. Every character still needs distinct identity layers and role-based motion.
+
 **Build for on-site animated preview first; polish and retail certification later.** No new card names or IDs may be assumed: reconcile against `src/catalog.js`, `src/hero-variants.js`, `src/npc-roster.js` and source monster data.
 
 | Batch | Anchored catalog targets | Work | Status at creation |

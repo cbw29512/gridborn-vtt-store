@@ -4,6 +4,8 @@
 
 **Current focus:** finish distinctive monsters and playable-looking character visuals at scale. Do not confuse catalog concepts, animated studies, or technically exported prototypes with visually approved products ready for sale.
 
+**Mandatory shared Lego-style anatomy:** follow [Shared Foundation and Layer Contract](SHARED_FOUNDATION_CONTRACT.md). Reuse each species/body-plan base rig, attachment anchors and locomotion states, then add independently authored identity/gear/role layers. Do not claim existing one-off source SVGs automatically inherit changes until they are migrated and tested.
+
 **Mandatory equipment/animation QC:** follow [Weapon and Attack QC](WEAPON_ATTACK_QC.md). Melee must visibly swing or thrust, bows shoot arrows, crossbows shoot bolts, casters visibly cast; head clearance, credible grips, frame safety and 64px readability are blocking gates. Audit existing assets before increasing the roster.
 
 **Mandatory before any new artwork:** follow [Research-to-Art Gate](RESEARCH_ART_GATE.md), recording individual source-backed anatomy, equipment, motion and licensing briefs before rendering. No study can be counted as a production asset without its research brief.

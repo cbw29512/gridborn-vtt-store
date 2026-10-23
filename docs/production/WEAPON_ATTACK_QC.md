@@ -1,6 +1,6 @@
 # Gridborn — mandatory visual QC and role-based attack animation contract
 
-**Applies to every character, NPC, monster and armed creature.** This is a blocking production contract, not a new count of completed products. Read alongside [RESEARCH_ART_GATE.md](RESEARCH_ART_GATE.md) and [MASTER_ROADMAP.md](MASTER_ROADMAP.md).
+**Applies to every character, NPC, monster and armed creature.** This is a blocking production contract, not a new count of completed products. Read alongside [RESEARCH_ART_GATE.md](RESEARCH_ART_GATE.md), [SHARED_FOUNDATION_CONTRACT.md](SHARED_FOUNDATION_CONTRACT.md) and [MASTER_ROADMAP.md](MASTER_ROADMAP.md).
 
 ## Data contract (before drawing or writing animation code)
 For every immutable catalog ID record: species/ancestry; class/job/role; anatomy references; intended weapon(s) and hand(s); attack category (melee, bow, crossbow, spell, natural attack, unarmed, or noncombatant); attack target/direction; grips, reach and safe visual clearances; and source-backed Idle/Move/Attack/Rest assets. An actual visible weapon/action—not the name of an ability—determines the choreography. Do not infer that all members of a class use the same attack: a melee Ranger swings, a bow Fighter fires, a wand-using caster casts.
