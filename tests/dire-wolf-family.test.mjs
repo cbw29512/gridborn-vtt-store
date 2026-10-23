@@ -27,7 +27,8 @@ test('Dire Wolf is NOT a copied card and uses the EXACT four-legged Gray Wolf sk
   for(const part of ['wolf-leg-hind-near','wolf-leg-hind-far','wolf-leg-front-near','wolf-leg-front-far'])
     assert.ok(dire.includes(part));
   assert.match(dire,/Dire Wolf/);
-  assert.doesNotMatch(dire,/Gray Wolf/);
+  assert.match(dire,/<title id="title">Dire Wolf/);
+  assert.doesNotMatch(dire,/<title id="title">Gray Wolf/);
  }
  const still=read('assets/studies/dire-wolf.svg');
  assert.match(still,/fangs/);
