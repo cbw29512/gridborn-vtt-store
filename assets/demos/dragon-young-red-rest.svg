@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges" data-gridborn-mode="rest" data-foundation-id="western-four-legged-winged-dragon" data-dragon-species="Red" data-dragon-age="young">
+<title id="title">Young Red Dragon — original Gridborn rest art study</title>
+<desc id="description">Original side-profile six-limbed fantasy dragon, four articulated legs, two membranous wings, tail, horns, readable eye and species-specific fire breath. Research and release approval pending.</desc>
+<style>#dragon-head{transform-origin:180px 122px;animation:dragon-head-settle 4s steps(1,end) infinite}#dragon-wing-near{transform-origin:120px 106px;animation:dragon-fold-wings 4s steps(1,end) infinite}#dragon-tail{transform-origin:91px 151px;animation:dragon-tail-rest 4s steps(1,end) infinite}
+@keyframes dragon-head-settle{0%,100%{transform:translate(-5px,8px)}52%{transform:translate(-5px,10px)}}
+@keyframes dragon-fold-wings{0%,100%{transform:rotate(-24deg)}52%{transform:rotate(-22deg)}}
+@keyframes dragon-tail-rest{0%,100%{transform:rotate(-6deg)}52%{transform:rotate(-8deg)}}
+@media(prefers-reduced-motion:reduce){#dragon-core,#dragon-tail,#dragon-wing-near,#dragon-head,#dragon-mouth,#dragon-breath,#dragon-front-near,#dragon-hind-near,#dragon-front-far,#dragon-hind-far{animation:none!important}#dragon-breath{opacity:0!important}}</style>
+<ellipse cx="126" cy="213" rx="84" ry="11" fill="#101522" opacity=".27"/>
+<g id="dragon-family" transform="translate(17.92 29.26) scale(0.86)">
+<g id="dragon-core">
+<g id="dragon-tail"><path d="M92 150Q55 152 35 174Q16 186 7 163Q20 178 26 162Q48 139 92 135Z" fill="#a13a34" stroke="#2b2934" stroke-width="5"/><path d="M49 154L44 138 58 148 71 131 73 146Z" fill="#f0ad65"/></g>
+<g id="dragon-wing-far"><path d="M120 122L101 65 89 39 68 58 56 39 39 68 84 102 98 125Z" fill="#ba5944" stroke="#2b2934" stroke-width="5"/><path d="M120 122L89 39M120 122L56 39M120 122L39 68" fill="none" stroke="#f0ad65" stroke-width="3" opacity=".65"/></g>
+<g id="dragon-hind-far"><path d="M117 145L130 155 133 188 119 201 104 201 115 181 102 169Z" fill="#a13a34" stroke="#2b2934" stroke-width="5"/><path d="M102 201L112 195 117 201 124 195" fill="none" stroke="#392633" stroke-width="4"/></g>
+<g id="dragon-front-far"><path d="M164 150L178 160 180 188 169 204 150 202 163 186 152 169Z" fill="#a13a34" stroke="#2b2934" stroke-width="5"/><path d="M152 203L160 194 169 202 175 195" fill="none" stroke="#392633" stroke-width="4"/></g>
+<g id="dragon-body"><path d="M87 123Q108 104 155 114Q181 118 186 145Q179 164 151 168L100 166Q80 154 87 123Z" fill="#a13a34" stroke="#2b2934" stroke-width="5"/><path d="M93 148Q132 160 177 141L164 162 110 164Z" fill="#db9c69"/><path d="M95 124L108 112 115 121 128 111 138 122 150 115 161 128" fill="none" stroke="#f0ad65" stroke-width="4"/><path d="M118 134L129 128 137 135M141 141L152 134 160 143" stroke="#f0ad65" stroke-width="3" fill="none" opacity=".78"/></g>
+<g id="dragon-wing-near"><path d="M119 118L113 58 95 27 80 50 63 33 45 65 71 87 88 84 103 123Z" fill="#ba5944" stroke="#2b2934" stroke-width="5"/><path d="M119 118L95 27M119 118L63 33M119 118L45 65" stroke="#f0ad65" stroke-width="3" fill="none" opacity=".73"/><path d="M119 118L103 114" stroke="#392633" stroke-width="5"/></g>
+<g id="dragon-hind-near"><path d="M98 147L116 151 120 172 109 196 89 202 75 196 96 181 88 165Z" fill="#a13a34" stroke="#2b2934" stroke-width="5"/><path d="M76 197L85 191 93 199 103 191" fill="none" stroke="#392633" stroke-width="4"/><path d="M94 161L110 170" fill="none" stroke="#f0ad65" stroke-width="4"/></g>
+<g id="dragon-front-near"><path d="M155 145L171 154 175 174 163 198 143 205 135 196 151 183 146 163Z" fill="#a13a34" stroke="#2b2934" stroke-width="5"/><path d="M136 197L145 190 153 200 163 192" fill="none" stroke="#392633" stroke-width="4"/><path d="M151 163L167 171" fill="none" stroke="#f0ad65" stroke-width="4"/></g>
+<g id="dragon-neck"><path d="M160 123Q175 103 190 98L206 104 200 134 177 151 168 146Z" fill="#a13a34" stroke="#2b2934" stroke-width="5"/><path d="M176 143L198 118 198 132 183 147Z" fill="#db9c69"/><path d="M171 118L179 109 182 117 192 103" fill="none" stroke="#f0ad65" stroke-width="4"/></g>
+<g id="dragon-head"><g id="dragon-horns"><path d="M183 88L172 62 191 75 204 92Z" fill="#392633" stroke="#261d2a" stroke-width="3"/><path d="M204 87L204 64 218 77 217 94Z" fill="#392633" stroke="#261d2a" stroke-width="3"/></g><path d="M181 100Q199 88 218 102L226 111 245 118 241 129 218 129 209 137 193 131 181 118Z" fill="#a13a34" stroke="#2b2934" stroke-width="5"/><path d="M202 112L220 108 221 119 207 121Z" fill="#db9c69"/><path d="M209 108L218 108 215 114 210 114Z" fill="#fff0a7" stroke="#302830" stroke-width="2"/><circle cx="214" cy="110" r="2" fill="#242132"/><path d="M233 118L237 120" stroke="#392633" stroke-width="4"/><g id="dragon-mouth"><path d="M213 130L238 129 232 137 221 136Z" fill="#392633" stroke="#2b2934" stroke-width="3"/><path d="M219 131L223 135 227 131 231 134" fill="none" stroke="#fff2d1" stroke-width="2"/></g></g>
+</g>
+<g id="dragon-breath" opacity="0" fill="#ffb03b"><path d="M226 118Q235 94 239 108L247 96 247 111 257 103 253 135 242 141 237 131 229 136Z"/><path d="M235 121L245 111 246 130Z" fill="#f0ad65"/></g>
+</g>
+</svg>
