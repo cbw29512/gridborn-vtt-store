@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="idle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Elf Court Performer Bard — original Gridborn archlute performer — idle performance study</title>
+<desc id="description">Original nonbinary Elf court musician with long silver hair, pronounced elegant pointed ears, pale warm skin, deep teal and blue fitted courtwear, silver circlet, slim sword sheathed behind left hip, and a slender long-necked archlute with a raised second pegbox. One hand presses frets and a second visibly plucks the instrument while a unique filigree note spell leaves the soundboard. Four noncommercial art states.</desc>
+<style>
+.court-core{animation:court-poise 3.2s steps(1,end) infinite}.court-plucking-hand{transform-origin:145px 158px;animation:court-gentle-arpeggio 3.2s steps(1,end) infinite}
+@keyframes court-poise{0%,85%,100%{transform:translate(0,0)}30%{transform:translate(-1px,-2px)}61%{transform:translate(1px,0)}}
+@keyframes court-gentle-arpeggio{0%,85%,100%{transform:rotate(0)}25%{transform:rotate(7deg)}44%{transform:rotate(-5deg)}61%{transform:rotate(3deg)}}
+@media(prefers-reduced-motion:reduce){.court-core,.court-plucking-hand,.court-left-leg,.court-right-leg,.court-strings,.court-notation,.court-archlute{animation:none!important}}
+</style>
+<ellipse cx="126" cy="208" rx="62" ry="10" fill="#131d29" opacity=".45"/>
+<ellipse cx="126" cy="197" rx="74" ry="23" fill="none" stroke="#9ac2c0" stroke-width="3" opacity=".6"/>
+<g class="court-core">
+ <g class="court-sword" data-weapon="sheathed-sword">
+  <path d="M99 141L78 198L74 211L83 215L89 201L111 150Z" fill="#485161" stroke="#303a49" stroke-width="4"/>
+  <path d="M106 144L80 206" stroke="#c8b69c" stroke-width="4"/>
+  <path d="M101 137L119 148" stroke="#d8c69d" stroke-width="6" stroke-linecap="round"/>
+  <path d="M99 134L92 129" stroke="#5e5b69" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="92" cy="127" r="4" fill="#dbe7da"/>
+ </g>
+ <g class="court-coat-tails">
+  <path d="M100 133L154 133L169 187L151 200L136 183L118 202L96 191L88 166Z" fill="#2b5364" stroke="#1b3345" stroke-width="4"/>
+  <path d="M101 153L95 174L107 187L120 174L136 190L150 174L162 187" fill="none" stroke="#c2b69d" stroke-width="3"/>
+  <path d="M98 171L105 164L120 181L132 169L144 178L157 166" fill="none" stroke="#83a8a2" stroke-width="3"/>
+ </g>
+ <g class="court-left-leg">
+  <path d="M107 160L129 167L125 194L109 208L96 201L95 181Z" fill="#4b5870" stroke="#283f55" stroke-width="3"/>
+  <path d="M94 194L116 197L113 213L86 214L82 204Z" fill="#344453" stroke="#c4b0a0" stroke-width="3"/>
+  <path d="M91 207L108 208" stroke="#dee0c8" stroke-width="3"/>
+ </g>
+ <g class="court-right-leg">
+  <path d="M134 161L154 163L168 190L160 207L144 206L134 186Z" fill="#46596e" stroke="#283f55" stroke-width="3"/>
+  <path d="M143 199L165 199L180 214L172 217L145 214Z" fill="#344453" stroke="#c4b0a0" stroke-width="3"/>
+  <path d="M150 210L174 211" stroke="#dee0c8" stroke-width="3"/>
+ </g>
+ <g class="court-chest">
+  <path d="M103 111L121 103L150 105L171 123L164 163L143 178L110 168L92 143Z" fill="#27506a" stroke="#1c3851" stroke-width="4"/>
+  <path d="M114 111L133 111L147 160L129 169L110 148Z" fill="#679294" stroke="#96b9b0" stroke-width="3"/>
+  <path d="M114 116L128 130L120 161L104 142Z" fill="#c6c5b2" stroke="#64828d" stroke-width="3"/>
+  <path d="M139 113L155 125L149 159L126 166L138 133Z" fill="#537d82" stroke="#c6c4a8" stroke-width="3"/>
+  <path d="M101 149L155 154" stroke="#414758" stroke-width="8"/>
+  <path d="M122 151L139 152L140 163L127 168L118 159Z" fill="#bbc9b0" stroke="#577175" stroke-width="3"/>
+  <path d="M111 121L126 138L114 151M141 120L149 141L143 150" stroke="#e7dec4" stroke-width="3" fill="none"/>
+  <path d="M126 142L132 148L139 143" stroke="#d7caaa" stroke-width="3" fill="none"/>
+ </g>
+ <g class="court-hair">
+  <path d="M104 62Q104 46 125 45Q143 41 155 58L159 106L155 134L142 141L115 127L99 110Z" fill="#c6cbd0" stroke="#656a7d" stroke-width="4"/>
+  <path d="M106 80Q96 105 96 132L107 149L118 131L112 103Z" fill="#abbcc4" stroke="#65788a" stroke-width="3"/>
+  <path d="M155 82Q167 110 160 145L148 158L146 119Z" fill="#a7b3bf" stroke="#64778a" stroke-width="3"/>
+  <path d="M101 119L107 133L104 145M153 123L159 142L153 150" stroke="#e9e1d5" stroke-width="4" fill="none"/>
+ </g>
+ <g class="court-face">
+  <path d="M108 69L123 56L146 62L157 81L153 108L140 121L120 118L105 101Z" fill="#d5af99" stroke="#7d7779" stroke-width="3"/>
+  <path d="M111 76L133 65L151 83L147 104L135 115L117 108Z" fill="#ecc6ac"/>
+  <path d="M106 85L87 77L104 99L114 91M150 86L168 78L152 99L145 91" fill="#ebc3a7" stroke="#9f8381" stroke-width="3"/>
+  <path d="M103 85L104 64L118 52L141 53L156 65L159 84L146 76L135 60L121 64L111 88Z" fill="#cbd3d6" stroke="#79818f" stroke-width="4"/>
+  <path d="M111 89L125 88M139 90L151 91" stroke="#4d5160" stroke-width="3"/>
+  <path d="M129 102L138 102" stroke="#b88780" stroke-width="3"/>
+  <path d="M128 95L130 100L134 100" stroke="#c49989" stroke-width="2" fill="none"/>
+ </g>
+ <g class="court-circlet">
+  <path d="M108 70L122 60L140 62L154 71" stroke="#e0d8b9" stroke-width="5" fill="none"/>
+  <path d="M127 61L133 66L139 61L135 74L131 74Z" fill="#8bd0cf" stroke="#556f89" stroke-width="2"/>
+ </g>
+ <g class="court-fretting-arm">
+  <path d="M151 121L170 131L187 117" fill="none" stroke="#ddbaaa" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M154 123L169 131" stroke="#4f7784" stroke-width="10"/>
+  <path d="M181 116L192 110L200 117L198 129L188 133L180 123Z" fill="#eac7b0" stroke="#a89192" stroke-width="3"/>
+  <path d="M187 120L197 121" stroke="#f7e5d4" stroke-width="3"/>
+ </g>
+ <g class="court-plucking-arm">
+  <path d="M105 122L94 146L120 158L143 155" stroke="#dcbaa8" stroke-width="14" stroke-linecap="round" fill="none"/>
+  <path d="M97 147L120 158" stroke="#4c6b85" stroke-width="9"/>
+ </g>
+ <g class="court-archlute" data-instrument="court-long-neck-archlute">
+  <!-- Narrow raised bridge pegbox / long bass strings are structurally distinct from the Halfling/Orc lutes. -->
+  <path d="M163 160L189 123L206 88L215 49" fill="none" stroke="#513f41" stroke-width="16" stroke-linecap="round"/>
+  <path d="M164 160L190 122L206 88L215 48" fill="none" stroke="#c8a77b" stroke-width="9" stroke-linecap="round"/>
+  <path d="M214 48L220 28L232 25" stroke="#5a4446" stroke-width="9" stroke-linecap="round" fill="none"/>
+  <path d="M211 40L222 41M216 33L227 36M208 56L198 53M202 69L214 73M196 82L207 86" stroke="#dcc09a" stroke-width="4"/>
+  <path d="M187 119L197 124M184 126L192 132M178 135L188 140M172 144L181 149" stroke="#665048" stroke-width="3"/>
+  <path d="M121 146Q125 128 148 124Q176 129 180 151Q183 179 159 190Q129 191 117 173Q113 160 121 146Z" fill="#5f4650" stroke="#44363d" stroke-width="5"/>
+  <path d="M124 146Q138 132 152 130Q176 136 175 159Q177 179 157 184Q129 183 121 167Z" fill="#c8a987" stroke="#635054" stroke-width="3"/>
+  <path d="M123 165Q134 180 157 183M128 138L146 130M169 141Q178 151 174 163" stroke="#f0d6ac" stroke-width="3" fill="none"/>
+  <circle cx="151" cy="157" r="13" fill="#4e4650" stroke="#e5d2b1" stroke-width="3"/>
+  <path d="M140 157L162 157M151 146L151 168M143 150L159 164M143 164L159 150" stroke="#d5b999" stroke-width="2"/>
+  <g class="court-strings" data-instrument-part="archlute-strings">
+   <path d="M189 120L143 178M191 118L146 179M193 115L150 180M195 111L153 181M197 108L157 182M201 100L161 181" stroke="#f0e6ce" stroke-width="1.5" fill="none"/>
+  </g>
+  <path d="M137 177L164 184" stroke="#76584d" stroke-width="5"/>
+ </g>
+ <g class="court-plucking-hand" data-instrument-action="court-string-pluck">
+  <path d="M134 152L144 146L154 152L153 163L142 168L133 163Z" fill="#e8c7b3" stroke="#9b8985" stroke-width="3"/>
+  <path d="M137 158L150 158M139 163L148 164" stroke="#fff0d6" stroke-width="2.5"/>
+ </g>
+</g>
+<g class="court-notation" data-spell-effect="court-silver-notes" opacity="0">
+ <path d="M177 157Q194 137 216 142Q234 149 249 127" fill="none" stroke="#81c6c4" stroke-width="3"/>
+ <path d="M191 138L191 124L203 123L203 139" fill="none" stroke="#edddb7" stroke-width="3"/>
+ <ellipse cx="188" cy="141" rx="6" ry="4" transform="rotate(-23 188 141)" fill="#f4e0b3"/>
+ <ellipse cx="200" cy="142" rx="6" ry="4" transform="rotate(-23 200 142)" fill="#f4e0b3"/>
+ <path d="M216 134L216 111L225 116L225 124" fill="none" stroke="#f7eed5" stroke-width="3"/>
+ <ellipse cx="213" cy="136" rx="6" ry="4" transform="rotate(-20 213 136)" fill="#e5dbcb"/>
+ <path d="M233 141L233 114L244 111" fill="none" stroke="#e9dac8" stroke-width="3"/>
+ <ellipse cx="230" cy="144" rx="6" ry="4" transform="rotate(-20 230 144)" fill="#e5dbcb"/>
+ <path d="M244 111L245 118" stroke="#e5dbcb" stroke-width="4"/>
+</g>
+</svg>

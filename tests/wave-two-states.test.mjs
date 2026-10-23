@@ -17,7 +17,7 @@ const batch=[
 test('Three distinct character, pregen and monster studies are fully represented in catalog',()=>{
  assert.equal(verifyMotionCatalog(catalog),true);
  assert.deepEqual(WAVE_STATES,['idle','move','attack','rest']);
- assert.equal(Object.keys(animatedPreviews).length,28);
+ assert.equal(Object.keys(animatedPreviews).length,29);
  for(const item of batch){
   const card=catalog.find(x=>x.id===item.id);
   assert.ok(card,item.id+' must exist');

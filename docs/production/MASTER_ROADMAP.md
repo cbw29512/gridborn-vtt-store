@@ -37,8 +37,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **30** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **28** | **20 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
+| Original illustrated concepts | **31** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **29** | **21 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -226,6 +226,13 @@ Produce the recognizable **common/base species first**, then build roles on that
 - Existing immutable `pregen-bard-female-1`: source-backed female Orc Songweaver with broad original species anatomy, braid/tusks/circlet, stage-performance coat, sword fully sheathed (not an impossible held weapon), realistically pear-bodied 11-course lute with frets, tuning pegs, bridge and rosette. Plucking and fretting hands are separately attached to the instrument.
 - Source-linked Idle/Move/one-shot Attack/Rest, 1.4s Attack produces visible pluck and vibrating strings, then releases separate original harmonic gold/violet spell wave from the instrument (not sword). Research grounded in 2024 Bard instrument focus and Met Museum's lute construction.
 - Provisional stacked counts: **30** originals, **28** four-state animated studies (**20 Characters**, **6 Monsters**, **2 Animals**), **13/108** authored-gender hero variants with source-backed animations; 95 lack a first study, class coverage 12/12; catalog concepts 518, retail-certified 0. Human 256/128/64/32px, source/RGBA/loop checks, actual VTT import, IP rights and fulfillment remain release gates.
+
+## Elf Court Performer nonbinary Bard — October 22, 2026
+
+- New source-backed `pregen-bard-nonbinary-3`, authored nonbinary Elf Court Performer: distinct silver-hair/pointed-ear silhouette, blue-teal court performance coat, circlet, safely sheathed sword and genuine extended-neck archlute (independent double pegbox, fret lines, rosette, bridge, string group). Complete connected fretting/plucking arms.
+- Four deterministic original Idle/Move/Attack/Rest states, with 1.4s one-shot physical arpeggio and independent projected musical notation. Sources: D&D 2024 Bard instrument-focus and Met Museum archlute instrument construction; no copied external art.
+- Preliminary stacked metrics: illustrated **30→31**, four-state animated **28→29** (**21 Character**, **6 Monster**, **2 Animal**), authored-gender hero identities **13→14 /108**, 94 remaining; total catalog 518, retail approved 0. Bard now has Halfling class study, female Orc and nonbinary Elf authored prototypes. Male Bard remains a priority for the 36-character gender milestone.
+- CI still requires source/media/Chromium/Foundry; human 256/128/64/32px, actual VTT import, legal/IP and purchase-delivery gates remain open. Media matrix concurrency bounded at four installs with no checks skipped.
 
 ## Batch update log
 
