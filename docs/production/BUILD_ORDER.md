@@ -1,6 +1,8 @@
 # Gridborn V1 — production queue and morning review
 
-> **Current priorities and verified progress:** see [Gridborn Master Roadmap](MASTER_ROADMAP.md). This build-order file preserves earlier chronological production notes, some of which refer to completed historical prototypes and are **not** the latest status. Update the Master Roadmap with each future batch/PR.
+> **Current ancestry-first build queue:** [Ancestry-First Production Order](ANCESTRY_FIRST_QUEUE.md). This is the current executable family-by-family order. **Historical notes below are retained for reference**, not current status.
+
+**Current priorities and verified progress:** see [Gridborn Master Roadmap](MASTER_ROADMAP.md). This build-order file preserves earlier chronological production notes, some of which refer to completed historical prototypes and are **not** the latest status. Update the Master Roadmap with each future batch/PR.
 
 
 The two JSON rosters contain the authoritative **12 hero + 12 monster**
