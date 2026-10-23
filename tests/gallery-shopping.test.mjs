@@ -20,7 +20,7 @@ test('Animated-only is a mode of the same four-category gallery, never a second 
  assert.match(app,/nodes\.clear\.hidden = [^;]*!animatedOnly;/);
  assert.deepEqual(filterGalleryByMotion(catalog,false),catalog);
  const anim=filterGalleryByMotion(catalog,true);
- assert.equal(anim.length,43);
+ assert.equal(anim.length,44);
  assert.ok(anim.every(x=>hasCatalogMotion(x.id)&&!x.purchasable));
  for(const cat of ['Characters','NPCs','Monsters','Animals']){
   const items=filterCatalog(catalog,readCatalogRoute('?category='+cat,catalog));
@@ -29,7 +29,7 @@ test('Animated-only is a mode of the same four-category gallery, never a second 
   assert.equal(new Set(moving.map(x=>x.id)).size,moving.length);
  }
  const monsters=filterGalleryByMotion(filterCatalog(catalog,readCatalogRoute('?category=Monsters',catalog)),true);
- assert.equal(monsters.length,16);
+ assert.equal(monsters.length,17);
  assert.equal(monsters.filter(x=>/^Young (Black|Blue|Brass|Bronze|Copper|Gold|Green|Red|Silver|White) Dragon$/.test(x.name)).length,10);
  assert.throws(()=>filterGalleryByMotion(null,true),/array/);
 });
