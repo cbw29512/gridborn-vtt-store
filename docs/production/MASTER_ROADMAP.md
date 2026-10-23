@@ -41,8 +41,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **44 original studies (includes City Guard and Human Blacksmith in this PR)** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **43 source-linked moving studies proposed** | **21 Characters**, **16 Monsters**, **2 Animals**, **4 NPCs**, Guard/Blacksmith pending CI |
+| Original illustrated concepts | **45 original studies (includes Dire Wolf in current PR)** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **44 source-linked moving studies proposed** | **21 Characters**, **17 Monsters**, **2 Animals**, **4 NPCs**, Dire Wolf pending CI |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -277,3 +277,10 @@ Produce the recognizable **common/base species first**, then build roles on that
 - **Authentic occupation identity:** Guard wears polished steel plate, nasal helmet, dark blue cloak, properly strapped left shield and right short spear. Blacksmith wears soot-dusted tunic/leather apron, utility tongs and a full-hand hammer with steel face.
 - **Four actual animated states** per identity (Idle, Move, Attack, Rest) with equipment attached to hand joints; Guard spear thrust and shield brace; Blacksmith hammer swings with brief forged-metal spark effect. Deterministic still and SVG animation generation lives in `src/creature-rigs/human-occupations.mjs` / `tools/generate-human-occupations.mjs`, source checks prevent anatomy drift.
 - **After gated merge:** 44 illustrated, 43 source-linked animated, 4 animated NPC studies, 0 retail-approved; 518 catalog concepts unchanged. No second gallery, checkout disabled. Continue refining 128px/64px/32px artwork and export/import testing before any commercial listing.
+
+## Canine VTT foundation — Dire Wolf · 2026-10-23
+
+- Reuse Gray Wolf `ani-forest-wolf`'s already source-animated four-legged gait, head, ear and tail via `src/creature-rigs/dire-wolf.mjs`. Add larger 1.06× scale wrapper, dark brindle coat, heavier shoulder ruff, facial scar and projecting fangs rather than making a different skeleton.
+- The **existing** `mon-forest-wolf` Dire Wolf monster card is the only new moving monster ID; ordinary Gray Wolf retains its existing Animals card and art. No duplicate galleries, new catalog IDs or product SKUs.
+- Original Still and four animated SVGs source-linked to the Gray Wolf base files; `node tools/generate-dire-wolf-states.mjs --check` tracks source drift. Locomotion uses diagonal opposing quadruped leg pairs, lunging bite with fangs and curled resting pose; no static shortcut claiming four states.
+- Post-merge technical inventory: **45 illustrated**, **44 moving studies** (17 Monsters, 4 NPCs, 21 Characters, 2 Animals), retail-approved **0**, 518 catalog identities unchanged. Real platform alpha video export, 32/64/128px visual art checks and legal review remain pending.

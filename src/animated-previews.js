@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'mon-forest-wolf': Object.freeze({
+    still:'./assets/studies/dire-wolf.svg',
+    idle:'./assets/demos/dire-wolf-idle.svg',
+    move:'./assets/demos/dire-wolf-move.svg',
+    action:'./assets/demos/dire-wolf-attack.svg',
+    rest:'./assets/demos/dire-wolf-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1300,restDurationMs:4800,
+    labels:Object.freeze({
+      idle:'Idle · massive Dire Wolf bristles and breathes',
+      move:'Move · four paws trot in alternating diagonal pairs',
+      action:'Attack · heavier forward lunge and bite with visible fangs',
+      rest:'Rest · folded wolf posture settles and breathes'
+    })
+  }),
+
   'npc-guard-human': Object.freeze({
     still:'./assets/studies/city-guard.svg',
     idle:'./assets/demos/city-guard-idle.svg',
