@@ -1,0 +1,8 @@
+# Gold Dragon — original shared-body art study (2026-10-23)
+
+- **Grounded catalog identity:** `mon-srd-52-young-gold-dragon`; SRD 5.2.1 source-index entry, Large Dragon.
+- **Shared foundation:** Original Gridborn four-legged western dragon geometry: near/far forelegs and hindlegs, two separate membranous wings, tail, neck, muzzle and jaws; every color uses the exact same body/joint plan.
+- **Individual overlay:** Gold scales and dark linework; antler horn/crest signature and fire breath effect with a separate animated release. Red and Gold both breathe fire but retain distinguishable palettes and head profiles; Green uses a separate cloud-like poison effect. Never claim the other 37 standard dragons are illustrated from this sample.
+- **Movement:** Grounded alternating four-leg gait, weight shift and tail counterbalance; wings breathe/swing but do not imply flying via horizontal sliding. Breath Attack opens jaws, effect detaches from muzzle and recovers in one shot. Idle/Move/Rest loop, reduced motion disables animation.
+- **References:** D&D Beyond [SRD 5.2.1](https://www.dndbeyond.com/srd), original source monster index and Gridborn [SRD attribution](../../SRD_5_2_1_ATTRIBUTION.md). Public design references from [DK Book of Dragons](https://dk.com/en-us/products/9780593969311-dungeons-dragons-the-book-of-dragons) inform that species silhouettes can differ. No reference art copied or redistributed.
+- **Blocking release gates:** source generator checks; full private media and Chromium CI; human 32/64/128px read, wings/head/feet QC, original-art review, true Foundry/Roll20 import, accessibility, rights and fulfillment. This is a **noncommercial engineering study**, not a sellable token.
