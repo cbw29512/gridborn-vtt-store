@@ -39,7 +39,8 @@ def check_featured_dragons(browser,origin,width,screenshots):
             try:
                 calm.goto(origin+'?category=Monsters#catalog',wait_until='load')
                 expect(calm.locator('#featured-dragons')).to_have_attribute('data-featured-phase','still')
-                assert all(path.endswith('dragon.svg') for path in calm.locator(
+                assert all('/assets/studies/dragon-young-' in path and path.endswith('.svg')
+                           for path in calm.locator(
                     '.featured-dragon-art').evaluate_all(
                         'imgs=>imgs.map(img=>new URL(img.src).pathname)'))
             finally:
