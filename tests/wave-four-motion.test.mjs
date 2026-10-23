@@ -16,7 +16,7 @@ const studies=[
 ];
 test('Full-motion store has sixteen distinct non-purchasable animated studies',()=>{
  assert.equal(verifyMotionCatalog(catalog),true);
- assert.equal(Object.keys(animatedPreviews).length,29);
+ assert.equal(Object.keys(animatedPreviews).length,30);
  assert.equal(catalog.length,518);
  assert.equal(catalog.filter(x=>x.previewArt).length,31);
  assert.deepEqual(WAVE_FOUR_STATES,['idle','move','attack','rest']);
