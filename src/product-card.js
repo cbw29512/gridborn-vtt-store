@@ -9,6 +9,7 @@ export function makeCard(item) {
   try {
     const card = document.createElement('article'); card.className = 'product-card';
     card.dataset.cardCategory=item.category;
+    card.dataset.productId=item.id;
     const visual = document.createElement('div'); visual.className = 'product-visual';
     visual.dataset.category = item.category;
     const preview=animatedPreviews[item.id];

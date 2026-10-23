@@ -10,8 +10,12 @@ def check_monster_catalog_no_duplicates(browser, origin, width, screenshots):
         expect(page.locator('#result-summary')).to_have_text('336 results found')
         expect(page.locator('#featured-dragons')).to_have_count(0)
         expect(page.locator('#featured-dragons-grid')).to_have_count(0)
-        expect(page.locator('#latest-previews')).to_be_hidden()
+        expect(page.locator('#latest-previews')).to_have_count(0)
+        expect(page.locator('.product-grid')).to_have_count(1)
         expect(page.locator('#results .product-card')).to_have_count(24)
+        all_cards=page.locator('.product-card')
+        ids=all_cards.evaluate_all('cards=>cards.map(card=>card.dataset.productId)')
+        assert len(ids)==len(set(ids)) and all(ids), 'Every product card must have a unique catalog ID'
         dragons = page.locator('#results .product-card[data-motion-id^="mon-srd-52-young-"][data-motion-id$="-dragon"]')
         expect(dragons).to_have_count(10)
         ids = dragons.evaluate_all('cards=>cards.map(c=>c.dataset.motionId)')

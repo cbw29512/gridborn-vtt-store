@@ -6,6 +6,7 @@ import { initializeConceptDialog } from './concept-dialog.js';
 import { makeCard } from './product-card.js';
 import { initializeCatalogMotion, hasCatalogMotion } from './catalog-motion.js';
 import {verifyMotionCatalog} from './production-motion-gate.mjs';
+import {assertSingleProductGallery} from './storefront-gallery.js';
 import { readCatalogRoute, writeCatalogRoute, markActiveCollection, connectCatalogNavigation } from './routing.js';
 
 // One battle-tested state object drives search and both dependent dropdowns.
@@ -45,12 +46,12 @@ function updateFilters() {
 function renderResults() {
   try {
     const filtered = filterCatalog(catalog, state);
-    if(nodes.latestPreviews)nodes.latestPreviews.hidden=state.category==='Monsters';
     const ordered = [...filtered].sort((a,b)=>
       (!state.query ? Number(hasCatalogMotion(b.id))-Number(hasCatalogMotion(a.id)) : 0) ||
       Number(Boolean(b.previewArt))-Number(Boolean(a.previewArt)) ||
       (state.category==='Monsters' ? a.name.localeCompare(b.name) : 0));
     nodes.results.replaceChildren(...ordered.slice(0, visibleCount).map(makeCard).filter(Boolean));
+    assertSingleProductGallery(document);
     document.dispatchEvent(new Event('gridborn:catalog-rendered'));
     nodes.empty.hidden = filtered.length > 0;
     nodes.results.hidden = filtered.length === 0;
@@ -90,7 +91,6 @@ function initialize() {
       summary: byId('result-summary'), caption: byId('category-caption'),
       empty: byId('empty-state'), emptyMessage: byId('empty-message'),
       clear: byId('clear-filters'), more: byId('show-more'),
-      latestPreviews:byId('latest-previews'),
     });
     initializeConceptDialog();
     nodes.category.replaceChildren(new Option('All categories', 'All'));
