@@ -22,7 +22,7 @@ from card_alignment_browser_qa import check_consistent_cards
 from wave_four_browser_qa import check_wave_four
 from catalog_motion_browser_qa import check_catalog_motion, check_reduced_motion
 from catalog_expansion_browser_qa import check_full_catalog
-from featured_monsters_browser_qa import check_featured_dragons
+from monster_catalog_browser_qa import check_monster_catalog_no_duplicates
 SIZES = (1440, 390, 320)
 class PreviewHandler(SimpleHTTPRequestHandler):
     def log_message(self, format_string, *args):
@@ -241,7 +241,7 @@ def main() -> int:
                     check_catalog_motion(browser, url, width, screenshots)
                     if width==1440: check_reduced_motion(browser, url)
                     check_full_catalog(browser, url, width, screenshots)
-                    check_featured_dragons(browser, url, width, screenshots)
+                    check_monster_catalog_no_duplicates(browser, url, width, screenshots)
             finally:
                 browser.close()
         LOG.info("All viewport tests passed. Screenshots remain temporary.")
