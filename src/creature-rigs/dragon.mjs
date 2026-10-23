@@ -32,6 +32,83 @@ export const DRAGON_PALETTES=Object.freeze({
     "breath": "#ffda63",
     "shape": "antler",
     "element": "fire"
+  },
+  "Black": {
+    "body": "#282f39",
+    "belly": "#6c7372",
+    "wing": "#404a54",
+    "ridge": "#afc0a6",
+    "horn": "#c7bda2",
+    "eye": "#d4ffae",
+    "breath": "#9dc966",
+    "shape": "forked",
+    "element": "acid"
+  },
+  "Blue": {
+    "body": "#295da4",
+    "belly": "#98b5ce",
+    "wing": "#357bc3",
+    "ridge": "#a4d2f4",
+    "horn": "#2a3a55",
+    "eye": "#fff2bd",
+    "breath": "#96deff",
+    "shape": "lightning-crest",
+    "element": "lightning"
+  },
+  "White": {
+    "body": "#dbe7e8",
+    "belly": "#fbf6df",
+    "wing": "#a8cdd9",
+    "ridge": "#e6f7ff",
+    "horn": "#6e8a99",
+    "eye": "#9cf0ff",
+    "breath": "#d5faff",
+    "shape": "ice-spines",
+    "element": "cold"
+  },
+  "Brass": {
+    "body": "#b67840",
+    "belly": "#e7c087",
+    "wing": "#c49054",
+    "ridge": "#f6d99a",
+    "horn": "#8d5739",
+    "eye": "#fff7c9",
+    "breath": "#ffa14e",
+    "shape": "ram",
+    "element": "fire"
+  },
+  "Bronze": {
+    "body": "#43817c",
+    "belly": "#b5b485",
+    "wing": "#5d9e92",
+    "ridge": "#d7cd8c",
+    "horn": "#2c554b",
+    "eye": "#fff2af",
+    "breath": "#b0f3ff",
+    "shape": "finback",
+    "element": "lightning"
+  },
+  "Copper": {
+    "body": "#a65e3e",
+    "belly": "#e5ab83",
+    "wing": "#bd7952",
+    "ridge": "#f2c3a0",
+    "horn": "#5b4538",
+    "eye": "#e3ffae",
+    "breath": "#9edb91",
+    "shape": "curl",
+    "element": "acid"
+  },
+  "Silver": {
+    "body": "#aebfcf",
+    "belly": "#f4f5ef",
+    "wing": "#a3b2ca",
+    "ridge": "#fff9ee",
+    "horn": "#637a91",
+    "eye": "#d3f4ff",
+    "breath": "#d7f7ff",
+    "shape": "feather",
+    "element": "cold"
   }
 });
 export const DRAGON_AGE_SCALES=Object.freeze({"wyrmling":0.66,"young":0.86,"adult":1,"ancient":1.06});
@@ -43,11 +120,21 @@ const MOTION=Object.freeze({
 });
 const REDUCED="@media(prefers-reduced-motion:reduce){#dragon-core,#dragon-tail,#dragon-wing-near,#dragon-head,#dragon-mouth,#dragon-breath,#dragon-front-near,#dragon-hind-near,#dragon-front-far,#dragon-hind-far{animation:none!important}#dragon-breath{opacity:0!important}}";
 function crownMarkup(p){
+ if(p.shape==="forked")return `<path d="M182 93L156 64 174 75 160 49 190 79Z" fill="${p.horn}" stroke="#29303a" stroke-width="3"/><path d="M201 91L205 56 215 70 225 59 220 91Z" fill="${p.horn}" stroke="#29303a" stroke-width="3"/>`;
+ if(p.shape==="lightning-crest")return `<path d="M188 92L189 45 201 57 198 88Z" fill="${p.horn}" stroke="${p.ridge}" stroke-width="3"/><path d="M204 88L221 70 213 94Z" fill="${p.ridge}"/>`;
+ if(p.shape==="ice-spines")return `<path d="M178 97L173 79 186 87 184 61 194 82 203 57 206 89 219 75 215 96Z" fill="${p.ridge}" stroke="${p.horn}" stroke-width="3"/>`;
+ if(p.shape==="ram")return `<path d="M181 91Q161 83 161 67Q161 50 178 52L184 65Q168 61 172 76L191 90Z" fill="${p.horn}" stroke="${p.ridge}" stroke-width="3"/><path d="M208 91Q219 80 224 89Q226 101 212 98Z" fill="${p.horn}"/>`;
+ if(p.shape==="finback")return `<path d="M171 103L164 78 180 86 173 59 191 80 196 54 205 88Z" fill="${p.ridge}" stroke="${p.horn}" stroke-width="3"/><path d="M206 88L216 73 215 94Z" fill="${p.horn}"/>`;
+ if(p.shape==="curl")return `<path d="M183 89Q155 66 166 52Q176 42 188 53Q173 53 176 66Q177 78 197 89Z" fill="${p.horn}" stroke="${p.ridge}" stroke-width="3"/><path d="M207 86Q218 58 230 73Q231 86 216 93Z" fill="${p.horn}"/>`;
+ if(p.shape==="feather")return `<path d="M175 97L161 87 175 84 169 67 187 77 184 51 202 79 210 62 215 88Z" fill="${p.ridge}" stroke="${p.horn}" stroke-width="3"/><path d="M212 91L231 76 224 97Z" fill="${p.horn}"/>`;
  if(p.shape==="swept")return `<path d="M183 88L172 62 191 75 204 92Z" fill="${p.horn}" stroke="#261d2a" stroke-width="3"/><path d="M204 87L204 64 218 77 217 94Z" fill="${p.horn}" stroke="#261d2a" stroke-width="3"/>`;
  if(p.shape==="frill")return `<path d="M178 102L158 89 176 88 164 69 187 81 189 64 206 87Z" fill="${p.ridge}" stroke="${p.horn}" stroke-width="4"/><path d="M194 89L186 67 210 84Z" fill="${p.horn}"/>`;
  return `<path d="M183 91Q167 71 168 55L177 68 184 62 185 52 195 75 200 86Z" fill="${p.horn}" stroke="#76551f" stroke-width="3"/><path d="M206 89Q213 70 224 66L219 82 230 81 217 95Z" fill="${p.horn}" stroke="#76551f" stroke-width="3"/><path d="M212 128Q220 148 238 135" fill="none" stroke="${p.ridge}" stroke-width="3"/>`;
 }
 function breathMarkup(p){
+ if(p.element==="acid")return `<path d="M223 123Q237 116 241 129L235 144 229 133Z"/><circle cx="247" cy="132" r="5"/><path d="M252 115Q261 124 256 133Q250 129 252 115Z"/>`;
+ if(p.element==="cold")return `<path d="M226 124L241 110 239 120 255 112 247 127 259 134 241 133 234 146Z"/><path d="M232 130L249 119M241 136L242 114" fill="none" stroke="${p.ridge}" stroke-width="3"/>`;
+ if(p.element==="lightning")return `<path d="M225 125L238 106 235 123 250 112 243 130 256 122 238 146 241 130Z"/><path d="M232 137L247 116" fill="none" stroke="${p.ridge}" stroke-width="3"/>`;
  if(p.element==="poison")return `<circle cx="237" cy="115" r="12"/><circle cx="251" cy="107" r="9"/><circle cx="248" cy="133" r="10"/><circle cx="225" cy="129" r="7"/>`;
  return `<path d="M226 118Q235 94 239 108L247 96 247 111 257 103 253 135 242 141 237 131 229 136Z"/><path d="M235 121L245 111 246 130Z" fill="${p.ridge}"/>`;
 }
