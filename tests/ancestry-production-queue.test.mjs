@@ -1,0 +1,51 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {catalog} from '../src/catalog.js';
+import {FAMILY_BUILD_ORDER,foundationFor} from '../src/species-foundations.mjs';
+import {ancestryOf,ancestryProductionQueue} from '../src/ancestry-production-queue.mjs';
+import {rigProportions} from '../src/rig-proportions.js';
+import {npcToRecipe} from '../src/npc-recipes.js';
+import {presetToRecipe} from '../src/builder-data.js';
+import {renderRig} from '../src/builder-rig.js';
+test('Human role kits share one body foundation, with independent clothing',()=>{
+ assert.deepEqual(FAMILY_BUILD_ORDER.slice(0,6),['Human','Orc','Half-Orc','Elf','Dwarf','Goblin']);
+ assert.deepEqual(foundationFor('Dwarf').scale,[1.05,.88]);
+ assert.equal(rigProportions('Dwarf'),'translate(-6.40 24.96) scale(1.05 0.88)');
+ assert.equal(rigProportions('Human'),'translate(0.00 0.00) scale(1 1)');
+ assert.equal(foundationFor('Half-Orc').availableInBuilder,false);
+ const fighter=presetToRecipe('chr-ftr-human');
+ const inn=npcToRecipe('npc-roster-innkeeper-human');
+ assert.equal(fighter.ancestry,'Human');
+ assert.equal(inn.ancestry,'Human');
+ assert.equal(rigProportions(fighter.ancestry),rigProportions(inn.ancestry));
+ assert.match(renderRig(fighter),/rig-figure/);
+ assert.match(renderRig(inn),/rig-figure/);
+ assert.notEqual(renderRig(fighter),renderRig(inn));
+});
+test('Queue inventories existing IDs, not fictional Human Bandits',()=>{
+ const report=ancestryProductionQueue();
+ assert.equal(report.totalCatalog,518);
+ assert.equal(report.matched+report.unassigned.length,518);
+ const human=report.families.find(x=>x.ancestry==='Human');
+ assert.ok(human.entries.some(x=>x.id==='chr-ftr-human'&&x.status==='animated-study'));
+ assert.ok(human.entries.some(x=>x.id==='npc-inn-human'));
+ assert.ok(human.entries.some(x=>x.id==='npc-roster-farmer-human'));
+ const orc=report.families.find(x=>x.ancestry==='Orc');
+ assert.ok(orc.entries.some(x=>x.id==='chr-bar-orc'));
+ assert.ok(orc.entries.some(x=>x.id==='npc-sol-orc'));
+ assert.equal(report.families.find(x=>x.ancestry==='Half-Orc').total,0);
+ assert.ok(report.flexibleHumanoidEnemies.some(x=>x.name==='Bandit'));
+ const bandit=catalog.find(x=>x.name==='Bandit');
+ assert.equal(ancestryOf(bandit),null);
+ assert.equal(ancestryOf(bandit,{[bandit.id]:'Human'}),'Human');
+ assert.throws(()=>ancestryOf(bandit,{[bandit.id]:'Dragon'}),/Unknown family/);
+ const ids=report.families.flatMap(x=>x.entries.map(e=>e.id));
+ assert.equal(new Set(ids).size,ids.length);
+ assert.ok(catalog.every(x=>x.purchasable===false));
+});
+test('Fail closed on fake animation or duplicate record',()=>{
+ const one=catalog.find(x=>x.id==='chr-ftr-human');
+ assert.throws(()=>ancestryProductionQueue([one,one]),/Duplicate/);
+ assert.throws(()=>ancestryProductionQueue([{...one,animationStatus:'art-study'}],{}),
+  /Missing preview source/);
+});
