@@ -234,6 +234,12 @@ Produce the recognizable **common/base species first**, then build roles on that
 - Preliminary stacked metrics: illustrated **30→31**, four-state animated **28→29** (**21 Character**, **6 Monster**, **2 Animal**), authored-gender hero identities **13→14 /108**, 94 remaining; total catalog 518, retail approved 0. Bard now has Halfling class study, female Orc and nonbinary Elf authored prototypes. Male Bard remains a priority for the 36-character gender milestone.
 - CI still requires source/media/Chromium/Foundry; human 256/128/64/32px, actual VTT import, legal/IP and purchase-delivery gates remain open. Media matrix concurrency bounded at four installs with no checks skipped.
 
+## Mercywarden Cleric mace-halo QC — October 23, 2026
+
+- **`pregen-cleric-female-2`**: repaired the existing original mace halo so the effect inherits the weapon motion in Idle, Move, Attack and Rest. Attack radiance peaks at the 54% impact keyframe. The canonical still is unchanged. [Research brief](briefs/pregen-cleric-female-2.md).
+- Regenerated four SVG state exports and added a deterministic source/halo/one-shot regression test. **No additional token, study or retail approval**: after PR #72 the catalog has 29 four-state studies and zero retail-cleared assets.
+- Human 128/64/32px inspection on both grid backgrounds, actual Foundry/Roll20 imports, art/IP approval and fulfillment remain mandatory. Checkout and production deployment stay disabled.
+
 ## Batch update log
 
 | Date | Source | Result | Still open |
