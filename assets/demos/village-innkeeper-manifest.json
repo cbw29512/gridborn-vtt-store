@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "npc-inn-human",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/village-innkeeper.svg",
+  "restSource": "assets/demos/village-innkeeper-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/village-innkeeper-idle.svg",
+      "durationSec": 3.2
+    },
+    "move": {
+      "source": "assets/demos/village-innkeeper-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/village-innkeeper-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "plannedOutputs": [
+    "transparent-webm",
+    "static-png",
+    "rest-webm"
+  ],
+  "vttCompatibility": "untested",
+  "purchasable": false
+}

@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'npc-inn-human': Object.freeze({
+    still:'./assets/studies/village-innkeeper.svg',
+    idle:'./assets/demos/village-innkeeper-idle.svg',
+    move:'./assets/demos/village-innkeeper-move.svg',
+    action:'./assets/demos/village-innkeeper-attack.svg',
+    rest:'./assets/demos/village-innkeeper-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · Village Innkeeper offers a foaming tankard (prototype)',
+      move:'Move · Innkeeper walks while steadying the serving arm (prototype)',
+      action:'Attack · defensive tankard shove with short foam burst (prototype)',
+      rest:'Rest · Innkeeper lowers tankard into an easy service stance (prototype)'
+    })
+  }),
+
   'pregen-bard-nonbinary-3': Object.freeze({
     still:'./assets/studies/elf-court-nonbinary.svg',
     idle:'./assets/demos/elf-court-nonbinary-idle.svg',

@@ -4,6 +4,8 @@
 
 **Current focus:** finish distinctive monsters and playable-looking character visuals at scale. Do not confuse catalog concepts, animated studies, or technically exported prototypes with visually approved products ready for sale.
 
+**Mandatory shared Lego-style anatomy:** follow [Shared Foundation and Layer Contract](SHARED_FOUNDATION_CONTRACT.md). Reuse each species/body-plan base rig, attachment anchors and locomotion states, then add independently authored identity/gear/role layers. Do not claim existing one-off source SVGs automatically inherit changes until they are migrated and tested.
+
 **Mandatory equipment/animation QC:** follow [Weapon and Attack QC](WEAPON_ATTACK_QC.md). Melee must visibly swing or thrust, bows shoot arrows, crossbows shoot bolts, casters visibly cast; head clearance, credible grips, frame safety and 64px readability are blocking gates. Audit existing assets before increasing the roster.
 
 **Mandatory before any new artwork:** follow [Research-to-Art Gate](RESEARCH_ART_GATE.md), recording individual source-backed anatomy, equipment, motion and licensing briefs before rendering. No study can be counted as a production asset without its research brief.
@@ -38,7 +40,7 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
 | Original illustrated concepts | **31** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **29** | **21 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
+| Public four-state animated art studies | **29 merged; 30 if this PR passes and merges** | **21 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** on main at branch creation; this PR adds the first NPC |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -119,6 +121,7 @@ Produce the recognizable **common/base species first**, then build roles on that
 
 ### Wave E — NPCs, animals and browsing quality
 
+- [ ] Village Innkeeper starter ID `npc-inn-human`: source-linked four-state animation proposed in current PR (not one of 48 roster concepts; final CI pending).
 - [ ] Begin animating the **48 existing NPC role/ancestry concepts**, prioritizing Innkeeper, Guard, Blacksmith, Healer and Merchant; verify unmistakable occupational props.
 - [x] Gray Wolf and Great White Shark have technical four-state studies. [ ] Continue land, air and ocean animal families with authentic movement anatomy.
 - [ ] Regularly compare new product cards against adjacent old cards for equal visual/vertical alignment and readability.
