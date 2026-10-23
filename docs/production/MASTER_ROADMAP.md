@@ -41,8 +41,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **41 proposed after both dragon batches (31 before PR #79)** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **40 proposed after both dragon batches (30 before PR #79)** | **21 Characters**, **16 Monsters** after ten dragons, **2 Animals**, **1 NPC** if both PRs pass |
+| Original illustrated concepts | **42 original studies (includes Human Farmer in this PR)** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **41 source-linked moving studies proposed** | **21 Characters**, **16 Monsters**, **2 Animals**, **2 NPCs**, with Human Farmer pending CI |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -263,3 +263,10 @@ Produce the recognizable **common/base species first**, then build roles on that
 - All ten now have individually defined scales, belly/wing materials, and crest/horn signatures. Acid, lightning, poison, cold, and fire use element-specific grouped effects, not identical flames. Source: official SRD v5.2.1; original silhouette/horn shapes are Gridborn's authored designs, not copied illustrations.
 - If this stacked PR passes and merges after PR #79, source-linked original illustrations **34→41**, four-state previews **33→40**, moving monsters **9→16**, with **0** retail-ready. All seven new IDs are preexisting monster index cards.
 - QC gate remains: source deterministic generator, full media/private CI, Chromium UI, human 32/64/128px silhouette/action verification, legal attribution and platform playback/import.
+
+## Human NPC family — Farmer via inherited human body · 2026-10-23
+
+- Real existing NPC ID `npc-roster-farmer-human` (**Human Farmer · Female**) receives original work overalls, straw field hat, braided hair, pockets and a correctly held three-tined pitchfork. Same canonical human skeleton/shadow, hip-and-leg origin and limb geometry as the already animated Village Innkeeper; the profession's outfit, head identity, hand-held tool and attack motion are new overlays.
+- **Verified inheritance method:** `src/creature-rigs/human-farmer.mjs` derives the still from `assets/studies/village-innkeeper.svg` with deterministic original role replacements. Source builder and all four motion outputs regenerate exactly via `tools/generate-human-farmer-states.mjs`. A change to shared base legs changes both works only after regeneration, and the source-drift test catches it; the two displayed roles are not simple color swaps.
+- **State story:** Idle balances tool; Move makes alternate steps while stabilizing shaft; Attack braces and thrusts the fork (not a false sword strike); Rest plants the fork. Static/stage fallbacks for reduced motion and file-load failures.
+- **Count change only after passing gates/merge:** illustrated **41→42**, animated **40→41**, NPC animated **1→2**, sale-ready remains **0**. Real platform import, 32/64/128px human QC and art licensing remain separate release gates.
