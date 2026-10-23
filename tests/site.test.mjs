@@ -56,7 +56,7 @@ test('preview application uses bounded modules', () => {
   assert.match(app, /initializeDemo\(\)/);
   assert.match(app, /initializeConceptDialog\(\)/);
   assert.match(app, /makeCard/);
-  assert.match(get('src/product-card.js'), /Preview only/);
+  assert.match(get('src/product-card.js'), /IN MOTION/);
 });
 
 test('category shortcuts are four normal links to stable catalog URLs', () => {
@@ -118,7 +118,7 @@ test('four category shortcuts show four distinct original concept illustrations'
     assert.ok(html.includes('assets/studies/' + name), name);
     assert.ok(existsSync(new URL('../assets/studies/' + name, import.meta.url)));
   }
-  assert.match(get('src/product-card.js'), /ANIMATION STUDY/);
+  assert.match(get('src/product-card.js'), /ANIMATION PREVIEW/);
   assert.match(get('src/product-card.js'), /illustration\.replaceWith\(symbol\)/);
 });
 
@@ -133,7 +133,7 @@ test('catalog supports global search and defers advanced filters until category 
 test('concept pricing is clearly marked as a target, without pretend buy buttons', () => {
   const cards = get('src/product-card.js');
   assert.match(cards, /Target \$/);
-  assert.match(cards, /Preview only/);
+  assert.match(cards, /IN MOTION/);
   assert.doesNotMatch(cards, /Coming soon|button\.disabled = true/);
 });
 

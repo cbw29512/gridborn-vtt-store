@@ -220,3 +220,7 @@
 @media(max-width:550px){.latest-previews{padding:10px;gap:9px}
  .latest-previews-label,.latest-previews-disclaimer{width:100%}
  .latest-preview-link{min-width:0;flex-basis:100%}}
+
+/* Keep the collection front and center; avoid duplicating the feature strip
+   when the visitor is already on the monster landing page. */
+.latest-previews[hidden]{display:none!important}
