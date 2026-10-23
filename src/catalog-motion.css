@@ -89,3 +89,16 @@
  .featured-dragon-art{height:102px}
  .featured-dragon-card strong{font-size:11px}
  .featured-dragon-card small{font-size:9px}}
+
+/* Motion-led product gallery: larger artwork and fewer words; the media does the selling. */
+.featured-dragons-heading{margin-bottom:15px}
+.featured-dragons h3{font-size:clamp(24px,2.8vw,32px);margin-bottom:0}
+.featured-dragons-grid{gap:13px}
+.featured-dragon-card{position:relative;padding:7px 7px 11px;gap:9px;overflow:hidden}
+.featured-dragon-art{height:155px;background:#e9e1d5}
+.featured-dragon-card strong{font-size:13px;line-height:1.25}
+.featured-dragon-arrow{position:absolute;top:11px;right:11px;background:#252b3dcf;
+ width:25px;height:25px;display:grid;place-items:center;border-radius:50%;
+ color:#ffdb96;font-size:16px;line-height:1;box-shadow:0 1px 4px #0005}
+.featured-dragon-card:hover .featured-dragon-arrow{background:#f1bf6c;color:#1b2530}
+@media(max-width:550px){.featured-dragon-art{height:133px}.featured-dragon-card strong{font-size:12px}}

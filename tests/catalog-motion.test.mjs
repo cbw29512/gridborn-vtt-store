@@ -34,7 +34,7 @@ test('Motion begins on catalog cards without Play buttons and stays preview-only
   const controller=read('src/catalog-motion.js');
   const app=read('src/app.js');
   const html=read('index.html');
-  assert.match(card,/MOVING ART STUDY/);
+  assert.match(card,/IN MOTION/);
   assert.match(card,/dataset\.motionId/);
   assert.match(card,/product-motion-stage/);
   assert.match(card,/illustration\.replaceWith\(symbol\)/);

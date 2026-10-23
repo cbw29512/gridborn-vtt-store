@@ -47,7 +47,7 @@ export function makeCard(item) {
     } else {
       visual.append(symbol);
     }
-    const badge = document.createElement('span'); badge.className = 'preview-label'; badge.textContent = hasMotion ? 'MOVING ART STUDY' : item.animationStatus === 'art-study' ? 'ANIMATION STUDY' :
+    const badge = document.createElement('span'); badge.className = 'preview-label'; badge.textContent = hasMotion ? 'IN MOTION' : item.animationStatus === 'art-study' ? 'ANIMATION PREVIEW' :
       item.previewArt ? 'ART STUDY' : 'CONCEPT ONLY';
     const footprint = document.createElement('span'); footprint.className = 'product-footprint';
     footprint.textContent = item.squares + '×' + item.squares + ' GRID';
@@ -60,7 +60,7 @@ export function makeCard(item) {
     meta.textContent = item.size +
       (item.challengeRating!==null&&item.challengeRating!==undefined?' · CR '+item.challengeRating:'') +
       (item.animationStatus === 'art-study'
-        ? ' · Animation prototype' : ' · Animation not produced');
+        ? ' · Four moving states' : ' · Design concept');
     const foot = document.createElement('div'); foot.className = 'product-foot';
     const price = document.createElement('strong'); price.className = 'product-price';
     price.textContent = item.previewArt
@@ -68,8 +68,6 @@ export function makeCard(item) {
       : 'Artwork pending';
     price.setAttribute('aria-label', item.previewArt
       ? 'Proposed price ' + price.textContent : 'Original artwork not yet produced');
-    const availability = document.createElement('span');
-    availability.className = 'product-unavailable'; availability.textContent = 'Preview only';
     const details = document.createElement('button');
     details.type = 'button'; details.className = 'details-button';
     details.textContent = 'View concept details';
@@ -91,7 +89,7 @@ export function makeCard(item) {
     bundleAdd.dataset.bundleId=item.id;
     bundleAdd.setAttribute('aria-label','Add '+item.name+' to bundle plan');
     bundleAdd.textContent='Add to bundle +';
-    foot.append(price, availability);
+    foot.append(price);
     body.append(type, name, meta, customizeSlot, details, bundleAdd, foot);
     card.append(visual, body);
     return card;

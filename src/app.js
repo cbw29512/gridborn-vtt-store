@@ -6,7 +6,7 @@ import { initializeConceptDialog } from './concept-dialog.js';
 import { makeCard } from './product-card.js';
 import { initializeCatalogMotion, hasCatalogMotion } from './catalog-motion.js';
 import {verifyMotionCatalog} from './production-motion-gate.mjs';
-import {renderFeaturedDragonGallery,shouldShowFeaturedDragons} from './featured-monsters.js';
+import {renderFeaturedDragonGallery,shouldShowFeaturedDragons,initializeFeaturedDragonMotion} from './featured-monsters.js';
 import { readCatalogRoute, writeCatalogRoute, markActiveCollection, connectCatalogNavigation } from './routing.js';
 
 // One battle-tested state object drives search and both dependent dropdowns.
@@ -46,6 +46,7 @@ function updateFilters() {
 function renderResults() {
   try {
     const filtered = filterCatalog(catalog, state);
+    if(nodes.latestPreviews)nodes.latestPreviews.hidden=state.category==='Monsters';
     if(nodes.featuredDragons){
       nodes.featuredDragons.hidden=!shouldShowFeaturedDragons(state)
         ||!nodes.featuredDragonGrid?.children.length;
@@ -95,6 +96,7 @@ function initialize() {
       empty: byId('empty-state'), emptyMessage: byId('empty-message'),
       clear: byId('clear-filters'), more: byId('show-more'),
       featuredDragons:byId('featured-dragons'),featuredDragonGrid:byId('featured-dragons-grid'),
+      latestPreviews:byId('latest-previews'),
     });
     initializeConceptDialog();
     try{renderFeaturedDragonGallery(nodes.featuredDragonGrid);}
@@ -132,7 +134,10 @@ function initialize() {
     byId('empty-reset').addEventListener('click', resetFilters);
     nodes.search.value = state.query;
     visibleCount=pageSize();
-    updateFilters(); renderResults(); initializeCatalogMotion(); initializeBundles(catalog); initializeDemo();
+    updateFilters(); renderResults(); initializeCatalogMotion();
+    try{initializeFeaturedDragonMotion(nodes.featuredDragons);}
+    catch(error){console.error('Cannot animate featured dragons',error);}
+    initializeBundles(catalog); initializeDemo();
   } catch (error) {
     console.error('Storefront failed to initialize', error);
     const summary = byId('result-summary');
