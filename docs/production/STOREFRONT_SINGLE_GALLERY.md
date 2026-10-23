@@ -24,3 +24,10 @@ Gridborn is a **selling website**, not an internal asset inventory dashboard. Th
 ## Current corrective action
 
 Remove the redundant *Latest Arrivals* strip (which repeated dragon and innkeeper thumbnails) and its CSS/JavaScript. Keep the four existing category shortcuts and the animated-first normal gallery. Preserve all existing 40 source-linked animated studies, 41 illustrations, catalog records, search/filter behavior and noncommercial safety controls. No storefront count increases in this housekeeping change.
+
+## Existing gallery polish · October 23, 2026
+
+- **Artwork-first:** enlarge original asset imagery inside the *same* certified card stage and let clicking or keyboard-activating the artwork open its native details/animation dialog. No duplicated image panel or product card.
+- **Focus control:** one `Animated only` toggle filters the existing gallery across the four categories, preserving the normal list and one-ID-one-card guarantees. Default remains full searchable catalog; users can see the actual 40 moving studies instead of sorting through concepts. Changing filters still uses the same results grid.
+- **Cleaner cards:** preserve grid equality and button accessibility but remove the redundant `IN MOTION` overlay for animated cards, whose visible stage already shows Idle/Move/Attack/Rest. Keep non-purchasable and rights controls unchanged.
+- **Required testing:** Node checks verify actual 40 animated assets, 16 Monsters (including 10 dragons), accessibility/one grid, and Chromium 1440/390/320 verifies mode switching, artwork clickthrough, no duplicates/overflow. No new product or release count from this UI pass.

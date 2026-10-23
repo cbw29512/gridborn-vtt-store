@@ -76,8 +76,8 @@
           <div class="filter-field" id="secondary-field" hidden><label for="secondary-filter" id="secondary-label">Second filter</label><select id="secondary-filter"></select></div>
         </div>
         <div class="results-heading"><div><span class="section-kicker" id="category-caption">All categories</span><h3 id="result-summary" aria-live="polite">Loading catalog…</h3></div><button id="clear-filters" class="clear-button" type="button" hidden>Clear search &amp; filters <span aria-hidden="true">×</span></button></div>
-        <div class="catalog-motion-toolbar">
-          <p>Watch the tokens in action: <strong>Idle → Move → Attack → Rest</strong> plays automatically.</p>
+        <div class="catalog-motion-toolbar" role="group" aria-label="Gallery controls">
+          <button id="animated-only-toggle" class="animated-only-toggle" type="button" aria-pressed="false" aria-controls="results">Animated only</button>
           <button id="catalog-motion-toggle" class="catalog-motion-toggle" type="button" aria-pressed="false">Pause catalog motion</button>
         </div>
         <div id="results" class="product-grid"></div>

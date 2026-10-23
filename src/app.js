@@ -4,6 +4,7 @@ import { initializeDemo } from './animation-demo.js';
 import {initializeBundles} from './bundle-ui.js';
 import { initializeConceptDialog } from './concept-dialog.js';
 import { makeCard } from './product-card.js';
+import {filterGalleryByMotion} from './gallery-motion-filter.js';
 import { initializeCatalogMotion, hasCatalogMotion } from './catalog-motion.js';
 import {verifyMotionCatalog} from './production-motion-gate.mjs';
 import {assertSingleProductGallery} from './storefront-gallery.js';
@@ -14,6 +15,7 @@ const state = { ...initialState };
 const nodes = {};
 const byId = id => document.getElementById(id);
 let visibleCount = 8;
+let animatedOnly = false;
 const pageSize=()=>['Monsters','Characters','NPCs'].includes(state.category)?24:8;
 function populateSelect(node, values, allText, selected = '') {
   try {
@@ -45,7 +47,9 @@ function updateFilters() {
 
 function renderResults() {
   try {
-    const filtered = filterCatalog(catalog, state);
+    const filtered = filterGalleryByMotion(filterCatalog(catalog, state),animatedOnly);
+    nodes.animatedOnly.setAttribute('aria-pressed',String(animatedOnly));
+    nodes.animatedOnly.textContent=animatedOnly?'All designs':'Animated only';
     const ordered = [...filtered].sort((a,b)=>
       (!state.query ? Number(hasCatalogMotion(b.id))-Number(hasCatalogMotion(a.id)) : 0) ||
       Number(Boolean(b.previewArt))-Number(Boolean(a.previewArt)) ||
@@ -63,7 +67,7 @@ function renderResults() {
     nodes.emptyMessage.textContent = 'No matches in ' +
       (state.category === 'All' ? 'the catalog' : state.category) +
       '. Try another search or clear the filters.';
-    nodes.clear.hidden = !state.query && !state.primary && !state.secondary;
+    nodes.clear.hidden = !state.query && !state.primary && !state.secondary && !animatedOnly;
     markActiveCollection(state.category);
   } catch (error) { console.error('Unable to render catalog results', error); }
 }
@@ -72,6 +76,7 @@ function resetFilters() {
   try {
     const currentCategory = state.category;
     Object.assign(state, { ...initialState, category: currentCategory });
+    animatedOnly = false;
     nodes.search.value = ''; nodes.category.value = state.category;
     visibleCount = pageSize(); updateFilters(); renderResults(); writeCatalogRoute(state);
   } catch (error) { console.error('Unable to reset catalog filters', error); }
@@ -91,6 +96,7 @@ function initialize() {
       summary: byId('result-summary'), caption: byId('category-caption'),
       empty: byId('empty-state'), emptyMessage: byId('empty-message'),
       clear: byId('clear-filters'), more: byId('show-more'),
+      animatedOnly: byId('animated-only-toggle'),
     });
     initializeConceptDialog();
     nodes.category.replaceChildren(new Option('All categories', 'All'));
@@ -117,6 +123,10 @@ function initialize() {
         nodes.search.value = state.query; nodes.category.value = state.category;
         visibleCount = pageSize(); updateFilters(); renderResults();
       } catch (error) { console.error('Unable to refresh routed catalog', error); }
+    });
+    nodes.animatedOnly.addEventListener('click', () => {
+      try{animatedOnly=!animatedOnly;visibleCount=pageSize();renderResults();}
+      catch(error){console.error('Could not filter moving tokens',error);}
     });
     nodes.more.addEventListener('click', () => {
       try { visibleCount += pageSize(); renderResults(); }
