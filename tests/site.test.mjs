@@ -118,7 +118,7 @@ test('four category shortcuts show four distinct original concept illustrations'
     assert.ok(html.includes('assets/studies/' + name), name);
     assert.ok(existsSync(new URL('../assets/studies/' + name, import.meta.url)));
   }
-  assert.match(get('src/product-card.js'), /ANIMATION STUDY/);
+  assert.match(get('src/product-card.js'), /ANIMATION PREVIEW/);
   assert.match(get('src/product-card.js'), /illustration\.replaceWith\(symbol\)/);
 });
 

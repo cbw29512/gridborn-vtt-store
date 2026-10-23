@@ -6,7 +6,7 @@ import {readCatalogRoute} from '../src/routing.js';
 import {filterCatalog} from '../src/filters.js';
 const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
 test('Latest-preview strip is early, navigable and linked to real media',()=>{
- assert.match(html,/Latest animated Gridborn previews/);
+ assert.match(html,/Latest Gridborn arrivals/);
  assert.ok(html.indexOf('class="latest-previews"')<html.indexOf('class="collection-nav"'));
  const dragon=readCatalogRoute('?category=Monsters&q=Young',catalog);
  const d=filterCatalog(catalog,dragon);
@@ -18,5 +18,8 @@ test('Latest-preview strip is early, navigable and linked to real media',()=>{
  assert.equal(n[0].animationStatus,'art-study');
  for(const route of ['?category=Monsters&amp;q=Young#catalog',
   '?category=NPCs&amp;q=Village+Innkeeper#catalog']) assert.ok(html.includes(route));
- assert.match(html,/Preview art only · buying disabled/);
+ assert.match(html,/LATEST ARRIVALS/);
+ assert.doesNotMatch(html,/Preview art only · buying disabled/);
+ assert.match(html,/assets\/demos\/dragon-young-red-idle\.svg/);
+ assert.match(html,/assets\/demos\/village-innkeeper-idle\.svg/);
 });
