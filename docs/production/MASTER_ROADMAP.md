@@ -39,8 +39,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **34 proposed (31 merged before this PR)** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **33 proposed (30 merged before this PR)** | **21 Characters**, **9 Monsters** after three dragons, **2 Animals**, **1 NPC** if this PR passes |
+| Original illustrated concepts | **41 proposed after both dragon batches (31 before PR #79)** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **40 proposed after both dragon batches (30 before PR #79)** | **21 Characters**, **16 Monsters** after ten dragons, **2 Animals**, **1 NPC** if both PRs pass |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -254,3 +254,10 @@ Produce the recognizable **common/base species first**, then build roles on that
 - **Three first art-and-motion studies proposed:** `mon-srd-52-young-red-dragon`, `mon-srd-52-young-green-dragon`, `mon-srd-52-young-gold-dragon`. Reuses existing immutable catalog IDs, adds original still and all four generated states, individual source references, manifests, and tests. No new index records or made-up product concepts.
 - **Counts after merge, only if all CI passes:** illustrated **31→34**, public source-linked studies **30→33**, including **9 Monsters**. The other 37 standard dragon records are unillustrated, not completed.
 - **Release blocked:** human 32/64/128px art checks, source rights/license, actual Foundry/Roll20 import, transparent WebM test, and checkout integration. Keep all products non-purchasable.
+
+## Full ten-color dragon young-form completion proposed · 2026-10-23
+
+- **Second color family PR:** adds Black, Blue, White, Brass, Bronze, Copper and Silver Young Dragons using the same `western-four-legged-winged-dragon` source body and four-state animation generator. Completes **10/10 standard color/metal Young Dragons** (10 of the 40 standard color×age combinations). The Wyrmling, Adult and Ancient 30 source records still require proper age/scale detail and actual renders.
+- All ten now have individually defined scales, belly/wing materials, and crest/horn signatures. Acid, lightning, poison, cold, and fire use element-specific grouped effects, not identical flames. Source: official SRD v5.2.1; original silhouette/horn shapes are Gridborn's authored designs, not copied illustrations.
+- If this stacked PR passes and merges after PR #79, source-linked original illustrations **34→41**, four-state previews **33→40**, moving monsters **9→16**, with **0** retail-ready. All seven new IDs are preexisting monster index cards.
+- QC gate remains: source deterministic generator, full media/private CI, Chromium UI, human 32/64/128px silhouette/action verification, legal attribution and platform playback/import.

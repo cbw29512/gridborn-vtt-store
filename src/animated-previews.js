@@ -3,6 +3,118 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'mon-srd-52-young-silver-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-silver.svg',
+    idle:'./assets/demos/dragon-young-silver-idle.svg',
+    move:'./assets/demos/dragon-young-silver-move.svg',
+    action:'./assets/demos/dragon-young-silver-attack.svg',
+    rest:'./assets/demos/dragon-young-silver-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Silver dragon breathes with subtle wing and tail motion (prototype)',
+      move:'Move · articulated front and hind legs travel with tail counterbalance (prototype)',
+      action:'Attack · distinct cold breath shoots from open jaws with recovery (prototype)',
+      rest:'Rest · lowered head and folded wing joint settles naturally (prototype)'
+    })
+  }),
+
+  'mon-srd-52-young-copper-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-copper.svg',
+    idle:'./assets/demos/dragon-young-copper-idle.svg',
+    move:'./assets/demos/dragon-young-copper-move.svg',
+    action:'./assets/demos/dragon-young-copper-attack.svg',
+    rest:'./assets/demos/dragon-young-copper-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Copper dragon breathes with subtle wing and tail motion (prototype)',
+      move:'Move · articulated front and hind legs travel with tail counterbalance (prototype)',
+      action:'Attack · distinct acid breath shoots from open jaws with recovery (prototype)',
+      rest:'Rest · lowered head and folded wing joint settles naturally (prototype)'
+    })
+  }),
+
+  'mon-srd-52-young-bronze-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-bronze.svg',
+    idle:'./assets/demos/dragon-young-bronze-idle.svg',
+    move:'./assets/demos/dragon-young-bronze-move.svg',
+    action:'./assets/demos/dragon-young-bronze-attack.svg',
+    rest:'./assets/demos/dragon-young-bronze-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Bronze dragon breathes with subtle wing and tail motion (prototype)',
+      move:'Move · articulated front and hind legs travel with tail counterbalance (prototype)',
+      action:'Attack · distinct lightning breath shoots from open jaws with recovery (prototype)',
+      rest:'Rest · lowered head and folded wing joint settles naturally (prototype)'
+    })
+  }),
+
+  'mon-srd-52-young-brass-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-brass.svg',
+    idle:'./assets/demos/dragon-young-brass-idle.svg',
+    move:'./assets/demos/dragon-young-brass-move.svg',
+    action:'./assets/demos/dragon-young-brass-attack.svg',
+    rest:'./assets/demos/dragon-young-brass-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Brass dragon breathes with subtle wing and tail motion (prototype)',
+      move:'Move · articulated front and hind legs travel with tail counterbalance (prototype)',
+      action:'Attack · distinct fire breath shoots from open jaws with recovery (prototype)',
+      rest:'Rest · lowered head and folded wing joint settles naturally (prototype)'
+    })
+  }),
+
+  'mon-srd-52-young-white-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-white.svg',
+    idle:'./assets/demos/dragon-young-white-idle.svg',
+    move:'./assets/demos/dragon-young-white-move.svg',
+    action:'./assets/demos/dragon-young-white-attack.svg',
+    rest:'./assets/demos/dragon-young-white-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young White dragon breathes with subtle wing and tail motion (prototype)',
+      move:'Move · articulated front and hind legs travel with tail counterbalance (prototype)',
+      action:'Attack · distinct cold breath shoots from open jaws with recovery (prototype)',
+      rest:'Rest · lowered head and folded wing joint settles naturally (prototype)'
+    })
+  }),
+
+  'mon-srd-52-young-blue-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-blue.svg',
+    idle:'./assets/demos/dragon-young-blue-idle.svg',
+    move:'./assets/demos/dragon-young-blue-move.svg',
+    action:'./assets/demos/dragon-young-blue-attack.svg',
+    rest:'./assets/demos/dragon-young-blue-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Blue dragon breathes with subtle wing and tail motion (prototype)',
+      move:'Move · articulated front and hind legs travel with tail counterbalance (prototype)',
+      action:'Attack · distinct lightning breath shoots from open jaws with recovery (prototype)',
+      rest:'Rest · lowered head and folded wing joint settles naturally (prototype)'
+    })
+  }),
+
+  'mon-srd-52-young-black-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-black.svg',
+    idle:'./assets/demos/dragon-young-black-idle.svg',
+    move:'./assets/demos/dragon-young-black-move.svg',
+    action:'./assets/demos/dragon-young-black-attack.svg',
+    rest:'./assets/demos/dragon-young-black-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Black dragon breathes with subtle wing and tail motion (prototype)',
+      move:'Move · articulated front and hind legs travel with tail counterbalance (prototype)',
+      action:'Attack · distinct acid breath shoots from open jaws with recovery (prototype)',
+      rest:'Rest · lowered head and folded wing joint settles naturally (prototype)'
+    })
+  }),
+
   'mon-srd-52-young-red-dragon': Object.freeze({
     still:'./assets/studies/dragon-young-red.svg',
     idle:'./assets/demos/dragon-young-red-idle.svg',

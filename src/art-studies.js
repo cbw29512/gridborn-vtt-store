@@ -3,6 +3,13 @@
  * Keys are immutable catalog IDs; drawings are not implied to be animations.
  */
 export const artStudies = Object.freeze({
+  'mon-srd-52-young-silver-dragon':'./assets/studies/dragon-young-silver.svg',
+  'mon-srd-52-young-copper-dragon':'./assets/studies/dragon-young-copper.svg',
+  'mon-srd-52-young-bronze-dragon':'./assets/studies/dragon-young-bronze.svg',
+  'mon-srd-52-young-brass-dragon':'./assets/studies/dragon-young-brass.svg',
+  'mon-srd-52-young-white-dragon':'./assets/studies/dragon-young-white.svg',
+  'mon-srd-52-young-blue-dragon':'./assets/studies/dragon-young-blue.svg',
+  'mon-srd-52-young-black-dragon':'./assets/studies/dragon-young-black.svg',
   'mon-srd-52-young-red-dragon':'./assets/studies/dragon-young-red.svg',
   'mon-srd-52-young-green-dragon':'./assets/studies/dragon-young-green.svg',
   'mon-srd-52-young-gold-dragon':'./assets/studies/dragon-young-gold.svg',

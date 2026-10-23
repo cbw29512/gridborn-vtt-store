@@ -24,9 +24,9 @@ test('One shared winged quadruped foundation maps all 40 existing age/color drag
   assert.throws(()=>dragonRecipeForRecord(source),/Not a standard/);
  }
 });
-test('Red, Green and Gold visibly vary scales, horns/frills and breath but preserve SAME rig joints',()=>{
+test('All ten species vary color, horns and appropriate breath while preserving SAME rig joints',()=>{
  const ids=new Set(),stillHashes=new Set();
- for(const species of ['Red','Green','Gold']){
+ for(const species of ['Red','Green','Gold','Black','Blue','White','Brass','Bronze','Copper','Silver']){
   const stem='dragon-young-'+species.toLowerCase(),cardId='mon-srd-52-young-'+species.toLowerCase()+'-dragon';
   const source=read('assets/studies/'+stem+'.svg');
   assert.equal(source,dragonArtwork(species,'young','still'));
@@ -53,7 +53,7 @@ test('Red, Green and Gold visibly vary scales, horns/frills and breath but prese
   assert.equal(manifest.artLicenseStatus,'not-verified');
   assert.equal(manifest.vttCompatibility,'untested');
  }
- assert.equal(ids.size,3);assert.equal(stillHashes.size,3);
+ assert.equal(ids.size,10);assert.equal(stillHashes.size,10);
  assert.throws(()=>dragonArtwork('Purple','young'),/Unknown dragon/);
  assert.throws(()=>dragonArtwork('Red','young','fly'),/Unsupported dragon state/);
 });
