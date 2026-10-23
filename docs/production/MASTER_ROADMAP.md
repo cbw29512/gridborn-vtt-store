@@ -4,6 +4,8 @@
 
 **Current focus:** finish distinctive monsters and playable-looking character visuals at scale. Do not confuse catalog concepts, animated studies, or technically exported prototypes with visually approved products ready for sale.
 
+**Mandatory shared Lego-style anatomy:** follow [Shared Foundation and Layer Contract](SHARED_FOUNDATION_CONTRACT.md). Reuse each species/body-plan base rig, attachment anchors and locomotion states, then add independently authored identity/gear/role layers. Do not claim existing one-off source SVGs automatically inherit changes until they are migrated and tested.
+
 **Mandatory equipment/animation QC:** follow [Weapon and Attack QC](WEAPON_ATTACK_QC.md). Melee must visibly swing or thrust, bows shoot arrows, crossbows shoot bolts, casters visibly cast; head clearance, credible grips, frame safety and 64px readability are blocking gates. Audit existing assets before increasing the roster.
 
 **Mandatory before any new artwork:** follow [Research-to-Art Gate](RESEARCH_ART_GATE.md), recording individual source-backed anatomy, equipment, motion and licensing briefs before rendering. No study can be counted as a production asset without its research brief.
@@ -37,8 +39,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **31** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **29** | **21 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
+| Original illustrated concepts | **34 proposed (31 merged before this PR)** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **33 proposed (30 merged before this PR)** | **21 Characters**, **9 Monsters** after three dragons, **2 Animals**, **1 NPC** if this PR passes |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -119,6 +121,7 @@ Produce the recognizable **common/base species first**, then build roles on that
 
 ### Wave E — NPCs, animals and browsing quality
 
+- [ ] Village Innkeeper starter ID `npc-inn-human`: source-linked four-state animation proposed in current PR (not one of 48 roster concepts; final CI pending).
 - [ ] Begin animating the **48 existing NPC role/ancestry concepts**, prioritizing Innkeeper, Guard, Blacksmith, Healer and Merchant; verify unmistakable occupational props.
 - [x] Gray Wolf and Great White Shark have technical four-state studies. [ ] Continue land, air and ocean animal families with authentic movement anatomy.
 - [ ] Regularly compare new product cards against adjacent old cards for equal visual/vertical alignment and readability.
@@ -243,3 +246,11 @@ Produce the recognizable **common/base species first**, then build roles on that
 | 2026-10-21 | **This roadmap** | Next waves and product definition documented | Wave A Ogre roles, then Wave B character variation, missing classes and families |
 
 **Update discipline:** Each production PR should reference this plan, report **before → after** verified animated counts, list new actual IDs and files, record passed checks and remaining blockers, and mark only verified work complete. Keep historical build notes in [BUILD_ORDER.md](BUILD_ORDER.md), but use **this document** as the current priority board.
+
+## Shared western dragon family — Red, Green and Gold first batch · 2026-10-23
+
+- **New original source rig:** `src/creature-rigs/dragon.mjs` defines one quadrupedal winged body with four legs, wings, head, neck, tail and joint anchors. Red, Green and Gold variations share exact geometry, while scales, horns/crests and fire/poison breath overlays are distinct; sources and four-state files are generated deterministically by `tools/generate-dragon-states.mjs`.
+- **Source catalog coverage:** `src/dragon-family.js` inventories the exact **40 standard SRD dragon records** (10 colors/metals × wyrmling/young/adult/ancient), excludes Dragon Turtle, Wyvern, Pseudodragon, Half-Dragon and Kobold Warrior as incompatible body plans.
+- **Three first art-and-motion studies proposed:** `mon-srd-52-young-red-dragon`, `mon-srd-52-young-green-dragon`, `mon-srd-52-young-gold-dragon`. Reuses existing immutable catalog IDs, adds original still and all four generated states, individual source references, manifests, and tests. No new index records or made-up product concepts.
+- **Counts after merge, only if all CI passes:** illustrated **31→34**, public source-linked studies **30→33**, including **9 Monsters**. The other 37 standard dragon records are unillustrated, not completed.
+- **Release blocked:** human 32/64/128px art checks, source rights/license, actual Foundry/Roll20 import, transparent WebM test, and checkout integration. Keep all products non-purchasable.

@@ -3,6 +3,67 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'mon-srd-52-young-red-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-red.svg',
+    idle:'./assets/demos/dragon-young-red-idle.svg',
+    move:'./assets/demos/dragon-young-red-move.svg',
+    action:'./assets/demos/dragon-young-red-attack.svg',
+    rest:'./assets/demos/dragon-young-red-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Red dragon holds a side-profile guard with responsive tail and wings (prototype)',
+      move:'Move · four articulated legs stride with braced wings and tail balance (prototype)',
+      action:'Attack · jaws open and release a distinct fire plume toward the target (prototype)',
+      rest:'Rest · folding wings, lowering head and settling as a living dragon (prototype)'
+    })
+  }),
+  'mon-srd-52-young-green-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-green.svg',
+    idle:'./assets/demos/dragon-young-green-idle.svg',
+    move:'./assets/demos/dragon-young-green-move.svg',
+    action:'./assets/demos/dragon-young-green-attack.svg',
+    rest:'./assets/demos/dragon-young-green-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Green dragon holds a side-profile guard with responsive tail and wings (prototype)',
+      move:'Move · four articulated legs stride with braced wings and tail balance (prototype)',
+      action:'Attack · jaws open and release a distinct poison cloud toward the target (prototype)',
+      rest:'Rest · folding wings, lowering head and settling as a living dragon (prototype)'
+    })
+  }),
+  'mon-srd-52-young-gold-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-gold.svg',
+    idle:'./assets/demos/dragon-young-gold-idle.svg',
+    move:'./assets/demos/dragon-young-gold-move.svg',
+    action:'./assets/demos/dragon-young-gold-attack.svg',
+    rest:'./assets/demos/dragon-young-gold-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Gold dragon holds a side-profile guard with responsive tail and wings (prototype)',
+      move:'Move · four articulated legs stride with braced wings and tail balance (prototype)',
+      action:'Attack · jaws open and release a distinct fire plume toward the target (prototype)',
+      rest:'Rest · folding wings, lowering head and settling as a living dragon (prototype)'
+    })
+  }),
+
+  'npc-inn-human': Object.freeze({
+    still:'./assets/studies/village-innkeeper.svg',
+    idle:'./assets/demos/village-innkeeper-idle.svg',
+    move:'./assets/demos/village-innkeeper-move.svg',
+    action:'./assets/demos/village-innkeeper-attack.svg',
+    rest:'./assets/demos/village-innkeeper-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · Village Innkeeper offers a foaming tankard (prototype)',
+      move:'Move · Innkeeper walks while steadying the serving arm (prototype)',
+      action:'Attack · defensive tankard shove with short foam burst (prototype)',
+      rest:'Rest · Innkeeper lowers tankard into an easy service stance (prototype)'
+    })
+  }),
+
   'pregen-bard-nonbinary-3': Object.freeze({
     still:'./assets/studies/elf-court-nonbinary.svg',
     idle:'./assets/demos/elf-court-nonbinary-idle.svg',
