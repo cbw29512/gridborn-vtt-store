@@ -10,21 +10,21 @@
 
 **Mandatory before any new artwork:** follow [Research-to-Art Gate](RESEARCH_ART_GATE.md), recording individual source-backed anatomy, equipment, motion and licensing briefs before rendering. No study can be counted as a production asset without its research brief.
 
-## Priority override — characters first (October 21, 2026)
+## Current production priority — species/body family first (October 23, 2026)
 
-**Current production focus: finish the full character roster before expanding monster families.** [Character production issue #44](https://github.com/cbw29512/gridborn-vtt-store/issues/44) supersedes the former Wave A Ogre-first ordering. Ogre production [issue #43](https://github.com/cbw29512/gridborn-vtt-store/issues/43) is deferred, not canceled. Existing completed studies and art direction remain valid.
+**Updated user direction:** build **one correct creature body foundation** and carry it through its actual adventurer, NPC and humanoid monster identities, with clothes, armor, profession props and equipment-specific attacks layered on top. Repeat with the next ancestry. This supersedes the older "finish all characters first" sequencing; it **does not** reduce the final 108 character / 48 NPC / 100+ monster targets.
 
-1. Audit the 108 planned character identities and existing art/studies; do not count a concept as finished.
-2. Establish at least one moving study for **all 12 classes** by filling Ranger, Bard, Druid, Monk, Sorcerer and Warlock gaps.
-3. Complete distinct **male, female and nonbinary** character designs across each class (**36** unique studies).
-4. Expand to **three male, three female and three nonbinary per class** (**108** distinct authored character variants) with Still, Idle, Move, one-shot Attack and Rest and the complete technical/media gate.
-5. After the character milestone, return to Ogre Mage/Knight/King, remaining monster families, NPCs and animals.
+1. **Human foundation** — existing Human adventurer variants, Human occupation roster, and any explicitly authored Human enemy designs. First animated Innkeeper merged in PR #77.
+2. **Orc, Half-Orc, Elf, Dwarf, Goblin, Gnome, Halfling** — keep species morphology while sharing compatible role kits (e.g. Barbarian leather/axe, Knight plate/shield). Half-Orc currently lacks approved catalog identities and is a planned foundation only.
+3. **Monster and animal body families** — Ogre, Skeleton, Wolf/Canine, Spider, Shark, Reptile, Construct, Dragon etc. Each body inherits only biomechanically appropriate motion and retains distinct species overlays and actions.
+4. **Dragon batch example** — Red/Green/Gold and future color/metals share a four-legged, two-winged dragon rig; scale colors, horns/crests and distinct breath effects are overlays. Dragon Turtle, Wyvern, Pseudodragon, Half-Dragon and Kobold require other families.
+5. **Every real ID gets source-linked Still, Idle, Move, one-shot Attack and Rest**, with research and test gates before merging. Each item remains unpurchasable until separate human art/VTT/IP/fulfillment approval.
 
-This priority order changes sequencing only; **current verified counts do not increase**. The Wave A/B/C headings below are historical batch labels, not execution order. Each production PR must record truthful status and check outcomes.
+See [Ancestry-First Production Queue](ANCESTRY_FIRST_QUEUE.md), [Cross-Category Batch Board](CROSS_CATEGORY_BATCH_BOARD.md) and [Shared Foundation Contract](SHARED_FOUNDATION_CONTRACT.md). Earlier Wave A/B/C sections below are historical project labels, **not the current execution order**. Do not inflate artwork counts from rig recipes, color metadata or index cards.
 
 ## Production method — complete first, improve in passes
 
-**User direction:** Produce an individually recognizable, working first version of **every planned token** before spending multiple batches polishing isolated favorites. Preserve category order: **108 characters → 100+ monsters → 48 NPCs → animals**. After broad coverage, conduct systematic refinement rounds.
+**User direction:** Produce an individually recognizable, working first version of **every planned token** before spending multiple batches polishing isolated favorites. Preserve category **coverage targets** of **108 characters, 100+ monsters, 48 NPCs and animals**, but execute **body-family-first batches across categories**. After broad coverage, conduct systematic refinement rounds.
 
 **Pass 1 — Coverage:** Audit identities/IDs; create original recognizable still art and distinct Idle, Move, one-shot Attack, and Rest sources for each planned token. Complete source-linked storefront preview and technical export checks. Do **not** count a generic rig recipe, palette-only swap, SRD index entry, or unfinished concept as a produced token. Work in small tested PR batches rather than a monolithic change.
 
