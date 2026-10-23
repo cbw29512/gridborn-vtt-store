@@ -21,7 +21,7 @@ def check_shopping_gallery(browser,origin,width,screenshots):
         expect(page.locator('#preview-dialog')).to_be_hidden()
         page.locator('#animated-only-toggle').click()
         expect(page.locator('#animated-only-toggle')).to_have_attribute('aria-pressed','true')
-        expect(page.locator('#result-summary')).to_have_text('41 results found')
+        expect(page.locator('#result-summary')).to_have_text('43 results found')
         assert page.locator('#results .product-card:not([data-motion-id])').count()==0
         page.locator('[data-category-link="Monsters"]').click()
         expect(page.locator('#result-summary')).to_have_text('16 results found')

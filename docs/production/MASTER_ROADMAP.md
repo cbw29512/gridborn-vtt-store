@@ -41,8 +41,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **42 original studies (includes Human Farmer in this PR)** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **41 source-linked moving studies proposed** | **21 Characters**, **16 Monsters**, **2 Animals**, **2 NPCs**, with Human Farmer pending CI |
+| Original illustrated concepts | **44 original studies (includes City Guard and Human Blacksmith in this PR)** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **43 source-linked moving studies proposed** | **21 Characters**, **16 Monsters**, **2 Animals**, **4 NPCs**, Guard/Blacksmith pending CI |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -270,3 +270,10 @@ Produce the recognizable **common/base species first**, then build roles on that
 - **Verified inheritance method:** `src/creature-rigs/human-farmer.mjs` derives the still from `assets/studies/village-innkeeper.svg` with deterministic original role replacements. Source builder and all four motion outputs regenerate exactly via `tools/generate-human-farmer-states.mjs`. A change to shared base legs changes both works only after regeneration, and the source-drift test catches it; the two displayed roles are not simple color swaps.
 - **State story:** Idle balances tool; Move makes alternate steps while stabilizing shaft; Attack braces and thrusts the fork (not a false sword strike); Rest plants the fork. Static/stage fallbacks for reduced motion and file-load failures.
 - **Count change only after passing gates/merge:** illustrated **41→42**, animated **40→41**, NPC animated **1→2**, sale-ready remains **0**. Real platform import, 32/64/128px human QC and art licensing remain separate release gates.
+
+## Shared Human VTT occupation batch — Guard + Blacksmith · 2026-10-23
+
+- Two **real existing** catalog IDs `npc-guard-human` (City Guard) and `npc-roster-blacksmith-human` (Human Blacksmith · Nonbinary), never new duplicate creature cards, both use the same shared Human leg/face/body source from `assets/studies/village-innkeeper.svg`.
+- **Authentic occupation identity:** Guard wears polished steel plate, nasal helmet, dark blue cloak, properly strapped left shield and right short spear. Blacksmith wears soot-dusted tunic/leather apron, utility tongs and a full-hand hammer with steel face.
+- **Four actual animated states** per identity (Idle, Move, Attack, Rest) with equipment attached to hand joints; Guard spear thrust and shield brace; Blacksmith hammer swings with brief forged-metal spark effect. Deterministic still and SVG animation generation lives in `src/creature-rigs/human-occupations.mjs` / `tools/generate-human-occupations.mjs`, source checks prevent anatomy drift.
+- **After gated merge:** 44 illustrated, 43 source-linked animated, 4 animated NPC studies, 0 retail-approved; 518 catalog concepts unchanged. No second gallery, checkout disabled. Continue refining 128px/64px/32px artwork and export/import testing before any commercial listing.

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "npc-guard-human",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/city-guard.svg",
+  "restSource": "assets/demos/city-guard-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/city-guard-idle.svg",
+      "durationSec": 3.2
+    },
+    "move": {
+      "source": "assets/demos/city-guard-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/city-guard-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "plannedOutputs": [
+    "transparent-webm",
+    "static-png",
+    "rest-webm"
+  ],
+  "vttCompatibility": "untested",
+  "purchasable": false
+}

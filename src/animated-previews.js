@@ -3,6 +3,35 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'npc-guard-human': Object.freeze({
+    still:'./assets/studies/city-guard.svg',
+    idle:'./assets/demos/city-guard-idle.svg',
+    move:'./assets/demos/city-guard-move.svg',
+    action:'./assets/demos/city-guard-attack.svg',
+    rest:'./assets/demos/city-guard-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · City Guard maintains a grounded, physically held equipment stance',
+      move:'Move · alternating legs carry weapons or tools anchored to the hands',
+      action:'Attack · shield-guarded forward spear thrust',
+      rest:'Rest · body settles and arms lower naturally'
+    })
+  }),
+  'npc-roster-blacksmith-human': Object.freeze({
+    still:'./assets/studies/human-blacksmith.svg',
+    idle:'./assets/demos/human-blacksmith-idle.svg',
+    move:'./assets/demos/human-blacksmith-move.svg',
+    action:'./assets/demos/human-blacksmith-attack.svg',
+    rest:'./assets/demos/human-blacksmith-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · Human Blacksmith · Nonbinary maintains a grounded, physically held equipment stance',
+      move:'Move · alternating legs carry weapons or tools anchored to the hands',
+      action:'Attack · full-hand forge hammer swing with sparks',
+      rest:'Rest · body settles and arms lower naturally'
+    })
+  }),
+
   'npc-roster-farmer-human': Object.freeze({
     still:'./assets/studies/human-farmer.svg',
     idle:'./assets/demos/human-farmer-idle.svg',

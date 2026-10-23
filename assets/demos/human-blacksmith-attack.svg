@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="attack" data-foundation-id="standard-human-npc" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Human Blacksmith · Nonbinary — original Gridborn concept — attack motion study</title>
+<desc id="description">A human blacksmith in soot-dark workwear with a long leather apron, utility belt and a steel-headed forge hammer securely gripped by the right hand.</desc>
+<style>#human-body{animation:human-smith-brace 1.4s steps(1,end) 1 both}#human-tool-arm{transform-origin:166px 132px;animation:human-hammer-swing 1.4s steps(1,end) 1 both}#human-impact{animation:human-impact-hit 1.4s steps(1,end) 1 both}
+@keyframes human-smith-brace{0%,100%{transform:translate(0,0)}20%{transform:translate(-3px,-2px)}56%{transform:translate(2px,0)}}
+@keyframes human-hammer-swing{0%,100%{transform:rotate(0)}26%{transform:rotate(-28deg)}52%,66%{transform:rotate(83deg) translate(4px,-2px)}85%{transform:rotate(14deg)}}
+@keyframes human-impact-hit{0%,43%,72%,100%{opacity:0}55%,64%{opacity:1}}
+@media(prefers-reduced-motion:reduce){#human-body,#human-left-leg,#human-right-leg,#human-tool-arm,#human-offhand-arm,#human-impact{animation:none!important}#human-impact{opacity:0!important}}</style>
+<ellipse cx="128" cy="200" rx="58" ry="13" fill="#060b16" opacity=".34"/>
+<ellipse cx="128" cy="195" rx="70" ry="24" fill="none" stroke="#ddb268" stroke-width="3" opacity=".70"/>
+
+<g id="human-body">
+<!-- warm brown trousers and boots -->
+<g id="human-left-leg"><rect x="101" y="157" width="23" height="36" fill="#292832"/><rect x="103" y="159" width="19" height="25" fill="#615044"/></g>
+<g id="human-right-leg"><rect x="137" y="157" width="23" height="36" fill="#292832"/><rect x="139" y="159" width="19" height="25" fill="#615044"/></g>
+<!-- Work shirt, leather apron, hot-forge stains and iron buckles -->
+<path d="M92 100L160 100 173 119 163 168 94 170 78 121Z" fill="#62564c" stroke="#362f32" stroke-width="5"/>
+<path d="M95 102h61v53H95z" fill="#926b49"/>
+<path d="M104 114L117 107 141 107 156 118 155 185 101 185Z" fill="#493d38" stroke="#b68c66" stroke-width="4"/>
+<path d="M103 121L118 116 137 116 151 121" fill="none" stroke="#cfaa7e" stroke-width="4"/>
+<path d="M121 127h17v9h-17z" fill="#9a7863"/>
+<path d="M105 151h44v9h-44" fill="none" stroke="#bd9a70" stroke-width="5"/>
+<path d="M113 145l8 8 12-7 13 13" fill="none" stroke="#73584b" stroke-width="3"/>
+<rect x="93" y="112" width="18" height="44" fill="#765b48"/>
+<rect x="99" y="119" width="10" height="25" fill="#a27f60"/>
+<!-- Same human head and eyes; soot streak, short hair, thick headband -->
+<rect x="106" y="57" width="48" height="53" fill="#312a30"/>
+<rect x="110" y="67" width="40" height="40" fill="#e2ad84"/>
+<path d="M105 72V58h12v-8h25v7h13v19h-9v-9h-30v7z" fill="#342c2a"/>
+<rect x="108" y="70" width="44" height="7" fill="#684c38" stroke="#392f29" stroke-width="2"/>
+<rect x="115" y="84" width="6" height="4" fill="#382f28"/><rect x="139" y="84" width="6" height="4" fill="#382f28"/>
+<path d="M124 96h16" stroke="#875747" stroke-width="3"/>
+<path d="M146 78l-5 7m-34 6l6 3" stroke="#64564a" stroke-width="3"/>
+<g id="human-tool-arm">
+<!-- Full-hand steel hammer grip. Hammer head is visibly attached to haft. -->
+<rect x="179" y="72" width="8" height="117" fill="#9d6d45" stroke="#493a30" stroke-width="3"/>
+<rect x="160" y="62" width="47" height="23" rx="2" fill="#96a6ad" stroke="#334452" stroke-width="5"/>
+<rect x="162" y="66" width="43" height="5" fill="#dee1d3"/>
+<rect x="159" y="113" width="15" height="41" fill="#936d4e" stroke="#40332f" stroke-width="3"/>
+<rect x="170" y="124" width="24" height="17" rx="3" fill="#735449" stroke="#bba184" stroke-width="3"/>
+</g>
+<g id="human-offhand-arm">
+<rect x="79" y="111" width="17" height="44" fill="#926d4b" stroke="#3f332e" stroke-width="4"/>
+<path d="M79 145h20v15H79z" fill="#694738"/>
+<!-- Smith tongs hung from belt, not an impossible second weapon -->
+<path d="M107 161L102 185m3-21l8 21" stroke="#aebbc0" stroke-width="4"/>
+<circle cx="107" cy="161" r="4" fill="#ccb380"/>
+</g>
+<g id="human-impact" opacity="0" fill="#ffd57d">
+<path d="M214 117l10-15 4 15 17 2-15 8 6 16-14-11-12 10 5-18-14-9Z"/>
+<path d="M219 91l4-12 6 12Z" fill="#fff5b8"/>
+</g>
+</g>
+</svg>
