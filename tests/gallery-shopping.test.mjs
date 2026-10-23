@@ -20,7 +20,7 @@ test('Animated-only is a mode of the same four-category gallery, never a second 
  assert.match(app,/nodes\.clear\.hidden = [^;]*!animatedOnly;/);
  assert.deepEqual(filterGalleryByMotion(catalog,false),catalog);
  const anim=filterGalleryByMotion(catalog,true);
- assert.equal(anim.length,40);
+ assert.equal(anim.length,41);
  assert.ok(anim.every(x=>hasCatalogMotion(x.id)&&!x.purchasable));
  for(const cat of ['Characters','NPCs','Monsters','Animals']){
   const items=filterCatalog(catalog,readCatalogRoute('?category='+cat,catalog));

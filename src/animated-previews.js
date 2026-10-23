@@ -3,6 +3,21 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'npc-roster-farmer-human': Object.freeze({
+    still:'./assets/studies/human-farmer.svg',
+    idle:'./assets/demos/human-farmer-idle.svg',
+    move:'./assets/demos/human-farmer-move.svg',
+    action:'./assets/demos/human-farmer-attack.svg',
+    rest:'./assets/demos/human-farmer-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · farmer balances a real three-tined pitchfork by hand',
+      move:'Move · walking with alternating feet and steadying pitchfork grip',
+      action:'Attack · grounded defensive pitchfork thrust with recovery',
+      rest:'Rest · pitchfork planted as farmer settles after work'
+    })
+  }),
+
   'mon-srd-52-young-silver-dragon': Object.freeze({
     still:'./assets/studies/dragon-young-silver.svg',
     idle:'./assets/demos/dragon-young-silver-idle.svg',
