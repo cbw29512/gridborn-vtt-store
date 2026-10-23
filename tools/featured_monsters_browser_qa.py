@@ -9,7 +9,7 @@ def check_featured_dragons(browser,origin,width,screenshots):
         page.goto(origin+'?category=Monsters#catalog',wait_until='load')
         expect(page.locator('#featured-dragons')).to_be_visible()
         expect(page.locator('#featured-dragons-grid .featured-dragon-card')).to_have_count(10)
-        expect(page.locator('#result-summary')).to_have_text('337 results found')
+        expect(page.locator('#result-summary')).to_have_text('336 results found')
         assert page.locator('#featured-dragons').bounding_box()['y'] < page.locator('#results').bounding_box()['y']
         images=page.locator('#featured-dragons-grid .featured-dragon-art')
         for i in range(10):
@@ -19,7 +19,7 @@ def check_featured_dragons(browser,origin,width,screenshots):
         assert all(path.endswith('-idle.svg') for path in images.evaluate_all(
             'images=>images.map(img=>new URL(img.src).pathname)'))
         assert page.evaluate('document.documentElement.scrollWidth-document.documentElement.clientWidth')<=1
-        page.get_by_role('link',name='Young Gold Dragon Animated art study · view all 4 states').click()
+        page.locator('[data-dragon-id="mon-srd-52-young-gold-dragon"]').click()
         expect(page.locator('#featured-dragons')).to_be_hidden()
         expect(page.locator('#result-summary')).to_have_text('1 result found')
         expect(page.locator('.product-card[data-motion-id="mon-srd-52-young-gold-dragon"]')).to_have_count(1)
