@@ -198,3 +198,26 @@
  .product-body .product-foot{min-height:47px;flex-direction:row;align-items:center}
  .product-unavailable{font-size:10px}
 }
+
+/* Gallery polish: the art itself is a keyboard-accessible preview action.
+   Keep the certified 180px/144px stage and equal-height card layout. */
+#results .product-visual{
+ appearance:none;-webkit-appearance:none;padding:0;margin:0;
+ font:inherit;text-align:center;border-width:0 0 1px;border-style:solid;
+ cursor:pointer;color:inherit;border-radius:0;
+}
+#results .product-visual:focus-visible{outline:3px solid #e5b56b;outline-offset:-4px;z-index:4}
+#results .product-art{
+ width:min(95%,190px);height:172px;max-width:98%;
+ object-fit:contain;filter:drop-shadow(0 7px 9px #09112055);
+}
+#results .product-card[data-motion-id] .preview-label{display:none}
+#results .product-card:hover{box-shadow:0 11px 27px #18222c1d}
+#results .product-body .details-button{font-weight:800}
+@media(max-width:460px){
+ #results .product-art{height:132px;width:min(94%,138px)}
+ #results .product-footprint{bottom:6px;right:5px}
+}
+@media(prefers-reduced-motion:reduce){
+ #results .product-art{transition:none}
+}

@@ -10,8 +10,10 @@ export function makeCard(item) {
     const card = document.createElement('article'); card.className = 'product-card';
     card.dataset.cardCategory=item.category;
     card.dataset.productId=item.id;
-    const visual = document.createElement('div'); visual.className = 'product-visual';
-    visual.dataset.category = item.category;
+    const visual = document.createElement('button'); visual.className = 'product-visual';
+    visual.type='button';visual.dataset.category=item.category;
+    visual.setAttribute('aria-label', 'Explore '+item.name+(item.previewArt?' animation and artwork':' design'));
+    visual.addEventListener('click',()=>openConcept(item,visual));
     const preview=animatedPreviews[item.id];
     const hasMotion=Boolean(preview?.idle&&preview?.move&&preview?.action&&preview?.rest);
     if(hasMotion){
@@ -71,7 +73,7 @@ export function makeCard(item) {
       ? 'Proposed price ' + price.textContent : 'Original artwork not yet produced');
     const details = document.createElement('button');
     details.type = 'button'; details.className = 'details-button';
-    details.textContent = 'View concept details';
+    details.textContent = hasMotion ? 'Explore animations' : 'View details';
     details.setAttribute('aria-label', 'View concept details for ' + item.name);
     details.addEventListener('click', () => openConcept(item, details));
     const customizeSlot=document.createElement('div');
