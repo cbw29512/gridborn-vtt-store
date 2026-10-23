@@ -198,3 +198,25 @@
  .product-body .product-foot{min-height:47px;flex-direction:row;align-items:center}
  .product-unavailable{font-size:10px}
 }
+
+/* Compact source-backed 'what changed?' gateway, above catalog category cards. */
+.latest-previews{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;
+ margin:8px 0 20px;padding:11px 13px;background:#202735;border:1px solid #535266;
+ border-radius:10px;color:#f6ead9}
+.latest-previews-label{font-size:10px;font-weight:900;letter-spacing:.13em;
+ text-transform:uppercase;color:#f2c778;white-space:nowrap}
+.latest-preview-link{display:flex;align-items:center;gap:9px;flex:1 1 260px;min-width:220px;
+ padding:5px 9px;border:1px solid #626274;border-radius:8px;text-decoration:none;
+ color:#f8eee0;background:#303849;min-height:60px;box-sizing:border-box}
+.latest-preview-link:hover{border-color:#f2c778;background:#3c4659}
+.latest-preview-link:focus-visible{outline:3px solid #f2c778;outline-offset:3px}
+.latest-preview-link img{width:48px;height:48px;object-fit:contain;
+ border:1px solid #69677a;border-radius:6px;background:#e4dccb;flex:none}
+.latest-preview-link span:nth-child(2){display:flex;flex:1;flex-direction:column;gap:3px;min-width:0}
+.latest-preview-link strong{font-size:12px;font-weight:800}
+.latest-preview-link small{font-size:10px;line-height:1.35;color:#d5dbe5}
+.latest-preview-link span:last-child{color:#f2c778}
+.latest-previews-disclaimer{font-size:10px;color:#c9cbd1}
+@media(max-width:550px){.latest-previews{padding:10px;gap:9px}
+ .latest-previews-label,.latest-previews-disclaimer{width:100%}
+ .latest-preview-link{min-width:0;flex-basis:100%}}
