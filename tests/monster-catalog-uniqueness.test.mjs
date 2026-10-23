@@ -19,7 +19,8 @@ test('Monsters page contains one catalog grid and no duplicate featured dragon c
  assert.doesNotMatch(html,/id="featured-dragons"|id="featured-dragons-grid"|THE DRAGON COLLECTION/);
  assert.doesNotMatch(app,/featured-monsters|featuredDragons|initializeFeaturedDragonMotion/);
  assert.doesNotMatch(css,/\.featured-dragons|\.featured-dragon-card/);
- assert.match(app,/nodes\.latestPreviews\.hidden=state\.category==='Monsters'/);
+ assert.doesNotMatch(html,/latest-previews|LATEST ARRIVALS/);
+ assert.match(app,/assertSingleProductGallery\(document\)/);
  assert.match(app,/initializeCatalogMotion\(\)/);
  assert.match(app,/hasCatalogMotion\(b\.id\)/);
  assert.equal(readCatalogRoute('?category=Monsters',catalog).category,'Monsters');
