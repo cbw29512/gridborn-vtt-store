@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="move" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Orc Songweaver Bard — original Gridborn stage performer — move state study</title>
+<desc id="description">Female Orc traveling songweaver with olive gray tusked face, asymmetric braided hair, gold circlet, burnt-orange embroidered stage coat, sheathed side sword and historically inspired large pear-bellied lute. Fretting hand grips the tied-fret neck, separate plucking hand passes over gut strings and a spell wave travels outward from the instrument soundboard. Original noncommercial source-art animation study.</desc>
+<style>
+.orc-bard-core{animation:orc-bard-walk 1.2s steps(1,end) infinite}.orc-bard-left-leg{transform-origin:113px 169px;animation:orc-bard-left-step 1.2s steps(1,end) infinite}.orc-bard-right-leg{transform-origin:149px 169px;animation:orc-bard-right-step 1.2s steps(1,end) infinite}
+@keyframes orc-bard-walk{0%,84%,100%{transform:translate(0,0)}29%{transform:translate(-4px,-2px)}59%{transform:translate(4px,-1px)}}
+@keyframes orc-bard-left-step{0%,84%,100%{transform:rotate(0)}29%{transform:rotate(-10deg)}59%{transform:rotate(12deg)}}
+@keyframes orc-bard-right-step{0%,84%,100%{transform:rotate(0)}29%{transform:rotate(12deg)}59%{transform:rotate(-11deg)}}
+@media(prefers-reduced-motion:reduce){.orc-bard-core,.orc-bard-pluck-hand,.orc-bard-left-leg,.orc-bard-right-leg,.orc-bard-strings,.orc-bard-chord,.orc-bard-lute,.orc-bard-pluck-arm{animation:none!important}}
+</style>
+<ellipse cx="125" cy="210" rx="64" ry="12" fill="#201a20" opacity=".45"/>
+<ellipse cx="125" cy="199" rx="73" ry="22" fill="none" stroke="#d3b77f" stroke-width="3" opacity=".6"/>
+<g class="orc-bard-core">
+ <g class="orc-bard-sword" data-weapon="sheathed-sword">
+  <path d="M101 138L76 193L73 209L82 213L87 198L115 148Z" fill="#524b50" stroke="#242d35" stroke-width="4"/>
+  <path d="M110 143L81 202" stroke="#d5b47f" stroke-width="5" fill="none"/>
+  <path d="M102 142L118 152" stroke="#ad935f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M106 137L96 130" stroke="#4d3833" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="95" cy="127" r="4" fill="#e3c58f"/>
+ </g>
+ <g class="orc-bard-skirt">
+  <path d="M98 151L155 145L174 183L156 203L136 187L119 202L100 185L87 197L84 176Z" fill="#5c3044" stroke="#35293f" stroke-width="5"/>
+  <path d="M93 169L104 179L114 169L131 187L147 170L163 181" fill="none" stroke="#deb56f" stroke-width="4"/>
+  <path d="M92 184L103 174L119 190M149 186L163 177" fill="none" stroke="#aa7c66" stroke-width="3"/>
+ </g>
+ <g class="orc-bard-left-leg">
+  <path d="M104 159L129 166L123 195L112 209L94 202L95 180Z" fill="#565c50" stroke="#34463e" stroke-width="4"/>
+  <path d="M95 193L115 200L113 216L80 218L78 207Z" fill="#50403c" stroke="#d4a878" stroke-width="3"/>
+  <path d="M83 209L107 210M84 214L109 215" stroke="#edd2a7" stroke-width="3"/>
+ </g>
+ <g class="orc-bard-right-leg">
+  <path d="M136 162L158 163L169 193L163 208L146 206L136 184Z" fill="#485850" stroke="#2d453d" stroke-width="4"/>
+  <path d="M146 197L166 197L185 215L177 219L143 215Z" fill="#50403c" stroke="#d4a878" stroke-width="3"/>
+  <path d="M152 209L178 214" stroke="#ecd0a6" stroke-width="3"/>
+ </g>
+ <g class="orc-bard-torso">
+  <path d="M95 115L115 104L152 107L175 130L169 164L146 178L105 170L88 145Z" fill="#793e43" stroke="#492d40" stroke-width="5"/>
+  <path d="M109 110L134 110L151 156L126 170L99 147Z" fill="#ce8858" stroke="#9e5645" stroke-width="3"/>
+  <path d="M109 116L122 137L108 159L95 143Z" fill="#a85f4d" stroke="#e2ae79" stroke-width="3"/>
+  <path d="M146 115L164 133L153 163L134 172L142 139Z" fill="#a85f4d" stroke="#e2ae79" stroke-width="3"/>
+  <path d="M102 154L160 159" stroke="#553a3c" stroke-width="10"/>
+  <path d="M124 154L142 155L142 167L129 173L117 164Z" fill="#e5be84" stroke="#70524d" stroke-width="3"/>
+  <path d="M117 123L132 142L147 120M108 139L122 146L118 156M147 140L157 147L150 158" fill="none" stroke="#f3d59a" stroke-width="3"/>
+  <path d="M117 144L132 148L143 143" stroke="#f0c681" stroke-width="3" fill="none"/>
+ </g>
+ <g class="orc-bard-head">
+  <path d="M108 69L124 53L145 55L159 73L159 105L147 119L119 120L104 102Z" fill="#74876d" stroke="#395c4c" stroke-width="4"/>
+  <path d="M114 77L134 65L151 78L152 100L136 111L118 107Z" fill="#91a387"/>
+  <path d="M107 89L87 84L104 101L116 96M154 88L173 83L158 102L147 94" fill="#84977b" stroke="#456653" stroke-width="3"/>
+  <path d="M105 82L104 64L118 48L138 45L155 57L168 83L155 72L145 58L123 66L111 89Z" fill="#352e3c" stroke="#252b36" stroke-width="4"/>
+  <path d="M106 66L123 54L144 55L157 70" stroke="#ae816d" stroke-width="5" fill="none"/>
+  <path d="M152 65Q170 82 160 117L155 143" stroke="#3e3439" stroke-width="13" stroke-linecap="round" fill="none"/>
+  <path d="M154 82L167 93L155 106L166 116L154 129L160 137" fill="none" stroke="#a77d62" stroke-width="5"/>
+  <path d="M119 90L129 88M142 88L151 90" stroke="#394d43" stroke-width="4"/>
+  <path d="M127 100L140 101" stroke="#647666" stroke-width="3"/>
+  <path d="M122 108L134 114L147 106" stroke="#4f644e" stroke-width="3" fill="none"/>
+  <path d="M120 106L123 119L130 113M142 106L146 119L151 108" fill="#e1d6a8" stroke="#587458" stroke-width="2"/>
+ </g>
+ <g class="orc-bard-circlet">
+  <path d="M109 70L120 62L139 62L156 70" fill="none" stroke="#e7ca85" stroke-width="5"/>
+  <path d="M129 59L133 68L139 61" fill="#8fc2ac" stroke="#d9c18a" stroke-width="2"/>
+ </g>
+ <g class="orc-bard-fretting-arm">
+  <path d="M156 127L175 138L186 126" fill="none" stroke="#819677" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M159 128L176 139" stroke="#d19165" stroke-width="11" stroke-linecap="round"/>
+  <path d="M181 121L190 116L199 123L197 133L188 138L181 130Z" fill="#a5b08c" stroke="#4d6954" stroke-width="3"/>
+  <path d="M187 126L198 126" stroke="#f3dab1" stroke-width="3"/>
+ </g>
+ <g class="orc-bard-pluck-arm">
+  <path d="M106 125L94 151L118 166L144 160" fill="none" stroke="#86997c" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M99 151L119 165" stroke="#c18360" stroke-width="10" stroke-linecap="round"/>
+ </g>
+ <g class="orc-bard-lute" data-instrument="large-pear-bellied-lute">
+  <!-- Bent pegbox with physical tuning pegs, fretted neck, 11-course fan and bridge. -->
+  <path d="M169 154L189 119L205 97L214 75" stroke="#50382f" stroke-width="21" fill="none" stroke-linecap="round"/>
+  <path d="M170 155L191 119L205 98L215 75" stroke="#c19a65" stroke-width="13" fill="none" stroke-linecap="round"/>
+  <path d="M205 98L220 88L218 69L231 61" fill="none" stroke="#614435" stroke-width="13" stroke-linecap="round"/>
+  <path d="M214 71L222 71M216 80L225 80M208 87L200 83M213 92L224 94M198 105L189 101" stroke="#caa874" stroke-width="5" stroke-linecap="round"/>
+  <path d="M193 116L204 123M188 124L199 131M183 132L194 139M178 140L190 147" stroke="#6b4a3c" stroke-width="3"/>
+  <path d="M121 149Q130 123 156 129Q181 132 188 155Q188 190 157 198Q126 194 115 172Q114 160 121 149Z" fill="#9a6343" stroke="#48372e" stroke-width="5"/>
+  <path d="M124 151Q137 134 158 135Q179 139 181 157Q183 183 158 191Q128 184 121 169Z" fill="#d9a56d" stroke="#6a4735" stroke-width="3"/>
+  <path d="M123 165Q137 184 159 190M127 145Q144 138 156 136M172 141Q183 152 181 171" fill="none" stroke="#efc88b" stroke-width="3"/>
+  <circle cx="154" cy="161" r="14" fill="#4b3a33" stroke="#f1c98a" stroke-width="4"/>
+  <circle cx="154" cy="161" r="9" fill="none" stroke="#cfa772" stroke-width="2"/>
+  <path d="M143 161L165 161M154 150L154 172M147 154L161 168M147 168L161 154" stroke="#c7a575" stroke-width="2"/>
+  <g class="orc-bard-strings" data-instrument-part="strings">
+   <path d="M190 119L146 179M192 118L149 180M194 116L151 181M196 114L154 183M198 112L157 184M200 110L160 185" stroke="#ede1bd" stroke-width="1.5" fill="none"/>
+  </g>
+  <path d="M140 178L164 185" stroke="#644735" stroke-width="5" fill="none"/>
+ </g>
+ <g class="orc-bard-pluck-hand" data-instrument-action="plucking-hand">
+  <path d="M136 156L147 148L156 153L158 161L149 170L140 168L135 163Z" fill="#9cae8d" stroke="#415e50" stroke-width="3"/>
+  <path d="M140 159L154 158M142 164L151 165" stroke="#efdab2" stroke-width="3"/>
+ </g>
+</g>
+<g class="orc-bard-chord" data-spell-effect="resonant-song" opacity="0">
+ <path d="M187 154Q208 137 223 154Q237 171 247 153" stroke="#6b5190" stroke-width="9" stroke-linecap="round" fill="none"/>
+ <path d="M187 154Q208 137 223 154Q237 171 247 153" stroke="#f6dca1" stroke-width="4" stroke-linecap="round" fill="none"/>
+ <path d="M205 138Q217 132 229 140M207 171Q221 177 238 167" stroke="#c39ab6" stroke-width="4" fill="none" stroke-linecap="round"/>
+ <circle cx="220" cy="153" r="4" fill="#f6e8b1"/>
+</g>
+</svg>
