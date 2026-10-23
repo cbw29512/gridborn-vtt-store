@@ -51,7 +51,7 @@ function breathMarkup(p){
  if(p.element==="poison")return `<circle cx="237" cy="115" r="12"/><circle cx="251" cy="107" r="9"/><circle cx="248" cy="133" r="10"/><circle cx="225" cy="129" r="7"/>`;
  return `<path d="M226 118Q235 94 239 108L247 96 247 111 257 103 253 135 242 141 237 131 229 136Z"/><path d="M235 121L245 111 246 130Z" fill="${p.ridge}"/>`;
 }
-function dragonArtwork(species,age,mode="still"){
+export function dragonArtwork(species,age,mode="still"){
  const p=DRAGON_PALETTES[species],scale=DRAGON_AGE_SCALES[age];if(!p||!scale)throw Error("Unknown dragon species or age");
  if(!["still","idle","move","attack","rest"].includes(mode))throw Error("Unsupported dragon state");
  const t=(128*(1-scale)).toFixed(2),y=(209*(1-scale)).toFixed(2);
