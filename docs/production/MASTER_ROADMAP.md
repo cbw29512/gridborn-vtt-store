@@ -41,8 +41,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **47 original studies (includes Ogre and Goblin Boss in current PR)** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **46 source-linked moving studies proposed** | **21 Characters**, **19 Monsters**, **2 Animals**, **4 NPCs**, Ogre/Goblin Boss pending CI |
+| Original illustrated concepts | **49 original studies (includes Goblin Warrior and Minion in current PR)** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **48 source-linked moving studies proposed** | **21 Characters**, **21 Monsters**, **2 Animals**, **4 NPCs**, Warrior/Minion pending CI |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -291,3 +291,9 @@ Produce the recognizable **common/base species first**, then build roles on that
 - Body-family regeneration is deterministic using `src/creature-rigs/monster-family-overlays.mjs` and `node tools/generate-monster-family-states.mjs --check`. It consumes the original Cave Ogre and Cave Goblin Still/Idle/Move/Attack/Rest source SVGs, reusing legs, head, grip, club swing/blade attack and lowered rest.
 - Ogre receives worn leather/metal jerkin and iron-bound greatclub, distinct from the cave variant. Goblin Boss receives high-rank copper crown, plate-sewn brigandine and extended physically attached sword crossguard. Both require manual 32/64/128px silhouette inspection and complete VTT alpha/movie playback certification before sale.
 - After guarded merge: original studies **47**, source-linked four-state studies **46**, 19 animated monsters, catalog still 518 unique cards, 0 approved retail exports.
+
+## Shared Goblin ranks — Warrior + Minion · 2026-10-23
+
+- Two more existing SRD identities `mon-srd-52-goblin-warrior` and `mon-srd-52-goblin-minion` use the **same Cave Goblin** original skeleton, arms, legs, blade-hand/buckler anchors and full four-state animations via the existing monster family generator.
+- Rank-specific visuals are applied as deterministic source overlays: Warrior has reinforced steel mail, close-fitting iron helm and long curved steel saber; Minion has patched cloth, headwrap and shorter worn dagger. Boss retains copper crown; basic Cave Goblin retains its ragged hood. Four distinct in-category cards, never extra galleries.
+- Human size/weapon/equipment art review, transparent video exports, Foundry/Roll20 import and license/fulfillment certification remain blocked. After merge: illustrated **49**, 4-state moving **48** (21 monsters), catalog records unchanged **518**, retail-cleared **0**.

@@ -6,8 +6,8 @@ import {catalog} from '../src/catalog.js';
 import {animatedPreviews} from '../src/animated-previews.js';
 const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 test('Ogre and Goblin Boss are original existing SRD identities on inherited source bodies',()=>{
- assert.deepEqual(MONSTER_VARIANTS.map(x=>x.id),['mon-srd-52-ogre','mon-srd-52-goblin-boss']);
- for(const role of MONSTER_VARIANTS){
+ assert.deepEqual(MONSTER_VARIANTS.slice(0,2).map(x=>x.id),['mon-srd-52-ogre','mon-srd-52-goblin-boss']);
+ for(const role of MONSTER_VARIANTS.filter(x=>!x.rank)){
   const target=catalog.filter(x=>x.id===role.id);
   assert.equal(target.length,1);
   assert.equal(target[0].name,role.name);
