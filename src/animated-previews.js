@@ -3,6 +3,35 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'mon-srd-52-ogre-zombie': Object.freeze({
+    still:'./assets/studies/srd-ogre-zombie.svg',
+    idle:'./assets/demos/srd-ogre-zombie-idle.svg',
+    move:'./assets/demos/srd-ogre-zombie-move.svg',
+    action:'./assets/demos/srd-ogre-zombie-attack.svg',
+    rest:'./assets/demos/srd-ogre-zombie-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · unnatural sway without breathing',
+      move:'Move · lopsided dead-weight leg drag',
+      action:'Attack · corpse-heavy club smash',
+      rest:'Rest · motionless, collapsed giant'
+    })
+  }),
+  'mon-srd-52-skeleton': Object.freeze({
+    still:'./assets/studies/srd-skeleton.svg',
+    idle:'./assets/demos/srd-skeleton-idle.svg',
+    move:'./assets/demos/srd-skeleton-move.svg',
+    action:'./assets/demos/srd-skeleton-attack.svg',
+    rest:'./assets/demos/srd-skeleton-rest.svg',
+    idleDurationMs:3000,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · skull, arms and shield twitch with no breathing',
+      move:'Move · jerky opposing bone-leg shuffle',
+      action:'Attack · one sudden skeletal sword slash',
+      rest:'Rest · inert skeleton collapsed to the ground'
+    })
+  }),
+
   'mon-srd-52-goblin-warrior': Object.freeze({
     still:'./assets/studies/srd-goblin-warrior.svg',
     idle:'./assets/demos/srd-goblin-warrior-idle.svg',
