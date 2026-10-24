@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="rest" data-source-body="village-innkeeper" data-undead-role="zombie" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Zombie — original Gridborn undead study — rest animation</title>
+<desc id="description">A ragged human zombie: dead grey-green skin, blank eyes, exposed bruised forearms and torn civilian clothing, both clawed hands anatomically connected to the arm rig.</desc>
+<style>#undead-body{animation:undead-zombie-collapse 4s steps(1,end) infinite}#undead-claw-trails{opacity:0!important}
+@keyframes undead-zombie-collapse{0%,100%{transform:translate(0,13px) rotate(9deg)}}
+@media(prefers-reduced-motion:reduce){#undead-body,#undead-left-leg,#undead-right-leg,#undead-right-claw,#undead-left-claw,#undead-claw-trails{animation:none!important}#undead-claw-trails{opacity:0!important}}</style>
+<ellipse cx="128" cy="200" rx="58" ry="13" fill="#060b16" opacity=".34"/>
+<ellipse cx="128" cy="195" rx="70" ry="24" fill="none" stroke="#ddb268" stroke-width="3" opacity=".70"/>
+
+<g id="undead-body">
+<!-- warm brown trousers and boots -->
+<g id="undead-left-leg"><rect x="101" y="157" width="23" height="36" fill="#292832"/><rect x="103" y="159" width="19" height="25" fill="#635f55"/></g>
+<g id="undead-right-leg"><rect x="137" y="157" width="23" height="36" fill="#292832"/><rect x="139" y="159" width="19" height="25" fill="#635f55"/></g>
+<g class="undead-zombie-tunic">
+<path d="M90 104l13-10 48 3 18 16 6 46-17 20-15-12-26 11-18-10-18-17Z" fill="#776e58" stroke="#403f3a" stroke-width="5"/>
+<path d="M97 111l26-5 28 8 9 24-25 13-22-4-15-22Z" fill="#97967e"/>
+<path d="M107 127l18 10 13-8 9 11" stroke="#4e6253" stroke-width="6" fill="none"/>
+<path d="M100 150l8 11 12-5 12 8 14-10 10 13" fill="none" stroke="#c4ba93" stroke-width="4"/>
+<path d="M109 105l18 7 23-5" stroke="#b0a48a" stroke-width="5" fill="none"/>
+</g><g class="undead-zombie-head">
+<path d="M105 56h50v56l-11 12h-31l-8-14Z" fill="#3d5049" stroke="#26383a" stroke-width="4"/>
+<path d="M109 68h42v43l-9 8h-27l-6-8Z" fill="#a6ad91"/>
+<path d="M105 66l13-16 24 3 11 15-7 10-6-10-24 4-7 9Z" fill="#45453f"/>
+<rect x="116" y="84" width="10" height="9" fill="#353b39"/><rect x="137" y="84" width="10" height="9" fill="#353b39"/>
+<rect x="119" y="85" width="4" height="4" fill="#e7d7a0"/><rect x="140" y="85" width="4" height="4" fill="#e7d7a0"/>
+<path d="M119 102l7 5 7-3 8 5" stroke="#56614d" fill="none" stroke-width="4"/>
+<path d="M108 92l9-5 3 10" fill="#5c7260"/>
+</g>
+<g id="undead-right-claw" class="undead-claw">
+<path d="M158 114l20 5 7 32-13 19-13-17Z" fill="#87967c" stroke="#45574b" stroke-width="3"/>
+<path d="M172 163l12 4 7 6-2 9-7-7-7 8-4-12-9 7-1-14Z" fill="#9caa83" stroke="#44574b" stroke-width="3"/>
+<path d="M188 171l6 7-5-3m-8 5l3 7m-19-12l-5 10" stroke="#d7d8a4" stroke-width="3"/>
+</g>
+<g id="undead-left-claw" class="undead-claw">
+<path d="M90 112l-16 9-4 32 15 18 12-16Z" fill="#899579" stroke="#46594c" stroke-width="3"/>
+<path d="M75 162l-12 5-8 8 4 9 7-11 7 9 5-11 8 9 1-13Z" fill="#9fac86" stroke="#425447" stroke-width="3"/>
+<path d="M58 175l-5 9m18-4l-3 8m13-12l3 11" stroke="#d6d19d" stroke-width="3"/>
+</g>
+<g id="undead-claw-trails" opacity="0" stroke="#c8c7a0" fill="none" stroke-width="4">
+<path d="M198 123l20-11m-19 24l24-7m-23 20l25-3"/>
+</g>
+</g>
+</svg>
