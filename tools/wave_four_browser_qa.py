@@ -21,7 +21,7 @@ def check_wave_four(browser,origin,width,screenshots:Path):
    card=page.locator('.product-card[data-motion-id="'+id+'"]')
    expect(card).to_have_count(1)
    card.scroll_into_view_if_needed()
-   expect(card.locator('.preview-label')).to_contain_text('MOVING ART STUDY')
+   expect(card.locator('.preview-label')).to_contain_text('IN MOTION')
    page.get_by_role('button',name='View concept details for '+name).click()
    expect(page.locator('#preview-title')).to_have_text(name)
    img=page.locator('#concept-preview-image')

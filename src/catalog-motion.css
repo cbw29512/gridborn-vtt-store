@@ -59,3 +59,17 @@
  .concept-scale-panel{padding:9px}
  .concept-scale-gallery figcaption{font-size:9px}
 }
+
+/* Two compact controls in the existing catalog toolbar; no second gallery. */
+.catalog-motion-toolbar{justify-content:flex-end;gap:9px;padding:8px 10px;background:transparent;border-color:#ded8cf}
+.animated-only-toggle{
+ min-height:44px;padding:9px 15px;border:1px solid #59616b;border-radius:6px;
+ background:#fff;color:#26323d;font-size:12px;font-weight:850;cursor:pointer
+}
+.animated-only-toggle:hover{background:#f7efe0;border-color:#a67a3d}
+.animated-only-toggle[aria-pressed="true"]{background:#293646;color:#fff6e9;border-color:#293646}
+.animated-only-toggle:focus-visible{outline:3px solid #b8863f;outline-offset:2px}
+@media(max-width:560px){
+ .catalog-motion-toolbar{flex-direction:row;align-items:stretch;gap:8px}
+ .animated-only-toggle,.catalog-motion-toggle{min-width:0;flex:1 1 0;padding:9px 7px}
+}

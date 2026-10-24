@@ -49,17 +49,22 @@ test('four wolf animation states are anatomically appropriate and distinct',()=>
  assert.match(rest,/prefers-reduced-motion:reduce/);
  assert.ok(idle!==move&&move!==attack&&attack!==rest);
 });
-test('wolf prototype appears only for the Gray Wolf, not the distinct Dire Wolf',()=>{
+test('Gray Wolf and Dire Wolf share one quadruped but have separate source-backed records',()=>{
  const gray=catalog.find(x=>x.id==='ani-forest-wolf');
  const dire=catalog.find(x=>x.id==='mon-forest-wolf');
  assert.equal(gray.animationStatus,'art-study');
  assert.equal(gray.purchasable,false);
  assert.equal(gray.previewArt,'./assets/studies/gray-wolf.svg');
- assert.equal(dire.animationStatus,'not-produced');
- assert.equal(animatedPreviews[dire.id],undefined);
+ assert.equal(dire.animationStatus,'art-study');
+ assert.equal(dire.purchasable,false);
+ assert.equal(dire.previewArt,'./assets/studies/dire-wolf.svg');
+ assert.notEqual(gray.previewArt,dire.previewArt);
+ assert.equal(animatedPreviews[dire.id].actionDurationMs,1300);
  assert.equal(animatedPreviews[gray.id].actionDurationMs,1300);
- for(const state of ['still','idle','move','action','rest'])
+ for(const state of ['still','idle','move','action','rest']){
   assert.equal(typeof animatedPreviews[gray.id][state],'string',state);
+  assert.equal(typeof animatedPreviews[dire.id][state],'string',state);
+ }
 });
 test('Dwarf Cleric has original mace-and-shield source plus builder recipe',()=>{
  const art=read('assets/studies/dwarven-cleric.svg');

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-mode="attack" data-source-body="village-innkeeper" data-undead-role="ghoul" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Ghoul — original Gridborn undead study — attack animation</title>
+<desc id="description">A wiry hunched ghoul with ash-pale skin, visible ribs, sunken luminous eyes and especially long bone-colored raking claws, using the same human legs and shoulder anchors.</desc>
+<style>#undead-body{animation:undead-ghoul-spring 1.4s steps(1,end) 1 both}#undead-left-claw{animation:undead-ghoul-rake-left 1.4s steps(1,end) 1 both;transform-origin:89px 122px}#undead-right-claw{animation:undead-ghoul-rake-right 1.4s steps(1,end) 1 both;transform-origin:165px 122px}#undead-claw-trails{animation:undead-ghoul-scratch 1.4s steps(1,end) 1 both}
+@keyframes undead-ghoul-spring{0%,100%{transform:translate(0,0)}26%{transform:translate(-5px,4px)}54%{transform:translate(11px,-5px)}79%{transform:translate(3px,-1px)}}
+@keyframes undead-ghoul-rake-left{0%,100%{transform:rotate(0)}28%{transform:rotate(35deg)}54%{transform:rotate(-38deg)}}
+@keyframes undead-ghoul-rake-right{0%,100%{transform:rotate(0)}28%{transform:rotate(-56deg)}54%{transform:rotate(52deg)}}
+@keyframes undead-ghoul-scratch{0%,41%,73%,100%{opacity:0}53%,63%{opacity:1}}
+@media(prefers-reduced-motion:reduce){#undead-body,#undead-left-leg,#undead-right-leg,#undead-right-claw,#undead-left-claw,#undead-claw-trails{animation:none!important}#undead-claw-trails{opacity:0!important}}</style>
+<ellipse cx="128" cy="200" rx="58" ry="13" fill="#060b16" opacity=".34"/>
+<ellipse cx="128" cy="195" rx="70" ry="24" fill="none" stroke="#ddb268" stroke-width="3" opacity=".70"/>
+
+<g id="undead-body">
+<!-- warm brown trousers and boots -->
+<g id="undead-left-leg"><rect x="101" y="157" width="23" height="36" fill="#292832"/><rect x="103" y="159" width="19" height="25" fill="#454b52"/></g>
+<g id="undead-right-leg"><rect x="137" y="157" width="23" height="36" fill="#292832"/><rect x="139" y="159" width="19" height="25" fill="#454b52"/></g>
+<g class="undead-ghoul-ribs">
+<path d="M89 101l18-12 43 3 24 12 4 49-24 17-43-3-24-21Z" fill="#555d67" stroke="#283641" stroke-width="4"/>
+<path d="M101 105l48-2 12 39-13 16-35-5-15-25Z" fill="#929d9d"/>
+<path d="M108 114l35 3m-38 8l42 5m-37 8l32 4" stroke="#d8d5bd" stroke-width="6" fill="none"/>
+<path d="M128 111l3 41" stroke="#556264" stroke-width="5"/>
+<path d="M109 143l9 12m30-14l-6 17" stroke="#404b51" stroke-width="5"/>
+<path d="M104 158l10 14 12-7 21 7 11-12" fill="none" stroke="#4e494c" stroke-width="4"/>
+</g><g class="undead-ghoul-head">
+<path d="M105 60l14-12 29 5 13 20-8 37-13 16-28-8-12-26Z" fill="#4a5560" stroke="#253441" stroke-width="4"/>
+<path d="M110 72l11-11 25 5 9 14-7 28-15 11-21-7-7-21Z" fill="#b7beb4"/>
+<path d="M105 72l8-20 28-8 18 18-4 13-13-9-24-1-10 17Z" fill="#454850"/>
+<path d="M114 84l13-3-2 13-13 1Z" fill="#303e48"/><path d="M138 81l12 2-4 12-12-1Z" fill="#303e48"/>
+<path d="M117 85l7-1m16 2l5 0" stroke="#d6d3a4" stroke-width="4"/>
+<path d="M125 103l17 3-4 9-11-2Z" fill="#48575c"/>
+<path d="M130 110l3 8 4-7" fill="#e4dbbf"/>
+</g>
+<g id="undead-right-claw" class="undead-claw">
+<path d="M161 109l18 6 10 34-13 20-15-14Z" fill="#a3b0ac" stroke="#455b62" stroke-width="4"/>
+<path d="M172 161l13 2 9 8-7 12-7-9-7 10-3-14-12 6 2-14Z" fill="#a8b5ad" stroke="#4c6368" stroke-width="3"/>
+<path d="M189 177l12 16-6-20m-17 7l-1 18m-18-24l-9 20" stroke="#ebe6d0" stroke-width="5" fill="none"/>
+</g>
+<g id="undead-left-claw" class="undead-claw">
+<path d="M92 112l-18 7-11 31 13 19 16-13Z" fill="#a2b3aa" stroke="#4f6569" stroke-width="4"/>
+<path d="M76 162l-13-1-10 10 6 12 9-8 8 11 4-15 12 9-2-15Z" fill="#adb9b1" stroke="#465d62" stroke-width="3"/>
+<path d="M56 178l-11 18 7-22m22 8l1 17m15-25l9 19" stroke="#e9e4d3" stroke-width="5" fill="none"/>
+</g>
+<g id="undead-claw-trails" opacity="0" fill="none" stroke="#d7e2d8" stroke-width="5">
+<path d="M195 112l31-18m-27 35l33-8m-32 26l30 3"/>
+</g>
+</g>
+</svg>

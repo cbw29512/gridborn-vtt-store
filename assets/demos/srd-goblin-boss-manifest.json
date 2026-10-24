@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "mon-srd-52-goblin-boss",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/srd-goblin-boss.svg",
+  "restSource": "assets/demos/srd-goblin-boss-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/srd-goblin-boss-idle.svg",
+      "durationSec": 3.2
+    },
+    "move": {
+      "source": "assets/demos/srd-goblin-boss-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/srd-goblin-boss-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "vttCompatibility": "untested",
+  "purchasable": false
+}

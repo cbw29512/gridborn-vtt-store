@@ -3,6 +3,354 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'mon-srd-52-zombie': Object.freeze({
+    still:'./assets/studies/srd-zombie.svg',
+    idle:'./assets/demos/srd-zombie-idle.svg',
+    move:'./assets/demos/srd-zombie-move.svg',
+    action:'./assets/demos/srd-zombie-attack.svg',
+    rest:'./assets/demos/srd-zombie-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · undead body shifts and twitches without breathing',
+      move:'Move · uneven dragging human step',
+      action:'Attack · right-hand unarmed claw swipe',
+      rest:'Rest · slack and inert corpse'
+    })
+  }),
+  'mon-srd-52-ghoul': Object.freeze({
+    still:'./assets/studies/srd-ghoul.svg',
+    idle:'./assets/demos/srd-ghoul-idle.svg',
+    move:'./assets/demos/srd-ghoul-move.svg',
+    action:'./assets/demos/srd-ghoul-attack.svg',
+    rest:'./assets/demos/srd-ghoul-rest.svg',
+    idleDurationMs:3000,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · undead body shifts and twitches without breathing',
+      move:'Move · low stalking two-legged gait',
+      action:'Attack · two-handed claw rake',
+      rest:'Rest · crouched undead stillness'
+    })
+  }),
+
+  'mon-srd-52-ogre-zombie': Object.freeze({
+    still:'./assets/studies/srd-ogre-zombie.svg',
+    idle:'./assets/demos/srd-ogre-zombie-idle.svg',
+    move:'./assets/demos/srd-ogre-zombie-move.svg',
+    action:'./assets/demos/srd-ogre-zombie-attack.svg',
+    rest:'./assets/demos/srd-ogre-zombie-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · unnatural sway without breathing',
+      move:'Move · lopsided dead-weight leg drag',
+      action:'Attack · corpse-heavy club smash',
+      rest:'Rest · motionless, collapsed giant'
+    })
+  }),
+  'mon-srd-52-skeleton': Object.freeze({
+    still:'./assets/studies/srd-skeleton.svg',
+    idle:'./assets/demos/srd-skeleton-idle.svg',
+    move:'./assets/demos/srd-skeleton-move.svg',
+    action:'./assets/demos/srd-skeleton-attack.svg',
+    rest:'./assets/demos/srd-skeleton-rest.svg',
+    idleDurationMs:3000,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · skull, arms and shield twitch with no breathing',
+      move:'Move · jerky opposing bone-leg shuffle',
+      action:'Attack · one sudden skeletal sword slash',
+      rest:'Rest · inert skeleton collapsed to the ground'
+    })
+  }),
+
+  'mon-srd-52-goblin-warrior': Object.freeze({
+    still:'./assets/studies/srd-goblin-warrior.svg',
+    idle:'./assets/demos/srd-goblin-warrior-idle.svg',
+    move:'./assets/demos/srd-goblin-warrior-move.svg',
+    action:'./assets/demos/srd-goblin-warrior-attack.svg',
+    rest:'./assets/demos/srd-goblin-warrior-rest.svg',
+    idleDurationMs:3600,moveDurationMs:3600,actionDurationMs:1400,restDurationMs:6000,
+    labels:Object.freeze({
+      idle:'Idle · Goblin Warrior breathes and blinks',
+      move:'Move · shared goblin stride carries the saber',
+      action:'Attack · quick curved saber slash',
+      rest:'Rest · sword lowered and shoulders relaxed'
+    })
+  }),
+  'mon-srd-52-goblin-minion': Object.freeze({
+    still:'./assets/studies/srd-goblin-minion.svg',
+    idle:'./assets/demos/srd-goblin-minion-idle.svg',
+    move:'./assets/demos/srd-goblin-minion-move.svg',
+    action:'./assets/demos/srd-goblin-minion-attack.svg',
+    rest:'./assets/demos/srd-goblin-minion-rest.svg',
+    idleDurationMs:3600,moveDurationMs:3600,actionDurationMs:1400,restDurationMs:6000,
+    labels:Object.freeze({
+      idle:'Idle · Goblin Minion breathes and blinks',
+      move:'Move · shared goblin stride carries the worn dagger',
+      action:'Attack · quick curved worn dagger slash',
+      rest:'Rest · sword lowered and shoulders relaxed'
+    })
+  }),
+
+  'mon-srd-52-ogre': Object.freeze({
+    still:'./assets/studies/srd-ogre.svg',
+    idle:'./assets/demos/srd-ogre-idle.svg',
+    move:'./assets/demos/srd-ogre-move.svg',
+    action:'./assets/demos/srd-ogre-attack.svg',
+    rest:'./assets/demos/srd-ogre-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · Ogre shifts weight and braces its gear',
+      move:'Move · original creature stride retained by shared body rig',
+      action:'Attack · iron-bound club smash visibly swings from its hand',
+      rest:'Rest · Ogre relaxes and lowers its weapon'
+    })
+  }),
+  'mon-srd-52-goblin-boss': Object.freeze({
+    still:'./assets/studies/srd-goblin-boss.svg',
+    idle:'./assets/demos/srd-goblin-boss-idle.svg',
+    move:'./assets/demos/srd-goblin-boss-move.svg',
+    action:'./assets/demos/srd-goblin-boss-attack.svg',
+    rest:'./assets/demos/srd-goblin-boss-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · Goblin Boss shifts weight and braces its gear',
+      move:'Move · original creature stride retained by shared body rig',
+      action:'Attack · steel sword strike visibly swings from its hand',
+      rest:'Rest · Goblin Boss relaxes and lowers its weapon'
+    })
+  }),
+
+  'mon-forest-wolf': Object.freeze({
+    still:'./assets/studies/dire-wolf.svg',
+    idle:'./assets/demos/dire-wolf-idle.svg',
+    move:'./assets/demos/dire-wolf-move.svg',
+    action:'./assets/demos/dire-wolf-attack.svg',
+    rest:'./assets/demos/dire-wolf-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1300,restDurationMs:4800,
+    labels:Object.freeze({
+      idle:'Idle · massive Dire Wolf bristles and breathes',
+      move:'Move · four paws trot in alternating diagonal pairs',
+      action:'Attack · heavier forward lunge and bite with visible fangs',
+      rest:'Rest · folded wolf posture settles and breathes'
+    })
+  }),
+
+  'npc-guard-human': Object.freeze({
+    still:'./assets/studies/city-guard.svg',
+    idle:'./assets/demos/city-guard-idle.svg',
+    move:'./assets/demos/city-guard-move.svg',
+    action:'./assets/demos/city-guard-attack.svg',
+    rest:'./assets/demos/city-guard-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · City Guard maintains a grounded, physically held equipment stance',
+      move:'Move · alternating legs carry weapons or tools anchored to the hands',
+      action:'Attack · shield-guarded forward spear thrust',
+      rest:'Rest · body settles and arms lower naturally'
+    })
+  }),
+  'npc-roster-blacksmith-human': Object.freeze({
+    still:'./assets/studies/human-blacksmith.svg',
+    idle:'./assets/demos/human-blacksmith-idle.svg',
+    move:'./assets/demos/human-blacksmith-move.svg',
+    action:'./assets/demos/human-blacksmith-attack.svg',
+    rest:'./assets/demos/human-blacksmith-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · Human Blacksmith · Nonbinary maintains a grounded, physically held equipment stance',
+      move:'Move · alternating legs carry weapons or tools anchored to the hands',
+      action:'Attack · full-hand forge hammer swing with sparks',
+      rest:'Rest · body settles and arms lower naturally'
+    })
+  }),
+
+  'npc-roster-farmer-human': Object.freeze({
+    still:'./assets/studies/human-farmer.svg',
+    idle:'./assets/demos/human-farmer-idle.svg',
+    move:'./assets/demos/human-farmer-move.svg',
+    action:'./assets/demos/human-farmer-attack.svg',
+    rest:'./assets/demos/human-farmer-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · farmer balances a real three-tined pitchfork by hand',
+      move:'Move · walking with alternating feet and steadying pitchfork grip',
+      action:'Attack · grounded defensive pitchfork thrust with recovery',
+      rest:'Rest · pitchfork planted as farmer settles after work'
+    })
+  }),
+
+  'mon-srd-52-young-silver-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-silver.svg',
+    idle:'./assets/demos/dragon-young-silver-idle.svg',
+    move:'./assets/demos/dragon-young-silver-move.svg',
+    action:'./assets/demos/dragon-young-silver-attack.svg',
+    rest:'./assets/demos/dragon-young-silver-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Silver dragon breathes with subtle wing and tail motion (prototype)',
+      move:'Move · articulated front and hind legs travel with tail counterbalance (prototype)',
+      action:'Attack · distinct cold breath shoots from open jaws with recovery (prototype)',
+      rest:'Rest · lowered head and folded wing joint settles naturally (prototype)'
+    })
+  }),
+
+  'mon-srd-52-young-copper-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-copper.svg',
+    idle:'./assets/demos/dragon-young-copper-idle.svg',
+    move:'./assets/demos/dragon-young-copper-move.svg',
+    action:'./assets/demos/dragon-young-copper-attack.svg',
+    rest:'./assets/demos/dragon-young-copper-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Copper dragon breathes with subtle wing and tail motion (prototype)',
+      move:'Move · articulated front and hind legs travel with tail counterbalance (prototype)',
+      action:'Attack · distinct acid breath shoots from open jaws with recovery (prototype)',
+      rest:'Rest · lowered head and folded wing joint settles naturally (prototype)'
+    })
+  }),
+
+  'mon-srd-52-young-bronze-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-bronze.svg',
+    idle:'./assets/demos/dragon-young-bronze-idle.svg',
+    move:'./assets/demos/dragon-young-bronze-move.svg',
+    action:'./assets/demos/dragon-young-bronze-attack.svg',
+    rest:'./assets/demos/dragon-young-bronze-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Bronze dragon breathes with subtle wing and tail motion (prototype)',
+      move:'Move · articulated front and hind legs travel with tail counterbalance (prototype)',
+      action:'Attack · distinct lightning breath shoots from open jaws with recovery (prototype)',
+      rest:'Rest · lowered head and folded wing joint settles naturally (prototype)'
+    })
+  }),
+
+  'mon-srd-52-young-brass-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-brass.svg',
+    idle:'./assets/demos/dragon-young-brass-idle.svg',
+    move:'./assets/demos/dragon-young-brass-move.svg',
+    action:'./assets/demos/dragon-young-brass-attack.svg',
+    rest:'./assets/demos/dragon-young-brass-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Brass dragon breathes with subtle wing and tail motion (prototype)',
+      move:'Move · articulated front and hind legs travel with tail counterbalance (prototype)',
+      action:'Attack · distinct fire breath shoots from open jaws with recovery (prototype)',
+      rest:'Rest · lowered head and folded wing joint settles naturally (prototype)'
+    })
+  }),
+
+  'mon-srd-52-young-white-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-white.svg',
+    idle:'./assets/demos/dragon-young-white-idle.svg',
+    move:'./assets/demos/dragon-young-white-move.svg',
+    action:'./assets/demos/dragon-young-white-attack.svg',
+    rest:'./assets/demos/dragon-young-white-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young White dragon breathes with subtle wing and tail motion (prototype)',
+      move:'Move · articulated front and hind legs travel with tail counterbalance (prototype)',
+      action:'Attack · distinct cold breath shoots from open jaws with recovery (prototype)',
+      rest:'Rest · lowered head and folded wing joint settles naturally (prototype)'
+    })
+  }),
+
+  'mon-srd-52-young-blue-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-blue.svg',
+    idle:'./assets/demos/dragon-young-blue-idle.svg',
+    move:'./assets/demos/dragon-young-blue-move.svg',
+    action:'./assets/demos/dragon-young-blue-attack.svg',
+    rest:'./assets/demos/dragon-young-blue-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Blue dragon breathes with subtle wing and tail motion (prototype)',
+      move:'Move · articulated front and hind legs travel with tail counterbalance (prototype)',
+      action:'Attack · distinct lightning breath shoots from open jaws with recovery (prototype)',
+      rest:'Rest · lowered head and folded wing joint settles naturally (prototype)'
+    })
+  }),
+
+  'mon-srd-52-young-black-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-black.svg',
+    idle:'./assets/demos/dragon-young-black-idle.svg',
+    move:'./assets/demos/dragon-young-black-move.svg',
+    action:'./assets/demos/dragon-young-black-attack.svg',
+    rest:'./assets/demos/dragon-young-black-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Black dragon breathes with subtle wing and tail motion (prototype)',
+      move:'Move · articulated front and hind legs travel with tail counterbalance (prototype)',
+      action:'Attack · distinct acid breath shoots from open jaws with recovery (prototype)',
+      rest:'Rest · lowered head and folded wing joint settles naturally (prototype)'
+    })
+  }),
+
+  'mon-srd-52-young-red-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-red.svg',
+    idle:'./assets/demos/dragon-young-red-idle.svg',
+    move:'./assets/demos/dragon-young-red-move.svg',
+    action:'./assets/demos/dragon-young-red-attack.svg',
+    rest:'./assets/demos/dragon-young-red-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Red dragon holds a side-profile guard with responsive tail and wings (prototype)',
+      move:'Move · four articulated legs stride with braced wings and tail balance (prototype)',
+      action:'Attack · jaws open and release a distinct fire plume toward the target (prototype)',
+      rest:'Rest · folding wings, lowering head and settling as a living dragon (prototype)'
+    })
+  }),
+  'mon-srd-52-young-green-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-green.svg',
+    idle:'./assets/demos/dragon-young-green-idle.svg',
+    move:'./assets/demos/dragon-young-green-move.svg',
+    action:'./assets/demos/dragon-young-green-attack.svg',
+    rest:'./assets/demos/dragon-young-green-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Green dragon holds a side-profile guard with responsive tail and wings (prototype)',
+      move:'Move · four articulated legs stride with braced wings and tail balance (prototype)',
+      action:'Attack · jaws open and release a distinct poison cloud toward the target (prototype)',
+      rest:'Rest · folding wings, lowering head and settling as a living dragon (prototype)'
+    })
+  }),
+  'mon-srd-52-young-gold-dragon': Object.freeze({
+    still:'./assets/studies/dragon-young-gold.svg',
+    idle:'./assets/demos/dragon-young-gold-idle.svg',
+    move:'./assets/demos/dragon-young-gold-move.svg',
+    action:'./assets/demos/dragon-young-gold-attack.svg',
+    rest:'./assets/demos/dragon-young-gold-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,
+    actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · young Gold dragon holds a side-profile guard with responsive tail and wings (prototype)',
+      move:'Move · four articulated legs stride with braced wings and tail balance (prototype)',
+      action:'Attack · jaws open and release a distinct fire plume toward the target (prototype)',
+      rest:'Rest · folding wings, lowering head and settling as a living dragon (prototype)'
+    })
+  }),
+
+  'npc-inn-human': Object.freeze({
+    still:'./assets/studies/village-innkeeper.svg',
+    idle:'./assets/demos/village-innkeeper-idle.svg',
+    move:'./assets/demos/village-innkeeper-move.svg',
+    action:'./assets/demos/village-innkeeper-attack.svg',
+    rest:'./assets/demos/village-innkeeper-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · Village Innkeeper offers a foaming tankard (prototype)',
+      move:'Move · Innkeeper walks while steadying the serving arm (prototype)',
+      action:'Attack · defensive tankard shove with short foam burst (prototype)',
+      rest:'Rest · Innkeeper lowers tankard into an easy service stance (prototype)'
+    })
+  }),
+
   'pregen-bard-nonbinary-3': Object.freeze({
     still:'./assets/studies/elf-court-nonbinary.svg',
     idle:'./assets/demos/elf-court-nonbinary-idle.svg',

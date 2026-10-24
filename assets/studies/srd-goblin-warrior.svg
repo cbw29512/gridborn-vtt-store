@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-source-body="cave-goblin" data-gridborn-family="goblin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
+<title id="title">Goblin Warrior — original Gridborn art study</title>
+<desc id="description">Small amber-eyed cave goblin carrying a curved blade and buckler This is a static artwork concept, not a completed VTT token.</desc>
+<ellipse cx="128" cy="200" rx="58" ry="13" fill="#060b16" opacity=".34"/>
+<ellipse cx="128" cy="195" rx="70" ry="24" fill="none" stroke="#ddb268" stroke-width="3" opacity=".70"/>
+
+<g class="body">
+<!-- shadows and pointed legs -->
+<path d="M110 142h43v49h-14l-7-24-9 24h-18z" fill="#27262d"/>
+<path d="M107 164h15v23h-15zM136 164h17v23h-17z" fill="#806446"/>
+<!-- little cape and jerkin -->
+<path d="M104 91h49l21 44-19 29h-49l-19-27z" fill="#232a2b"/>
+<path d="M106 100h45l14 41-17 18h-35l-18-18z" fill="#965b36"/>
+<path d="M112 103h33v39h-33z" fill="#48644f"/>
+<rect x="112" y="143" width="38" height="8" fill="#c0a06f"/><rect x="125" y="143" width="9" height="11" fill="#e3c484"/>
+<g class="warrior-role-armor">
+<path d="M105 106l14-7 31 3 15 24-11 30h-47l-14-27Z" fill="#38494d" stroke="#26353a" stroke-width="4"/>
+<path d="M111 112l34-6 14 23-13 20h-34l-12-22Z" fill="#879699" stroke="#45545d" stroke-width="4"/>
+<path d="M110 117l43 8m-42 7l40 7" stroke="#dccdb1" stroke-width="3"/>
+<path d="M109 149h45v9h-45Z" fill="#7c4d40" stroke="#cea974" stroke-width="3"/>
+</g><!-- face and giant ears -->
+<path d="M107 60h49v53h-49z" fill="#172a2b"/>
+<path d="M109 65h44v46h-44z" fill="#72966a"/>
+<path d="M112 74L83 61l10 34 21 8zM151 74l29-13-10 34-20 8z" fill="#608a5e"/>
+<rect x="115" y="82" width="13" height="10" fill="#342d2b"/><rect x="138" y="82" width="13" height="10" fill="#342d2b"/>
+<rect x="118" y="83" width="7" height="6" fill="#f8c75e"/><rect x="141" y="83" width="7" height="6" fill="#f8c75e"/>
+<rect x="122" y="99" width="20" height="5" fill="#2f4739"/>
+<path d="M121 103h6v9h-6zM138 103h6v9h-6z" fill="#e5d6a5"/>
+<!-- rough hood -->
+<path d="M111 57h45v13h-46zM119 49h30v10h-30z" fill="#3c4941"/>
+<g class="warrior-iron-helmet">
+<path d="M110 62l9-13 22-5 16 15 4 12-52 1Z" fill="#a5b1ad" stroke="#42545e" stroke-width="4"/>
+<path d="M106 70h54" stroke="#c4cac0" stroke-width="5"/>
+<path d="M132 65h8v23h-8Z" fill="#b3bcb8" stroke="#4f6068" stroke-width="2"/>
+</g><g class="blade"><g class="warrior-steel-saber">
+<path d="M179 90l10-47 7 14-10 56h-8Z" fill="#c9d7d8" stroke="#40525b" stroke-width="4"/>
+<path d="M168 125l17 7 16-5-5 12h-23Z" fill="#cac0a4" stroke="#50443e" stroke-width="3"/>
+</g><!-- crooked dagger -->
+<path d="M177 84h12v48h-12z" fill="#2d3437"/>
+<path d="M178 79l11-24 5 12-6 38h-10z" fill="#c4d2cf"/>
+<rect x="169" y="128" width="30" height="8" fill="#bd9456"/>
+<rect x="181" y="135" width="7" height="27" fill="#654934"/>
+</g>
+<!-- battered buckler -->
+<rect x="65" y="125" width="36" height="37" fill="#263136"/>
+<rect x="70" y="129" width="28" height="27" fill="#8d664b"/>
+<rect x="81" y="130" width="7" height="24" fill="#c5a879"/>
+<rect x="73" y="141" width="23" height="6" fill="#c5a879"/>
+
+</g>
+</svg>

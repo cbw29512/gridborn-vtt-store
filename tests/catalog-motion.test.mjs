@@ -9,7 +9,7 @@ const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 test('All existing four-state animation prototypes visibly participate in autoplay',()=>{
   const ids=Object.keys(animatedPreviews);
   assert.deepEqual(ids.sort(),[
-    'ani-forest-wolf','ani-ocean-greatwhite','chr-brd-halfling','chr-clr-dwarf','chr-ftr-human','chr-pal-human','chr-rge-gnome','chr-rng-elf','chr-wiz-elf','mon-cave-goblin','mon-cave-ogre','mon-cave-spider','mon-dng-armor','mon-dng-skeleton','mon-swamp-lizard','pregen-barbarian-male-3','pregen-bard-female-1','pregen-bard-nonbinary-3','pregen-cleric-female-2','pregen-druid-female-1','pregen-monk-female-3','pregen-monk-male-1','pregen-monk-nonbinary-3','pregen-ranger-female-1','pregen-ranger-male-1','pregen-ranger-nonbinary-1','pregen-rogue-nonbinary-1','pregen-sorcerer-nonbinary-1','pregen-warlock-nonbinary-1']);
+    'ani-forest-wolf','ani-ocean-greatwhite','chr-brd-halfling','chr-clr-dwarf','chr-ftr-human','chr-pal-human','chr-rge-gnome','chr-rng-elf','chr-wiz-elf','mon-cave-goblin','mon-cave-ogre','mon-cave-spider','mon-dng-armor','mon-dng-skeleton','mon-forest-wolf','mon-srd-52-ghoul','mon-srd-52-goblin-boss','mon-srd-52-goblin-minion','mon-srd-52-goblin-warrior','mon-srd-52-ogre','mon-srd-52-ogre-zombie','mon-srd-52-skeleton','mon-srd-52-young-black-dragon','mon-srd-52-young-blue-dragon','mon-srd-52-young-brass-dragon','mon-srd-52-young-bronze-dragon','mon-srd-52-young-copper-dragon','mon-srd-52-young-gold-dragon','mon-srd-52-young-green-dragon','mon-srd-52-young-red-dragon','mon-srd-52-young-silver-dragon','mon-srd-52-young-white-dragon','mon-srd-52-zombie','mon-swamp-lizard','npc-guard-human','npc-inn-human','npc-roster-blacksmith-human','npc-roster-farmer-human','pregen-barbarian-male-3','pregen-bard-female-1','pregen-bard-nonbinary-3','pregen-cleric-female-2','pregen-druid-female-1','pregen-monk-female-3','pregen-monk-male-1','pregen-monk-nonbinary-3','pregen-ranger-female-1','pregen-ranger-male-1','pregen-ranger-nonbinary-1','pregen-rogue-nonbinary-1','pregen-sorcerer-nonbinary-1','pregen-warlock-nonbinary-1']);
   assert.deepEqual(MOTION_STAGES.map(s=>s.key),['idle','move','action','rest']);
   assert.equal(MOTION_STAGES.length,4);
   for(const entry of MOTION_STAGES)assert.ok(entry.durationMs>=0);
@@ -34,7 +34,7 @@ test('Motion begins on catalog cards without Play buttons and stays preview-only
   const controller=read('src/catalog-motion.js');
   const app=read('src/app.js');
   const html=read('index.html');
-  assert.match(card,/MOVING ART STUDY/);
+  assert.match(card,/IN MOTION/);
   assert.match(card,/dataset\.motionId/);
   assert.match(card,/product-motion-stage/);
   assert.match(card,/illustration\.replaceWith\(symbol\)/);
@@ -47,7 +47,10 @@ test('Motion begins on catalog cards without Play buttons and stays preview-only
   assert.match(app,/initializeCatalogMotion\(\)/);
   assert.match(app,/!state\.query \? Number\(hasCatalogMotion\(b\.id\)\)/, 'Unfiltered store must prioritize real moving studies');
   assert.match(html,/id="catalog-motion-toggle"/);
-  assert.match(html,/Idle → Move → Attack → Rest/);
+  // Buyer sees the motion in the artwork; the stage contract proves all four
+  // states without requiring an explanatory paragraph above the cards.
+  assert.deepEqual(MOTION_STAGES.map(stage=>stage.key),['idle','move','action','rest']);
+  assert.match(html,/id="animated-only-toggle"/);
   assert.match(html,/src\/catalog-motion\.css/);
   assert.match(html,/All purchases remain disabled/);
   assert.doesNotMatch(controller,/stripe|checkout\.sessions|buyNow/i);

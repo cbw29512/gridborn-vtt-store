@@ -22,7 +22,7 @@ def check_wave_two(browser,origin,width,screenshots:Path):
    expect(card).to_have_count(1)
    card.scroll_into_view_if_needed()
    assert card.locator('.product-motion-stage').count()==1
-   expect(card.locator('.preview-label')).to_contain_text('MOVING ART STUDY')
+   expect(card.locator('.preview-label')).to_contain_text('IN MOTION')
    page.get_by_role('button',name='View concept details for '+name).click()
    expect(page.locator('#preview-title')).to_have_text(name)
    image=page.locator('#concept-preview-image')

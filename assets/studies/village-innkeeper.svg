@@ -5,14 +5,15 @@
 <ellipse cx="128" cy="200" rx="58" ry="13" fill="#060b16" opacity=".34"/>
 <ellipse cx="128" cy="195" rx="70" ry="24" fill="none" stroke="#ddb268" stroke-width="3" opacity=".70"/>
 
+<g id="inn-body">
 <!-- warm brown trousers and boots -->
-<rect x="101" y="157" width="23" height="36" fill="#292832"/><rect x="137" y="157" width="23" height="36" fill="#292832"/>
-<rect x="103" y="159" width="19" height="25" fill="#615044"/><rect x="139" y="159" width="19" height="25" fill="#615044"/>
+<g id="inn-left-leg"><rect x="101" y="157" width="23" height="36" fill="#292832"/><rect x="103" y="159" width="19" height="25" fill="#615044"/></g>
+<g id="inn-right-leg"><rect x="137" y="157" width="23" height="36" fill="#292832"/><rect x="139" y="159" width="19" height="25" fill="#615044"/></g>
 <!-- puff-sleeve tunic and green vest -->
 <path d="M92 98h69v12h14v39h-18v25H93v-26H78v-37h14z" fill="#322735"/>
 <path d="M95 101h62v54H95z" fill="#d8c6a1"/>
 <path d="M98 104h22v48H98zM137 104h20v48h-20z" fill="#3a6655"/>
-<rect x="83" y="113" width="15" height="39" fill="#f0e2c0"/><rect x="159" y="113" width="14" height="38" fill="#f0e2c0"/>
+<rect x="83" y="113" width="15" height="39" fill="#f0e2c0"/>
 <!-- apron & lace -->
 <path d="M110 123h39v62h-44v-60z" fill="#f4e2b8"/>
 <path d="M112 128h32v6h-32z" fill="#e1c698"/><path d="M103 144h59v7h-59z" fill="#a36b45"/>
@@ -23,12 +24,17 @@
 <path d="M105 72V58h12v-8h25v7h13v19h-9v-9h-30v7z" fill="#704633"/>
 <rect x="115" y="84" width="6" height="4" fill="#41332a"/><rect x="139" y="84" width="6" height="4" fill="#41332a"/>
 <rect x="123" y="94" width="18" height="4" fill="#9a5b52"/>
+<g id="inn-server-arm"><rect x="159" y="113" width="14" height="38" fill="#f0e2c0"/>
 <!-- tankard right, ceramic gleam and foam -->
 <rect x="162" y="123" width="29" height="37" fill="#2b3037"/>
 <rect x="166" y="128" width="23" height="29" fill="#a86b44"/>
 <rect x="191" y="132" width="11" height="20" fill="none" stroke="#e7bf85" stroke-width="6"/>
 <rect x="166" y="121" width="22" height="10" fill="#f3eee0"/>
 <rect x="170" y="116" width="9" height="10" fill="#f9f5e7"/><rect x="182" y="117" width="7" height="10" fill="#f9f5e7"/>
-<path d="M174 132h5v17h-5z" fill="#e3aa68"/><path d="M96 144h14v15H96z" fill="#e2ad84"/>
+<path d="M174 132h5v17h-5z" fill="#e3aa68"/><rect x="162" y="131" width="8" height="12" rx="2" fill="#e2ad84"/></g>
+<path d="M96 144h14v15H96z" fill="#e2ad84"/>
+<g id="inn-keys" fill="none" stroke="#dcbf75" stroke-width="3"><path d="M149 151v12m-1-1h9m-3 0v6"/><circle cx="149" cy="150" r="5"/></g>
+<g id="inn-splash" opacity="0" fill="#f7edd2"><circle cx="213" cy="120" r="5"/><circle cx="228" cy="111" r="3"/><path d="M207 139l15-7-5 12z"/></g>
 
+</g>
 </svg>

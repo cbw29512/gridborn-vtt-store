@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "mon-srd-52-goblin-minion",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/srd-goblin-minion.svg",
+  "restSource": "assets/demos/srd-goblin-minion-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/srd-goblin-minion-idle.svg",
+      "durationSec": 3.6
+    },
+    "move": {
+      "source": "assets/demos/srd-goblin-minion-move.svg",
+      "durationSec": 3.6
+    },
+    "attack": {
+      "source": "assets/demos/srd-goblin-minion-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "vttCompatibility": "untested",
+  "purchasable": false
+}

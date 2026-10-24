@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" shape-rendering="crispEdges"
+ role="img" aria-labelledby="title description" data-foundation-id="gray-wolf-quadruped" data-dire-mode="move" class="wolf-scene dire-wolf wolf-move">
+<title id="title">Dire Wolf — move Gridborn quadruped study</title>
+<desc id="description">A broader-shouldered Dire Wolf derived from original Gray Wolf anatomy with heavier ruff, long fangs, dark brindle coat and the same four independent legs with long muzzle, pointed ears, thick tail and four individually drawn paws. Alternating diagonal-pair trotting gait. Preview only; not a certified VTT animation or sale-ready asset.</desc>
+<style>
+ .wolf-body{transform-origin:129px 145px;animation:wolf-stride-body 1s ease-in-out infinite}
+ .wolf-tail{transform-origin:83px 135px}
+ .wolf-head{transform-origin:185px 129px}
+ .wolf-leg{transform-box:view-box}
+ .wolf-leg-hind-far{transform-origin:88px 147px}
+ .wolf-leg-hind-near{transform-origin:108px 158px}
+ .wolf-leg-front-far{transform-origin:156px 138px}
+ .wolf-leg-front-near{transform-origin:177px 156px}
+ 
+ 
+ .wolf-leg-hind-far,.wolf-leg-front-near{animation:wolf-leg-a 1s ease-in-out infinite}
+ .wolf-leg-front-far,.wolf-leg-hind-near{animation:wolf-leg-b 1s ease-in-out infinite}
+ .wolf-tail{animation:wolf-tail-run 1s ease-in-out infinite}
+ .wolf-head{animation:wolf-run-head 1s ease-in-out infinite}
+ 
+ 
+ 
+ @keyframes wolf-idle-breath{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}}
+ @keyframes wolf-idle-head{0%,100%{transform:rotate(0)}50%{transform:rotate(2deg)}}
+ @keyframes wolf-tail-sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(8deg)}}
+ @keyframes wolf-ear-twitch{0%,68%,72%,100%{transform:rotate(0)}69%,71%{transform:rotate(4deg)}}
+ @keyframes wolf-stride-body{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-5px)}}
+ @keyframes wolf-leg-a{0%,100%{transform:rotate(-17deg)}50%{transform:rotate(19deg) translateY(-6px)}}
+ @keyframes wolf-leg-b{0%,100%{transform:rotate(19deg) translateY(-6px)}50%{transform:rotate(-17deg)}}
+ @keyframes wolf-tail-run{0%,100%{transform:rotate(7deg)}50%{transform:rotate(-8deg)}}
+ @keyframes wolf-run-head{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(4deg)}}
+ @keyframes wolf-lunge{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}47%{transform:translate(13px,-8px)}70%{transform:translateX(5px)}}
+ @keyframes wolf-bite{0%,22%,100%{transform:rotate(0)}47%{transform:rotate(16deg)}61%{transform:rotate(-9deg)}}
+ @keyframes wolf-tail-strike{0%,100%{transform:rotate(0)}45%{transform:rotate(-19deg)}}
+ @keyframes wolf-brace{0%,100%{transform:rotate(0)}47%{transform:rotate(-12deg)}}
+ @keyframes wolf-sleep-breath{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}}
+ @keyframes wolf-sleep-tail{0%,100%{transform:rotate(0)}50%{transform:rotate(5deg)}}
+ @keyframes wolf-sleep-head{0%,100%{transform:translateY(0)}50%{transform:translateY(1px)}}
+ @media(prefers-reduced-motion:reduce){
+  .wolf-body,.wolf-tail,.wolf-head,.wolf-leg,.wolf-ear{animation:none!important}
+ }
+ </style><ellipse cx="132" cy="205" rx="91" ry="13" fill="#08121b" opacity=".31"/><ellipse cx="133" cy="196" rx="105" ry="27" fill="none" stroke="#d3ae75" stroke-width="3" opacity=".68"/>
+ <g class="dire-scale" transform="translate(-8 -8) scale(1.06)">
+ <g class="wolf-body">
+ <g class="wolf-tail">
+  <path d="M84 132L61 120 42 100 28 101 33 128 69 150 90 155Z" fill="#302b31" />
+  <path d="M84 133L61 124 40 105 37 106 40 123 71 147 84 149Z" fill="#7b6660" />
+  <path d="M33 102L45 110 44 123 36 120Z" fill="#d8d1bf" />
+ </g>
+ <g class="wolf-leg wolf-leg-hind-far">
+   <path d="M78 132 L100 130 L97.5 153 L95 159 L79 157Z" fill="#302b31" />
+   <path d="M81 133 L96 132 L94.5 152 L83 155Z" fill="#5c4d4e" />
+   <path d="M85 150L102 155L88 174L74 176Z" fill="#5c4d4e" />
+   <path d="M73 173h25l7 8h-40Z" fill="#2a3841" />
+   <rect x="76" y="173" width="16" height="4" fill="#829ba0"/>
+   <rect x="77" y="180" width="4" height="3" fill="#161f2a"/>
+   <rect x="85" y="180" width="4" height="3" fill="#161f2a"/>
+  </g>
+ <g class="wolf-leg wolf-leg-front-far">
+   <path d="M146 132 L168 130 L174.5 153 L163 159 L147 157Z" fill="#302b31" />
+   <path d="M149 133 L164 132 L171.5 152 L151 155Z" fill="#5c4d4e" />
+   <path d="M153 150L170 155L174 174L160 176Z" fill="#5c4d4e" />
+   <path d="M159 173h25l7 8h-40Z" fill="#2a3841" />
+   <rect x="162" y="173" width="16" height="4" fill="#829ba0"/>
+   <rect x="163" y="180" width="4" height="3" fill="#161f2a"/>
+   <rect x="171" y="180" width="4" height="3" fill="#161f2a"/>
+  </g>
+ <g class="wolf-torso">
+  <path d="M77 105Q95 94 123 99L167 108 188 130 172 160 111 174 76 157 67 136Z" fill="#302b31" />
+  <path d="M81 109Q101 100 128 103L165 113 180 132 167 155 112 167 81 152 73 135Z" fill="#74625a" />
+  <path d="M89 116L130 109 158 123 160 144 117 157 86 141Z" fill="#9d8774" />
+  <path d="M108 133L162 131 151 151 116 163 89 150Z" fill="#c7b69d" />
+  <path d="M77 110L104 101 102 118 83 127Z" fill="#b4a086" />
+  <path d="M136 108L166 114 173 129 157 125Z" fill="#51464b" />
+ </g>
+ <g class="dire-mane"><path d="M137 109L147 91 155 107 161 98 168 118 178 119 177 142 167 160 158 145 151 163 141 143 131 132Z" fill="#473a3b" stroke="#292a33" stroke-width="4"/><path d="M145 108L155 127 149 144 164 135 166 146" fill="none" stroke="#b79b81" stroke-width="5"/></g>
+ <g class="wolf-leg wolf-leg-hind-near">
+   <path d="M97 147 L119 145 L116.5 168 L114 174 L98 172Z" fill="#302b31" />
+   <path d="M100 148 L115 147 L113.5 167 L102 170Z" fill="#837069" />
+   <path d="M104 165L121 170L107 189L93 191Z" fill="#837069" />
+   <path d="M92 188h25l7 8h-40Z" fill="#2a3841" />
+   <rect x="95" y="188" width="16" height="4" fill="#b59e8a"/>
+   <rect x="96" y="195" width="4" height="3" fill="#161f2a"/>
+   <rect x="104" y="195" width="4" height="3" fill="#161f2a"/>
+  </g>
+ <g class="wolf-leg wolf-leg-front-near">
+   <path d="M165 147 L187 145 L193.5 168 L182 174 L166 172Z" fill="#302b31" />
+   <path d="M168 148 L183 147 L190.5 167 L170 170Z" fill="#837069" />
+   <path d="M172 165L189 170L193 189L179 191Z" fill="#837069" />
+   <path d="M178 188h25l7 8h-40Z" fill="#2a3841" />
+   <rect x="181" y="188" width="16" height="4" fill="#b59e8a"/>
+   <rect x="182" y="195" width="4" height="3" fill="#161f2a"/>
+   <rect x="190" y="195" width="4" height="3" fill="#161f2a"/>
+  </g>
+ <g class="wolf-head">
+  <path d="M159 93L179 82 198 86 217 107 220 126 210 142 181 151 158 134 153 114Z" fill="#312d34" />
+  <path d="M163 99L179 87 197 91 210 108 213 126 203 136 184 144 164 131Z" fill="#a18c79" />
+  <g class="wolf-ear">
+   <path d="M168 98L164 61 186 78 190 101Z" fill="#38323a" />
+   <path d="M173 90L170 72 182 82 183 96Z" fill="#b48f83" />
+   <path d="M188 92L203 64 207 105 198 109Z" fill="#38323a" />
+   <path d="M192 90L201 75 201 98Z" fill="#bd9991" />
+  </g>
+  <path d="M175 118L197 109 213 116 222 125 205 138 181 140Z" fill="#c0c7bb" />
+  <path d="M194 121L221 114 241 124 237 138 219 143 204 139Z" fill="#ead7b6" />
+  <path d="M231 120L242 123 239 133 231 131Z" fill="#202b33" />
+  <path d="M201 135L222 142 238 137 222 148 208 143Z" fill="#4a4d4a" />
+  <path d="M201 139L219 145 226 143 214 149Z" fill="#b9a79b" />
+  <rect x="190" y="110" width="11" height="7" fill="#263540"/>
+  <rect x="193" y="111" width="4" height="4" fill="#ffce64"/>
+  <path d="M170 116L182 114 178 133 166 130Z" fill="#e3e0cf" />
+  <path d="M209 108L213 112 213 119 209 117Z" fill="#586b70" />
+ <path d="M187 100l10 17-9 5" fill="none" stroke="#e5c4a0" stroke-width="4"/><path d="M214 143l5 11 6-12" fill="#f3e9d0" stroke="#493b37" stroke-width="2"/><path d="M223 142l6 8 5-11" fill="#f3e9d0" stroke="#493b37" stroke-width="2"/>
+ </g>
+ </g>
+ </g>
+</svg>

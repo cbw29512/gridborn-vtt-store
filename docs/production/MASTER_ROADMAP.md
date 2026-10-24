@@ -4,25 +4,29 @@
 
 **Current focus:** finish distinctive monsters and playable-looking character visuals at scale. Do not confuse catalog concepts, animated studies, or technically exported prototypes with visually approved products ready for sale.
 
+**Mandatory clean selling storefront:** follow [Single Gallery & Merchandising Contract](STOREFRONT_SINGLE_GALLERY.md). There is one canonical product grid for all four categories; tabs, search, sorting and category shortcuts filter/navigate it instead of creating duplicate galleries or duplicating the same product card. CI and browser QA enforce uniqueness.
+
+**Mandatory shared Lego-style anatomy:** follow [Shared Foundation and Layer Contract](SHARED_FOUNDATION_CONTRACT.md). Reuse each species/body-plan base rig, attachment anchors and locomotion states, then add independently authored identity/gear/role layers. Do not claim existing one-off source SVGs automatically inherit changes until they are migrated and tested.
+
 **Mandatory equipment/animation QC:** follow [Weapon and Attack QC](WEAPON_ATTACK_QC.md). Melee must visibly swing or thrust, bows shoot arrows, crossbows shoot bolts, casters visibly cast; head clearance, credible grips, frame safety and 64px readability are blocking gates. Audit existing assets before increasing the roster.
 
 **Mandatory before any new artwork:** follow [Research-to-Art Gate](RESEARCH_ART_GATE.md), recording individual source-backed anatomy, equipment, motion and licensing briefs before rendering. No study can be counted as a production asset without its research brief.
 
-## Priority override — characters first (October 21, 2026)
+## Current production priority — species/body family first (October 23, 2026)
 
-**Current production focus: finish the full character roster before expanding monster families.** [Character production issue #44](https://github.com/cbw29512/gridborn-vtt-store/issues/44) supersedes the former Wave A Ogre-first ordering. Ogre production [issue #43](https://github.com/cbw29512/gridborn-vtt-store/issues/43) is deferred, not canceled. Existing completed studies and art direction remain valid.
+**Updated user direction:** build **one correct creature body foundation** and carry it through its actual adventurer, NPC and humanoid monster identities, with clothes, armor, profession props and equipment-specific attacks layered on top. Repeat with the next ancestry. This supersedes the older "finish all characters first" sequencing; it **does not** reduce the final 108 character / 48 NPC / 100+ monster targets.
 
-1. Audit the 108 planned character identities and existing art/studies; do not count a concept as finished.
-2. Establish at least one moving study for **all 12 classes** by filling Ranger, Bard, Druid, Monk, Sorcerer and Warlock gaps.
-3. Complete distinct **male, female and nonbinary** character designs across each class (**36** unique studies).
-4. Expand to **three male, three female and three nonbinary per class** (**108** distinct authored character variants) with Still, Idle, Move, one-shot Attack and Rest and the complete technical/media gate.
-5. After the character milestone, return to Ogre Mage/Knight/King, remaining monster families, NPCs and animals.
+1. **Human foundation** — existing Human adventurer variants, Human occupation roster, and any explicitly authored Human enemy designs. First animated Innkeeper merged in PR #77.
+2. **Orc, Half-Orc, Elf, Dwarf, Goblin, Gnome, Halfling** — keep species morphology while sharing compatible role kits (e.g. Barbarian leather/axe, Knight plate/shield). Half-Orc currently lacks approved catalog identities and is a planned foundation only.
+3. **Monster and animal body families** — Ogre, Skeleton, Wolf/Canine, Spider, Shark, Reptile, Construct, Dragon etc. Each body inherits only biomechanically appropriate motion and retains distinct species overlays and actions.
+4. **Dragon batch example** — Red/Green/Gold and future color/metals share a four-legged, two-winged dragon rig; scale colors, horns/crests and distinct breath effects are overlays. Dragon Turtle, Wyvern, Pseudodragon, Half-Dragon and Kobold require other families.
+5. **Every real ID gets source-linked Still, Idle, Move, one-shot Attack and Rest**, with research and test gates before merging. Each item remains unpurchasable until separate human art/VTT/IP/fulfillment approval.
 
-This priority order changes sequencing only; **current verified counts do not increase**. The Wave A/B/C headings below are historical batch labels, not execution order. Each production PR must record truthful status and check outcomes.
+See [Ancestry-First Production Queue](ANCESTRY_FIRST_QUEUE.md), [Cross-Category Batch Board](CROSS_CATEGORY_BATCH_BOARD.md) and [Shared Foundation Contract](SHARED_FOUNDATION_CONTRACT.md). Earlier Wave A/B/C sections below are historical project labels, **not the current execution order**. Do not inflate artwork counts from rig recipes, color metadata or index cards.
 
 ## Production method — complete first, improve in passes
 
-**User direction:** Produce an individually recognizable, working first version of **every planned token** before spending multiple batches polishing isolated favorites. Preserve category order: **108 characters → 100+ monsters → 48 NPCs → animals**. After broad coverage, conduct systematic refinement rounds.
+**User direction:** Produce an individually recognizable, working first version of **every planned token** before spending multiple batches polishing isolated favorites. Preserve category **coverage targets** of **108 characters, 100+ monsters, 48 NPCs and animals**, but execute **body-family-first batches across categories**. After broad coverage, conduct systematic refinement rounds.
 
 **Pass 1 — Coverage:** Audit identities/IDs; create original recognizable still art and distinct Idle, Move, one-shot Attack, and Rest sources for each planned token. Complete source-linked storefront preview and technical export checks. Do **not** count a generic rig recipe, palette-only swap, SRD index entry, or unfinished concept as a produced token. Work in small tested PR batches rather than a monolithic change.
 
@@ -37,8 +41,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **31** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **29** | **21 Characters**, **6 Monsters**, **2 Animals**, **0 NPCs** |
+| Original illustrated concepts | **53 original studies (includes Ghoul and Zombie in current PR)** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **52 source-linked moving studies proposed** | **21 Characters**, **25 Monsters**, **2 Animals**, **4 NPCs**, Ghoul/Zombie pending CI |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -119,6 +123,7 @@ Produce the recognizable **common/base species first**, then build roles on that
 
 ### Wave E — NPCs, animals and browsing quality
 
+- [ ] Village Innkeeper starter ID `npc-inn-human`: source-linked four-state animation proposed in current PR (not one of 48 roster concepts; final CI pending).
 - [ ] Begin animating the **48 existing NPC role/ancestry concepts**, prioritizing Innkeeper, Guard, Blacksmith, Healer and Merchant; verify unmistakable occupational props.
 - [x] Gray Wolf and Great White Shark have technical four-state studies. [ ] Continue land, air and ocean animal families with authentic movement anatomy.
 - [ ] Regularly compare new product cards against adjacent old cards for equal visual/vertical alignment and readability.
@@ -236,9 +241,8 @@ Produce the recognizable **common/base species first**, then build roles on that
 
 ## Mercywarden Cleric mace-halo QC — October 23, 2026
 
-- **`pregen-cleric-female-2`**: repaired the existing original mace halo so the effect inherits the weapon motion in Idle, Move, Attack and Rest. Attack radiance peaks at the 54% impact keyframe. The canonical still is unchanged. [Research brief](briefs/pregen-cleric-female-2.md).
-- Regenerated four SVG state exports and added a deterministic source/halo/one-shot regression test. **No additional token, study or retail approval**: after PR #72 the catalog has 29 four-state studies and zero retail-cleared assets.
-- Human 128/64/32px inspection on both grid backgrounds, actual Foundry/Roll20 imports, art/IP approval and fulfillment remain mandatory. Checkout and production deployment stay disabled.
+- **`pregen-cleric-female-2`**: corrected the original mace halo to inherit weapon motion in Idle, Move, Attack and Rest. Attack radiance peaks at the 54% strike keyframe. Canonical still unchanged; [research brief](briefs/pregen-cleric-female-2.md).
+- Four SVG state exports are synchronized to the source generator, with deterministic one-shot/halo regression coverage. **No new token or retail approval**; human 128/64/32px inspection, real Foundry/Roll20 imports, IP approval and fulfillment remain pending. Checkout disabled.
 
 ## Batch update log
 
@@ -249,3 +253,66 @@ Produce the recognizable **common/base species first**, then build roles on that
 | 2026-10-21 | **This roadmap** | Next waves and product definition documented | Wave A Ogre roles, then Wave B character variation, missing classes and families |
 
 **Update discipline:** Each production PR should reference this plan, report **before → after** verified animated counts, list new actual IDs and files, record passed checks and remaining blockers, and mark only verified work complete. Keep historical build notes in [BUILD_ORDER.md](BUILD_ORDER.md), but use **this document** as the current priority board.
+
+## Shared western dragon family — Red, Green and Gold first batch · 2026-10-23
+
+- **New original source rig:** `src/creature-rigs/dragon.mjs` defines one quadrupedal winged body with four legs, wings, head, neck, tail and joint anchors. Red, Green and Gold variations share exact geometry, while scales, horns/crests and fire/poison breath overlays are distinct; sources and four-state files are generated deterministically by `tools/generate-dragon-states.mjs`.
+- **Source catalog coverage:** `src/dragon-family.js` inventories the exact **40 standard SRD dragon records** (10 colors/metals × wyrmling/young/adult/ancient), excludes Dragon Turtle, Wyvern, Pseudodragon, Half-Dragon and Kobold Warrior as incompatible body plans.
+- **Three first art-and-motion studies proposed:** `mon-srd-52-young-red-dragon`, `mon-srd-52-young-green-dragon`, `mon-srd-52-young-gold-dragon`. Reuses existing immutable catalog IDs, adds original still and all four generated states, individual source references, manifests, and tests. No new index records or made-up product concepts.
+- **Counts after merge, only if all CI passes:** illustrated **31→34**, public source-linked studies **30→33**, including **9 Monsters**. The other 37 standard dragon records are unillustrated, not completed.
+- **Release blocked:** human 32/64/128px art checks, source rights/license, actual Foundry/Roll20 import, transparent WebM test, and checkout integration. Keep all products non-purchasable.
+
+## Full ten-color dragon young-form completion proposed · 2026-10-23
+
+- **Second color family PR:** adds Black, Blue, White, Brass, Bronze, Copper and Silver Young Dragons using the same `western-four-legged-winged-dragon` source body and four-state animation generator. Completes **10/10 standard color/metal Young Dragons** (10 of the 40 standard color×age combinations). The Wyrmling, Adult and Ancient 30 source records still require proper age/scale detail and actual renders.
+- All ten now have individually defined scales, belly/wing materials, and crest/horn signatures. Acid, lightning, poison, cold, and fire use element-specific grouped effects, not identical flames. Source: official SRD v5.2.1; original silhouette/horn shapes are Gridborn's authored designs, not copied illustrations.
+- If this stacked PR passes and merges after PR #79, source-linked original illustrations **34→41**, four-state previews **33→40**, moving monsters **9→16**, with **0** retail-ready. All seven new IDs are preexisting monster index cards.
+- QC gate remains: source deterministic generator, full media/private CI, Chromium UI, human 32/64/128px silhouette/action verification, legal attribution and platform playback/import.
+
+## Human NPC family — Farmer via inherited human body · 2026-10-23
+
+- Real existing NPC ID `npc-roster-farmer-human` (**Human Farmer · Female**) receives original work overalls, straw field hat, braided hair, pockets and a correctly held three-tined pitchfork. Same canonical human skeleton/shadow, hip-and-leg origin and limb geometry as the already animated Village Innkeeper; the profession's outfit, head identity, hand-held tool and attack motion are new overlays.
+- **Verified inheritance method:** `src/creature-rigs/human-farmer.mjs` derives the still from `assets/studies/village-innkeeper.svg` with deterministic original role replacements. Source builder and all four motion outputs regenerate exactly via `tools/generate-human-farmer-states.mjs`. A change to shared base legs changes both works only after regeneration, and the source-drift test catches it; the two displayed roles are not simple color swaps.
+- **State story:** Idle balances tool; Move makes alternate steps while stabilizing shaft; Attack braces and thrusts the fork (not a false sword strike); Rest plants the fork. Static/stage fallbacks for reduced motion and file-load failures.
+- **Count change only after passing gates/merge:** illustrated **41→42**, animated **40→41**, NPC animated **1→2**, sale-ready remains **0**. Real platform import, 32/64/128px human QC and art licensing remain separate release gates.
+
+## Shared Human VTT occupation batch — Guard + Blacksmith · 2026-10-23
+
+- Two **real existing** catalog IDs `npc-guard-human` (City Guard) and `npc-roster-blacksmith-human` (Human Blacksmith · Nonbinary), never new duplicate creature cards, both use the same shared Human leg/face/body source from `assets/studies/village-innkeeper.svg`.
+- **Authentic occupation identity:** Guard wears polished steel plate, nasal helmet, dark blue cloak, properly strapped left shield and right short spear. Blacksmith wears soot-dusted tunic/leather apron, utility tongs and a full-hand hammer with steel face.
+- **Four actual animated states** per identity (Idle, Move, Attack, Rest) with equipment attached to hand joints; Guard spear thrust and shield brace; Blacksmith hammer swings with brief forged-metal spark effect. Deterministic still and SVG animation generation lives in `src/creature-rigs/human-occupations.mjs` / `tools/generate-human-occupations.mjs`, source checks prevent anatomy drift.
+- **After gated merge:** 44 illustrated, 43 source-linked animated, 4 animated NPC studies, 0 retail-approved; 518 catalog concepts unchanged. No second gallery, checkout disabled. Continue refining 128px/64px/32px artwork and export/import testing before any commercial listing.
+
+## Canine VTT foundation — Dire Wolf · 2026-10-23
+
+- Reuse Gray Wolf `ani-forest-wolf`'s already source-animated four-legged gait, head, ear and tail via `src/creature-rigs/dire-wolf.mjs`. Add larger 1.06× scale wrapper, dark brindle coat, heavier shoulder ruff, facial scar and projecting fangs rather than making a different skeleton.
+- The **existing** `mon-forest-wolf` Dire Wolf monster card is the only new moving monster ID; ordinary Gray Wolf retains its existing Animals card and art. No duplicate galleries, new catalog IDs or product SKUs.
+- Original Still and four animated SVGs source-linked to the Gray Wolf base files; `node tools/generate-dire-wolf-states.mjs --check` tracks source drift. Locomotion uses diagonal opposing quadruped leg pairs, lunging bite with fangs and curled resting pose; no static shortcut claiming four states.
+- Post-merge technical inventory: **45 illustrated**, **44 moving studies** (17 Monsters, 4 NPCs, 21 Characters, 2 Animals), retail-approved **0**, 518 catalog identities unchanged. Real platform alpha video export, 32/64/128px visual art checks and legal review remain pending.
+
+## Ogre + Goblin body family monsters · 2026-10-23
+
+- **Existing, distinct SRD identities only**: Ogre `mon-srd-52-ogre` and Goblin Boss `mon-srd-52-goblin-boss` receive their first source-backed art/motion studies. Original Cave Ogre and Cave Goblin remain in the catalog exactly once; no second gallery.
+- Body-family regeneration is deterministic using `src/creature-rigs/monster-family-overlays.mjs` and `node tools/generate-monster-family-states.mjs --check`. It consumes the original Cave Ogre and Cave Goblin Still/Idle/Move/Attack/Rest source SVGs, reusing legs, head, grip, club swing/blade attack and lowered rest.
+- Ogre receives worn leather/metal jerkin and iron-bound greatclub, distinct from the cave variant. Goblin Boss receives high-rank copper crown, plate-sewn brigandine and extended physically attached sword crossguard. Both require manual 32/64/128px silhouette inspection and complete VTT alpha/movie playback certification before sale.
+- After guarded merge: original studies **47**, source-linked four-state studies **46**, 19 animated monsters, catalog still 518 unique cards, 0 approved retail exports.
+
+## Shared Goblin ranks — Warrior + Minion · 2026-10-23
+
+- Two more existing SRD identities `mon-srd-52-goblin-warrior` and `mon-srd-52-goblin-minion` use the **same Cave Goblin** original skeleton, arms, legs, blade-hand/buckler anchors and full four-state animations via the existing monster family generator.
+- Rank-specific visuals are applied as deterministic source overlays: Warrior has reinforced steel mail, close-fitting iron helm and long curved steel saber; Minion has patched cloth, headwrap and shorter worn dagger. Boss retains copper crown; basic Cave Goblin retains its ragged hood. Four distinct in-category cards, never extra galleries.
+- Human size/weapon/equipment art review, transparent video exports, Foundry/Roll20 import and license/fulfillment certification remain blocked. After merge: illustrated **49**, 4-state moving **48** (21 monsters), catalog records unchanged **518**, retail-cleared **0**.
+
+## Two SRD Undead source bodies — Ogre Zombie and Skeleton · October 23, 2026
+
+- Existing **Ogre Zombie** `mon-srd-52-ogre-zombie` builds upon Cave Ogre core/body/legs/held club. The role overlay adds dead grey-green skin, decayed injuries and grave rags, damaged club, a source-linked asymmetric drag gait and slower maul. Idle and rest are undead sways/inert poses, not simulated respiration.
+- Existing standard **Skeleton** `mon-srd-52-skeleton` reuses Skeleton Warrior's genuinely articulated bones, exposed ribs, skull, sword and shield, with burial leather, skull fractures, altered shield/sword corrosion and grave-muted cape. Source rest stays a folded **inert** corpse; no breathing. Distinct from the existing Dungeon Skeleton card.
+- Shared deterministic generator `tools/generate-undead-family.mjs --check` and source renderer `src/creature-rigs/undead-family.mjs`; no duplicated catalog IDs or alternative gallery. Render state source files and original art remain separate from production alpha-export/Foundry/Roll20 import certification.
+- Projected on merge: **51 illustrated**, **50 four-state studies**, **23 animated Monsters**, still **518 catalog concepts** and **zero approved retail SKUs**. Human at-scale artwork review, alpha media, platform import, rights and sales delivery remain outstanding.
+
+## Human undead monsters — standard Zombie + Ghoul · 2026-10-23
+
+- The preexisting SRD 5.2.1 **Zombie** `mon-srd-52-zombie` and **Ghoul** `mon-srd-52-ghoul` are made from ONE original Human species geometry: `assets/studies/village-innkeeper.svg`. Both preserve the original Human leg outlines and transform origins; occupation clothing/face/arms and motions are role-specific overlays, with no innkeeper tankard, apron, beer, or keys.
+- Zombie's design is corpse-muted green with torn work clothes, blank dead eyes, dragging gait, drooping clawed arms and a late right claw swipe. Ghoul has a wiry rib-exposed torso, pale hungry face, visibly longer talons, low stalking gait and a real two-handed claw rake. Claw effects are only shown at impact, not when resting. Neither uses living-style breathing.
+- `src/creature-rigs/human-undead.mjs` and `tools/generate-human-undead.mjs --check` are the generation/ancestry parity gate for five SVG source states per card. Catalog uses the same `#results` grid and its existing immutable monster records; no parallel gallery.
+- Projected: **53 illustrated**, **52 four-state studies**, **25 moving Monsters**, **518 total catalog entries**, **0 retail-approved exports**. 32/64/128px art review, right/left claw geometry, actual alpha video import/Foundry/Roll20 playback, rights and fulfillment still require manual verification.

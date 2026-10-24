@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-source-body="cave-goblin" data-gridborn-family="goblin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges" data-gridborn-mode="attack">
+<title id="title">Goblin Minion — single blade strike study</title>
+<desc id="description">Independent attack animation preview. Original Goblin Minion study only; not an exported or purchasable VTT token.</desc>
+<ellipse cx="128" cy="200" rx="58" ry="13" fill="#060b16" opacity=".34"/>
+<ellipse cx="128" cy="195" rx="70" ry="24" fill="none" stroke="#ddb268" stroke-width="3" opacity=".70"/>
+
+<style>
+
+.body{animation:gb-goblin-strike-lunge 1.4s ease-in-out 1 both;transform-origin:128px 150px}
+.blade{animation:gb-goblin-strike-blade 1.4s cubic-bezier(.25,.75,.35,1) 1 both;transform-origin:183px 134px}
+.buckler{animation:gb-goblin-strike-guard 1.4s ease-in-out 1 both;transform-origin:87px 146px}
+@keyframes gb-goblin-strike-lunge{
+0%,100%{transform:translate(0,0)}
+24%{transform:translate(4px,1px)}
+49%{transform:translate(-10px,-3px)}
+70%{transform:translate(-4px,-1px)}
+}
+@keyframes gb-goblin-strike-blade{
+0%,100%{transform:rotate(0)}
+24%{transform:rotate(-48deg)}
+49%{transform:rotate(62deg)}
+70%{transform:rotate(22deg)}
+}
+@keyframes gb-goblin-strike-guard{
+0%,100%{transform:rotate(0)}
+24%{transform:rotate(18deg)}
+49%{transform:rotate(-19deg)}
+}
+@media(prefers-reduced-motion:reduce){.body,.blade,.buckler,.goblin-leg-left,.goblin-leg-right,.goblin-blink{animation:none!important}}
+</style>
+<g class="body">
+<!-- shadows and pointed legs -->
+<path d="M110 142h43v49h-14l-7-24-9 24h-18z" fill="#27262d"/>
+<g class="goblin-leg-left"><path d="M107 164h15v23h-15z" fill="#806446"/></g><g class="goblin-leg-right"><path d="M136 164h17v23h-17z" fill="#806446"/></g>
+<!-- little cape and jerkin -->
+<path d="M104 91h49l21 44-19 29h-49l-19-27z" fill="#232a2b"/>
+<path d="M106 100h45l14 41-17 18h-35l-18-18z" fill="#965b36"/>
+<path d="M112 103h33v39h-33z" fill="#48644f"/>
+<rect x="112" y="143" width="38" height="8" fill="#c0a06f"/><rect x="125" y="143" width="9" height="11" fill="#e3c484"/>
+<g class="minion-role-rags">
+<path d="M107 103l19 6 25-8 14 30-15 29-42-3-12-27Z" fill="#745e46" stroke="#3d3435" stroke-width="4"/>
+<path d="M111 111l24 7-12 19-13-7Z" fill="#ac9269"/>
+<path d="M141 111l17 15-9 25-12-6Z" fill="#515d48"/>
+<path d="M114 148l36 8-9 9-28-6Z" fill="#4e4637"/>
+</g><!-- face and giant ears -->
+<path d="M107 60h49v53h-49z" fill="#172a2b"/>
+<path d="M109 65h44v46h-44z" fill="#72966a"/>
+<path d="M112 74L83 61l10 34 21 8zM151 74l29-13-10 34-20 8z" fill="#608a5e"/>
+<rect x="115" y="82" width="13" height="10" fill="#342d2b"/><rect x="138" y="82" width="13" height="10" fill="#342d2b"/>
+<rect x="118" y="83" width="7" height="6" fill="#f8c75e"/><rect x="141" y="83" width="7" height="6" fill="#f8c75e"/><g class="goblin-blink" opacity="0"><rect x="115" y="82" width="13" height="10" fill="#608a5e"/><rect x="138" y="82" width="13" height="10" fill="#608a5e"/></g>
+<rect x="122" y="99" width="20" height="5" fill="#2f4739"/>
+<path d="M121 103h6v9h-6zM138 103h6v9h-6z" fill="#e5d6a5"/>
+<!-- rough hood -->
+<path d="M111 57h45v13h-46zM119 49h30v10h-30z" fill="#3c4941"/>
+
+<g class="minion-role-headwrap">
+<path d="M111 57l15-11 27 6 5 14-48-1Z" fill="#65513d" stroke="#3c3634" stroke-width="3"/>
+<path d="M114 66l-4 13m40-14l8 16" stroke="#af8d62" stroke-width="4"/>
+</g><g class="blade"><g class="minion-iron-dagger">
+<path d="M180 92l7-25 7 12-7 26h-7Z" fill="#c1c7ba" stroke="#48565c" stroke-width="3"/>
+<path d="M175 128h22l-5 9h-15Z" fill="#887354" stroke="#393b37" stroke-width="3"/>
+</g>
+<!-- crooked dagger -->
+<path d="M177 84h12v48h-12z" fill="#2d3437"/>
+<path d="M178 79l11-24 5 12-6 38h-10z" fill="#c4d2cf"/>
+<rect x="169" y="128" width="30" height="8" fill="#bd9456"/>
+<rect x="181" y="135" width="7" height="27" fill="#654934"/>
+</g>
+<g class="buckler">
+<!-- battered buckler -->
+<rect x="65" y="125" width="36" height="37" fill="#263136"/>
+<rect x="70" y="129" width="28" height="27" fill="#8d664b"/>
+<rect x="81" y="130" width="7" height="24" fill="#c5a879"/>
+<rect x="73" y="141" width="23" height="6" fill="#c5a879"/>
+</g>
+</g>
+</svg>
