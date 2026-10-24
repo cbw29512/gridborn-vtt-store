@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "mon-srd-52-zombie",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/srd-zombie.svg",
+  "restSource": "assets/demos/srd-zombie-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/srd-zombie-idle.svg",
+      "durationSec": 3.2
+    },
+    "move": {
+      "source": "assets/demos/srd-zombie-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/srd-zombie-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "vttCompatibility": "untested",
+  "purchasable": false
+}

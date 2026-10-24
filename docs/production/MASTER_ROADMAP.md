@@ -41,8 +41,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **51 original studies (includes Ogre Zombie and Skeleton in current PR)** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **50 source-linked moving studies proposed** | **21 Characters**, **23 Monsters**, **2 Animals**, **4 NPCs**, Ogre Zombie and Skeleton pending CI |
+| Original illustrated concepts | **53 original studies (includes Ghoul and Zombie in current PR)** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **52 source-linked moving studies proposed** | **21 Characters**, **25 Monsters**, **2 Animals**, **4 NPCs**, Ghoul/Zombie pending CI |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -304,3 +304,10 @@ Produce the recognizable **common/base species first**, then build roles on that
 - Existing standard **Skeleton** `mon-srd-52-skeleton` reuses Skeleton Warrior's genuinely articulated bones, exposed ribs, skull, sword and shield, with burial leather, skull fractures, altered shield/sword corrosion and grave-muted cape. Source rest stays a folded **inert** corpse; no breathing. Distinct from the existing Dungeon Skeleton card.
 - Shared deterministic generator `tools/generate-undead-family.mjs --check` and source renderer `src/creature-rigs/undead-family.mjs`; no duplicated catalog IDs or alternative gallery. Render state source files and original art remain separate from production alpha-export/Foundry/Roll20 import certification.
 - Projected on merge: **51 illustrated**, **50 four-state studies**, **23 animated Monsters**, still **518 catalog concepts** and **zero approved retail SKUs**. Human at-scale artwork review, alpha media, platform import, rights and sales delivery remain outstanding.
+
+## Human undead monsters — standard Zombie + Ghoul · 2026-10-23
+
+- The preexisting SRD 5.2.1 **Zombie** `mon-srd-52-zombie` and **Ghoul** `mon-srd-52-ghoul` are made from ONE original Human species geometry: `assets/studies/village-innkeeper.svg`. Both preserve the original Human leg outlines and transform origins; occupation clothing/face/arms and motions are role-specific overlays, with no innkeeper tankard, apron, beer, or keys.
+- Zombie's design is corpse-muted green with torn work clothes, blank dead eyes, dragging gait, drooping clawed arms and a late right claw swipe. Ghoul has a wiry rib-exposed torso, pale hungry face, visibly longer talons, low stalking gait and a real two-handed claw rake. Claw effects are only shown at impact, not when resting. Neither uses living-style breathing.
+- `src/creature-rigs/human-undead.mjs` and `tools/generate-human-undead.mjs --check` are the generation/ancestry parity gate for five SVG source states per card. Catalog uses the same `#results` grid and its existing immutable monster records; no parallel gallery.
+- Projected: **53 illustrated**, **52 four-state studies**, **25 moving Monsters**, **518 total catalog entries**, **0 retail-approved exports**. 32/64/128px art review, right/left claw geometry, actual alpha video import/Foundry/Roll20 playback, rights and fulfillment still require manual verification.
