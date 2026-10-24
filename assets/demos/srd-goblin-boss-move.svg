@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-gridborn-family="goblin" data-source-body="cave-goblin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges" data-gridborn-mode="move">
+<title id="title">Goblin Boss — alternating leg walk study</title>
+<desc id="description">Independent move animation preview. Original Goblin Boss study only; not an exported or purchasable VTT token.</desc>
+<ellipse cx="128" cy="200" rx="58" ry="13" fill="#060b16" opacity=".34"/>
+<ellipse cx="128" cy="195" rx="70" ry="24" fill="none" stroke="#ddb268" stroke-width="3" opacity=".70"/>
+
+<style>
+
+.body{animation:gb-goblin-walk-bob .72s ease-in-out infinite;transform-origin:128px 150px}
+.goblin-leg-left{animation:gb-goblin-step-left .72s ease-in-out infinite;transform-origin:116px 166px}
+.goblin-leg-right{animation:gb-goblin-step-right .72s ease-in-out infinite;transform-origin:145px 166px}
+.blade{animation:gb-goblin-walk-blade .72s ease-in-out infinite;transform-origin:183px 134px}
+.buckler{animation:gb-goblin-walk-buckler .72s ease-in-out infinite;transform-origin:87px 146px}
+@keyframes gb-goblin-walk-bob{0%,50%,100%{transform:translateY(0)}25%,75%{transform:translateY(-4px)}}
+@keyframes gb-goblin-step-left{0%,100%{transform:rotate(-16deg)}50%{transform:rotate(16deg)}}
+@keyframes gb-goblin-step-right{0%,100%{transform:rotate(16deg)}50%{transform:rotate(-16deg)}}
+@keyframes gb-goblin-walk-blade{0%,100%{transform:rotate(7deg)}50%{transform:rotate(-8deg)}}
+@keyframes gb-goblin-walk-buckler{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(9deg)}}
+@media(prefers-reduced-motion:reduce){.body,.blade,.buckler,.goblin-leg-left,.goblin-leg-right,.goblin-blink{animation:none!important}}
+</style>
+<g class="body">
+<!-- shadows and pointed legs -->
+<path d="M110 142h43v49h-14l-7-24-9 24h-18z" fill="#27262d"/>
+<g class="goblin-leg-left"><path d="M107 164h15v23h-15z" fill="#806446"/></g><g class="goblin-leg-right"><path d="M136 164h17v23h-17z" fill="#806446"/></g>
+<!-- little cape and jerkin -->
+<path d="M104 91h49l21 44-19 29h-49l-19-27z" fill="#232a2b"/>
+<path d="M106 100h45l14 41-17 18h-35l-18-18z" fill="#965b36"/>
+<path d="M112 103h33v39h-33z" fill="#48644f"/>
+<rect x="112" y="143" width="38" height="8" fill="#c0a06f"/><rect x="125" y="143" width="9" height="11" fill="#e3c484"/>
+<g class="boss-role-armor">
+<path d="M105 105l19-6 23 6 18 23-14 26h-42l-16-27Z" fill="#593d3a" stroke="#332c31" stroke-width="4"/>
+<path d="M110 113l16-6 10 17-10 22-21-10Z" fill="#986047" stroke="#e5b87b" stroke-width="3"/>
+<path d="M139 113l12 5 10 15-12 13-17-8Z" fill="#79534b" stroke="#cfb274" stroke-width="3"/>
+<path d="M109 150h43v10h-43z" fill="#cc9b5b" stroke="#574433" stroke-width="3"/>
+<path d="M124 149h14v11h-14z" fill="#324f55"/>
+</g><!-- face and giant ears -->
+<path d="M107 60h49v53h-49z" fill="#172a2b"/>
+<path d="M109 65h44v46h-44z" fill="#72966a"/>
+<path d="M112 74L83 61l10 34 21 8zM151 74l29-13-10 34-20 8z" fill="#608a5e"/>
+<rect x="115" y="82" width="13" height="10" fill="#342d2b"/><rect x="138" y="82" width="13" height="10" fill="#342d2b"/>
+<rect x="118" y="83" width="7" height="6" fill="#f8c75e"/><rect x="141" y="83" width="7" height="6" fill="#f8c75e"/><g class="goblin-blink" opacity="0"><rect x="115" y="82" width="13" height="10" fill="#608a5e"/><rect x="138" y="82" width="13" height="10" fill="#608a5e"/></g>
+<rect x="122" y="99" width="20" height="5" fill="#2f4739"/>
+<path d="M121 103h6v9h-6zM138 103h6v9h-6z" fill="#e5d6a5"/>
+<!-- rough hood -->
+<path d="M111 57h45v13h-46zM119 49h30v10h-30z" fill="#3c4941"/>
+
+<g class="boss-copper-crown">
+<path d="M108 59l-4-20 15 12 14-22 12 22 18-12-5 22Z" fill="#b18646" stroke="#43342e" stroke-width="4"/>
+<path d="M113 61h43v12h-43Z" fill="#936943" stroke="#41342e" stroke-width="3"/>
+<path d="M119 60l14-17 10 17" fill="none" stroke="#e5bd76" stroke-width="4"/>
+<path d="M132 63h9v10h-9z" fill="#b14d3f"/>
+</g><g class="blade"><g class="boss-steel-sword">
+<path d="M183 82l5-38 10 17-11 43h-4Z" fill="#d5e1db" stroke="#4a5559" stroke-width="3"/>
+<path d="M170 128l15 4 15-5-4 12h-21z" fill="#e1bc78" stroke="#49453f" stroke-width="3"/>
+</g>
+<!-- crooked dagger -->
+<path d="M177 84h12v48h-12z" fill="#2d3437"/>
+<path d="M178 79l11-24 5 12-6 38h-10z" fill="#c4d2cf"/>
+<rect x="169" y="128" width="30" height="8" fill="#bd9456"/>
+<rect x="181" y="135" width="7" height="27" fill="#654934"/>
+</g>
+<g class="buckler">
+<!-- battered buckler -->
+<rect x="65" y="125" width="36" height="37" fill="#263136"/>
+<rect x="70" y="129" width="28" height="27" fill="#8d664b"/>
+<rect x="81" y="130" width="7" height="24" fill="#c5a879"/>
+<rect x="73" y="141" width="23" height="6" fill="#c5a879"/>
+</g>
+</g>
+</svg>
