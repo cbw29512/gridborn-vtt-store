@@ -19,7 +19,7 @@ const variants=[
 
 test('Full-motion listing gate accepts 12 source-distinct catalog entries',()=>{
  assert.equal(verifyMotionCatalog(catalog),true);
- assert.equal(Object.keys(animatedPreviews).length,44);
+ assert.equal(Object.keys(animatedPreviews).length,46);
  const originalHashes=new Set();
  for(const item of variants){
   const entry=catalog.find(x=>x.id===item.id);

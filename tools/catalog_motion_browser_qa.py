@@ -22,15 +22,15 @@ def check_catalog_motion(browser,origin,width,screenshots:Path):
         # Catalog cards paginate eight at a time; open every page before counting.
         for _ in range(16):
             shown = page.locator('.product-card[data-motion-id]').count()
-            if shown >= 44:
+            if shown >= 46:
                 break
             more = page.locator('#show-more')
             assert more.is_visible(), 'Catalog stopped paginating before every motion study'
             more.click()
             assert page.locator('.product-card[data-motion-id]').count() > shown, (
                 'Show more must append additional motion cards')
-        assert page.locator('.product-card[data-motion-id]').count() == 44, (
-            'All 44 noncommercial motion studies must be shown')
+        assert page.locator('.product-card[data-motion-id]').count() == 46, (
+            'All 46 noncommercial motion studies must be shown')
         # Re-render one original creature into view to start its first Idle phase.
         page.locator('#search').fill('Gray Wolf')
         card=page.locator('.product-card[data-motion-id="ani-forest-wolf"]')

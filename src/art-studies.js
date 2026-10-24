@@ -3,6 +3,8 @@
  * Keys are immutable catalog IDs; drawings are not implied to be animations.
  */
 export const artStudies = Object.freeze({
+  'mon-srd-52-goblin-boss':'./assets/studies/srd-goblin-boss.svg',
+  'mon-srd-52-ogre':'./assets/studies/srd-ogre.svg',
   'mon-forest-wolf':'./assets/studies/dire-wolf.svg',
   'npc-roster-blacksmith-human':'./assets/studies/human-blacksmith.svg',
   'npc-guard-human':'./assets/studies/city-guard.svg',

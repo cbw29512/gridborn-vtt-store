@@ -3,6 +3,35 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'mon-srd-52-ogre': Object.freeze({
+    still:'./assets/studies/srd-ogre.svg',
+    idle:'./assets/demos/srd-ogre-idle.svg',
+    move:'./assets/demos/srd-ogre-move.svg',
+    action:'./assets/demos/srd-ogre-attack.svg',
+    rest:'./assets/demos/srd-ogre-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · Ogre shifts weight and braces its gear',
+      move:'Move · original creature stride retained by shared body rig',
+      action:'Attack · iron-bound club smash visibly swings from its hand',
+      rest:'Rest · Ogre relaxes and lowers its weapon'
+    })
+  }),
+  'mon-srd-52-goblin-boss': Object.freeze({
+    still:'./assets/studies/srd-goblin-boss.svg',
+    idle:'./assets/demos/srd-goblin-boss-idle.svg',
+    move:'./assets/demos/srd-goblin-boss-move.svg',
+    action:'./assets/demos/srd-goblin-boss-attack.svg',
+    rest:'./assets/demos/srd-goblin-boss-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · Goblin Boss shifts weight and braces its gear',
+      move:'Move · original creature stride retained by shared body rig',
+      action:'Attack · steel sword strike visibly swings from its hand',
+      rest:'Rest · Goblin Boss relaxes and lowers its weapon'
+    })
+  }),
+
   'mon-forest-wolf': Object.freeze({
     still:'./assets/studies/dire-wolf.svg',
     idle:'./assets/demos/dire-wolf-idle.svg',
