@@ -49,6 +49,6 @@
  <path d="M173 60h23l7 14-5 15h-25l-9-14z" fill="#a9bbc2" stroke="#30485a" stroke-width="3"/>
  <path d="M178 59l7-14 7 14 13 8-10 10-19-2-12-10z" fill="#d9be85"/>
  <circle cx="185" cy="70" r="6" fill="#fff1c6"/>
-</g>
 <g class="rig-effect"><circle cx="185" cy="70" r="20" fill="none" stroke="#f2d390" stroke-width="3" opacity=".7"/><path d="M185 46v9m0 29v9m-24-23h9m29 0h9" stroke="#fff0c6" stroke-width="3"/></g>
+</g>
 </svg>
