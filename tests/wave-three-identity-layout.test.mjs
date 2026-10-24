@@ -17,9 +17,9 @@ const variants=[
  {id:'mon-cave-ogre',kind:'ogre',stem:'cave-ogre',className:'Monsters'}
 ];
 
-test('Full-motion listing gate accepts 12 source-distinct catalog entries',()=>{
+test('Full-motion listing gate retains four source-distinct studied identities',()=>{
  assert.equal(verifyMotionCatalog(catalog),true);
- assert.equal(Object.keys(animatedPreviews).length,29);
+ assert.equal(Object.keys(animatedPreviews).length,52,'Current merged catalog has 52 animated studies, not the older 29');
  const originalHashes=new Set();
  for(const item of variants){
   const entry=catalog.find(x=>x.id===item.id);
