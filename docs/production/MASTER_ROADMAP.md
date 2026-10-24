@@ -41,8 +41,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **49 original studies (includes Goblin Warrior and Minion in current PR)** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **48 source-linked moving studies proposed** | **21 Characters**, **21 Monsters**, **2 Animals**, **4 NPCs**, Warrior/Minion pending CI |
+| Original illustrated concepts | **51 original studies (includes Ogre Zombie and Skeleton in current PR)** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **50 source-linked moving studies proposed** | **21 Characters**, **23 Monsters**, **2 Animals**, **4 NPCs**, Ogre Zombie and Skeleton pending CI |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -297,3 +297,10 @@ Produce the recognizable **common/base species first**, then build roles on that
 - Two more existing SRD identities `mon-srd-52-goblin-warrior` and `mon-srd-52-goblin-minion` use the **same Cave Goblin** original skeleton, arms, legs, blade-hand/buckler anchors and full four-state animations via the existing monster family generator.
 - Rank-specific visuals are applied as deterministic source overlays: Warrior has reinforced steel mail, close-fitting iron helm and long curved steel saber; Minion has patched cloth, headwrap and shorter worn dagger. Boss retains copper crown; basic Cave Goblin retains its ragged hood. Four distinct in-category cards, never extra galleries.
 - Human size/weapon/equipment art review, transparent video exports, Foundry/Roll20 import and license/fulfillment certification remain blocked. After merge: illustrated **49**, 4-state moving **48** (21 monsters), catalog records unchanged **518**, retail-cleared **0**.
+
+## Two SRD Undead source bodies — Ogre Zombie and Skeleton · October 23, 2026
+
+- Existing **Ogre Zombie** `mon-srd-52-ogre-zombie` builds upon Cave Ogre core/body/legs/held club. The role overlay adds dead grey-green skin, decayed injuries and grave rags, damaged club, a source-linked asymmetric drag gait and slower maul. Idle and rest are undead sways/inert poses, not simulated respiration.
+- Existing standard **Skeleton** `mon-srd-52-skeleton` reuses Skeleton Warrior's genuinely articulated bones, exposed ribs, skull, sword and shield, with burial leather, skull fractures, altered shield/sword corrosion and grave-muted cape. Source rest stays a folded **inert** corpse; no breathing. Distinct from the existing Dungeon Skeleton card.
+- Shared deterministic generator `tools/generate-undead-family.mjs --check` and source renderer `src/creature-rigs/undead-family.mjs`; no duplicated catalog IDs or alternative gallery. Render state source files and original art remain separate from production alpha-export/Foundry/Roll20 import certification.
+- Projected on merge: **51 illustrated**, **50 four-state studies**, **23 animated Monsters**, still **518 catalog concepts** and **zero approved retail SKUs**. Human at-scale artwork review, alpha media, platform import, rights and sales delivery remain outstanding.
