@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "mon-srd-52-ghoul",
+  "status": "concept-only",
+  "stateOnly": true,
+  "stillSource": "assets/studies/srd-ghoul.svg",
+  "restSource": "assets/demos/srd-ghoul-rest.svg",
+  "restDurationSec": 4,
+  "artLicenseStatus": "not-verified",
+  "canvasPx": 256,
+  "fps": 10,
+  "stateClips": {
+    "idle": {
+      "source": "assets/demos/srd-ghoul-idle.svg",
+      "durationSec": 3
+    },
+    "move": {
+      "source": "assets/demos/srd-ghoul-move.svg",
+      "durationSec": 2.4
+    },
+    "attack": {
+      "source": "assets/demos/srd-ghoul-attack.svg",
+      "durationSec": 1.4
+    }
+  },
+  "vttCompatibility": "untested",
+  "purchasable": false
+}
