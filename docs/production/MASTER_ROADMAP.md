@@ -41,8 +41,8 @@ The first passes aim for **complete coverage without mistaking rough prototypes 
 | Scope | Currently evidenced | Target / explanation |
 | --- | --- | --- |
 | Catalog concepts | **518** | Searchable concepts, **not** 518 finished tokens |
-| Original illustrated concepts | **45 original studies (includes Dire Wolf in current PR)** | Some still-only; source art not yet commercially approved |
-| Public four-state animated art studies | **44 source-linked moving studies proposed** | **21 Characters**, **17 Monsters**, **2 Animals**, **4 NPCs**, Dire Wolf pending CI |
+| Original illustrated concepts | **47 original studies (includes Ogre and Goblin Boss in current PR)** | Some still-only; source art not yet commercially approved |
+| Public four-state animated art studies | **46 source-linked moving studies proposed** | **21 Characters**, **19 Monsters**, **2 Animals**, **4 NPCs**, Ogre/Goblin Boss pending CI |
 | Private animation packages | **16 previously technically certified; new Ranger export pending** | Private export pipeline; **not** real VTT import or artistic approval |
 | Class archetypes | **12 classes** planned | First reach one approved male, female, and nonbinary character per class (**36**), then 3 per gender/class (**108**) |
 | Hero variant concept roster | **108** | Concepts, **not** completed playable D&D pregens or animations |
@@ -284,3 +284,10 @@ Produce the recognizable **common/base species first**, then build roles on that
 - The **existing** `mon-forest-wolf` Dire Wolf monster card is the only new moving monster ID; ordinary Gray Wolf retains its existing Animals card and art. No duplicate galleries, new catalog IDs or product SKUs.
 - Original Still and four animated SVGs source-linked to the Gray Wolf base files; `node tools/generate-dire-wolf-states.mjs --check` tracks source drift. Locomotion uses diagonal opposing quadruped leg pairs, lunging bite with fangs and curled resting pose; no static shortcut claiming four states.
 - Post-merge technical inventory: **45 illustrated**, **44 moving studies** (17 Monsters, 4 NPCs, 21 Characters, 2 Animals), retail-approved **0**, 518 catalog identities unchanged. Real platform alpha video export, 32/64/128px visual art checks and legal review remain pending.
+
+## Ogre + Goblin body family monsters · 2026-10-23
+
+- **Existing, distinct SRD identities only**: Ogre `mon-srd-52-ogre` and Goblin Boss `mon-srd-52-goblin-boss` receive their first source-backed art/motion studies. Original Cave Ogre and Cave Goblin remain in the catalog exactly once; no second gallery.
+- Body-family regeneration is deterministic using `src/creature-rigs/monster-family-overlays.mjs` and `node tools/generate-monster-family-states.mjs --check`. It consumes the original Cave Ogre and Cave Goblin Still/Idle/Move/Attack/Rest source SVGs, reusing legs, head, grip, club swing/blade attack and lowered rest.
+- Ogre receives worn leather/metal jerkin and iron-bound greatclub, distinct from the cave variant. Goblin Boss receives high-rank copper crown, plate-sewn brigandine and extended physically attached sword crossguard. Both require manual 32/64/128px silhouette inspection and complete VTT alpha/movie playback certification before sale.
+- After guarded merge: original studies **47**, source-linked four-state studies **46**, 19 animated monsters, catalog still 518 unique cards, 0 approved retail exports.
