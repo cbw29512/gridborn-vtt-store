@@ -3,6 +3,35 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'mon-srd-52-goblin-warrior': Object.freeze({
+    still:'./assets/studies/srd-goblin-warrior.svg',
+    idle:'./assets/demos/srd-goblin-warrior-idle.svg',
+    move:'./assets/demos/srd-goblin-warrior-move.svg',
+    action:'./assets/demos/srd-goblin-warrior-attack.svg',
+    rest:'./assets/demos/srd-goblin-warrior-rest.svg',
+    idleDurationMs:3600,moveDurationMs:3600,actionDurationMs:1400,restDurationMs:6000,
+    labels:Object.freeze({
+      idle:'Idle · Goblin Warrior breathes and blinks',
+      move:'Move · shared goblin stride carries the saber',
+      action:'Attack · quick curved saber slash',
+      rest:'Rest · sword lowered and shoulders relaxed'
+    })
+  }),
+  'mon-srd-52-goblin-minion': Object.freeze({
+    still:'./assets/studies/srd-goblin-minion.svg',
+    idle:'./assets/demos/srd-goblin-minion-idle.svg',
+    move:'./assets/demos/srd-goblin-minion-move.svg',
+    action:'./assets/demos/srd-goblin-minion-attack.svg',
+    rest:'./assets/demos/srd-goblin-minion-rest.svg',
+    idleDurationMs:3600,moveDurationMs:3600,actionDurationMs:1400,restDurationMs:6000,
+    labels:Object.freeze({
+      idle:'Idle · Goblin Minion breathes and blinks',
+      move:'Move · shared goblin stride carries the worn dagger',
+      action:'Attack · quick curved worn dagger slash',
+      rest:'Rest · sword lowered and shoulders relaxed'
+    })
+  }),
+
   'mon-srd-52-ogre': Object.freeze({
     still:'./assets/studies/srd-ogre.svg',
     idle:'./assets/demos/srd-ogre-idle.svg',
