@@ -2,7 +2,7 @@
 <svg data-gridborn-mode="idle" data-source-body="village-innkeeper" data-undead-role="ghoul" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 240" role="img" aria-labelledby="title description" shape-rendering="crispEdges">
 <title id="title">Ghoul — original Gridborn undead study — idle animation</title>
 <desc id="description">A wiry hunched ghoul with ash-pale skin, visible ribs, sunken luminous eyes and especially long bone-colored raking claws, using the same human legs and shoulder anchors.</desc>
-<style>#undead-body{animation:undead-ghoul-crouch 3s steps(1,end) infinite}#undead-left-claw,#undead-right-claw{animation:undead-ghoul-twitch 3s steps(1,end) infinite;transform-origin:155px 120px}
+<style>#undead-body{animation:undead-ghoul-crouch 3s steps(1,end) infinite}#undead-left-claw{animation:undead-ghoul-twitch 3s steps(1,end) infinite;transform-origin:89px 122px}#undead-right-claw{animation:undead-ghoul-twitch 3s steps(1,end) infinite;transform-origin:165px 122px}
 @keyframes undead-ghoul-crouch{0%,100%{transform:translateY(4px) rotate(3deg)}47%{transform:translateY(2px) rotate(0)}}
 @keyframes undead-ghoul-twitch{0%,100%{transform:rotate(0)}23%{transform:rotate(-6deg)}53%{transform:rotate(8deg)}}
 @media(prefers-reduced-motion:reduce){#undead-body,#undead-left-leg,#undead-right-leg,#undead-right-claw,#undead-left-claw,#undead-claw-trails{animation:none!important}#undead-claw-trails{opacity:0!important}}</style>

@@ -32,6 +32,9 @@ test('Human Ghoul and Zombie preserve human body leg geometry but no Innkeeper p
   assert.equal(row[0].animationStatus,'art-study');
   assert.equal(row[0].previewArt,'./assets/studies/'+role.stem+'.svg');
  }
+ const ghoulIdle=read('assets/demos/srd-ghoul-idle.svg');
+ assert.match(ghoulIdle,/#undead-left-claw\\{[^}]*transform-origin:89px 122px/);
+ assert.match(ghoulIdle,/#undead-right-claw\\{[^}]*transform-origin:165px 122px/);
  assert.notEqual(read('assets/studies/srd-zombie.svg'),read('assets/studies/srd-ghoul.svg'));
  assert.throws(()=>deriveHumanUndead('broken',HUMAN_UNDEAD[0]),/foundation missing/);
 });
