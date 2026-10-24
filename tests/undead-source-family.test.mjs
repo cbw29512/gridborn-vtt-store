@@ -44,7 +44,12 @@ test('Undead actions are physically driven, Skeleton never breathes, Ogre Zombie
  const zMove=read('assets/demos/srd-ogre-zombie-move.svg');
  const zAttack=read('assets/demos/srd-ogre-zombie-attack.svg');
  const zRest=read('assets/demos/srd-ogre-zombie-rest.svg');
- assert.match(zIdle,/ogre-zombie-sway/);assert.doesNotMatch(zIdle,/animation:ogre-heavy-breath 3\.2s ease-in-out infinite\}\.rig-weapon/);
+ assert.match(zIdle,/ogre-zombie-sway/);
+ // Original source retains its first keyframes; final CSS selector overrides it.
+ assert.ok(zIdle.indexOf('.rig-core{animation:ogre-zombie-sway')>
+           zIdle.indexOf('.rig-core{animation:ogre-heavy-breath'));
+ assert.ok(zRest.indexOf('.rig-core{animation:ogre-zombie-inert')>
+           zRest.indexOf('.rig-core{animation:ogre-rest'));
  assert.match(zMove,/ogre-zombie-drag-leg/);assert.match(zMove,/rig-leg-left/);
  assert.match(zAttack,/ogre-zombie-club/);assert.match(zAttack,/rig-weapon/);
  assert.match(zRest,/ogre-zombie-inert/);assert.match(zRest,/ogre-zombie-ground-club/);
