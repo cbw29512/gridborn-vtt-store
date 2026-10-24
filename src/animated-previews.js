@@ -3,6 +3,35 @@
  * Source details are keyed by catalog ID, never a creature-name heuristic.
  */
 export const animatedPreviews = Object.freeze({
+  'mon-srd-52-zombie': Object.freeze({
+    still:'./assets/studies/srd-zombie.svg',
+    idle:'./assets/demos/srd-zombie-idle.svg',
+    move:'./assets/demos/srd-zombie-move.svg',
+    action:'./assets/demos/srd-zombie-attack.svg',
+    rest:'./assets/demos/srd-zombie-rest.svg',
+    idleDurationMs:3200,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · undead body shifts and twitches without breathing',
+      move:'Move · uneven dragging human step',
+      action:'Attack · right-hand unarmed claw swipe',
+      rest:'Rest · slack and inert corpse'
+    })
+  }),
+  'mon-srd-52-ghoul': Object.freeze({
+    still:'./assets/studies/srd-ghoul.svg',
+    idle:'./assets/demos/srd-ghoul-idle.svg',
+    move:'./assets/demos/srd-ghoul-move.svg',
+    action:'./assets/demos/srd-ghoul-attack.svg',
+    rest:'./assets/demos/srd-ghoul-rest.svg',
+    idleDurationMs:3000,moveDurationMs:2400,actionDurationMs:1400,restDurationMs:4000,
+    labels:Object.freeze({
+      idle:'Idle · undead body shifts and twitches without breathing',
+      move:'Move · low stalking two-legged gait',
+      action:'Attack · two-handed claw rake',
+      rest:'Rest · crouched undead stillness'
+    })
+  }),
+
   'mon-srd-52-ogre-zombie': Object.freeze({
     still:'./assets/studies/srd-ogre-zombie.svg',
     idle:'./assets/demos/srd-ogre-zombie-idle.svg',
