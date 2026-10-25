@@ -316,3 +316,8 @@ Produce the recognizable **common/base species first**, then build roles on that
 - Zombie's design is corpse-muted green with torn work clothes, blank dead eyes, dragging gait, drooping clawed arms and a late right claw swipe. Ghoul has a wiry rib-exposed torso, pale hungry face, visibly longer talons, low stalking gait and a real two-handed claw rake. Claw effects are only shown at impact, not when resting. Neither uses living-style breathing.
 - `src/creature-rigs/human-undead.mjs` and `tools/generate-human-undead.mjs --check` are the generation/ancestry parity gate for five SVG source states per card. Catalog uses the same `#results` grid and its existing immutable monster records; no parallel gallery.
 - Projected: **53 illustrated**, **52 four-state studies**, **25 moving Monsters**, **518 total catalog entries**, **0 retail-approved exports**. 32/64/128px art review, right/left claw geometry, actual alpha video import/Foundry/Roll20 playback, rights and fulfillment still require manual verification.
+ 
+## Animated Armor sword and one-shot cleave — October 25, 2026
+
+- **`mon-dng-armor`**: lowered/shortened the original steel sword to clear the visor and retain distinct shield and construct anatomy. Replaced the shallow Attack wobble with a 56-degree, grip-anchored anticipation/contact arc; weapon translation tracks the body lunge. All four generated states remain linked to the original still and generator.
+- Added generator-parity and sword-tip/frame assertions, plus [individual research/art brief](briefs/mon-dng-armor.md). **No new catalog entry or retail asset.** Human 128/64/32px review, real Foundry/Roll20 imports, licensing and fulfillment still pending. No checkout or deployment.
