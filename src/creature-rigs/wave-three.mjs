@@ -16,6 +16,12 @@ export const renderWaveThree=function makeMotion(kind,mode,source){
   art=art.replace('<g class="dwarf-shield">','</g>\n<g class="dwarf-shield rig-offhand">');
   art=art.replace('<g class="dwarf-mace">','<g class="dwarf-mace rig-weapon">');
  }
+ if(kind==="mercy"){
+  const haloBoundary='</g>\n<g class="rig-effect">';
+  if(!art.includes(haloBoundary)||!art.includes('</g>\n</svg>'))throw Error("Mercywarden art changed");
+  art=art.replace(haloBoundary,'<g class="rig-effect">');
+  art=art.replace('</g>\n</svg>','</g>\n</g>\n</svg>');
+ }
  const animSets={
  dwarf:{
  idle:`.rig-core{animation:dwarf-guard 3.2s ease-in-out infinite}.rig-weapon{transform-origin:188px 151px;animation:dwarf-mace-guard 3.2s ease-in-out infinite}.rig-offhand{transform-origin:77px 142px;animation:dwarf-shield-guard 3.2s ease-in-out infinite}
@@ -46,10 +52,10 @@ export const renderWaveThree=function makeMotion(kind,mode,source){
 @keyframes mercy-left{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(-14deg)}65%{transform:rotate(12deg)}}
 @keyframes mercy-right{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(14deg)}65%{transform:rotate(-12deg)}}
 @keyframes mercy-shield-walk{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(-6deg)}65%{transform:rotate(5deg)}}`,
- attack:`.rig-core{animation:mercy-cast-step 1.4s ease-in-out 1 both}.rig-weapon{transform-origin:186px 150px;animation:mercy-cast-mace 1.4s ease-in-out 1 both}.rig-effect{animation:mercy-heal-flash 1.4s steps(1,end) 1 both}
+ attack:`.rig-core{animation:mercy-cast-step 1.4s ease-in-out 1 both}.rig-weapon{transform-origin:186px 150px;animation:mercy-cast-mace 1.4s ease-in-out 1 both}.rig-effect{transform-origin:185px 70px;animation:mercy-heal-flash 1.4s ease-out 1 both}
 @keyframes mercy-cast-step{0%,100%{transform:translate(0,0)}24%{transform:translate(3px,1px)}54%{transform:translate(-6px,-2px)}75%{transform:translate(-1px,0)}}
 @keyframes mercy-cast-mace{0%,100%{transform:rotate(0)}24%{transform:rotate(-24deg)}54%{transform:rotate(32deg)}75%{transform:rotate(10deg)}}
-@keyframes mercy-heal-flash{0%,10%,82%,100%{opacity:.13;transform:scale(1)}45%{opacity:1;transform:scale(1.4)}60%{opacity:.65;transform:scale(1.2)}}`,
+@keyframes mercy-heal-flash{0%,28%,100%{opacity:.1;transform:scale(.9)}54%{opacity:1;transform:scale(1.16)}72%{opacity:.55;transform:scale(1.04)}}`,
  rest:`.rig-core{animation:mercy-prayer 4s ease-in-out infinite}.rig-offhand{transform-origin:76px 143px;animation:mercy-shield-rest 4s ease-in-out infinite}.rig-effect{animation:mercy-candle 4s steps(1,end) infinite}
 @keyframes mercy-prayer{0%,10%,90%,100%{transform:translateY(8px)}45%{transform:translateY(6px)}}
 @keyframes mercy-shield-rest{0%,10%,90%,100%{transform:rotate(17deg)}45%{transform:rotate(15deg)}}

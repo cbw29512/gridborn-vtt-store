@@ -17,9 +17,9 @@ const variants=[
  {id:'mon-cave-ogre',kind:'ogre',stem:'cave-ogre',className:'Monsters'}
 ];
 
-test('Full-motion listing gate accepts 12 source-distinct catalog entries',()=>{
+test('Full-motion listing gate retains four source-distinct studied identities',()=>{
  assert.equal(verifyMotionCatalog(catalog),true);
- assert.equal(Object.keys(animatedPreviews).length,52);
+ assert.equal(Object.keys(animatedPreviews).length,52,'Current merged catalog has 52 animated studies, not the older 29');
  const originalHashes=new Set();
  for(const item of variants){
   const entry=catalog.find(x=>x.id===item.id);
@@ -91,4 +91,20 @@ test('Cards use fixed visual stages, uniform rows, builder slots and anchored fo
  assert.match(html,/customizeSlot/);
  assert.match(html,/body\.append\(type, name, meta, customizeSlot, details, bundleAdd, foot\)/);
  assert.equal(catalog.length,518,'Animate existing IDs instead of adding lookalike duplicate cards');
+});
+
+test('Mercywarden mace radiance follows weapon grip through all four states',()=>{
+ const source=read('assets/studies/human-mercywarden-female.svg');
+ assert.match(source,/<\/g>\n<g class="rig-effect">/,'Canonical still is unchanged');
+ for(const mode of WAVE_THREE_STATES){
+  const svg=read('assets/demos/human-mercywarden-female-'+mode+'.svg');
+  assert.equal(svg,renderWaveThree('mercy',mode,source),'All states must be generated from original art');
+  assert.match(svg,/<g class="rig-weapon">[\s\S]*?<g class="rig-effect">[\s\S]*?<\/g>\n<\/g>\n<\/svg>/,
+   'Mace halo must inherit weapon transform in '+mode);
+ }
+ const strike=read('assets/demos/human-mercywarden-female-attack.svg');
+ assert.match(strike,/mercy-cast-mace 1\.4s ease-in-out 1 both/);
+ assert.match(strike,/transform-origin:185px 70px;animation:mercy-heal-flash/);
+ assert.match(strike,/54%\{opacity:1;transform:scale\(1\.16\)\}/,'Radiance peaks at strike');
+ assert.doesNotMatch(strike,/mercy-heal-flash 1\.4s steps\(1,end\)/);
 });
