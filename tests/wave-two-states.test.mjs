@@ -104,3 +104,21 @@ test('wizard casts a separate, one-shot arcane projectile instead of only moving
   assert.doesNotMatch(svg,/data-weapon-projectile="arcane-bolt"/);
  }
 });
+test('Animated Armor sword remains attached, frame-safe and source-synchronized',()=>{
+ const still=read('assets/studies/animated-armor.svg');
+ const shot=read('assets/demos/animated-armor-attack.svg');
+ assert.ok(still.includes('M202 122L207 92L216 80L221 91L217 122Z'));
+ assert.ok(shot.includes('transform-origin:194px 155px'));
+ assert.ok(shot.includes('25%{transform:translate(-3px,0) rotate(-30deg)}'));
+ assert.ok(shot.includes('53%{transform:translate(6px,-3px) rotate(26deg)}'));
+ const p={x:194,y:155},tip={x:216,y:80};
+ for(const [deg,dx,dy] of [[0,0,0],[-30,-3,0],[26,6,-3],[6,2,0]]){
+  const r=deg*Math.PI/180;
+  const px=p.x+(tip.x-p.x)*Math.cos(r)-(tip.y-p.y)*Math.sin(r)+dx;
+  const py=p.y+(tip.x-p.x)*Math.sin(r)+(tip.y-p.y)*Math.cos(r)+dy;
+  assert.ok(px>170&&px<254&&py>60&&py<145,'Sword tip must clear helmet and frame: '+deg);
+ }
+ for(const mode of WAVE_STATES){
+  assert.equal(read('assets/demos/animated-armor-'+mode+'.svg'),renderWave('armor',mode,still));
+ }
+});
