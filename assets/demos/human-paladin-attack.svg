@@ -4,9 +4,9 @@
 <title id="title">Human Paladin — attack original motion study</title>
 <desc id="description">Ivory tabard with crested helm, shield and sword, attack motion prototype only. Not a paid product.</desc>
 <style>
-.rig-core{animation:paladin-smite-step 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:193px 148px;animation:paladin-sunstrike 1.4s steps(1,end) 1 both}.rig-offhand{transform-origin:76px 151px;animation:paladin-shield-block 1.4s steps(1,end) 1 both}
+.rig-core{animation:paladin-smite-step 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:193px 148px;animation:paladin-sunstrike 1.4s ease-in-out 1 both}.rig-offhand{transform-origin:76px 151px;animation:paladin-shield-block 1.4s steps(1,end) 1 both}
    @keyframes paladin-smite-step{0%,100%{transform:translate(0,0)}24%{transform:translate(4px,0)}53%{transform:translate(-9px,-2px)}76%{transform:translate(-2px,0)}}
-   @keyframes paladin-sunstrike{0%,100%{transform:rotate(0)}24%{transform:rotate(-43deg)}53%{transform:rotate(59deg)}76%{transform:rotate(12deg)}}
+   @keyframes paladin-sunstrike{0%,100%{transform:rotate(0)}24%{transform:rotate(-14deg)}53%{transform:rotate(28deg)}76%{transform:rotate(12deg)}}
    @keyframes paladin-shield-block{0%,100%{transform:rotate(0)}24%{transform:rotate(-8deg)}53%{transform:rotate(14deg)}76%{transform:rotate(5deg)}}
 @media(prefers-reduced-motion:reduce){.rig-core,.rig-body,.rig-tail,.rig-fin,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-leg-left,.rig-leg-right,.paladin-legs{animation:none!important}}
 </style>
@@ -85,7 +85,6 @@
  <path d="M99 80H109V102H99Z M149 80H161V101H150Z" fill="#869baa"/>
  <path d="M102 83H106V95H102Z" fill="#f5f4e6"/>
 </g>
-</g>
 <g class="paladin-shield rig-offhand">
  <path d="M50 117H101V156L76 192 50 159Z" fill="#1b2734" stroke="#d3b477" stroke-width="4"/>
  <path d="M57 125H94V155L76 181 57 156Z" fill="#3c5d8d"/>
@@ -106,5 +105,6 @@
  <path d="M188 149H197V181H188Z" fill="#644e3b"/>
  <path d="M190 153H194V174H190Z" fill="#bd9e73"/>
  <path d="M186 178H199V184H186Z" fill="#d3b179"/>
+</g>
 </g>
 </svg>

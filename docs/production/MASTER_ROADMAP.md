@@ -321,3 +321,9 @@ Produce the recognizable **common/base species first**, then build roles on that
 
 - **`mon-dng-armor`**: lowered/shortened the original steel sword to clear the visor and retain distinct shield and construct anatomy. Replaced the shallow Attack wobble with a 56-degree, grip-anchored anticipation/contact arc; weapon translation tracks the body lunge. All four generated states remain linked to the original still and generator.
 - Added generator-parity and sword-tip/frame assertions, plus [individual research/art brief](briefs/mon-dng-armor.md). **No new catalog entry or retail asset.** Human 128/64/32px review, real Foundry/Roll20 imports, licensing and fulfillment still pending. No checkout or deployment.
+
+## Human Paladin sword grip and frame-safe swing — October 27, 2026
+
+- Existing `chr-pal-human` retains the same original still and catalog ID. The wave-four generator now keeps shield and sword **inside the translated body rig** rather than leaving held equipment behind during a lunge.
+- The sword's prior discrete -43°/+59° snap could cross the helmet and clip the frame. Replaced with a smoothly interpolated **-14° wind-up / +28° contact / +12° recovery** swing; source-linked Idle, Move, Attack, Rest exports were regenerated without duplicating art.
+- Added rig-parent/group-balance, frame/helmet-tip and generator-parity tests plus [individual art brief](briefs/chr-pal-human.md). No additional catalog studies or retail-ready products are claimed. Human 128/64/32px inspection, actual VTT imports, alpha video, IP and fulfillment signoff remain blocked; checkout and deployment unchanged.

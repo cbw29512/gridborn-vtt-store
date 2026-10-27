@@ -85,7 +85,6 @@
  <path d="M99 80H109V102H99Z M149 80H161V101H150Z" fill="#869baa"/>
  <path d="M102 83H106V95H102Z" fill="#f5f4e6"/>
 </g>
-</g>
 <g class="paladin-shield rig-offhand">
  <path d="M50 117H101V156L76 192 50 159Z" fill="#1b2734" stroke="#d3b477" stroke-width="4"/>
  <path d="M57 125H94V155L76 181 57 156Z" fill="#3c5d8d"/>
@@ -106,5 +105,6 @@
  <path d="M188 149H197V181H188Z" fill="#644e3b"/>
  <path d="M190 153H194V174H190Z" fill="#bd9e73"/>
  <path d="M186 178H199V184H186Z" fill="#d3b179"/>
+</g>
 </g>
 </svg>

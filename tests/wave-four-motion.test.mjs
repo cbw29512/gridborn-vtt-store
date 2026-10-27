@@ -97,3 +97,40 @@ test('Gnome crossbow holds and fires a separate visible bolt with one-shot fligh
  }
  assert.match(read('assets/demos/gnome-rogue-manifest.json'),/"purchasable"\s*:\s*false/);
 });
+
+
+test('Paladin sword is body-attached and sweeps a frame-safe arc clear of the helmet',()=>{
+ const original=read('assets/studies/human-paladin.svg');
+ const seen=new Set();
+ for(const state of WAVE_FOUR_STATES){
+  const svg=read('assets/demos/human-paladin-'+state+'.svg');
+  assert.equal(svg,renderWaveFour('paladin',state,original),'Paladin generator parity: '+state);
+  const groups=[];
+  for(const [tag] of svg.matchAll(/<\/?g\b[^>]*>/g)){
+   if(tag.startsWith('</')){
+    assert.ok(groups.length,'Unmatched group closing in '+state);
+    groups.pop();
+   }else{
+    const cls=tag.match(/class="([^"]+)"/)?.[1]||'';
+    if(cls.includes('rig-weapon')||cls.includes('rig-offhand')){
+     assert.ok(groups.includes('rig-core'),cls+' must follow the lunging body');
+     seen.add(cls.includes('rig-weapon')?'weapon':'shield');
+    }
+    groups.push(cls);
+   }
+  }
+  assert.equal(groups.length,0,'All SVG rig groups must balance in '+state);
+ }
+ assert.deepEqual([...seen].sort(),['shield','weapon']);
+ const attack=read('assets/demos/human-paladin-attack.svg');
+ assert.match(attack,/paladin-sunstrike 1\.4s ease-in-out 1 both/,'Sword must swing smoothly, not teleport between keyframes');
+ assert.match(attack,/24%\{transform:rotate\(-14deg\)\}53%\{transform:rotate\(28deg\)\}/);
+ const pivot={x:193,y:148},tip={x:191,y:37};
+ for(const angle of [0,-14,28,12]){
+  const radians=angle*Math.PI/180;
+  const x=pivot.x+(tip.x-pivot.x)*Math.cos(radians)-(tip.y-pivot.y)*Math.sin(radians);
+  const y=pivot.y+(tip.x-pivot.x)*Math.sin(radians)+(tip.y-pivot.y)*Math.cos(radians);
+  assert.ok(x>162&&x<250&&y>30&&y<90,'Sword tip clears helmet and 256px canvas at '+angle+'deg');
+ }
+ assert.ok(28-(-14)>=40,'Paladin needs a visible weapon sweep, not a small wobble');
+});

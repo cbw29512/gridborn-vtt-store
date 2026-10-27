@@ -16,8 +16,9 @@ export const renderWaveFour=function renderWaveFour(kind,mode,source){
   const shield='<g class="paladin-shield">',weapon='<g class="paladin-sword">';
   if(!s.includes(shield)||!s.includes(weapon))throw Error('Paladin grouping anchors changed');
   s=s.replace(marker,'<g class="rig-core">\n'+marker)
-    .replace(shield,'</g>\n<g class="paladin-shield rig-offhand">')
-    .replace(weapon,'<g class="paladin-sword rig-weapon">');
+    .replace(shield,'<g class="paladin-shield rig-offhand">')
+    .replace(weapon,'<g class="paladin-sword rig-weapon">')
+    .replace('</g>\n</svg>','</g>\n</g>\n</svg>');
  }
  if(kind==='shark'){
   for(const [a,b] of [
@@ -38,9 +39,9 @@ export const renderWaveFour=function renderWaveFour(kind,mode,source){
    @keyframes paladin-step-legs{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(-7deg)}65%{transform:rotate(7deg)}}
    @keyframes paladin-step-sword{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(8deg)}65%{transform:rotate(-6deg)}}
    @keyframes paladin-step-shield{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(-6deg)}65%{transform:rotate(5deg)}}`,
-   attack:`.rig-core{animation:paladin-smite-step 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:193px 148px;animation:paladin-sunstrike 1.4s steps(1,end) 1 both}.rig-offhand{transform-origin:76px 151px;animation:paladin-shield-block 1.4s steps(1,end) 1 both}
+   attack:`.rig-core{animation:paladin-smite-step 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:193px 148px;animation:paladin-sunstrike 1.4s ease-in-out 1 both}.rig-offhand{transform-origin:76px 151px;animation:paladin-shield-block 1.4s steps(1,end) 1 both}
    @keyframes paladin-smite-step{0%,100%{transform:translate(0,0)}24%{transform:translate(4px,0)}53%{transform:translate(-9px,-2px)}76%{transform:translate(-2px,0)}}
-   @keyframes paladin-sunstrike{0%,100%{transform:rotate(0)}24%{transform:rotate(-43deg)}53%{transform:rotate(59deg)}76%{transform:rotate(12deg)}}
+   @keyframes paladin-sunstrike{0%,100%{transform:rotate(0)}24%{transform:rotate(-14deg)}53%{transform:rotate(28deg)}76%{transform:rotate(12deg)}}
    @keyframes paladin-shield-block{0%,100%{transform:rotate(0)}24%{transform:rotate(-8deg)}53%{transform:rotate(14deg)}76%{transform:rotate(5deg)}}`,
    rest:`.rig-core{animation:paladin-prayer-rest 4s ease-in-out infinite}.rig-weapon{transform-origin:193px 148px;animation:paladin-sword-sheathe 4s ease-in-out infinite}.rig-offhand{transform-origin:76px 151px;animation:paladin-shield-lower 4s ease-in-out infinite}
    @keyframes paladin-prayer-rest{0%,10%,90%,100%{transform:translateY(9px)}50%{transform:translateY(7px)}}
