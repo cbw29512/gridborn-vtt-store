@@ -97,3 +97,21 @@ test('Gnome crossbow holds and fires a separate visible bolt with one-shot fligh
  }
  assert.match(read('assets/demos/gnome-rogue-manifest.json'),/"purchasable"\s*:\s*false/);
 });
+
+test('Lizardfolk spear is gripped, jaw-clear and one-shot frame-safe',()=>{
+ const still=read('assets/studies/swamp-lizardfolk.svg');
+ const shot=read('assets/demos/swamp-lizardfolk-attack.svg');
+ assert.ok(still.includes('data-weapon-grip="right-hand"'));
+ assert.ok(still.includes('M140 189L220 156'));
+ assert.ok(still.includes('M218 157L235 143L232 164L221 165Z'));
+ assert.ok(shot.includes('24%{transform:translate(-8px,3px)}'));
+ assert.ok(shot.includes('54%{transform:translate(12px,-3px)}'));
+ for(const [dx,dy] of [[0,0],[-8,3],[12,-3],[3,-1]]){
+  assert.ok(235+dx>215&&235+dx<256,'Spear tip within horizontal frame');
+  assert.ok(143+dy>=135&&143+dy<165,'Spear tip below snout');
+ }
+ for(const mode of WAVE_FOUR_STATES){
+  assert.equal(read('assets/demos/swamp-lizardfolk-'+mode+'.svg'),renderWaveFour('lizardfolk',mode,still));
+ }
+ assert.ok(read('assets/demos/swamp-lizardfolk-manifest.json').includes('"purchasable": false'));
+});

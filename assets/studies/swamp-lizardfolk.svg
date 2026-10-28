@@ -40,11 +40,15 @@
  <path d="M60 139l31 34M92 139l-31 34" stroke="#31554c" stroke-width="3"/>
 </g>
 <g class="rig-weapon">
- <path d="M139 180L221 143" stroke="#302c2a" stroke-width="11" stroke-linecap="round"/>
- <path d="M139 180L221 143" stroke="#806449" stroke-width="6" stroke-linecap="round"/>
- <path d="M218 144L236 132L232 151L223 153Z" fill="#bac7bc" stroke="#51635c" stroke-width="2"/>
- <path d="M177 160L188 155L192 164L181 169Z" fill="#7b9d71" stroke="#244239" stroke-width="2"/>
- <path d="M173 159L181 155L191 162L182 170L174 168Z" fill="#537d60" stroke="#204037" stroke-width="2"/>
+ <!-- Original spear with an attached right-hand grip, clear of the snout. -->
+ <path d="M140 189L220 156" stroke="#302c2a" stroke-width="10" stroke-linecap="round"/>
+ <path d="M140 189L220 156" stroke="#806449" stroke-width="6" stroke-linecap="round"/>
+ <path d="M218 157L235 143L232 164L221 165Z" fill="#bac7bc" stroke="#51635c" stroke-width="2"/>
+ <path d="M218 157L232 149" fill="none" stroke="#e0e8d8" stroke-width="2"/>
+ <g data-weapon-grip="right-hand">
+  <path d="M165 169Q172 162 180 168L188 176Q183 185 174 181L166 177Z" fill="#608663" stroke="#204037" stroke-width="3"/>
+  <path d="M169 174L181 178M173 169L184 174" stroke="#294f3f" stroke-width="2" fill="none"/>
+ </g>
 </g>
 <g class="rig-effect"><path d="M63 204l-15 7m46-2-10 7" stroke="#92bc9a" stroke-width="3" opacity=".5"/></g>
 </svg>

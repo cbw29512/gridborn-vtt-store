@@ -321,3 +321,8 @@ Produce the recognizable **common/base species first**, then build roles on that
 
 - **`mon-dng-armor`**: lowered/shortened the original steel sword to clear the visor and retain distinct shield and construct anatomy. Replaced the shallow Attack wobble with a 56-degree, grip-anchored anticipation/contact arc; weapon translation tracks the body lunge. All four generated states remain linked to the original still and generator.
 - Added generator-parity and sword-tip/frame assertions, plus [individual research/art brief](briefs/mon-dng-armor.md). **No new catalog entry or retail asset.** Human 128/64/32px review, real Foundry/Roll20 imports, licensing and fulfillment still pending. No checkout or deployment.
+
+## Swamp Lizardfolk spear grip and thrust — October 26, 2026
+
+- `mon-swamp-lizard`: moved the original spear below the reptilian snout, attached an actual gripping hand, preserved separate reed shield/tail, and synchronized all four SVG states with `wave-four.mjs`. One-shot Attack has a braced wind-up and forward thrust, plus frame-bound and generator-parity assertions.
+- Added [individual research/art brief](briefs/mon-swamp-lizard.md). No new catalog identity or sale-approved asset; human 128/64/32px review, actual VTT import, rights and fulfillment remain blocking. No checkout or deployment.
