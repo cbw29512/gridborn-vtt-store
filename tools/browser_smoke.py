@@ -24,6 +24,7 @@ from catalog_motion_browser_qa import check_catalog_motion, check_reduced_motion
 from catalog_expansion_browser_qa import check_full_catalog
 from monster_catalog_browser_qa import check_monster_catalog_no_duplicates
 from shopping_gallery_browser_qa import check_shopping_gallery
+from catalog_history_browser_qa import check_catalog_history
 SIZES = (1440, 390, 320)
 class PreviewHandler(SimpleHTTPRequestHandler):
     def log_message(self, format_string, *args):
@@ -244,6 +245,7 @@ def main() -> int:
                     check_full_catalog(browser, url, width, screenshots)
                     check_monster_catalog_no_duplicates(browser, url, width, screenshots)
                     check_shopping_gallery(browser, url, width, screenshots)
+                    check_catalog_history(browser, url, width)
             finally:
                 browser.close()
         LOG.info("All viewport tests passed. Screenshots remain temporary.")
