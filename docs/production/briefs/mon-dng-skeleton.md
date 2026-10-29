@@ -15,7 +15,8 @@
 - **Silhouette:** exposed skull sockets, segmented shoulder/elbow/wrist, open ribcage, pelvis, bone legs, torn cape; do not animate respiration. Maintain a distinct sword mass and damaged shield at 128/64/32px on light and dark backgrounds.
 - **Grip:** shift the existing sword 5px toward the right bony hand, shorten the tip to avoid the skull during wind-up; the hilt/pommel overlaps the hand geometry. Sword and right arm share shoulder pivot `157,110` and remain attached during the body lunge.
 - **Idle:** small rigid skull/guard/sword adjustments, no breathing. **Move:** opposing articulated shuffle with equipment motion. **Attack:** anticipate at -18°, strike at +25°, recover through +9° to guard over 1.4 seconds; a single attack, not an infinite loop. **Rest:** inert collapsed corpse with faint socket glimmer only.
-- **Inherited variant:** the existing `mon-srd-52-skeleton` source-derived Still and four states are regenerated with the same weapon correction, including repositioned rust detail; no duplicate token identity.\n- **Frame evidence:** test the tip's shoulder-pivot positions at the four authored angles and deterministic parity of Still + four generated states. These checks are structural, not a substitute for reviewing rasterized motion at gameplay size.
+- **Inherited variant:** the existing `mon-srd-52-skeleton` source-derived Still and four states are regenerated with the same weapon correction, including repositioned rust detail; no duplicate token identity.
+- **Frame evidence:** test the tip's shoulder-pivot positions at the four authored angles and deterministic parity of Still + four generated states. These checks are structural, not a substitute for reviewing rasterized motion at gameplay size.
 
 ## Readiness and blocking review
 
