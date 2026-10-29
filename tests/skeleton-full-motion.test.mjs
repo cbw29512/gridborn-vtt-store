@@ -90,8 +90,8 @@ test('Skeleton sword is gripped and swings on a bounded one-shot arc clear of th
  const attack=read('assets/demos/skeleton-warrior-attack.svg');
  assert.match(original,/M186 69L191 56 196 73Z/, 'Shortened blade tip is distinct from the skull');
  assert.match(original,/<rect x="186" y="169" width="11" height="6"/, 'Pommel overlaps the right-hand grip');
- assert.match(attack,/bone-attack-sword 1\\.4s ease-in-out 1 both/);
- assert.match(attack,/@keyframes bone-attack-sword\\{0%,100%\\{transform:rotate\\(0\\)\\}22%\\{transform:rotate\\(-18deg\\)\\}51%\\{transform:rotate\\(25deg\\)\\}74%\\{transform:rotate\\(9deg\\)\\}\\}/);
+ assert.match(attack,/bone-attack-sword 1\.4s ease-in-out 1 both/);
+ assert.match(attack,/@keyframes bone-attack-sword\{0%,100%\{transform:rotate\(0\)\}22%\{transform:rotate\(-18deg\)\}51%\{transform:rotate\(25deg\)\}74%\{transform:rotate\(9deg\)\}\}/);
  // The blade tip follows the same shoulder pivot as the articulated right arm.
  // Bounds are conservative; human review at 32/64/128px remains mandatory.
  for(const angle of [-18,0,9,25]){
