@@ -78,7 +78,7 @@ function resetFilters() {
     Object.assign(state, { ...initialState, category: currentCategory });
     animatedOnly = false;
     nodes.search.value = ''; nodes.category.value = state.category;
-    visibleCount = pageSize(); updateFilters(); renderResults(); writeCatalogRoute(state);
+    visibleCount = pageSize(); updateFilters(); renderResults(); writeCatalogRoute(state, 'push');
   } catch (error) { console.error('Unable to reset catalog filters', error); }
 }
 
@@ -103,15 +103,15 @@ function initialize() {
     for (const label of Object.keys(categoryConfig)) nodes.category.add(new Option(label, label));
     nodes.category.value = state.category;
     nodes.category.addEventListener('change', () => {
-      try { state.category = nodes.category.value; state.primary = ''; state.secondary = ''; visibleCount = pageSize(); updateFilters(); renderResults(); writeCatalogRoute(state); }
+      try { state.category = nodes.category.value; state.primary = ''; state.secondary = ''; visibleCount = pageSize(); updateFilters(); renderResults(); writeCatalogRoute(state, 'push'); }
       catch (error) { console.error('Category change failed', error); }
     });
     nodes.primary.addEventListener('change', () => {
-      try { state.primary = nodes.primary.value; state.secondary = ''; visibleCount = pageSize(); updateFilters(); renderResults(); writeCatalogRoute(state); }
+      try { state.primary = nodes.primary.value; state.secondary = ''; visibleCount = pageSize(); updateFilters(); renderResults(); writeCatalogRoute(state, 'push'); }
       catch (error) { console.error('Primary filter change failed', error); }
     });
     nodes.secondary.addEventListener('change', () => {
-      try { state.secondary = nodes.secondary.value; visibleCount = pageSize(); renderResults(); writeCatalogRoute(state); }
+      try { state.secondary = nodes.secondary.value; visibleCount = pageSize(); renderResults(); writeCatalogRoute(state, 'push'); }
       catch (error) { console.error('Secondary filter change failed', error); }
     });
     nodes.search.addEventListener('input', () => {
