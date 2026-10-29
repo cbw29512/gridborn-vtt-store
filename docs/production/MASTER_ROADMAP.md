@@ -332,3 +332,9 @@ Produce the recognizable **common/base species first**, then build roles on that
 
 - `mon-swamp-lizard`: moved the original spear below the reptilian snout, attached an actual gripping hand, preserved separate reed shield/tail, and synchronized all four SVG states with `wave-four.mjs`. One-shot Attack has a braced wind-up and forward thrust, plus frame-bound and generator-parity assertions.
 - Added [individual research/art brief](briefs/mon-swamp-lizard.md). No new catalog identity or sale-approved asset; human 128/64/32px review, actual VTT import, rights and fulfillment remain blocking. No checkout or deployment.
+
+## Skeleton Warrior weapon grip and attack QC — October 29, 2026
+
+- Existing `mon-dng-skeleton`: shortened and shifted the original sword to overlap the articulated right-hand grip while clearing the skull; kept the exposed ribs, pelvis, damaged shield, and original catalog identity.
+- Replaced the -49°/+61° stepped sword snap with a continuous -18° wind-up / +25° contact / +9° recovery around the existing shoulder pivot. Rebuilt all four independent SVG states from the canonical source and `skeleton.mjs` generator, with source-parity and conservative tip-boundary regression checks.
+- [Individual research/art brief](briefs/mon-dng-skeleton.md). No new catalog entry or commercially approved asset. Human 128/64/32px light/dark review, actual Foundry/Roll20 import, licensing and fulfillment remain pending; checkout and deployment stay disabled.
