@@ -12,6 +12,12 @@
 
 **Mandatory before any new artwork:** follow [Research-to-Art Gate](RESEARCH_ART_GATE.md), recording individual source-backed anatomy, equipment, motion and licensing briefs before rendering. No study can be counted as a production asset without its research brief.
 
+## Storefront navigation QA reconciliation — October 28, 2026 (pending CI)
+
+- Supersede obsolete conflicting draft PR #4 **without** its duplicate Chromium workflow or stale eight-result / opt-in-animation assertions. Keep the current 518-concept paginated single gallery and existing Chromium media QA.
+- Deliberate category/primary/secondary/reset actions create browser history entries; search keystrokes replace the current entry. Browser Back/Forward restores validated dependent filters, with dedicated Node and real Chromium regression coverage at 1440/390/320px.
+- This is navigation QA, **not new art**: animated studies and commercial approvals remain unchanged. Merge only after all required CI passes; never deploy or enable checkout.
+
 ## Current production priority — species/body family first (October 23, 2026)
 
 **Updated user direction:** build **one correct creature body foundation** and carry it through its actual adventurer, NPC and humanoid monster identities, with clothes, armor, profession props and equipment-specific attacks layered on top. Repeat with the next ancestry. This supersedes the older "finish all characters first" sequencing; it **does not** reduce the final 108 character / 48 NPC / 100+ monster targets.

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { catalog } from '../src/catalog.js';
-import { readCatalogRoute, serializeCatalogRoute } from '../src/routing.js';
+import { readCatalogRoute, serializeCatalogRoute, writeCatalogRoute } from '../src/routing.js';
 
 test('blank routes use the default category and empty filters', () => {
   assert.deepEqual(readCatalogRoute('', catalog), {category:'All',query:'',primary:'',secondary:''});
@@ -47,4 +47,37 @@ test('second-level filters require a valid first-level selection', () => {
   const state = readCatalogRoute('?category=Animals&secondary=Sharks', catalog);
   assert.equal(state.primary, '');
   assert.equal(state.secondary, '');
+});
+
+
+test('filter choices push browser history, search replaces, and unchanged routes do nothing', () => {
+  const originalWindow = globalThis.window;
+  let current = new URL('https://example.test/');
+  const actions = [];
+  globalThis.window = {
+    get location() { return current; },
+    history: {
+      state: null,
+      pushState(_state, _title, next) { actions.push('push'); current = new URL(next, current); },
+      replaceState(_state, _title, next) { actions.push('replace'); current = new URL(next, current); },
+    },
+  };
+  try {
+    const state = {category:'Animals',query:'',primary:'',secondary:''};
+    writeCatalogRoute(state, 'push', 'catalog');
+    assert.equal(current.search, '?category=Animals');
+    assert.equal(current.hash, '#catalog');
+    state.primary = 'Ocean';
+    writeCatalogRoute(state, 'push');
+    assert.deepEqual(actions, ['push', 'push']);
+    writeCatalogRoute(state, 'push');
+    assert.equal(actions.length, 2, 'Same route must not add history');
+    state.query = 'shark';
+    writeCatalogRoute(state);
+    assert.deepEqual(actions, ['push', 'push', 'replace']);
+    assert.deepEqual(readCatalogRoute(current.search, catalog), state);
+  } finally {
+    if (originalWindow === undefined) delete globalThis.window;
+    else globalThis.window = originalWindow;
+  }
 });
