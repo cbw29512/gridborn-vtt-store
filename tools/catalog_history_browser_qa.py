@@ -35,7 +35,11 @@ def check_catalog_history(browser, origin: str, width: int) -> None:
         # Search keystrokes replace the current URL rather than adding a
         # separate history entry for each character typed.
         page.locator("#search").fill("shark")
-        assert "q=shark" in page.url
+        expect(page.locator("#search")).to_have_value("shark")
+        # Same-document history restoration and URL replacement can settle on
+        # different browser tasks. Await the user-visible route, not a single
+        # immediate page.url snapshot; failures retain the observed URL.
+        expect(page).to_have_url(__import__("re").compile(r"[?&]q=shark(?:&|#|$)"), timeout=10000)
         page.go_back(wait_until="domcontentloaded")
         expect(page.locator("#category")).to_have_value("Animals")
         expect(page.locator("#primary-filter")).to_have_value("")
