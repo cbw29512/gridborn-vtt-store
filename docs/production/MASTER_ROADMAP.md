@@ -333,6 +333,12 @@ Produce the recognizable **common/base species first**, then build roles on that
 - `mon-swamp-lizard`: moved the original spear below the reptilian snout, attached an actual gripping hand, preserved separate reed shield/tail, and synchronized all four SVG states with `wave-four.mjs`. One-shot Attack has a braced wind-up and forward thrust, plus frame-bound and generator-parity assertions.
 - Added [individual research/art brief](briefs/mon-swamp-lizard.md). No new catalog identity or sale-approved asset; human 128/64/32px review, actual VTT import, rights and fulfillment remain blocking. No checkout or deployment.
 
+## Human Paladin sword grip and frame-safe swing — October 27, 2026
+
+- Existing `chr-pal-human` retains the same original still and catalog ID. The wave-four generator now keeps shield and sword **inside the translated body rig** rather than leaving held equipment behind during a lunge.
+- The sword's prior discrete -43°/+59° snap could cross the helmet and clip the frame. Replaced with a smoothly interpolated **-14° wind-up / +28° contact / +12° recovery** swing; source-linked Idle, Move, Attack, Rest exports were regenerated without duplicating art.
+- Added rig-parent/group-balance, frame/helmet-tip and generator-parity tests plus [individual art brief](briefs/chr-pal-human.md). No additional catalog studies or retail-ready products are claimed. Human 128/64/32px inspection, actual VTT imports, alpha video, IP and fulfillment signoff remain blocked; checkout and deployment unchanged.
+
 ## Skeleton Warrior weapon grip and attack QC — October 29, 2026
 
 - Existing `mon-dng-skeleton`: shortened and shifted the original sword to overlap the articulated right-hand grip while clearing the skull; kept the exposed ribs, pelvis, damaged shield, and original catalog identity.
