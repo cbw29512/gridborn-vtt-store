@@ -338,3 +338,10 @@ Produce the recognizable **common/base species first**, then build roles on that
 - Existing `chr-pal-human` retains the same original still and catalog ID. The wave-four generator now keeps shield and sword **inside the translated body rig** rather than leaving held equipment behind during a lunge.
 - The sword's prior discrete -43°/+59° snap could cross the helmet and clip the frame. Replaced with a smoothly interpolated **-14° wind-up / +28° contact / +12° recovery** swing; source-linked Idle, Move, Attack, Rest exports were regenerated without duplicating art.
 - Added rig-parent/group-balance, frame/helmet-tip and generator-parity tests plus [individual art brief](briefs/chr-pal-human.md). No additional catalog studies or retail-ready products are claimed. Human 128/64/32px inspection, actual VTT imports, alpha video, IP and fulfillment signoff remain blocked; checkout and deployment unchanged.
+
+## Skeleton Warrior weapon grip and attack QC — October 29, 2026
+
+- Existing `mon-dng-skeleton`: shortened and shifted the original sword to overlap the articulated right-hand grip while clearing the skull; kept the exposed ribs, pelvis, damaged shield, and original catalog identity.
+- Replaced the -49°/+61° stepped sword snap with a continuous -18° wind-up / +25° contact / +9° recovery around the existing shoulder pivot. Rebuilt all four independent SVG states from the canonical source and `skeleton.mjs` generator, with source-parity and conservative tip-boundary regression checks.
+- The existing source-derived SRD Skeleton variant also inherits the revised sword geometry: regenerated its Still/Idle/Move/Attack/Rest assets and aligned the rust overlay with the shortened blade; the undead-family parity gate remains blocking.
+- [Individual research/art brief](briefs/mon-dng-skeleton.md). No new catalog entry or commercially approved asset. Human 128/64/32px light/dark review, actual Foundry/Roll20 import, licensing and fulfillment remain pending; checkout and deployment stay disabled.

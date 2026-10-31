@@ -87,13 +87,13 @@
  <path d="M111 58L117 57M141 59L146 61" stroke="#fff4d4" stroke-width="3"/>
 </g>
 <g class="bone-blade">
- <path d="M192 38H198L200 140H189Z" fill="#384650"/>
- <path d="M194 39H196L196 137H193Z" fill="#d3d9d2"/>
- <path d="M191 35L196 22 201 39Z" fill="#e7e6d8"/>
- <rect x="180" y="137" width="30" height="8" fill="#363b3d"/>
- <rect x="183" y="139" width="24" height="3" fill="#c3a271"/>
- <path d="M193 145H199V170H193Z" fill="#886643"/>
- <rect x="191" y="169" width="11" height="6" fill="#bf9c68"/>
+ <path d="M187 71H193L195 140H184Z" fill="#384650"/>
+ <path d="M189 72H191L191 137H188Z" fill="#d3d9d2"/>
+ <path d="M186 69L191 56 196 73Z" fill="#e7e6d8"/>
+ <rect x="175" y="137" width="30" height="8" fill="#363b3d"/>
+ <rect x="178" y="139" width="24" height="3" fill="#c3a271"/>
+ <path d="M188 145H194V170H188Z" fill="#886643"/>
+ <rect x="186" y="169" width="11" height="6" fill="#bf9c68"/>
 </g>
 <g class="bone-shield">
  <path d="M62 124H103V158L83 186 62 159Z" fill="#18222e" stroke="#111b24" stroke-width="3"/>

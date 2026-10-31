@@ -5,11 +5,11 @@
 <desc id="description">One sudden sword windup and downward strike, then resets to guarded pose. Preview only; not a certified VTT product.</desc>
 <style>
 .bone-assembly{animation:bone-attack-lunge 1.4s steps(1,end) 1 both}
-.bone-arm-right,.bone-blade{transform-origin:157px 110px;animation:bone-attack-sword 1.4s steps(1,end) 1 both}
+.bone-arm-right,.bone-blade{transform-origin:157px 110px;animation:bone-attack-sword 1.4s ease-in-out 1 both}
 .bone-arm-left,.bone-shield{transform-origin:100px 110px;animation:bone-attack-block 1.4s steps(1,end) 1 both}
 .bone-skull{transform-origin:129px 105px;animation:bone-attack-head 1.4s steps(1,end) 1 both}
 @keyframes bone-attack-lunge{0%,100%{transform:translate(0,0)}21%{transform:translate(3px,0)}49%{transform:translate(-11px,-3px)}72%{transform:translate(-4px,0)}}
-@keyframes bone-attack-sword{0%,100%{transform:rotate(0)}21%{transform:rotate(-49deg)}49%{transform:rotate(61deg)}72%{transform:rotate(17deg)}}
+@keyframes bone-attack-sword{0%,100%{transform:rotate(0)}22%{transform:rotate(-18deg)}51%{transform:rotate(25deg)}74%{transform:rotate(9deg)}}
 @keyframes bone-attack-block{0%,100%{transform:rotate(0)}21%{transform:rotate(-11deg)}49%{transform:rotate(13deg)}72%{transform:rotate(6deg)}}
 @keyframes bone-attack-head{0%,100%{transform:rotate(0)}21%{transform:rotate(5deg)}49%{transform:rotate(-6deg)}}
 @media(prefers-reduced-motion:reduce){.bone-assembly,.bone-skull,.bone-cape,.bone-leg-left,.bone-leg-right,.bone-arm-left,.bone-arm-right,.bone-shield,.bone-blade{animation:none!important}}
@@ -101,16 +101,16 @@
 </g>
 </g>
 <g class="bone-blade"><g class="skeleton-rusted-sword">
-<path d="M194 56l2 27-4 10" stroke="#aa865f" stroke-width="3" fill="none"/>
-<path d="M188 135h19" stroke="#c4a16c" stroke-width="3"/>
+<path d="M189 73l2 27-4 10" stroke="#aa865f" stroke-width="3" fill="none"/>
+<path d="M183 135h19" stroke="#c4a16c" stroke-width="3"/>
 </g>
- <path d="M192 38H198L200 140H189Z" fill="#384650"/>
- <path d="M194 39H196L196 137H193Z" fill="#d3d9d2"/>
- <path d="M191 35L196 22 201 39Z" fill="#e7e6d8"/>
- <rect x="180" y="137" width="30" height="8" fill="#363b3d"/>
- <rect x="183" y="139" width="24" height="3" fill="#c3a271"/>
- <path d="M193 145H199V170H193Z" fill="#886643"/>
- <rect x="191" y="169" width="11" height="6" fill="#bf9c68"/>
+ <path d="M187 71H193L195 140H184Z" fill="#384650"/>
+ <path d="M189 72H191L191 137H188Z" fill="#d3d9d2"/>
+ <path d="M186 69L191 56 196 73Z" fill="#e7e6d8"/>
+ <rect x="175" y="137" width="30" height="8" fill="#363b3d"/>
+ <rect x="178" y="139" width="24" height="3" fill="#c3a271"/>
+ <path d="M188 145H194V170H188Z" fill="#886643"/>
+ <rect x="186" y="169" width="11" height="6" fill="#bf9c68"/>
 </g>
 <g class="bone-shield"><g class="skeleton-iron-rim">
 <path d="M64 128H99v28l-16 28-18-26Z" fill="none" stroke="#74847a" stroke-width="4"/>

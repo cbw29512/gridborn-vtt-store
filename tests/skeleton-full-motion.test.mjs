@@ -63,7 +63,7 @@ test('Skeleton undead mechanics: jerky motion, one attack and inert collapsed re
  assert.match(idle,/bone-idle-skull 3s steps\(1,end\) infinite/);
  assert.match(move,/bone-shuffle-left 1\.2s/);
  assert.match(move,/bone-shuffle-right 1\.2s/);
- assert.match(attack,/bone-attack-sword 1\.4s steps\(1,end\) 1 both/);
+ assert.match(attack,/bone-attack-sword 1\.4s ease-in-out 1 both/);
  assert.doesNotMatch(attack,/bone-attack-sword 1\.4s[^\n]*infinite/);
  assert.match(rest,/rotate\(80 128 143\)/);
  assert.match(rest,/Corpse pose: all bones stay immobile/);
@@ -81,5 +81,26 @@ test('Skeleton undead mechanics: jerky motion, one attack and inert collapsed re
  assert.equal(manifest.restDurationSec,4);
  for(const state of ['idle','move','attack']){
    assert.equal(manifest.stateClips[state].source,preview[state==='attack'?'action':state].slice(2));
+ }
+});
+
+
+test('Skeleton sword is gripped and swings on a bounded one-shot arc clear of the skull',()=>{
+ const original=read('assets/studies/skeleton-warrior.svg');
+ const attack=read('assets/demos/skeleton-warrior-attack.svg');
+ assert.match(original,/M186 69L191 56 196 73Z/, 'Shortened blade tip is distinct from the skull');
+ assert.match(original,/<rect x="186" y="169" width="11" height="6"/, 'Pommel overlaps the right-hand grip');
+ assert.match(attack,/bone-attack-sword 1\.4s ease-in-out 1 both/);
+ assert.match(attack,/@keyframes bone-attack-sword\{0%,100%\{transform:rotate\(0\)\}22%\{transform:rotate\(-18deg\)\}51%\{transform:rotate\(25deg\)\}74%\{transform:rotate\(9deg\)\}\}/);
+ // The blade tip follows the same shoulder pivot as the articulated right arm.
+ // Bounds are conservative; human review at 32/64/128px remains mandatory.
+ for(const angle of [-18,0,9,25]){
+  const radians=angle*Math.PI/180;
+  const x=157+34*Math.cos(radians)+54*Math.sin(radians);
+  const y=110+34*Math.sin(radians)-54*Math.cos(radians);
+  assert.ok(x>166&&x<240&&y>25&&y<200, 'Sword tip leaves safe stage: '+angle);
+ }
+ for(const state of SKELETON_STATES){
+  assert.equal(read('assets/demos/skeleton-warrior-'+state+'.svg'),renderSkeleton(state,original),state+' source parity');
  }
 });

@@ -28,11 +28,11 @@ export const renderSkeleton=function renderSkeleton(mode, source) {
 @keyframes bone-idle-sword{0%,12%,88%,100%{transform:rotate(0)}32%{transform:rotate(-4deg)}65%{transform:rotate(3deg)}}
 @keyframes bone-idle-cloth{0%,12%,88%,100%{transform:translateX(0)}32%{transform:translateX(2px)}65%{transform:translateX(-2px)}}`;
   const attack=`.bone-assembly{animation:bone-attack-lunge 1.4s steps(1,end) 1 both}
-.bone-arm-right,.bone-blade{transform-origin:157px 110px;animation:bone-attack-sword 1.4s steps(1,end) 1 both}
+.bone-arm-right,.bone-blade{transform-origin:157px 110px;animation:bone-attack-sword 1.4s ease-in-out 1 both}
 .bone-arm-left,.bone-shield{transform-origin:100px 110px;animation:bone-attack-block 1.4s steps(1,end) 1 both}
 .bone-skull{transform-origin:129px 105px;animation:bone-attack-head 1.4s steps(1,end) 1 both}
 @keyframes bone-attack-lunge{0%,100%{transform:translate(0,0)}21%{transform:translate(3px,0)}49%{transform:translate(-11px,-3px)}72%{transform:translate(-4px,0)}}
-@keyframes bone-attack-sword{0%,100%{transform:rotate(0)}21%{transform:rotate(-49deg)}49%{transform:rotate(61deg)}72%{transform:rotate(17deg)}}
+@keyframes bone-attack-sword{0%,100%{transform:rotate(0)}22%{transform:rotate(-18deg)}51%{transform:rotate(25deg)}74%{transform:rotate(9deg)}}
 @keyframes bone-attack-block{0%,100%{transform:rotate(0)}21%{transform:rotate(-11deg)}49%{transform:rotate(13deg)}72%{transform:rotate(6deg)}}
 @keyframes bone-attack-head{0%,100%{transform:rotate(0)}21%{transform:rotate(5deg)}49%{transform:rotate(-6deg)}}`;
   const rest=`/* Corpse pose: all bones stay immobile. Only a faint eye-socket glimmer varies. */
