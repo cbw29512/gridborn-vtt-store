@@ -60,7 +60,7 @@ const STYLES=Object.freeze({
 }
 `,
  attack:`
-/* One-shot 1.4 second attack: guarded windup, forward sword hit, settle. */
+/* One-shot 1.4s outward slash: blade clears the helmet and frame. */
 .body{animation:fighter-attack-lunge 1.4s ease-in-out 1 both}
 .cape{animation:fighter-attack-cape 1.4s ease-in-out 1 both}
 .shield{transform-origin:97px 115px;animation:fighter-attack-guard 1.4s ease-in-out 1 both}
@@ -84,9 +84,9 @@ const STYLES=Object.freeze({
 }
 @keyframes fighter-attack-swing{
 0%,100%{transform:rotate(0)}
-22%{transform:rotate(-49deg)}
-53%{transform:rotate(54deg)}
-74%{transform:rotate(17deg)}
+22%{transform:rotate(8deg)}
+53%{transform:rotate(43deg)}
+74%{transform:rotate(15deg)}
 }
 `
 });
