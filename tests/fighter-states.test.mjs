@@ -63,3 +63,28 @@ test('Fighter has four public prototype modes, but still no commercial license o
  assert.equal(manifest.stateClips.move.durationSec,3.2);
  assert.equal(manifest.stateClips.attack.durationSec,1.4);
 });
+
+// The visible hand must overlap the hilt (x=171..182, y=100..143).
+test('Fighter sword grip overlaps the hilt in all source and preview states',()=>{
+ for(const mode of ['still','idle','move','attack','rest','loop','sleep']){
+  const svg=read('assets/demos/human-fighter-'+mode+'.svg');
+  assert.match(svg,/<rect x="162" y="140" width="11" height="12" fill="#f0be8c"\/>/);
+  assert.match(svg,/<path d="M171 100h11v43h-11z"/);
+ }
+});
+
+test('Fighter one-shot slash keeps sword tip off helmet and inside canvas',()=>{
+ const svg=read('assets/demos/human-fighter-attack.svg');
+ for(const [percent,angle] of [[22,8],[53,43],[74,15]])
+  assert.ok(svg.includes(percent+'%{transform:rotate('+angle+'deg)}'));
+ assert.doesNotMatch(svg,/rotate\(-49deg\)|rotate\(54deg\)/);
+ const tip=(degrees,lungeX=0)=>{
+  const rad=degrees*Math.PI/180;
+  return {x:168+8*Math.cos(rad)+105*Math.sin(rad)+lungeX,
+          y:142+8*Math.sin(rad)-105*Math.cos(rad)};
+ };
+ for(const [angle,lungeX] of [[0,0],[8,3],[43,-8],[15,-3]]){
+  const {x,y}=tip(angle,lungeX);
+  assert.ok(x>155&&x<251&&y>10&&y<230,'sword tip: '+angle+'deg at '+x+','+y);
+ }
+});
