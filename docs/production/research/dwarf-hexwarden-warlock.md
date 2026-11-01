@@ -15,3 +15,7 @@ Compact shoulders, short legs and open visible face. Left hand holds an understa
 
 ## Release gates
 Human 256/128/64/32px light/dark legibility, finger/book anatomy, face clearance and frame bounds, technical decoded WebM alpha/loop verification, real Foundry/Roll20 playback, artwork licensing and sales/fulfillment signoff. All prototypes remain non-purchasable; VTT compatibility untested.
+
+## Projectile travel QC — November 1, 2026
+
+The existing original grimoire, rune and violet/green spell paths remain unchanged. Previously the visible bolt translated only 2px and looked stationary. The one-shot now starts the separate bolt at x-offset -20px by the book at 57%, travels to +4px at 68% (24px visible travel), and fades in place at 78%. The widest rightmost stroke ends at 255.5/256px, preserving frame clearance. The book remains the casting focus; the staff is carried, not waved as a spell. Source-generated attack parity and stroke-bound tests are included. Human at-scale visual review, actual Foundry/Roll20 imports, rights and fulfillment still block sale.

@@ -7,7 +7,7 @@
 @keyframes hex-brace{0%,100%{transform:translate(0,0)}24%{transform:translate(-2px,-1px)}52%{transform:translate(-1px,-2px)}74%{transform:translate(1px,0)}}
 @keyframes hex-tome-open{0%,100%{transform:rotate(0)}25%{transform:rotate(-5deg)}51%{transform:rotate(4deg)}75%{transform:rotate(0)}}
 @keyframes hex-rune-invoke{0%,22%,54%,100%{opacity:0}30%{opacity:.6}43%,49%{opacity:1}}
-@keyframes hex-eldritch-release{0%,51%{opacity:0;transform:translate(0,0)}57%{opacity:1;transform:translate(0,0)}68%{opacity:1;transform:translate(2px,-2px)}78%,100%{opacity:0;transform:translate(2px,-2px)}}
+@keyframes hex-eldritch-release{0%,51%{opacity:0;transform:translate(-20px,0)}57%{opacity:1;transform:translate(-20px,0)}68%{opacity:1;transform:translate(4px,-2px)}78%,100%{opacity:0;transform:translate(4px,-2px)}}
 @media(prefers-reduced-motion:reduce){.hex-core,.hex-book,.hex-left-leg,.hex-right-leg,.hex-rune,.hex-bolt,.hex-staff{animation:none!important}}
 </style>
 <ellipse cx="134" cy="215" rx="63" ry="12" fill="#11171e" opacity=".5"/>
