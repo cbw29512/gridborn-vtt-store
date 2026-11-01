@@ -12,6 +12,13 @@
 
 **Mandatory before any new artwork:** follow [Research-to-Art Gate](RESEARCH_ART_GATE.md), recording individual source-backed anatomy, equipment, motion and licensing briefs before rendering. No study can be counted as a production asset without its research brief.
 
+## Human Fighter weapon QC — October 31, 2026 (pending PR certification)
+
+- Correct the existing `chr-ftr-human` hand/hilt overlap in original Still, Idle, Rest, legacy Loop/Sleep and generated Move/Attack; preserve catalog identity and counts.
+- Replace helmet-crossing -49°/+54° sword motion with +8° anticipation, +43° outward strike and +15° recovery; retain 1.4s one-shot timing and body lunge.
+- Add deterministic export parity, grip/frame assertions and [individual Fighter art brief](briefs/chr-ftr-human.md). Require Storefront, Chromium, Foundry and private media CI on the exact head before merging.
+- Human 128/64/32px visual QC, actual VTT imports, rights and fulfillment remain pending; commercial approvals **0**. No checkout or deployment.
+
 ## Storefront navigation QA reconciliation — October 28, 2026 (pending CI)
 
 - Supersede obsolete conflicting draft PR #4 **without** its duplicate Chromium workflow or stale eight-result / opt-in-animation assertions. Keep the current 518-concept paginated single gallery and existing Chromium media QA.
