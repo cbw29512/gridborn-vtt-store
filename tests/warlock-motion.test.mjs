@@ -29,8 +29,8 @@ test('Hexwarden original grimoire invokes separate rune and eldritch projectile'
  assert.match(attack,/hex-rune-invoke 1\.4s steps\(1,end\) 1 both/);
  assert.match(attack,/hex-eldritch-release 1\.4s linear 1 both/);
  assert.match(attack,/0%,51%\{opacity:0;transform:translate\(-20px,0\)\}/);
- const launch=attack.match(/57%\{opacity:1;transform:translate\((-?\d+)px,(-?\d+)px\)\}/);
- const contact=attack.match(/68%\{opacity:1;transform:translate\((-?\d+)px,(-?\d+)px\)\}/);
+ const launch=attack.match(/57%\{opacity:1;transform:translate\((-?\d+)px,(-?\d+)(?:px)?\)\}/);
+ const contact=attack.match(/68%\{opacity:1;transform:translate\((-?\d+)px,(-?\d+)(?:px)?\)\}/);
  assert.ok(launch&&contact,'A separate visible projectile needs release and travel keyframes');
  const startX=Number(launch[1]),endX=Number(contact[1]);
  assert.ok(endX-startX>=20,'Projectile must travel visibly rather than flash in place');
