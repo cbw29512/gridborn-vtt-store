@@ -27,8 +27,22 @@ test('Sparkweaver hand-crystal gathers charge and launches a separate one-shot b
  const attack=read('assets/demos/elf-sparkweaver-sorcerer-attack.svg');
  assert.match(attack,/spark-gather 1\.4s steps\(1,end\) 1 both/);
  assert.match(attack,/spark-release 1\.4s linear 1 both/);
- assert.match(attack,/54%\{opacity:1;transform:translate\(0,0\)\}/);
- assert.match(attack,/65%\{opacity:1;transform:translate\(4px,-2px\)\}/);
+ assert.match(attack,/0%,48%\{opacity:0;transform:translate\(-16px,0\)\}/);
+ const launch=attack.match(/54%\{opacity:1;transform:translate\((-?\d+)px,(-?\d+)(?:px)?\)\}/);
+ const contact=attack.match(/65%\{opacity:1;transform:translate\((-?\d+)px,(-?\d+)(?:px)?\)\}/);
+ assert.ok(launch&&contact,'A separate visible projectile needs release and travel keyframes');
+ const startX=Number(launch[1]),endX=Number(contact[1]);
+ assert.ok(endX-startX>=20,'Projectile must travel visibly rather than flash in place');
+ const bolt=attack.match(/<g class="spark-bolt"[\s\S]*?<\/g>/)?.[0];
+ assert.ok(bolt,'Source-drawn projectile group required');
+ const strokes=[...bolt.matchAll(/<path d="([^"]+)"[^>]*stroke-width="([\d.]+)"/g)];
+ assert.ok(strokes.length>=2,'Retain the original layered projectile art');
+ for(const [,path,width] of strokes){
+  const xs=[...path.matchAll(/[ML](-?\d+(?:\.\d+)?)\s+(-?\d+(?:\.\d+)?)/g)].map(match=>Number(match[1]));
+  assert.ok(xs.length,'Projectile path coordinates required');
+  assert.ok(Math.min(...xs)+startX-Number(width)/2>=0,'Projectile clips left frame');
+  assert.ok(Math.max(...xs)+endX+Number(width)/2<=256,'Projectile clips right frame');
+ }
  assert.doesNotMatch(attack,/spark-release[^\n]*infinite/);
  for(const mode of ['idle','move','rest']){
   const svg=read('assets/demos/elf-sparkweaver-sorcerer-'+mode+'.svg');

@@ -18,3 +18,7 @@ Idle 3.2s: breathing plus pulsing hand crystal, not generic staff rotation. Move
 
 ## Hard release gates
 Production-grade human assessment at 32/64/128px for clarity, crystal grip, anatomy, face clearance, silhouette uniqueness; light/dark map; encoded alpha frames and seams; actual Foundry/Roll20 import; artwork/third-party rights audit and checkout delivery. Purchasable false; VTT compatibility untested.
+
+## Projectile travel QC — November 1, 2026
+
+The existing original gold/blue spell geometry and hand-crystal source remain unchanged. The previous release translated only 4px while visible, reading as a static flash at VTT scale. The 1.4s one-shot now launches the separate bolt at x-offset -16px on 54% and moves to +8px at 65% (24px actual travel), fading at 74% without a second jump. The rightmost stroke reaches 255.5/256px; the crystal, staff, face and four-state source rig remain unchanged. Deterministic export and path/stroke frame tests protect this motion. This is technical QC, not human 128/64/32px or actual-VTT certification; licensing and fulfillment remain unapproved.
