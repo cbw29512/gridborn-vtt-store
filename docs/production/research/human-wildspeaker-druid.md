@@ -19,3 +19,7 @@ Human female Wildspeaker with unique braided dark hair, understated expression, 
 
 ## Outstanding certification
 Human 256/128/64/32px light/dark-grid anatomy QC; ensure plant geometry and staff don't intersect body/face across *all* motion keyframes; decoded transparent WebM loops, real Foundry and Roll20 imports; original art license review and commercial fulfillment signoff. No sale: `purchasable:false`, `vttCompatibility:untested`.
+
+## Thorn-whip reach correction — November 2, 2026
+
+The original hand, staff, oak mantle, face and independently drawn vine paths remain unchanged. The previous Attack slid the complete already-extended vine by only 9px, reading as a moving ornament rather than a growing cast. The revised one-shot anchors the vine at (192,119), beside the free hand, grows it from 12% to 100% of its original 48px horizontal reach by 59% of the action, then retracts/fades. Its original farthest x coordinate is 240, with maximum 5px stroke radius, leaving at least 11px frame clearance. All non-Attack exports remain unchanged and generated from the same canonical art. Automated geometric/source parity checks are not a substitute for 128/64/32px human review, real VTT import, legal/IP approval or fulfillment. No new ID or commercial approval.
