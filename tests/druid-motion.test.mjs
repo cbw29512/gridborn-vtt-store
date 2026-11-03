@@ -32,7 +32,22 @@ test('Human female Wildspeaker has original live staff and independent thorn-whi
  const attack=read('assets/demos/human-wildspeaker-druid-attack.svg');
  assert.match(attack,/druid-vine-hand 1\.4s steps\(1,end\) 1 both/);
  assert.match(attack,/druid-thorn-whip 1\.4s linear 1 both/);
- assert.match(attack,/59%\{opacity:1;transform:translate\(9px,-3px\)\}/);
+ assert.match(attack,/59%\{opacity:1;transform:scaleX\(1\)\}/);
+ assert.match(attack,/36%\{opacity:\.8;transform:scaleX\(\.36\)\}/);
+ assert.match(attack,/68%\{opacity:1;transform:scaleX\(\.82\)\}/);
+ assert.match(attack,/transform-origin:192px 119px/);
+ assert.doesNotMatch(attack,/@keyframes druid-thorn-whip[^\n]*translate/);
+ // The independently drawn vine must grow from the hand, not slide as a complete ornament.
+ const vine=src.match(/<g class="druid-vine"[\s\S]*?<\/g>/)?.[0];
+ assert.ok(vine,'Separate vine geometry is required');
+ const paths=[...vine.matchAll(/<path d="([^"]+)"/g)].map(match=>match[1]);
+ assert.ok(paths.length>=3,'Vine stalk and thorn geometry must remain');
+ const maxX=Math.max(...paths.flatMap(path=>{
+  const coordinates=path.match(/-?\d+(?:\.\d+)?/g).map(Number);
+  return coordinates.filter((_,index)=>index%2===0);
+ }));
+ assert.ok(maxX+5<256,'Extended vine must retain stroke clearance at 256px');
+ assert.equal(maxX,240,'Canonical thorn tip drifted');
  assert.doesNotMatch(attack,/druid-thorn-whip[^\n]*infinite/);
  for(const mode of ['idle','move','rest']){
   const output=read('assets/demos/human-wildspeaker-druid-'+mode+'.svg');

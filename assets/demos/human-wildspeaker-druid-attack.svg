@@ -3,10 +3,10 @@
 <title id="title">Human Wildspeaker Druid — original Gridborn grove spellcaster — attack movement study</title>
 <desc id="description">Female Human Wildspeaker druid with practical moss-brown layered leather, distinct oak-leaf shoulder mantle, long dark braid, bone and acorn charms, live gnarled quarterstaff held by one hand, and free right hand forming a directed thornvine spell. Original noncommercial artwork.</desc>
 <style>
-.druid-core{animation:druid-cast-brace 1.4s steps(1,end) 1 both}.druid-casting-arm{transform-origin:157px 126px;animation:druid-vine-hand 1.4s steps(1,end) 1 both}.druid-vine{animation:druid-thorn-whip 1.4s linear 1 both}.druid-staff{transform-origin:75px 125px;animation:druid-staff-root 1.4s steps(1,end) 1 both}
+.druid-core{animation:druid-cast-brace 1.4s steps(1,end) 1 both}.druid-casting-arm{transform-origin:157px 126px;animation:druid-vine-hand 1.4s steps(1,end) 1 both}.druid-vine{transform-origin:192px 119px;animation:druid-thorn-whip 1.4s linear 1 both}.druid-staff{transform-origin:75px 125px;animation:druid-staff-root 1.4s steps(1,end) 1 both}
 @keyframes druid-cast-brace{0%,100%{transform:translate(0,0)}23%{transform:translate(-2px,0)}50%{transform:translate(-2px,-2px)}75%{transform:translate(1px,0)}}
 @keyframes druid-vine-hand{0%,100%{transform:rotate(0)}23%{transform:rotate(-17deg)}48%{transform:rotate(14deg)}74%{transform:rotate(3deg)}}
-@keyframes druid-thorn-whip{0%,24%{opacity:0;transform:translate(0,0)}36%{opacity:.75;transform:translate(0,0)}49%{opacity:1;transform:translate(2px,-2px)}59%{opacity:1;transform:translate(9px,-3px)}76%,100%{opacity:0;transform:translate(9px,-3px)}}
+@keyframes druid-thorn-whip{0%,24%{opacity:0;transform:scaleX(.12)}36%{opacity:.8;transform:scaleX(.36)}49%{opacity:1;transform:scaleX(.7)}59%{opacity:1;transform:scaleX(1)}68%{opacity:1;transform:scaleX(.82)}76%{opacity:0;transform:scaleX(.18)}100%{opacity:0;transform:scaleX(.12)}}
 @keyframes druid-staff-root{0%,100%{transform:rotate(0)}26%{transform:rotate(3deg)}52%{transform:rotate(-2deg)}}
 @media(prefers-reduced-motion:reduce){.druid-core,.druid-mantle,.druid-staff,.druid-left-leg,.druid-right-leg,.druid-casting-arm,.druid-vine{animation:none!important}}
 </style>
