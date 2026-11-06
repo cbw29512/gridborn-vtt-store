@@ -108,3 +108,21 @@ test('Mercywarden mace radiance follows weapon grip through all four states',()=
  assert.match(strike,/54%\{opacity:1;transform:scale\(1\.16\)\}/,'Radiance peaks at strike');
  assert.doesNotMatch(strike,/mercy-heal-flash 1\.4s steps\(1,end\)/);
 });
+
+test('Dwarf and Ogre translate body and attached equipment together',()=>{
+ for(const item of [{kind:'dwarf',stem:'dwarven-cleric',motion:'dwarf-smite-step'},{kind:'ogre',stem:'cave-ogre',motion:'ogre-slam-step'}]){
+  const source=read('assets/studies/'+item.stem+'.svg');
+  for(const state of WAVE_THREE_STATES){
+   const svg=read('assets/demos/'+item.stem+'-'+state+'.svg');
+   assert.equal(svg,renderWaveThree(item.kind,state,source),'Generator/export mismatch: '+item.stem+' '+state);
+   const body=svg.indexOf('<g class="rig-body">');
+   const core=svg.indexOf('<g class="rig-core">',body);
+   const weapon=svg.indexOf('class="rig-weapon"',core);
+   assert.ok(body>=0&&core>body&&weapon>core,'Equipment must be nested in shared body rig');
+   assert.match(svg,/\.rig-body\{animation:/,'Body translation must be on common parent');
+   assert.doesNotMatch(svg,/\.rig-core\{animation:/,'No competing translation on child torso');
+   assert.match(svg,/\.rig-weapon\{transform-origin:/,'Weapon must retain independent swing');
+  }
+  assert.match(read('assets/demos/'+item.stem+'-attack.svg'),new RegExp('\\.rig-body\\{animation:'+item.motion));
+ }
+});
