@@ -3,14 +3,13 @@
 <title id="title">Cave Ogre — idle animation study</title>
 <desc id="description">Enormous hunched ogre with slab club and heavy, uneven steps. idle animation prototype, preview only.</desc>
 <style>
-.rig-body{animation:ogre-heavy-breath 3.2s ease-in-out infinite}.rig-weapon{transform-origin:208px 172px;animation:ogre-club-weight 3.2s ease-in-out infinite}
+.rig-core{animation:ogre-heavy-breath 3.2s ease-in-out infinite}.rig-weapon{transform-origin:208px 172px;animation:ogre-club-weight 3.2s ease-in-out infinite}
 @keyframes ogre-heavy-breath{0%,10%,90%,100%{transform:translate(0,0)}42%{transform:translate(0,-2px) rotate(-2deg)}70%{transform:translateY(1px)}}
 @keyframes ogre-club-weight{0%,10%,90%,100%{transform:rotate(0)}42%{transform:rotate(-8deg)}70%{transform:rotate(5deg)}}
-@media(prefers-reduced-motion:reduce){.rig-body,.rig-core,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-leg-left,.rig-leg-right,.dwarf-legs{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.rig-core,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-leg-left,.rig-leg-right,.dwarf-legs{animation:none!important}}
 </style>
 <ellipse cx="126" cy="215" rx="79" ry="12" fill="#080e1b" opacity=".5"/>
 <ellipse cx="127" cy="203" rx="86" ry="28" fill="none" stroke="#be9664" stroke-width="3" opacity=".7"/>
-<g class="rig-body">
 <g class="rig-core">
  <g class="rig-leg-left"><path d="M93 152h39l-14 55-37 3-9-25z" fill="#4e6666" stroke="#283b43" stroke-width="5"/><path d="M76 194h49l2 19H64z" fill="#373137" stroke="#7c6b56" stroke-width="4"/></g>
  <g class="rig-leg-right"><path d="M137 149h37l13 56-38 6-21-26z" fill="#476061" stroke="#283a42" stroke-width="5"/><path d="M149 196h43l13 18h-63z" fill="#3a3037" stroke="#7e6a52" stroke-width="4"/></g>
@@ -38,7 +37,6 @@
  <path d="M174 39l22-27 30 18-4 42-25 13-27-25z" fill="#747271" stroke="#292d36" stroke-width="5"/>
  <path d="M185 46l17-15 12 8-5 17-17 8z" fill="#a2a099"/>
  <path d="M192 80l18 9" stroke="#c8a77d" stroke-width="5"/>
-</g>
 </g>
 <g class="rig-effect"><path d="M68 197h23m65 9h18" stroke="#b4a28a" stroke-width="3" opacity=".6"/></g>
 </svg>
