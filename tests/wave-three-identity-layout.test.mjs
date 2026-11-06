@@ -108,3 +108,20 @@ test('Mercywarden mace radiance follows weapon grip through all four states',()=
  assert.match(strike,/54%\{opacity:1;transform:scale\(1\.16\)\}/,'Radiance peaks at strike');
  assert.doesNotMatch(strike,/mercy-heal-flash 1\.4s steps\(1,end\)/);
 });
+
+test('Dwarf body, mace and shield share translation while retaining their own swing',()=>{
+ const source=read('assets/studies/dwarven-cleric.svg');
+ for(const state of WAVE_THREE_STATES){
+  const svg=read('assets/demos/dwarven-cleric-'+state+'.svg');
+  assert.equal(svg,renderWaveThree('dwarf',state,source),'Generator/export mismatch: '+state);
+  const body=svg.indexOf('<g class="rig-body">');
+  const core=svg.indexOf('<g class="rig-core">',body);
+  const weapon=svg.indexOf('class="dwarf-mace rig-weapon"',core);
+  const shield=svg.indexOf('class="dwarf-shield rig-offhand"',core);
+  assert.ok(body>=0&&core>body&&weapon>core&&shield>core,'Body and equipment must share a parent');
+  assert.match(svg,/\\.rig-body\\{animation:/);
+  assert.doesNotMatch(svg,/\\.rig-core\\{animation:/);
+  assert.match(svg,/\\.rig-weapon\\{transform-origin:/);
+ }
+ assert.match(read('assets/demos/dwarven-cleric-attack.svg'),/dwarf-smite-step/);
+});
