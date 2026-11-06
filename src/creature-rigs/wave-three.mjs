@@ -17,11 +17,6 @@ export const renderWaveThree=function makeMotion(kind,mode,source){
   art=art.replace('<g class="dwarf-mace">','<g class="dwarf-mace rig-weapon">');
   art=art.replace('</g>\n</svg>','</g>\n</g>\n</svg>');
  }
- if(kind==="ogre"){
-  if(!art.includes('<g class="rig-core">')||!art.includes('<g class="rig-effect">'))throw Error('Ogre anatomy markers changed');
-  art=art.replace('<g class="rig-core">','<g class="rig-body">\n<g class="rig-core">');
-  art=art.replace('<g class="rig-effect">','</g>\n<g class="rig-effect">');
- }
  if(kind==="mercy"){
   const haloBoundary='</g>\n<g class="rig-effect">';
   if(!art.includes(haloBoundary)||!art.includes('</g>\n</svg>'))throw Error("Mercywarden art changed");
@@ -87,24 +82,25 @@ export const renderWaveThree=function makeMotion(kind,mode,source){
 @keyframes shadow-darkness{0%,10%,90%,100%{opacity:.16}45%{opacity:.38}}`
  },
  ogre:{
- idle:`.rig-body{animation:ogre-heavy-breath 3.2s ease-in-out infinite}.rig-weapon{transform-origin:208px 172px;animation:ogre-club-weight 3.2s ease-in-out infinite}
+ idle:`.rig-core{animation:ogre-heavy-breath 3.2s ease-in-out infinite}.rig-weapon{transform-origin:208px 172px;animation:ogre-club-weight 3.2s ease-in-out infinite}
 @keyframes ogre-heavy-breath{0%,10%,90%,100%{transform:translate(0,0)}42%{transform:translate(0,-2px) rotate(-2deg)}70%{transform:translateY(1px)}}
 @keyframes ogre-club-weight{0%,10%,90%,100%{transform:rotate(0)}42%{transform:rotate(-8deg)}70%{transform:rotate(5deg)}}`,
- move:`.rig-body{animation:ogre-lumber 1.2s steps(1,end) infinite}.rig-leg-left{transform-origin:110px 157px;animation:ogre-left 1.2s steps(1,end) infinite}.rig-leg-right{transform-origin:160px 154px;animation:ogre-right 1.2s steps(1,end) infinite}.rig-weapon{transform-origin:208px 172px;animation:ogre-club-lumber 1.2s steps(1,end) infinite}
+ move:`.rig-core{animation:ogre-lumber 1.2s steps(1,end) infinite}.rig-leg-left{transform-origin:110px 157px;animation:ogre-left 1.2s steps(1,end) infinite}.rig-leg-right{transform-origin:160px 154px;animation:ogre-right 1.2s steps(1,end) infinite}.rig-weapon{transform-origin:208px 172px;animation:ogre-club-lumber 1.2s steps(1,end) infinite}
 @keyframes ogre-lumber{0%,10%,90%,100%{transform:translate(0,0)}30%{transform:translate(-6px,-3px)}65%{transform:translate(5px,1px)}}
 @keyframes ogre-left{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(-12deg)}65%{transform:rotate(8deg)}}
 @keyframes ogre-right{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(10deg)}65%{transform:rotate(-12deg)}}
 @keyframes ogre-club-lumber{0%,10%,90%,100%{transform:rotate(0)}30%{transform:rotate(-7deg)}65%{transform:rotate(8deg)}}`,
- attack:`.rig-body{animation:ogre-slam-step 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:208px 172px;animation:ogre-club-slam 1.4s steps(1,end) 1 both}
+ attack:`.rig-core{animation:ogre-slam-step 1.4s steps(1,end) 1 both}.rig-weapon{transform-origin:208px 172px;animation:ogre-club-slam 1.4s steps(1,end) 1 both}
 @keyframes ogre-slam-step{0%,100%{transform:translate(0,0)}23%{transform:translate(4px,2px)}55%{transform:translate(-10px,-4px)}75%{transform:translate(-2px,1px)}}
 @keyframes ogre-club-slam{0%,100%{transform:rotate(0)}23%{transform:rotate(-56deg)}55%{transform:rotate(69deg)}75%{transform:rotate(14deg)}}`,
- rest:`.rig-body{animation:ogre-rest 4s ease-in-out infinite}.rig-weapon{transform-origin:208px 172px;animation:ogre-club-ground 4s ease-in-out infinite}
+ rest:`.rig-core{animation:ogre-rest 4s ease-in-out infinite}.rig-weapon{transform-origin:208px 172px;animation:ogre-club-ground 4s ease-in-out infinite}
 @keyframes ogre-rest{0%,10%,90%,100%{transform:translateY(13px) rotate(5deg)}45%{transform:translateY(10px) rotate(5deg)}}
 @keyframes ogre-club-ground{0%,10%,90%,100%{transform:rotate(58deg)}45%{transform:rotate(55deg)}}`
  }
  };
- const style=animSets[kind][mode],reduce=`@media(prefers-reduced-motion:reduce){.rig-body,.rig-core,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-leg-left,.rig-leg-right,.dwarf-legs{animation:none!important}}`;
+ const style=animSets[kind][mode]; let reduce=`@media(prefers-reduced-motion:reduce){.rig-body,.rig-core,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-leg-left,.rig-leg-right,.dwarf-legs{animation:none!important}}`;
  if(!style)throw Error("Missing specialized motion");
+ if(kind!=='dwarf')reduce=reduce.replace('.rig-body,','');
  art=art.replace("</desc>","</desc>\n<style>\n"+style+"\n"+reduce+"\n</style>");
  return art;
 };
