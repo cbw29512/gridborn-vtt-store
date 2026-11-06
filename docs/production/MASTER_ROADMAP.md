@@ -1,9 +1,9 @@
 # Gridborn — master token production roadmap
 
-## Cleric and Ogre equipment attachment — November 6, 2026 (PR pending certification)
+## Cleric equipment attachment — November 6, 2026 (PR pending certification)
 
-- Repair existing `chr-clr-dwarf` and `mon-cave-ogre` translated body rigs so weapon and offhand inherit the same translation while retaining their distinct weapon rotations and attack timing.
-- Preserve canonical original still art and existing catalog IDs; synchronize all eight Idle/Move/Attack/Rest SVG exports with the generator and add regression coverage.
+- Repair existing `chr-clr-dwarf` translated body rig so mace and shield inherit the same translation while retaining independent rotations. Cave Ogre remains a separately tracked follow-up because multiple derived Ogre-family exports require coordinated regeneration.
+- Preserve canonical original still art and existing catalog IDs; synchronize all four Cleric Idle/Move/Attack/Rest SVG exports with the generator and add regression coverage.
 - Require all existing CI, human 128/64/32px frame review, actual VTT imports and licensing/fulfillment gates. Commercially approved assets remain **0**; no checkout or production deployment.
 
 
