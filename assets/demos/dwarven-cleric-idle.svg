@@ -4,15 +4,16 @@
 <title id="title">Dwarven Cleric — idle animation study</title>
 <desc id="description">Stocky dwarf beard with mace, heavy shield and radiant holy symbol. idle animation prototype, preview only.</desc>
 <style>
-.rig-core{animation:dwarf-guard 3.2s ease-in-out infinite}.rig-weapon{transform-origin:188px 151px;animation:dwarf-mace-guard 3.2s ease-in-out infinite}.rig-offhand{transform-origin:77px 142px;animation:dwarf-shield-guard 3.2s ease-in-out infinite}
+.rig-body{animation:dwarf-guard 3.2s ease-in-out infinite}.rig-weapon{transform-origin:188px 151px;animation:dwarf-mace-guard 3.2s ease-in-out infinite}.rig-offhand{transform-origin:77px 142px;animation:dwarf-shield-guard 3.2s ease-in-out infinite}
 @keyframes dwarf-guard{0%,10%,90%,100%{transform:translateY(0)}42%{transform:translateY(-2px)}66%{transform:translateY(1px)}}
 @keyframes dwarf-mace-guard{0%,10%,90%,100%{transform:rotate(0)}42%{transform:rotate(5deg)}66%{transform:rotate(-4deg)}}
 @keyframes dwarf-shield-guard{0%,10%,90%,100%{transform:rotate(0)}42%{transform:rotate(-6deg)}66%{transform:rotate(3deg)}}
-@media(prefers-reduced-motion:reduce){.rig-core,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-leg-left,.rig-leg-right,.dwarf-legs{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.rig-body,.rig-core,.rig-head,.rig-weapon,.rig-offhand,.rig-effect,.rig-leg-left,.rig-leg-right,.dwarf-legs{animation:none!important}}
 </style>
 <ellipse cx="128" cy="207" rx="65" ry="14" fill="#080f16" opacity=".39"/>
 <ellipse cx="126" cy="198" rx="75" ry="23" fill="none" stroke="#d4af74" stroke-width="3" opacity=".73"/>
 <!-- Broad dwarven torso has an intentionally shorter vertical profile than humans. -->
+<g class="rig-body">
 <g class="rig-core">
 <g class="dwarf-cloak">
  <path d="M91 105H165L185 177 167 190 145 181 130 198 107 183 85 189 70 175Z" fill="#272638"/>
@@ -104,5 +105,6 @@
  <path d="M180 61L184 48 190 60 195 47 202 62 211 67 200 74 208 85 199 87 192 99 188 87 179 90 181 78 173 70Z" fill="#c6d0d2" opacity=".86"/>
  <path d="M188 61L194 61 194 85 187 85Z" fill="#eef0de"/>
  <rect x="183" y="175" width="13" height="7" fill="#dfb979"/>
+</g>
 </g>
 </svg>
